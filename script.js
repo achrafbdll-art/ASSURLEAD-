@@ -1442,9 +1442,247 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     };
 
+    // --- ZELLIGE TECH CANVAS DESIGN ---
+    const initZelligeTechCanvas = () => {
+        const canvas = document.getElementById('zellige-tech-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        const section = document.getElementById('offres');
+        if (!section) return;
+
+        let width = canvas.width = section.offsetWidth;
+        let height = canvas.height = section.offsetHeight;
+
+        // Resize handler
+        const resizeObserver = new ResizeObserver(() => {
+            width = canvas.width = section.offsetWidth;
+            height = canvas.height = section.offsetHeight;
+        });
+        resizeObserver.observe(section);
+
+        // Mouse coordinates for activation
+        let mouseX = -1000;
+        let mouseY = -1000;
+        let isHovered = false;
+
+        section.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+            isHovered = true;
+        });
+
+        section.addEventListener('mouseleave', () => {
+            isHovered = false;
+        });
+
+        // Parameters for Islamic geometric design (Zellige)
+        const D = 90; // spacing between centers of stars
+        const R_out = 32; // outer radius of 8-point star
+        const R_in = R_out * 0.65; // inner radius of star
+
+        // Digital interactive circuits/pulses moving along cells
+        const pulses = [];
+        const maxPulses = 15;
+
+        class ZelligePulse {
+            constructor(startX, startY, dirX, dirY, length, cellX, cellY) {
+                this.x = startX;
+                this.y = startY;
+                this.dx = dirX;
+                this.dy = dirY;
+                this.speed = 1.5 + Math.random() * 2;
+                this.progress = 0;
+                this.maxProgress = length;
+                this.color = '#00ff41';
+                this.cellX = cellX;
+                this.cellY = cellY;
+            }
+
+            update() {
+                this.progress += this.speed;
+                this.x += this.dx * this.speed;
+                this.y += this.dy * this.speed;
+                return this.progress < this.maxProgress;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 1.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#ffffff';
+                ctx.shadowColor = '#00ff41';
+                ctx.shadowBlur = 10;
+                ctx.fill();
+                ctx.shadowBlur = 0; // reset
+            }
+        }
+
+        // Draw 8-point star (Khatem)
+        const drawStar8 = (cx, cy, rOut, rIn, rotationAngle, bloomIntensity, fillAlpha) => {
+            ctx.beginPath();
+            for (let i = 0; i < 16; i++) {
+                const angle = rotationAngle + (i * Math.PI) / 8;
+                const r = i % 2 === 0 ? rOut : rIn;
+                const px = cx + Math.cos(angle) * r;
+                const py = cy + Math.sin(angle) * r;
+                if (i === 0) ctx.moveTo(px, py);
+                else ctx.lineTo(px, py);
+            }
+            ctx.closePath();
+
+            // Fill
+            if (fillAlpha > 0) {
+                ctx.fillStyle = `rgba(0, 255, 65, ${fillAlpha})`;
+                ctx.fill();
+            }
+
+            // Stroke
+            ctx.lineWidth = bloomIntensity > 1.2 ? 1.5 : 1;
+            ctx.strokeStyle = bloomIntensity > 1.2 ? '#00FF41' : 'rgba(0, 255, 65, 0.4)';
+            
+            if (bloomIntensity > 1) {
+                ctx.shadowColor = '#00ff41';
+                ctx.shadowBlur = 4 * bloomIntensity;
+            }
+            ctx.stroke();
+            ctx.shadowBlur = 0; // reset
+        };
+
+        // Draw overlapping tech squares / circuit rings around star
+        const drawTechSquare = (cx, cy, size, rot, bloomIntensity) => {
+            ctx.save();
+            ctx.translate(cx, cy);
+            ctx.rotate(rot);
+            ctx.beginPath();
+            ctx.rect(-size/2, -size/2, size, size);
+            ctx.strokeStyle = bloomIntensity > 1.2 ? 'rgba(0, 255, 65, 0.6)' : 'rgba(0, 255, 65, 0.15)';
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+            ctx.restore();
+        };
+
+        // Animation frame
+        let lastTime = 0;
+        let angleAcc = 0;
+
+        const animate = (timestamp) => {
+            if (!lastTime) lastTime = timestamp;
+            const dt = timestamp - lastTime;
+            lastTime = timestamp;
+
+            // Only draw if section is visible
+            const rect = section.getBoundingClientRect();
+            const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+            if (inViewport) {
+                ctx.clearRect(0, 0, width, height);
+
+                angleAcc += 0.003;
+
+                // Let's create pulses in grid lines occasionally
+                if (pulses.length < maxPulses && Math.random() < 0.05) {
+                    const cols = Math.floor(width / D) + 2;
+                    const rows = Math.floor(height / D) + 2;
+                    const gx = Math.floor(Math.random() * cols);
+                    const gy = Math.floor(Math.random() * rows);
+                    const cx = gx * D + (gx % 2 === 0 ? 0 : D / 4);
+                    const cy = gy * D;
+
+                    // Pulses travel along zellige angles
+                    const directions = [
+                        { dx: Math.cos(Math.PI / 8), dy: Math.sin(Math.PI / 8) },
+                        { dx: Math.cos(2*Math.PI / 8), dy: Math.sin(2*Math.PI / 8) },
+                        { dx: Math.cos(3*Math.PI / 8), dy: Math.sin(3*Math.PI / 8) },
+                        { dx: Math.cos(5*Math.PI / 8), dy: Math.sin(5*Math.PI / 8) },
+                        { dx: -Math.cos(Math.PI / 8), dy: -Math.sin(Math.PI / 8) },
+                    ];
+                    const dir = directions[Math.floor(Math.random() * directions.length)];
+                    pulses.push(new ZelligePulse(cx, cy, dir.dx, dir.dy, D * 1.5, gx, gy));
+                }
+
+                // Render background grid structure with geometric Zellige tessellation
+                const startX = -D;
+                const startY = -D;
+
+                for (let cx = startX; cx < width + D; cx += D) {
+                    for (let cy = startY; cy < height + D; cy += D) {
+                        const rotSpeed = 0.002 * (Math.sin(cx / 100 + cy / 100) || 1);
+                        const currentRot = angleAcc * rotSpeed * 10 + (cx + cy) * 0.01;
+
+                        const dx = cx - mouseX;
+                        const dy = cy - mouseY;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        let bloomIntensity = 1.0;
+                        let fillAlpha = 0.01;
+
+                        if (isHovered && dist < 180) {
+                            const factor = 1 - dist / 180;
+                            bloomIntensity += factor * 1.5;
+                            fillAlpha += factor * 0.12;
+                        }
+
+                        const pulseFactor = Math.sin(angleAcc * 0.5 + (cx * 0.01 + cy * 0.01)) * 0.5 + 0.5;
+                        fillAlpha += pulseFactor * 0.04;
+
+                        // Draw the 8-pointed main stars of Moroccan Zellige
+                        drawStar8(cx, cy, R_out, R_in, currentRot, bloomIntensity, fillAlpha);
+
+                        // Secondary geometries
+                        drawTechSquare(cx, cy, R_out * 1.4, -currentRot * 0.5, bloomIntensity);
+                        drawTechSquare(cx, cy, R_out * 0.5, currentRot, bloomIntensity);
+
+                        // Connecting grid lines
+                        ctx.beginPath();
+                        ctx.strokeStyle = bloomIntensity > 1.2 ? 'rgba(0, 255, 65, 0.15)' : 'rgba(0, 255, 65, 0.04)';
+                        ctx.lineWidth = 0.5;
+                        
+                        ctx.moveTo(cx, cy);
+                        ctx.lineTo(cx + D, cy + D);
+                        ctx.moveTo(cx + D, cy);
+                        ctx.lineTo(cx, cy + D);
+                        ctx.stroke();
+
+                        // Intermediate diamonds/circles in zellige style
+                        const mx = cx + D/2;
+                        const my = cy + D/2;
+                        
+                        const midDist = isHovered ? Math.sqrt((mx - mouseX) ** 2 + (my - mouseY) ** 2) : 1000;
+                        const midIntensity = midDist < 120 ? (1 - midDist / 120) * 1.2 : 0;
+                        
+                        ctx.beginPath();
+                        ctx.arc(mx, my, R_out * 0.25, 0, Math.PI * 2);
+                        ctx.strokeStyle = midIntensity > 0.5 ? 'rgba(0, 255, 65, 0.4)' : 'rgba(0, 255, 65, 0.1)';
+                        ctx.stroke();
+                        if (midIntensity > 0.1) {
+                            ctx.fillStyle = `rgba(0, 255, 65, ${midIntensity * 0.1})`;
+                            ctx.fill();
+                        }
+                    }
+                }
+
+                // Pulses update & draw
+                for (let i = pulses.length - 1; i >= 0; i--) {
+                    const p = pulses[i];
+                    const active = p.update();
+                    if (!active) {
+                        pulses.splice(i, 1);
+                    } else {
+                        p.draw();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        };
+
+        requestAnimationFrame(animate);
+    };
+
     // Initialize items
     init3DHeroStyle('hero-canvas-container');
     initROIScene();
+    initZelligeTechCanvas();
     initQuestionnaire();
     updateROI();
     renderLeads();

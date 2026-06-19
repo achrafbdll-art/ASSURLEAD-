@@ -20,40 +20,46 @@
     box-sizing: border-box;
 }
 
-html {
-    background-color: var(--bg-deep);
-}
-
 body {
     font-family: 'Inter', sans-serif;
+    background-color: var(--bg-deep);
     color: var(--white);
     line-height: 1.5;
     overflow-x: hidden;
     position: relative;
-    background-color: transparent;
 }
 
-/* Bulletproof Fixed Tech Pattern & Vignette Mask */
-#fixed-tech-bg {
+/* Fixed background design with elegant network dots and grid pattern */
+body::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -999;
-    background-color: var(--bg-deep);
+    z-index: -2;
     background-image: 
-        /* Constellation of neon green dots at 4% opacity */
         radial-gradient(rgba(0, 255, 65, 0.04) 1.5px, transparent 1.5px),
-        /* Subtle geometric white crossed lines */
-        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        /* Centered dark radial vignette block for high-contrast text legibility */
-        radial-gradient(circle at 50% 50%, rgba(5, 5, 8, 0.1) 0%, rgba(5, 5, 8, 0.95) 100%);
-    background-size: 30px 30px, 90px 90px, 90px 90px, 100% 100%;
-    background-repeat: repeat, repeat, repeat, no-repeat;
-    background-position: center center;
+        linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+    background-size: 30px 30px, 90px 90px, 90px 90px;
     background-attachment: fixed;
+    background-position: center center;
+    pointer-events: none;
+}
+
+/* Vignette de contraste to maintain high contrast and readability across sections */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: radial-gradient(circle at 50% 50%, rgba(5, 5, 5, 0.15) 0%, var(--bg-deep) 100%);
+    background-attachment: fixed;
+    background-position: center center;
     pointer-events: none;
 }
 
@@ -301,18 +307,14 @@ nav.scrolled {
 
 /* Dashboard Visual */
 .dashboard-card {
-    background-color: rgba(10, 10, 12, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--brand-black);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 16px;
     box-shadow: 0 25px 50px -12px rgba(0, 255, 65, 0.05);
 }
 
 .dashboard-header {
-    background-color: rgba(24, 24, 27, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--zinc-900);
     padding: 24px;
     display: flex;
     justify-content: space-between;
@@ -362,9 +364,7 @@ nav.scrolled {
 }
 
 .dashboard-body {
-    background-color: rgba(24, 24, 27, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--zinc-900);
     padding: 32px;
     border: 1px solid var(--zinc-800);
     border-top: none;
@@ -451,9 +451,7 @@ nav.scrolled {
 }
 
 .roi-controls {
-    background-color: rgba(10, 10, 12, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--brand-black);
     padding: 48px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -623,9 +621,7 @@ nav.scrolled {
 }
 
 .price-card {
-    background-color: rgba(10, 10, 12, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--brand-black);
     padding: 48px;
     display: flex;
     flex-direction: column;
@@ -782,9 +778,7 @@ nav.scrolled {
 }
 
 .contact-form-container {
-    background-color: rgba(10, 10, 12, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--brand-black);
     padding: 64px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -873,9 +867,7 @@ nav.scrolled {
 }
 
 .methode-step {
-    background-color: rgba(24, 24, 27, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--zinc-900);
     padding: 48px;
     border: 1px solid var(--zinc-800);
     position: relative;
@@ -924,9 +916,7 @@ nav.scrolled {
 }
 
 .project-card {
-    background-color: rgba(24, 24, 27, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--zinc-900);
     border: 1px solid var(--zinc-800);
     overflow: hidden;
     transition: all 0.3s;
