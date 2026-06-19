@@ -1443,12 +1443,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- ZELLIGE TECH CANVAS DESIGN ---
-    const initZelligeTechCanvas = () => {
-        const canvas = document.getElementById('zellige-tech-canvas');
+    const initZelligeTechCanvas = (canvasId = 'zellige-tech-canvas', sectionId = 'offres') => {
+        const canvas = document.getElementById(canvasId);
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d');
-        const section = document.getElementById('offres');
+        const section = document.getElementById(sectionId);
         if (!section) return;
 
         let width = canvas.width = section.offsetWidth;
@@ -1682,7 +1682,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize items
     init3DHeroStyle('hero-canvas-container');
     initROIScene();
-    initZelligeTechCanvas();
+    initZelligeTechCanvas('zellige-tech-canvas', 'offres');
+    initZelligeTechCanvas('zellige-tech-contact-canvas', 'contact');
     initQuestionnaire();
     updateROI();
     renderLeads();
