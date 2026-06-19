@@ -1,7 +1,754 @@
 import * as THREE from 'three';
 import { GoogleGenAI } from "@google/genai";
 
+// --- MULTILINGUAL DICTIONARY ---
+const translations = {
+    // Navbar
+    nav_projets: {
+        fr: "Réalisations",
+        en: "Success Stories",
+        ar: "إنجازاتنا"
+    },
+    nav_offres: {
+        fr: "Offres",
+        en: "Services",
+        ar: "العروض"
+    },
+    nav_roi: {
+        fr: "Simulateur",
+        en: "ROI Simulator",
+        ar: "الحاسبة"
+    },
+    nav_methode: {
+        fr: "Méthode",
+        en: "Our Method",
+        ar: "منهجيتنا"
+    },
+    nav_contact: {
+        fr: "Contact",
+        en: "Contact",
+        ar: "اتصل بنا"
+    },
+    nav_start: {
+        fr: "Démarrer",
+        en: "Get Started",
+        ar: "ابدأ الآن"
+    },
+    // Hero
+    hero_badge: {
+        fr: "Agent Digital 2026",
+        en: "Digital Agency 2026",
+        ar: "الوكالة الرقمية 2026"
+    },
+    hero_title: {
+        fr: "On ne communique pas. <br><span class=\"neon\">On convertit.</span>",
+        en: "We don't just build buzz. <br><span class=\"neon\">We convert.</span>",
+        ar: "نحن لا نطلق مجرد حملات. <br><span class=\"neon\">بل نصنع المبيعات.</span>"
+    },
+    hero_paragraph: {
+        fr: "Votre visibilité mérite des résultats. Nous construisons des systèmes d'acquisition automatisés pour les agents d'assurance et courtiers ambitieux.",
+        en: "Your online visibility deserves real outcomes. We build automated acquisition funnels tailor-made for ambitious insurance agents and brokers.",
+        ar: "مكانتك الرقمية تستحق نتائج فعلية. نحن نصنع أنظمة استقطاب عملاء مؤتمتة مخصصة لوسطاء ووكلاء التأمين الطموحين."
+    },
+    hero_btn_growth: {
+        fr: "Lancer ma croissance <i class=\"fas fa-arrow-right\"></i>",
+        en: "Launch My Growth <i class=\"fas fa-arrow-right\"></i>",
+        ar: "ضاعف مبيعاتك الآن <i class=\"fas fa-arrow-right\"></i>"
+    },
+    hero_btn_audit: {
+        fr: "Audit Stratégique",
+        en: "Free Strategy Audit",
+        ar: "طلب تدقيق استراتيجي"
+    },
+    hero_partners_label: {
+        fr: "Partenaires Stratégiques",
+        en: "Strategic Partners",
+        ar: "شركاؤنا الاستراتيجيون"
+    },
+    // Dashboard Card
+    dash_live_indicator: {
+        fr: "Dashboard Live",
+        en: "Live Dashboard",
+        ar: "لوحة البيانات اللحظية"
+    },
+    dash_leads_label: {
+        fr: "Leads ce mois",
+        en: "Leads this month",
+        ar: "العملاء الجدد هذا الشهر"
+    },
+    dash_conv_label: {
+        fr: "Taux de Conv.",
+        en: "Conversion Rate",
+        ar: "معدل التحويل"
+    },
+    // ROI
+    roi_badge: {
+        fr: "Simulateur 2026",
+        en: "Growth Simulator 2026",
+        ar: "حاسبة الأرباح 2026"
+    },
+    roi_title: {
+        fr: "Projetez votre <span class=\"neon\">Réussite.</span>",
+        en: "Project Your <span class=\"neon\">Success.</span>",
+        ar: "خطط <span class=\"neon\">لنجاحك المالي.</span>"
+    },
+    roi_p: {
+        fr: "Utilisez notre simulateur de croissance pour visualiser l'impact direct de nos stratégies sur votre chiffre d'affaires.",
+        en: "Use our interactive performance calculator to project the direct revenue impact of automated acquisition routes on your agency.",
+        ar: "استخدم حاسبة النمو التفاعلية الخاصة بنا لمعرفة العائد المالي المباشر لاستراتيجياتنا على رقم معاملاتك."
+    },
+    roi_budget_label: {
+        fr: "Budget Publicitaire Mensuel",
+        en: "Monthly Advertising Budget",
+        ar: "الميزانية الإعلانية الشهرية"
+    },
+    roi_conv_label: {
+        fr: "Taux de Conversion Estimé",
+        en: "Estimated Conversion Rate",
+        ar: "معدل التحويل المتوقع"
+    },
+    roi_leads_title: {
+        fr: "Leads Mensuels",
+        en: "Monthly Leads",
+        ar: "العملاء المحتملون شهرياً"
+    },
+    roi_cost_title: {
+        fr: "Coût par Lead",
+        en: "Cost per Lead",
+        ar: "التكلفة لكل عميل"
+    },
+    roi_sales_title: {
+        fr: "Ventes Estimées",
+        en: "Estimated Sales",
+        ar: "المبيعات المتوقعة"
+    },
+    roi_basket_title: {
+        fr: "Panier Moyen",
+        en: "Average Policy Value",
+        ar: "متوسط قيمة العقد"
+    },
+    roi_rev_title: {
+        fr: "Revenu Net Estimé",
+        en: "Estimated Net Revenue",
+        ar: "صافي الأرباح المتوقعة"
+    },
+    roi_tag: {
+        fr: "ROI",
+        en: "ROI Logo",
+        ar: "العائد على الاستثمار"
+    },
+    roi_overlay_tag: {
+        fr: "Simulation Temps Réel",
+        en: "Real-time Simulation",
+        ar: "محاكاة لحظية"
+    },
+    roi_status_text: {
+        fr: "Flux de Trésorerie Positif",
+        en: "Positive Cashflow Stream",
+        ar: "تدفق مالي إيجابي مضمون"
+    },
+    roi_cost_val: {
+        fr: "15 MAD",
+        en: "15 MAD",
+        ar: "15 درهم"
+    },
+    roi_basket_val: {
+        fr: "1,200 MAD",
+        en: "1,200 MAD",
+        ar: "1,200 درهم"
+    },
+    // Offers Header
+    offers_badge: {
+        fr: "Solutions d'Acquisition",
+        en: "Acquisition Solutions",
+        ar: "حلول استقطاب العملاء"
+    },
+    offers_title: {
+        fr: "L'investissement <span class=\"neon\">Rentable.</span>",
+        en: "A Highly Profitable <span class=\"neon\">Investment.</span>",
+        ar: "الاستثمار <span class=\"neon\">الأكثر ربحية.</span>"
+    },
+    offers_p: {
+        fr: "Des packs conçus pour chaque étape de votre développement. Transparence totale, performance garantie.",
+        en: "Funnels engineered for every milestone of your agency's scaling journey. Total billing transparency, high performance guaranteed.",
+        ar: "باقات مصممة ومدروسة لتناسب كل مرحلة من مراحل نمو وكالتك. شفافية مطلقة وأداء مضمون."
+    },
+    // Mini Express
+    offer_mini_title: {
+        fr: "Mini Express",
+        en: "Express Core",
+        ar: "ميني إكسبريس"
+    },
+    offer_mini_f1: {
+        fr: "Landing Page conversion",
+        en: "High-Converting Landing Page",
+        ar: "صفحة هبوط عالية التحويل"
+    },
+    offer_mini_f2: {
+        fr: "Livraison 5 jours",
+        en: "5-Day Design Delivery",
+        ar: "تسليم سريع خلال 5 أيام"
+    },
+    offer_mini_f3: {
+        fr: "Capture de leads",
+        en: "Lead Capture Integration",
+        ar: "نظام التقاط بيانات العملاء"
+    },
+    offer_mini_f4: {
+        fr: "Design Responsive",
+        en: "Responsive & Modern Design",
+        ar: "تصميم متجاوب بالكامل"
+    },
+    offer_mini_f5: {
+        fr: "Setup Analytics",
+        en: "Basic Analytics Tracking",
+        ar: "إعداد تحليلات الأداء الأساسية"
+    },
+    offer_mini_btn: {
+        fr: "Démarrer",
+        en: "Get Started",
+        ar: "ابدأ الآن"
+    },
+    // Starter
+    offer_starter_title: {
+        fr: "Starter",
+        en: "Pro Growth Starter",
+        ar: "باقة البداية"
+    },
+    offer_starter_f1: {
+        fr: "Hébergement Pro",
+        en: "Premium Secured Hosting",
+        ar: "استضافة احترافية آمنة"
+    },
+    offer_starter_f2: {
+        fr: "Maintenance technique",
+        en: "Weekly Technical Maintenance",
+        ar: "صيانة تقنية دورية"
+    },
+    offer_starter_f3: {
+        fr: "Mise à jour mensuelle",
+        en: "Monthly Content Revisions",
+        ar: "تحديثات شهرية للمحتوى"
+    },
+    offer_starter_f4: {
+        fr: "SEO Local Basique",
+        en: "Local Search SEO Setup",
+        ar: "تهيئة محركات البحث المحلية أساسي"
+    },
+    offer_starter_f5: {
+        fr: "Support Prioritaire",
+        en: "Business Priority Support",
+        ar: "دعم فني ذو أولوية"
+    },
+    offer_starter_btn: {
+        fr: "Choisir",
+        en: "Choose Plan",
+        ar: "اختر الباقة"
+    },
+    // Growth
+    offer_growth_badge: {
+        fr: "Performance",
+        en: "Top Seller",
+        ar: "الأعلى طلباً"
+    },
+    offer_growth_title: {
+        fr: "Growth",
+        en: "Omni Growth Plan",
+        ar: "باقة النمو المتكاملة"
+    },
+    offer_growth_f1: {
+        fr: "SEO Local Avancé",
+        en: "Advanced Local Authority SEO",
+        ar: "تهيئة محركات بحث احترافية"
+    },
+    offer_growth_f2: {
+        fr: "Campagne Meta Ads",
+        en: "Meta Social Ads Launch & Scale",
+        ar: "إطلاق حملات إعلانية احترافية (فيسبوك/إنستغرام)"
+    },
+    offer_growth_f3: {
+        fr: "Reporting Hebdo",
+        en: "Detailed Weekly Performance Reports",
+        ar: "تقارير أداء أسبوعية تفصيلية"
+    },
+    offer_growth_f4: {
+        fr: "Dashboard Live",
+        en: "Interactive Client Dashboard",
+        ar: "لوحة تحكم تفاعلية مخصصة"
+    },
+    offer_growth_f5: {
+        fr: "Optimisation CRO",
+        en: "Continuous Conversion Optimization",
+        ar: "تحسين دائم لنسب تحويل المبيعات"
+    },
+    offer_growth_btn: {
+        fr: "Accélérer",
+        en: "Accelerate Today",
+        ar: "ابدأ النمو السريع"
+    },
+    // Scale
+    offer_scale_title: {
+        fr: "Scale",
+        en: "Market Leader Scale",
+        ar: "باقة الهيمنة الشاملة"
+    },
+    offer_scale_f1: {
+        fr: "SEO Multi-villes",
+        en: "Multi-City Search Dominance",
+        ar: "تهيئة محركات بحث لعدة مدن"
+    },
+    offer_scale_f2: {
+        fr: "Ads Multi-canaux",
+        en: "Omnichannel Paid Advertising",
+        ar: "حملات إعلانية متعددة القنوات"
+    },
+    offer_scale_f3: {
+        fr: "Automation CRM",
+        en: "CRM Pipeline & Lead Automation",
+        ar: "ربط وتأتمتة إدارة علاقات العملاء(CRM)"
+    },
+    offer_scale_f4: {
+        fr: "Email Marketing",
+        en: "Email Nurturing & Follow-ups",
+        ar: "حملات تسويق ذكية بالبريد الإلكتروني"
+    },
+    offer_scale_f5: {
+        fr: "Audit Trimestriel",
+        en: "Quarterly Executive Marketing Audit",
+        ar: "تدقيق وتقييم تسويقي ربع سنوي"
+    },
+    offer_scale_btn: {
+        fr: "Dominer",
+        en: "Dominate Market",
+        ar: "هيمن على السوق"
+    },
+    // Notre Approche
+    methode_badge: {
+        fr: "Notre Approche",
+        en: "Our Approach",
+        ar: "منهجنا العملي"
+    },
+    methode_title: {
+        fr: "Le Cycle de <span class=\"neon\">Conversion.</span>",
+        en: "The Continuous <span class=\"neon\">Conversion Loop.</span>",
+        ar: "حلقة <span class=\"neon\">التحويل والنمو.</span>"
+    },
+    methode_p: {
+        fr: "Une méthodologie rigoureuse en 4 étapes pour transformer votre visibilité en chiffre d'affaires.",
+        en: "A rigorous 4-step execution workflow built to reliably monetize your digital traffic into persistent policy contracts.",
+        ar: "منهجية دقيقة من 4 خطوات عملية لتحويل حضورك الرقمي إلى عائد مالي مستمر."
+    },
+    methode_step1_title: {
+        fr: "Audit & Stratégie",
+        en: "1. Audit & Local Intel",
+        ar: "1. التدقيق والدراسة"
+    },
+    methode_step1_p: {
+        fr: "Analyse de votre marché local et définition des objectifs de leads mensuels.",
+        en: "Granular local market positioning audit and mapping of realistic target monthly customer goals.",
+        ar: "تحليل معمق للمنافسة واحتياجات السوق المحلية وتحديد أهداف العملاء بدقة."
+    },
+    methode_step2_title: {
+        fr: "Système d'Acquisition",
+        en: "2. Funnel Implementation",
+        ar: "2. بناء نظام الاستقطاب"
+    },
+    methode_step2_p: {
+        fr: "Déploiement de landing pages haute-performance et setup des campagnes Ads.",
+        en: "Surgical execution of elite-converting landing layouts matched with paid acquisition routes.",
+        ar: "إطلاق صفحات هبوط عالية التحويل مدمجة مع حملات إعلانية مستهدفة ومدفوعة."
+    },
+    methode_step3_title: {
+        fr: "Automation CRM",
+        en: "3. Workflow Automation",
+        ar: "3. أتمتة البيانات والاتصال"
+    },
+    methode_step3_p: {
+        fr: "Qualification automatique des leads et notification instantanée sur votre mobile.",
+        en: "Automated instant lead vetting and direct notifications pushed straight to your mobile phone sales pipeline.",
+        ar: "فلترة وتصنيف العملاء تلقائياً وإخطاركم فورياً عبر رسالة أو إشعار مباشر لسرعة الإقفال."
+    },
+    methode_step4_title: {
+        fr: "Optimisation ROI",
+        en: "4. Return Optimization",
+        ar: "4. زيادة وتحسين العائد"
+    },
+    methode_step4_p: {
+        fr: "Analyse hebdomadaire des performances et ajustement pour maximiser la conversion.",
+        en: "Continuous micro-testing, structural speed audits, and split optimizations to compound your net revenue margins.",
+        ar: "متابعة دورية أسبوعية لبيانات الأداء الإعلاني والتحويل مع تعديلات مستمرة لزيادة الأرباح."
+    },
+    // Projects
+    projets_badge: {
+        fr: "Succès Clients",
+        en: "Client Success",
+        ar: "قصص النجاح"
+    },
+    projets_title: {
+        fr: "Nos <span class=\"neon\">Réalisations.</span>",
+        en: "Our <span class=\"neon\">Past Work.</span>",
+        ar: "مشاريعنا <span class=\"neon\">الناجحة.</span>"
+    },
+    projets_p: {
+        fr: "Découvrez comment nos systèmes d'acquisition transforment l'activité des agents d'assurance.",
+        en: "Discover how our digital customer acquisition systems empower real agency books to compound yearly scale.",
+        ar: "شاهد كيف تمكنت أنظمتنا الرقمية من تحقيق مبيعات قياسية لوكالات تأمين حقيقية."
+    },
+    projets_card_btn: {
+        fr: "Voir le site <i class=\"fas fa-external-link-alt\"></i>",
+        en: "Explore Funnel <i class=\"fas fa-external-link-alt\"></i>",
+        ar: "زيارة الموقع الالكتروني <i class=\"fas fa-external-link-alt\"></i>"
+    },
+    projets_card_title: {
+        fr: "Assurances El Omrani",
+        en: "El Omrani Insurance Brokerage",
+        ar: "مؤسسة العمراني للتأمين"
+    },
+    projets_card_p: {
+        fr: "Système complet d'acquisition de leads pour l'assurance automobile et santé.",
+        en: "Full automation acquisition system built to drive qualified auto, fleet, and corporate family health insurance leads.",
+        ar: "نظام استقطاب ذكي ومتكامل لتوليد مبيعات وعقود التأمين على السيارات والصحة."
+    },
+    projets_card_t1: {
+        fr: "Landing Page",
+        en: "Landing Page",
+        ar: "صفحة هبوط"
+    },
+    projets_card_t2: {
+        fr: "Ads Meta",
+        en: "Meta Social Ads",
+        ar: "إعلانات ميتا"
+    },
+    projets_card_t3: {
+        fr: "Automation",
+        en: "CRM Automation",
+        ar: "أتمتة المبيعات"
+    },
+    // Contact Info
+    contact_badge: {
+        fr: "Contact",
+        en: "Partnership Desk",
+        ar: "تواصل معنا"
+    },
+    contact_title: {
+        fr: "Parlons <br><span class=\"neon\">Résultats.</span>",
+        en: "Let's Scale <br><span class=\"neon\">Your Numbers.</span>",
+        ar: "فلنتحدث عن <span class=\"neon\">زيادة الأرباح.</span>"
+    },
+    contact_p: {
+        fr: "Vous avez des questions ou vous souhaitez un audit personnalisé ? Notre équipe vous recontactera sous 24h.",
+        en: "Ready to transition from traditional tracking to fully automated growth? Drop your details and our team will run an audit of your territory.",
+        ar: "جاهز لتجاوز الطرق القديمة واعتماد نظام سحب عملاء مؤتمت؟ اترك بياناتك وسنقوم بمراجعة رقعتك الجغرافية فوراً."
+    },
+    contact_email_label: {
+        fr: "Email",
+        en: "Secure Email Link",
+        ar: "البريد الإلكتروني"
+    },
+    contact_phone_label: {
+        fr: "Téléphone",
+        en: "Direct Inbound Line",
+        ar: "الهاتف المباشر"
+    },
+    // Form Questionnaire
+    form_identity_label: {
+        fr: "IDENTITÉ",
+        en: "YOUR IDENTITY",
+        ar: "الاسم والنسب"
+    },
+    form_identity_placeholder: {
+        fr: "VOTRE NOM COMPLET",
+        en: "YOUR FULL NAME",
+        ar: "اكتب اسمك الكامل هنا"
+    },
+    form_btn_next: {
+        fr: "SUIVANT <i class=\"fas fa-chevron-right\"></i>",
+        en: "CONTINUE <i class=\"fas fa-chevron-right\"></i>",
+        ar: "التالي <i class=\"fas fa-chevron-right\"></i>"
+    },
+    form_contact_label: {
+        fr: "CONTACT",
+        en: "CORPORATE CONTACT EMAIL",
+        ar: "معلومات الاتصال"
+    },
+    form_contact_placeholder: {
+        fr: "EMAIL PROFESSIONNEL",
+        en: "BUSINESS EMAIL ADDRESS",
+        ar: "البريد الإلكتروني المهني"
+    },
+    form_btn_back: {
+        fr: "RETOUR",
+        en: "GO BACK",
+        ar: "السابق"
+    },
+    form_agency_label: {
+        fr: "AGENCE",
+        en: "AGENCY REGISTRY",
+        ar: "اسم الوكالة"
+    },
+    form_agency_placeholder: {
+        fr: "NOM DE VOTRE AGENCE",
+        en: "NAME OF YOUR REGISTERED AGENCY",
+        ar: "ما هو اسم وكالتك أو شركتك للتأمين؟"
+    },
+    form_goal_label: {
+        fr: "OBJECTIF",
+        en: "GROWTH MILESTONES",
+        ar: "هدف النمو"
+    },
+    form_goal_placeholder: {
+        fr: "VOTRE OBJECTIF DE CROISSANCE",
+        en: "DESCRIBE YOUR REVENUE OR LEAD TARGETS",
+        ar: "حدثنا باختصار عن عدد المبيعات أو رقم المعاملات الذي تهدف إلى بلوغه..."
+    },
+    form_btn_submit: {
+        fr: "ENVOYER <i class=\"fas fa-bolt\"></i>",
+        en: "SUBMIT PLAN <i class=\"fas fa-bolt\"></i>",
+        ar: "إرسال البيانات <i class=\"fas fa-bolt\"></i>"
+    },
+    // Footer
+    footer_copy: {
+        fr: "© 2026 ASSURLEAD INFRASTRUCTURE. TOUS DROITS RÉSERVÉS.",
+        en: "© 2026 ASSURLEAD GROWTH ENG INFRASTRUCTURE. ALL RIGHTS RESERVED.",
+        ar: "© 2026 جميع الحقوق محفوظة لشبكة وكلاء أسورليد للمبيعات."
+    },
+    // Modal
+    modal_badge: {
+        fr: "Offre Limitée",
+        en: "Exclusive Cohort Limits",
+        ar: "عرض محدود للغاية"
+    },
+    modal_title: {
+        fr: "Prêt à <span class=\"neon\">Dominer</span> votre Marché ?",
+        en: "Ready to <span class=\"neon\">Dominate</span> Your Territory?",
+        ar: "هل أنت مستعد <span class=\"neon\">للهيمنة</span> على منطقتك الجغرافية؟"
+    },
+    modal_p: {
+        fr: "Réservez votre audit stratégique gratuit aujourd'hui et recevez notre guide \"Agent Digital 2026\" instantanément.",
+        en: "Secure your territorial optimization roadmap audit today and unlock our comprehensive manual 'Digital Insurance Agent Guide' at no charge.",
+        ar: "احجز جلستك المجانية للتدقيق والتحديث والتطوير الرقمي اليوم، واحصل على نسختك من دليل 'وكيل التأمين الرقمي 2026' فوراً."
+    },
+    modal_btn: {
+        fr: "Réservez mon Audit Gratuit",
+        en: "Claim My Territorial Audit Now",
+        ar: "ابدأ جلسة التدقيق المجانية الآن"
+    },
+    modal_timer: {
+        fr: "Plus que 3 créneaux cette semaine",
+        en: "Only 3 territorial slots left open this calendar week",
+        ar: "متبقي 3 مقاعد فقط متاحة للتدقيق الجغرافي هذا الأسبوع"
+    },
+    // Chatbot
+    chat_badge: {
+        fr: "Yacine AI",
+        en: "Yacine AI",
+        ar: "ياسين الذكي"
+    },
+    chat_title: {
+        fr: "Yacine AI",
+        en: "Yacine AI",
+        ar: "ياسين المساعد الذكي"
+    },
+    chat_status: {
+        fr: "En ligne",
+        en: "Connected",
+        ar: "نشط الآن"
+    },
+    chat_welcome: {
+        fr: "Bonjour ! Je suis Yacine, votre assistant IA. Comment puis-je vous aider à faire croître votre agence aujourd'hui ?",
+        en: "Hello! I am Yacine, your digital strategic partner. How can I help maximize your incoming lead pipelines today?",
+        ar: "مرحباً بك! أنا ياسين، مساعدك الذكي المخصص لشركاء التأمين. كيف يمكنني مساعدتك في مضاعفة مبيعاتك واستقطاب عملاء جدد اليوم؟"
+    },
+    chat_input_placeholder: {
+        fr: "Posez votre question...",
+        en: "Type your inquiry here...",
+        ar: "اكتب سؤالك واستشرني بخصوص نمو مبيعاتك..."
+    }
+};
+
+// --- DYNAMIC TICKER MAP ---
+const tickerTranslations = {
+    title: {
+        fr: "Nouveau Lead Qualifié",
+        en: "New Verified Lead",
+        ar: "عميل مؤكد جديد"
+    },
+    action: {
+        fr: "vient de demander un devis",
+        en: "just requested tag quote in",
+        ar: "طلب للتو تسعيرة لتأمين"
+    },
+    products: {
+        "Auto": { fr: "Auto", en: "Auto", ar: "السيارات" },
+        "Santé": { fr: "Santé", en: "Health", ar: "الصحة" },
+        "Habitation": { fr: "Habitation", en: "Home", ar: "السكن" },
+        "Retraite": { fr: "Retraite", en: "Retirement", ar: "التقاعد" }
+    },
+    cities: {
+        "Casablanca": { fr: "Casablanca", en: "Casablanca", ar: "الدار البيضاء" },
+        "Rabat": { fr: "Rabat", en: "Rabat", ar: "الرباط" },
+        "Marrakech": { fr: "Marrakech", en: "Marrakech", ar: "مراكش" },
+        "Tanger": { fr: "Tanger", en: "Tangier", ar: "طنجة" },
+        "Tangier": { fr: "Tanger", en: "Tangier", ar: "طنجة" },
+        "Agadir": { fr: "Agadir", en: "Agadir", ar: "أكادير" }
+    }
+};
+
+// --- CHATBOT WELLCOMES ---
+const chatWelcomeMessages = {
+    fr: "Bonjour ! Je suis Yacine, votre assistant IA. Comment puis-je vous aider à faire croître votre agence aujourd'hui ?",
+    en: "Hello! I am Yacine, your digital strategic partner. How can I help maximize your incoming lead pipelines today?",
+    ar: "مرحباً بك! أنا ياسين، مساعدك الذكي المخصص لشركاء التأمين. كيف يمكنني مساعدتك في مضاعفة مبيعاتك واستقطاب عملاء جدد اليوم؟"
+};
+
+const formSubmitAlert = {
+    fr: "Merci ! Votre demande a été envoyée. Notre équipe vous recontactera sous 24h.",
+    en: "Thank you! Your growth request has been securely logged. Our territory team will connect with you within 24 hours.",
+    ar: "شكراً لك! تم تسجيل طلبك بنجاح. سيقوم فريقنا بموافاة حسابك والتواصل معك خلال الـ 24 ساعة القادمة."
+};
+
+const systemInstructions = {
+    fr: `Tu es Yacine, l'assistant IA expert de l'agence de marketing digital "AssurLead" au Maroc. 
+    Ton persona : Empathique, Expert, Proactif.
+    Ta mission : Aider les agents d'assurance à capter plus de leads via nos solutions (Mini Express, Starter, Growth, Scale).
+    Ta règle d'or : Sois précis sur les tarifs (à partir de 1200 MAD) et encourage l'usage du simulateur ROI.
+    Confère tes réponses uniquement en français de manière professionnelle et fluide.`,
+    en: `You are Yacine, the elite AI Marketing Assistant at "AssurLead", Morocco's specialized digital acquisition agency for insurance brokers and agents. 
+    Your persona: Empathetic, highly expert, proactive, and result-oriented.
+    Your mission: Assist insurance professionals to generate more qualified leads using our automated systems (Express Core, Starter, Growth, Scale).
+    Golden rules: Be highly precise on our packages starting from 1200 MAD and encourage playing with the interactive 3D ROI Growth Simulator.
+    Always reply professionally, elegantly, and fluently in English.`,
+    ar: `أنت ياسين، المساعد الذكي الخبير لوكالة التسويق الرقمي "AssurLead" والمتخصصة في جلب الزبناء لوكلاء ووسطاء التأمين بالمغرب.
+    شخصيتك: ودود، خبير، استباقي ومهني للغاية.
+    مهمتك: مساعدة المهنيين في مجال التأمين على استقطاب عملاء أكثر إيجابية عبر حلولنا الذكية المؤتمتة (ميني إكسبريس، Starter، Growth، Scale).
+    القاعدة الذهبية: كن دقيقًا بشأن الأسعار (تبدأ من 1200 درهم) وشجعهم على تجربة حاسبة العائد التفاعلية ثلاثية الأبعاد.
+    أجب دائماً بلغة عربية مهنية وسلسة وبأعلى مستويات اللباقة.`
+};
+
+const multiLangSuggestions = {
+    fr: {
+        initial: ["Comment ça marche ?", "Quels tarifs ?", "Voir des exemples", "Simuler mon ROI"],
+        pricing: ["Pack Starter", "Pack Growth", "Pack Scale", "Audit gratuit"],
+        projects: ["Assurances El Omrani", "Témoignages", "Comment démarrer ?"],
+        roisim: ["Calculer mon revenu", "Taux de conversion ?", "Stratégie Ads"]
+    },
+    en: {
+        initial: ["How does it work?", "What are the rates?", "See examples", "Calculate my ROI"],
+        pricing: ["Starter Pack", "Growth Pack", "Scale Pack", "Free audit"],
+        projects: ["El Omrani Insurance", "Testimonials", "How to begin?"],
+        roisim: ["Calculate my revenue", "Conversion rate?", "Ads strategy"]
+    },
+    ar: {
+        initial: ["كيف يعمل النظام؟", "ما هي الأسعار؟", "عرض النماذج", "حساب أرباحي"],
+        pricing: ["باقة البداية", "باقة النمو", "باقة الهيمنة", "جلسة تدقيق مجانية"],
+        projects: ["تأمين العمراني", "آراء العملاء", "كيف نبدأ العمل؟"],
+        roisim: ["احسب عائدي المالي", "معدل التحويل؟", "استراتيجية الإعلانات"]
+    }
+};
+
+const botThinkingMessages = {
+    fr: "Yacine réfléchit...",
+    en: "Yacine is thinking...",
+    ar: "ياسين يفكر..."
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+    // --- MULTILINGUAL ENGINE ---
+    const setLanguage = (lang) => {
+        document.documentElement.lang = lang;
+        if (lang === 'ar') {
+            document.body.setAttribute('dir', 'rtl');
+        } else {
+            document.body.setAttribute('dir', 'ltr');
+        }
+
+        // 1. Translate elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[key] && translations[key][lang]) {
+                el.innerHTML = translations[key][lang];
+            }
+        });
+
+        // 2. Translate elements with data-i18n-placeholder
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (translations[key] && translations[key][lang]) {
+                el.placeholder = translations[key][lang];
+            }
+        });
+
+        // 3. Update current language button UI
+        const btnTextMap = { fr: 'FR', en: 'EN', ar: 'العربية' };
+        const btnSpan = document.querySelector('#lang-btn-current span');
+        if (btnSpan) btnSpan.textContent = btnTextMap[lang] || lang.toUpperCase();
+
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+        });
+
+        // 4. Update dynamic offer prices
+        const offerPrices = { mini: 1200, starter: 1800, growth: 2400, scale: 3000 };
+        const keys = ['mini', 'starter', 'growth', 'scale'];
+        keys.forEach(k => {
+            const el = document.getElementById(`offer_${k}_price`);
+            if (el) {
+                const price = offerPrices[k];
+                if (lang === 'ar') {
+                    el.innerHTML = `${price} <span>درهم</span>`;
+                } else {
+                    el.innerHTML = `${price} <span>MAD</span>`;
+                }
+            }
+        });
+
+        // Save selection
+        localStorage.setItem('assurlead_lang', lang);
+        
+        // Trigger ROI calculation
+        try {
+            if (typeof updateROI === 'function') {
+                updateROI();
+            }
+        } catch(e) {}
+
+        // Trigger Ticker update
+        try {
+            if (typeof updateTickerDOM === 'function') {
+                updateTickerDOM();
+            }
+        } catch(e) {}
+    };
+
+    // Toggle Language Dropdown
+    const langBtn = document.getElementById('lang-btn-current');
+    const langDropdown = document.getElementById('lang-dropdown');
+    
+    if (langBtn && langDropdown) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', () => {
+            langDropdown.classList.remove('active');
+        });
+        
+        langDropdown.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', (e) => {
+                const selectedLang = opt.getAttribute('data-lang');
+                setLanguage(selectedLang);
+                langDropdown.classList.remove('active');
+            });
+        });
+    }
+
+    // Load Saved Language
+    const savedLang = localStorage.getItem('assurlead_lang') || 'fr';
+    setTimeout(() => {
+        setLanguage(savedLang);
+    }, 100);
+
     // --- UTILS ---
     const setupResizeHandler = (container, camera, renderer) => {
         const observer = new ResizeObserver(() => {
@@ -218,9 +965,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const revenue = sales * 1200;
         const roi = ((revenue - budget) / budget) * 100;
 
-        budgetVal.innerText = budget.toLocaleString() + ' MAD';
+        const lang = localStorage.getItem('assurlead_lang') || 'fr';
+        const currencySuffix = lang === 'ar' ? ' درهم' : ' MAD';
+
+        budgetVal.innerText = budget.toLocaleString() + currencySuffix;
         convVal.innerText = conv + '%';
-        revenueDisplay.innerText = Math.floor(revenue).toLocaleString() + ' MAD';
+        revenueDisplay.innerText = Math.floor(revenue).toLocaleString() + currencySuffix;
         roiDisplay.innerText = '+' + Math.floor(roi) + '%';
         
         if (leadsCount) leadsCount.innerText = leads.toLocaleString();
@@ -283,30 +1033,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // Lead Ticker
-    const ticker = document.getElementById('lead-ticker');
-    const tickerName = document.getElementById('ticker-name');
-    const tickerMeta = document.getElementById('ticker-meta');
-    const leads = [
-        { name: "Ahmed B.", city: "Casablanca", time: "à l'instant" },
-        { name: "Sara M.", city: "Rabat", time: "il y a 2 min" },
-        { name: "Youssef K.", city: "Marrakech", time: "il y a 5 min" },
-        { name: "Inès T.", city: "Tanger", time: "il y a 1 min" },
-    ];
-
-    function updateTicker() {
-        if (!ticker) return;
-        const lead = leads[Math.floor(Math.random() * leads.length)];
-        ticker.classList.remove('active');
-        setTimeout(() => {
-            tickerName.textContent = `${lead.name} vient de s'inscrire`;
-            tickerMeta.textContent = `${lead.city} • ${lead.time}`;
-            ticker.classList.add('active');
-        }, 500);
-    }
-    setInterval(updateTicker, 8000);
-    setTimeout(updateTicker, 2000);
 
     // Modal
     const modal = document.getElementById('cta-modal');
@@ -400,11 +1126,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ENVOI...';
+
+            const lang = localStorage.getItem('assurlead_lang') || 'fr';
+            const sendingText = {
+                fr: '<i class="fas fa-spinner fa-spin"></i> ENVOI...',
+                en: '<i class="fas fa-spinner fa-spin"></i> SENDING...',
+                ar: '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...'
+            };
+            submitBtn.innerHTML = sendingText[lang];
 
             // Simulate API call
             setTimeout(() => {
-                alert('Merci ! Votre demande a été envoyée. Notre équipe vous recontactera sous 24h.');
+                const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
+                alert(alertText);
                 form.reset();
                 currentStep = 0;
                 updateSteps();
@@ -447,7 +1181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     setInterval(updateHeroDashboard, 5000);
 
-    // --- CHATBOT YACINE ---
+    // --- CHATBOT YACINE & CONTEXT ENGINE ---
     const chatToggle = document.getElementById('chat-toggle');
     const chatWindow = document.getElementById('chat-window');
     const chatClose = document.getElementById('chat-close');
@@ -465,17 +1199,13 @@ document.addEventListener('DOMContentLoaded', () => {
         isAgent: false
     };
 
-    const suggestions = {
-        initial: ["Comment ça marche ?", "Quels tarifs ?", "Voir des exemples", "Simuler mon ROI"],
-        pricing: ["Pack Starter", "Pack Growth", "Pack Scale", "Audit gratuit"],
-        projects: ["Assurances El Omrani", "Témoignages", "Comment démarrer ?"],
-        roisim: ["Calculer mon revenu", "Taux de conversion ?", "Stratégie Ads"]
-    };
-
     const showSuggestions = (type = 'initial') => {
         if (!chatSuggestions) return;
         chatSuggestions.innerHTML = '';
-        const list = suggestions[type] || suggestions.initial;
+        
+        const lang = localStorage.getItem('assurlead_lang') || 'fr';
+        const activeSugs = multiLangSuggestions[lang] || multiLangSuggestions.fr;
+        const list = activeSugs[type] || activeSugs.initial;
         
         list.forEach(text => {
             const btn = document.createElement('button');
@@ -496,9 +1226,12 @@ document.addEventListener('DOMContentLoaded', () => {
             chatWindow.classList.toggle('hidden');
             if (!chatWindow.classList.contains('hidden')) {
                 chatInput.focus();
-                if (chatMessages.children.length <= 1) {
-                    showSuggestions('initial');
+                if (chatMessages.children.length === 0) {
+                    const lang = localStorage.getItem('assurlead_lang') || 'fr';
+                    const activeWelcome = chatWelcomeMessages[lang] || chatWelcomeMessages.fr;
+                    addMessage(activeWelcome, 'bot');
                 }
+                showSuggestions('initial');
             }
         });
 
@@ -526,29 +1259,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Interaction Tracking for better AI context
         const lowerText = text.toLowerCase();
-        if (/tarif|prix|mad|combien|coût/.test(lowerText)) userInteractions.askedPricing = true;
-        if (/projet|exemple|réalisation|portfolio/.test(lowerText)) userInteractions.viewedProjects = true;
-        if (/roi|calcul|simulateur|prévision/.test(lowerText)) userInteractions.viewedROI = true;
+        if (/tarif|prix|mad|combien|coût|سعر|باقة/.test(lowerText)) userInteractions.askedPricing = true;
+        if (/projet|exemple|réalisation|portfolio|مشروع/.test(lowerText)) userInteractions.viewedProjects = true;
+        if (/roi|calcul|simulateur|prévision|أرباح/.test(lowerText)) userInteractions.viewedROI = true;
+
+        const lang = localStorage.getItem('assurlead_lang') || 'fr';
 
         const loadingDiv = document.createElement('div');
         loadingDiv.classList.add('message', 'bot', 'loading');
-        loadingDiv.textContent = 'Yacine réfléchit...';
+        loadingDiv.textContent = botThinkingMessages[lang] || botThinkingMessages.fr;
         chatMessages.appendChild(loadingDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         try {
             let apiKey = null;
 
-            // 1. Try URL parameters (extremely useful for GitHub Pages static links)
+            // 1. Try URL parameters
             try {
                 const urlParams = new URLSearchParams(window.location.search);
                 apiKey = urlParams.get('api_key') || urlParams.get('gemini_api_key') || urlParams.get('apikey');
             } catch (e) {}
 
-            // 2. Try localStorage (useful to avoid exposure in URLs or rebuilds)
+            // 2. Try localStorage
             if (!apiKey) {
                 try {
-                    apiKey = localStorage.getItem('VITE_GEMINI_API_KEY') || localStorage.getItem('GEMINI_API_KEY');
+                     apiKey = localStorage.getItem('VITE_GEMINI_API_KEY') || localStorage.getItem('GEMINI_API_KEY');
                 } catch (e) {}
             }
 
@@ -562,12 +1297,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // 4. Try legacy process.env
             if (!apiKey) {
                 try {
-                    apiKey = process.env.GEMINI_API_KEY;
+                     apiKey = process.env.GEMINI_API_KEY;
                 } catch (e) {}
             }
 
             if (!apiKey) {
-                throw new Error("Clé API Gemini manquante. Veuillez configurer la variable d'environnement VITE_GEMINI_API_KEY, utiliser le localStorage ou joindre ?api_key=VOTRE_CLE à l'URL.");
+                const missingKeyErr = {
+                    fr: "Clé API Gemini manquante. Veuillez configurer la variable d'environnement VITE_GEMINI_API_KEY, utiliser le localStorage ou joindre ?api_key=VOTRE_CLE à l'URL.",
+                    en: "Gemini API Key is missing. Please configure VITE_GEMINI_API_KEY in your environment, use localStorage, or append ?api_key=YOUR_KEY to the url.",
+                    ar: "مفتاح واجهة برمجة تطبيقات Gemini مفقود. يرجى تهيئة متغير البيئة VITE_GEMINI_API_KEY، أو استخدام التخزين المحلي، أو إضافة ?api_key=YOUR_KEY إلى عنوان URL."
+                };
+                throw new Error(missingKeyErr[lang] || missingKeyErr.fr);
             }
 
             const ai = new GoogleGenAI({ 
@@ -579,15 +1319,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            const activeInstructions = systemInstructions[lang] || systemInstructions.fr;
+
             const response = await ai.models.generateContent({
                 model: "gemini-3.5-flash",
                 contents: chatHistory,
                 config: {
-                    systemInstruction: `Tu es Yacine, l'assistant IA expert de l'agence de marketing digital "AssurLead" au Maroc. 
-                    Ton persona : Empathique, Expert, Proactif.
-                    Ta mission : Aider les agents d'assurance à capter plus de leads via nos solutions (Mini Express, Starter, Growth, Scale).
-                    Ta règle d'or : Sois précis sur les tarifs (à partir de 1200 MAD) et encourage l'usage du simulateur ROI.
-                    Contexte : ${JSON.stringify(userInteractions)}.`,
+                    systemInstruction: `${activeInstructions}\nContexte additionnel : ${JSON.stringify(userInteractions)}.`,
                     temperature: 0.8,
                     topP: 0.95,
                     topK: 40,
@@ -595,7 +1333,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            const botResponse = response.text || "Désolé, je n'ai pas pu générer de réponse.";
+            const botResponse = response.text || (lang === 'ar' ? "عذرًا، لم أتمكن من الحصول على رد." : lang === 'en' ? "Sorry, I couldn't formulate tag response." : "Désolé, je n'ai pas pu générer de réponse.");
 
             chatMessages.removeChild(loadingDiv);
             addMessage(botResponse, 'bot');
@@ -604,19 +1342,24 @@ document.addEventListener('DOMContentLoaded', () => {
             // Post-response suggestions
             setTimeout(() => {
                 const bText = botResponse.toLowerCase();
-                if (/tarif|pack|mad/.test(bText)) showSuggestions('pricing');
-                else if (/projet|exemple|réalisation/.test(bText)) showSuggestions('projects');
-                else if (/roi|Calcul|simulateur/.test(bText)) showSuggestions('roisim');
+                if (/tarif|pack|mad|سعر|باقة|درهم/.test(bText)) showSuggestions('pricing');
+                else if (/projet|exemple|réalisation|مشروع|مثال/.test(bText)) showSuggestions('projects');
+                else if (/roi|Calcul|simulateur|أرباح|حساب/.test(bText)) showSuggestions('roisim');
                 else showSuggestions('initial');
             }, 800);
 
         } catch (error) {
             console.error('Chat error:', error);
             if (loadingDiv.parentNode) chatMessages.removeChild(loadingDiv);
-            if (error.message && error.message.includes("Clé API")) {
+            if (error.message && (error.message.includes("Clé API") || error.message.includes("API Key") || error.message.includes("مفتاح"))) {
                 addMessage(error.message, 'bot');
             } else {
-                addMessage("Oups ! Une petite coupure technique. Je reviens vers vous dans un instant. En attendant, n'hésitez pas à simuler votre ROI !", 'bot');
+                const fallbackErrorMsg = {
+                    fr: "Oups ! Une petite coupure technique. Je reviens vers vous dans un instant. En attendant, n'hésitez pas à simuler votre ROI !",
+                    en: "Oops! We encountered tag slight technical disconnect. I'll be back in tag flash. In the meantime, don't hesitate to play with the interactive ROI calculator!",
+                    ar: "عذراً! واجهنا انقطاعًا فنيًا بسيطًا وسأعود للتواصل معك فورًا. في غضون ذلك، لا تتردد في محاكاة وتقدير أرباحك وعائداتك التفاعلية!"
+                };
+                addMessage(fallbackErrorMsg[lang] || fallbackErrorMsg.fr, 'bot');
             }
         }
     };
@@ -628,27 +1371,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LIVE LEAD TICKER ---
+    // --- LIVE LEAD TICKER (REACTIVELY MULTILINGUAL) ---
+    let tickerInterval = null;
+    let updateTickerDOM = null;
+
     const renderLeads = () => {
         const ticker = document.getElementById('lead-ticker');
         if (!ticker) return;
 
         const names = ["Amine B.", "Youssef K.", "Sara L.", "Hassan M.", "Imane T.", "Omar D."];
-        const cities = ["Casablanca", "Rabat", "Marrakech", "Tangier", "Agadir"];
-        const products = ["Auto", "Santé", "Habitation", "Retraite"];
+        const rawCities = ["Casablanca", "Rabat", "Marrakech", "Tanger", "Agadir"];
+        const rawProducts = ["Auto", "Santé", "Habitation", "Retraite"];
 
-        const showLead = () => {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const city = cities[Math.floor(Math.random() * cities.length)];
-            const product = products[Math.floor(Math.random() * products.length)];
+        // State trackers for active ticker items so change of language reactively displays the new translation instantly
+        let activeName = "Amine B.";
+        let activeCity = "Casablanca";
+        let activeProduct = "Auto";
+
+        updateTickerDOM = () => {
+            const lang = localStorage.getItem('assurlead_lang') || 'fr';
             
+            // Translate City
+            let translatedCity = activeCity;
+            if (tickerTranslations.cities[activeCity] && tickerTranslations.cities[activeCity][lang]) {
+                translatedCity = tickerTranslations.cities[activeCity][lang];
+            }
+
+            // Translate Product
+            let translatedProduct = activeProduct;
+            if (tickerTranslations.products[activeProduct] && tickerTranslations.products[activeProduct][lang]) {
+                translatedProduct = tickerTranslations.products[activeProduct][lang];
+            }
+
+            // Fetch generic action strings
+            const localizedTitle = tickerTranslations.title[lang] || tickerTranslations.title.fr;
+            const localizedAction = tickerTranslations.action[lang] || tickerTranslations.action.fr;
+
+            const detailsHTML = lang === 'ar' ? 
+                `<strong>${activeName}</strong> من مدينة <strong>${translatedCity}</strong> ${localizedAction} <strong>${translatedProduct}</strong>` :
+                `<strong>${activeName}</strong> (${translatedCity}) ${localizedAction} <strong>${translatedProduct}</strong>`;
+
             ticker.innerHTML = `
                 <div class="ticker-icon"><i class="fas fa-bolt"></i></div>
                 <div class="ticker-info">
-                    <div class="ticker-label">Nouveau Lead Qualifié</div>
-                    <div class="ticker-text"><strong>${name}</strong> (${city}) vient de demander un devis <strong>${product}</strong></div>
+                    <div class="ticker-label">${localizedTitle}</div>
+                    <div class="ticker-text">${detailsHTML}</div>
                 </div>
             `;
+        };
+
+        const showNewLead = () => {
+            activeName = names[Math.floor(Math.random() * names.length)];
+            activeCity = rawCities[Math.floor(Math.random() * rawCities.length)];
+            activeProduct = rawProducts[Math.floor(Math.random() * rawProducts.length)];
+            
+            updateTickerDOM();
             
             ticker.classList.add('active');
             
@@ -657,10 +1434,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 5000);
         };
 
-        // Initial delay
+        // Initialize ticker DOM and schedule regular randomized tick
         setTimeout(() => {
-            showLead();
-            setInterval(showLead, 15000);
+            showNewLead();
+            if (tickerInterval) clearInterval(tickerInterval);
+            tickerInterval = setInterval(showNewLead, 15000);
         }, 5000);
     };
 

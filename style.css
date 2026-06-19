@@ -1472,3 +1472,237 @@ input:focus, textarea:focus {
 .hidden {
     display: none !important;
 }
+
+/* ==========================================================================
+   MULTI-LANGUAGE SELECTOR & RTL SYSTEM (FR, EN, AR)
+   ========================================================================== */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 1002;
+    position: relative;
+}
+
+.lang-selector {
+    position: relative;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    padding: 8px 16px;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease-in-out;
+}
+
+.lang-btn:hover {
+    border-color: var(--brand-neon);
+    color: var(--brand-neon);
+    background: rgba(0, 255, 65, 0.05);
+}
+
+.lang-btn i {
+    font-size: 12px;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background-color: var(--zinc-900);
+    border: 1px solid var(--zinc-800);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 120px;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1010;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.lang-dropdown.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.lang-option {
+    background: none;
+    border: none;
+    color: var(--zinc-400);
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lang-option:hover, .lang-option.active {
+    color: var(--brand-neon);
+    background-color: rgba(0, 255, 65, 0.05);
+}
+
+.lang-option::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: var(--brand-neon);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.lang-option.active::after {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   RTL LAYOUT SUPPORT (ARABIC RIGHT-TO-LEFT)
+   ========================================================================== */
+
+body[dir="rtl"], 
+body[dir="rtl"] input, 
+body[dir="rtl"] textarea, 
+body[dir="rtl"] button, 
+body[dir="rtl"] select,
+body[dir="rtl"] .btn {
+    font-family: 'Cairo', 'Inter', sans-serif !important;
+}
+
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Adjust layout columns */
+body[dir="rtl"] .hero-grid {
+    grid-template-columns: 0.8fr 1.2fr;
+}
+
+@media (max-width: 1024px) {
+    body[dir="rtl"] .hero-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+body[dir="rtl"] .nav-links {
+    margin-right: auto;
+    margin-left: initial;
+}
+
+body[dir="rtl"] .lang-dropdown {
+    right: auto;
+    left: 0;
+}
+
+body[dir="rtl"] .lang-option {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+/* Flip arrow of the marquee and icons in RTL */
+body[dir="rtl"] .fa-arrow-right,
+body[dir="rtl"] .fa-chevron-right {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
+body[dir="rtl"] .fa-arrow-left,
+body[dir="rtl"] .fa-chevron-left {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
+body[dir="rtl"] .price-card .features li {
+    text-align: right;
+}
+
+body[dir="rtl"] .contact-method {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+body[dir="rtl"] .method-icon {
+    margin-right: 0;
+    margin-left: 16px;
+}
+
+/* Ticker overrides */
+body[dir="rtl"] .lead-ticker {
+    left: auto;
+    right: 40px;
+}
+
+@media (max-width: 768px) {
+    body[dir="rtl"] .lead-ticker {
+        right: 12px;
+        left: 12px;
+    }
+    
+    body[dir="rtl"] .nav-links {
+        right: auto;
+        left: -100%;
+    }
+    
+    body[dir="rtl"] .nav-links.active {
+        left: 0;
+        right: auto;
+    }
+}
+
+body[dir="rtl"] .chat-widget {
+    left: 40px;
+    right: auto;
+}
+
+body[dir="rtl"] .chat-window {
+    left: 0;
+    right: auto;
+}
+
+@media (max-width: 480px) {
+    body[dir="rtl"] .chat-window {
+        left: -12px;
+        right: auto;
+    }
+    
+    body[dir="rtl"] .chat-widget {
+        left: 16px;
+        right: auto;
+    }
+}
+
+body[dir="rtl"] .modal-content {
+    text-align: center;
+}
+
+body[dir="rtl"] .close-btn {
+    right: auto;
+    left: 24px;
+}
+
+body[dir="rtl"] .steps-progress {
+    flex-direction: row-reverse;
+}
