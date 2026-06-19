@@ -20,12 +20,41 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: var(--bg-deep);
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-deep);
     color: var(--white);
     line-height: 1.5;
     overflow-x: hidden;
+    position: relative;
+    background-color: transparent;
+}
+
+/* Bulletproof Fixed Tech Pattern & Vignette Mask */
+#fixed-tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+    background-color: var(--bg-deep);
+    background-image: 
+        /* Constellation of neon green dots at 4% opacity */
+        radial-gradient(rgba(0, 255, 65, 0.04) 1.5px, transparent 1.5px),
+        /* Subtle geometric white crossed lines */
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        /* Centered dark radial vignette block for high-contrast text legibility */
+        radial-gradient(circle at 50% 50%, rgba(5, 5, 8, 0.1) 0%, rgba(5, 5, 8, 0.95) 100%);
+    background-size: 30px 30px, 90px 90px, 90px 90px, 100% 100%;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    pointer-events: none;
 }
 
 .container {
@@ -192,7 +221,7 @@ nav.scrolled {
 
 /* Hero Section */
 .hero {
-    background-color: var(--brand-black);
+    background-color: transparent;
     padding: 200px 0 100px;
     position: relative;
     overflow: hidden;
@@ -272,14 +301,18 @@ nav.scrolled {
 
 /* Dashboard Visual */
 .dashboard-card {
-    background-color: var(--brand-black);
+    background-color: rgba(10, 10, 12, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 16px;
     box-shadow: 0 25px 50px -12px rgba(0, 255, 65, 0.05);
 }
 
 .dashboard-header {
-    background-color: var(--zinc-900);
+    background-color: rgba(24, 24, 27, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 24px;
     display: flex;
     justify-content: space-between;
@@ -329,7 +362,9 @@ nav.scrolled {
 }
 
 .dashboard-body {
-    background-color: var(--zinc-900);
+    background-color: rgba(24, 24, 27, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 32px;
     border: 1px solid var(--zinc-800);
     border-top: none;
@@ -382,7 +417,7 @@ nav.scrolled {
 /* ROI Section */
 .roi-section {
     padding: 100px 0;
-    background-color: var(--bg-deep);
+    background-color: transparent;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
     overflow: hidden;
@@ -416,7 +451,9 @@ nav.scrolled {
 }
 
 .roi-controls {
-    background-color: var(--brand-black);
+    background-color: rgba(10, 10, 12, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 48px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -567,7 +604,7 @@ nav.scrolled {
 /* Offers Section */
 .offers {
     padding: 100px 0;
-    background-color: var(--brand-black);
+    background-color: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -586,7 +623,9 @@ nav.scrolled {
 }
 
 .price-card {
-    background-color: var(--brand-black);
+    background-color: rgba(10, 10, 12, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 48px;
     display: flex;
     flex-direction: column;
@@ -667,7 +706,7 @@ nav.scrolled {
 /* Contact Section */
 .contact {
     padding: 100px 0;
-    background-color: var(--bg-deep);
+    background-color: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -743,7 +782,9 @@ nav.scrolled {
 }
 
 .contact-form-container {
-    background-color: var(--brand-black);
+    background-color: rgba(10, 10, 12, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 64px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -804,7 +845,7 @@ nav.scrolled {
 /* Méthode Section */
 .methode {
     padding: 100px 0;
-    background-color: var(--bg-deep);
+    background-color: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -832,7 +873,9 @@ nav.scrolled {
 }
 
 .methode-step {
-    background-color: var(--zinc-900);
+    background-color: rgba(24, 24, 27, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 48px;
     border: 1px solid var(--zinc-800);
     position: relative;
@@ -871,7 +914,7 @@ nav.scrolled {
 /* Projects Section */
 .projects {
     padding: 100px 0;
-    background-color: var(--brand-black);
+    background-color: transparent;
 }
 
 .projects-grid {
@@ -881,7 +924,9 @@ nav.scrolled {
 }
 
 .project-card {
-    background-color: var(--zinc-900);
+    background-color: rgba(24, 24, 27, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--zinc-800);
     overflow: hidden;
     transition: all 0.3s;
