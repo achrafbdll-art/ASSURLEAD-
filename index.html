@@ -362,12 +362,12 @@
                     </div>
                     <div class="form-step" id="step-1">
                         <label data-i18n="form_identity_label">IDENTITÉ</label>
-                        <input type="text" data-i18n-placeholder="form_identity_placeholder" placeholder="VOTRE NOM COMPLET" required>
+                        <input type="text" name="name" data-i18n-placeholder="form_identity_placeholder" placeholder="VOTRE NOM COMPLET" required>
                         <button type="button" class="btn btn-primary full-width next-btn" data-i18n="form_btn_next">SUIVANT <i class="fas fa-chevron-right"></i></button>
                     </div>
                     <div class="form-step hidden" id="step-2">
                         <label data-i18n="form_contact_label">CONTACT</label>
-                        <input type="email" data-i18n-placeholder="form_contact_placeholder" placeholder="EMAIL PROFESSIONNEL" required>
+                        <input type="email" name="email" data-i18n-placeholder="form_contact_placeholder" placeholder="EMAIL PROFESSIONNEL" required>
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline prev-btn" data-i18n="form_btn_back">RETOUR</button>
                             <button type="button" class="btn btn-primary next-btn" data-i18n="form_btn_next">SUIVANT</button>
@@ -375,7 +375,7 @@
                     </div>
                     <div class="form-step hidden" id="step-3">
                         <label data-i18n="form_agency_label">AGENCE</label>
-                        <input type="text" data-i18n-placeholder="form_agency_placeholder" placeholder="NOM DE VOTRE AGENCE" required>
+                        <input type="text" name="agency" data-i18n-placeholder="form_agency_placeholder" placeholder="NOM DE VOTRE AGENCE" required>
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline prev-btn" data-i18n="form_btn_back">RETOUR</button>
                             <button type="button" class="btn btn-primary next-btn" data-i18n="form_btn_next">SUIVANT</button>
@@ -383,7 +383,7 @@
                     </div>
                     <div class="form-step hidden" id="step-4">
                         <label data-i18n="form_goal_label">OBJECTIF</label>
-                        <textarea rows="4" data-i18n-placeholder="form_goal_placeholder" placeholder="VOTRE OBJECTIF DE CROISSANCE"></textarea>
+                        <textarea rows="4" name="message" data-i18n-placeholder="form_goal_placeholder" placeholder="VOTRE OBJECTIF DE CROISSANCE"></textarea>
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline prev-btn" data-i18n="form_btn_back">RETOUR</button>
                             <button type="submit" class="btn btn-primary" data-i18n="form_btn_submit">ENVOYER <i class="fas fa-bolt"></i></button>

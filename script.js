@@ -1135,16 +1135,58 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             submitBtn.innerHTML = sendingText[lang];
 
-            // Simulate API call
-            setTimeout(() => {
-                const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
-                alert(alertText);
-                form.reset();
-                currentStep = 0;
-                updateSteps();
+            const nameVal = form.querySelector('[name="name"]').value;
+            const emailVal = form.querySelector('[name="email"]').value;
+            const agencyVal = form.querySelector('[name="agency"]').value;
+            const messageVal = form.querySelector('[name="message"]').value;
+
+            // Submit values to FormSubmit via AJAX API
+            const payload = {
+                name: nameVal,
+                email: emailVal,
+                agency: agencyVal,
+                message: messageVal,
+                _subject: `Nouveau Lead Assurlead - ${nameVal} (${agencyVal})`,
+                _honey: ""
+            };
+
+            fetch("https://formsubmit.co/ajax/achrafbdll@gmail.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
+                    alert(alertText);
+                    form.reset();
+                    currentStep = 0;
+                    updateSteps();
+                } else {
+                    const errorText = {
+                        fr: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+                        en: "An error occurred while sending. Please try again.",
+                        ar: "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى."
+                    };
+                    alert(errorText[lang] || errorText.fr);
+                }
+            })
+            .catch(err => {
+                console.error("Form submit error:", err);
+                const errorText = {
+                    fr: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+                    en: "An error occurred while sending. Please try again.",
+                    ar: "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى."
+                };
+                alert(errorText[lang] || errorText.fr);
+            })
+            .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
-            }, 1500);
+            });
         });
     };
 
@@ -1163,6 +1205,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic Hero Dashboard
     const updateHeroDashboard = () => {
+        const dashboard = document.querySelector('.hero-visual');
+        if (!dashboard || dashboard.offsetParent === null) return;
+
         const bars = document.querySelectorAll('.chart .bar');
         const leadStat = document.querySelector('.stat-box .stat-val.neon');
         

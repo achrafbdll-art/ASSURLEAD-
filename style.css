@@ -1424,6 +1424,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .hero-visual {
+        display: none !important;
+    }
+
     .hero-content h1 { font-size: 40px; }
     .section-header h2 { font-size: 32px; }
     .contact-info h2 { font-size: 48px; }
