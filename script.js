@@ -1733,4 +1733,79 @@ document.addEventListener('DOMContentLoaded', () => {
     initQuestionnaire();
     updateROI();
     renderLeads();
+
+    // --- ANIMATED INCREMENTAL COUNTER FOR STATS ---
+    const initStatsCounter = () => {
+        const statsSection = document.querySelector('.stats-stripe');
+        if (!statsSection) return;
+
+        const statNumbers = statsSection.querySelectorAll('.stripe-num');
+        
+        const animateNumber = (el) => {
+            const originalText = el.textContent.trim();
+            const match = originalText.match(/^([0-9.,]+)(.*)$/);
+            if (!match) return;
+
+            const numStr = match[1];
+            const suffix = match[2];
+
+            const cleanNumStr = numStr.replace(/,/g, '');
+            const targetValue = parseFloat(cleanNumStr);
+            const isFloat = cleanNumStr.includes('.');
+            const decimalPlaces = isFloat ? (cleanNumStr.split('.')[1] || '').length : 0;
+            const useCommaSeparator = numStr.includes(',');
+
+            let startTimestamp = null;
+            const duration = 2000; // 2 seconds
+
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                
+                // Use smooth cubic-bezier ease out: progress = 1 - (1 - x)^3
+                const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                const currentValue = easeOutProgress * targetValue;
+                
+                let formattedValue;
+                if (isFloat) {
+                    formattedValue = currentValue.toFixed(decimalPlaces);
+                } else {
+                    const rounded = Math.floor(currentValue);
+                    if (useCommaSeparator) {
+                        formattedValue = rounded.toLocaleString('en-US');
+                    } else {
+                        formattedValue = rounded.toString();
+                    }
+                }
+
+                el.textContent = formattedValue + suffix;
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    el.textContent = originalText; // Ensure exact final value
+                }
+            };
+
+            window.requestAnimationFrame(step);
+        };
+
+        const observerOptions = {
+            root: null,
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statNumbers.forEach(el => animateNumber(el));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(statsSection);
+    };
+
+    initStatsCounter();
 });
