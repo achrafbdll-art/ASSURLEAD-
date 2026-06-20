@@ -41,24 +41,24 @@ const translations = {
         ar: "الوكالة الرقمية 2026"
     },
     hero_title: {
-        fr: "On ne communique pas. <br><span class=\"neon\">On convertit.</span>",
-        en: "We don't just build buzz. <br><span class=\"neon\">We convert.</span>",
-        ar: "نحن لا نطلق مجرد حملات. <br><span class=\"neon\">بل نصنع المبيعات.</span>"
+        fr: "On ne code pas. <br><span class=\"neon\">On pilote des démarrages à +1.5 MDH.</span>",
+        en: "We don't code. <br><span class=\"neon\">We pilot launches up to +1.5M MAD.</span>",
+        ar: "نحن لا نبرمج فقط. <br><span class=\"neon\">بل نقود انطلاقات تتجاوز +1.5 مليون درهم.</span>"
     },
     hero_paragraph: {
-        fr: "Votre visibilité mérite des résultats. Nous construisons des systèmes d'acquisition automatisés pour les agents d'assurance et courtiers ambitieux.",
-        en: "Your online visibility deserves real outcomes. We build automated acquisition funnels tailor-made for ambitious insurance agents and brokers.",
-        ar: "مكانتك الرقمية تستحق نتائج فعلية. نحن نصنع أنظمة استقطاب عملاء مؤتمتة مخصصة لوسطاء ووكلاء التأمين الطموحين."
+        fr: "On a lancé et piloté de 0 à 1.5MDH la plateforme d'un Assureur Mondial Top 3. On fait pareil pour votre agence.",
+        en: "We successfully designed and scaled a Top 3 Global Insurer platform from 0 to 1.5M MAD. We do the exact same for your agency.",
+        ar: "لقد أطلقنا وأدرنا منصة لشركة تأمين عالمية من أكبر 3 شركات من 0 إلى 1.5 مليون درهم. نفعل الشيء نفسه لوكالتك."
     },
     hero_btn_growth: {
-        fr: "Lancer ma croissance <i class=\"fas fa-arrow-right\"></i>",
-        en: "Launch My Growth <i class=\"fas fa-arrow-right\"></i>",
-        ar: "ضاعف مبيعاتك الآن <i class=\"fas fa-arrow-right\"></i>"
+        fr: "Audit Pilotage Démarrage Gratuit 10min <i class=\"fas fa-arrow-right\"></i>",
+        en: "Free 10-Min Launch Control Audit <i class=\"fas fa-arrow-right\"></i>",
+        ar: "تدقيق مجاني لإطلاق وريادة وكالتك في 10 دقائق <i class=\"fas fa-arrow-right\"></i>"
     },
     hero_btn_audit: {
-        fr: "Audit Stratégique",
-        en: "Free Strategy Audit",
-        ar: "طلب تدقيق استراتيجي"
+        fr: "Voir la Preuve Live: Elomrani.com →",
+        en: "See Live Proof: Elomrani.com →",
+        ar: "رؤية الإثبات المباشر: Elomrani.com ←"
     },
     hero_partners_label: {
         fr: "Partenaires Stratégiques",
@@ -252,9 +252,9 @@ const translations = {
         ar: "الأعلى طلباً"
     },
     offer_growth_title: {
-        fr: "Growth",
-        en: "Omni Growth Plan",
-        ar: "باقة النمو المتكاملة"
+        fr: "Pack Pilotage Démarrage Digital",
+        en: "Digital Pilot Launch Pack",
+        ar: "باقة ريادة الانطلاق الرقمي"
     },
     offer_growth_f1: {
         fr: "SEO Local Avancé",
@@ -508,9 +508,9 @@ const translations = {
     },
     // Footer
     footer_copy: {
-        fr: "© 2026 ASSURLEAD INFRASTRUCTURE. TOUS DROITS RÉSERVÉS.",
-        en: "© 2026 ASSURLEAD GROWTH ENG INFRASTRUCTURE. ALL RIGHTS RESERVED.",
-        ar: "© 2026 جميع الحقوق محفوظة لشبكة وكلاء أسورليد للمبيعات."
+        fr: "ASSURLEAD - Pilotes du Démarrage Commercial Digital. Méthode +1.5MDH CA.",
+        en: "ASSURLEAD - Digital Commercial Launch Pilots. +1.5M MAD Revenue Method.",
+        ar: "ASSURLEAD - رواد الانطلاقة التجارية الرقمية. منهجية +1.5 مليون درهم."
     },
     // Modal
     modal_badge: {
@@ -540,9 +540,9 @@ const translations = {
     },
     // Chatbot
     chat_badge: {
-        fr: "Yacine AI",
-        en: "Yacine AI",
-        ar: "ياسين الذكي"
+        fr: "WhatsApp",
+        en: "WhatsApp",
+        ar: "واتساب"
     },
     chat_title: {
         fr: "Yacine AI",
@@ -1294,6 +1294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const handleChat = async () => {
+        if (!chatInput) return;
         const text = chatInput.value.trim();
         if (!text) return;
 
