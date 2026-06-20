@@ -153,9 +153,9 @@ const translations = {
         ar: "15 درهم"
     },
     roi_basket_val: {
-        fr: "1,200 MAD",
-        en: "1,200 MAD",
-        ar: "1,200 درهم"
+        fr: "1,999 MAD",
+        en: "1,999 MAD",
+        ar: "1,999 درهم"
     },
     // Offers Header
     offers_badge: {
@@ -611,17 +611,17 @@ const systemInstructions = {
     fr: `Tu es Yacine, l'assistant IA expert de l'agence de marketing digital "AssurLead" au Maroc. 
     Ton persona : Empathique, Expert, Proactif.
     Ta mission : Aider les agents d'assurance à capter plus de leads via nos solutions (Mini Express, Starter, Growth, Scale).
-    Ta règle d'or : Sois précis sur les tarifs (à partir de 1200 MAD) et encourage l'usage du simulateur ROI.
+    Ta règle d'or : Sois précis sur les tarifs (à partir de 1999 MAD) et encourage l'usage du simulateur ROI.
     Confère tes réponses uniquement en français de manière professionnelle et fluide.`,
     en: `You are Yacine, the elite AI Marketing Assistant at "AssurLead", Morocco's specialized digital acquisition agency for insurance brokers and agents. 
     Your persona: Empathetic, highly expert, proactive, and result-oriented.
     Your mission: Assist insurance professionals to generate more qualified leads using our automated systems (Express Core, Starter, Growth, Scale).
-    Golden rules: Be highly precise on our packages starting from 1200 MAD and encourage playing with the interactive 3D ROI Growth Simulator.
+    Golden rules: Be highly precise on our packages starting from 1999 MAD and encourage playing with the interactive 3D ROI Growth Simulator.
     Always reply professionally, elegantly, and fluently in English.`,
     ar: `أنت ياسين، المساعد الذكي الخبير لوكالة التسويق الرقمي "AssurLead" والمتخصصة في جلب الزبناء لوكلاء ووسطاء التأمين بالمغرب.
     شخصيتك: ودود، خبير، استباقي ومهني للغاية.
     مهمتك: مساعدة المهنيين في مجال التأمين على استقطاب عملاء أكثر إيجابية عبر حلولنا الذكية المؤتمتة (ميني إكسبريس، Starter، Growth، Scale).
-    القاعدة الذهبية: كن دقيقًا بشأن الأسعار (تبدأ من 1200 درهم) وشجعهم على تجربة حاسبة العائد التفاعلية ثلاثية الأبعاد.
+    القاعدة الذهبية: كن دقيقًا بشأن الأسعار (تبدأ من 1999 درهم) وشجعهم على تجربة حاسبة العائد التفاعلية ثلاثية الأبعاد.
     أجب دائماً بلغة عربية مهنية وسلسة وبأعلى مستويات اللباقة.`
 };
 
@@ -688,7 +688,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 4. Update dynamic offer prices
-        const offerPrices = { mini: 1200, starter: 1800, growth: 2400, scale: 3000 };
+        const offerPrices = { mini: 1999, starter: 2999, growth: 3999, scale: 6999 };
         const keys = ['mini', 'starter', 'growth', 'scale'];
         keys.forEach(k => {
             const el = document.getElementById(`offer_${k}_price`);
@@ -962,7 +962,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const leads = Math.floor(budget / 15);
         const sales = Math.floor(leads * (conv / 100));
-        const revenue = sales * 1200;
+        const revenue = sales * 1999;
         const roi = ((revenue - budget) / budget) * 100;
 
         const lang = localStorage.getItem('assurlead_lang') || 'fr';
