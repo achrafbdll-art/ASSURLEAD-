@@ -46,9 +46,9 @@ const translations = {
         ar: "نحن لا نبرمج فقط. <br><span class=\"neon\">بل نقود انطلاقات تتجاوز +1.5 مليون درهم.</span>"
     },
     hero_paragraph: {
-        fr: "On a lancé et piloté de 0 à 1.5MDH la plateforme d'un Assureur Mondial Top 3. On fait pareil pour votre agence.",
-        en: "We successfully designed and scaled a Top 3 Global Insurer platform from 0 to 1.5M MAD. We do the exact same for your agency.",
-        ar: "لقد أطلقنا وأدرنا منصة لشركة تأمين عالمية من أكبر 3 شركات من 0 إلى 1.5 مليون درهم. نفعل الشيء نفسه لوكالتك."
+        fr: "On a lancé et piloté de 0 à 1.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence.",
+        en: "We successfully scaled a Top 3 Global Insurer from 0 to 1.5M MAD. We do the exact same for your agency.",
+        ar: "لقد أطلقنا وأدرنا شركة تأمين عالمية من أكبر 3 شركات من 0 إلى 1.5 مليون درهم. نفعل الشيء نفسه لوكالتك."
     },
     hero_btn_growth: {
         fr: "Audit Pilotage Démarrage Gratuit 10min <i class=\"fas fa-arrow-right\"></i>",
@@ -56,9 +56,9 @@ const translations = {
         ar: "تدقيق مجاني لإطلاق وريادة وكالتك في 10 دقائق <i class=\"fas fa-arrow-right\"></i>"
     },
     hero_btn_audit: {
-        fr: "Voir la Preuve Live: Elomrani.com →",
-        en: "See Live Proof: Elomrani.com →",
-        ar: "رؤية الإثبات المباشر: Elomrani.com ←"
+        fr: "Découvrir nos offres",
+        en: "Discover our offers",
+        ar: "اكتشف عروضنا"
     },
     hero_partners_label: {
         fr: "Partenaires Stratégiques",
