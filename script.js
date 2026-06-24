@@ -404,6 +404,11 @@ const translations = {
         en: "El Omrani Insurance Brokerage",
         ar: "مؤسسة العمراني للتأمين"
     },
+    projets_card_google_badge: {
+        fr: "1ère Page Google — Assurance AXA Casablanca",
+        en: "1st Page Google — AXA Insurance Casablanca",
+        ar: "الصفحة الأولى غوغل — تأمين أكسا الدار البيضاء"
+    },
     projets_card_p: {
         fr: "Système complet d'acquisition de leads pour l'assurance automobile et santé.",
         en: "Full automation acquisition system built to drive qualified auto, fleet, and corporate family health insurance leads.",
@@ -579,9 +584,9 @@ const translations = {
         ar: "هل أنت مستعد <span class=\"neon\">للهيمنة</span> على منطقتك الجغرافية؟"
     },
     modal_p: {
-        fr: "Réservez votre audit stratégique gratuit aujourd'hui et recevez notre guide \"Agent Digital 2026\" instantanément.",
-        en: "Secure your territorial optimization roadmap audit today and unlock our comprehensive manual 'Digital Insurance Agent Guide' at no charge.",
-        ar: "احجز جلستك المجانية للتدقيق والتحديث والتطوير الرقمي اليوم، واحصل على نسختك من دليل 'وكيل التأمين الرقمي 2026' فوراً."
+        fr: "Réservez votre audit stratégique gratuit aujourd'hui pour obtenir une visibilité sur la 1ère page de Google et déployer une véritable machine à cash pour votre business.",
+        en: "Book your free strategic audit today to secure 1st page visibility on Google and deploy a high-yielding cash machine for your business.",
+        ar: "احجز جلستك المجانية للتدقيق الاستراتيجي اليوم لتأمين ظهورك في الصفحة الأولى على غوغل وبناء آلة حقيقية لتوليد الأرباح لعملك."
     },
     modal_btn: {
         fr: "Réservez mon Audit Gratuit",
@@ -1865,5 +1870,51 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(statsSection);
     };
 
+    // --- SCROLL REVEAL ANIMATIONS ---
+    const initScrollReveal = () => {
+        const revealElements = document.querySelectorAll('.price-card, .methode-step');
+        
+        // Add scroll-reveal class to elements
+        revealElements.forEach(el => {
+            el.classList.add('scroll-reveal');
+        });
+
+        const revealObserverOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    
+                    // Stagger calculation based on index within its parent grid
+                    const siblings = Array.from(el.parentNode.children).filter(child => 
+                        child.classList.contains('price-card') || child.classList.contains('methode-step')
+                    );
+                    const siblingIndex = siblings.indexOf(el);
+                    const delay = siblingIndex >= 0 ? siblingIndex * 150 : 0;
+                    
+                    setTimeout(() => {
+                        el.classList.add('revealed');
+                        
+                        // Clean up classes after animation completes to restore smooth native hover/interactions
+                        setTimeout(() => {
+                            el.classList.remove('scroll-reveal');
+                            el.classList.remove('revealed');
+                        }, 1200);
+                    }, delay);
+                    
+                    observer.unobserve(el);
+                }
+            });
+        }, revealObserverOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    };
+
     initStatsCounter();
+    initScrollReveal();
 });
