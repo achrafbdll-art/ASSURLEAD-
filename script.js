@@ -526,6 +526,11 @@ const translations = {
         en: "BUSINESS EMAIL ADDRESS",
         ar: "البريد الإلكتروني المهني"
     },
+    form_phone_placeholder: {
+        fr: "NUMÉRO DE TÉLÉPHONE",
+        en: "PHONE NUMBER",
+        ar: "رقم الهاتف"
+    },
     form_btn_back: {
         fr: "RETOUR",
         en: "GO BACK",
@@ -1187,6 +1192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const nameVal = form.querySelector('[name="name"]').value;
             const emailVal = form.querySelector('[name="email"]').value;
+            const phoneVal = form.querySelector('[name="phone"]').value;
             const agencyVal = form.querySelector('[name="agency"]').value;
             const messageVal = form.querySelector('[name="message"]').value;
 
@@ -1194,6 +1200,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const payload = {
                 name: nameVal,
                 email: emailVal,
+                phone: phoneVal,
                 agency: agencyVal,
                 message: messageVal,
                 _subject: `Nouveau Lead Assurlead - ${nameVal} (${agencyVal})`,
