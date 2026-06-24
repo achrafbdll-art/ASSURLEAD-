@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GoogleGenAI } from "@google/genai";
+import confetti from 'canvas-confetti';
 
 // --- MULTILINGUAL DICTIONARY ---
 const translations = {
@@ -1222,8 +1223,41 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => {
                 if (response.ok) {
-                    const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
-                    alert(alertText);
+                    // Beautiful neon-themed confetti celebration
+                    confetti({
+                        particleCount: 120,
+                        spread: 80,
+                        origin: { y: 0.6 },
+                        colors: ['#00ff41', '#ffffff', '#113c18', '#0df2ff']
+                    });
+                    
+                    // Left and right diagonal bursts
+                    setTimeout(() => {
+                        confetti({
+                            particleCount: 60,
+                            angle: 60,
+                            spread: 60,
+                            origin: { x: 0, y: 0.8 },
+                            colors: ['#00ff41', '#ffffff', '#0df2ff']
+                        });
+                    }, 200);
+
+                    setTimeout(() => {
+                        confetti({
+                            particleCount: 60,
+                            angle: 120,
+                            spread: 60,
+                            origin: { x: 1, y: 0.8 },
+                            colors: ['#00ff41', '#ffffff', '#0df2ff']
+                        });
+                    }, 450);
+
+                    // Slightly delay the blocking native alert so the user sees the flying confetti
+                    setTimeout(() => {
+                        const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
+                        alert(alertText);
+                    }, 1000);
+
                     form.reset();
                     currentStep = 0;
                     updateSteps();
