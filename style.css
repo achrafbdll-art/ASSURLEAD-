@@ -1113,9 +1113,16 @@ footer {
 }
 
 .modal-inner p {
-    color: var(--zinc-500);
-    margin-bottom: 48px;
-    font-weight: 300;
+    color: var(--zinc-100);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.modal-inner p strong {
+    color: var(--white);
+    font-weight: 700;
 }
 
 .modal-timer {

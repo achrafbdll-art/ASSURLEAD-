@@ -584,9 +584,9 @@ const translations = {
         ar: "هل أنت مستعد <span class=\"neon\">للهيمنة</span> على منطقتك الجغرافية؟"
     },
     modal_p: {
-        fr: "Réservez votre audit stratégique gratuit aujourd'hui pour obtenir une visibilité sur la 1ère page de Google et déployer une véritable machine à cash pour votre business.",
-        en: "Book your free strategic audit today to secure 1st page visibility on Google and deploy a high-yielding cash machine for your business.",
-        ar: "احجز جلستك المجانية للتدقيق الاستراتيجي اليوم لتأمين ظهورك في الصفحة الأولى على غوغل وبناء آلة حقيقية لتوليد الأرباح لعملك."
+        fr: "Réservez votre <strong>audit stratégique gratuit</strong> aujourd'hui pour obtenir une <span class=\"neon\">visibilité sur la 1ère page de Google</span> et déployer une <span class=\"neon\">véritable machine à cash</span> pour votre business.",
+        en: "Book your <strong>free strategic audit</strong> today to secure <span class=\"neon\">1st page visibility on Google</span> and deploy a <span class=\"neon\">high-yielding cash machine</span> for your business.",
+        ar: "احجز جلستك المجانية <strong>للتدقيق الاستراتيجي</strong> اليوم لتأمين <span class=\"neon\">ظهورك في الصفحة الأولى على غوغل</span> وبناء <span class=\"neon\">آلة حقيقية لتوليد الأرباح</span> لعملك."
     },
     modal_btn: {
         fr: "Réservez mon Audit Gratuit",
