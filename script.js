@@ -41,14 +41,14 @@ const translations = {
         ar: "الوكالة الرقمية 2026"
     },
     hero_title: {
-        fr: "On ne code pas. <br><span class=\"neon\">On pilote des démarrages à +1.5 MDH.</span>",
-        en: "We don't code. <br><span class=\"neon\">We pilot launches up to +1.5M MAD.</span>",
-        ar: "نحن لا نبرمج فقط. <br><span class=\"neon\">بل نقود انطلاقات تتجاوز +1.5 مليون درهم.</span>"
+        fr: "On ne code pas. <br><span class=\"neon\">On pilote des démarrages à +2.5 MDH.</span>",
+        en: "We don't code. <br><span class=\"neon\">We pilot launches up to +2.5M MAD.</span>",
+        ar: "نحن لا نبرمج فقط. <br><span class=\"neon\">بل نقود انطلاقات تتجاوز +2.5 مليون درهم.</span>"
     },
     hero_paragraph: {
-        fr: "On a lancé et piloté de 0 à 1.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence. Une machine à cash pour votre business.",
-        en: "We successfully scaled a Top 3 Global Insurer from 0 to 1.5M MAD. We do the exact same for your agency. A cash machine for your business.",
-        ar: "لقد أطلقنا وأدرنا شركة تأمين عالمية من أكبر 3 شركات من 0 إلى 1.5 مليون درهم. نفعل الشيء نفسه لوكالتك. آلة لتوليد الأرباح لعملك."
+        fr: "On a lancé et piloté de 0 à 2.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence. Une machine à cash pour votre business.",
+        en: "We successfully scaled a Top 3 Global Insurer from 0 to 2.5M MAD. We do the exact same for your agency. A cash machine for your business.",
+        ar: "لقد أطلقنا وأدرنا شركة تأمين عالمية من أكبر 3 شركات من 0 إلى 2.5 مليون درهم. نفعل الشيء نفسه لوكالتك. آلة لتوليد الأرباح لعملك."
     },
     hero_btn_growth: {
         fr: "Audit Pilotage Démarrage Gratuit 10min <i class=\"fas fa-arrow-right\"></i>",
@@ -568,9 +568,9 @@ const translations = {
     },
     // Footer
     footer_copy: {
-        fr: "ASSURLEAD - Pilotes du Démarrage Commercial Digital. Méthode +1.5MDH CA.",
-        en: "ASSURLEAD - Digital Commercial Launch Pilots. +1.5M MAD Revenue Method.",
-        ar: "ASSURLEAD - رواد الانطلاقة التجارية الرقمية. منهجية +1.5 مليون درهم."
+        fr: "ASSURLEAD - Pilotes du Démarrage Commercial Digital. Méthode +2.5MDH CA.",
+        en: "ASSURLEAD - Digital Commercial Launch Pilots. +2.5M MAD Revenue Method.",
+        ar: "ASSURLEAD - رواد الانطلاقة التجارية الرقمية. منهجية +2.5 مليون درهم."
     },
     // Modal
     modal_badge: {
