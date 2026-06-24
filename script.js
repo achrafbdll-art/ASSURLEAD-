@@ -1635,7 +1635,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Stroke
             ctx.lineWidth = bloomIntensity > 1.2 ? 1.5 : 1;
-            ctx.strokeStyle = bloomIntensity > 1.2 ? '#00FF41' : 'rgba(0, 255, 65, 0.4)';
+            ctx.strokeStyle = bloomIntensity > 1.2 ? '#00FF41' : 'rgba(0, 255, 65, 0.55)';
             
             if (bloomIntensity > 1) {
                 ctx.shadowColor = '#00ff41';
@@ -1652,7 +1652,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.rotate(rot);
             ctx.beginPath();
             ctx.rect(-size/2, -size/2, size, size);
-            ctx.strokeStyle = bloomIntensity > 1.2 ? 'rgba(0, 255, 65, 0.6)' : 'rgba(0, 255, 65, 0.15)';
+            ctx.strokeStyle = bloomIntensity > 1.2 ? 'rgba(0, 255, 65, 0.7)' : 'rgba(0, 255, 65, 0.25)';
             ctx.lineWidth = 0.8;
             ctx.stroke();
             ctx.restore();
@@ -1730,7 +1730,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         // Connecting grid lines
                         ctx.beginPath();
-                        ctx.strokeStyle = bloomIntensity > 1.2 ? 'rgba(0, 255, 65, 0.15)' : 'rgba(0, 255, 65, 0.04)';
+                        ctx.strokeStyle = bloomIntensity > 1.2 ? 'rgba(0, 255, 65, 0.25)' : 'rgba(0, 255, 65, 0.08)';
                         ctx.lineWidth = 0.5;
                         
                         ctx.moveTo(cx, cy);
@@ -1748,7 +1748,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         ctx.beginPath();
                         ctx.arc(mx, my, R_out * 0.25, 0, Math.PI * 2);
-                        ctx.strokeStyle = midIntensity > 0.5 ? 'rgba(0, 255, 65, 0.4)' : 'rgba(0, 255, 65, 0.1)';
+                        ctx.strokeStyle = midIntensity > 0.5 ? 'rgba(0, 255, 65, 0.5)' : 'rgba(0, 255, 65, 0.16)';
                         ctx.stroke();
                         if (midIntensity > 0.1) {
                             ctx.fillStyle = `rgba(0, 255, 65, ${midIntensity * 0.1})`;
@@ -1779,6 +1779,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init3DHeroStyle('hero-canvas-container');
     initROIScene();
     initZelligeTechCanvas('zellige-tech-canvas', 'offres');
+    initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section');
     initZelligeTechCanvas('zellige-tech-contact-canvas', 'contact');
     initQuestionnaire();
     updateROI();

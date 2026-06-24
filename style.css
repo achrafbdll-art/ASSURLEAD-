@@ -875,7 +875,7 @@ nav.scrolled {
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.4;
+    opacity: 0.85;
 }
 
 .methode .container {
@@ -1771,12 +1771,18 @@ body[dir="rtl"] .steps-progress {
 
 /* Stats Stripe Styles */
 .stats-stripe {
-    background: rgba(10, 10, 12, 0.6);
+    background: rgba(5, 5, 5, 0.75);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding: 60px 0;
     position: relative;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+}
+
+.stats-stripe .container {
+    position: relative;
+    z-index: 2;
 }
 
 .stats-stripe-grid {
@@ -1792,9 +1798,10 @@ body[dir="rtl"] .steps-progress {
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(6px);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
 }
 
