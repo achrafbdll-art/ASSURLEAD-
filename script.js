@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { GoogleGenAI } from "@google/genai";
-import confetti from 'canvas-confetti';
 
 // --- MULTILINGUAL DICTIONARY ---
 const translations = {
@@ -21,9 +20,9 @@ const translations = {
         ar: "الحاسبة"
     },
     nav_methode: {
-        fr: "Méthode",
-        en: "Our Method",
-        ar: "منهجيتنا"
+        fr: "Secteurs",
+        en: "Sectors",
+        ar: "القطاعات"
     },
     nav_contact: {
         fr: "Contact",
@@ -57,9 +56,9 @@ const translations = {
         ar: "تدقيق مجاني لإطلاق وريادة وكالتك في 10 دقائق <i class=\"fas fa-arrow-right\"></i>"
     },
     hero_btn_audit: {
-        fr: "Découvrir nos offres",
-        en: "Discover our offers",
-        ar: "اكتشف عروضنا"
+        fr: "Découvrir nos réalisations",
+        en: "Discover our work",
+        ar: "اكتشف إنجازاتنا"
     },
     hero_partners_label: {
         fr: "Partenaires Stratégiques",
@@ -164,45 +163,35 @@ const translations = {
         en: "Acquisition Solutions",
         ar: "حلول استقطاب العملاء"
     },
-    offers_title: {
-        fr: "L'investissement <span class=\"neon\">Rentable.</span>",
-        en: "A Highly Profitable <span class=\"neon\">Investment.</span>",
-        ar: "الاستثمار <span class=\"neon\">الأكثر ربحية.</span>"
-    },
-    offers_p: {
-        fr: "Des packs conçus pour chaque étape de votre développement. Transparence totale, performance garantie.",
-        en: "Funnels engineered for every milestone of your agency's scaling journey. Total billing transparency, high performance guaranteed.",
-        ar: "باقات مصممة ومدروسة لتناسب كل مرحلة من مراحل نمو وكالتك. شفافية مطلقة وأداء مضمون."
-    },
     // Mini Express
     offer_mini_title: {
-        fr: "Mini Express",
-        en: "Express Core",
-        ar: "ميني إكسبريس"
+        fr: "Landing page seule",
+        en: "Single Landing Page",
+        ar: "صفحة هبوط منفردة"
     },
     offer_mini_f1: {
-        fr: "Landing Page conversion",
+        fr: "Landing page de haute conversion",
         en: "High-Converting Landing Page",
         ar: "صفحة هبوط عالية التحويل"
     },
     offer_mini_f2: {
-        fr: "Livraison 5 jours",
-        en: "5-Day Design Delivery",
-        ar: "تسليم سريع خلال 5 أيام"
+        fr: "Design moderne & responsive",
+        en: "Modern & Responsive Design",
+        ar: "تصميم حديث ومتجاوب"
     },
     offer_mini_f3: {
-        fr: "Capture de leads",
-        en: "Lead Capture Integration",
-        ar: "نظام التقاط بيانات العملاء"
+        fr: "Capture de leads & intégrations",
+        en: "Lead Capture & Integrations",
+        ar: "نظام التقاط بيانات العملاء والربط"
     },
     offer_mini_f4: {
-        fr: "Design Responsive",
-        en: "Responsive & Modern Design",
-        ar: "تصميم متجاوب بالكامل"
+        fr: "Optimisation de vitesse",
+        en: "Speed Optimization",
+        ar: "تحسين سرعة التصفح"
     },
     offer_mini_f5: {
-        fr: "Setup Analytics",
-        en: "Basic Analytics Tracking",
+        fr: "Installation analytics de base",
+        en: "Basic Analytics Setup",
         ar: "إعداد تحليلات الأداء الأساسية"
     },
     offer_mini_btn: {
@@ -212,34 +201,34 @@ const translations = {
     },
     // Starter
     offer_starter_title: {
-        fr: "Starter",
-        en: "Pro Growth Starter",
-        ar: "باقة البداية"
+        fr: "Site vitrine + SEO local",
+        en: "Showcase Website + Local SEO",
+        ar: "موقع تعريفي + سيو محلي"
     },
     offer_starter_f1: {
-        fr: "Hébergement Pro",
-        en: "Premium Secured Hosting",
-        ar: "استضافة احترافية آمنة"
+        fr: "Site vitrine complet (multipages)",
+        en: "Full Multi-page Showcase Website",
+        ar: "موقع تعريفي كامل متعدد الصفحات"
     },
     offer_starter_f2: {
-        fr: "Maintenance technique",
-        en: "Weekly Technical Maintenance",
-        ar: "صيانة تقنية دورية"
+        fr: "Référencement local (Google Maps)",
+        en: "Local SEO & Google Maps Optimization",
+        ar: "تحسين محركات البحث المحلية وغوغل ماب"
     },
     offer_starter_f3: {
-        fr: "Mise à jour mensuelle",
-        en: "Monthly Content Revisions",
-        ar: "تحديثات شهرية للمحتوى"
+        fr: "Hébergement pro sécurisé",
+        en: "Secured Professional Hosting",
+        ar: "استضافة احترافية آمنة"
     },
     offer_starter_f4: {
-        fr: "SEO Local Basique",
-        en: "Local Search SEO Setup",
-        ar: "تهيئة محركات البحث المحلية أساسي"
+        fr: "Maintenance technique incluse",
+        en: "Technical Maintenance Included",
+        ar: "الصيانة التقنية مشمولة"
     },
     offer_starter_f5: {
-        fr: "Support Prioritaire",
-        en: "Business Priority Support",
-        ar: "دعم فني ذو أولوية"
+        fr: "Support prioritaire par email/chat",
+        en: "Priority Email & Chat Support",
+        ar: "دعم ذو أولوية عبر البريد والدردشة"
     },
     offer_starter_btn: {
         fr: "Choisir",
@@ -248,39 +237,39 @@ const translations = {
     },
     // Growth
     offer_growth_badge: {
-        fr: "Performance",
-        en: "Top Seller",
-        ar: "الأعلى طلباً"
+        fr: "Recommandé",
+        en: "Recommended",
+        ar: "موصى به"
     },
     offer_growth_title: {
-        fr: "Pack Pilotage Démarrage Digital",
-        en: "Digital Pilot Launch Pack",
-        ar: "باقة ريادة الانطلاق الرقمي"
+        fr: "Pack acquisition complet",
+        en: "Complete Acquisition Pack",
+        ar: "باقة الاستقطاب الكاملة"
     },
     offer_growth_f1: {
-        fr: "SEO Local Avancé",
-        en: "Advanced Local Authority SEO",
-        ar: "تهيئة محركات بحث احترافية"
+        fr: "Site internet haute conversion (Landing/Vitrine)",
+        en: "High-Converting Website (Landing/Showcase)",
+        ar: "موقع إلكتروني عالي التحويل"
     },
     offer_growth_f2: {
-        fr: "Campagne Meta Ads",
-        en: "Meta Social Ads Launch & Scale",
-        ar: "إطلاق حملات إعلانية احترافية (فيسبوك/إنستغرام)"
+        fr: "Campagnes Google Ads & Meta Ads",
+        en: "Google Ads & Meta Ads Campaigns",
+        ar: "حملات إعلانية على غوغل وميتا"
     },
     offer_growth_f3: {
-        fr: "Reporting Hebdo",
-        en: "Detailed Weekly Performance Reports",
-        ar: "تقارير أداء أسبوعية تفصيلية"
+        fr: "Intégration & Automation CRM",
+        en: "CRM Integration & Automation",
+        ar: "ربط وتأتمتة نظام إدارة العملاء (CRM)"
     },
     offer_growth_f4: {
-        fr: "Dashboard Live",
-        en: "Interactive Client Dashboard",
-        ar: "لوحة تحكم تفاعلية مخصصة"
+        fr: "Suivi en temps réel & Dashboard",
+        en: "Real-time Tracking & Custom Dashboard",
+        ar: "لوحة تحكم وتتبع لحظي للأداء"
     },
     offer_growth_f5: {
-        fr: "Optimisation CRO",
-        en: "Continuous Conversion Optimization",
-        ar: "تحسين دائم لنسب تحويل المبيعات"
+        fr: "Optimisation continue du taux de conversion (CRO)",
+        en: "Continuous Conversion Rate Optimization",
+        ar: "تحسين مستمر لنسب المبيعات"
     },
     offer_growth_btn: {
         fr: "Accélérer",
@@ -289,39 +278,95 @@ const translations = {
     },
     // Scale
     offer_scale_title: {
-        fr: "Scale",
-        en: "Market Leader Scale",
-        ar: "باقة الهيمنة الشاملة"
+        fr: "Pilotage mensuel",
+        en: "Monthly Retainer & Management",
+        ar: "إدارة وتشغيل شهري"
     },
     offer_scale_f1: {
-        fr: "SEO Multi-villes",
-        en: "Multi-City Search Dominance",
-        ar: "تهيئة محركات بحث لعدة مدن"
+        fr: "Gestion et optimisation des campagnes",
+        en: "Campaign Management & Optimization",
+        ar: "إدارة وتحسين الحملات الإعلانية"
     },
     offer_scale_f2: {
-        fr: "Ads Multi-canaux",
-        en: "Omnichannel Paid Advertising",
-        ar: "حملات إعلانية متعددة القنوات"
+        fr: "Suivi SEO & netlinking continu",
+        en: "Ongoing SEO & Local Netlinking",
+        ar: "تحسين محركات البحث والروابط بشكل مستمر"
     },
     offer_scale_f3: {
-        fr: "Automation CRM",
-        en: "CRM Pipeline & Lead Automation",
-        ar: "ربط وتأتمتة إدارة علاقات العملاء(CRM)"
+        fr: "Rapports hebdomadaires détaillés",
+        en: "Detailed Weekly Performance Reports",
+        ar: "تقارير أداء أسبوعية مفصلة"
     },
     offer_scale_f4: {
-        fr: "Email Marketing",
-        en: "Email Nurturing & Follow-ups",
-        ar: "حملات تسويق ذكية بالبريد الإلكتروني"
+        fr: "Ajustement stratégique des budgets",
+        en: "Strategic Budget Allocation",
+        ar: "تعديل استراتيجي للميزانيات"
     },
     offer_scale_f5: {
-        fr: "Audit Trimestriel",
-        en: "Quarterly Executive Marketing Audit",
-        ar: "تدقيق وتقييم تسويقي ربع سنوي"
+        fr: "Accès à notre dashboard live 24/7",
+        en: "24/7 Access to Live Interactive Dashboard",
+        ar: "وصول على مدار الساعة للوحة التحكم"
     },
     offer_scale_btn: {
         fr: "Dominer",
         en: "Dominate Market",
         ar: "هيمن على السوق"
+    },
+    // Secteurs d'accompagnement
+    sec_badge: {
+        fr: "Diversification",
+        en: "Sectors",
+        ar: "القطاعات"
+    },
+    sec_title: {
+        fr: "Nous accompagnons <span class=\"neon\">également.</span>",
+        en: "We also <span class=\"neon\">accompany.</span>",
+        ar: "نرافق <span class=\"neon\">أيضاً.</span>"
+    },
+    sec_p: {
+        fr: "Notre expertise s'étend à d'autres secteurs clés pour propulser leur croissance digitale.",
+        en: "Our high-yield customer acquisition frameworks successfully scale other core industries.",
+        ar: "تتميز أنظمتنا بالمرونة والقدرة على تحقيق نمو مبيعات استثنائي في قطاعات رئيسية أخرى."
+    },
+    sec_immobilier_title: {
+        fr: "Immobilier",
+        en: "Real Estate",
+        ar: "العقارات"
+    },
+    sec_immobilier_p: {
+        fr: "Acquisition de leads qualifiés pour les promoteurs et agents immobiliers.",
+        en: "High-quality buyer and seller lead generation for promoters and agencies.",
+        ar: "استقطاب زبناء ومستثمرين مهتمين بشراء العقارات للشركات والوكلاء."
+    },
+    sec_restauration_title: {
+        fr: "Restauration",
+        en: "Restaurants",
+        ar: "المطاعم والضيافة"
+    },
+    sec_restauration_p: {
+        fr: "Système de réservation en ligne et visibilité locale accrue pour restaurants premium.",
+        en: "Online booking systems and premium local search dominance for restaurants.",
+        ar: "أنظمة حجز طاولة ذكية وزيادة حضور المطاعم الراقية محلياً."
+    },
+    sec_sante_title: {
+        fr: "Santé",
+        en: "Healthcare",
+        ar: "الصحة والطب"
+    },
+    sec_sante_p: {
+        fr: "Solutions d'acquisition de patients et de prise de rendez-vous pour cliniques.",
+        en: "Patient acquisition funnels and booking integrations for clinics.",
+        ar: "حلول جذب المرضى وحجز المواعيد للعيادات والمراكز الطبية."
+    },
+    sec_auto_title: {
+        fr: "Automobile",
+        en: "Automotive",
+        ar: "السيارات"
+    },
+    sec_auto_p: {
+        fr: "Génération de leads qualifiés pour concessionnaires, garages et services auto.",
+        en: "Qualified buyers and booking leads for dealerships and auto centers.",
+        ar: "توليد عملاء مهتمين بشراء السيارات، الصيانة والخدمات."
     },
     // Notre Approche
     methode_badge: {
@@ -749,17 +794,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 4. Update dynamic offer prices
-        const offerPrices = { mini: 1999, starter: 2999, growth: 3999, scale: 6999 };
+        const offerPrices = {
+            mini: {
+                fr: "2 000 - 4 000 <span>DH</span>",
+                en: "2,000 - 4,000 <span>DH</span>",
+                ar: "2 000 - 4 000 <span>درهم</span>"
+            },
+            starter: {
+                fr: "5 000 - 12 000 <span>DH</span>",
+                en: "5,000 - 12,000 <span>DH</span>",
+                ar: "5 000 - 12 000 <span>درهم</span>"
+            },
+            growth: {
+                fr: "15 000 - 35 000 <span>DH</span>",
+                en: "15,000 - 35,000 <span>DH</span>",
+                ar: "15 000 - 35 000 <span>درهم</span>"
+            },
+            scale: {
+                fr: "2 000 - 8 000 <span>DH/mois</span>",
+                en: "2,000 - 8,000 <span>DH/month</span>",
+                ar: "2 000 - 8 000 <span>درهم/شهر</span>"
+            }
+        };
         const keys = ['mini', 'starter', 'growth', 'scale'];
         keys.forEach(k => {
             const el = document.getElementById(`offer_${k}_price`);
             if (el) {
-                const price = offerPrices[k];
-                if (lang === 'ar') {
-                    el.innerHTML = `${price} <span>درهم</span>`;
-                } else {
-                    el.innerHTML = `${price} <span>MAD</span>`;
-                }
+                el.innerHTML = offerPrices[k][lang] || offerPrices[k].fr;
             }
         });
 
@@ -830,8 +891,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setPixelRatio(window.devicePixelRatio);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setSize(container.clientWidth, container.clientHeight);
         container.appendChild(renderer.domElement);
 
@@ -892,8 +953,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x050505);
         const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setPixelRatio(window.devicePixelRatio);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setSize(container.clientWidth, container.clientHeight);
         container.appendChild(renderer.domElement);
 
@@ -1082,8 +1143,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            const isActive = navLinks.classList.toggle('active');
+            document.body.style.overflow = isActive ? 'hidden' : '';
+            const icon = mobileMenuToggle.querySelector('i');
+            if (icon) {
+                icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
+            }
         });
 
         // Close menu when clicking a link
@@ -1091,6 +1156,10 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 document.body.style.overflow = '';
+                const icon = mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.className = 'fas fa-bars';
+                }
             });
         });
     }
@@ -1223,41 +1292,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => {
                 if (response.ok) {
-                    // Beautiful neon-themed confetti celebration
-                    confetti({
-                        particleCount: 120,
-                        spread: 80,
-                        origin: { y: 0.6 },
-                        colors: ['#00ff41', '#ffffff', '#113c18', '#0df2ff']
-                    });
-                    
-                    // Left and right diagonal bursts
-                    setTimeout(() => {
-                        confetti({
-                            particleCount: 60,
-                            angle: 60,
-                            spread: 60,
-                            origin: { x: 0, y: 0.8 },
-                            colors: ['#00ff41', '#ffffff', '#0df2ff']
-                        });
-                    }, 200);
-
-                    setTimeout(() => {
-                        confetti({
-                            particleCount: 60,
-                            angle: 120,
-                            spread: 60,
-                            origin: { x: 1, y: 0.8 },
-                            colors: ['#00ff41', '#ffffff', '#0df2ff']
-                        });
-                    }, 450);
-
-                    // Slightly delay the blocking native alert so the user sees the flying confetti
-                    setTimeout(() => {
-                        const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
-                        alert(alertText);
-                    }, 1000);
-
+                    const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
+                    alert(alertText);
                     form.reset();
                     currentStep = 0;
                     updateSteps();
@@ -1287,15 +1323,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Projects Navigation
-    const navProjets = document.getElementById('nav-projets');
     const projetsSection = document.getElementById('projets');
-    if (navProjets && projetsSection) {
-        navProjets.addEventListener('click', (e) => {
-            e.preventDefault();
-            projetsSection.classList.toggle('hidden');
-            if (!projetsSection.classList.contains('hidden')) {
+    if (projetsSection) {
+        document.querySelectorAll('a[href="#projets"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                projetsSection.classList.remove('hidden');
                 projetsSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            });
         });
     }
 
@@ -1619,14 +1654,30 @@ document.addEventListener('DOMContentLoaded', () => {
             isHovered = false;
         });
 
-        // Parameters for Islamic geometric design (Zellige)
-        const D = 90; // spacing between centers of stars
-        const R_out = 32; // outer radius of 8-point star
+        // Touch support for mobile interaction
+        const handleTouch = (e) => {
+            if (e.touches && e.touches[0]) {
+                const rect = canvas.getBoundingClientRect();
+                mouseX = e.touches[0].clientX - rect.left;
+                mouseY = e.touches[0].clientY - rect.top;
+                isHovered = true;
+            }
+        };
+        section.addEventListener('touchstart', handleTouch, { passive: true });
+        section.addEventListener('touchmove', handleTouch, { passive: true });
+        section.addEventListener('touchend', () => {
+            isHovered = false;
+        }, { passive: true });
+
+        // Parameters for Islamic geometric design (Zellige) - Optimized for mobile performance
+        const isMobile = window.innerWidth < 768;
+        const D = isMobile ? 135 : 90; // spacing between centers of stars (fewer stars on mobile)
+        const R_out = isMobile ? 42 : 32; // outer radius of 8-point star
         const R_in = R_out * 0.65; // inner radius of star
 
         // Digital interactive circuits/pulses moving along cells
         const pulses = [];
-        const maxPulses = 15;
+        const maxPulses = isMobile ? 5 : 15; // fewer pulses on mobile to conserve CPU/battery
 
         class ZelligePulse {
             constructor(startX, startY, dirX, dirY, length, cellX, cellY) {
@@ -1906,7 +1957,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- SCROLL REVEAL ANIMATIONS ---
     const initScrollReveal = () => {
-        const revealElements = document.querySelectorAll('.price-card, .methode-step');
+        const revealElements = document.querySelectorAll('.price-card, .sector-card');
         
         // Add scroll-reveal class to elements
         revealElements.forEach(el => {
@@ -1926,7 +1977,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Stagger calculation based on index within its parent grid
                     const siblings = Array.from(el.parentNode.children).filter(child => 
-                        child.classList.contains('price-card') || child.classList.contains('methode-step')
+                        child.classList.contains('price-card') || child.classList.contains('sector-card')
                     );
                     const siblingIndex = siblings.indexOf(el);
                     const delay = siblingIndex >= 0 ? siblingIndex * 150 : 0;

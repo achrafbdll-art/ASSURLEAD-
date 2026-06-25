@@ -622,6 +622,60 @@ nav.scrolled {
     box-shadow: 0 0 10px var(--brand-neon);
 }
 
+/* Sectors Section */
+.sectors-section {
+    padding: 100px 0;
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.sectors-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sector-card {
+    background-color: var(--brand-black);
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+
+.sector-card:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+    box-shadow: inset 0 0 20px rgba(0, 255, 65, 0.02);
+}
+
+.sector-icon {
+    font-size: 24px;
+    color: var(--brand-neon);
+    margin-bottom: 32px;
+}
+
+.sector-card h3 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.sector-card p {
+    font-size: 14px;
+    color: var(--zinc-400);
+    line-height: 1.6;
+}
+
 /* Offers Section */
 .offers {
     padding: 100px 0;
@@ -689,15 +743,17 @@ nav.scrolled {
 }
 
 .price {
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 900;
     margin-bottom: 40px;
+    letter-spacing: -0.02em;
 }
 
 .price span {
-    font-size: 10px;
-    color: var(--zinc-500);
-    margin-left: 8px;
+    font-size: 14px;
+    color: var(--brand-neon);
+    margin-left: 4px;
+    font-weight: 700;
 }
 
 .features {
@@ -1442,6 +1498,8 @@ footer {
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
+        position: relative;
+        z-index: 1003;
     }
 
     .nav-links {
@@ -1467,7 +1525,7 @@ footer {
         padding: 16px;
     }
     
-    .offers-grid, .methode-grid {
+    .offers-grid, .methode-grid, .sectors-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1526,7 +1584,7 @@ footer {
     .btn { width: 100%; }
     .hero-btns { flex-direction: column; }
     
-    .price { font-size: 36px; }
+    .price { font-size: 26px; }
     .stat-val { font-size: 20px; }
 }
 
@@ -1721,6 +1779,10 @@ body[dir="rtl"] .fa-chevron-left {
 }
 
 body[dir="rtl"] .price-card .features li {
+    text-align: right;
+}
+
+body[dir="rtl"] .sector-card {
     text-align: right;
 }
 
