@@ -1568,14 +1568,87 @@ footer {
         right: 12px;
         width: auto;
         transform: translateY(150%);
+        padding: 12px;
+        gap: 12px;
     }
 
     .lead-ticker.active {
         transform: translateY(0);
     }
 
+    .ticker-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    .ticker-text {
+        font-size: 11px;
+    }
+
+    .ticker-subtext {
+        font-size: 9px;
+    }
+
     .modal-content {
-        padding: 48px 24px;
+        padding: 32px 20px;
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+        border-radius: 16px;
+    }
+
+    .modal-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .modal-inner h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .modal-inner p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 24px;
+    }
+
+    .close-btn {
+        top: 16px;
+        right: 16px;
+        font-size: 20px;
+    }
+
+    .chat-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .chat-toggle {
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
+    }
+
+    .chat-badge {
+        top: -6px;
+        right: -6px;
+        font-size: 8px;
+        padding: 3px 6px;
+    }
+
+    .chat-window {
+        position: fixed;
+        bottom: 84px;
+        right: 16px;
+        left: 16px;
+        width: auto;
+        height: calc(100% - 100px);
+        max-height: 520px;
+        border-radius: 16px;
     }
 }
 
@@ -1818,6 +1891,23 @@ body[dir="rtl"] .lead-ticker {
         left: 0;
         right: auto;
     }
+
+    body[dir="rtl"] .chat-widget {
+        left: 16px;
+        right: auto;
+        bottom: 16px;
+    }
+
+    body[dir="rtl"] .chat-window {
+        left: 16px;
+        right: 16px;
+        width: auto;
+    }
+
+    body[dir="rtl"] .close-btn {
+        right: auto;
+        left: 16px;
+    }
 }
 
 body[dir="rtl"] .chat-widget {
@@ -1832,13 +1922,15 @@ body[dir="rtl"] .chat-window {
 
 @media (max-width: 480px) {
     body[dir="rtl"] .chat-window {
-        left: -12px;
-        right: auto;
+        left: 16px;
+        right: 16px;
+        width: auto;
     }
     
     body[dir="rtl"] .chat-widget {
         left: 16px;
         right: auto;
+        bottom: 16px;
     }
 }
 
