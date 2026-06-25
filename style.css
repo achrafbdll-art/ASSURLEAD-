@@ -108,12 +108,24 @@ h1, h2, h3, h4 {
     border-radius: 0;
     font-weight: 900;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     border: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 12px;
+}
+
+.btn i {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover i {
+    transform: translateX(4px);
+}
+
+body[dir="rtl"] .btn:hover i {
+    transform: translateX(-4px);
 }
 
 .btn-primary {
@@ -123,8 +135,9 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary:hover {
-    background-color: rgba(0, 255, 65, 0.9);
-    transform: translateY(-2px);
+    background-color: var(--brand-neon);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px -3px rgba(0, 255, 65, 0.4);
 }
 
 .btn-outline {
@@ -136,6 +149,9 @@ h1, h2, h3, h4 {
 .btn-outline:hover {
     border-color: var(--brand-neon);
     color: var(--brand-neon);
+    transform: translateY(-4px);
+    background-color: rgba(0, 255, 65, 0.02);
+    box-shadow: 0 15px 25px -10px rgba(0, 255, 65, 0.15);
 }
 
 .btn-sm {
@@ -702,17 +718,28 @@ nav.scrolled {
     padding: 48px;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
 }
 
 .price-card:hover {
     background-color: rgba(255, 255, 255, 0.02);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(0, 255, 65, 0.1);
+    z-index: 2;
 }
 
 .price-card.highlighted {
     background-color: rgba(0, 255, 65, 0.02);
     border: 1px solid var(--brand-neon);
     z-index: 1;
+}
+
+.price-card.highlighted:hover {
+    background-color: rgba(0, 255, 65, 0.04);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 255, 65, 0.2);
+    z-index: 2;
 }
 
 .popular-badge {
@@ -731,6 +758,12 @@ nav.scrolled {
     font-size: 24px;
     color: var(--zinc-500);
     margin-bottom: 32px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+}
+
+.price-card:hover .card-icon {
+    color: var(--brand-neon);
+    transform: translateY(-4px) scale(1.1);
 }
 
 .highlighted .card-icon {
