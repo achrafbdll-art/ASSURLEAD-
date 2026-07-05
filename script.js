@@ -1247,6 +1247,122 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { if (!modalTriggered) showModal(); }, 8000);
     }
 
+    // --- CONFETTI CELEBRATION ENGINE ---
+    const triggerConfetti = () => {
+        const canvas = document.createElement('canvas');
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100vw';
+        canvas.style.height = '100vh';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '999999';
+        document.body.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }, { once: true });
+
+        const colors = [
+            '#00ff41', // Neon Green
+            '#003300', // Deep Brand Green
+            '#ffffff', // Crisp White
+            '#00ffff', // Electric Cyan
+            '#10b981', // Emerald Green
+            '#34d399'  // Pastel Mint Green
+        ];
+
+        const particles = [];
+        const particleCount = 120;
+
+        // Cannon 1: Bottom-Left shooting up-right
+        for (let i = 0; i < particleCount / 2; i++) {
+            particles.push({
+                x: 0,
+                y: height,
+                angle: -Math.PI / 4 + (Math.random() - 0.5) * 0.4,
+                speed: 14 + Math.random() * 14,
+                gravity: 0.45,
+                rotation: Math.random() * 360,
+                rotationSpeed: (Math.random() - 0.5) * 8,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                width: 8 + Math.random() * 8,
+                height: 12 + Math.random() * 12,
+                opacity: 1,
+                friction: 0.94
+            });
+        }
+
+        // Cannon 2: Bottom-Right shooting up-left
+        for (let i = 0; i < particleCount / 2; i++) {
+            particles.push({
+                x: width,
+                y: height,
+                angle: -3 * Math.PI / 4 + (Math.random() - 0.5) * 0.4,
+                speed: 14 + Math.random() * 14,
+                gravity: 0.45,
+                rotation: Math.random() * 360,
+                rotationSpeed: (Math.random() - 0.5) * 8,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                width: 8 + Math.random() * 8,
+                height: 12 + Math.random() * 12,
+                opacity: 1,
+                friction: 0.94
+            });
+        }
+
+        let animationFrameId;
+        const update = () => {
+            ctx.clearRect(0, 0, width, height);
+
+            let activeParticles = 0;
+
+            particles.forEach(p => {
+                if (p.opacity <= 0) return;
+
+                activeParticles++;
+
+                // Physics update
+                p.x += Math.cos(p.angle) * p.speed;
+                p.y += Math.sin(p.angle) * p.speed;
+                p.speed *= p.friction;
+                p.y += p.gravity;
+                p.rotation += p.rotationSpeed;
+
+                // Fade out as they fall down
+                if (p.y > height * 0.55) {
+                    p.opacity -= 0.012;
+                }
+
+                if (p.opacity > 0) {
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rotation * Math.PI / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = p.opacity;
+                    ctx.shadowColor = p.color;
+                    ctx.shadowBlur = 4;
+                    ctx.fillRect(-p.width / 2, -p.height / 2, p.width, p.height);
+                    ctx.restore();
+                }
+            });
+
+            if (activeParticles > 0) {
+                animationFrameId = requestAnimationFrame(update);
+            } else {
+                cancelAnimationFrame(animationFrameId);
+                canvas.remove();
+            }
+        };
+
+        update();
+    };
+
     // --- FORM HANDLING ---
     const initQuestionnaire = () => {
         const form = document.getElementById('questionnaire');
@@ -1348,8 +1464,11 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => {
                 if (response.ok) {
+                    triggerConfetti();
                     const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
-                    alert(alertText);
+                    setTimeout(() => {
+                        alert(alertText);
+                    }, 250);
                     form.reset();
                     currentStep = 0;
                     updateSteps();
@@ -1928,6 +2047,16 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animate);
     };
 
+    // Initialize WhatsApp button listeners for confetti celebration
+    const initCtaConfetti = () => {
+        const ctaLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
+        ctaLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                triggerConfetti();
+            });
+        });
+    };
+
     // Initialize items
     init3DHeroStyle('hero-canvas-container');
     initROIScene();
@@ -1935,6 +2064,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section');
     initZelligeTechCanvas('zellige-tech-contact-canvas', 'contact');
     initQuestionnaire();
+    initCtaConfetti();
     updateROI();
     renderLeads();
 
