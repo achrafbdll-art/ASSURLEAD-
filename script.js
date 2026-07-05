@@ -669,6 +669,62 @@ const translations = {
         fr: "Posez votre question...",
         en: "Type your inquiry here...",
         ar: "اكتب سؤالك واستشرني بخصوص نمو مبيعاتك..."
+    },
+    // FAQ Section
+    faq_badge: {
+        fr: "FAQ",
+        en: "FAQ",
+        ar: "الأسئلة الشائعة"
+    },
+    faq_title: {
+        fr: "Questions <span class=\"neon\">Fréquentes.</span>",
+        en: "Frequently Asked <span class=\"neon\">Questions.</span>",
+        ar: "الأسئلة <span class=\"neon\">الشائعة.</span>"
+    },
+    faq_p: {
+        fr: "Tout ce que vous devez savoir sur notre méthode d'acquisition et nos garanties de performance.",
+        en: "Everything you need to know about our customer acquisition framework and performance assurances.",
+        ar: "كل ما تحتاج معرفته عن منهجية استقطاب العملاء وضمانات الأداء الخاصة بنا."
+    },
+    faq_q1: {
+        fr: "Comment l'agence peut-elle assurer un tel retour sur investissement (ROI) ?",
+        en: "How can the agency ensure such a high return on investment (ROI)?",
+        ar: "كيف يمكن للوكالة ضمان مثل هذا العائد المرتفع على الاستثمار (ROI)؟"
+    },
+    faq_a1: {
+        fr: "Notre simulateur est basé sur des données réelles de campagnes. Nous ciblons exclusivement des leads ultra-qualifiés ayant une intention d'achat immédiate, réduisant le gaspillage de budget et maximisant vos marges nettes.",
+        en: "Our simulator is backed by real campaign metrics. We precisely target high-intent prospects searching for coverage, ensuring zero wasted budget and maximum conversion margin.",
+        ar: "تعتمد حاسبتنا على بيانات حقيقية للحملات السابقة. نستهدف بدقة الزبناء المهتمين بشراء عقود التأمين حالاً، مما يقلل من هدر الميزانية ويضمن أعلى هامش ربح."
+    },
+    faq_q2: {
+        fr: "Combien de temps prend la mise en place de mon système d'acquisition ?",
+        en: "How long does the implementation of my acquisition system take?",
+        ar: "كم من الوقت يستغرق إعداد نظام استقطاب العملاء الخاص بي؟"
+    },
+    faq_a2: {
+        fr: "Pour la formule Landing page seule ou Starter, comptez 5 à 7 jours. Pour le Pack Acquisition complet (Growth), le déploiement technique et le lancement des premières campagnes prennent environ 10 à 14 jours.",
+        en: "For the Landing Page or Starter plan, it takes 5 to 7 days. The full Growth Acquisition Pack is deployed and completely active within 10 to 14 business days, including analytics and CRM triggers.",
+        ar: "يستغرق إعداد صفحة الهبوط أو باقة البداية من 5 إلى 7 أيام. أما باقة الاستقطاب الكاملة (Growth) فيتم إطلاقها بالكامل وربطها بالأنظمة خلال 10 إلى 14 يوم عمل."
+    },
+    faq_q3: {
+        fr: "Comment fonctionne votre garantie de croissance ?",
+        en: "How does your growth guarantee work?",
+        ar: "كيف تعمل ضمانة النمو المخصصة لي؟"
+    },
+    faq_a3: {
+        fr: "C'est simple : si nous n'atteignons pas l'objectif minimum de 5 leads qualifiés durant le premier mois pour la formule Growth, nous gérons votre système gratuitement le mois suivant. Nous assumons le risque à votre place.",
+        en: "Very simple: if we do not hit the minimum floor of 5 qualified leads during your first active month on the Growth tier, our monthly management is completely free the following month. We assume the full risk.",
+        ar: "الأمر في غاية البساطة: إذا لم نصل إلى الحد الأدنى وهو 5 عملاء محتملين مؤكدين خلال الشهر الأول في باقة النمو (Growth)، فإن إدارة حملاتكم للشهر التالي ستكون مجانية بالكامل. نحن نتحمل المخاطرة بدلاً منكم."
+    },
+    faq_q4: {
+        fr: "Est-ce que cette méthode fonctionne pour toutes les villes du Maroc ?",
+        en: "Does this method work for all cities in Morocco?",
+        ar: "هل تعمل هذه المنهجية في جميع المدن المغربية؟"
+    },
+    faq_a4: {
+        fr: "Oui, notre ciblage géographique précis nous permet de saturer la demande locale, que vous soyez à Casablanca, Rabat, Marrakech, Tanger, ou dans d'autres villes de taille moyenne.",
+        en: "Yes, our highly localized geographical targeting allows us to capture regional search volume perfectly, whether you are based in Casablanca, Rabat, Marrakech, Tangier, or mid-sized cities.",
+        ar: "نعم، يتيح لنا الاستهداف الجغرافي الدقيق تلبية الطلب المحلي بكفاءة عالية، سواء كنت متواجداً في الدار البيضاء، الرباط، مراكش، طنجة، أو في أي مدينة مغربية أخرى."
     }
 };
 
@@ -2000,6 +2056,55 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach(el => revealObserver.observe(el));
     };
 
+    // --- FAQ ACCORDION ---
+    const initFaqAccordion = () => {
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const trigger = item.querySelector('.faq-trigger');
+            const answerContainer = item.querySelector('.faq-answer-container');
+            
+            if (trigger && answerContainer) {
+                trigger.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            const otherContainer = otherItem.querySelector('.faq-answer-container');
+                            if (otherContainer) {
+                                otherContainer.style.maxHeight = null;
+                            }
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    if (!isOpen) {
+                        answerContainer.style.maxHeight = answerContainer.scrollHeight + 'px';
+                    } else {
+                        answerContainer.style.maxHeight = null;
+                    }
+                });
+            }
+        });
+
+        // Handle language changes to adapt heights dynamically
+        const observer = new MutationObserver(() => {
+            const activeItem = document.querySelector('.faq-item.active');
+            if (activeItem) {
+                const container = activeItem.querySelector('.faq-answer-container');
+                if (container) {
+                    container.style.maxHeight = container.scrollHeight + 'px';
+                }
+            }
+        });
+        
+        // Observe html lang attribute
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    };
+
     initStatsCounter();
     initScrollReveal();
+    initFaqAccordion();
 });

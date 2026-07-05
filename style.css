@@ -2195,3 +2195,111 @@ body[dir="rtl"] .steps-progress {
     transform: translateY(0) !important;
 }
 
+/* FAQ Section */
+.faq-section {
+    padding: 100px 0;
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background-color: var(--brand-black);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.faq-item:hover {
+    border-color: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 10px 30px -15px rgba(0, 255, 65, 0.05);
+}
+
+.faq-item.active {
+    border-color: var(--brand-neon);
+    box-shadow: 0 15px 40px -15px rgba(0, 255, 65, 0.1);
+}
+
+.faq-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--white);
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.faq-trigger span:first-child {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--zinc-500);
+    font-size: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.faq-item:hover .faq-icon {
+    color: var(--brand-neon);
+    background-color: rgba(0, 255, 65, 0.05);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    background-color: var(--brand-neon);
+    color: var(--brand-black);
+    box-shadow: 0 0 10px var(--brand-neon);
+}
+
+.faq-answer-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer {
+    padding: 0 32px 24px 32px;
+    color: var(--zinc-400);
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* RTL Specific Styles for FAQ */
+body[dir="rtl"] .faq-trigger {
+    text-align: right;
+}
+
