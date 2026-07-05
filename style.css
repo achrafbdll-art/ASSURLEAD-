@@ -1,17 +1,17 @@
 :root {
     --brand-blue: #0A192F;
     --brand-neon: #00FF41;
-    --brand-black: #050505;
-    --zinc-50: #fafafa;
-    --zinc-100: #f4f4f5;
-    --zinc-200: #e4e4e7;
-    --zinc-400: #a1a1aa;
-    --zinc-500: #71717a;
-    --zinc-600: #52525b;
-    --zinc-800: #27272a;
-    --zinc-900: #18181b;
-    --white: #ffffff;
-    --bg-deep: #050505;
+    --brand-black: #09090b;
+    --zinc-50: #f9fafb;
+    --zinc-100: #f3f4f6;
+    --zinc-200: #e5e7eb;
+    --zinc-400: #cbd5e1;
+    --zinc-500: #9ca3af;
+    --zinc-600: #6b7280;
+    --zinc-800: #222225;
+    --zinc-900: #141416;
+    --white: #f9fafb;
+    --bg-deep: #09090b;
 }
 
 html {
