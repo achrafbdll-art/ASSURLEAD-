@@ -153,60 +153,68 @@
     <!-- ROI Calculator -->
     <section id="roi" class="roi-section">
         <div class="container">
-            <div class="section-header">
-                <span class="badge" data-i18n="roi_badge">Simulateur 2026</span>
-                <h2 data-i18n="roi_title">Projetez votre <span class="neon">Réussite.</span></h2>
-                <p data-i18n="roi_p">Utilisez notre simulateur de croissance pour visualiser l'impact direct de nos stratégies sur votre chiffre d'affaires.</p>
-            </div>
-            <div class="roi-grid">
-                <div class="roi-controls">
-                    <div class="control-group">
-                        <label><span data-i18n="roi_budget_label">Budget Publicitaire Mensuel</span> <span id="budget-val" class="neon">2,500 MAD</span></label>
-                        <input type="range" id="budget-input" min="1000" max="50000" step="500" value="2500">
-                    </div>
-                    <div class="control-group">
-                        <label><span data-i18n="roi_conv_label">Taux de Conversion Estimé</span> <span id="conv-val" class="neon">15%</span></label>
-                        <input type="range" id="conv-input" min="1" max="50" step="1" value="15">
-                    </div>
-                    
-                    <div class="roi-metrics-grid">
-                        <div class="metric-card">
-                            <span class="metric-label" data-i18n="roi_leads_title">Leads Mensuels</span>
-                            <span id="leads-count" class="metric-value">166</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-label" data-i18n="roi_cost_title">Coût par Lead</span>
-                            <span class="metric-value" id="roi-cost-val" data-i18n="roi_cost_val">15 MAD</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-label" data-i18n="roi_sales_title">Ventes Estimées</span>
-                            <span id="sales-count" class="metric-value">25</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-label" data-i18n="roi_basket_title">Panier Moyen</span>
-                            <span class="metric-value" id="roi-basket-val" data-i18n="roi_basket_val">1,999 MAD</span>
-                        </div>
-                    </div>
+            <div class="roi-dynamic-frame">
+                <!-- Decorative Corner Lines -->
+                <div class="frame-corner top-left"></div>
+                <div class="frame-corner top-right"></div>
+                <div class="frame-corner bottom-left"></div>
+                <div class="frame-corner bottom-right"></div>
 
-                    <div class="roi-total-card">
-                        <div class="total-main">
-                            <span class="total-label" data-i18n="roi_rev_title">Revenu Net Estimé</span>
-                            <span id="revenue-display" class="total-value neon">24,000 MAD</span>
+                <div class="section-header">
+                    <span class="badge" data-i18n="roi_badge">Simulateur 2026</span>
+                    <h2 data-i18n="roi_title">Projetez votre <span class="neon">Réussite.</span></h2>
+                    <p data-i18n="roi_p">Utilisez notre simulateur de croissance pour visualiser l'impact direct de nos stratégies sur votre chiffre d'affaires.</p>
+                </div>
+                <div class="roi-grid">
+                    <div class="roi-controls">
+                        <div class="control-group">
+                            <label><span data-i18n="roi_budget_label">Budget Publicitaire Mensuel</span> <span id="budget-val" class="neon">2,500 MAD</span></label>
+                            <input type="range" id="budget-input" min="1000" max="50000" step="500" value="2500">
                         </div>
-                        <div class="total-side">
-                            <span class="total-label" data-i18n="roi_tag">ROI</span>
-                            <span id="roi-display" class="total-roi">+860%</span>
+                        <div class="control-group">
+                            <label><span data-i18n="roi_conv_label">Taux de Conversion Estimé</span> <span id="conv-val" class="neon">15%</span></label>
+                            <input type="range" id="conv-input" min="1" max="50" step="1" value="15">
+                        </div>
+                        
+                        <div class="roi-metrics-grid">
+                            <div class="metric-card">
+                                <span class="metric-label" data-i18n="roi_leads_title">Leads Mensuels</span>
+                                <span id="leads-count" class="metric-value">166</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label" data-i18n="roi_cost_title">Coût par Lead</span>
+                                <span class="metric-value" id="roi-cost-val" data-i18n="roi_cost_val">15 MAD</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label" data-i18n="roi_sales_title">Ventes Estimées</span>
+                                <span id="sales-count" class="metric-value">25</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label" data-i18n="roi_basket_title">Panier Moyen</span>
+                                <span class="metric-value" id="roi-basket-val" data-i18n="roi_basket_val">1,999 MAD</span>
+                            </div>
+                        </div>
+
+                        <div class="roi-total-card">
+                            <div class="total-main">
+                                <span class="total-label" data-i18n="roi_rev_title">Revenu Net Estimé</span>
+                                <span id="revenue-display" class="total-value neon">24,000 MAD</span>
+                            </div>
+                            <div class="total-side">
+                                <span class="total-label" data-i18n="roi_tag">ROI</span>
+                                <span id="roi-display" class="total-roi">+860%</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="roi-visual-container">
-                    <div id="roi-canvas-container" class="roi-canvas"></div>
-                    <div class="visual-overlay">
-                        <div class="overlay-tag" data-i18n="roi_overlay_tag">Simulation Temps Réel</div>
-                        <div class="overlay-data">
-                            <div class="data-item">
-                                <div class="data-dot"></div>
-                                <span data-i18n="roi_status_text">Flux de Trésorerie Positif</span>
+                    <div class="roi-visual-container">
+                        <div id="roi-canvas-container" class="roi-canvas"></div>
+                        <div class="visual-overlay">
+                            <div class="overlay-tag" data-i18n="roi_overlay_tag">Simulation Temps Réel</div>
+                            <div class="overlay-data">
+                                <div class="data-item">
+                                    <div class="data-dot"></div>
+                                    <span data-i18n="roi_status_text">Flux de Trésorerie Positif</span>
+                                </div>
                             </div>
                         </div>
                     </div>
