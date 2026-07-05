@@ -475,56 +475,6 @@ const translations = {
         en: "CRM Automation",
         ar: "أتمتة المبيعات"
     },
-    projets_card2_title: {
-        fr: "Le Garage Restaurant",
-        en: "Le Garage Restaurant",
-        ar: "مطعم لو غاراج"
-    },
-    projets_card2_p: {
-        fr: "Site vitrine élégant et système d'acquisition de réservations en ligne pour un restaurant bistronomique premium.",
-        en: "Elegant showcase website and online reservation acquisition system for a premium bistro restaurant.",
-        ar: "موقع تعريفي ونظام حجز طاولة ذكي لمطعم راقٍ ومميز."
-    },
-    projets_card2_t1: {
-        fr: "Site Vitrine",
-        en: "Showcase Site",
-        ar: "موقع تعريفي"
-    },
-    projets_card2_t2: {
-        fr: "Réservation",
-        en: "Booking",
-        ar: "حجوزات"
-    },
-    projets_card2_t3: {
-        fr: "SEO Local",
-        en: "Local SEO",
-        ar: "تحسين محركات البحث"
-    },
-    projets_card3_title: {
-        fr: "Julio Shop",
-        en: "Julio Shop",
-        ar: "جوليو شوب"
-    },
-    projets_card3_p: {
-        fr: "Boutique e-commerce moderne et performante avec un système d'acquisition client optimisé et tunnel de vente fluide.",
-        en: "Modern and high-performance e-commerce store with an optimized customer acquisition system and frictionless checkout flow.",
-        ar: "متجر تجارة إلكترونية عصري وعالي الأداء مع نظام تحسين جذب العملاء ومسار مبيعات سلس."
-    },
-    projets_card3_t1: {
-        fr: "E-Commerce",
-        en: "E-Commerce",
-        ar: "تجارة إلكترونية"
-    },
-    projets_card3_t2: {
-        fr: "Conversion",
-        en: "Conversion",
-        ar: "تحسين التحويل"
-    },
-    projets_card3_t3: {
-        fr: "Acquisition Meta",
-        en: "Meta Ads",
-        ar: "إعلانات ميتا"
-    },
     // Contact Info
     contact_badge: {
         fr: "Contact",
