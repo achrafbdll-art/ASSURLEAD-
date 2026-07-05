@@ -2013,6 +2013,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initZelligeTechCanvas('zellige-tech-canvas', 'offres');
     initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section');
     initZelligeTechCanvas('zellige-tech-contact-canvas', 'contact');
+    initZelligeTechCanvas('zellige-tech-faq-canvas', 'faq');
     initQuestionnaire();
     initCtaConfetti();
     updateROI();
