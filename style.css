@@ -834,10 +834,14 @@ nav.scrolled {
 
 .offers-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 992px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .price-card {
@@ -847,12 +851,14 @@ nav.scrolled {
     flex-direction: column;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .price-card:hover {
     background-color: rgba(255, 255, 255, 0.02);
     transform: translateY(-8px);
     box-shadow: 0 20px 40px -15px rgba(0, 255, 65, 0.1);
+    border-color: rgba(0, 255, 65, 0.3);
     z-index: 2;
 }
 
@@ -860,13 +866,275 @@ nav.scrolled {
     background-color: rgba(0, 255, 65, 0.02);
     border: 1px solid var(--brand-neon);
     z-index: 1;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.08);
 }
 
 .price-card.highlighted:hover {
     background-color: rgba(0, 255, 65, 0.04);
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px -10px rgba(0, 255, 65, 0.2);
+    box-shadow: 0 20px 40px -10px rgba(0, 255, 65, 0.25);
     z-index: 2;
+}
+
+/* System Funnel Section */
+.systeme-section {
+    padding: 100px 0;
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.systeme-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.funnel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 60px;
+}
+
+.funnel-card {
+    background-color: var(--brand-black);
+    padding: 32px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.funnel-card:hover {
+    border-color: var(--brand-neon);
+    transform: translateY(-6px);
+    background-color: rgba(0, 255, 65, 0.02);
+    box-shadow: 0 12px 30px -10px rgba(0, 255, 65, 0.15);
+}
+
+.funnel-step-badge {
+    font-size: 10px;
+    font-weight: 900;
+    color: var(--brand-neon);
+    background: rgba(0, 255, 65, 0.08);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    padding: 4px 10px;
+    border-radius: 2px;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+.funnel-icon {
+    font-size: 24px;
+    color: var(--brand-neon);
+    margin-bottom: 16px;
+}
+
+.funnel-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--white);
+}
+
+.funnel-card p {
+    font-size: 13px;
+    color: var(--zinc-400);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Comparison Box */
+.comparison-container {
+    background: var(--brand-black);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 4px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.comp-col {
+    padding: 24px;
+    border-radius: 4px;
+}
+
+.comp-col.classic {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comp-col.assurlead {
+    background: rgba(0, 255, 65, 0.03);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    box-shadow: 0 0 25px rgba(0, 255, 65, 0.05);
+}
+
+.comp-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comp-title.bad {
+    color: var(--zinc-400);
+}
+
+.comp-title.good {
+    color: var(--brand-neon);
+}
+
+.comp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comp-list li {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.comp-list.bad li {
+    color: var(--zinc-500);
+}
+
+.comp-list.good li {
+    color: var(--zinc-300);
+}
+
+.comp-list li i {
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.comp-list.bad li i {
+    color: #ff4136;
+}
+
+.comp-list.good li i {
+    color: var(--brand-neon);
+}
+
+/* Case Study Section */
+.case-study-section {
+    padding: 100px 0;
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study-card {
+    background-color: var(--brand-black);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    padding: 48px;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media (max-width: 992px) {
+    .case-study-card {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+    }
+}
+
+.case-study-visual {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-study-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.case-study-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.case-stat-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.case-stat-val {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--brand-neon);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.case-stat-lbl {
+    font-size: 11px;
+    color: var(--zinc-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.case-study-narrative h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--brand-neon);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.case-study-narrative p {
+    font-size: 14px;
+    color: var(--zinc-300);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.roi-disclaimer {
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--zinc-500);
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid var(--brand-neon);
+    padding: 10px 14px;
+    border-radius: 2px;
 }
 
 .popular-badge {

@@ -4,14 +4,14 @@ import { GoogleGenAI } from "@google/genai";
 // --- MULTILINGUAL DICTIONARY ---
 const translations = {
     // Navbar
-    nav_projets: {
-        fr: "Réalisations",
-        en: "Success Stories",
-        ar: "إنجازاتنا"
+    nav_systeme: {
+        fr: "Notre Système",
+        en: "Our System",
+        ar: "نظامنا"
     },
     nav_offres: {
         fr: "Offres",
-        en: "Services",
+        en: "Offers",
         ar: "العروض"
     },
     nav_roi: {
@@ -19,10 +19,15 @@ const translations = {
         en: "ROI Simulator",
         ar: "الحاسبة"
     },
-    nav_methode: {
-        fr: "Secteurs",
-        en: "Sectors",
-        ar: "القطاعات"
+    nav_cas: {
+        fr: "Étude de Cas",
+        en: "Case Study",
+        ar: "دراسة حالة"
+    },
+    nav_faq: {
+        fr: "FAQ",
+        en: "FAQ",
+        ar: "الأسئلة الشائعة"
     },
     nav_contact: {
         fr: "Contact",
@@ -30,112 +35,245 @@ const translations = {
         ar: "اتصل بنا"
     },
     nav_start: {
-        fr: "Démarrer",
-        en: "Get Started",
-        ar: "ابدأ الآن"
+        fr: "Audit Gratuit",
+        en: "Free Audit",
+        ar: "تدقيق مجاني"
     },
     // Hero
     hero_badge: {
         fr: "Agent Digital 2026",
-        en: "Digital Agency 2026",
-        ar: "الوكالة الرقمية 2026"
+        en: "Digital Agent 2026",
+        ar: "الوكيل الرقمي 2026"
     },
     hero_title: {
-        fr: "On ne code pas. <br><span class=\"neon\">On pilote des démarrages à +2.5 MDH.</span>",
-        en: "We don't code. <br><span class=\"neon\">We pilot launches up to +2.5M MAD.</span>",
-        ar: "نحن لا نبرمج فقط. <br><span class=\"neon\">بل نقود انطلاقات تتجاوز +2.5 مليون درهم.</span>"
+        fr: "On ne code pas. <br><span class=\"neon\">On pilote des démarrages à +1.5 MDH.</span>",
+        en: "We don't just code. <br><span class=\"neon\">We pilot launches to +1.5M MAD.</span>",
+        ar: "نحن لا نكتفي بالبرمجة. <br><span class=\"neon\">بل نقود انطلاقات تتجاوز +1.5 مليون درهم.</span>"
     },
     hero_paragraph: {
-        fr: "On a lancé et piloté de 0 à 2.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence. Une machine à cash pour votre business.",
-        en: "We successfully scaled a Top 3 Global Insurer from 0 to 2.5M MAD. We do the exact same for your agency. A cash machine for your business.",
-        ar: "لقد أطلقنا وأدرنا شركة تأمين عالمية من أكبر 3 شركات من 0 إلى 2.5 مليون درهم. نفعل الشيء نفسه لوكالتك. آلة لتوليد الأرباح لعملك."
+        fr: "On a lancé et piloté de 0 à 1.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence. Une machine à cash pour votre business.",
+        en: "We launched and scaled from 0 to 1.5M MAD for a Top 3 Global Insurer. We do the same for your agency. A revenue engine for your business.",
+        ar: "أطلقنا وأدرنا من 0 إلى 1.5 مليون درهم لشركة تأمين عالمية من التوب 3. نصنع نفس النجاح لوكالتك لتكون ماكينة أرباح حقيقية."
     },
     hero_btn_growth: {
-        fr: "Audit Pilotage Démarrage Gratuit 10min <i class=\"fas fa-arrow-right\"></i>",
-        en: "Free 10-Min Launch Control Audit <i class=\"fas fa-arrow-right\"></i>",
-        ar: "تدقيق مجاني لإطلاق وريادة وكالتك في 10 دقائق <i class=\"fas fa-arrow-right\"></i>"
+        fr: "Recevoir mon Audit Gratuit <i class=\"fas fa-arrow-right\"></i>",
+        en: "Claim Free Acquisition Audit <i class=\"fas fa-arrow-right\"></i>",
+        ar: "احصل على تدقيق مجاني لوكالتك <i class=\"fas fa-arrow-right\"></i>"
     },
     hero_btn_audit: {
-        fr: "Découvrir nos réalisations",
-        en: "Discover our work",
-        ar: "اكتشف إنجازاتنا"
+        fr: "Découvrir notre système <i class=\"fas fa-chevron-down\"></i>",
+        en: "Discover Our System <i class=\"fas fa-chevron-down\"></i>",
+        ar: "اكتشف نظامنا <i class=\"fas fa-chevron-down\"></i>"
     },
     hero_partners_label: {
-        fr: "Partenaires Stratégiques",
-        en: "Strategic Partners",
-        ar: "شركاؤنا الاستراتيجيون"
+        fr: "Écosystème & Compagnies d'Assurance",
+        en: "Insurance Ecosystem & Companies",
+        ar: "المنظومة وشركات التأمين الشريكة"
     },
     // Dashboard Card
     dash_live_indicator: {
-        fr: "Dashboard Live",
-        en: "Live Dashboard",
-        ar: "لوحة البيانات اللحظية"
+        fr: "Pipeline d'Acquisition Actif",
+        en: "Active Acquisition Pipeline",
+        ar: "مسار الاستقطاب النشط"
     },
     dash_leads_label: {
-        fr: "Leads ce mois",
-        en: "Leads this month",
-        ar: "العملاء الجدد هذا الشهر"
+        fr: "Leads Qualifiés / Mois",
+        en: "Qualified Leads / Month",
+        ar: "عملاء مؤهلون / شهر"
     },
     dash_conv_label: {
-        fr: "Taux de Conv.",
-        en: "Conversion Rate",
-        ar: "معدل التحويل"
+        fr: "Taux de Contact",
+        en: "Contact Rate",
+        ar: "نسبة التواصل الفوري"
+    },
+    // Stats
+    stat_ca: {
+        fr: "Primes & CA Pilotés",
+        en: "Managed Premiums & Revenue",
+        ar: "أقساط ورقم معاملات مُدار"
+    },
+    stat_leads: {
+        fr: "Leads Qualifiés / Mois en Moyenne",
+        en: "Avg. Qualified Leads / Month",
+        ar: "متوسط العملاء المؤهلين / شهر"
+    },
+    stat_contracts: {
+        fr: "Contrats Signés / Mois par Agence",
+        en: "Signed Contracts / Month / Agency",
+        ar: "عقود موقعة شهرياً لكل وكالة"
+    },
+    // System Section (Funnel)
+    sys_badge: {
+        fr: "Notre Système Propriétaire",
+        en: "Proprietary Acquisition Framework",
+        ar: "نظامنا المبتكر للاستقطاب"
+    },
+    sys_title: {
+        fr: "La Machine <span class=\"neon\">d'Acquisition Assurance.</span>",
+        en: "The Insurance <span class=\"neon\">Acquisition Engine.</span>",
+        ar: "محرك <span class=\"neon\">استقطاب عملاء التأمين.</span>"
+    },
+    sys_p: {
+        fr: "Nous ne vendons pas des clics sans lendemain. Nous déployons un tunnel d'acquisition complet conçu spécifiquement pour le secteur de l'assurance au Maroc.",
+        en: "We don't sell random clicks. We build an end-to-end acquisition funnel engineered specifically for Moroccan insurance agencies.",
+        ar: "نحن لا نبيع نقرات عشوائية، بل نبني لك قمع استقطاب متكامل مخصص لسوق التأمين في المغرب."
+    },
+    sys_step1_title: {
+        fr: "Google Search & Meta Ads",
+        en: "Google Search & Meta Ads",
+        ar: "إعلانات غوغل وميتا الدقيقة"
+    },
+    sys_step1_p: {
+        fr: "Ciblage chirurgical des personnes cherchant activement un devis d'assurance (Auto, Santé, RC Pro, Flotte) dans votre ville.",
+        en: "Surgical intent targeting of clients actively looking for insurance quotes (Auto, Health, Liability, Fleet) in your target area.",
+        ar: "استهداف دقيق للمواطنين والشركات الذين يبحثون بنشاط عن عروض أسعار التأمين (سيارات، صحة، مخاطر مهنية) في مدينتك."
+    },
+    sys_step2_title: {
+        fr: "Landing Pages Dédiées",
+        en: "Dedicated Landing Pages",
+        ar: "صفحات هبوط متخصصة"
+    },
+    sys_step2_p: {
+        fr: "Tunnels de conversion ultra-rapides avec formulaire de devis simplifié en 2 minutes par produit d'assurance.",
+        en: "Ultra-fast conversion tunnels with simplified 2-minute insurance quote forms per coverage line.",
+        ar: "صفحات هبوط فائقة السرعة مع نموذج طلب تسعيرة مبسط في دقيقتين لكل نوع تأمين."
+    },
+    sys_step3_title: {
+        fr: "Qualification Instantanée",
+        en: "Instant Lead Qualification",
+        ar: "فلترة وتأهيل فوري للعميل"
+    },
+    sys_step3_p: {
+        fr: "Filtrage automatisé des coordonnées, vérification anti-doublons et validation des critères d'éligibilité du prospect.",
+        en: "Automated phone/data validation, duplicate removal, and qualification against your policy criteria.",
+        ar: "تحقق تلقائي من صحة أرقام الهواتف، إزالة التكرار والتأكد من مطابقة العميل لشروط وثيقة التأمين."
+    },
+    sys_step4_title: {
+        fr: "Alerte CRM & Relance < 60s",
+        en: "CRM Alert & Follow-up < 60s",
+        ar: "إشعار CRM ومتابعة في أقل من 60 ثانية"
+    },
+    sys_step4_p: {
+        fr: "Transmission instantanée sur le mobile de votre équipe commerciale avec relances WhatsApp pré-programmées.",
+        en: "Instant dispatch to your sales team's mobile phone with automated WhatsApp follow-up triggers.",
+        ar: "إرسال بيانات العميل فوراً إلى هاتف فريقك التجاري مع رسائل واتساب تفاعلية مجهزة ومؤتمتة."
+    },
+    sys_step5_title: {
+        fr: "Signature & Mesure du CAC",
+        en: "Closing & CAC Tracking",
+        ar: "إبرام العقد وقياس تكلفة الاستقطاب"
+    },
+    sys_step5_p: {
+        fr: "Émission du contrat d'assurance et suivi précis de votre coût par contrat signé pour maximiser votre rentabilité.",
+        en: "Policy contract issuance with transparent tracking of your exact acquisition cost per signed contract.",
+        ar: "توقيع وثيقة التأمين مع تتبع دقيق لتكلفة الحصول على كل عقد لضمان أعلى ربحية لوكالتك."
+    },
+    // Comparison Matrix
+    comp_classic_title: {
+        fr: "Agence Web Classique",
+        en: "Generic Web Agency",
+        ar: "الوكالات التقليدية العامة"
+    },
+    comp_c1: {
+        fr: "Crée un site vitrine passif sans focus acquisition",
+        en: "Builds a passive showcase site with zero acquisition focus",
+        ar: "تصنع موقعاً تقليدياً بدون تركيز على جلب مبيعات"
+    },
+    comp_c2: {
+        fr: "Facture des clics sans suivre les contrats signés",
+        en: "Bills for impressions/clicks with no signed contract accountability",
+        ar: "تحاسبك على النقرات دون أي متابعة للعقود الموقعة"
+    },
+    comp_c3: {
+        fr: "Aucune connaissance des règles du marché de l'assurance",
+        en: "Zero understanding of Moroccan insurance regulations and products",
+        ar: "عدم معرفة بقوانين وخصوصيات قطاع التأمين بالمغرب"
+    },
+    comp_c4: {
+        fr: "Pas de CRM ni d'automatisation des relances WhatsApp",
+        en: "No dedicated CRM or automated WhatsApp follow-up pipelines",
+        ar: "غياب نظام CRM وأتمتة المتابعة عبر الواتساب"
+    },
+    comp_assurlead_title: {
+        fr: "Le Système ASSURLEAD",
+        en: "The ASSURLEAD Engine",
+        ar: "نظام ASSURLEAD المتخصص"
+    },
+    comp_a1: {
+        fr: "100% Spécialisé dans l'acquisition de courtiers & agences",
+        en: "100% Specialized in broker & insurance agency customer acquisition",
+        ar: "100% متخصص في جلب زبناء وكلاء ومكاتب التأمين"
+    },
+    comp_a2: {
+        fr: "Leads qualifiés, vérifiés et exclusifs à votre agence",
+        en: "Verified, qualified leads strictly 100% exclusive to your agency",
+        ar: "عملاء مؤهلون ومحققون وحصريون لوكالتك فقط"
+    },
+    comp_a3: {
+        fr: "Intégration CRM + Notification instantanée < 60 secondes",
+        en: "CRM integration + Instant mobile alert in under 60 seconds",
+        ar: "ربط CRM وإشعار فوري للفريق في أقل من 60 ثانية"
+    },
+    comp_a4: {
+        fr: "Optimisation continue basée sur le Coût par Contrat réel",
+        en: "Continuous optimization driven by Cost Per Signed Contract",
+        ar: "تحسين مستمر مبني على تكلفة العقد الفعلي الموقع"
     },
     // ROI
     roi_badge: {
-        fr: "Simulateur 2026",
-        en: "Growth Simulator 2026",
-        ar: "حاسبة الأرباح 2026"
+        fr: "Simulateur d'Acquisition",
+        en: "Acquisition Simulator",
+        ar: "حاسبة الأرباح والاستقطاب"
     },
     roi_title: {
-        fr: "Projetez votre <span class=\"neon\">Réussite.</span>",
-        en: "Project Your <span class=\"neon\">Success.</span>",
-        ar: "خطط <span class=\"neon\">لنجاحك المالي.</span>"
+        fr: "Simulez la Rentabilité <span class=\"neon\">de votre Agence.</span>",
+        en: "Simulate Your Agency's <span class=\"neon\">Acquisition Profitability.</span>",
+        ar: "احسب العائد المالي <span class=\"neon\">لوكالتك للتأمين.</span>"
     },
     roi_p: {
-        fr: "Utilisez notre simulateur de croissance pour visualiser l'impact direct de nos stratégies sur votre chiffre d'affaires.",
-        en: "Use our interactive performance calculator to project the direct revenue impact of automated acquisition routes on your agency.",
-        ar: "استخدم حاسبة النمو التفاعلية الخاصة بنا لمعرفة العائد المالي المباشر لاستراتيجياتنا على رقم معاملاتك."
+        fr: "Estimez vos volumes de leads qualifiés, devis émis et contrats signés selon votre budget publicitaire.",
+        en: "Estimate your monthly qualified leads, quote volume, and signed insurance policies based on your ad spend.",
+        ar: "احسب عدد العملاء المؤهلين، طلبات التسعير والعقود الموقعة بناءً على ميزانيتك الإعلانية."
     },
     roi_budget_label: {
-        fr: "Budget Publicitaire Mensuel",
-        en: "Monthly Advertising Budget",
-        ar: "الميزانية الإعلانية الشهرية"
+        fr: "Budget Média Mensuel (Google/Meta Ads)",
+        en: "Monthly Media Budget (Google/Meta Ads)",
+        ar: "الميزانية الإعلانية الشهرية (غوغل وميتا)"
     },
     roi_conv_label: {
-        fr: "Taux de Conversion Estimé",
-        en: "Estimated Conversion Rate",
-        ar: "معدل التحويل المتوقع"
+        fr: "Taux de Closing Commercial Estimé",
+        en: "Estimated Sales Closing Rate",
+        ar: "نسبة إقفال المبيعات وتوقيع العقود"
     },
     roi_leads_title: {
-        fr: "Leads Mensuels",
-        en: "Monthly Leads",
-        ar: "العملاء المحتملون شهرياً"
+        fr: "Demandes de Devis (Leads)",
+        en: "Quote Requests (Leads)",
+        ar: "طلبات التسعيرة (Leads)"
     },
     roi_cost_title: {
-        fr: "Coût par Lead",
-        en: "Cost per Lead",
-        ar: "التكلفة لكل عميل"
+        fr: "Coût par Lead Moyen",
+        en: "Avg. Cost per Lead",
+        ar: "متوسط تكلفة العميل"
     },
     roi_sales_title: {
-        fr: "Ventes Estimées",
-        en: "Estimated Sales",
-        ar: "المبيعات المتوقعة"
+        fr: "Contrats Signés Estimés",
+        en: "Estimated Signed Policies",
+        ar: "العقود الموقعة المتوقعة"
     },
     roi_basket_title: {
-        fr: "Panier Moyen",
-        en: "Average Policy Value",
-        ar: "متوسط قيمة العقد"
+        fr: "Prime Moyenne / Panier",
+        en: "Avg. Policy Premium",
+        ar: "متوسط قسط التأمين"
     },
     roi_rev_title: {
-        fr: "Revenu Net Estimé",
-        en: "Estimated Net Revenue",
-        ar: "صافي الأرباح المتوقعة"
+        fr: "Volume de Primes / CA Estimé",
+        en: "Estimated Premium Volume / Revenue",
+        ar: "إجمالي حجم الأقساط والمداخيل"
     },
     roi_tag: {
         fr: "ROI",
-        en: "ROI Logo",
-        ar: "العائد على الاستثمار"
+        en: "ROI",
+        ar: "العائد"
     },
     roi_overlay_tag: {
         fr: "Simulation Temps Réel",
@@ -143,487 +281,354 @@ const translations = {
         ar: "محاكاة لحظية"
     },
     roi_status_text: {
-        fr: "Flux de Trésorerie Positif",
-        en: "Positive Cashflow Stream",
-        ar: "تدفق مالي إيجابي مضمون"
+        fr: "Rentabilité d'Acquisition Validée",
+        en: "Acquisition ROI Validated",
+        ar: "نموذج نمو عالي الربحية"
     },
-    roi_cost_val: {
-        fr: "15 MAD",
-        en: "15 MAD",
-        ar: "15 درهم"
-    },
-    roi_basket_val: {
-        fr: "1,999 MAD",
-        en: "1,999 MAD",
-        ar: "1,999 درهم"
+    roi_disclaimer: {
+        fr: '<i class="fas fa-info-circle"></i> Simulation indicative basée sur les moyennes observées sur le marché de l\'assurance au Maroc. Les résultats réels varient selon le produit (Auto, Santé, Risques Pro), la ville, le budget média et la réactivité commerciale de votre équipe.',
+        en: '<i class="fas fa-info-circle"></i> Indicative projection based on benchmark data in the Moroccan insurance market. Actual metrics vary with coverage lines, city, ad budget, and sales team response times.',
+        ar: '<i class="fas fa-info-circle"></i> محاكاة تقديرية مبنية على مؤشرات سوق التأمين بالمغرب. النتائج الفعلية تتفاوت حسب نوع المنتجات، المدينة، الميزانية وسرعة تجاوب فريقك التجاري.'
     },
     // Offers Header
     offers_badge: {
-        fr: "Solutions d'Acquisition",
-        en: "Acquisition Solutions",
-        ar: "حلول استقطاب العملاء"
+        fr: "Grille Tarifaire",
+        en: "Pricing & Packages",
+        ar: "الباقات والأسعار"
     },
-    // Mini Express
-    offer_mini_title: {
-        fr: "Landing page seule",
-        en: "Single Landing Page",
-        ar: "صفحة هبوط منفردة"
+    offers_title: {
+        fr: "3 Formules Simples. <span class=\"neon\">Zéro Frais Cachés.</span>",
+        en: "3 Clear Tiers. <span class=\"neon\">Zero Hidden Fees.</span>",
+        ar: "3 باقات واضحة. <span class=\"neon\">بدون أي مصاريف خفية.</span>"
     },
-    offer_mini_f1: {
-        fr: "Landing page de haute conversion",
-        en: "High-Converting Landing Page",
-        ar: "صفحة هبوط عالية التحويل"
+    offers_p: {
+        fr: "Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.",
+        en: "Select the ideal tier aligned with your growth targets across your target territory.",
+        ar: "اختر الباقة المناسبة لطموحاتك وتوسع وكالتك في رقعتك الجغرافية."
     },
-    offer_mini_f2: {
-        fr: "Design moderne & responsive",
-        en: "Modern & Responsive Design",
-        ar: "تصميم حديث ومتجاوب"
-    },
-    offer_mini_f3: {
-        fr: "Capture de leads & intégrations",
-        en: "Lead Capture & Integrations",
-        ar: "نظام التقاط بيانات العملاء والربط"
-    },
-    offer_mini_f4: {
-        fr: "Optimisation de vitesse",
-        en: "Speed Optimization",
-        ar: "تحسين سرعة التصفح"
-    },
-    offer_mini_f5: {
-        fr: "Installation analytics de base",
-        en: "Basic Analytics Setup",
-        ar: "إعداد تحليلات الأداء الأساسية"
-    },
-    offer_mini_btn: {
-        fr: "Démarrer",
-        en: "Get Started",
-        ar: "ابدأ الآن"
-    },
-    // Starter
+    // STARTER
     offer_starter_title: {
-        fr: "Site vitrine + SEO local",
-        en: "Showcase Website + Local SEO",
-        ar: "موقع تعريفي + سيو محلي"
+        fr: "STARTER",
+        en: "STARTER",
+        ar: "باقة البداية (STARTER)"
     },
     offer_starter_f1: {
-        fr: "Site vitrine complet (multipages)",
-        en: "Full Multi-page Showcase Website",
-        ar: "موقع تعريفي كامل متعدد الصفحات"
+        fr: "Landing page haute conversion (Auto ou Santé)",
+        en: "High-converting landing page (Auto or Health)",
+        ar: "صفحة هبوط عالية التحويل (تأمين السيارات أو الصحة)"
     },
     offer_starter_f2: {
-        fr: "Référencement local (Google Maps)",
-        en: "Local SEO & Google Maps Optimization",
-        ar: "تحسين محركات البحث المحلية وغوغل ماب"
+        fr: "Formulaire de demande de devis en 2 minutes",
+        en: "2-minute rapid insurance quote request form",
+        ar: "استمارة طلب تسعيرة سريعة في دقيقتين"
     },
     offer_starter_f3: {
-        fr: "Hébergement pro sécurisé",
-        en: "Secured Professional Hosting",
-        ar: "استضافة احترافية آمنة"
+        fr: "Tracking Google Analytics 4 & Pixel Meta",
+        en: "Google Analytics 4 & Meta Pixel event tracking",
+        ar: "تتبع متقدم عبر Google Analytics 4 و Meta Pixel"
     },
     offer_starter_f4: {
-        fr: "Maintenance technique incluse",
-        en: "Technical Maintenance Included",
-        ar: "الصيانة التقنية مشمولة"
+        fr: "Bouton WhatsApp Business direct intégré",
+        en: "Integrated Direct WhatsApp Business button",
+        ar: "زر تواصل مباشر ومبرمج عبر واتساب بزنس"
     },
     offer_starter_f5: {
-        fr: "Support prioritaire par email/chat",
-        en: "Priority Email & Chat Support",
-        ar: "دعم ذو أولوية عبر البريد والدردشة"
+        fr: "Hébergement sécurisé & design 100% mobile",
+        en: "Secured hosting & 100% mobile-first design",
+        ar: "استضافة سريعة وتصميم متوافق 100% مع الهواتف"
     },
     offer_starter_btn: {
-        fr: "Choisir",
-        en: "Choose Plan",
-        ar: "اختر الباقة"
+        fr: "Démarrer en Starter",
+        en: "Start with Starter",
+        ar: "ابدأ بباقة STARTER"
     },
-    // Growth
+    // GROWTH
     offer_growth_badge: {
-        fr: "Recommandé",
-        en: "Recommended",
-        ar: "موصى به"
+        fr: "Recommandé • Pack Complet",
+        en: "Recommended • Full Pack",
+        ar: "الأكثر طلباً • الباقة الشاملة"
     },
     offer_growth_title: {
-        fr: "Pack acquisition complet",
-        en: "Complete Acquisition Pack",
-        ar: "باقة الاستقطاب الكاملة"
+        fr: "GROWTH",
+        en: "GROWTH",
+        ar: "باقة النمو (GROWTH)"
     },
     offer_growth_f1: {
-        fr: "Site internet haute conversion (Landing/Vitrine)",
-        en: "High-Converting Website (Landing/Showcase)",
-        ar: "موقع إلكتروني عالي التحويل"
+        fr: "Système complet d'acquisition d'assurance clé en main",
+        en: "Complete turnkey insurance acquisition framework",
+        ar: "نظام استقطاب وتوليد عملاء تأمين متكامل وجاهز"
     },
     offer_growth_f2: {
-        fr: "Campagnes Google Ads & Meta Ads",
-        en: "Google Ads & Meta Ads Campaigns",
-        ar: "حملات إعلانية على غوغل وميتا"
+        fr: "Landing pages dédiées par produit & intention locale",
+        en: "Dedicated landing pages per product & localized intent",
+        ar: "صفحات هبوط متعددة مخصصة لكل منتج تأمين"
     },
     offer_growth_f3: {
-        fr: "Intégration & Automation CRM",
-        en: "CRM Integration & Automation",
-        ar: "ربط وتأتمتة نظام إدارة العملاء (CRM)"
+        fr: "Setup campagnes Google Ads (Search) + Meta Ads",
+        en: "Complete Google Ads (Search) + Meta Ads campaign setup",
+        ar: "إعداد وإطلاق حملات إعلانية مستهدفة على غوغل وميتا"
     },
     offer_growth_f4: {
-        fr: "Suivi en temps réel & Dashboard",
-        en: "Real-time Tracking & Custom Dashboard",
-        ar: "لوحة تحكم وتتبع لحظي للأداء"
+        fr: "CRM dédié avec alertes leads instantanées (< 60s)",
+        en: "Dedicated CRM pipeline with instant lead alerts (< 60s)",
+        ar: "نظام إدارة علاقات العملاء (CRM) مع إشعارات فورية أقل من دقيقة"
     },
     offer_growth_f5: {
-        fr: "Optimisation continue du taux de conversion (CRO)",
-        en: "Continuous Conversion Rate Optimization",
-        ar: "تحسين مستمر لنسب المبيعات"
+        fr: "Automatisation des relances devis par WhatsApp",
+        en: "Automated WhatsApp follow-up triggers for quote requests",
+        ar: "أتمتة المتابعة والتذكير بعروض الأسعار عبر واتساب"
+    },
+    offer_growth_f6: {
+        fr: "Dashboard en direct du Coût d'Acquisition par Contrat",
+        en: "Live tracking dashboard of Cost Per Signed Contract",
+        ar: "لوحة تحكم مباشرة لقياس تكلفة كل عقد موقع"
+    },
+    offer_growth_guarantee: {
+        fr: "<strong>GARANTIE D'ENGAGEMENT :</strong> Minimum 5 leads qualifiés garantis durant le 1er mois (demande complète, coordonnées vérifiées, zone cible), sinon gestion offerte le mois suivant.",
+        en: "<strong>COMMITMENT GUARANTEE:</strong> Minimum 5 qualified leads guaranteed in Month 1 (verified phone, complete details, target territory), or our management is 100% free the following month.",
+        ar: "<strong>ضمان الالتزام والأداء:</strong> نضمن لك 5 عملاء مؤهلين كحد أدنى خلال الشهر الأول، وإلا فإن إدارة حملاتك للشهر الموالي مجانية بالكامل."
     },
     offer_growth_btn: {
-        fr: "Accélérer",
-        en: "Accelerate Today",
-        ar: "ابدأ النمو السريع"
+        fr: "Déployer le Système Growth",
+        en: "Deploy Growth Engine",
+        ar: "إطلاق باقة GROWTH"
     },
-    // Scale
+    // SCALE
     offer_scale_title: {
-        fr: "Pilotage mensuel",
-        en: "Monthly Retainer & Management",
-        ar: "إدارة وتشغيل شهري"
+        fr: "SCALE",
+        en: "SCALE",
+        ar: "باقة التوسع (SCALE)"
     },
     offer_scale_f1: {
-        fr: "Gestion et optimisation des campagnes",
-        en: "Campaign Management & Optimization",
-        ar: "إدارة وتحسين الحملات الإعلانية"
+        fr: "Pilotage & optimisation continue des campagnes Google & Meta",
+        en: "Continuous management & optimization of Google & Meta campaigns",
+        ar: "إدارة وتحسين مستمر لحملات إعلانات غوغل وميتا"
     },
     offer_scale_f2: {
-        fr: "Suivi SEO & netlinking continu",
-        en: "Ongoing SEO & Local Netlinking",
-        ar: "تحسين محركات البحث والروابط بشكل مستمر"
+        fr: "A/B testing continu des annonces et tunnels de conversion",
+        en: "Ongoing A/B testing of creatives and conversion tunnels",
+        ar: "اختبار وتطوير دوري لصفحات الهبوط والإعلانات (A/B Testing)"
     },
     offer_scale_f3: {
-        fr: "Rapports hebdomadaires détaillés",
-        en: "Detailed Weekly Performance Reports",
-        ar: "تقارير أداء أسبوعية مفصلة"
+        fr: "Optimisation continue du coût par contrat signé",
+        en: "Continuous optimization of Cost Per Signed Policy",
+        ar: "خفض مستمر لتكلفة الحصول على كل عقد موقع"
     },
     offer_scale_f4: {
-        fr: "Ajustement stratégique des budgets",
-        en: "Strategic Budget Allocation",
-        ar: "تعديل استراتيجي للميزانيات"
+        fr: "Reporting bimensuel d'analyse de rentabilité",
+        en: "Bi-monthly detailed profitability and ROI reports",
+        ar: "تقارير نصف شهرية تفصيلية لتحليل العائد على الاستثمار"
     },
     offer_scale_f5: {
-        fr: "Accès à notre dashboard live 24/7",
-        en: "24/7 Access to Live Interactive Dashboard",
-        ar: "وصول على مدار الساعة للوحة التحكم"
+        fr: "Support prioritaire & ajustements stratégiques continus",
+        en: "Priority direct support & continuous strategic scaling",
+        ar: "دعم مخصص ذو أولوية وتوجيه استراتيجي دائم"
     },
     offer_scale_btn: {
-        fr: "Dominer",
-        en: "Dominate Market",
-        ar: "هيمن على السوق"
+        fr: "Passer à l'Échelle",
+        en: "Scale Up Today",
+        ar: "ابدأ باقة التوسع SCALE"
     },
-    // Secteurs d'accompagnement
-    sec_badge: {
-        fr: "Diversification",
-        en: "Sectors",
-        ar: "القطاعات"
+    // Case Study
+    case_badge: {
+        fr: "Preuve & Résultats Réels",
+        en: "Proven Client Results",
+        ar: "نتائج حقيقية موثقة"
     },
-    sec_title: {
-        fr: "Nous accompagnons <span class=\"neon\">également.</span>",
-        en: "We also <span class=\"neon\">accompany.</span>",
-        ar: "نرافق <span class=\"neon\">أيضاً.</span>"
+    case_title: {
+        fr: "Étude de Cas : <span class=\"neon\">Assurances El Omrani.</span>",
+        en: "Case Study: <span class=\"neon\">El Omrani Insurance.</span>",
+        ar: "دراسة حالة: <span class=\"neon\">مؤسسة العمراني للتأمين.</span>"
     },
-    sec_p: {
-        fr: "Notre expertise s'étend à d'autres secteurs clés pour propulser leur croissance digitale.",
-        en: "Our high-yield customer acquisition frameworks successfully scale other core industries.",
-        ar: "تتميز أنظمتنا بالمرونة والقدرة على تحقيق نمو مبيعات استثنائي في قطاعات رئيسية أخرى."
+    case_p: {
+        fr: "Comment un courtier d'assurance à Casablanca a structuré un flux prévisible de demandes de devis qualifiées chaque mois.",
+        en: "How an insurance brokerage in Casablanca built a predictable monthly pipeline of qualified policy leads.",
+        ar: "كيف استطاع وسيط تأمين بالدار البيضاء بناء تدفق مستمر للعملاء وطلبات التسعير كل شهر."
     },
-    sec_immobilier_title: {
-        fr: "Immobilier",
-        en: "Real Estate",
-        ar: "العقارات"
+    case_tag: {
+        fr: "Cabinet d'Assurance • Casablanca",
+        en: "Insurance Brokerage • Casablanca",
+        ar: "مكتب تأمين • الدار البيضاء"
     },
-    sec_immobilier_p: {
-        fr: "Acquisition de leads qualifiés pour les promoteurs et agents immobiliers.",
-        en: "High-quality buyer and seller lead generation for promoters and agencies.",
-        ar: "استقطاب زبناء ومستثمرين مهتمين بشراء العقارات للشركات والوكلاء."
+    case_heading: {
+        fr: "Passage d'un modèle passif à un moteur d'acquisition actif",
+        en: "Transitioning from Passive Walk-ins to an Active Acquisition Engine",
+        ar: "الانتقال من الانتظار التقليدي إلى محرك استقطاب نشط ومؤتمت"
     },
-    sec_restauration_title: {
-        fr: "Restauration",
-        en: "Restaurants",
-        ar: "المطاعم والضيافة"
+    case_challenge_title: {
+        fr: "Le Défi Initial",
+        en: "The Initial Challenge",
+        ar: "التحدي السابق"
     },
-    sec_restauration_p: {
-        fr: "Système de réservation en ligne et visibilité locale accrue pour restaurants premium.",
-        en: "Online booking systems and premium local search dominance for restaurants.",
-        ar: "أنظمة حجز طاولة ذكية وزيادة حضور المطاعم الراقية محلياً."
+    case_challenge_p: {
+        fr: "Dépendance au passage piéton et au bouche-à-oreille local, avec une forte concurrence sur la zone de Casablanca. Aucun canal digital pour capter les automobilistes et professionnels au moment exact de leur recherche d'assurance.",
+        en: "Over-reliance on local foot traffic and word-of-mouth amid aggressive competition in Casablanca. No digital infrastructure to capture motorists and businesses at the precise moment of intent.",
+        ar: "الاعتماد الكامل على مرور المارة والتوصيات التقليدية وسط منافسة شرسة في الدار البيضاء، مع غياب منظومة رقمية لجذب السائقين والشركات عند رغبتهم في تجديد أو شراء التأمين."
     },
-    sec_sante_title: {
-        fr: "Santé",
-        en: "Healthcare",
-        ar: "الصحة والطب"
+    case_solution_title: {
+        fr: "La Solution ASSURLEAD",
+        en: "The ASSURLEAD Solution",
+        ar: "حل ASSURLEAD"
     },
-    sec_sante_p: {
-        fr: "Solutions d'acquisition de patients et de prise de rendez-vous pour cliniques.",
-        en: "Patient acquisition funnels and booking integrations for clinics.",
-        ar: "حلول جذب المرضى وحجز المواعيد للعيادات والمراكز الطبية."
+    case_solution_p: {
+        fr: "Déploiement d'un tunnel Google Search ultra-ciblé sur l'assurance auto & santé pro, landing page avec formulaire de tarification express en 2 minutes, et routage instantané des leads vers les conseillers via WhatsApp.",
+        en: "Deployment of a high-intent Google Search funnel for auto & corporate health, 2-minute express quote landing pages, and instant WhatsApp lead routing to agency advisors.",
+        ar: "إطلاق حملات بحث غوغل مستهدفة للسيارات والتغطية الصحية، صفحات هبوط بتسعير سريع في دقيقتين، وتوجيه فوري للعملاء نحو المستشارين عبر الواتساب."
     },
-    sec_auto_title: {
-        fr: "Automobile",
-        en: "Automotive",
-        ar: "السيارات"
+    case_s1: {
+        fr: "Demandes de devis / mois",
+        en: "Quote requests / month",
+        ar: "طلب تسعيرة شهرياً"
     },
-    sec_auto_p: {
-        fr: "Génération de leads qualifiés pour concessionnaires, garages et services auto.",
-        en: "Qualified buyers and booking leads for dealerships and auto centers.",
-        ar: "توليد عملاء مهتمين بشراء السيارات، الصيانة والخدمات."
+    case_s2: {
+        fr: "Coût moyen par lead",
+        en: "Average cost per lead",
+        ar: "متوسط تكلفة العميل"
     },
-    // Notre Approche
-    methode_badge: {
-        fr: "Notre Approche",
-        en: "Our Approach",
-        ar: "منهجنا العملي"
+    case_s3: {
+        fr: "Contrats signés / mois",
+        en: "Signed policies / month",
+        ar: "عقد موقع شهرياً"
     },
-    methode_title: {
-        fr: "Le Cycle de <span class=\"neon\">Conversion.</span>",
-        en: "The Continuous <span class=\"neon\">Conversion Loop.</span>",
-        ar: "حلقة <span class=\"neon\">التحويل والنمو.</span>"
+    case_s4: {
+        fr: "Temps de rappel moyen",
+        en: "Average callback time",
+        ar: "متوسط زمن إعادة الاتصال"
     },
-    methode_p: {
-        fr: "Une méthodologie rigoureuse en 4 étapes pour transformer votre visibilité en chiffre d'affaires.",
-        en: "A rigorous 4-step execution workflow built to reliably monetize your digital traffic into persistent policy contracts.",
-        ar: "منهجية دقيقة من 4 خطوات عملية لتحويل حضورك الرقمي إلى عائد مالي مستمر."
-    },
-    methode_step1_title: {
-        fr: "Audit & Stratégie",
-        en: "1. Audit & Local Intel",
-        ar: "1. التدقيق والدراسة"
-    },
-    methode_step1_p: {
-        fr: "Analyse de votre marché local et définition des objectifs de leads mensuels.",
-        en: "Granular local market positioning audit and mapping of realistic target monthly customer goals.",
-        ar: "تحليل معمق للمنافسة واحتياجات السوق المحلية وتحديد أهداف العملاء بدقة."
-    },
-    methode_step2_title: {
-        fr: "Système d'Acquisition",
-        en: "2. Funnel Implementation",
-        ar: "2. بناء نظام الاستقطاب"
-    },
-    methode_step2_p: {
-        fr: "Déploiement de landing pages haute-performance et setup des campagnes Ads.",
-        en: "Surgical execution of elite-converting landing layouts matched with paid acquisition routes.",
-        ar: "إطلاق صفحات هبوط عالية التحويل مدمجة مع حملات إعلانية مستهدفة ومدفوعة."
-    },
-    methode_step3_title: {
-        fr: "Automation CRM",
-        en: "3. Workflow Automation",
-        ar: "3. أتمتة البيانات والاتصال"
-    },
-    methode_step3_p: {
-        fr: "Qualification automatique des leads et notification instantanée sur votre mobile.",
-        en: "Automated instant lead vetting and direct notifications pushed straight to your mobile phone sales pipeline.",
-        ar: "فلترة وتصنيف العملاء تلقائياً وإخطاركم فورياً عبر رسالة أو إشعار مباشر لسرعة الإقفال."
-    },
-    methode_step4_title: {
-        fr: "Optimisation ROI",
-        en: "4. Return Optimization",
-        ar: "4. زيادة وتحسين العائد"
-    },
-    methode_step4_p: {
-        fr: "Analyse hebdomadaire des performances et ajustement pour maximiser la conversion.",
-        en: "Continuous micro-testing, structural speed audits, and split optimizations to compound your net revenue margins.",
-        ar: "متابعة دورية أسبوعية لبيانات الأداء الإعلاني والتحويل مع تعديلات مستمرة لزيادة الأرباح."
-    },
-    // Projects
-    projets_badge: {
-        fr: "Succès Clients",
-        en: "Client Success",
-        ar: "قصص النجاح"
-    },
-    projets_title: {
-        fr: "Nos <span class=\"neon\">Réalisations.</span>",
-        en: "Our <span class=\"neon\">Past Work.</span>",
-        ar: "مشاريعنا <span class=\"neon\">الناجحة.</span>"
-    },
-    projets_p: {
-        fr: "Découvrez comment nos systèmes d'acquisition transforment l'activité des agents d'assurance.",
-        en: "Discover how our digital customer acquisition systems empower real agency books to compound yearly scale.",
-        ar: "شاهد كيف تمكنت أنظمتنا الرقمية من تحقيق مبيعات قياسية لوكالات تأمين حقيقية."
-    },
-    projets_card_btn: {
-        fr: "Voir le site <i class=\"fas fa-external-link-alt\"></i>",
-        en: "Explore Funnel <i class=\"fas fa-external-link-alt\"></i>",
-        ar: "زيارة الموقع الالكتروني <i class=\"fas fa-external-link-alt\"></i>"
-    },
-    projets_card_title: {
-        fr: "Assurances El Omrani",
-        en: "El Omrani Insurance Brokerage",
-        ar: "مؤسسة العمراني للتأمين"
-    },
-    projets_card_google_badge: {
-        fr: "1ère Page Google — Assurance AXA Casablanca",
-        en: "1st Page Google — AXA Insurance Casablanca",
-        ar: "الصفحة الأولى غوغل — تأمين أكسا الدار البيضاء"
-    },
-    projets_card_p: {
-        fr: "Système complet d'acquisition de leads pour l'assurance automobile et santé.",
-        en: "Full automation acquisition system built to drive qualified auto, fleet, and corporate family health insurance leads.",
-        ar: "نظام استقطاب ذكي ومتكامل لتوليد مبيعات وعقود التأمين على السيارات والصحة."
-    },
-    projets_card_t1: {
-        fr: "Landing Page",
-        en: "Landing Page",
-        ar: "صفحة هبوط"
-    },
-    projets_card_t2: {
-        fr: "Ads Meta",
-        en: "Meta Social Ads",
-        ar: "إعلانات ميتا"
-    },
-    projets_card_t3: {
-        fr: "Automation",
-        en: "CRM Automation",
-        ar: "أتمتة المبيعات"
-    },
-    // Contact Info
+    // Contact & Exclusivity
     contact_badge: {
-        fr: "Contact",
-        en: "Partnership Desk",
-        ar: "تواصل معنا"
+        fr: "Audit Stratégique Offert",
+        en: "Free Strategic Audit",
+        ar: "تدقيق استراتيجي مجاني"
     },
     contact_title: {
-        fr: "Parlons <br><span class=\"neon\">Résultats.</span>",
-        en: "Let's Scale <br><span class=\"neon\">Your Numbers.</span>",
-        ar: "فلنتحدث عن <span class=\"neon\">زيادة الأرباح.</span>"
+        fr: "Analysons votre <br><span class=\"neon\">Zone Commerciale.</span>",
+        en: "Analyze Your <br><span class=\"neon\">Territory Potential.</span>",
+        ar: "دعنا نحلل <span class=\"neon\">منطقتك التجارية.</span>"
     },
     contact_p: {
-        fr: "Vous avez des questions ou vous souhaitez un audit personnalisé ? Notre équipe vous recontactera sous 24h.",
-        en: "Ready to transition from traditional tracking to fully automated growth? Drop your details and our team will run an audit of your territory.",
-        ar: "جاهز لتجاوز الطرق القديمة واعتماد نظام سحب عملاء مؤتمت؟ اترك بياناتك وسنقوم بمراجعة رقعتك الجغرافية فوراً."
+        fr: "Réservez votre audit d'acquisition de 15 minutes. Nous analysons les volumes de recherche d'assurance dans votre ville et vous présentons le potentiel de leads mensuel.",
+        en: "Book your 15-minute acquisition audit. We examine local insurance search volumes in your city and map out your monthly lead pipeline.",
+        ar: "احجز جلسة تدقيق مدتها 15 دقيقة لتحليل حجم البحث عن التأمين في مدينتك وتقدير عدد العقود الممكن استقطابها شهرياً."
+    },
+    contact_exclusivity: {
+        fr: "<i class=\"fas fa-map-marker-alt\" style=\"color: var(--brand-neon); margin-right: 6px;\"></i> <strong>Politique d'Exclusivité Territoriale :</strong> Afin de garantir la performance de nos campagnes et d'éviter tout conflit d'intérêts, nous limitons le nombre d'agences partenaires par zone géographique.",
+        en: "<i class=\"fas fa-map-marker-alt\" style=\"color: var(--brand-neon); margin-right: 6px;\"></i> <strong>Territorial Exclusivity Policy:</strong> To maximize campaign performance and prevent any conflict of interest, we strictly limit partner agency intake per geographical area.",
+        ar: "<i class=\"fas fa-map-marker-alt\" style=\"color: var(--brand-neon); margin-right: 6px;\"></i> <strong>سياسة الحصرية الجغرافية:</strong> لضمان أقصى أداء للحملات ومنع تضارب المصالح، نلتزم بعدد محدد ومحدود من الشركاء في كل منطقة."
     },
     contact_email_label: {
-        fr: "Email",
-        en: "Secure Email Link",
+        fr: "Email Dédié",
+        en: "Dedicated Email",
         ar: "البريد الإلكتروني"
     },
     contact_phone_label: {
-        fr: "Téléphone",
-        en: "Direct Inbound Line",
-        ar: "الهاتف المباشر"
+        fr: "Ligne Directe WhatsApp",
+        en: "Direct WhatsApp Line",
+        ar: "خط الواتساب المباشر"
     },
     // Form Questionnaire
     form_identity_label: {
-        fr: "IDENTITÉ",
+        fr: "VOTRE IDENTITÉ",
         en: "YOUR IDENTITY",
         ar: "الاسم والنسب"
     },
     form_identity_placeholder: {
-        fr: "VOTRE NOM COMPLET",
+        fr: "VOTRE NOM ET PRÉNOM",
         en: "YOUR FULL NAME",
         ar: "اكتب اسمك الكامل هنا"
     },
     form_btn_next: {
         fr: "SUIVANT <i class=\"fas fa-chevron-right\"></i>",
-        en: "CONTINUE <i class=\"fas fa-chevron-right\"></i>",
+        en: "NEXT <i class=\"fas fa-chevron-right\"></i>",
         ar: "التالي <i class=\"fas fa-chevron-right\"></i>"
     },
     form_contact_label: {
-        fr: "CONTACT",
-        en: "CORPORATE CONTACT EMAIL",
-        ar: "معلومات الاتصال"
+        fr: "COORDONNÉES PROFESSIONNELLES",
+        en: "PROFESSIONAL CONTACT",
+        ar: "بيانات التواصل المهنية"
     },
     form_contact_placeholder: {
         fr: "EMAIL PROFESSIONNEL",
-        en: "BUSINESS EMAIL ADDRESS",
+        en: "BUSINESS EMAIL",
         ar: "البريد الإلكتروني المهني"
     },
     form_phone_placeholder: {
-        fr: "NUMÉRO DE TÉLÉPHONE",
-        en: "PHONE NUMBER",
-        ar: "رقم الهاتف"
+        fr: "NUMÉRO WHATSAPP / MOBILE",
+        en: "WHATSAPP / MOBILE NUMBER",
+        ar: "رقم الواتساب أو الهاتف"
     },
     form_btn_back: {
         fr: "RETOUR",
-        en: "GO BACK",
-        ar: "السابق"
+        en: "BACK",
+        ar: "رجوع"
     },
     form_agency_label: {
-        fr: "AGENCE",
-        en: "AGENCY REGISTRY",
-        ar: "اسم الوكالة"
+        fr: "VOTRE AGENCE / VILLE",
+        en: "YOUR AGENCY / CITY",
+        ar: "اسم الوكالة والمدينة"
     },
     form_agency_placeholder: {
-        fr: "NOM DE VOTRE AGENCE",
-        en: "NAME OF YOUR REGISTERED AGENCY",
-        ar: "ما هو اسم وكالتك أو شركتك للتأمين؟"
+        fr: "NOM DU CABINET & VILLE (Ex: AXA Casablanca)",
+        en: "AGENCY NAME & CITY (e.g. AXA Casablanca)",
+        ar: "اسم المكتب أو الوكالة والمدينة (مثال: أكسا الدار البيضاء)"
     },
     form_goal_label: {
-        fr: "OBJECTIF",
-        en: "GROWTH MILESTONES",
-        ar: "هدف النمو"
+        fr: "OBJECTIF COMMERCIAL",
+        en: "COMMERCIAL GOAL",
+        ar: "الهدف التجاري والمنتجات"
     },
     form_goal_placeholder: {
-        fr: "VOTRE OBJECTIF DE CROISSANCE",
-        en: "DESCRIBE YOUR REVENUE OR LEAD TARGETS",
-        ar: "حدثنا باختصار عن عدد المبيعات أو رقم المعاملات الذي تهدف إلى بلوغه..."
+        fr: "Produits ciblés (Auto, Santé, Entreprise) et objectifs de contrats mensuels...",
+        en: "Target insurance lines (Auto, Health, Commercial) and monthly contract targets...",
+        ar: "المنتجات المستهدفة (سيارات، صحة، شركات) وعدد العقود الشهرية المرجوة..."
     },
     form_btn_submit: {
-        fr: "ENVOYER <i class=\"fas fa-bolt\"></i>",
-        en: "SUBMIT PLAN <i class=\"fas fa-bolt\"></i>",
-        ar: "إرسال البيانات <i class=\"fas fa-bolt\"></i>"
+        fr: "DEMANDER MON AUDIT <i class=\"fas fa-bolt\"></i>",
+        en: "REQUEST MY AUDIT <i class=\"fas fa-bolt\"></i>",
+        ar: "طلب التدقيق المجاني <i class=\"fas fa-bolt\"></i>"
     },
     // Footer
     footer_copy: {
-        fr: "ASSURLEAD - Pilotes du Démarrage Commercial Digital. Méthode +2.5MDH CA.",
-        en: "ASSURLEAD - Digital Commercial Launch Pilots. +2.5M MAD Revenue Method.",
-        ar: "ASSURLEAD - رواد الانطلاقة التجارية الرقمية. منهجية +2.5 مليون درهم."
+        fr: "ASSURLEAD - Pilotes du Démarrage Commercial Digital. Méthode +1.5MDH CA.",
+        en: "ASSURLEAD - Digital Commercial Launch Pilots. +1.5M MAD Revenue Method.",
+        ar: "ASSURLEAD - رواد الإطلاق التجاري الرقمي. منهجية +1.5 مليون درهم."
     },
     // Modal
     modal_badge: {
-        fr: "Offre Limitée",
-        en: "Exclusive Cohort Limits",
-        ar: "عرض محدود للغاية"
+        fr: "Audit Stratégique d'Acquisition",
+        en: "Strategic Acquisition Audit",
+        ar: "تدقيق استراتيجي للاستقطاب"
     },
     modal_title: {
-        fr: "Prêt à <span class=\"neon\">Dominer</span> votre Marché ?",
-        en: "Ready to <span class=\"neon\">Dominate</span> Your Territory?",
-        ar: "هل أنت مستعد <span class=\"neon\">للهيمنة</span> على منطقتك الجغرافية؟"
+        fr: "Multipliez vos Devis <span class=\"neon\">d'Assurance.</span>",
+        en: "Multiply Your <span class=\"neon\">Insurance Quotes.</span>",
+        ar: "ضاعف مبيعاتك <span class=\"neon\">وعقود التأمين.</span>"
     },
     modal_p: {
-        fr: "Réservez votre <strong>audit stratégique gratuit</strong> aujourd'hui pour obtenir une <span class=\"neon\">visibilité sur la 1ère page de Google</span> et déployer une <span class=\"neon\">véritable machine à cash</span> pour votre business.",
-        en: "Book your <strong>free strategic audit</strong> today to secure <span class=\"neon\">1st page visibility on Google</span> and deploy a <span class=\"neon\">high-yielding cash machine</span> for your business.",
-        ar: "احجز جلستك المجانية <strong>للتدقيق الاستراتيجي</strong> اليوم لتأمين <span class=\"neon\">ظهورك في الصفحة الأولى على غوغل</span> وبناء <span class=\"neon\">آلة حقيقية لتوليد الأرباح</span> لعملك."
+        fr: "Réservez votre <strong>audit d'acquisition gratuit</strong> pour découvrir le volume de prospects d'assurance prêts à souscrire dans votre ville et déployer votre machine à contrats.",
+        en: "Book your <strong>free acquisition audit</strong> to discover the exact volume of high-intent insurance prospects in your city and launch your customer acquisition machine.",
+        ar: "احجز <strong>تدقيقك المجاني</strong> لاكتشاف حجم العملاء المستعدين للاكتتاب في مدينتك وبناء منظومة استقطاب عقود فورية."
     },
     modal_btn: {
         fr: "Réservez mon Audit Gratuit",
-        en: "Claim My Territorial Audit Now",
-        ar: "ابدأ جلسة التدقيق المجانية الآن"
+        en: "Book My Free Audit",
+        ar: "حجز التدقيق المجاني الآن"
     },
     modal_timer: {
-        fr: "Plus que 3 créneaux cette semaine",
-        en: "Only 3 territorial slots left open this calendar week",
-        ar: "متبقي 3 مقاعد فقط متاحة للتدقيق الجغرافي هذا الأسبوع"
+        fr: "Exclusivité territoriale par zone géographique",
+        en: "Strict territorial exclusivity per zone",
+        ar: "حصرية جغرافية مشروطة لكل منطقة"
     },
-    // Chatbot
+    // Chat & WhatsApp Widget
     chat_badge: {
         fr: "WhatsApp",
         en: "WhatsApp",
         ar: "واتساب"
     },
-    chat_title: {
-        fr: "Yacine AI",
-        en: "Yacine AI",
-        ar: "ياسين المساعد الذكي"
-    },
-    chat_status: {
-        fr: "En ligne",
-        en: "Connected",
-        ar: "نشط الآن"
-    },
-    chat_welcome: {
-        fr: "Bonjour ! Je suis Yacine, votre assistant IA. Comment puis-je vous aider à faire croître votre agence aujourd'hui ?",
-        en: "Hello! I am Yacine, your digital strategic partner. How can I help maximize your incoming lead pipelines today?",
-        ar: "مرحباً بك! أنا ياسين، مساعدك الذكي المخصص لشركاء التأمين. كيف يمكنني مساعدتك في مضاعفة مبيعاتك واستقطاب عملاء جدد اليوم؟"
-    },
-    chat_input_placeholder: {
-        fr: "Posez votre question...",
-        en: "Type your inquiry here...",
-        ar: "اكتب سؤالك واستشرني بخصوص نمو مبيعاتك..."
-    },
     // FAQ Section
     faq_badge: {
-        fr: "FAQ",
-        en: "FAQ",
+        fr: "FAQ Spécialisée",
+        en: "Specialized FAQ",
         ar: "الأسئلة الشائعة"
     },
     faq_title: {
@@ -632,49 +637,49 @@ const translations = {
         ar: "الأسئلة <span class=\"neon\">الشائعة.</span>"
     },
     faq_p: {
-        fr: "Tout ce que vous devez savoir sur notre méthode d'acquisition et nos garanties de performance.",
-        en: "Everything you need to know about our customer acquisition framework and performance assurances.",
-        ar: "كل ما تحتاج معرفته عن منهجية استقطاب العملاء وضمانات الأداء الخاصة بنا."
+        fr: "Tout ce que vous devez savoir sur notre système d'acquisition et nos engagements de performance.",
+        en: "Everything you need to know about our specialized acquisition framework and performance commitments.",
+        ar: "كل ما تحتاج معرفته عن نظام الاستقطاب وضمانات الأداء الخاصة بنا."
     },
     faq_q1: {
-        fr: "Comment l'agence peut-elle assurer un tel retour sur investissement (ROI) ?",
-        en: "How can the agency ensure such a high return on investment (ROI)?",
-        ar: "كيف يمكن للوكالة ضمان مثل هذا العائد المرتفع على الاستثمار (ROI)؟"
+        fr: "Quelle est la différence entre ASSURLEAD et une agence web généraliste ?",
+        en: "What is the difference between ASSURLEAD and a generic web agency?",
+        ar: "ما هو الفرق بين ASSURLEAD ووكالة ويب عامة؟"
     },
     faq_a1: {
-        fr: "Notre simulateur est basé sur des données réelles de campagnes. Nous ciblons exclusivement des leads ultra-qualifiés ayant une intention d'achat immédiate, réduisant le gaspillage de budget et maximisant vos marges nettes.",
-        en: "Our simulator is backed by real campaign metrics. We precisely target high-intent prospects searching for coverage, ensuring zero wasted budget and maximum conversion margin.",
-        ar: "تعتمد حاسبتنا على بيانات حقيقية للحملات السابقة. نستهدف بدقة الزبناء المهتمين بشراء عقود التأمين حالاً، مما يقلل من هدر الميزانية ويضمن أعلى هامش ربح."
+        fr: "Une agence généraliste vous vend des clics ou une maquette de site web sans se soucier des contrats signés. ASSURLEAD est 100% spécialisée dans l'assurance au Maroc : nous concevons les tunnels, qualifions les prospects, installons le CRM et optimisons le système jusqu'à la signature de la police d'assurance.",
+        en: "A generic agency sells traffic or static templates with no regard for signed policies. ASSURLEAD is 100% dedicated to Moroccan insurance: we engineer funnels, qualify prospects, deploy CRMs, and optimize the entire path to signed contracts.",
+        ar: "الوكالات العامة تبيعك مجرد نقرات أو تصاميم دون اهتمام بالعقود الموقعة. أما ASSURLEAD فمتخصصة 100% في قطاع التأمين بالمغرب: نصمم أقماع التحويل، نؤهل العملاء، نربط CRM ونحسن التكلفة حتى توقيع العقد النهائي."
     },
     faq_q2: {
-        fr: "Combien de temps prend la mise en place de mon système d'acquisition ?",
-        en: "How long does the implementation of my acquisition system take?",
-        ar: "كم من الوقت يستغرق إعداد نظام استقطاب العملاء الخاص بي؟"
+        fr: "Qu'est-ce qu'un lead qualifié selon votre charte ?",
+        en: "What defines a verified qualified lead?",
+        ar: "ما هو تعريف العميل المؤهل (Lead Qualifié) لديكم؟"
     },
     faq_a2: {
-        fr: "Pour la formule Landing page seule ou Starter, comptez 5 à 7 jours. Pour le Pack Acquisition complet (Growth), le déploiement technique et le lancement des premières campagnes prennent environ 10 à 14 jours.",
-        en: "For the Landing Page or Starter plan, it takes 5 to 7 days. The full Growth Acquisition Pack is deployed and completely active within 10 to 14 business days, including analytics and CRM triggers.",
-        ar: "يستغرق إعداد صفحة الهبوط أو باقة البداية من 5 إلى 7 أيام. أما باقة الاستقطاب الكاملة (Growth) فيتم إطلاقها بالكامل وربطها بالأنظمة خلال 10 إلى 14 يوم عمل."
+        fr: "Un lead qualifié est un prospect ayant formulé une demande explicite (type de véhicule, date d'échéance ou besoin santé/pro), avec un numéro de téléphone marocain vérifié et situé dans votre zone géographique cible. Les faux numéros ou doublons sont automatiquement écartés.",
+        en: "A qualified lead is a prospect who submitted an explicit request (vehicle details, renewal date, health/pro coverage), with a verified phone number located in your target territory.",
+        ar: "العميل المؤهل هو شخص قدم طلباً صريحاً لتسعيرة (نوع المركبة، تاريخ التجديد، أو التغطية الصحية)، مع رقم هاتف مغربي مؤكد وضمن منطقتك الجغرافية المستهدفة."
     },
     faq_q3: {
-        fr: "Comment fonctionne votre garantie de croissance ?",
-        en: "How does your growth guarantee work?",
-        ar: "كيف تعمل ضمانة النمو المخصصة لي؟"
+        fr: "Les prospects générés sont-ils exclusifs à mon agence ?",
+        en: "Are the generated leads strictly exclusive to my agency?",
+        ar: "هل العملاء المتولدون حصريون لوكالتي فقط؟"
     },
     faq_a3: {
-        fr: "C'est simple : si nous n'atteignons pas l'objectif minimum de 5 leads qualifiés durant le premier mois pour la formule Growth, nous gérons votre système gratuitement le mois suivant. Nous assumons le risque à votre place.",
-        en: "Very simple: if we do not hit the minimum floor of 5 qualified leads during your first active month on the Growth tier, our monthly management is completely free the following month. We assume the full risk.",
-        ar: "الأمر في غاية البساطة: إذا لم نصل إلى الحد الأدنى وهو 5 عملاء محتملين مؤكدين خلال الشهر الأول في باقة النمو (Growth)، فإن إدارة حملاتكم للشهر التالي ستكون مجانية بالكامل. نحن نتحمل المخاطرة بدلاً منكم."
+        fr: "Oui, à 100%. Contrairement aux plateformes de comparateurs qui revendent le même prospect à 4 ou 5 assureurs simultanément, chaque prospect généré par votre tunnel est strictement exclusif à votre agence et transmis directement à votre équipe.",
+        en: "Yes, 100%. Unlike comparison platforms that resell the same prospect to 4 or 5 competitors, each lead generated by your funnel is completely exclusive to your agency.",
+        ar: "نعم، 100%. على عكس منصات المقارنة التي تعيد بيع نفس الزبون لعدة شركات في نفس الوقت، كل عميل يطلبه قمعك هو حصري تماماً لوكالتك ويصل مباشرة إلى فريقك."
     },
     faq_q4: {
-        fr: "Est-ce que cette méthode fonctionne pour toutes les villes du Maroc ?",
-        en: "Does this method work for all cities in Morocco?",
-        ar: "هل تعمل هذه المنهجية في جميع المدن المغربية؟"
+        fr: "Quel budget publicitaire mensuel minimum faut-il prévoir ?",
+        en: "What minimum monthly advertising budget should be anticipated?",
+        ar: "ما هي الميزانية الإعلانية الشهرية المقترحة للبداية؟"
     },
     faq_a4: {
-        fr: "Oui, notre ciblage géographique précis nous permet de saturer la demande locale, que vous soyez à Casablanca, Rabat, Marrakech, Tanger, ou dans d'autres villes de taille moyenne.",
-        en: "Yes, our highly localized geographical targeting allows us to capture regional search volume perfectly, whether you are based in Casablanca, Rabat, Marrakech, Tangier, or mid-sized cities.",
-        ar: "نعم، يتيح لنا الاستهداف الجغرافي الدقيق تلبية الطلب المحلي بكفاءة عالية، سواء كنت متواجداً في الدار البيضاء، الرباط، مراكش، طنجة، أو في أي مدينة مغربية أخرى."
+        fr: "Nous recommandons un budget média de départ compris entre 2 000 et 4 000 DH par mois pour Google et Meta Ads. Ce budget est payé directement aux plateformes publicitaires et permet de générer entre 60 et 120 demandes de devis selon votre ville et le mix de produits ciblés.",
+        en: "We recommend an initial monthly media spend between 2,000 and 4,000 MAD for Google and Meta Ads. This is paid directly to ad platforms and yields 60 to 120 qualified quote requests depending on the city and product mix.",
+        ar: "نقترح ميزانية إعلانية أولية تتراوح بين 2,000 و 4,000 درهم شهرياً لإعلانات غوغل وميتا، وتدفع مباشرة للمنصات وتتيح استقطاب ما بين 60 إلى 120 طلب تسعيرة شهرياً."
     }
 };
 
@@ -720,41 +725,49 @@ const formSubmitAlert = {
 };
 
 const systemInstructions = {
-    fr: `Tu es Yacine, l'assistant IA expert de l'agence de marketing digital "AssurLead" au Maroc. 
-    Ton persona : Empathique, Expert, Proactif.
-    Ta mission : Aider les agents d'assurance à capter plus de leads via nos solutions (Mini Express, Starter, Growth, Scale).
-    Ta règle d'or : Sois précis sur les tarifs (à partir de 1999 MAD) et encourage l'usage du simulateur ROI.
-    Confère tes réponses uniquement en français de manière professionnelle et fluide.`,
-    en: `You are Yacine, the elite AI Marketing Assistant at "AssurLead", Morocco's specialized digital acquisition agency for insurance brokers and agents. 
-    Your persona: Empathetic, highly expert, proactive, and result-oriented.
-    Your mission: Assist insurance professionals to generate more qualified leads using our automated systems (Express Core, Starter, Growth, Scale).
-    Golden rules: Be highly precise on our packages starting from 1999 MAD and encourage playing with the interactive 3D ROI Growth Simulator.
-    Always reply professionally, elegantly, and fluently in English.`,
-    ar: `أنت ياسين، المساعد الذكي الخبير لوكالة التسويق الرقمي "AssurLead" والمتخصصة في جلب الزبناء لوكلاء ووسطاء التأمين بالمغرب.
-    شخصيتك: ودود، خبير، استباقي ومهني للغاية.
-    مهمتك: مساعدة المهنيين في مجال التأمين على استقطاب عملاء أكثر إيجابية عبر حلولنا الذكية المؤتمتة (ميني إكسبريس، Starter، Growth، Scale).
-    القاعدة الذهبية: كن دقيقًا بشأن الأسعار (تبدأ من 1999 درهم) وشجعهم على تجربة حاسبة العائد التفاعلية ثلاثية الأبعاد.
-    أجب دائماً بلغة عربية مهنية وسلسة وبأعلى مستويات اللباقة.`
+    fr: `Tu es Yacine, l'assistant IA expert de l'agence d'acquisition digitale "AssurLead" au Maroc, spécialisée exclusivement dans l'assurance (courtiers, agents généraux).
+    Ton persona : Empathique, Expert, Proactif, orienté résultats (coût par contrat signé).
+    Ta mission : Aider les professionnels de l'assurance au Maroc à déployer leur système d'acquisition (Google Ads, Meta Ads, landing pages, qualification CRM WhatsApp).
+    Nos offres :
+    - STARTER (2 900 à 4 900 DH) : Landing page haute conversion + formulaire 2min + GA4/Pixel + bouton WhatsApp.
+    - GROWTH (15 000 à 25 000 DH) : Système complet clé en main + Google Ads Search + Meta Ads + CRM alertes <60s + WhatsApp auto + Garantie 5 leads qualifiés min le 1er mois.
+    - SCALE (4 000 à 8 000 DH/mois) : Pilotage et optimisation continue des campagnes + A/B testing + reporting bimensuel.
+    Ta règle d'or : Sois précis, professionnel, et encourage la réservation de l'audit gratuit territorial de 15 minutes ou l'essai du simulateur ROI.
+    Réponds en français de manière fluide, chaleureuse et professionnelle.`,
+    en: `You are Yacine, the elite AI acquisition advisor at "AssurLead" in Morocco, specialized exclusively in insurance customer acquisition (brokers, agents).
+    Your persona: Empathetic, highly expert, proactive, and focused on signed contract ROI.
+    Our packages:
+    - STARTER (2,900 to 4,900 MAD): High-converting landing page + 2-min quote form + GA4/Meta Pixel + WhatsApp CTA.
+    - GROWTH (15,000 to 25,000 MAD): Turnkey acquisition system + Google Ads Search + Meta Ads + CRM alerts <60s + automated WhatsApp + 5 guaranteed leads min in Month 1.
+    - SCALE (4,000 to 8,000 MAD/month): Continuous campaign management, A/B testing & CAC reduction.
+    Always reply clearly, elegantly, and fluently in English.`,
+    ar: `أنت ياسين، المستشار والمساعد الذكي الخبير لوكالة "AssurLead" المتخصصة حصرياً في استقطاب عملاء التأمين بالمغرب (وسطاء، وكلاء عامون).
+    شخصيتك: ودود، خبير، استباقي ومهني يركز على تكلفة العقد النهائي الموقع.
+    باقاتنا الرئيسية:
+    - باقة STARTER (من 2,900 إلى 4,900 درهم): صفحة هبوط عالية التحويل + استمارة تسعير سريعة + تتبع Pixel + زر واتساب.
+    - باقة GROWTH (من 15,000 إلى 25,000 درهم): نظام استقطاب متكامل + إعلانات غوغل وميتا + نظام CRM بإشعارات أقل من دقيقة + أتمتة الواتساب + ضمان 5 عملاء مؤهلين كحد أدنى.
+    - باقة SCALE (من 4,000 إلى 8,000 درهم شهرياً): إدارة وتحسين مستمر للحملات وخفض تكلفة العقود الموقعة.
+    أجب دائماً بلغة عربية راقية ومتقنة وشجع المستخدمين على طلب التدقيق المجاني لمنطقتهم.`
 };
 
 const multiLangSuggestions = {
     fr: {
-        initial: ["Comment ça marche ?", "Quels tarifs ?", "Voir des exemples", "Simuler mon ROI"],
-        pricing: ["Pack Starter", "Pack Growth", "Pack Scale", "Audit gratuit"],
-        projects: ["Assurances El Omrani", "Témoignages", "Comment démarrer ?"],
-        roisim: ["Calculer mon revenu", "Taux de conversion ?", "Stratégie Ads"]
+        initial: ["Comment fonctionne le système ?", "Quels sont les tarifs ?", "Étude de cas El Omrani", "Simuler mon ROI"],
+        pricing: ["Pack Starter", "Pack Growth (Recommandé)", "Pack Scale", "Audit gratuit 15min"],
+        projects: ["Assurances El Omrani", "Garantie 5 leads", "Comment démarrer ?"],
+        roisim: ["Calculer mon volume", "Taux de conversion ?", "Coût par lead (28 DH)"]
     },
     en: {
-        initial: ["How does it work?", "What are the rates?", "See examples", "Calculate my ROI"],
-        pricing: ["Starter Pack", "Growth Pack", "Scale Pack", "Free audit"],
-        projects: ["El Omrani Insurance", "Testimonials", "How to begin?"],
-        roisim: ["Calculate my revenue", "Conversion rate?", "Ads strategy"]
+        initial: ["How does the system work?", "What are the rates?", "El Omrani Case Study", "Calculate my ROI"],
+        pricing: ["Starter Tier", "Growth Tier (Recommended)", "Scale Retainer", "Free 15-min audit"],
+        projects: ["El Omrani Insurance", "5 Leads Guarantee", "How to begin?"],
+        roisim: ["Calculate my revenue", "Conversion rate?", "Cost per lead (28 MAD)"]
     },
     ar: {
-        initial: ["كيف يعمل النظام؟", "ما هي الأسعار؟", "عرض النماذج", "حساب أرباحي"],
-        pricing: ["باقة البداية", "باقة النمو", "باقة الهيمنة", "جلسة تدقيق مجانية"],
-        projects: ["تأمين العمراني", "آراء العملاء", "كيف نبدأ العمل؟"],
-        roisim: ["احسب عائدي المالي", "معدل التحويل؟", "استراتيجية الإعلانات"]
+        initial: ["كيف يعمل النظام؟", "ما هي الأسعار والباقات؟", "دراسة حالة العمراني", "حساب أرباحي"],
+        pricing: ["باقة Starter", "باقة Growth (الأكثر طلباً)", "باقة Scale", "تدقيق مجاني 15 دقيقة"],
+        projects: ["تأمين العمراني", "ضمان 5 عملاء", "كيف نبدأ العمل؟"],
+        roisim: ["احسب عائدي المالي", "معدل التحويل؟", "تكلفة العميل (28 درهم)"]
     }
 };
 
@@ -801,34 +814,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 4. Update dynamic offer prices
         const offerPrices = {
-            mini: {
-                fr: "2 000 - 4 000 <span>DH</span>",
-                en: "2,000 - 4,000 <span>DH</span>",
-                ar: "2 000 - 4 000 <span>درهم</span>"
-            },
             starter: {
-                fr: "5 000 - 12 000 <span>DH</span>",
-                en: "5,000 - 12,000 <span>DH</span>",
-                ar: "5 000 - 12 000 <span>درهم</span>"
+                fr: "2 900 - 4 900 <span>DH</span>",
+                en: "2,900 - 4,900 <span>DH</span>",
+                ar: "2 900 - 4 900 <span>درهم</span>"
             },
             growth: {
-                fr: "15 000 - 35 000 <span>DH</span>",
-                en: "15,000 - 35,000 <span>DH</span>",
-                ar: "15 000 - 35 000 <span>درهم</span>"
+                fr: "15 000 - 25 000 <span>DH installation</span>",
+                en: "15,000 - 25,000 <span>DH setup</span>",
+                ar: "15 000 - 25 000 <span>درهم للإطلاق</span>"
             },
             scale: {
-                fr: "2 000 - 8 000 <span>DH/mois</span>",
-                en: "2,000 - 8,000 <span>DH/month</span>",
-                ar: "2 000 - 8 000 <span>درهم/شهر</span>"
+                fr: "4 000 - 8 000 <span>DH/mois</span>",
+                en: "4,000 - 8,000 <span>DH/month</span>",
+                ar: "4 000 - 8 000 <span>درهم/شهر</span>"
             }
         };
-        const keys = ['mini', 'starter', 'growth', 'scale'];
+        const keys = ['starter', 'growth', 'scale'];
         keys.forEach(k => {
             const el = document.getElementById(`offer_${k}_price`);
             if (el) {
                 el.innerHTML = offerPrices[k][lang] || offerPrices[k].fr;
             }
         });
+
+        const roiCostEl = document.getElementById('roi-cost-val');
+        if (roiCostEl) {
+            roiCostEl.innerText = lang === 'ar' ? '28 درهم' : '28 MAD';
+        }
+        const roiBasketEl = document.getElementById('roi-basket-val');
+        if (roiBasketEl) {
+            roiBasketEl.innerText = lang === 'ar' ? '2,800 درهم' : '2,800 MAD';
+        }
 
         // Save selection
         localStorage.setItem('assurlead_lang', lang);
@@ -1088,10 +1105,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const budget = parseInt(budgetInput.value);
         const conv = parseInt(convInput.value);
         
-        const leads = Math.floor(budget / 15);
+        // Benchmark Assurance Maroc: CPL moyen ~28 MAD, Panier moyen (Prime) ~2,800 MAD
+        const leads = Math.floor(budget / 28);
         const sales = Math.floor(leads * (conv / 100));
-        const revenue = sales * 1999;
-        const roi = ((revenue - budget) / budget) * 100;
+        const revenue = sales * 2800;
+        const roi = budget > 0 ? ((revenue - budget) / budget) * 100 : 0;
 
         const lang = localStorage.getItem('assurlead_lang') || 'fr';
         const currencySuffix = lang === 'ar' ? ' درهم' : ' MAD';
@@ -1106,7 +1124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update 3D Bar
         if (roiBar) {
-            const targetHeight = Math.max(0.1, (revenue / 20000) * 3);
+            const targetHeight = Math.max(0.1, (revenue / 60000) * 3);
             roiBar.scale.y = targetHeight;
             roiBar.position.y = -2 + (targetHeight * 2); 
             
@@ -1123,7 +1141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update Tornado Intensity
         if (currencySymbols.length > 0) {
-            const intensity = Math.min(2, revenue / 10000);
+            const intensity = Math.min(2, revenue / 30000);
             currencySymbols.forEach(symbol => {
                 symbol.material.opacity = 0.3 + (intensity * 0.3);
                 symbol.scale.set(0.3 + intensity * 0.2, 0.3 + intensity * 0.2, 1);

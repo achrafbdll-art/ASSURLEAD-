@@ -1,5 +1,8 @@
 {
   "name": "Remix: ASSURLEAD - Growth Engine",
-  "description": "Système d'acquisition automatisé multilingue (Français, English, العربية) pour agents d'assurance avec simulateur ROI 3D interactif et interface premium.",
-  "requestFramePermissions": []
+  "description": "L'agence d'acquisition digitale spécialisée dans l'assurance au Maroc. Génération de prospects qualifiés, landing pages, CRM et automatisation commerciale.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
