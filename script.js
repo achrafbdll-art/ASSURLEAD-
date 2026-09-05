@@ -41,14 +41,14 @@ const translations = {
     },
     // Hero
     hero_badge: {
-        fr: "Agent Digital 2026",
-        en: "Digital Agent 2026",
-        ar: "الوكيل الرقمي 2026"
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Agent Digital 2026",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Digital Agent 2026",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> الوكيل الرقمي 2026"
     },
     hero_title: {
-        fr: "Création de sites internet <br>et <span class=\"neon\">génération de leads</span> au Maroc.",
-        en: "Website Creation <br>and <span class=\"neon\">Lead Generation</span> in Morocco.",
-        ar: "إنشاء المواقع الإلكترونية <br>و<span class=\"neon\">توليد العملاء المحتملين</span> في المغرب."
+        fr: "Création de sites internet <br>et <span class=\"neon\">génération de leads</span> au Maroc <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        en: "Website Creation <br>and <span class=\"neon\">Lead Generation</span> in Morocco <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        ar: "إنشاء المواقع الإلكترونية <br>و<span class=\"neon\">توليد العملاء المحتملين</span> في المغرب <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
         fr: "On a lancé et piloté de 0 à 1.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence. Une machine à cash pour votre business.",
@@ -740,9 +740,9 @@ const translations = {
         ar: "توليد عملاء محتملين للتأمين بالمغرب"
     },
     footer_copy: {
-        fr: "ASSURLEAD - Création de sites internet et génération de leads au Maroc.",
-        en: "ASSURLEAD - Website Creation & Lead Generation in Morocco.",
-        ar: "ASSURLEAD - إنشاء المواقع الإلكترونية وتوليد العملاء المحتملين في المغرب."
+        fr: "ASSURLEAD - Création de sites internet et génération de leads au Maroc 🇲🇦",
+        en: "ASSURLEAD - Website Creation & Lead Generation in Morocco 🇲🇦",
+        ar: "ASSURLEAD - إنشاء المواقع الإلكترونية وتوليد العملاء المحتملين في المغرب 🇲🇦"
     },
     // Modal
     modal_badge: {
