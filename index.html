@@ -152,7 +152,33 @@
 
     <!-- ROI Calculator -->
     <section id="roi" class="roi-section">
+        <div class="sage-arcs-bg" aria-hidden="true">
+            <svg class="sage-arcs-svg" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="600" cy="260" r="100" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="600" cy="260" r="165" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="600" cy="260" r="230" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="600" cy="260" r="295" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="600" cy="260" r="360" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="600" cy="260" r="425" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+            </svg>
+        </div>
         <div class="container">
+            <!-- High-Impact Poster Header (Sage Inspired) -->
+            <div class="sage-poster-header">
+                <span class="badge" data-i18n="roi_badge">Simulateur d'Acquisition 2026</span>
+                <div class="sage-top-line" data-i18n="roi_top_line">Simulez en direct la</div>
+                <h2 class="sage-giant-title">
+                    <span class="sage-neon-text" data-i18n="roi_title">Rentabilité<br>de votre Agence</span>
+                </h2>
+                <div class="sage-bottom-line" data-i18n="roi_bottom_line">sur chaque contrat signé</div>
+                <p class="sage-subtitle" data-i18n="roi_p">Estimez vos volumes de leads qualifiés, devis émis et contrats signés selon votre budget publicitaire.</p>
+                <div class="sage-btn-wrapper">
+                    <a href="#contact" class="sage-pill-btn" data-i18n="roi_cta_btn">
+                        Je demande un devis <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
             <div class="roi-dynamic-frame">
                 <!-- Decorative Corner Lines -->
                 <div class="frame-corner top-left"></div>
@@ -160,11 +186,6 @@
                 <div class="frame-corner bottom-left"></div>
                 <div class="frame-corner bottom-right"></div>
 
-                <div class="section-header">
-                    <span class="badge" data-i18n="roi_badge">Simulateur 2026</span>
-                    <h2 data-i18n="roi_title">Projetez votre <span class="neon">Réussite.</span></h2>
-                    <p data-i18n="roi_p">Utilisez notre simulateur de croissance pour visualiser l'impact direct de nos stratégies sur votre chiffre d'affaires.</p>
-                </div>
                 <div class="roi-grid">
                     <div class="roi-controls">
                         <div class="control-group">
@@ -410,7 +431,6 @@
 
     <!-- Contact -->
     <section id="contact" class="contact">
-        <canvas id="zellige-tech-contact-canvas" class="section-bg-canvas"></canvas>
         <div class="container contact-grid">
             <div class="contact-info">
                 <span class="badge" data-i18n="contact_badge">Contact</span>
@@ -477,7 +497,8 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
+        <canvas id="zellige-tech-footer-canvas" class="section-bg-canvas"></canvas>
         <div class="container">
             <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD - Pilotes du Démarrage Commercial Digital. Méthode +1.5MDH CA.</p>
         </div>

@@ -520,6 +520,148 @@ nav.scrolled {
     z-index: 1;
 }
 
+/* --- SAGE / HIGH-IMPACT POSTER HEADER --- */
+.sage-poster-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 64px auto;
+    position: relative;
+    z-index: 2;
+}
+
+.sage-poster-header .badge {
+    margin-bottom: 22px;
+}
+
+.sage-top-line {
+    font-size: clamp(22px, 3.4vw, 34px);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.sage-giant-title {
+    font-size: clamp(44px, 7.5vw, 84px);
+    font-weight: 900;
+    line-height: 0.94;
+    letter-spacing: -0.04em;
+    margin: 8px 0 12px 0;
+    text-transform: none;
+}
+
+.sage-neon-text {
+    color: var(--brand-neon) !important;
+    -webkit-text-fill-color: var(--brand-neon) !important;
+    text-shadow: 0 0 45px rgba(0, 255, 65, 0.55), 0 0 20px rgba(0, 255, 65, 0.3);
+    display: inline-block;
+}
+
+.sage-bottom-line {
+    font-size: clamp(22px, 3.4vw, 34px);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.sage-subtitle {
+    font-size: clamp(15px, 1.8vw, 18px);
+    color: var(--zinc-400);
+    max-width: 660px;
+    margin: 0 auto 34px auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.sage-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.sage-pill-btn {
+    background-color: var(--brand-neon) !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    border-radius: 9999px !important;
+    padding: 18px 48px;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 14px 40px rgba(0, 255, 65, 0.5), 0 0 25px rgba(0, 255, 65, 0.3);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+.sage-pill-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    background-color: #00ff55 !important;
+    box-shadow: 0 20px 50px rgba(0, 255, 65, 0.75), 0 0 35px rgba(0, 255, 65, 0.45);
+    color: #000000 !important;
+}
+
+.sage-pill-btn i {
+    color: #000000 !important;
+    font-size: 15px;
+    transition: transform 0.25s ease;
+}
+
+.sage-pill-btn:hover i {
+    transform: translateX(4px);
+}
+
+body[dir="rtl"] .sage-pill-btn:hover i {
+    transform: translateX(-4px);
+}
+
+/* Concentric Green Arcs (Sage Graphic) */
+.sage-arcs-bg {
+    position: absolute;
+    right: -100px;
+    top: 240px;
+    width: 480px;
+    height: 480px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.32;
+    overflow: hidden;
+}
+
+.sage-arcs-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 30px rgba(0, 255, 65, 0.4));
+    animation: sage-arcs-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes sage-arcs-glow {
+    0% {
+        opacity: 0.75;
+        transform: scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+body[dir="rtl"] .sage-arcs-bg {
+    right: auto;
+    left: -100px;
+    transform: scaleX(-1);
+}
+
 /* Dynamic Frame for ROI Section */
 .roi-dynamic-frame {
     position: relative;
@@ -1574,16 +1716,25 @@ nav.scrolled {
 
 /* Footer */
 footer {
-    padding: 64px 0;
+    position: relative;
+    padding: 72px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
+    overflow: hidden;
+}
+
+footer .container {
+    position: relative;
+    z-index: 1;
 }
 
 .footer-copy {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 900;
-    color: var(--zinc-600);
-    letter-spacing: 0.4em;
+    color: var(--zinc-400);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
 }
 
 /* Modal */
@@ -2032,6 +2183,25 @@ footer {
 
     .hero { padding: 150px 0 80px; }
     .container { padding: 0 20px; }
+
+    .sage-poster-header {
+        margin-bottom: 40px;
+    }
+
+    .sage-pill-btn {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px 28px;
+        justify-content: center;
+    }
+
+    .sage-arcs-bg {
+        width: 300px;
+        height: 300px;
+        right: -90px;
+        top: 280px;
+        opacity: 0.18;
+    }
 
     .roi-controls, .contact-form-container {
         padding: 32px 24px;

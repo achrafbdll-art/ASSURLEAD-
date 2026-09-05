@@ -221,19 +221,34 @@ const translations = {
     },
     // ROI
     roi_badge: {
-        fr: "Simulateur d'Acquisition",
-        en: "Acquisition Simulator",
-        ar: "حاسبة الأرباح والاستقطاب"
+        fr: "Simulateur d'Acquisition 2026",
+        en: "Acquisition Simulator 2026",
+        ar: "حاسبة الأرباح والاستقطاب 2026"
+    },
+    roi_top_line: {
+        fr: "Simulez en direct la",
+        en: "Simulate live the",
+        ar: "احسب بشكل فوري"
     },
     roi_title: {
-        fr: "Simulez la Rentabilité <span class=\"neon\">de votre Agence.</span>",
-        en: "Simulate Your Agency's <span class=\"neon\">Acquisition Profitability.</span>",
-        ar: "احسب العائد المالي <span class=\"neon\">لوكالتك للتأمين.</span>"
+        fr: "Rentabilité<br>de votre Agence",
+        en: "Profitability<br>of your Agency",
+        ar: "أرباح ومردودية<br>وكالتك"
+    },
+    roi_bottom_line: {
+        fr: "sur chaque contrat signé",
+        en: "on every signed policy",
+        ar: "على كل عقد موقع"
     },
     roi_p: {
         fr: "Estimez vos volumes de leads qualifiés, devis émis et contrats signés selon votre budget publicitaire.",
         en: "Estimate your monthly qualified leads, quote volume, and signed insurance policies based on your ad spend.",
         ar: "احسب عدد العملاء المؤهلين، طلبات التسعير والعقود الموقعة بناءً على ميزانيتك الإعلانية."
+    },
+    roi_cta_btn: {
+        fr: "Je demande un devis <i class=\"fas fa-arrow-right\"></i>",
+        en: "Request a quote <i class=\"fas fa-arrow-right\"></i>",
+        ar: "أطلب عرض سعر <i class=\"fas fa-arrow-right\"></i>"
     },
     roi_budget_label: {
         fr: "Budget Média Mensuel (Google/Meta Ads)",
@@ -2030,8 +2045,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initROIScene();
     initZelligeTechCanvas('zellige-tech-canvas', 'offres');
     initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section');
-    initZelligeTechCanvas('zellige-tech-contact-canvas', 'contact');
     initZelligeTechCanvas('zellige-tech-faq-canvas', 'faq');
+    initZelligeTechCanvas('zellige-tech-footer-canvas', 'footer');
     initQuestionnaire();
     initCtaConfetti();
     updateROI();
