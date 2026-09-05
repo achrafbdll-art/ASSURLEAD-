@@ -41,9 +41,9 @@ const translations = {
     },
     // Hero
     hero_badge: {
-        fr: "<span class=\"badge-flag\">🇲🇦</span> Agent Digital 2026",
-        en: "<span class=\"badge-flag\">🇲🇦</span> Digital Agent 2026",
-        ar: "<span class=\"badge-flag\">🇲🇦</span> الوكيل الرقمي 2026"
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Agent Digital 2026 <i class=\"fas fa-meteor shooting-icon\"></i>",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Digital Agent 2026 <i class=\"fas fa-meteor shooting-icon\"></i>",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> الوكيل الرقمي 2026 <i class=\"fas fa-meteor shooting-icon\"></i>"
     },
     hero_title: {
         fr: "Création de sites internet <br>et <span class=\"neon\">génération de leads</span> au Maroc <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
