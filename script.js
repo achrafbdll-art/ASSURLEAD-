@@ -46,9 +46,9 @@ const translations = {
         ar: "الوكيل الرقمي 2026"
     },
     hero_title: {
-        fr: "On ne code pas. <br><span class=\"neon\">On pilote des démarrages à +1.5 MDH.</span>",
-        en: "We don't just code. <br><span class=\"neon\">We pilot launches to +1.5M MAD.</span>",
-        ar: "نحن لا نكتفي بالبرمجة. <br><span class=\"neon\">بل نقود انطلاقات تتجاوز +1.5 مليون درهم.</span>"
+        fr: "L’agence spécialisée dans les sites internet <br>et <span class=\"neon\">l’acquisition digitale</span> pour les professionnels de l’assurance au Maroc.",
+        en: "The specialized agency in websites <br>and <span class=\"neon\">digital acquisition</span> for insurance professionals in Morocco.",
+        ar: "الوكالة المتخصصة في المواقع الإلكترونية <br>و<span class=\"neon\">الاستقطاب الرقمي</span> لمهنيي التأمين في المغرب."
     },
     hero_paragraph: {
         fr: "On a lancé et piloté de 0 à 1.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence. Une machine à cash pour votre business.",

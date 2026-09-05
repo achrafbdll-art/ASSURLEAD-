@@ -323,7 +323,7 @@ nav.scrolled {
     gap: 48px;
     position: relative;
     z-index: 10;
-    max-width: 900px;
+    max-width: 1040px;
     margin: 0 auto;
 }
 
@@ -336,9 +336,11 @@ nav.scrolled {
 }
 
 .hero-content h1 {
-    font-size: 80px;
-    line-height: 0.95;
-    margin-bottom: 32px;
+    font-size: clamp(34px, 4.6vw, 62px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    font-weight: 900;
 }
 
 .hero-content p {
