@@ -46,9 +46,9 @@ const translations = {
         ar: "الوكيل الرقمي 2026"
     },
     hero_title: {
-        fr: "L’agence spécialisée dans les sites internet <br>et <span class=\"neon\">l’acquisition digitale</span> pour les professionnels de l’assurance au Maroc.",
-        en: "The specialized agency in websites <br>and <span class=\"neon\">digital acquisition</span> for insurance professionals in Morocco.",
-        ar: "الوكالة المتخصصة في المواقع الإلكترونية <br>و<span class=\"neon\">الاستقطاب الرقمي</span> لمهنيي التأمين في المغرب."
+        fr: "Création de sites internet <br>et <span class=\"neon\">génération de leads</span> au Maroc.",
+        en: "Website Creation <br>and <span class=\"neon\">Lead Generation</span> in Morocco.",
+        ar: "إنشاء المواقع الإلكترونية <br>و<span class=\"neon\">توليد العملاء المحتملين</span> في المغرب."
     },
     hero_paragraph: {
         fr: "On a lancé et piloté de 0 à 1.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence. Une machine à cash pour votre business.",
@@ -694,10 +694,55 @@ const translations = {
         ar: "طلب التدقيق المجاني <i class=\"fas fa-bolt\"></i>"
     },
     // Footer
+    footer_seo_title: {
+        fr: "Expertise Digitale & Référencement au Maroc",
+        en: "Digital Expertise & SEO in Morocco",
+        ar: "الخبرة الرقمية وتحسين محركات البحث في المغرب"
+    },
+    seo_tag_casa: {
+        fr: "Création site internet Casablanca",
+        en: "Website Design Casablanca",
+        ar: "إنشاء مواقع إلكترونية الدار البيضاء"
+    },
+    seo_tag_rabat: {
+        fr: "Création site internet Rabat",
+        en: "Website Design Rabat",
+        ar: "إنشاء مواقع إلكترونية الرباط"
+    },
+    seo_tag_kech: {
+        fr: "Création site internet Marrakech",
+        en: "Website Design Marrakech",
+        ar: "إنشاء مواقع إلكترونية مراكش"
+    },
+    seo_tag_tanger: {
+        fr: "Création site internet Tanger",
+        en: "Website Design Tangier",
+        ar: "إنشاء مواقع إلكترونية طنجة"
+    },
+    seo_tag_agence: {
+        fr: "Agence web Maroc",
+        en: "Web Agency Morocco",
+        ar: "وكالة ويب المغرب"
+    },
+    seo_tag_seo: {
+        fr: "Référencement SEO Casablanca",
+        en: "SEO Optimization Casablanca",
+        ar: "تحسين محركات البحث سيو الدار البيضاء"
+    },
+    seo_tag_assur: {
+        fr: "Création site internet agence assurance Maroc",
+        en: "Insurance Agency Website Morocco",
+        ar: "إنشاء مواقع لوكالات التأمين بالمغرب"
+    },
+    seo_tag_leads: {
+        fr: "Génération de leads assurance Maroc",
+        en: "Insurance Lead Generation Morocco",
+        ar: "توليد عملاء محتملين للتأمين بالمغرب"
+    },
     footer_copy: {
-        fr: "ASSURLEAD - Pilotes du Démarrage Commercial Digital. Méthode +1.5MDH CA.",
-        en: "ASSURLEAD - Digital Commercial Launch Pilots. +1.5M MAD Revenue Method.",
-        ar: "ASSURLEAD - رواد الإطلاق التجاري الرقمي. منهجية +1.5 مليون درهم."
+        fr: "ASSURLEAD - Création de sites internet et génération de leads au Maroc.",
+        en: "ASSURLEAD - Website Creation & Lead Generation in Morocco.",
+        ar: "ASSURLEAD - إنشاء المواقع الإلكترونية وتوليد العملاء المحتملين في المغرب."
     },
     // Modal
     modal_badge: {

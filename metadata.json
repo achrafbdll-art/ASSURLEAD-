@@ -1,6 +1,6 @@
 {
   "name": "Remix: ASSURLEAD - Growth Engine",
-  "description": "L'agence d'acquisition digitale spécialisée dans l'assurance au Maroc. Génération de prospects qualifiés, landing pages, CRM et automatisation commerciale.",
+  "description": "ASSURLEAD : Agence web au Maroc spécialisée en création de site internet (Casablanca, Rabat, Marrakech, Tanger), référencement SEO et génération de leads pour agences d'assurance au Maroc.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
