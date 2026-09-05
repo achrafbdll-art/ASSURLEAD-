@@ -973,10 +973,17 @@ body[dir="rtl"] .sage-arcs-bg {
 
 .sage-arcs-sectors {
     top: 40px;
-    right: -100px;
+    left: -100px;
+    right: auto;
     width: 480px;
     height: 480px;
     opacity: 0.32;
+}
+
+body[dir="rtl"] .sage-arcs-sectors {
+    left: auto;
+    right: -100px;
+    transform: scaleX(-1);
 }
 
 .sectors-section .container {
@@ -2388,7 +2395,13 @@ footer .container {
         opacity: 0.18;
     }
 
-    .sage-arcs-sectors, .sage-arcs-contact {
+    .sage-arcs-sectors {
+        top: 90px;
+        left: -90px;
+        right: auto;
+    }
+
+    .sage-arcs-contact {
         top: 90px;
     }
 
