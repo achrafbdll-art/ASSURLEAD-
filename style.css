@@ -130,14 +130,41 @@ body[dir="rtl"] .btn:hover i {
 
 .btn-primary {
     background-color: var(--brand-neon);
-    color: var(--brand-black);
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
     box-shadow: 0 10px 15px -3px rgba(0, 255, 65, 0.2);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
     background-color: var(--brand-neon);
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
     transform: translateY(-4px);
     box-shadow: 0 15px 25px -3px rgba(0, 255, 65, 0.4);
+}
+
+.btn-primary i,
+.btn-primary span {
+    color: #000000 !important;
+}
+
+/* Explicit black text for Audit Gratuit and primary action buttons */
+[data-i18n="nav_start"],
+[data-i18n="hero_btn_growth"],
+[data-i18n="modal_btn"],
+.nav-links [data-i18n="nav_start"],
+a[href*="wa.me"].btn-primary {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+[data-i18n="nav_start"] i,
+[data-i18n="hero_btn_growth"] i,
+[data-i18n="modal_btn"] i,
+a[href*="wa.me"].btn-primary i {
+    color: #000000 !important;
 }
 
 .btn-outline {
@@ -222,7 +249,7 @@ nav.scrolled {
     list-style: none;
 }
 
-.nav-links a {
+.nav-links a:not(.btn) {
     text-decoration: none;
     color: var(--zinc-500);
     font-size: 10px;
@@ -232,8 +259,34 @@ nav.scrolled {
     transition: color 0.2s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:not(.btn):hover, .nav-links a:not(.btn).active {
     color: var(--brand-neon);
+}
+
+.nav-links a.btn,
+.nav-links a.btn-primary,
+.nav-links .btn-primary,
+.nav-links [data-i18n="nav_start"] {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background-color: var(--brand-neon) !important;
+    font-weight: 900 !important;
+}
+
+.nav-links a.btn:hover,
+.nav-links a.btn-primary:hover,
+.nav-links .btn-primary:hover,
+.nav-links a.btn.active,
+.nav-links a.btn-primary.active,
+.nav-links [data-i18n="nav_start"]:hover {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background-color: var(--brand-neon) !important;
+}
+
+.nav-links a.btn i,
+.nav-links a.btn-primary i {
+    color: #000000 !important;
 }
 
 .mobile-menu-toggle {
@@ -1948,9 +2001,21 @@ footer {
         right: 0;
     }
     
-    .nav-links a {
+    .nav-links a:not(.btn) {
         font-size: 24px;
         padding: 16px;
+    }
+    
+    .nav-links a.btn-primary,
+    .nav-links [data-i18n="nav_start"] {
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
+        background-color: var(--brand-neon) !important;
+        font-size: 14px;
+        font-weight: 900;
+        margin: 20px auto 0;
+        display: inline-flex;
+        width: auto;
     }
     
     .offers-grid, .methode-grid, .sectors-grid {

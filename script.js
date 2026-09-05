@@ -56,9 +56,9 @@ const translations = {
         ar: "أطلقنا وأدرنا من 0 إلى 1.5 مليون درهم لشركة تأمين عالمية من التوب 3. نصنع نفس النجاح لوكالتك لتكون ماكينة أرباح حقيقية."
     },
     hero_btn_growth: {
-        fr: "Recevoir mon Audit Gratuit <i class=\"fas fa-arrow-right\"></i>",
-        en: "Claim Free Acquisition Audit <i class=\"fas fa-arrow-right\"></i>",
-        ar: "احصل على تدقيق مجاني لوكالتك <i class=\"fas fa-arrow-right\"></i>"
+        fr: "Audit Pilotage Démarrage Gratuit 10min <i class=\"fas fa-arrow-right\"></i>",
+        en: "Free 10-min Launch Pilot Audit <i class=\"fas fa-arrow-right\"></i>",
+        ar: "تدقيق مجاني لقيادة الانطلاق 10 دقائق <i class=\"fas fa-arrow-right\"></i>"
     },
     hero_btn_audit: {
         fr: "Découvrir notre système <i class=\"fas fa-chevron-down\"></i>",
@@ -753,19 +753,19 @@ const systemInstructions = {
 const multiLangSuggestions = {
     fr: {
         initial: ["Comment fonctionne le système ?", "Quels sont les tarifs ?", "Étude de cas El Omrani", "Simuler mon ROI"],
-        pricing: ["Pack Starter", "Pack Growth (Recommandé)", "Pack Scale", "Audit gratuit 15min"],
+        pricing: ["Pack Starter", "Pack Growth (Recommandé)", "Audit gratuit 15min"],
         projects: ["Assurances El Omrani", "Garantie 5 leads", "Comment démarrer ?"],
         roisim: ["Calculer mon volume", "Taux de conversion ?", "Coût par lead (28 DH)"]
     },
     en: {
         initial: ["How does the system work?", "What are the rates?", "El Omrani Case Study", "Calculate my ROI"],
-        pricing: ["Starter Tier", "Growth Tier (Recommended)", "Scale Retainer", "Free 15-min audit"],
+        pricing: ["Starter Tier", "Growth Tier (Recommended)", "Free 15-min audit"],
         projects: ["El Omrani Insurance", "5 Leads Guarantee", "How to begin?"],
         roisim: ["Calculate my revenue", "Conversion rate?", "Cost per lead (28 MAD)"]
     },
     ar: {
         initial: ["كيف يعمل النظام؟", "ما هي الأسعار والباقات؟", "دراسة حالة العمراني", "حساب أرباحي"],
-        pricing: ["باقة Starter", "باقة Growth (الأكثر طلباً)", "باقة Scale", "تدقيق مجاني 15 دقيقة"],
+        pricing: ["باقة Starter", "باقة Growth (الأكثر طلباً)", "تدقيق مجاني 15 دقيقة"],
         projects: ["تأمين العمراني", "ضمان 5 عملاء", "كيف نبدأ العمل؟"],
         roisim: ["احسب عائدي المالي", "معدل التحويل؟", "تكلفة العميل (28 درهم)"]
     }
@@ -830,7 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ar: "4 000 - 8 000 <span>درهم/شهر</span>"
             }
         };
-        const keys = ['starter', 'growth', 'scale'];
+        const keys = ['starter', 'growth'];
         keys.forEach(k => {
             const el = document.getElementById(`offer_${k}_price`);
             if (el) {
