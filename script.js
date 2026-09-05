@@ -444,6 +444,77 @@ const translations = {
         en: "Scale Up Today",
         ar: "ابدأ باقة التوسع SCALE"
     },
+    // Sectors / Multi-industry
+    sec_badge: {
+        fr: "Multi-Secteurs",
+        en: "Cross-Industry",
+        ar: "قطاعات متعددة"
+    },
+    sec_top_line: {
+        fr: "Au-delà de l'assurance",
+        en: "Beyond Insurance",
+        ar: "إلى جانب قطاع التأمين"
+    },
+    sec_title: {
+        fr: "Nous accompagnons<br>également",
+        en: "We Also Scale<br>Other Key Sectors",
+        ar: "نواكب ونطور<br>قطاعات رئيسية أخرى"
+    },
+    sec_bottom_line: {
+        fr: "d'autres secteurs clés",
+        en: "to drive sustainable digital growth",
+        ar: "لتعزيز نموها الرقمي"
+    },
+    sec_p: {
+        fr: "Notre expertise s'étend à d'autres secteurs clés pour propulser leur croissance digitale.",
+        en: "Our customer acquisition expertise expands to other key industries to drive digital scale.",
+        ar: "خبرتنا في استقطاب العملاء تمتد إلى قطاعات حيوية أخرى لمضاعفة مبيعاتها الرقمية."
+    },
+    sec_cta_btn: {
+        fr: "Je demande un devis <i class=\"fas fa-arrow-right\"></i>",
+        en: "Request a quote <i class=\"fas fa-arrow-right\"></i>",
+        ar: "أطلب عرض سعر <i class=\"fas fa-arrow-right\"></i>"
+    },
+    sec_immobilier_title: {
+        fr: "Immobilier",
+        en: "Real Estate",
+        ar: "العقارات"
+    },
+    sec_immobilier_p: {
+        fr: "Acquisition de leads qualifiés pour les promoteurs et agents immobiliers.",
+        en: "High-intent lead acquisition for developers and real estate brokers.",
+        ar: "استقطاب مشترين ومستثمرين مؤهلين للمنعشين العقاريين والوكالات."
+    },
+    sec_restauration_title: {
+        fr: "Restauration",
+        en: "Hospitality & Dining",
+        ar: "المطاعم والضيافة"
+    },
+    sec_restauration_p: {
+        fr: "Système de réservation en ligne et visibilité locale accrue pour restaurants premium.",
+        en: "Direct table reservation funnels and local dominance for premium dining.",
+        ar: "أنظمة حجز طاولات إلكترونية وريادة الظهور المحلي للمطاعم المتميزة."
+    },
+    sec_sante_title: {
+        fr: "Santé & Cliniques",
+        en: "Healthcare & Clinics",
+        ar: "الصحة والعيادات"
+    },
+    sec_sante_p: {
+        fr: "Solutions d'acquisition de patients et de prise de rendez-vous pour cliniques.",
+        en: "Qualified patient acquisition and automated booking for specialized clinics.",
+        ar: "حلول حجز المواعيد واستقطاب المرضى للعيادات والمراكز الطبية."
+    },
+    sec_auto_title: {
+        fr: "Automobile",
+        en: "Automotive",
+        ar: "قطاع السيارات"
+    },
+    sec_auto_p: {
+        fr: "Génération de leads qualifiés pour concessionnaires, garages et services auto.",
+        en: "Qualified buyer generation for dealerships, garages, and auto services.",
+        ar: "توليد طلبات شراء واستفسارات مؤكدة لوكلاء وتجار السيارات ومراكز الصيانة."
+    },
     // Case Study
     case_badge: {
         fr: "Preuve & Résultats Réels",
@@ -516,20 +587,40 @@ const translations = {
         en: "Free Strategic Audit",
         ar: "تدقيق استراتيجي مجاني"
     },
+    contact_top_line: {
+        fr: "Analysons votre",
+        en: "Let's Analyze Your",
+        ar: "دعنا نحلل"
+    },
     contact_title: {
-        fr: "Analysons votre <br><span class=\"neon\">Zone Commerciale.</span>",
-        en: "Analyze Your <br><span class=\"neon\">Territory Potential.</span>",
-        ar: "دعنا نحلل <span class=\"neon\">منطقتك التجارية.</span>"
+        fr: "Zone Commerciale.",
+        en: "Commercial Territory.",
+        ar: "منطقتك التجارية."
+    },
+    contact_bottom_line: {
+        fr: "et votre potentiel de leads",
+        en: "and your lead growth potential",
+        ar: "وفرص استقطاب العقود"
     },
     contact_p: {
         fr: "Réservez votre audit d'acquisition de 15 minutes. Nous analysons les volumes de recherche d'assurance dans votre ville et vous présentons le potentiel de leads mensuel.",
         en: "Book your 15-minute acquisition audit. We examine local insurance search volumes in your city and map out your monthly lead pipeline.",
         ar: "احجز جلسة تدقيق مدتها 15 دقيقة لتحليل حجم البحث عن التأمين في مدينتك وتقدير عدد العقود الممكن استقطابها شهرياً."
     },
+    contact_cta_btn: {
+        fr: "Je demande mon audit <i class=\"fas fa-arrow-down\"></i>",
+        en: "Claim My Free Audit <i class=\"fas fa-arrow-down\"></i>",
+        ar: "أطلب تدقيقي المجاني <i class=\"fas fa-arrow-down\"></i>"
+    },
+    contact_excl_title: {
+        fr: "Exclusivité Territoriale Garantie",
+        en: "Guaranteed Territorial Exclusivity",
+        ar: "حصرية جغرافية مضمونة"
+    },
     contact_exclusivity: {
-        fr: "<i class=\"fas fa-map-marker-alt\" style=\"color: var(--brand-neon); margin-right: 6px;\"></i> <strong>Politique d'Exclusivité Territoriale :</strong> Afin de garantir la performance de nos campagnes et d'éviter tout conflit d'intérêts, nous limitons le nombre d'agences partenaires par zone géographique.",
-        en: "<i class=\"fas fa-map-marker-alt\" style=\"color: var(--brand-neon); margin-right: 6px;\"></i> <strong>Territorial Exclusivity Policy:</strong> To maximize campaign performance and prevent any conflict of interest, we strictly limit partner agency intake per geographical area.",
-        ar: "<i class=\"fas fa-map-marker-alt\" style=\"color: var(--brand-neon); margin-right: 6px;\"></i> <strong>سياسة الحصرية الجغرافية:</strong> لضمان أقصى أداء للحملات ومنع تضارب المصالح، نلتزم بعدد محدد ومحدود من الشركاء في كل منطقة."
+        fr: "Afin de garantir la performance de nos campagnes et d'éviter tout conflit d'intérêts, nous limitons strictement le nombre d'agences partenaires par zone géographique.",
+        en: "To guarantee campaign performance and avoid conflicts of interest, we strictly limit partner agency intake per geographical area.",
+        ar: "لضمان أقصى أداء للحملات ومنع أي تضارب للمصالح، نلتزم بحصر عدد محدود جداً من الوكالات الشريكة في كل منطقة جغرافية."
     },
     contact_email_label: {
         fr: "Email Dédié",
