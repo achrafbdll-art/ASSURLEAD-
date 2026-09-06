@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E0C"/>
+      <stop offset="100%" stop-color="#020403"/>
+    </linearGradient>
+    <linearGradient id="neonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D235"/>
+      <stop offset="100%" stop-color="#00FF41"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00FF41" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle with neon accent border -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="#00FF41" stroke-width="2.5"/>
+  
+  <!-- Subtle inner glow ring -->
+  <rect x="5" y="5" width="54" height="54" rx="11" fill="none" stroke="#00FF41" stroke-width="0.8" stroke-opacity="0.25"/>
+
+  <!-- Upward Growth Dynamic Chart Line (AssurLead Signature) -->
+  <path d="M12 47 L24 35 L34 41 L51 17" fill="none" stroke="url(#neonGrad)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  
+  <!-- Arrow Head -->
+  <path d="M38 17 L51 17 L51 30" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Shimmer Peak Node -->
+  <circle cx="51" cy="17" r="3" fill="#FFFFFF"/>
+  
+  <!-- Data Points -->
+  <circle cx="24" cy="35" r="2.5" fill="#00FF41"/>
+  <circle cx="34" cy="41" r="2.5" fill="#00FF41"/>
+  <circle cx="12" cy="47" r="2.5" fill="#00FF41"/>
+
+  <!-- Small Moroccan Star Accent at bottom right -->
+  <polygon points="48,46 49.3,50 53.5,50 50.1,52.5 51.4,56.5 48,54 44.6,56.5 45.9,52.5 42.5,50 46.7,50" fill="#00FF41" opacity="0.6"/>
+</svg>
