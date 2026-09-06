@@ -321,6 +321,62 @@ const translations = {
         en: "Select the ideal tier aligned with your growth targets across your target territory.",
         ar: "اختر الباقة المناسبة لطموحاتك وتوسع وكالتك في رقعتك الجغرافية."
     },
+    // Promotional Banner (Offre Spéciale)
+    promo_badge: {
+        fr: "OFFRE SPÉCIALE",
+        en: "SPECIAL OFFER",
+        ar: "عرض خاص"
+    },
+    promo_title: {
+        fr: "CRÉATION DE SITES<br>INTERNET<br>PROFESSIONNELS",
+        en: "PROFESSIONAL<br>WEBSITE<br>CREATION",
+        ar: "إنشاء مواقع<br>إلكترونية<br>احترافية"
+    },
+    promo_desc: {
+        fr: "Nous créons des sites modernes, ultra-rapides et pensés dès la première ligne de code pour inspirer confiance et convertir vos visiteurs en demandes de devis.",
+        en: "We build modern, ultra-fast websites designed from the very first line of code to inspire trust and convert your visitors into quote requests.",
+        ar: "نصمم مواقع عصرية، فائقة السرعة ومبرمجة من السطر الأول لبناء الثقة وتحويل زوارك إلى طلبات عروض أسعار فعلية."
+    },
+    promo_price_unit: {
+        fr: "DH (Offre d'appel)",
+        en: "DH (Intro Offer)",
+        ar: "درهم (عرض انطلاق)"
+    },
+    promo_btn: {
+        fr: "Profiter de l'offre <i class=\"fab fa-whatsapp\"></i>",
+        en: "Claim This Offer <i class=\"fab fa-whatsapp\"></i>",
+        ar: "الاستفادة من العرض <i class=\"fab fa-whatsapp\"></i>"
+    },
+    promo_f1: {
+        fr: "Design UX/UI haute conversion",
+        en: "High-converting UX/UI design",
+        ar: "تصميم UX/UI عالي التحويل"
+    },
+    promo_f2: {
+        fr: "Bouton WhatsApp commercial direct",
+        en: "Direct commercial WhatsApp button",
+        ar: "زر واتساب تجاري مباشر"
+    },
+    promo_f3: {
+        fr: "Formulaire de devis interactif",
+        en: "Interactive quote request form",
+        ar: "نموذج طلب تسعيرة تفاعلي"
+    },
+    promo_f4: {
+        fr: "100% Responsive smartphone & tablette",
+        en: "100% Responsive smartphone & tablet",
+        ar: "متوافق 100% مع الهواتف والأجهزة اللوحية"
+    },
+    promo_f5: {
+        fr: "Vitesse de chargement &lt; 1.2s",
+        en: "Loading speed &lt; 1.2s",
+        ar: "سرعة تحميل أقل من 1.2 ثانية"
+    },
+    promo_f6: {
+        fr: "Hébergement sécurisé SSL HTTPS",
+        en: "Secure SSL HTTPS hosting",
+        ar: "استضافة آمنة بشهادة SSL HTTPS"
+    },
     // STARTER
     offer_starter_title: {
         fr: "STARTER",

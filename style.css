@@ -1314,6 +1314,206 @@ body[dir="rtl"] .sage-arcs-sectors {
     z-index: 1;
 }
 
+/* Promotional Banner (Offre Spéciale) */
+.promo-banner {
+    margin-bottom: 54px;
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid var(--brand-neon);
+    background: radial-gradient(circle at 12% 20%, rgba(0, 255, 65, 0.08), transparent 50%),
+                radial-gradient(circle at 88% 80%, rgba(0, 255, 65, 0.05), transparent 50%),
+                #070b09;
+    box-shadow: 0 0 40px rgba(0, 255, 65, 0.16), 0 20px 48px rgba(0, 0, 0, 0.65), inset 0 0 40px rgba(0, 255, 65, 0.03);
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-banner:hover {
+    box-shadow: 0 0 50px rgba(0, 255, 65, 0.25), 0 24px 54px rgba(0, 0, 0, 0.75), inset 0 0 50px rgba(0, 255, 65, 0.06);
+    border-color: #00ff55;
+}
+
+.promo-banner-inner {
+    padding: 48px 52px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.promo-left-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+body[dir="rtl"] .promo-left-col {
+    align-items: flex-start;
+    text-align: right;
+}
+
+.promo-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    background: rgba(0, 255, 65, 0.12);
+    color: var(--brand-neon);
+    border: 1px solid rgba(0, 255, 65, 0.45);
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    box-shadow: 0 0 16px rgba(0, 255, 65, 0.18);
+}
+
+.promo-title {
+    font-size: clamp(24px, 2.9vw, 38px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+.promo-desc {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--zinc-400);
+    margin-bottom: 28px;
+    max-width: 500px;
+    font-weight: 400;
+}
+
+.promo-pricing-action {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 22px;
+}
+
+.promo-price-wrapper {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.promo-price-val {
+    font-size: clamp(38px, 4.4vw, 54px);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--brand-neon);
+    letter-spacing: -0.03em;
+    text-shadow: 0 0 22px rgba(0, 255, 65, 0.45);
+}
+
+.promo-price-unit {
+    font-size: clamp(16px, 1.8vw, 21px);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+}
+
+.promo-btn {
+    padding: 13px 26px;
+    font-size: 13px;
+    border-radius: 8px;
+    letter-spacing: 0.08em;
+    box-shadow: 0 8px 25px rgba(0, 255, 65, 0.35);
+    white-space: nowrap;
+}
+
+.promo-right-col {
+    width: 100%;
+}
+
+.promo-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px 22px;
+}
+
+.promo-features-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.promo-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.45;
+    text-align: left;
+}
+
+body[dir="rtl"] .promo-feature-item {
+    text-align: right;
+}
+
+.promo-check {
+    color: var(--brand-neon);
+    font-size: 17px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    filter: drop-shadow(0 0 6px rgba(0, 255, 65, 0.45));
+}
+
+@media (max-width: 991px) {
+    .promo-banner-inner {
+        grid-template-columns: 1fr;
+        padding: 38px 28px;
+        gap: 36px;
+    }
+
+    .promo-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .promo-features-col {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 680px) {
+    .promo-features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .promo-features-col {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 540px) {
+    .promo-banner-inner {
+        padding: 28px 20px;
+    }
+
+    .promo-pricing-action {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .promo-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 .offers-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
