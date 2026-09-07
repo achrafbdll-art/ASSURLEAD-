@@ -563,14 +563,14 @@ const translations = {
         ar: "متوسط قسط التأمين"
     },
     roi_rev_title: {
-        fr: "Volume de Primes / CA Estimé",
-        en: "Estimated Premium Volume / Revenue",
-        ar: "إجمالي حجم الأقساط والمداخيل"
+        fr: "CA potentiel estimé",
+        en: "Estimated Potential Revenue",
+        ar: "رقم المعاملات المحتمل التقديري"
     },
     roi_tag: {
-        fr: "ROI",
-        en: "ROI",
-        ar: "العائد"
+        fr: "ROI indicatif",
+        en: "Indicative ROI",
+        ar: "العائد الاستثماري التقديري"
     },
     roi_overlay_tag: {
         fr: "Simulation Temps Réel",
@@ -583,9 +583,9 @@ const translations = {
         ar: "نموذج نمو عالي الربحية"
     },
     roi_disclaimer: {
-        fr: '<i class="fas fa-info-circle"></i> Simulation indicative basée sur les moyennes observées sur le marché de l\'assurance au Maroc. Les résultats réels varient selon le produit (Auto, Santé, Risques Pro), la ville, le budget média et la réactivité commerciale de votre équipe.',
-        en: '<i class="fas fa-info-circle"></i> Indicative projection based on benchmark data in the Moroccan insurance market. Actual metrics vary with coverage lines, city, ad budget, and sales team response times.',
-        ar: '<i class="fas fa-info-circle"></i> محاكاة تقديرية مبنية على مؤشرات سوق التأمين بالمغرب. النتائج الفعلية تتفاوت حسب نوع المنتجات، المدينة، الميزانية وسرعة تجاوب فريقك التجاري.'
+        fr: '<i class="fas fa-info-circle"></i> Simulation indicative basée sur les paramètres renseignés. Les résultats réels varient selon le secteur, la zone, l\'offre, le budget publicitaire et le taux de conversion.',
+        en: '<i class="fas fa-info-circle"></i> Indicative simulation based on the entered parameters. Actual results vary depending on the sector, area, offer, advertising budget, and conversion rate.',
+        ar: '<i class="fas fa-info-circle"></i> محاكاة تقديرية مبنية على المعطيات المحددة. تختلف النتائج الفعلية حسب القطاع، المنطقة، العرض، الميزانية الإعلانية ونسبة التحويل.'
     },
     // Offers Header
     offers_badge: {
