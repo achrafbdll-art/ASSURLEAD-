@@ -333,9 +333,9 @@ const translations = {
         ar: "إنشاء المواقع الإلكترونية <br>و<span class=\"neon\">توليد العملاء المحتملين</span> في المغرب <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
-        fr: "On a lancé et piloté de 0 à 1.5MDH pour un Assureur Mondial Top 3. On fait pareil pour votre agence. Une machine à cash pour votre business.",
-        en: "We launched and scaled from 0 to 1.5M MAD for a Top 3 Global Insurer. We do the same for your agency. A revenue engine for your business.",
-        ar: "أطلقنا وأدرنا من 0 إلى 1.5 مليون درهم لشركة تأمين عالمية من التوب 3. نصنع نفس النجاح لوكالتك لتكون ماكينة أرباح حقيقية."
+        fr: "On a lancé et piloté de 0 à 1.5MDH pour AXA ASSURANCE MAROC. On fait pareil pour votre agence. Une machine à cash pour votre business.",
+        en: "We launched and scaled from 0 to 1.5M MAD for AXA ASSURANCE MAROC. We do the same for your agency. A revenue engine for your business.",
+        ar: "أطلقنا وأدرنا من 0 إلى 1.5 مليون درهم لصالح AXA ASSURANCE MAROC. نصنع نفس النجاح لوكالتك لتكون ماكينة أرباح حقيقية."
     },
     hero_btn_growth: {
         fr: "Audit Pilotage Démarrage Gratuit 10min <i class=\"fas fa-arrow-right\"></i>",
