@@ -3454,3 +3454,453 @@ body[dir="rtl"] .faq-trigger {
     text-align: right;
 }
 
+/* ==========================================================================
+   DIAGNOSTIC VISIBILITÉ PAGE & CALLOUT BANNER
+   ========================================================================== */
+
+/* Callout Banner in index.html */
+.diagnostic-callout-section {
+    padding: 24px 0 48px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.diagnostic-callout-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    background: radial-gradient(circle at 15% 50%, rgba(239, 68, 68, 0.12), transparent 50%),
+                linear-gradient(135deg, #0D090A 0%, #060908 100%);
+    border: 1px solid rgba(239, 68, 68, 0.38);
+    border-radius: 16px;
+    padding: 30px 36px;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 25px rgba(239, 68, 68, 0.08);
+}
+
+.diagnostic-callout-card:hover {
+    border-color: #FF3838;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.75), 0 0 35px rgba(239, 68, 68, 0.22);
+    transform: translateY(-2px);
+}
+
+.diagnostic-callout-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 780px;
+}
+
+body[dir="rtl"] .diagnostic-callout-left {
+    align-items: flex-start;
+    text-align: right;
+}
+
+.diagnostic-callout-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #FF453A;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.diag-pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #FF3838;
+    box-shadow: 0 0 8px #FF3838;
+    animation: diagDotPulse 1.8s infinite;
+    display: inline-block;
+}
+
+@keyframes diagDotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.75); }
+}
+
+.diagnostic-callout-left h3 {
+    font-size: clamp(20px, 2.3vw, 28px);
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.diagnostic-callout-left p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #A1A1AA;
+    margin: 0;
+}
+
+.btn-outline-danger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border: 1.5px solid #FF3838;
+    background: rgba(239, 68, 68, 0.08);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.diagnostic-callout-card:hover .btn-outline-danger {
+    background: #FF3838;
+    color: #FFFFFF;
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.55);
+}
+
+.nav-diag-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #FF5252 !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+
+.nav-diag-btn:hover {
+    color: #FFFFFF !important;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.65);
+}
+
+/* Independent Diagnostic Page */
+.diagnostic-page-body {
+    background-color: #060807;
+    color: #EDEDED;
+    min-height: 100vh;
+}
+
+.diag-main-wrapper {
+    padding-top: 130px;
+    padding-bottom: 80px;
+    position: relative;
+    background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.07), transparent 45%),
+                radial-gradient(circle at 85% 30%, rgba(0, 255, 65, 0.04), transparent 40%);
+}
+
+.diag-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.diag-hero-header {
+    text-align: center;
+    max-width: 1080px;
+    margin: 0 auto 54px auto;
+}
+
+.diag-badge-pill {
+    display: inline-block;
+    padding: 7px 22px;
+    border-radius: 9999px;
+    border: 1px solid rgba(239, 68, 68, 0.45);
+    background: rgba(239, 68, 68, 0.08);
+    color: #FF453A;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    box-shadow: 0 0 24px rgba(239, 68, 68, 0.15);
+}
+
+.diag-hero-title {
+    font-size: clamp(38px, 6vw, 76px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.diag-highlight-red {
+    color: #FF3838;
+    display: inline-block;
+}
+
+.diag-hero-qmark {
+    color: #FF3838;
+    font-weight: 900;
+    display: inline-block;
+    filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.45));
+}
+
+.diag-hero-sub {
+    font-size: clamp(16px, 1.7vw, 19.5px);
+    line-height: 1.65;
+    color: #A1A1AA;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* 5 Problem Cards */
+.diag-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.diag-card {
+    background: #080B0A;
+    border: 1px solid rgba(239, 68, 68, 0.18);
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+body[dir="rtl"] .diag-card {
+    align-items: flex-start;
+    text-align: right;
+}
+
+.diag-card:hover {
+    border-color: rgba(239, 68, 68, 0.55);
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.14);
+    transform: translateY(-3px);
+    background: #0C0E0D;
+}
+
+.diag-card-highlight {
+    grid-column: span 1;
+}
+
+.diag-card-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF3838;
+    font-size: 17px;
+    margin-bottom: 22px;
+    flex-shrink: 0;
+}
+
+.diag-card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    line-height: 1.35;
+}
+
+.diag-card-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #A1A1AA;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Green Key Takeaway Banner */
+.diag-green-banner {
+    background: #04170D;
+    border: 1px solid rgba(0, 255, 65, 0.35);
+    border-radius: 12px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 24px;
+    margin-bottom: 54px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.08);
+}
+
+body[dir="rtl"] .diag-green-banner {
+    text-align: right;
+}
+
+.diag-green-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--brand-neon);
+    color: #04170D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 0 14px rgba(0, 255, 65, 0.65);
+}
+
+.diag-green-text {
+    font-size: clamp(15px, 1.45vw, 17.5px);
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.45;
+}
+
+/* Consultation Action Card on Diagnostic Page */
+.diag-consultation-section {
+    margin-bottom: 50px;
+}
+
+.diag-consultation-card {
+    background: radial-gradient(circle at top center, rgba(0, 255, 65, 0.09), transparent 65%), #0A0F0D;
+    border: 1.5px solid var(--brand-neon);
+    border-radius: 20px;
+    padding: 50px 36px;
+    text-align: center;
+    box-shadow: 0 0 45px rgba(0, 255, 65, 0.14), 0 20px 50px rgba(0, 0, 0, 0.85);
+    position: relative;
+    overflow: hidden;
+}
+
+.diag-consultation-header h2 {
+    font-size: clamp(24px, 3.2vw, 38px);
+    font-weight: 900;
+    color: #FFFFFF;
+    margin: 16px 0 14px 0;
+    line-height: 1.25;
+}
+
+.diag-consultation-header p {
+    font-size: 15.5px;
+    color: #A1A1AA;
+    max-width: 720px;
+    margin: 0 auto 34px auto;
+    line-height: 1.65;
+}
+
+.diag-consultation-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.diag-btn-main {
+    padding: 16px 32px;
+    font-size: 15px;
+    box-shadow: 0 0 25px rgba(0, 255, 65, 0.4);
+}
+
+.diag-consultation-trust {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+    font-size: 13.5px;
+    color: #A1A1AA;
+}
+
+.diag-consultation-trust .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.diag-consultation-trust i {
+    color: var(--brand-neon);
+}
+
+.diag-back-link-wrapper {
+    margin-top: 10px;
+}
+
+.diag-back-link {
+    color: #A1A1AA;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.diag-back-link:hover {
+    color: var(--brand-neon);
+}
+
+/* Nav diagnostic active indicator */
+.nav-diag-active {
+    color: var(--brand-neon) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1080px) {
+    .diag-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .diag-card-highlight {
+        grid-column: span 2;
+    }
+    .diagnostic-callout-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .diagnostic-callout-action {
+        width: 100%;
+    }
+    .diagnostic-callout-action .btn-outline-danger {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .diag-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .diag-card-highlight {
+        grid-column: span 1;
+    }
+    .diag-green-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 20px;
+    }
+    .diag-consultation-card {
+        padding: 34px 20px;
+    }
+    .diag-consultation-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .diag-consultation-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+

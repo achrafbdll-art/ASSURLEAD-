@@ -39,6 +39,156 @@ const translations = {
         en: "Free Audit",
         ar: "تدقيق مجاني"
     },
+    nav_diagnostic: {
+        fr: "Diagnostic",
+        en: "Diagnostic",
+        ar: "التشخيص"
+    },
+    diag_nav_home: {
+        fr: "<i class=\"fas fa-home\"></i> Accueil",
+        en: "<i class=\"fas fa-home\"></i> Home",
+        ar: "<i class=\"fas fa-home\"></i> الرئيسية"
+    },
+    diag_nav_cta: {
+        fr: "Consultation Gratuite",
+        en: "Free Consultation",
+        ar: "استشارة مجانية"
+    },
+    diag_callout_badge: {
+        fr: "DIAGNOSTIC DE VISIBILITÉ",
+        en: "VISIBILITY DIAGNOSTIC",
+        ar: "تشخيص الرؤية الرقمية"
+    },
+    diag_callout_title: {
+        fr: "Pourquoi vos futurs clients ne vous trouvent pas ?",
+        en: "Why your future clients aren't finding you?",
+        ar: "لماذا لا يجدك عملاؤك المستقبليون؟"
+    },
+    diag_callout_desc: {
+        fr: "Dans un marché où 91% des décisions d'achat commencent sur smartphone, l'absence de dispositif digital vous rend invisible. Consultez le diagnostic complet et découvrez les solutions.",
+        en: "In a market where 91% of buying decisions begin on smartphones, lack of a digital setup makes you invisible. Check out the complete diagnostic and discover the solutions.",
+        ar: "في سوق تبدأ فيه 91% من قرارات الشراء على الهاتف الذكي، فإن غياب المنظومة الرقمية يجعلك غير مرئي. اطلع على التشخيص الكامل واكتشف الحلول."
+    },
+    diag_callout_btn: {
+        fr: "Consulter le Diagnostic <i class=\"fas fa-arrow-right\"></i>",
+        en: "View Diagnostic <i class=\"fas fa-arrow-right\"></i>",
+        ar: "عرض التشخيص <i class=\"fas fa-arrow-left\"></i>"
+    },
+    diag_page_badge: {
+        fr: "DIAGNOSTIC DE VISIBILITÉ",
+        en: "VISIBILITY DIAGNOSTIC",
+        ar: "تشخيص الرؤية الرقمية"
+    },
+    diag_page_title: {
+        fr: "Pourquoi vos futurs clients<br><span class=\"diag-highlight-red\">ne vous trouvent pas</span> <span class=\"diag-hero-qmark\">?</span>",
+        en: "Why your future clients<br><span class=\"diag-highlight-red\">aren't finding you</span> <span class=\"diag-hero-qmark\">?</span>",
+        ar: "لماذا عملاؤك المستقبليون<br><span class=\"diag-highlight-red\">لا يجدون وكالتك</span> <span class=\"diag-hero-qmark\">؟</span>"
+    },
+    diag_page_sub: {
+        fr: "Dans un marché où 91% des décisions d'achat commencent sur smartphone, l'absence de dispositif digital vous rend invisible aux yeux de vos prospects qualifiés.",
+        en: "In a market where 91% of buying decisions start on smartphones, the lack of a digital footprint makes you invisible to qualified prospects.",
+        ar: "في سوق تبدأ فيه 91% من قرارات الشراء عبر الهاتف الذكي، فإن غياب المنظومة الرقمية يجعلك غير مرئي أمام عملائك المحتملين."
+    },
+    diag_c1_title: {
+        fr: "PAS DE SITE PROFESSIONNEL",
+        en: "NO PROFESSIONAL WEBSITE",
+        ar: "غياب موقع إلكتروني احترافي"
+    },
+    diag_c1_desc: {
+        fr: "Sans site web moderne, votre agence manque de crédibilité face à des clients exigeants qui comparent avant de décider.",
+        en: "Without a modern website, your agency lacks credibility in front of demanding clients who compare before deciding.",
+        ar: "بدون موقع إلكتروني عصري، تفتقر وكالتك للمصداقية أمام عملاء يبحثون ويقارنون قبل اتخاذ القرار."
+    },
+    diag_c2_title: {
+        fr: "FAIBLE VISIBILITÉ GOOGLE",
+        en: "LOW GOOGLE VISIBILITY",
+        ar: "ضعف الظهور على جوجل"
+    },
+    diag_c2_desc: {
+        fr: "Vos concurrents trustent la 1ère page et Google Maps pendant que vos prospects recherchent activement vos services.",
+        en: "Your competitors dominate page 1 and Google Maps while your prospects are actively searching for your services.",
+        ar: "منافسوك يستحوذون على الصفحة الأولى وجوجل مابس بينما يبحث عملاؤك بنشاط عن خدماتك."
+    },
+    diag_c3_title: {
+        fr: "PEU DE PROSPECTS RÉGULIERS",
+        en: "FEW REGULAR PROSPECTS",
+        ar: "قلة العملاء المحتملين بانتظام"
+    },
+    diag_c3_desc: {
+        fr: "Dépendance aléatoire au bouche-à-oreille sans flux maîtrisé de demandes entrantes semaine après semaine.",
+        en: "Random dependency on word-of-mouth with no controlled incoming flow of requests week after week.",
+        ar: "الاعتماد العشوائي على التوصيات الشفهية دون تدفق منتظم لطلبات عروض الأسعار أسبوعاً بعد أسبوع."
+    },
+    diag_c4_title: {
+        fr: "PRÉSENCE DIGITALE INSUFFISANTE",
+        en: "INSUFFICIENT DIGITAL PRESENCE",
+        ar: "حضور رقمي غير كافٍ"
+    },
+    diag_c4_desc: {
+        fr: "Absence de passerelle directe pour échanger en 1 clic (comme WhatsApp) et orienter le visiteur vers la signature.",
+        en: "Lack of a direct 1-click bridge (like WhatsApp) to guide visitors straight to contract signing.",
+        ar: "غياب قناة تواصل فورية بنقرة واحدة (مثل واتساب) لتوجيه الزائر نحو التوقيع السريع."
+    },
+    diag_c5_title: {
+        fr: "PAS DE STRATÉGIE D'ACQUISITION",
+        en: "NO ACQUISITION STRATEGY",
+        ar: "غياب استراتيجية استقطاب"
+    },
+    diag_c5_desc: {
+        fr: "Aucun système prédictible de génération de contacts qualifiés ni mesure claire du retour sur investissement.",
+        en: "No predictable system for generating qualified leads or measuring return on investment.",
+        ar: "انعدام نظام يمكن التنبؤ به لجلب العملاء المؤهلين وقياس العائد على الاستثمار بوضوح."
+    },
+    diag_alert_text: {
+        fr: "Vos clients recherchent sur Internet avant de vous contacter. Faites en sorte qu'ils tombent sur vous.",
+        en: "Your clients search the Internet before contacting you. Make sure they stumble upon you.",
+        ar: "عملاؤك يبحثون على الإنترنت قبل الاتصال بك. تأكد من أنهم يجدونك أنت أولاً."
+    },
+    diag_cta_badge: {
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Audit Stratégique Personnalisé",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Personalized Strategic Audit",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> تدقيق استراتيجي مخصص"
+    },
+    diag_cta_title: {
+        fr: "Prêt à inverser la tendance et capter vos futurs clients ?",
+        en: "Ready to turn the tables and capture your future clients?",
+        ar: "هل أنت مستعد لعكس المعادلة واستقطاب عملائك المستقبليين؟"
+    },
+    diag_cta_desc: {
+        fr: "Ne laissez plus vos concurrents monopoliser les demandes de devis au Maroc. Bénéficiez d'une consultation de diagnostic personnalisée de 10 minutes offerte avec notre expert digital.",
+        en: "Stop letting competitors monopolize incoming quote requests in Morocco. Enjoy a free 10-minute tailored visibility audit consultation with our digital expert.",
+        ar: "لا تترك منافسيك يستحوذون على طلبات عروض الأسعار في المغرب. استفد من استشارة تشخيصية مجانية لمدة 10 دقائق مع خبيرنا الرقمي."
+    },
+    diag_cta_whatsapp: {
+        fr: "Lancer mon Diagnostic Gratuit (10 min) <i class=\"fab fa-whatsapp\"></i>",
+        en: "Start My Free Diagnostic (10 min) <i class=\"fab fa-whatsapp\"></i>",
+        ar: "ابدأ تشخيصي المجاني (10 دقائق) <i class=\"fab fa-whatsapp\"></i>"
+    },
+    diag_cta_offers: {
+        fr: "Découvrir nos solutions de création de sites <i class=\"fas fa-bolt\"></i>",
+        en: "Explore our website creation solutions <i class=\"fas fa-bolt\"></i>",
+        ar: "استكشف حلول إنشاء المواقع <i class=\"fas fa-bolt\"></i>"
+    },
+    diag_cta_home: {
+        fr: "<i class=\"fas fa-arrow-left\"></i> Revenir à l'accueil du site",
+        en: "<i class=\"fas fa-arrow-left\"></i> Back to main home",
+        ar: "<i class=\"fas fa-arrow-right\"></i> العودة للصفحة الرئيسية"
+    },
+    diag_trust_1: {
+        fr: "Audit sans engagement",
+        en: "No obligation audit",
+        ar: "تدقيق بدون أي التزام"
+    },
+    diag_trust_2: {
+        fr: "Analyse concurrentielle locale",
+        en: "Local competitive analysis",
+        ar: "تحليل تنافسي محلي"
+    },
+    diag_trust_3: {
+        fr: "Plan d'action chiffré",
+        en: "Quantified action plan",
+        ar: "خطة عمل مرقمة ومدروسة"
+    },
     // Hero
     hero_badge: {
         fr: "<span class=\"badge-flag\">🇲🇦</span> Agent Digital 2026 <i class=\"fas fa-meteor shooting-icon\"></i>",
