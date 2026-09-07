@@ -1,6 +1,18 @@
 import * as THREE from 'three';
 import { GoogleGenAI } from "@google/genai";
 
+// Safely suppress benign ResizeObserver loop notification messages
+window.addEventListener('error', (e) => {
+    if (e && e.message && (
+        e.message.includes('ResizeObserver loop completed with undelivered notifications') ||
+        e.message.includes('ResizeObserver loop limit exceeded')
+    )) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        return true;
+    }
+});
+
 // --- MULTILINGUAL DICTIONARY ---
 const translations = {
     // Navbar
@@ -43,6 +55,126 @@ const translations = {
         fr: "Diagnostic",
         en: "Diagnostic",
         ar: "التشخيص"
+    },
+    nav_approche: {
+        fr: "Notre Approche",
+        en: "Our Approach",
+        ar: "نهجنا"
+    },
+    appr_badge: {
+        fr: "NOTRE APPROCHE",
+        en: "OUR APPROACH",
+        ar: "نهجنا المبتكر"
+    },
+    appr_hero_title: {
+        fr: "Nous transformons<br>votre visibilité<br><span class=\"neon\">en opportunités</span><br><span class=\"neon\">commerciales.</span>",
+        en: "We transform<br>your visibility<br><span class=\"neon\">into commercial</span><br><span class=\"neon\">opportunities.</span>",
+        ar: "نحوّل<br>حضورك الرقمي<br><span class=\"neon\">إلى فرص تجارية</span><br><span class=\"neon\">وعقود فعلية.</span>"
+    },
+    appr_hero_sub: {
+        fr: "Une chaîne digitale complète pour capter, rassurer et convertir vos visiteurs en contrats réels.",
+        en: "A complete digital pipeline to capture, reassure, and convert your visitors into real signed contracts.",
+        ar: "منظومة رقمية متكاملة لجذب زوارك، بناء ثقتهم وتحويلهم إلى عقود تأمين فعلية."
+    },
+    appr_c1_title: {
+        fr: "SITE WEB PROFESSIONNEL",
+        en: "PROFESSIONAL WEBSITE",
+        ar: "موقع إلكتروني احترافي"
+    },
+    appr_c1_desc: {
+        fr: "Conception d'un site sur-mesure ultra-rapide, responsive mobile & desktop, valorisant votre expertise et maximisant vos conversions.",
+        en: "Custom ultra-fast website tailored for mobile & desktop, highlighting your expertise and maximizing conversion rates.",
+        ar: "تصميم موقع فائق السرعة ومتجاوب مع الهواتف والحواسيب، يبرز خبرتك ويعزز نسب التحويل."
+    },
+    appr_c2_title: {
+        fr: "SEO LOCAL & RÉFÉRENCEMENT",
+        en: "LOCAL SEO & RANKING",
+        ar: "السيو المحلي والظهور"
+    },
+    appr_c2_desc: {
+        fr: "Positionnement prioritaire sur les requêtes Google de votre zone géographique (Casablanca, Rabat, Tanger, Marrakech, etc.).",
+        en: "Top Google ranking for high-intent queries in your specific city (Casablanca, Rabat, Tangier, Marrakech, etc.).",
+        ar: "تصدر نتائج بحث جوجل في منطقتك الجغرافية (الدار البيضاء، الرباط، طنجة، مراكش وغيرها)."
+    },
+    appr_c3_title: {
+        fr: "OPTIMISATION GOOGLE",
+        en: "GOOGLE BUSINESS OPTIMIZATION",
+        ar: "تحسين ملف جوجل للأعمال"
+    },
+    appr_c3_desc: {
+        fr: "Fiche Google Business Profile vérifiée et optimisée pour capter les appels locaux et accumuler des avis 5 étoiles.",
+        en: "Verified, optimized Google Business Profile to capture incoming local phone calls and build 5-star social proof.",
+        ar: "توثيق وتحسين حساب جوجل بيزنس لجذب الاتصالات الهاتفية المحلية وحصد تقييمات 5 نجوم."
+    },
+    appr_c4_title: {
+        fr: "WHATSAPP BUSINESS AUTOMATION",
+        en: "WHATSAPP BUSINESS AUTOMATION",
+        ar: "أتمتة واتساب للأعمال"
+    },
+    appr_c4_desc: {
+        fr: "Intégration d'un tunnel direct WhatsApp pour engager immédiatement les prospects chauds sans friction.",
+        en: "Direct WhatsApp funnel integration to immediately engage hot leads with zero friction.",
+        ar: "دمج مسار واتساب فوري للتواصل مع العملاء المحتملين مباشرة دون أي تعقيد."
+    },
+    appr_c5_title: {
+        fr: "LEAD GENERATION CIBLÉE",
+        en: "TARGETED LEAD GENERATION",
+        ar: "استقطاب عملاء مستهدفين"
+    },
+    appr_c5_desc: {
+        fr: "Campagnes ultra-ciblées générant des demandes de devis exclusives et qualifiées prêtes pour vos conseillers.",
+        en: "Ultra-targeted acquisition campaigns delivering exclusive, qualified quote requests ready for your brokers.",
+        ar: "حملات تسويقية دقيقة تولد طلبات عروض أسعار حصرية ومؤهلة لفريق مستشاريك."
+    },
+    appr_c6_title: {
+        fr: "STRATÉGIE DIGITALE & ROI",
+        en: "DIGITAL STRATEGY & ROI",
+        ar: "استراتيجية رقمية وعائد استثماري"
+    },
+    appr_c6_desc: {
+        fr: "Accompagnement continu, pilotage du coût d'acquisition et garantie de performance commerciale.",
+        en: "Continuous support, acquisition cost monitoring, and commercial performance guarantees.",
+        ar: "مواكبة مستمرة، تحكم دقيق في تكلفة اكتساب العملاء وضمان المردودية التجارية."
+    },
+    appr_cta_badge: {
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Déploiement Clé en Main",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Turnkey Deployment",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> جاهز للتسليم والاستخدام"
+    },
+    appr_cta_title: {
+        fr: "Prêt à activer votre écosystème d'acquisition ?",
+        en: "Ready to activate your client acquisition ecosystem?",
+        ar: "هل أنت مستعد لتفعيل منظومة الاستقطاب الخاصة بوكالتك؟"
+    },
+    appr_cta_desc: {
+        fr: "Nos experts conçoivent et déploient l'ensemble de votre dispositif sous 14 jours, avec des résultats mesurables dès le premier mois.",
+        en: "Our specialists design and deploy your full digital infrastructure within 14 days, with tangible results from month one.",
+        ar: "خبراؤنا يصممون ويطلقون منظومتك الكاملة خلال 14 يوماً مع نتائج ملموسة من الشهر الأول."
+    },
+    appr_cta_whatsapp: {
+        fr: "Lancer mon Projet sur WhatsApp <i class=\"fab fa-whatsapp\"></i>",
+        en: "Start My Project on WhatsApp <i class=\"fab fa-whatsapp\"></i>",
+        ar: "ابدأ مشروعي عبر واتساب <i class=\"fab fa-whatsapp\"></i>"
+    },
+    appr_cta_diag: {
+        fr: "Consulter le Diagnostic de Visibilité <i class=\"fas fa-chart-line\"></i>",
+        en: "View Visibility Diagnostic <i class=\"fas fa-chart-line\"></i>",
+        ar: "اطّلع على تشخيص الرؤية الرقمية <i class=\"fas fa-chart-line\"></i>"
+    },
+    appr_trust_1: {
+        fr: "Délai garanti 14 jours",
+        en: "14-day guaranteed delivery",
+        ar: "تسليم مضمون في 14 يوماً"
+    },
+    appr_trust_2: {
+        fr: "Sans engagement de durée",
+        en: "No long-term commitment",
+        ar: "بدون أي التزام زمني"
+    },
+    appr_trust_3: {
+        fr: "Assistance 7j/7 au Maroc",
+        en: "7/7 Support in Morocco",
+        ar: "مواكبة ودعم 7/7 في المغرب"
     },
     diag_nav_home: {
         fr: "<i class=\"fas fa-home\"></i> Accueil",
@@ -1253,12 +1385,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- UTILS ---
     const setupResizeHandler = (container, camera, renderer) => {
+        let animationFrameId = null;
         const observer = new ResizeObserver(() => {
-            const width = container.clientWidth;
-            const height = container.clientHeight;
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-            renderer.setSize(width, height);
+            if (animationFrameId) {
+                window.cancelAnimationFrame(animationFrameId);
+            }
+            animationFrameId = window.requestAnimationFrame(() => {
+                if (!container) return;
+                const width = container.clientWidth;
+                const height = container.clientHeight;
+                if (width === 0 || height === 0) return;
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+                renderer.setSize(width, height, false);
+            });
         });
         observer.observe(container);
         return observer;
@@ -2131,10 +2271,21 @@ document.addEventListener('DOMContentLoaded', () => {
         let width = canvas.width = section.offsetWidth;
         let height = canvas.height = section.offsetHeight;
 
-        // Resize handler
+        // Resize handler with RAF debouncing to avoid notification loops
+        let resizeRaf = null;
         const resizeObserver = new ResizeObserver(() => {
-            width = canvas.width = section.offsetWidth;
-            height = canvas.height = section.offsetHeight;
+            if (resizeRaf) {
+                window.cancelAnimationFrame(resizeRaf);
+            }
+            resizeRaf = window.requestAnimationFrame(() => {
+                if (!section || !canvas) return;
+                const newW = section.offsetWidth;
+                const newH = section.offsetHeight;
+                if (newW > 0 && newH > 0 && (width !== newW || height !== newH)) {
+                    width = canvas.width = newW;
+                    height = canvas.height = newH;
+                }
+            });
         });
         resizeObserver.observe(section);
 

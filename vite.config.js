@@ -16,6 +16,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         diagnostic: resolve(__dirname, 'diagnostic.html'),
+        approche: resolve(__dirname, 'approche.html'),
       },
     },
   },
