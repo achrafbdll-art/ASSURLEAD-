@@ -1089,9 +1089,9 @@ const translations = {
         ar: "تدقيق استراتيجي للاستقطاب"
     },
     modal_title: {
-        fr: "Multipliez vos Devis <span class=\"neon\">d'Assurance.</span>",
-        en: "Multiply Your <span class=\"neon\">Insurance Quotes.</span>",
-        ar: "ضاعف مبيعاتك <span class=\"neon\">وعقود التأمين.</span>"
+        fr: "Multipliez vos Devis <span class=\"neon\">et attirer plus de clients.</span>",
+        en: "Multiply Your Quotes <span class=\"neon\">& Attract More Clients.</span>",
+        ar: "ضاعف عروض أسعارك <span class=\"neon\">واجذب المزيد من العملاء.</span>"
     },
     modal_p: {
         fr: "Réservez votre <strong>audit d'acquisition gratuit</strong> pour découvrir le volume de prospects d'assurance prêts à souscrire dans votre ville et déployer votre machine à contrats.",
