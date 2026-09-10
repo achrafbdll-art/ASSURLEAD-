@@ -104,6 +104,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#offres" data-i18n="nav_offres">Offres</a></li>
+                <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="#accompagnement" data-i18n="nav_methode">Secteurs</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
@@ -152,7 +153,7 @@
                 <p data-i18n="hero_paragraph">On a lancé et piloté de 0 à 1.5MDH pour une grande compagnie d'assurance multinationale au Maroc. On fait pareil pour votre agence. Une machine à cash pour votre business.</p>
                 <div class="hero-btns">
                     <a href="https://wa.me/212707573162" target="_blank" class="btn btn-primary" data-i18n="hero_btn_growth">Audit Pilotage Démarrage Gratuit 10min <i class="fas fa-arrow-right"></i></a>
-                    <a href="#projets" class="btn btn-outline" data-i18n="hero_btn_audit">Découvrir nos réalisations</a>
+                    <a href="/realisations.html" class="btn btn-outline" data-i18n="hero_btn_audit">Découvrir nos réalisations</a>
                 </div>
                 <div class="partners">
                     <span class="partners-label" data-i18n="hero_partners_label">Partenaires Stratégiques</span>
@@ -524,9 +525,8 @@
         </div>
     </section>
 
-    <!-- Client Dashboard Section (Hidden by default, shown when logged in or clicked) -->
-    <!-- Projects / Portfolio -->
-    <section id="projets" class="projects hidden">
+    <!-- Projects / Portfolio (Masqué de la page principale - Dédié à la page /realisations.html) -->
+    <section id="projets" class="projects hidden" style="display: none;" aria-hidden="true">
         <div class="container">
             <div class="section-header">
                 <span class="badge" data-i18n="projets_badge">Succès Clients</span>
@@ -537,18 +537,26 @@
                 <div class="project-card">
                     <div class="project-image">
                         <span class="project-image-badge" data-i18n="projets_card_google_badge">1ère Page Google — Assurance AXA Casablanca</span>
-                        <img src="/src/assets/images/insurance_case_study_1782303908826.jpg" alt="Assurances El Omrani" referrerPolicy="no-referrer">
+                        <img src="/src/assets/images/insurance_case_study_1782303908826.jpg" alt="Assurances El Omrani - www.assuranceselomrani.com" referrerPolicy="no-referrer">
                         <div class="project-overlay">
-                            <a href="https://www.assuranceselomrani.com" target="_blank" class="btn btn-primary btn-sm" data-i18n="projets_card_btn">Voir le site <i class="fas fa-external-link-alt"></i></a>
+                            <a href="/realisations.html" class="btn btn-primary btn-sm"><i class="fas fa-file-lines"></i> Étude de cas</a>
+                            <a href="https://www.assuranceselomrani.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="color: white; border-color: white;"><i class="fas fa-external-link-alt"></i> Visiter le site</a>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3 data-i18n="projets_card_title">Assurances El Omrani</h3>
-                        <p data-i18n="projets_card_p">Système complet d'acquisition de leads pour l'assurance automobile et santé.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+                            <h3 data-i18n="projets_card_title" style="margin: 0;">Assurances El Omrani</h3>
+                            <a href="https://www.assuranceselomrani.com" target="_blank" rel="noopener noreferrer" style="color: var(--brand-neon); font-size: 13px; font-weight: 700; text-decoration: none;">www.assuranceselomrani.com <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <p data-i18n="projets_card_p">Système complet d'acquisition de leads pour l'assurance automobile, santé et risques pros pour l'agence à Casablanca.</p>
                         <div class="project-tags">
-                            <span data-i18n="projets_card_t1">Landing Page</span>
-                            <span data-i18n="projets_card_t2">Ads Meta</span>
-                            <span data-i18n="projets_card_t3">Automation</span>
+                            <span data-i18n="projets_card_t1">Site Web Clé en Main</span>
+                            <span data-i18n="projets_card_t2">1ère Page Google</span>
+                            <span data-i18n="projets_card_t3">WhatsApp Automation</span>
+                        </div>
+                        <div style="margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap;">
+                            <a href="/realisations.html" class="btn btn-primary btn-sm"><i class="fas fa-file-alt"></i> Découvrir la réalisation</a>
+                            <a href="https://www.assuranceselomrani.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> www.assuranceselomrani.com</a>
                         </div>
                     </div>
                 </div>
@@ -694,6 +702,9 @@
                     </a>
                     <a href="/approche.html" class="seo-tag seo-tag-highlight" title="Notre approche digitale et génération de leads Maroc">
                         <i class="fas fa-rocket"></i> <span data-i18n="nav_approche">Notre Approche Digitale</span>
+                    </a>
+                    <a href="/realisations.html" class="seo-tag seo-tag-highlight" title="Réalisation site agent assurance www.assuranceselomrani.com">
+                        <i class="fas fa-check-circle"></i> <span data-i18n="footer_seo_realisation">Réalisation : Assurances El Omrani</span>
                     </a>
                 </div>
             </div>

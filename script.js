@@ -56,10 +56,290 @@ const translations = {
         en: "Diagnostic",
         ar: "التشخيص"
     },
+    nav_realisations: {
+        fr: "Réalisations",
+        en: "Case Studies",
+        ar: "أعمالنا"
+    },
     nav_approche: {
         fr: "Notre Approche",
         en: "Our Approach",
         ar: "نهجنا"
+    },
+    footer_seo_realisation: {
+        fr: "Réalisation : Assurances El Omrani",
+        en: "Case Study: Assurances El Omrani",
+        ar: "دراسة حالة: تأمينات العمراني"
+    },
+    rea_badge: {
+        fr: "<span class=\"badge-flag\">🇲🇦</span> ÉTUDE DE CAS • AGENT D'ASSURANCE MAROC",
+        en: "<span class=\"badge-flag\">🇲🇦</span> CASE STUDY • MOROCCO INSURANCE AGENT",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> دراسة حالة • وكيل تأمين بالمغرب"
+    },
+    rea_hero_title: {
+        fr: "Cabinet Assurances El Omrani<br><span class=\"neon\">Site Web & Système d'Acquisition.</span>",
+        en: "Assurances El Omrani Agency<br><span class=\"neon\">Website & Lead Acquisition Engine.</span>",
+        ar: "وكالة تأمينات العمراني<br><span class=\"neon\">موقع إلكتروني ومنظومة استقطاب عملاء.</span>"
+    },
+    rea_hero_sub: {
+        fr: "Déploiement complet d'un site web sur-mesure ultra-rapide (<a href=\"https://www.assuranceselomrani.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assuranceselomrani.com</a>), référencement local 1ère page Google et tunnel de conversion WhatsApp pour l'agence d'assurance à Casablanca.",
+        en: "Full deployment of a high-speed custom website (<a href=\"https://www.assuranceselomrani.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assuranceselomrani.com</a>), local Google 1st page ranking, and WhatsApp conversion funnel for the insurance agency in Casablanca.",
+        ar: "إطلاق شامل لموقع إلكتروني فائق السرعة ومخصص (<a href=\"https://www.assuranceselomrani.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assuranceselomrani.com</a>)، مع تصدر الصفحة الأولى في غوغل محلياً وتفعيل مسار تحويل مباشر عبر واتساب لوكالة التأمين بالدار البيضاء."
+    },
+    rea_meta_client: {
+        fr: "Client : <strong>Assurances El Omrani</strong>",
+        en: "Client: <strong>Assurances El Omrani</strong>",
+        ar: "العميل: <strong>تأمينات العمراني</strong>"
+    },
+    rea_meta_comp: {
+        fr: "Réseau : <strong>AXA Assurance Maroc</strong>",
+        en: "Network: <strong>AXA Assurance Morocco</strong>",
+        ar: "الشبكة: <strong>أكسا للتأمين المغرب</strong>"
+    },
+    rea_meta_city: {
+        fr: "Zone : <strong>Casablanca & Maroc</strong>",
+        en: "Zone: <strong>Casablanca & Morocco</strong>",
+        ar: "المنطقة: <strong>الدار البيضاء والمغرب</strong>"
+    },
+    rea_btn_visit: {
+        fr: "Visiter www.assuranceselomrani.com",
+        en: "Visit www.assuranceselomrani.com",
+        ar: "زيارة الموقع www.assuranceselomrani.com"
+    },
+    rea_btn_whatsapp: {
+        fr: "Déployer pour mon agence",
+        en: "Deploy for my agency",
+        ar: "إطلاق منظومة لوكالتي"
+    },
+    rea_live_tag: {
+        fr: "Site En Ligne",
+        en: "Live Website",
+        ar: "موقع مباشر"
+    },
+    rea_kpi1_title: {
+        fr: "Demandes de Devis",
+        en: "Quote Requests",
+        ar: "طلبات عروض الأسعار"
+    },
+    rea_kpi1_desc: {
+        fr: "Augmentation mensuelle des cotations entrantes (Auto, Moto, Santé, Habitation).",
+        en: "Monthly surge in incoming quote requests (Auto, Health, Home, Commercial).",
+        ar: "ارتفاع شهري في طلبات التسعير الواردة (سيارات، صحة، سكن، مخاطر مهنية)."
+    },
+    rea_kpi2_title: {
+        fr: "SEO Google Local",
+        en: "Local Google SEO",
+        ar: "تصدر غوغل المحلي"
+    },
+    rea_kpi2_desc: {
+        fr: "Positionnement prioritaire sur les requêtes d'assurance géolocalisées à Casablanca.",
+        en: "Top priority ranking for localized insurance queries across Casablanca.",
+        ar: "ترتيب متقدم على الكلمات المفتاحية للتأمين بمدينة الدار البيضاء."
+    },
+    rea_kpi3_title: {
+        fr: "Coût par Lead",
+        en: "Cost per Lead",
+        ar: "تكلفة العميل المؤهل"
+    },
+    rea_kpi3_desc: {
+        fr: "Économie directe par rapport à l'achat de leads non exclusifs sur les plateformes tierces.",
+        en: "Direct savings compared to buying shared non-exclusive leads from third-party broker sites.",
+        ar: "توفير مباشر مقارنة بشراء بيانات غير حصرية من المنصات الوسيطة."
+    },
+    rea_kpi4_title: {
+        fr: "Réactivité WhatsApp",
+        en: "WhatsApp Responsiveness",
+        ar: "سرعة التفاعل عبر واتساب"
+    },
+    rea_kpi4_desc: {
+        fr: "Délai moyen de prise en charge d'un prospect chaud grâce au routage instantané.",
+        en: "Average response time for hot prospects thanks to automated direct routing.",
+        ar: "متوسط وقت التكفل بالعميل المستعجل بفضل التوجيه الفوري المباشر."
+    },
+    rea_impact_badge: {
+        fr: "Transformation Commerciale",
+        en: "Business Transformation",
+        ar: "التحول التجاري"
+    },
+    rea_impact_title: {
+        fr: "L'Impact Concret sur l'Agence",
+        en: "Concrete Agency Impact",
+        ar: "الأثر الملموس على نشاط الوكالة"
+    },
+    rea_impact_sub: {
+        fr: "Comparatif de l'activité du cabinet avant et après le déploiement du système digital ASSURLEAD.",
+        en: "Comparison of agency activity before and after implementing the ASSURLEAD digital framework.",
+        ar: "مقارنة نشاط الوكالة قبل وبعد تشغيل منظومة ASSURLEAD الرقمية."
+    },
+    rea_before_badge: {
+        fr: "Avant ASSURLEAD",
+        en: "Before ASSURLEAD",
+        ar: "قبل ASSURLEAD"
+    },
+    rea_before_title: {
+        fr: "Activité Passante & Dépendance Physique",
+        en: "Walk-in Reliance & Offline Bottlenecks",
+        ar: "الاعتماد الكلي على الزيارات العابرة"
+    },
+    rea_b1: {
+        fr: "Dépendance à 100% au passage en agence physique et au bouche-à-oreille local.",
+        en: "100% reliance on physical walk-in traffic and word-of-mouth.",
+        ar: "الاعتماد بنسبة 100% على مرور الزوار أمام الوكالة والتوصيات الشفهية."
+    },
+    rea_b2: {
+        fr: "Aucun site internet moderne valorisant l'expertise du cabinet auprès des professionnels.",
+        en: "No modern website showcasing agency credentials to high-value prospects.",
+        ar: "غياب موقع إلكتروني احترافي يبرز خبرة الوكالة أمام المهنيين والشركات."
+    },
+    rea_b3: {
+        fr: "Perte des prospects qui comparent en ligne le soir, le week-end ou depuis leur mobile.",
+        en: "Loss of valuable prospects comparing insurance options online in evenings and weekends.",
+        ar: "فقدان العملاء الذين يقارنون العروض عبر هواتفهم في المساء ونهاية الأسبوع."
+    },
+    rea_b4: {
+        fr: "Absence de canal direct WhatsApp pour capter les demandes de devis urgentes.",
+        en: "No direct WhatsApp funnel to handle urgent quote requests immediately.",
+        ar: "غياب قناة واتساب سريعة لاستقبال ومتابعة طلبات التسعير المستعجلة."
+    },
+    rea_after_badge: {
+        fr: "Après www.assuranceselomrani.com",
+        en: "After www.assuranceselomrani.com",
+        ar: "بعد إطلاق www.assuranceselomrani.com"
+    },
+    rea_after_title: {
+        fr: "Machine Digitale & Flux Continu",
+        en: "Digital Engine & Continuous Inflow",
+        ar: "منظومة رقمية وتدفق مستمر"
+    },
+    rea_a1: {
+        fr: "Présence web premium 24h/24 crédibilisant immédiatement le cabinet à Casablanca.",
+        en: "24/7 premium web presence instantly establishing credibility across Casablanca.",
+        ar: "حضور رقمي احترافي 24/7 يعزز ثقة ومصداقية الوكالة في الدار البيضاء."
+    },
+    rea_a2: {
+        fr: "Positionnement 1ère page Google sur \"Assurance Casablanca\" et requêtes cibles.",
+        en: "Top 1st page Google ranking on \"Assurance Casablanca\" and key target keywords.",
+        ar: "تصدر الصفحة الأولى في غوغل لكلمة \"تأمين الدار البيضاء\" والمنتجات المستهدفة."
+    },
+    rea_a3: {
+        fr: "Bouton WhatsApp direct déclenchant des conversations qualifiées en moins de 10 minutes.",
+        en: "Direct WhatsApp button initiating qualified conversations in under 10 minutes.",
+        ar: "زر واتساب مباشر يتيح بدء محادثات مؤهلة مع المستشارين في أقل من 10 دقائق."
+    },
+    rea_a4: {
+        fr: "100% de prospects exclusifs et propriétaires à l'agence (zéro lead revendu à des tiers).",
+        en: "100% proprietary exclusive leads (zero resale to competing brokers).",
+        ar: "بيانات عملاء حصرية 100% ملك للوكالة (بدون أي إعادة بيع للمنافسين)."
+    },
+    rea_pillars_badge: {
+        fr: "Détails de la Solution",
+        en: "Solution Blueprint",
+        ar: "تفاصيل الحل المعتمد"
+    },
+    rea_pillars_title: {
+        fr: "Ce qui a été Conçu & Déployé",
+        en: "What Was Built & Deployed",
+        ar: "ما تم تصميمه وتنفيذه للوكالة"
+    },
+    rea_pillars_sub: {
+        fr: "Une architecture web robuste spécialement calibrée pour le secteur de l'assurance au Maroc.",
+        en: "A robust web architecture specifically tailored for Morocco's insurance industry.",
+        ar: "بنية رقمية متينة مصممة خصيصاً لقطاع التأمين بالمغرب."
+    },
+    rea_p1_title: {
+        fr: "Site Web Haute Performance",
+        en: "High-Performance Website",
+        ar: "موقع ويب فائق الأداء"
+    },
+    rea_p1_desc: {
+        fr: "Conception sur-mesure pour www.assuranceselomrani.com : temps de chargement < 1.2s, design épuré, navigation fluide et 100% optimisé smartphone.",
+        en: "Custom architecture for www.assuranceselomrani.com: < 1.2s loading speed, sleek UI, mobile-first responsiveness.",
+        ar: "تصميم مخصص للموقع www.assuranceselomrani.com بسرعة تحميل أقل من 1.2 ثانية وتوافق تام مع الهواتف الذكية."
+    },
+    rea_p2_title: {
+        fr: "Tunnels de Devis par Produit",
+        en: "Product-Specific Quote Funnels",
+        ar: "مسارات تسعير مخصصة لكل منتج"
+    },
+    rea_p2_desc: {
+        fr: "Formulaires interactifs spécifiques pour l'Auto (immatriculation, bonus), la Santé, l'Habitation et les Risques Professionnels.",
+        en: "Tailored multi-step forms for Auto (registration, bonus), Health, Home, and Commercial policies.",
+        ar: "نماذج تفاعلية مخصصة لتأمين السيارات، التأمين الصحي، السكن، وتأمينات الشركات."
+    },
+    rea_p3_title: {
+        fr: "Tunnel WhatsApp Instantané",
+        en: "Instant WhatsApp Funnel",
+        ar: "تحويل مباشر عبر واتساب"
+    },
+    rea_p3_desc: {
+        fr: "Intégration d'un bouton WhatsApp commercial pré-rempli pour éliminer la friction et transformer les visiteurs en conversations directes.",
+        en: "Pre-filled commercial WhatsApp routing eliminating friction and driving immediate calls/chats.",
+        ar: "ربط زر واتساب بنصوص مسبقة الإعداد لإزالة العوائق وبدء المحادثات التجارية فوراً."
+    },
+    rea_p4_title: {
+        fr: "SEO Local Casablanca",
+        en: "Local Casablanca SEO",
+        ar: "تحسين محركات البحث المحلي بالبيضاء"
+    },
+    rea_p4_desc: {
+        fr: "Optimisation on-page et Google Business Profile pour hisser le cabinet sur les premières positions des recherches locales.",
+        en: "On-page optimization & Google Business Profile setup propelling the agency to top search spots.",
+        ar: "تهيئة الموقع وملف غوغل التجاري لضمان تصدر الوكالة في نتائج البحث الجغرافي."
+    },
+    rea_p5_title: {
+        fr: "Confiance & Rassurance",
+        en: "Trust & Credibility",
+        ar: "عوامل الثقة والمصداقية"
+    },
+    rea_p5_desc: {
+        fr: "Mise en avant des agréments, de la marque partenaire AXA, des avis clients vérifiés et de la géolocalisation de l'agence.",
+        en: "Prominent display of certifications, AXA partner branding, verified customer reviews, and map location.",
+        ar: "إبراز التراخيص، علامة الشريك أكسا، آراء العملاء الموثقة وخريطة موقع الوكالة."
+    },
+    rea_p6_title: {
+        fr: "Tracking & Pilotage ROI",
+        en: "Analytics & ROI Tracking",
+        ar: "تتبع الأداء وعائد الاستثمار"
+    },
+    rea_p6_desc: {
+        fr: "Mesure en temps réel des clics d'appels, des messages WhatsApp générés et du coût par souscription de contrat.",
+        en: "Live tracking of phone calls, generated WhatsApp leads, and acquisition cost per signed policy.",
+        ar: "متابعة لحظية للنقرات، اتصالات واتساب، وتكلفة توقيع كل عقد تأميني."
+    },
+    rea_quote_text: {
+        fr: "« Grâce à notre site www.assuranceselomrani.com et à la stratégie d'acquisition digitale déployée par ASSURLEAD, notre agence reçoit quotidiennement des demandes de devis qualifiées directement sur WhatsApp. Les clients apprécient la rapidité du site et la facilité de contact. C'est un véritable accélérateur pour notre portefeuille à Casablanca. »",
+        en: "“Thanks to our website www.assuranceselomrani.com and the digital strategy deployed by ASSURLEAD, our agency receives daily qualified quote requests straight to WhatsApp. Clients love the speed of the site and easy contact. It has been a true growth accelerator for our Casablanca portfolio.”",
+        ar: "«بفضل موقعنا www.assuranceselomrani.com وخطة الاستقطاب الرقمية التي طورتها ASSURLEAD، أصبحت وكالتنا تستقبل يومياً طلبات تسعير مؤهلة مباشرة عبر واتساب. سرعة الموقع وسهولة التواصل صنعت فارقاً حقيقياً في نمو محفظة عملائنا بالدار البيضاء.»"
+    },
+    rea_quote_author: {
+        fr: "Direction du Cabinet",
+        en: "Agency Management",
+        ar: "إدارة الوكالة"
+    },
+    rea_quote_agency: {
+        fr: "Cabinet Assurances El Omrani • Agent AXA",
+        en: "Assurances El Omrani • AXA Agent",
+        ar: "وكالة تأمينات العمراني • وكيل أكسا"
+    },
+    rea_cta_title: {
+        fr: "Vous voulez le même système pour votre agence d'assurance ?",
+        en: "Want the same acquisition system for your insurance agency?",
+        ar: "هل ترغب في المنظومة ذاتها لوكالتك التأمينية بالمغرب؟"
+    },
+    rea_cta_desc: {
+        fr: "Nous concevons et mettons en ligne votre site internet et vos tunnels d'acquisition d'assurance en 14 jours, avec des résultats mesurables dès le 1er mois.",
+        en: "We design and deploy your custom insurance website and acquisition funnels in 14 days, with proven results in Month 1.",
+        ar: "نقوم بتصميم وإطلاق موقع وكالتك ومسارات استقطاب العملاء في 14 يوماً فقط، مع نتائج ملموسة منذ الشهر الأول."
+    },
+    rea_cta_btn_wa: {
+        fr: "Lancer mon Projet sur WhatsApp <i class=\"fab fa-whatsapp\"></i>",
+        en: "Launch on WhatsApp <i class=\"fab fa-whatsapp\"></i>",
+        ar: "ابدأ مشروع وكالتك عبر واتساب <i class=\"fab fa-whatsapp\"></i>"
+    },
+    rea_cta_btn_site: {
+        fr: "Voir le site live : assuranceselomrani.com <i class=\"fas fa-external-link-alt\"></i>",
+        en: "View live site: assuranceselomrani.com <i class=\"fas fa-external-link-alt\"></i>",
+        ar: "زيارة الموقع المباشر: assuranceselomrani.com <i class=\"fas fa-external-link-alt\"></i>"
     },
     appr_badge: {
         fr: "NOTRE APPROCHE",
@@ -1962,17 +2242,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Projects Navigation
-    const projetsSection = document.getElementById('projets');
-    if (projetsSection) {
-        document.querySelectorAll('a[href="#projets"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                projetsSection.classList.remove('hidden');
-                projetsSection.scrollIntoView({ behavior: 'smooth' });
-            });
+    // Projects Navigation -> Redirect to dedicated page
+    document.querySelectorAll('a[href="#projets"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = '/realisations.html';
         });
-    }
+    });
 
     // Dynamic Hero Dashboard
     const updateHeroDashboard = () => {
