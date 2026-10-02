@@ -31,6 +31,11 @@ const translations = {
         en: "ROI Simulator",
         ar: "الحاسبة"
     },
+    nav_simulateur: {
+        fr: "Simulateur",
+        en: "Simulator",
+        ar: "الحاسبة"
+    },
     nav_cas: {
         fr: "Étude de Cas",
         en: "Case Study",
@@ -603,34 +608,34 @@ const translations = {
     },
     // Hero
     hero_badge: {
-        fr: "<span class=\"badge-flag\">🇲🇦</span> Agent Digital 2026 <i class=\"fas fa-meteor shooting-icon\"></i>",
-        en: "<span class=\"badge-flag\">🇲🇦</span> Digital Agent 2026 <i class=\"fas fa-meteor shooting-icon\"></i>",
-        ar: "<span class=\"badge-flag\">🇲🇦</span> الوكيل الرقمي 2026 <i class=\"fas fa-meteor shooting-icon\"></i>"
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <i class=\"fas fa-meteor shooting-icon\"></i>",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco <i class=\"fas fa-meteor shooting-icon\"></i>",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <i class=\"fas fa-meteor shooting-icon\"></i>"
     },
     hero_title: {
-        fr: "Création de sites internet <br>et <span class=\"neon\">génération de leads</span> au Maroc <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        en: "Website Creation <br>and <span class=\"neon\">Lead Generation</span> in Morocco <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        ar: "إنشاء المواقع الإلكترونية <br>و<span class=\"neon\">توليد العملاء المحتملين</span> في المغرب <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
+        fr: "Votre site ne doit pas seulement être beau.<br>Il doit être <span class=\"neon\">trouvé sur Google</span> et générer des leads. <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        en: "Your website shouldn't just look good.<br>It must be <span class=\"neon\">found on Google</span> and generate qualified leads. <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        ar: "موقعك الإلكتروني لا يجب أن يكون جميلاً فحسب.<br>بل يجب أن <span class=\"neon\">يظهر في صدارة غوغل</span> ويجلب لك عملاء مؤهلين. <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
-        fr: "On a lancé et piloté de 0 à 1.5MDH pour une grande compagnie d'assurance multinationale au Maroc. On fait pareil pour votre agence. Une machine à cash pour votre business.",
-        en: "We launched and scaled from 0 to 1.5M MAD for a leading multinational insurance company in Morocco. We do the same for your agency. A revenue engine for your business.",
-        ar: "أطلقنا وأدرنا من 0 إلى 1.5 مليون درهم لصالح شركة تأمين متعددة الجنسيات كبرى بالمغرب. نصنع نفس النجاح لوكالتك لتكون ماكينة أرباح حقيقية."
+        fr: "Nous créons des sites web optimisés pour Google afin de transformer votre visibilité en leads et vos leads en clients. Un moteur d'acquisition pérenne conçu pour le marché marocain.",
+        en: "We build Google-optimized websites designed to turn your local search visibility into leads and your leads into paying clients in Morocco.",
+        ar: "نصمم مواقع إلكترونية مهيأة لغوغل لتحويل ظهورك المحلي إلى عملاء محتملين ومبيعات حقيقية لوكالتك وشركتك في المغرب."
     },
     hero_btn_growth: {
-        fr: "Audit Pilotage Démarrage Gratuit 10min <i class=\"fas fa-arrow-right\"></i>",
-        en: "Free 10-min Launch Pilot Audit <i class=\"fas fa-arrow-right\"></i>",
-        ar: "تدقيق مجاني لقيادة الانطلاق 10 دقائق <i class=\"fas fa-arrow-right\"></i>"
+        fr: "Demander un audit gratuit (15 min) <i class=\"fas fa-arrow-right\"></i>",
+        en: "Get a Free SEO Audit (15 min) <i class=\"fas fa-arrow-right\"></i>",
+        ar: "طلب تدقيق مجاني للظهور (15 دقيقة) <i class=\"fas fa-arrow-right\"></i>"
     },
     hero_btn_audit: {
-        fr: "Découvrir notre système <i class=\"fas fa-chevron-down\"></i>",
-        en: "Discover Our System <i class=\"fas fa-chevron-down\"></i>",
-        ar: "اكتشف نظامنا <i class=\"fas fa-chevron-down\"></i>"
+        fr: "Voir comment ça fonctionne",
+        en: "See how it works",
+        ar: "اكتشف كيف يعمل نظامنا"
     },
     hero_partners_label: {
-        fr: "Écosystème & Compagnies d'Assurance",
-        en: "Insurance Ecosystem & Companies",
-        ar: "المنظومة وشركات التأمين الشريكة"
+        fr: "Secteurs & Réseaux Accompagnés au Maroc",
+        en: "Sectors & Networks in Morocco",
+        ar: "القطاعات والشبكات المواكبة في المغرب"
     },
     // Dashboard Card
     dash_live_indicator: {
@@ -730,7 +735,37 @@ const translations = {
         en: "Policy contract issuance with transparent tracking of your exact acquisition cost per signed contract.",
         ar: "توقيع وثيقة التأمين مع تتبع دقيق لتكلفة الحصول على كل عقد لضمان أعلى ربحية لوكالتك."
     },
-    // Comparison Matrix
+    // Comparison Matrix & Difference
+    diff_badge: {
+        fr: "La Vraie Différence",
+        en: "The Real Difference",
+        ar: "الفرق الجوهري"
+    },
+    diff_title: {
+        fr: "<span class=\"nowrap-phrase\">Site Vitrine Classique</span> <span class=\"nowrap-phrase\">vs <span class=\"neon\">Moteur d'Acquisition</span></span>",
+        en: "<span class=\"nowrap-phrase\">Classic Showcase Site</span> <span class=\"nowrap-phrase\">vs <span class=\"neon\">Acquisition Engine</span></span>",
+        ar: "<span class=\"nowrap-phrase\">الموقع التقليدي</span> <span class=\"nowrap-phrase\">مقابل <span class=\"neon\">محرك استقطاب العملاء</span></span>"
+    },
+    diff_p: {
+        fr: "<span class=\"diff-sub-phrase\">Pourquoi 90% des sites web d'entreprises au Maroc ne génèrent aucun client</span> <span class=\"diff-sub-phrase\">— et comment notre architecture inverse l'équation.</span>",
+        en: "<span class=\"diff-sub-phrase\">Why 90% of business websites in Morocco fail to generate clients</span> <span class=\"diff-sub-phrase\">— and how our architecture reverses the equation.</span>",
+        ar: "<span class=\"diff-sub-phrase\">لماذا 90% من المواقع بالمغرب لا تجلب أي عميل</span> <span class=\"diff-sub-phrase\">— وكيف يقلب نظامنا المعادلة لصالحك.</span>"
+    },
+    methode_badge: {
+        fr: "Processus Éprouvé",
+        en: "Proven Process",
+        ar: "منهجية مثبتة"
+    },
+    methode_title: {
+        fr: "<span class=\"nowrap-phrase\">Notre Méthode d'Acquisition</span> <span class=\"nowrap-phrase neon\">en 4 Étapes.</span>",
+        en: "<span class=\"nowrap-phrase\">Our Acquisition Method</span> <span class=\"nowrap-phrase neon\">in 4 Steps.</span>",
+        ar: "<span class=\"nowrap-phrase\">منهجيتنا في الاستقطاب</span> <span class=\"nowrap-phrase neon\">في 4 خطوات.</span>"
+    },
+    methode_p: {
+        fr: "Une démarche d'ingénierie web et de référencement naturel rigoureuse pour positionner votre entreprise face à ses futurs clients.",
+        en: "A rigorous web engineering and organic SEO process to position your business in front of future clients.",
+        ar: "هندسة رقمية دقيقة وتهيئة غوغل محكمة لوضع وكالتك أمام عملائك المستقبليين."
+    },
     comp_classic_title: {
         fr: "Agence Web Classique",
         en: "Generic Web Agency",
@@ -812,6 +847,11 @@ const translations = {
         en: "Request a quote <i class=\"fas fa-arrow-right\"></i>",
         ar: "أطلب عرض سعر <i class=\"fas fa-arrow-right\"></i>"
     },
+    roi_launch_btn: {
+        fr: "<i class=\"fas fa-calculator\"></i> Lancer le Simulateur d'Acquisition <i class=\"fas fa-arrow-right\"></i>",
+        en: "<i class=\"fas fa-calculator\"></i> Launch Acquisition Simulator <i class=\"fas fa-arrow-right\"></i>",
+        ar: "<i class=\"fas fa-calculator\"></i> فتح حاسبة الأرباح والاستقطاب <i class=\"fas fa-arrow-left\"></i>"
+    },
     roi_budget_label: {
         fr: "Budget Média Mensuel (Google/Meta Ads)",
         en: "Monthly Media Budget (Google/Meta Ads)",
@@ -874,9 +914,9 @@ const translations = {
         ar: "الباقات والأسعار"
     },
     offers_title: {
-        fr: "3 Formules Simples. <span class=\"neon\">Zéro Frais Cachés.</span>",
-        en: "3 Clear Tiers. <span class=\"neon\">Zero Hidden Fees.</span>",
-        ar: "3 باقات واضحة. <span class=\"neon\">بدون أي مصاريف خفية.</span>"
+        fr: "4 Formules Claires. <span class=\"neon\">Zéro Frais Cachés.</span>",
+        en: "4 Clear Tiers. <span class=\"neon\">Zero Hidden Fees.</span>",
+        ar: "4 باقات واضحة. <span class=\"neon\">بدون أي مصاريف خفية.</span>"
     },
     offers_p: {
         fr: "Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.",
@@ -939,128 +979,172 @@ const translations = {
         en: "Secure SSL HTTPS hosting",
         ar: "استضافة آمنة بشهادة SSL HTTPS"
     },
-    // STARTER
+    // 1. 🚀 STARTER (2 000 DH)
+    offer_starter_badge: {
+        fr: "Essentiel",
+        en: "Essential",
+        ar: "الباقة الأساسية"
+    },
     offer_starter_title: {
-        fr: "STARTER",
-        en: "STARTER",
-        ar: "باقة البداية (STARTER)"
+        fr: "🚀 STARTER",
+        en: "🚀 STARTER",
+        ar: "🚀 باقة الانطلاق (STARTER)"
     },
     offer_starter_f1: {
-        fr: "Landing page haute conversion (Auto ou Santé)",
-        en: "High-converting landing page (Auto or Health)",
-        ar: "صفحة هبوط عالية التحويل (تأمين السيارات أو الصحة)"
+        fr: "Site professionnel",
+        en: "Professional website",
+        ar: "موقع إلكتروني احترافي"
     },
     offer_starter_f2: {
-        fr: "Formulaire de demande de devis en 2 minutes",
-        en: "2-minute rapid insurance quote request form",
-        ar: "استمارة طلب تسعيرة سريعة في دقيقتين"
+        fr: "Structure SEO",
+        en: "SEO structure",
+        ar: "بنية مهيأة لمحركات البحث"
     },
     offer_starter_f3: {
-        fr: "Tracking Google Analytics 4 & Pixel Meta",
-        en: "Google Analytics 4 & Meta Pixel event tracking",
-        ar: "تتبع متقدم عبر Google Analytics 4 و Meta Pixel"
+        fr: "WhatsApp direct",
+        en: "Direct WhatsApp",
+        ar: "زر واتساب مباشر"
     },
     offer_starter_f4: {
-        fr: "Bouton WhatsApp Business direct intégré",
-        en: "Integrated Direct WhatsApp Business button",
-        ar: "زر تواصل مباشر ومبرمج عبر واتساب بزنس"
+        fr: "Formulaire",
+        en: "Quote form",
+        ar: "استمارة طلب تسعيرة"
     },
     offer_starter_f5: {
-        fr: "Hébergement sécurisé & design 100% mobile",
-        en: "Secured hosting & 100% mobile-first design",
-        ar: "استضافة سريعة وتصميم متوافق 100% مع الهواتف"
+        fr: "Google Maps",
+        en: "Google Maps",
+        ar: "تهيئة Google Maps"
     },
     offer_starter_btn: {
-        fr: "Démarrer en Starter",
-        en: "Start with Starter",
-        ar: "ابدأ بباقة STARTER"
+        fr: "Choisir Starter",
+        en: "Choose Starter",
+        ar: "اختيار باقة Starter"
     },
-    // GROWTH
+
+    // 2. 📈 GROWTH (4 500 DH)
     offer_growth_badge: {
-        fr: "Recommandé • Pack Complet",
-        en: "Recommended • Full Pack",
-        ar: "الأكثر طلباً • الباقة الشاملة"
+        fr: "Recommandé • Plus Populaire",
+        en: "Recommended • Most Popular",
+        ar: "الأكثر طلباً • موصى به"
     },
     offer_growth_title: {
-        fr: "GROWTH",
-        en: "GROWTH",
-        ar: "باقة النمو (GROWTH)"
+        fr: "📈 GROWTH",
+        en: "📈 GROWTH",
+        ar: "📈 باقة النمو (GROWTH)"
     },
     offer_growth_f1: {
-        fr: "Système complet d'acquisition d'assurance clé en main",
-        en: "Complete turnkey insurance acquisition framework",
-        ar: "نظام استقطاب وتوليد عملاء تأمين متكامل وجاهز"
+        fr: "Site complet",
+        en: "Complete website",
+        ar: "موقع إلكتروني متكامل"
     },
     offer_growth_f2: {
-        fr: "Landing pages dédiées par produit & intention locale",
-        en: "Dedicated landing pages per product & localized intent",
-        ar: "صفحات هبوط متعددة مخصصة لكل منتج تأمين"
+        fr: "SEO local",
+        en: "Local SEO",
+        ar: "سيو محلي (Local SEO)"
     },
     offer_growth_f3: {
-        fr: "Setup campagnes Google Ads (Search) + Meta Ads",
-        en: "Complete Google Ads (Search) + Meta Ads campaign setup",
-        ar: "إعداد وإطلاق حملات إعلانية مستهدفة على غوغل وميتا"
+        fr: "Optimisation Google",
+        en: "Google optimization",
+        ar: "تحسين المعايير لغوغل"
     },
     offer_growth_f4: {
-        fr: "CRM dédié avec alertes leads instantanées (< 60s)",
-        en: "Dedicated CRM pipeline with instant lead alerts (< 60s)",
-        ar: "نظام إدارة علاقات العملاء (CRM) مع إشعارات فورية أقل من دقيقة"
+        fr: "Pages services",
+        en: "Dedicated service pages",
+        ar: "صفحات مخصصة للخدمات"
     },
     offer_growth_f5: {
-        fr: "Automatisation des relances devis par WhatsApp",
-        en: "Automated WhatsApp follow-up triggers for quote requests",
-        ar: "أتمتة المتابعة والتذكير بعروض الأسعار عبر واتساب"
-    },
-    offer_growth_f6: {
-        fr: "Dashboard en direct du Coût d'Acquisition par Contrat",
-        en: "Live tracking dashboard of Cost Per Signed Contract",
-        ar: "لوحة تحكم مباشرة لقياس تكلفة كل عقد موقع"
-    },
-    offer_growth_guarantee: {
-        fr: "<strong>GARANTIE D'ENGAGEMENT :</strong> Minimum 5 leads qualifiés garantis durant le 1er mois (demande complète, coordonnées vérifiées, zone cible), sinon gestion offerte le mois suivant.",
-        en: "<strong>COMMITMENT GUARANTEE:</strong> Minimum 5 qualified leads guaranteed in Month 1 (verified phone, complete details, target territory), or our management is 100% free the following month.",
-        ar: "<strong>ضمان الالتزام والأداء:</strong> نضمن لك 5 عملاء مؤهلين كحد أدنى خلال الشهر الأول، وإلا فإن إدارة حملاتك للشهر الموالي مجانية بالكامل."
+        fr: "Conversion",
+        en: "Conversion focus",
+        ar: "مسارات تحويل الزوار"
     },
     offer_growth_btn: {
-        fr: "Déployer le Système Growth",
-        en: "Deploy Growth Engine",
-        ar: "إطلاق باقة GROWTH"
+        fr: "Choisir Growth",
+        en: "Choose Growth",
+        ar: "اختيار باقة Growth"
     },
-    // SCALE
-    offer_scale_title: {
-        fr: "SCALE",
-        en: "SCALE",
-        ar: "باقة التوسع (SCALE)"
+
+    // 3. 🔥 LEAD ENGINE (8 000 DH)
+    offer_lead_engine_badge: {
+        fr: "Moteur Actif",
+        en: "Active Engine",
+        ar: "محرك استقطاب نشط"
     },
-    offer_scale_f1: {
-        fr: "Pilotage & optimisation continue des campagnes Google & Meta",
-        en: "Continuous management & optimization of Google & Meta campaigns",
-        ar: "إدارة وتحسين مستمر لحملات إعلانات غوغل وميتا"
+    offer_lead_engine_title: {
+        fr: "🔥 LEAD ENGINE",
+        en: "🔥 LEAD ENGINE",
+        ar: "🔥 محرك العملاء (LEAD ENGINE)"
     },
-    offer_scale_f2: {
-        fr: "A/B testing continu des annonces et tunnels de conversion",
-        en: "Ongoing A/B testing of creatives and conversion tunnels",
-        ar: "اختبار وتطوير دوري لصفحات الهبوط والإعلانات (A/B Testing)"
+    offer_lead_engine_f1: {
+        fr: "Site web performant",
+        en: "High-performance website",
+        ar: "موقع ويب عالي الأداء"
     },
-    offer_scale_f3: {
-        fr: "Optimisation continue du coût par contrat signé",
-        en: "Continuous optimization of Cost Per Signed Policy",
-        ar: "خفض مستمر لتكلفة الحصول على كل عقد موقع"
+    offer_lead_engine_f2: {
+        fr: "Stratégie SEO organique",
+        en: "Organic SEO strategy",
+        ar: "استراتيجية سيو عضوي متقدمة"
     },
-    offer_scale_f4: {
-        fr: "Reporting bimensuel d'analyse de rentabilité",
-        en: "Bi-monthly detailed profitability and ROI reports",
-        ar: "تقارير نصف شهرية تفصيلية لتحليل العائد على الاستثمار"
+    offer_lead_engine_f3: {
+        fr: "Contenu optimisé",
+        en: "Optimized content",
+        ar: "محتوى حصري ومحسن"
     },
-    offer_scale_f5: {
-        fr: "Support prioritaire & ajustements stratégiques continus",
-        en: "Priority direct support & continuous strategic scaling",
-        ar: "دعم مخصص ذو أولوية وتوجيه استراتيجي دائم"
+    offer_lead_engine_f4: {
+        fr: "SEO local",
+        en: "Local SEO targeting",
+        ar: "استهداف موضعي لسيو المدن"
     },
-    offer_scale_btn: {
-        fr: "Passer à l'Échelle",
-        en: "Scale Up Today",
-        ar: "ابدأ باقة التوسع SCALE"
+    offer_lead_engine_f5: {
+        fr: "Suivi & pilotage",
+        en: "Performance monitoring",
+        ar: "متابعة دورية وقياس النتائج"
+    },
+    offer_lead_engine_btn: {
+        fr: "Choisir Lead Engine",
+        en: "Choose Lead Engine",
+        ar: "اختيار باقة Lead Engine"
+    },
+
+    // 4. 🏆 ACQUISITION (12 000 DH+)
+    offer_acquisition_badge: {
+        fr: "Sur Mesure",
+        en: "Bespoke System",
+        ar: "نظام شامل ومخصص"
+    },
+    offer_acquisition_title: {
+        fr: "🏆 ACQUISITION",
+        en: "🏆 ACQUISITION",
+        ar: "🏆 باقة الاستقطاب الشامل (ACQUISITION)"
+    },
+    offer_acquisition_f1: {
+        fr: "Site sur mesure",
+        en: "Custom bespoke website",
+        ar: "موقع مخصص فائق الاحترافية"
+    },
+    offer_acquisition_f2: {
+        fr: "Stratégie SEO avancée",
+        en: "Advanced SEO strategy",
+        ar: "استراتيجية سيو تنافسية موسعة"
+    },
+    offer_acquisition_f3: {
+        fr: "Contenu stratégique",
+        en: "Strategic content creation",
+        ar: "صناعة محتوى استراتيجي"
+    },
+    offer_acquisition_f4: {
+        fr: "Optimisation continue",
+        en: "Continuous optimization",
+        ar: "تحسين وتطوير فني وتقني مستمر"
+    },
+    offer_acquisition_f5: {
+        fr: "Acquisition organique",
+        en: "Organic lead acquisition",
+        ar: "منظومة استقطاب عضوي مستدامة"
+    },
+    offer_acquisition_btn: {
+        fr: "Choisir Acquisition",
+        en: "Choose Acquisition",
+        ar: "اختيار باقة Acquisition"
     },
     // Sectors / Multi-industry
     sec_badge: {
@@ -1369,14 +1453,14 @@ const translations = {
         ar: "تدقيق استراتيجي للاستقطاب"
     },
     modal_title: {
-        fr: "Multipliez vos Devis <span class=\"neon\">et attirer plus de clients.</span>",
-        en: "Multiply Your Quotes <span class=\"neon\">& Attract More Clients.</span>",
-        ar: "ضاعف عروض أسعارك <span class=\"neon\">واجذب المزيد من العملاء.</span>"
+        fr: "Multipliez vos Devis <span class=\"neon\">grâce au SEO local.</span>",
+        en: "Multiply Your Quotes <span class=\"neon\">With Local SEO.</span>",
+        ar: "ضاعف عروض أسعارك <span class=\"neon\">بفضل السيو المحلي.</span>"
     },
     modal_p: {
-        fr: "Réservez votre <strong>audit d'acquisition gratuit</strong> pour découvrir le volume de prospects d'assurance prêts à souscrire dans votre ville et déployer votre machine à contrats.",
-        en: "Book your <strong>free acquisition audit</strong> to discover the exact volume of high-intent insurance prospects in your city and launch your customer acquisition machine.",
-        ar: "احجز <strong>تدقيقك المجاني</strong> لاكتشاف حجم العملاء المستعدين للاكتتاب في مدينتك وبناء منظومة استقطاب عقود فورية."
+        fr: "Réservez votre <strong>audit de visibilité Google gratuit</strong> pour découvrir le volume de recherches de prospects dans votre ville et déployer votre moteur d'acquisition organique.",
+        en: "Book your <strong>free Google visibility audit</strong> to discover the exact search volume of prospects in your city and launch your organic acquisition engine.",
+        ar: "احجز <strong>تدقيقك المجاني للظهور في غوغل</strong> لاكتشاف حجم طلبات العملاء في مدينتك وبناء محرك استقطاب عضوي متكامل."
     },
     modal_btn: {
         fr: "Réservez mon Audit Gratuit",
@@ -1584,22 +1668,27 @@ document.addEventListener('DOMContentLoaded', () => {
         // 4. Update dynamic offer prices
         const offerPrices = {
             starter: {
-                fr: "2 900 - 4 900 <span>DH</span>",
-                en: "2,900 - 4,900 <span>DH</span>",
-                ar: "2 900 - 4 900 <span>درهم</span>"
+                fr: "2 000 <span>DH</span>",
+                en: "2,000 <span>DH</span>",
+                ar: "2 000 <span>درهم</span>"
             },
             growth: {
-                fr: "15 000 - 25 000 <span>DH installation</span>",
-                en: "15,000 - 25,000 <span>DH setup</span>",
-                ar: "15 000 - 25 000 <span>درهم للإطلاق</span>"
+                fr: "4 500 <span>DH</span>",
+                en: "4,500 <span>DH</span>",
+                ar: "4 500 <span>درهم</span>"
             },
-            scale: {
-                fr: "4 000 - 8 000 <span>DH/mois</span>",
-                en: "4,000 - 8,000 <span>DH/month</span>",
-                ar: "4 000 - 8 000 <span>درهم/شهر</span>"
+            lead_engine: {
+                fr: "8 000 <span>DH</span>",
+                en: "8,000 <span>DH</span>",
+                ar: "8 000 <span>درهم</span>"
+            },
+            acquisition: {
+                fr: "12 000 <span>DH+</span>",
+                en: "12,000 <span>DH+</span>",
+                ar: "12 000 <span>درهم+</span>"
             }
         };
-        const keys = ['starter', 'growth'];
+        const keys = ['starter', 'growth', 'lead_engine', 'acquisition'];
         keys.forEach(k => {
             const el = document.getElementById(`offer_${k}_price`);
             if (el) {
@@ -1870,34 +1959,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // ROI Calculator Logic
     const budgetInput = document.getElementById('budget-input');
     const convInput = document.getElementById('conv-input');
+    const basketInput = document.getElementById('basket-input');
     const budgetVal = document.getElementById('budget-val');
     const convVal = document.getElementById('conv-val');
+    const basketVal = document.getElementById('basket-val');
+    const basketSummaryVal = document.getElementById('basket-summary-val');
     const revenueDisplay = document.getElementById('revenue-display');
     const roiDisplay = document.getElementById('roi-display');
     const leadsCount = document.getElementById('leads-count');
     const salesCount = document.getElementById('sales-count');
+    const simWhatsappBtn = document.getElementById('sim-whatsapp-share');
 
     const updateROI = () => {
         if (!budgetInput || !convInput) return;
         const budget = parseInt(budgetInput.value);
         const conv = parseInt(convInput.value);
+        const basket = basketInput ? parseInt(basketInput.value) : 2800;
         
-        // Benchmark Assurance Maroc: CPL moyen ~28 MAD, Panier moyen (Prime) ~2,800 MAD
+        // Benchmark Assurance Maroc: CPL moyen ~28 MAD, Panier moyen (Prime) configurable
         const leads = Math.floor(budget / 28);
         const sales = Math.floor(leads * (conv / 100));
-        const revenue = sales * 2800;
+        const revenue = sales * basket;
         const roi = budget > 0 ? ((revenue - budget) / budget) * 100 : 0;
 
         const lang = localStorage.getItem('assurlead_lang') || 'fr';
         const currencySuffix = lang === 'ar' ? ' درهم' : ' MAD';
 
-        budgetVal.innerText = budget.toLocaleString() + currencySuffix;
-        convVal.innerText = conv + '%';
-        revenueDisplay.innerText = Math.floor(revenue).toLocaleString() + currencySuffix;
-        roiDisplay.innerText = '+' + Math.floor(roi) + '%';
+        if (budgetVal) budgetVal.innerText = budget.toLocaleString() + currencySuffix;
+        if (convVal) convVal.innerText = conv + '%';
+        if (basketVal) basketVal.innerText = basket.toLocaleString() + currencySuffix;
+        if (basketSummaryVal) basketSummaryVal.innerText = basket.toLocaleString() + currencySuffix;
+        if (revenueDisplay) revenueDisplay.innerText = Math.floor(revenue).toLocaleString() + currencySuffix;
+        if (roiDisplay) roiDisplay.innerText = '+' + Math.floor(roi) + '%';
         
         if (leadsCount) leadsCount.innerText = leads.toLocaleString();
         if (salesCount) salesCount.innerText = sales.toLocaleString();
+
+        // Update Dynamic WhatsApp message
+        if (simWhatsappBtn) {
+            const encodedMsg = encodeURIComponent(
+                `Bonjour AssurLead, j'ai simulé mon acquisition en ligne :\n` +
+                `• Budget Mensuel : ${budget.toLocaleString()} MAD\n` +
+                `• Leads Qualifiés Estimés : ${leads.toLocaleString()} demandes\n` +
+                `• Contrats Signés Estimés : ${sales.toLocaleString()}\n` +
+                `• CA Potentiel : ${Math.floor(revenue).toLocaleString()} MAD (+${Math.floor(roi)}% ROI)\n\n` +
+                `Je souhaite valider ce plan d'acquisition pour mon agence.`
+            );
+            simWhatsappBtn.href = `https://wa.me/212707573162?text=${encodedMsg}`;
+        }
 
         // Update 3D Bar
         if (roiBar) {
@@ -1928,6 +2037,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (budgetInput) budgetInput.addEventListener('input', updateROI);
     if (convInput) convInput.addEventListener('input', updateROI);
+    if (basketInput) basketInput.addEventListener('input', updateROI);
+    // Initial run to populate values
+    updateROI();
 
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
@@ -2830,11 +2942,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const animateNumber = (el) => {
             const originalText = el.textContent.trim();
-            const match = originalText.match(/^([0-9.,]+)(.*)$/);
+            const match = originalText.match(/^([^0-9]*)([0-9.,]+)(.*)$/);
             if (!match) return;
 
-            const numStr = match[1];
-            const suffix = match[2];
+            const prefix = match[1];
+            const numStr = match[2];
+            const suffix = match[3];
 
             const cleanNumStr = numStr.replace(/,/g, '');
             const targetValue = parseFloat(cleanNumStr);
@@ -2865,7 +2978,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                el.textContent = formattedValue + suffix;
+                el.textContent = prefix + formattedValue + suffix;
 
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
