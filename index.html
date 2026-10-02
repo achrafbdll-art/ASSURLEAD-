@@ -392,10 +392,23 @@
                 <span class="badge" data-i18n="offers_badge">Grille Tarifaire</span>
                 <h2 data-i18n="offers_title" class="offers-title-aligned"><span class="nowrap-phrase">4 Formules Claires.</span> <span class="nowrap-phrase neon">Zéro Frais Cachés.</span></h2>
                 <p data-i18n="offers_p">Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.</p>
+                
+                <!-- Appel à l'action : Profiter d'une offre à prix spécial -->
+                <div class="special-offer-trigger-wrapper">
+                    <button type="button" class="btn-special-offer-cta" id="toggle-special-offer-btn" aria-expanded="false" aria-controls="special-offer-banner">
+                        <span class="special-offer-cta-icon-sparkle"><i class="fas fa-bolt"></i></span>
+                        <span class="special-offer-cta-text" data-i18n="special_offer_btn">Profiter d'une offre à prix spécial</span>
+                        <span class="special-offer-cta-date-badge" data-i18n="special_offer_deadline">jusqu'au 31/10/2026</span>
+                        <span class="special-offer-cta-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                </div>
             </div>
 
-            <!-- Offre Spéciale Banner -->
-            <div class="promo-banner">
+            <!-- Offre Spéciale Banner (Affichée uniquement suite à l'appel à l'action) -->
+            <div class="promo-banner promo-banner-collapsible" id="special-offer-banner">
+                <button type="button" class="promo-close-btn" id="close-special-offer-btn" aria-label="Fermer l'offre spéciale">
+                    <i class="fas fa-times"></i>
+                </button>
                 <div class="promo-banner-inner">
                     <div class="promo-left-col">
                         <span class="promo-badge" data-i18n="promo_badge">OFFRE SPÉCIALE</span>
@@ -635,12 +648,12 @@
     <section id="contact" class="contact">
         <div class="sage-arcs-bg sage-arcs-contact" aria-hidden="true">
             <svg class="sage-arcs-svg" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="600" cy="260" r="100" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
-                <circle cx="600" cy="260" r="165" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
-                <circle cx="600" cy="260" r="230" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
-                <circle cx="600" cy="260" r="295" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
-                <circle cx="600" cy="260" r="360" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
-                <circle cx="600" cy="260" r="425" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="0" cy="260" r="100" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="0" cy="260" r="165" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="0" cy="260" r="230" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="0" cy="260" r="295" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="0" cy="260" r="360" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
+                <circle cx="0" cy="260" r="425" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
             </svg>
         </div>
         <div class="container">

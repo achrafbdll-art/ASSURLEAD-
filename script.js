@@ -924,6 +924,16 @@ const translations = {
         ar: "اختر الباقة المناسبة لطموحاتك وتوسع وكالتك في رقعتك الجغرافية."
     },
     // Promotional Banner (Offre Spéciale)
+    special_offer_btn: {
+        fr: "Profiter d'une offre à prix spécial",
+        en: "Claim a Special Price Offer",
+        ar: "الاستفادة من عرض بسعر خاص"
+    },
+    special_offer_deadline: {
+        fr: "jusqu'au 31/10/2026",
+        en: "until 31/10/2026",
+        ar: "حتى 31/10/2026"
+    },
     promo_badge: {
         fr: "OFFRE SPÉCIALE",
         en: "SPECIAL OFFER",
@@ -3100,7 +3110,48 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
     };
 
+    // --- SPECIAL OFFER COLLAPSIBLE TRIGGER ---
+    const initSpecialOfferToggle = () => {
+        const toggleBtn = document.getElementById('toggle-special-offer-btn');
+        const closeBtn = document.getElementById('close-special-offer-btn');
+        const banner = document.getElementById('special-offer-banner');
+
+        if (!toggleBtn || !banner) return;
+
+        const openOffer = () => {
+            banner.classList.add('is-open');
+            toggleBtn.classList.add('active');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            setTimeout(() => {
+                banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        };
+
+        const closeOffer = () => {
+            banner.classList.remove('is-open');
+            toggleBtn.classList.remove('active');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+        };
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (banner.classList.contains('is-open')) {
+                closeOffer();
+            } else {
+                openOffer();
+            }
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeOffer();
+            });
+        }
+    };
+
     initStatsCounter();
     initScrollReveal();
     initFaqAccordion();
+    initSpecialOfferToggle();
 });
