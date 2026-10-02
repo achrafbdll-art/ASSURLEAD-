@@ -613,9 +613,9 @@ const translations = {
         ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <i class=\"fas fa-meteor shooting-icon\"></i>"
     },
     hero_title: {
-        fr: "Votre site ne doit pas seulement être beau.<br>Il doit être <span class=\"neon\">trouvé sur Google</span> et générer des leads. <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        en: "Your website shouldn't just look good.<br>It must be <span class=\"neon\">found on Google</span> and generate qualified leads. <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        ar: "موقعك الإلكتروني لا يجب أن يكون جميلاً فحسب.<br>بل يجب أن <span class=\"neon\">يظهر في صدارة غوغل</span> ويجلب لك عملاء مؤهلين. <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
+        fr: "Prenez la 1ère place sur Google.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        en: "Take #1 rank on Google.<br><span class=\"neon\">Acquire new clients starting today.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        ar: "احتل المرتبة الأولى في غوغل.<br><span class=\"neon\">واكسب عملاء جدد ابتداءً من اليوم.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
         fr: "Nous créons des sites web optimisés pour Google afin de transformer votre visibilité en leads et vos leads en clients. Un moteur d'acquisition pérenne conçu pour le marché marocain.",
@@ -914,9 +914,9 @@ const translations = {
         ar: "الباقات والأسعار"
     },
     offers_title: {
-        fr: "4 Formules Claires. <span class=\"neon\">Zéro Frais Cachés.</span>",
-        en: "4 Clear Tiers. <span class=\"neon\">Zero Hidden Fees.</span>",
-        ar: "4 باقات واضحة. <span class=\"neon\">بدون أي مصاريف خفية.</span>"
+        fr: "<span class=\"nowrap-phrase\">4 Formules Claires.</span> <span class=\"nowrap-phrase neon\">Zéro Frais Cachés.</span>",
+        en: "<span class=\"nowrap-phrase\">4 Clear Tiers.</span> <span class=\"nowrap-phrase neon\">Zero Hidden Fees.</span>",
+        ar: "<span class=\"nowrap-phrase\">4 باقات واضحة.</span> <span class=\"nowrap-phrase neon\">بدون أي مصاريف خفية.</span>"
     },
     offers_p: {
         fr: "Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.",

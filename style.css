@@ -1424,11 +1424,13 @@ body[dir="rtl"] .sage-arcs-bg {
 .methode-section {
     padding: 90px 0;
     position: relative;
+    overflow: hidden;
+    background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.sage-arcs-sectors {
-    top: 40px;
+.sage-arcs-methode {
+    top: 50px;
     left: -100px;
     right: auto;
     width: 480px;
@@ -1436,9 +1438,29 @@ body[dir="rtl"] .sage-arcs-bg {
     opacity: 0.32;
 }
 
-body[dir="rtl"] .sage-arcs-sectors {
+body[dir="rtl"] .sage-arcs-methode {
     left: auto;
     right: -100px;
+    transform: scaleX(-1);
+}
+
+.methode-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.sage-arcs-sectors {
+    top: 40px;
+    right: -100px;
+    left: auto;
+    width: 480px;
+    height: 480px;
+    opacity: 0.32;
+}
+
+body[dir="rtl"] .sage-arcs-sectors {
+    right: auto;
+    left: -100px;
     transform: scaleX(-1);
 }
 
@@ -5456,6 +5478,25 @@ body[dir="rtl"] .pillar-card {
     color: var(--brand-neon);
 }
 
+/* Offers Section Header */
+.offers-title-aligned {
+    font-size: clamp(22px, 3.1vw, 40px);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    text-align: center;
+    margin: 0 auto 16px auto;
+    max-width: 1000px;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+    .offers-title-aligned {
+        white-space: nowrap;
+    }
+}
+
 /* Methode Section Header & Grid 4 Steps */
 .methode-title-aligned {
     font-size: clamp(22px, 3vw, 38px);
@@ -5477,14 +5518,15 @@ body[dir="rtl"] .pillar-card {
 }
 
 .methode-step-card {
-    background: #0d0d10;
+    background: radial-gradient(circle at 0% 0%, rgba(0, 255, 65, 0.05), transparent 70%), rgba(16, 16, 20, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 32px 24px;
     position: relative;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(8px);
 }
 
 .methode-step-card:hover {
