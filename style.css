@@ -247,15 +247,18 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     position: relative;
-    border-radius: 10px;
-    background: transparent;
-    filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.35));
-    transition: filter 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000000;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.25);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.4));
+    transition: filter 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     flex-shrink: 0;
 }
 
 .logo:hover .logo-icon {
-    filter: drop-shadow(0 0 16px rgba(0, 255, 65, 0.7));
+    filter: drop-shadow(0 0 16px rgba(0, 255, 65, 0.75));
+    box-shadow: 0 0 16px rgba(0, 255, 65, 0.5);
     transform: scale(1.05);
 }
 
