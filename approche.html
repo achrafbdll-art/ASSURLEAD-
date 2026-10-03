@@ -29,7 +29,9 @@
 
     <!-- Live Lead Ticker -->
     <div id="lead-ticker" class="lead-ticker">
-        <div class="ticker-icon"><i class="fas fa-bolt"></i></div>
+        <div class="ticker-icon ticker-logo-icon">
+            <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="28" height="28">
+        </div>
         <div class="ticker-content">
             <div class="ticker-text" id="ticker-name">Youssef K. vient de demander un devis Santé</div>
             <div class="ticker-subtext" id="ticker-meta">Casablanca • à l'instant</div>
@@ -210,6 +212,27 @@
 
         </div>
     </main>
+
+    <!-- CTA Modal -->
+    <div id="cta-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <div class="modal-inner">
+                <div class="modal-logo-header">
+                    <div class="logo-icon modal-logo-icon">
+                        <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="52" height="52">
+                    </div>
+                    <span class="logo-text modal-logo-brand">ASSUR<span class="neon">LEAD</span><span class="logo-text">COM</span></span>
+                </div>
+                <span class="badge" data-i18n="modal_badge">Audit de Visibilité Google</span>
+                <h2 data-i18n="modal_title">Multipliez vos Devis <span class="neon">grâce au SEO local.</span></h2>
+                <p data-i18n="modal_p">Réservez votre <strong>audit de visibilité gratuit de 15 minutes</strong> pour analyser votre présence sur Google et déployer un <span class="neon">moteur d'acquisition de leads organiques</span> pour votre activité au Maroc.</p>
+                <a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20audit%20de%20visibilit%C3%A9%20Google%20gratuit" target="_blank" class="btn btn-primary full-width" data-i18n="modal_btn">Réserver mon Audit Gratuit</a>
+                <div class="modal-timer"><i class="fas fa-clock"></i> <span data-i18n="modal_timer">Plus que 3 créneaux cette semaine</span></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Floating WhatsApp Widget -->
     <div id="chat-widget" class="chat-widget">

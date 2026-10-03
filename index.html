@@ -90,7 +90,9 @@
 <body>
     <!-- Live Lead Ticker -->
     <div id="lead-ticker" class="lead-ticker">
-        <div class="ticker-icon"><i class="fas fa-bolt"></i></div>
+        <div class="ticker-icon ticker-logo-icon">
+            <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="28" height="28">
+        </div>
         <div class="ticker-content">
             <div class="ticker-text" id="ticker-name">Demande de devis transmise via Google</div>
             <div class="ticker-subtext" id="ticker-meta">Casablanca • à l'instant</div>
@@ -411,7 +413,12 @@
                 </button>
                 <div class="promo-banner-inner">
                     <div class="promo-left-col">
-                        <span class="promo-badge" data-i18n="promo_badge">OFFRE SPÉCIALE</span>
+                        <div class="promo-logo-row">
+                            <div class="promo-logo-icon">
+                                <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="26" height="26">
+                            </div>
+                            <span class="promo-badge" data-i18n="promo_badge">OFFRE SPÉCIALE</span>
+                        </div>
                         <h3 class="promo-title" data-i18n="promo_title">CRÉATION DE SITES<br>INTERNET<br>PROFESSIONNELS</h3>
                         <p class="promo-desc" data-i18n="promo_desc">Nous créons des sites modernes, ultra-rapides et pensés dès la première ligne de code pour inspirer confiance et convertir vos visiteurs en demandes de devis.</p>
                         <div class="promo-pricing-action">
@@ -795,9 +802,14 @@
     <div id="cta-modal" class="modal">
         <div class="modal-backdrop"></div>
         <div class="modal-content">
-            <button id="close-modal" class="close-btn"><i class="fas fa-times"></i></button>
+            <button id="close-modal" class="close-btn" aria-label="Fermer"><i class="fas fa-times"></i></button>
             <div class="modal-inner">
-                <div class="modal-icon"><i class="fas fa-bolt"></i></div>
+                <div class="modal-logo-header">
+                    <div class="logo-icon modal-logo-icon">
+                        <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="52" height="52">
+                    </div>
+                    <span class="logo-text modal-logo-brand">ASSUR<span class="neon">LEAD</span><span class="logo-text">COM</span></span>
+                </div>
                 <span class="badge" data-i18n="modal_badge">Audit de Visibilité Google</span>
                 <h2 data-i18n="modal_title">Multipliez vos Devis <span class="neon">grâce au SEO local.</span></h2>
                 <p data-i18n="modal_p">Réservez votre <strong>audit de visibilité gratuit de 15 minutes</strong> pour analyser votre présence sur Google et déployer un <span class="neon">moteur d'acquisition de leads organiques</span> pour votre activité au Maroc.</p>
