@@ -3165,38 +3165,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Interactive Moroccan Cities Stickers Cluster & Lead Estimator
+    // Interactive Moroccan Cities Stickers Cluster
     const initCityStickersInteractive = () => {
         const stickers = document.querySelectorAll('.city-sticker');
-        const estimateName = document.getElementById('estimate-city-name');
-        const estimateVal = document.getElementById('estimate-city-val');
-        const estimateBadge = document.getElementById('city-lead-estimate-badge');
-
         if (!stickers.length) return;
 
-        const updateEstimate = (city, leads) => {
-            if (estimateName) estimateName.textContent = city;
-            if (estimateVal) estimateVal.textContent = leads;
-            if (estimateBadge) {
-                estimateBadge.classList.add('pulse-update');
-                setTimeout(() => estimateBadge.classList.remove('pulse-update'), 300);
-            }
-        };
-
         stickers.forEach(sticker => {
-            const city = sticker.getAttribute('data-city');
-            const leads = sticker.getAttribute('data-leads');
-
             sticker.addEventListener('mouseenter', () => {
                 stickers.forEach(s => s.classList.remove('active'));
                 sticker.classList.add('active');
-                if (city && leads) updateEstimate(city, leads);
             });
 
             sticker.addEventListener('click', () => {
                 stickers.forEach(s => s.classList.remove('active'));
                 sticker.classList.add('active');
-                if (city && leads) updateEstimate(city, leads);
 
                 const qSect = document.getElementById('questionnaire');
                 if (qSect) {

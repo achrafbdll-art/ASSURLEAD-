@@ -1092,54 +1092,6 @@ body[dir="rtl"] .sage-poster-left .sage-btn-wrapper {
     50% { transform: translateY(-3px) rotate(-10deg); }
 }
 
-.city-lead-estimate-badge {
-    margin-top: 18px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 22px;
-    background: rgba(10, 14, 12, 0.9);
-    border: 1.5px solid rgba(0, 255, 65, 0.35);
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(0, 255, 65, 0.15);
-    backdrop-filter: blur(12px);
-    font-size: 13.5px;
-    color: #FFFFFF;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 25;
-}
-
-.city-lead-estimate-badge.pulse-update {
-    transform: scale(1.04);
-    border-color: var(--brand-neon);
-    box-shadow: 0 0 25px rgba(0, 255, 65, 0.4);
-}
-
-.estimate-pulse {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--brand-neon);
-    box-shadow: 0 0 10px var(--brand-neon);
-    display: inline-block;
-    animation: dotPulse 1.5s infinite;
-}
-
-@keyframes dotPulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.7); }
-}
-
-.estimate-text strong {
-    color: #FFFFFF;
-}
-
-.estimate-text .neon-highlight {
-    color: var(--brand-neon);
-    font-weight: 900;
-    text-shadow: 0 0 12px rgba(0, 255, 65, 0.4);
-}
-
 .moroccan-cities-cluster {
     position: relative;
     width: 600px;
