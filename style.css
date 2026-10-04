@@ -1103,6 +1103,8 @@ body[dir="rtl"] .sage-poster-left .sage-btn-wrapper {
 /* City Sticker Base - Cut Paper / Sticker Tape Graphic Style */
 .city-sticker {
     position: absolute;
+    display: inline-block;
+    text-decoration: none;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-weight: 900;
     color: #000000;

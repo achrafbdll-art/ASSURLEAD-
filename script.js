@@ -1315,9 +1315,9 @@ const translations = {
         ar: "وفرص استقطاب العقود"
     },
     contact_city_hint: {
-        fr: "Survolez ou cliquez sur votre ville pour estimer vos leads",
-        en: "Hover or click on your city to estimate your leads",
-        ar: "مرر الفأرة أو اضغط على مدينتك لتقدير عدد العملاء المحتملين"
+        fr: "Cliquez sur votre ville pour échanger directement sur WhatsApp",
+        en: "Click on your city to connect directly on WhatsApp",
+        ar: "اضغط على مدينتك للتواصل الفوري معنا عبر واتساب"
     },
     contact_p: {
         fr: "Réservez votre audit d'acquisition de 15 minutes. Nous analysons les volumes de recherche d'assurance dans votre ville et vous présentons le potentiel de leads mensuel.",
