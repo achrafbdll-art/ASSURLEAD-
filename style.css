@@ -1009,8 +1009,8 @@ body[dir="rtl"] .sage-pill-btn:hover i {
    ======================================================== */
 .sage-zone-layout {
     display: grid;
-    grid-template-columns: 1.15fr 0.95fr;
-    gap: 40px;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 32px;
     align-items: center;
     margin-bottom: 64px;
     position: relative;
@@ -1038,7 +1038,7 @@ body[dir="rtl"] .sage-pill-btn:hover i {
 }
 
 body[dir="rtl"] .sage-zone-layout {
-    grid-template-columns: 0.95fr 1.15fr;
+    grid-template-columns: 0.95fr 1.05fr;
 }
 
 body[dir="rtl"] .sage-poster-header.sage-poster-left {
@@ -1062,30 +1062,31 @@ body[dir="rtl"] .sage-poster-left .sage-btn-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1000px;
+    overflow: visible;
 }
 
 .moroccan-cities-cluster {
     position: relative;
-    width: 520px;
+    width: 600px;
     height: 380px;
     max-width: 100%;
+    flex-shrink: 0;
 }
 
-/* City Sticker Base - Graphic Paper Cut / Tape Style */
+/* City Sticker Base - Cut Paper / Sticker Tape Graphic Style */
 .city-sticker {
     position: absolute;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-weight: 900;
-    color: #050505;
-    letter-spacing: -0.04em;
+    color: #000000;
+    letter-spacing: -0.035em;
     border-radius: 3px;
     white-space: nowrap;
     user-select: none;
     cursor: pointer;
     line-height: 1;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), 0 2px 5px rgba(0, 0, 0, 0.3);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, z-index 0s;
@@ -1094,144 +1095,150 @@ body[dir="rtl"] .sage-poster-left .sage-btn-wrapper {
 .city-sticker:hover {
     transform: scale(1.12) rotate(0deg) !important;
     z-index: 60 !important;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 255, 65, 0.4) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 255, 65, 0.45) !important;
 }
 
-/* Individual Sticker Coordinates, Colors & Rotations (Identique à la composition de la photo) */
-/* 1. Tétouan - Warm Orange-Red (Style Rome) */
+/* 1. Tétouan - Orange Vif (Style Rome) */
 .sticker-tetouan {
-    top: 8%;
-    left: 12%;
-    padding: 11px 26px;
-    font-size: 34px;
-    background-color: #FF6636;
-    transform: rotate(7deg);
-    z-index: 2;
-}
-
-/* 2. Tanger - Deep Amber Yellow (Style Madrid) */
-.sticker-tanger {
-    top: 2%;
-    left: 44%;
-    padding: 13px 30px;
-    font-size: 38px;
-    background-color: #FFAA00;
-    transform: rotate(-10deg);
-    z-index: 2;
-}
-
-/* 3. Kénitra - Deep Royal Cobalt (Style Lisbon) */
-.sticker-kenitra {
-    top: 18%;
-    right: 3%;
+    top: 15px;
+    left: 45px;
     padding: 10px 24px;
-    font-size: 30px;
-    background-color: #0056D2;
-    transform: rotate(12deg);
+    font-size: 29px;
+    background-color: #FF6238;
+    transform: rotate(8deg);
+    z-index: 2;
+}
+
+/* 2. Tanger - Jaune Ambré Foncé (Style Madrid) */
+.sticker-tanger {
+    top: 5px;
+    left: 225px;
+    padding: 12px 30px;
+    font-size: 34px;
+    background-color: #FFAA00;
+    transform: rotate(-8deg);
     z-index: 3;
 }
 
-/* 4. Agadir - Vibrant Teal / Turquoise (Style Paris) */
+/* 3. Kénitra - Bleu Cobalt Royal (Style Lisbon) */
+.sticker-kenitra {
+    top: 35px;
+    right: 25px;
+    padding: 10px 24px;
+    font-size: 27px;
+    background-color: #0056D2;
+    transform: rotate(12deg);
+    z-index: 4;
+}
+
+/* 4. Agadir - Turquoise / Teal Éclatant (Style Paris) */
 .sticker-agadir {
-    top: 22%;
-    left: 2%;
-    padding: 12px 28px;
-    font-size: 33px;
+    top: 95px;
+    left: 5px;
+    padding: 10px 26px;
+    font-size: 28px;
     background-color: #00BFA5;
-    transform: rotate(-13deg);
+    transform: rotate(-12deg);
     z-index: 5;
 }
 
-/* 5. Rabat - Steel Slate Gray-Blue (Style Copenhagen) */
+/* 5. Rabat - Bleu Ardoise Métallique (Style Copenhagen) */
 .sticker-rabat {
-    top: 22%;
-    left: 20%;
-    padding: 13px 36px;
-    font-size: 38px;
+    top: 78px;
+    left: 145px;
+    padding: 12px 32px;
+    font-size: 34px;
     background-color: #7993AE;
-    transform: rotate(6deg);
+    transform: rotate(5deg);
     z-index: 6;
 }
 
-/* 6. Mohammedia - Vivid Tangerine Red-Orange (Style Venice) */
-.sticker-mohammedia {
-    top: 48%;
-    left: 0%;
-    padding: 9px 22px;
-    font-size: 27px;
-    background-color: #FF3D00;
-    transform: rotate(-17deg);
-    z-index: 3;
-}
-
-/* 7. Casablanca - Hero Vibrant Periwinkle Royal Blue (Style Barcelona) */
-.sticker-casablanca {
-    top: 40%;
-    left: 28%;
-    padding: 15px 36px;
-    font-size: 42px;
-    background-color: #4C5DFF;
-    transform: rotate(-4deg);
-    z-index: 8;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-/* 8. Oujda - Electric Sky Cyan (Style Munich) */
+/* 6. Oujda - Bleu Cyan Ciel Électrique (Style Munich) */
 .sticker-oujda {
-    top: 44%;
-    right: -2%;
-    padding: 11px 26px;
-    font-size: 32px;
-    background-color: #00B4D8;
-    transform: rotate(14deg);
-    z-index: 4;
-}
-
-/* 9. Fès - Kelly Emerald Green (Style Milan) */
-.sticker-fes {
-    top: 68%;
-    left: 6%;
+    top: 130px;
+    right: 15px;
     padding: 10px 26px;
-    font-size: 30px;
-    background-color: #00C853;
-    transform: rotate(-8deg);
-    z-index: 4;
-}
-
-/* 10. Marrakech - Hot Electric Magenta Pink (Style Amsterdam) */
-.sticker-marrakech {
-    top: 54%;
-    left: 17%;
-    padding: 14px 34px;
-    font-size: 38px;
-    background-color: #E6007A;
-    transform: rotate(7deg);
-    z-index: 9;
-}
-
-/* 11. Laâyoune - Rich Violet / Lavender (Style London) */
-.sticker-laayoune {
-    top: 65%;
-    left: 42%;
-    padding: 10px 24px;
-    font-size: 28px;
-    background-color: #8338EC;
-    transform: rotate(-6deg);
-    z-index: 3;
-}
-
-/* 12. Meknès - Bright Crimson Red (Style Berlin) */
-.sticker-meknes {
-    top: 64%;
-    right: 2%;
-    padding: 11px 28px;
-    font-size: 32px;
-    background-color: #FF2B2B;
-    transform: rotate(9deg);
+    font-size: 29px;
+    background-color: #00B4D8;
+    transform: rotate(13deg);
     z-index: 5;
 }
 
+/* 7. Casablanca - Héro Bleu Pervenche Électrique (Style Barcelona) */
+.sticker-casablanca {
+    top: 155px;
+    left: 165px;
+    padding: 14px 36px;
+    font-size: 38px;
+    background-color: #4C5DFF;
+    transform: rotate(-4deg);
+    z-index: 15;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* 8. Mohammedia - Rouge Orangé Tangerine (Style Venice) */
+.sticker-mohammedia {
+    top: 195px;
+    left: 5px;
+    padding: 9px 22px;
+    font-size: 25px;
+    background-color: #FF3D00;
+    transform: rotate(-16deg);
+    z-index: 7;
+}
+
+/* 9. Marrakech - Rose Magenta Éclatant (Style Amsterdam) */
+.sticker-marrakech {
+    top: 235px;
+    left: 95px;
+    padding: 13px 32px;
+    font-size: 34px;
+    background-color: #E6007A;
+    transform: rotate(6deg);
+    z-index: 12;
+}
+
+/* 10. Meknès - Rouge Écarlate Brillant (Style Berlin) */
+.sticker-meknes {
+    top: 250px;
+    right: 20px;
+    padding: 11px 28px;
+    font-size: 29px;
+    background-color: #FF2B2B;
+    transform: rotate(8deg);
+    z-index: 8;
+}
+
+/* 11. Laâyoune - Violet / Lavande Électrique (Style London) */
+.sticker-laayoune {
+    top: 275px;
+    left: 275px;
+    padding: 10px 24px;
+    font-size: 26px;
+    background-color: #8338EC;
+    transform: rotate(-5deg);
+    z-index: 9;
+}
+
+/* 12. Fès - Vert Émeraude / Kelly (Style Milan) */
+.sticker-fes {
+    top: 295px;
+    left: 35px;
+    padding: 10px 24px;
+    font-size: 28px;
+    background-color: #00C853;
+    transform: rotate(-8deg);
+    z-index: 10;
+}
+
 /* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .moroccan-cities-cluster {
+        transform: scale(0.9);
+        transform-origin: center center;
+    }
+}
+
 @media (max-width: 1080px) {
     .sage-zone-layout {
         grid-template-columns: 1fr;
@@ -1257,21 +1264,25 @@ body[dir="rtl"] .sage-poster-left .sage-btn-wrapper {
     .moroccan-cities-cluster-wrapper {
         min-height: 380px;
     }
+    .moroccan-cities-cluster {
+        transform: scale(0.85);
+        transform-origin: center center;
+    }
 }
 
 @media (max-width: 600px) {
     .moroccan-cities-cluster-wrapper {
-        transform: scale(0.76);
+        transform: scale(0.68);
         transform-origin: center center;
-        min-height: 290px;
+        min-height: 270px;
         margin: -25px 0;
     }
 }
 
 @media (max-width: 420px) {
     .moroccan-cities-cluster-wrapper {
-        transform: scale(0.64);
-        margin: -45px 0;
+        transform: scale(0.56);
+        margin: -40px 0;
     }
 }
 
@@ -7015,270 +7026,6 @@ body[dir="rtl"] .offers-title-aligned {
         display: none;
     }
 }
-
-/* ========================================================
-   MOROCCAN CITIES STICKER COLLAGE (Design Identique Photo)
-   Rubrique: "Analysons votre Zone Commerciale"
-   ======================================================== */
-.moroccan-cities-stage-wrapper {
-    margin: 34px auto 32px auto;
-    max-width: 860px;
-    width: 100%;
-}
-
-.moroccan-cities-stage {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    background: #F8CFD5; /* Exact pastel blush pink background from the photo */
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15);
-    overflow: hidden;
-    user-select: none;
-}
-
-.stage-emblem {
-    position: absolute;
-    top: 18px;
-    left: 20px;
-    width: 36px;
-    height: 36px;
-    background: #181920;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    z-index: 20;
-}
-
-.city-sticker {
-    position: absolute;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 24px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 900;
-    color: #000000;
-    letter-spacing: -0.035em;
-    line-height: 1.05;
-    border-radius: 2px;
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
-    cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, z-index 0.1s;
-}
-
-.city-sticker:hover {
-    transform: scale(1.12) rotate(var(--rot)) !important;
-    z-index: 50 !important;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35) !important;
-}
-
-/* Individual Stickers matching the reference photo's layout */
-.sticker-agadir {
-    --rot: -11deg;
-    background: #F59E0B;
-    font-size: 38px;
-    padding: 12px 28px;
-    top: 14%;
-    left: 45%;
-    transform: rotate(var(--rot));
-    z-index: 2;
-}
-
-.sticker-rabat {
-    --rot: 5deg;
-    background: #E86B43;
-    font-size: 36px;
-    padding: 11px 26px;
-    top: 20%;
-    left: 21%;
-    transform: rotate(var(--rot));
-    z-index: 3;
-}
-
-.sticker-kenitra {
-    --rot: 14deg;
-    background: #0056B3;
-    font-size: 32px;
-    padding: 10px 24px;
-    top: 24%;
-    left: 69%;
-    transform: rotate(var(--rot));
-    z-index: 2;
-}
-
-.sticker-fes {
-    --rot: -18deg;
-    background: #00B894;
-    font-size: 36px;
-    padding: 11px 26px;
-    top: 28%;
-    left: 6%;
-    transform: rotate(var(--rot));
-    z-index: 4;
-}
-
-.sticker-mohammedia {
-    --rot: -5deg;
-    background: #7EA1B8;
-    font-size: 36px;
-    padding: 12px 30px;
-    top: 26%;
-    left: 25%;
-    transform: rotate(var(--rot));
-    z-index: 5;
-}
-
-.sticker-casablanca {
-    --rot: -1.5deg;
-    background: #4D47F5;
-    font-size: 38px;
-    padding: 14px 34px;
-    top: 47%;
-    left: 35%;
-    transform: rotate(var(--rot));
-    z-index: 10;
-}
-
-.sticker-tanger {
-    --rot: 11deg;
-    background: #00A8E8;
-    font-size: 36px;
-    padding: 12px 28px;
-    top: 46%;
-    left: 68%;
-    transform: rotate(var(--rot));
-    z-index: 6;
-}
-
-.sticker-eljadida {
-    --rot: -8deg;
-    background: #FA3C00;
-    font-size: 32px;
-    padding: 10px 24px;
-    top: 52%;
-    left: 5%;
-    transform: rotate(var(--rot));
-    z-index: 3;
-}
-
-.sticker-tetouan {
-    --rot: -4deg;
-    background: #00A344;
-    font-size: 34px;
-    padding: 11px 26px;
-    top: 68%;
-    left: 10%;
-    transform: rotate(var(--rot));
-    z-index: 7;
-}
-
-.sticker-marrakech {
-    --rot: -7deg;
-    background: #E6006E;
-    font-size: 40px;
-    padding: 14px 32px;
-    top: 54%;
-    left: 19%;
-    transform: rotate(var(--rot));
-    z-index: 12;
-}
-
-.sticker-oujda {
-    --rot: 11deg;
-    background: #8E59CF;
-    font-size: 34px;
-    padding: 11px 26px;
-    top: 66%;
-    left: 42%;
-    transform: rotate(var(--rot));
-    z-index: 4;
-}
-
-.sticker-meknes {
-    --rot: 4deg;
-    background: #E52B2B;
-    font-size: 36px;
-    padding: 12px 28px;
-    top: 66%;
-    left: 66%;
-    transform: rotate(var(--rot));
-    z-index: 5;
-}
-
-.city-leads-bubble {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(14, 16, 20, 0.94);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 65, 0.45);
-    border-radius: 9999px;
-    padding: 7px 20px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    z-index: 25;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    pointer-events: none;
-    transition: all 0.25s ease;
-}
-
-/* Responsive Scaling for Tablets and Mobile */
-@media (max-width: 820px) {
-    .moroccan-cities-stage {
-        height: 360px;
-    }
-    .city-sticker {
-        font-size: 26px !important;
-        padding: 8px 18px !important;
-    }
-    .sticker-marrakech {
-        font-size: 30px !important;
-    }
-    .sticker-casablanca {
-        font-size: 28px !important;
-    }
-}
-
-@media (max-width: 580px) {
-    .moroccan-cities-stage {
-        height: 290px;
-        border-radius: 16px;
-    }
-    .city-sticker {
-        font-size: 17px !important;
-        padding: 5px 12px !important;
-    }
-    .sticker-marrakech {
-        font-size: 20px !important;
-        left: 14% !important;
-    }
-    .sticker-casablanca {
-        font-size: 19px !important;
-        left: 30% !important;
-    }
-    .sticker-tanger {
-        left: 62% !important;
-    }
-    .sticker-meknes {
-        left: 60% !important;
-    }
-    .city-leads-bubble {
-        font-size: 11px;
-        padding: 5px 14px;
-        width: 90%;
-        justify-content: center;
-    }
-}
-
 
 
 
