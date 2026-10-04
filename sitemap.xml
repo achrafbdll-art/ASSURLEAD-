@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://www.assurleadcom.com/</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Page Pilier SEO : Création Site Web Casablanca -->
+    <url>
+        <loc>https://www.assurleadcom.com/creation-site-web-casablanca.html</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+    <!-- Page Pilier SEO : Création Site Web Maroc -->
+    <url>
+        <loc>https://www.assurleadcom.com/creation-site-web-maroc.html</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+    <!-- Diagnostic de Visibilité Google -->
+    <url>
+        <loc>https://www.assurleadcom.com/diagnostic.html</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Réalisations & Études de Cas -->
+    <url>
+        <loc>https://www.assurleadcom.com/realisations.html</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Notre Approche Digitale & SEO -->
+    <url>
+        <loc>https://www.assurleadcom.com/approche.html</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Réalisation Spécifique : Assurances El Omrani -->
+    <url>
+        <loc>https://www.assurleadcom.com/realisation-el-omrani.html</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+</urlset>

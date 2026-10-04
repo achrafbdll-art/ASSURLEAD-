@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Google & Moteurs de recherche
+Sitemap: https://www.assurleadcom.com/sitemap.xml

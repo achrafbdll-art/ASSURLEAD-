@@ -19,6 +19,8 @@ export default defineConfig({
         approche: resolve(__dirname, 'approche.html'),
         realisations: resolve(__dirname, 'realisations.html'),
         realisation_el_omrani: resolve(__dirname, 'realisation-el-omrani.html'),
+        creation_site_web_casablanca: resolve(__dirname, 'creation-site-web-casablanca.html'),
+        creation_site_web_maroc: resolve(__dirname, 'creation-site-web-maroc.html'),
       },
     },
   },

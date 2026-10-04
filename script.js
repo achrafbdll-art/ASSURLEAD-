@@ -613,14 +613,14 @@ const translations = {
         ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <i class=\"fas fa-meteor shooting-icon\"></i>"
     },
     hero_title: {
-        fr: "Prenez la 1ère place sur Google.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        en: "Take #1 rank on Google.<br><span class=\"neon\">Acquire new clients starting today.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        ar: "احتل المرتبة الأولى في غوغل.<br><span class=\"neon\">واكسب عملاء جدد ابتداءً من اليوم.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
+        fr: "Création de Site Web à Casablanca & au Maroc.<br><span class=\"neon\">1ère place sur Google & Devis Qualifiés.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        en: "Website Creation in Casablanca & Morocco.<br><span class=\"neon\">#1 Rank on Google & Qualified Leads.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        ar: "إنشاء المواقع الإلكترونية بالدار البيضاء والمغرب.<br><span class=\"neon\">المرتبة الأولى في غوغل واستقطاب العملاء.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
-        fr: "Nous créons des sites web optimisés pour Google afin de transformer votre visibilité en leads et vos leads en clients. Un moteur d'acquisition pérenne conçu pour le marché marocain.",
-        en: "We build Google-optimized websites designed to turn your local search visibility into leads and your leads into paying clients in Morocco.",
-        ar: "نصمم مواقع إلكترونية مهيأة لغوغل لتحويل ظهورك المحلي إلى عملاء محتملين ومبيعات حقيقية لوكالتك وشركتك في المغرب."
+        fr: "Agence leader en création de site web à Casablanca et partout au Maroc. Nous concevons des sites internet ultra-performants et optimisés pour le SEO Google local afin de capter un flux continu de clients prêts à signer.",
+        en: "Top agency for website creation in Casablanca and across Morocco. We build high-speed, SEO-engineered websites designed to rank #1 on Google and turn local search demand into qualified clients.",
+        ar: "الوكالة الرائدة في إنشاء المواقع الإلكترونية بالدار البيضاء وكافة مدن المغرب. نبني مواقع فائقة السرعة ومتوافقة مع خوارزميات غوغل لتصدر نتائج البحث وتحويل الزوار لعملاء فعليين."
     },
     hero_btn_growth: {
         fr: "Demander un audit gratuit (15 min) <i class=\"fas fa-arrow-right\"></i>",
@@ -1543,6 +1543,16 @@ const translations = {
         fr: "Nous recommandons un budget média de départ compris entre 2 000 et 4 000 DH par mois pour Google et Meta Ads. Ce budget est payé directement aux plateformes publicitaires et permet de générer entre 60 et 120 demandes de devis selon votre ville et le mix de produits ciblés.",
         en: "We recommend an initial monthly media spend between 2,000 and 4,000 MAD for Google and Meta Ads. This is paid directly to ad platforms and yields 60 to 120 qualified quote requests depending on the city and product mix.",
         ar: "نقترح ميزانية إعلانية أولية تتراوح بين 2,000 و 4,000 درهم شهرياً لإعلانات غوغل وميتا، وتدفع مباشرة للمنصات وتتيح استقطاب ما بين 60 إلى 120 طلب تسعيرة شهرياً."
+    },
+    faq_q5: {
+        fr: "Pourquoi la création d'un site web à Casablanca nécessite-t-elle une approche SEO spécifique au Maroc ?",
+        en: "Why does website creation in Casablanca require a Morocco-specific SEO strategy?",
+        ar: "لماذا يتطلب إنشاء موقع إلكتروني بالدار البيضاء استراتيجية سيو خاصة بالمغرب؟"
+    },
+    faq_a5: {
+        fr: "À Casablanca et au Maroc, plus de 85% des recherches s'effectuent sur smartphone, avec une attente d'interaction immédiate par WhatsApp ou téléphone. Un site web performant à Casablanca doit allier un chargement ultra-rapide (< 1s), un balisage Google Maps local (Maârif, Anfa, Sidi Maârouf, etc.) et des tunnels de conversion adaptés aux habitudes d'achat marocaines.",
+        en: "In Casablanca and Morocco, over 85% of searches occur on smartphones, with an expectation of instant contact via WhatsApp or phone. A top-performing site in Casablanca requires lightning-fast loading (< 1s), local Google Maps markup, and conversion funnels tuned for Moroccan buying habits.",
+        ar: "في الدار البيضاء والمغرب، أكثر من 85% من عمليات البحث تتم عبر الهواتف الذكية مع رغبة في التواصل الفوري عبر واتساب أو الهاتف. نجاح الموقع يتطلب سرعة خارقة (أقل من ثانية)، تهيئة جغرافية دقيقة في خرائط غوغل وتصميماً مخصصاً لسلوك المستهلك المغربي."
     }
 };
 
