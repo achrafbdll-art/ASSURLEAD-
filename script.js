@@ -1295,8 +1295,8 @@ const translations = {
     },
     // Contact & Exclusivity
     contact_badge: {
-        fr: "Audit Stratégique Offert",
-        en: "Free Strategic Audit",
+        fr: "AUDIT STRATÉGIQUE OFFERT",
+        en: "FREE STRATEGIC AUDIT",
         ar: "تدقيق استراتيجي مجاني"
     },
     contact_top_line: {
@@ -1313,6 +1313,11 @@ const translations = {
         fr: "et votre potentiel de leads",
         en: "and your lead growth potential",
         ar: "وفرص استقطاب العقود"
+    },
+    contact_city_hint: {
+        fr: "Survolez ou cliquez sur votre ville pour estimer vos leads",
+        en: "Hover or click on your city to estimate your leads",
+        ar: "مرر الفأرة أو اضغط على مدينتك لتقدير عدد العملاء المحتملين"
     },
     contact_p: {
         fr: "Réservez votre audit d'acquisition de 15 minutes. Nous analysons les volumes de recherche d'assurance dans votre ville et vous présentons le potentiel de leads mensuel.",
@@ -3160,8 +3165,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Interactive Moroccan Cities Stickers Cluster & Lead Estimator
+    const initCityStickersInteractive = () => {
+        const stickers = document.querySelectorAll('.city-sticker');
+        const estimateName = document.getElementById('estimate-city-name');
+        const estimateVal = document.getElementById('estimate-city-val');
+        const estimateBadge = document.getElementById('city-lead-estimate-badge');
+
+        if (!stickers.length) return;
+
+        const updateEstimate = (city, leads) => {
+            if (estimateName) estimateName.textContent = city;
+            if (estimateVal) estimateVal.textContent = leads;
+            if (estimateBadge) {
+                estimateBadge.classList.add('pulse-update');
+                setTimeout(() => estimateBadge.classList.remove('pulse-update'), 300);
+            }
+        };
+
+        stickers.forEach(sticker => {
+            const city = sticker.getAttribute('data-city');
+            const leads = sticker.getAttribute('data-leads');
+
+            sticker.addEventListener('mouseenter', () => {
+                stickers.forEach(s => s.classList.remove('active'));
+                sticker.classList.add('active');
+                if (city && leads) updateEstimate(city, leads);
+            });
+
+            sticker.addEventListener('click', () => {
+                stickers.forEach(s => s.classList.remove('active'));
+                sticker.classList.add('active');
+                if (city && leads) updateEstimate(city, leads);
+
+                const qSect = document.getElementById('questionnaire');
+                if (qSect) {
+                    qSect.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            sticker.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    sticker.click();
+                }
+            });
+        });
+    };
+
     initStatsCounter();
     initScrollReveal();
     initFaqAccordion();
     initSpecialOfferToggle();
+    initCityStickersInteractive();
 });
