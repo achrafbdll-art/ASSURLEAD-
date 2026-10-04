@@ -7016,6 +7016,270 @@ body[dir="rtl"] .offers-title-aligned {
     }
 }
 
+/* ========================================================
+   MOROCCAN CITIES STICKER COLLAGE (Design Identique Photo)
+   Rubrique: "Analysons votre Zone Commerciale"
+   ======================================================== */
+.moroccan-cities-stage-wrapper {
+    margin: 34px auto 32px auto;
+    max-width: 860px;
+    width: 100%;
+}
+
+.moroccan-cities-stage {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: #F8CFD5; /* Exact pastel blush pink background from the photo */
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    user-select: none;
+}
+
+.stage-emblem {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    width: 36px;
+    height: 36px;
+    background: #181920;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 20;
+}
+
+.city-sticker {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    border-radius: 2px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, z-index 0.1s;
+}
+
+.city-sticker:hover {
+    transform: scale(1.12) rotate(var(--rot)) !important;
+    z-index: 50 !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Individual Stickers matching the reference photo's layout */
+.sticker-agadir {
+    --rot: -11deg;
+    background: #F59E0B;
+    font-size: 38px;
+    padding: 12px 28px;
+    top: 14%;
+    left: 45%;
+    transform: rotate(var(--rot));
+    z-index: 2;
+}
+
+.sticker-rabat {
+    --rot: 5deg;
+    background: #E86B43;
+    font-size: 36px;
+    padding: 11px 26px;
+    top: 20%;
+    left: 21%;
+    transform: rotate(var(--rot));
+    z-index: 3;
+}
+
+.sticker-kenitra {
+    --rot: 14deg;
+    background: #0056B3;
+    font-size: 32px;
+    padding: 10px 24px;
+    top: 24%;
+    left: 69%;
+    transform: rotate(var(--rot));
+    z-index: 2;
+}
+
+.sticker-fes {
+    --rot: -18deg;
+    background: #00B894;
+    font-size: 36px;
+    padding: 11px 26px;
+    top: 28%;
+    left: 6%;
+    transform: rotate(var(--rot));
+    z-index: 4;
+}
+
+.sticker-mohammedia {
+    --rot: -5deg;
+    background: #7EA1B8;
+    font-size: 36px;
+    padding: 12px 30px;
+    top: 26%;
+    left: 25%;
+    transform: rotate(var(--rot));
+    z-index: 5;
+}
+
+.sticker-casablanca {
+    --rot: -1.5deg;
+    background: #4D47F5;
+    font-size: 38px;
+    padding: 14px 34px;
+    top: 47%;
+    left: 35%;
+    transform: rotate(var(--rot));
+    z-index: 10;
+}
+
+.sticker-tanger {
+    --rot: 11deg;
+    background: #00A8E8;
+    font-size: 36px;
+    padding: 12px 28px;
+    top: 46%;
+    left: 68%;
+    transform: rotate(var(--rot));
+    z-index: 6;
+}
+
+.sticker-eljadida {
+    --rot: -8deg;
+    background: #FA3C00;
+    font-size: 32px;
+    padding: 10px 24px;
+    top: 52%;
+    left: 5%;
+    transform: rotate(var(--rot));
+    z-index: 3;
+}
+
+.sticker-tetouan {
+    --rot: -4deg;
+    background: #00A344;
+    font-size: 34px;
+    padding: 11px 26px;
+    top: 68%;
+    left: 10%;
+    transform: rotate(var(--rot));
+    z-index: 7;
+}
+
+.sticker-marrakech {
+    --rot: -7deg;
+    background: #E6006E;
+    font-size: 40px;
+    padding: 14px 32px;
+    top: 54%;
+    left: 19%;
+    transform: rotate(var(--rot));
+    z-index: 12;
+}
+
+.sticker-oujda {
+    --rot: 11deg;
+    background: #8E59CF;
+    font-size: 34px;
+    padding: 11px 26px;
+    top: 66%;
+    left: 42%;
+    transform: rotate(var(--rot));
+    z-index: 4;
+}
+
+.sticker-meknes {
+    --rot: 4deg;
+    background: #E52B2B;
+    font-size: 36px;
+    padding: 12px 28px;
+    top: 66%;
+    left: 66%;
+    transform: rotate(var(--rot));
+    z-index: 5;
+}
+
+.city-leads-bubble {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(14, 16, 20, 0.94);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 65, 0.45);
+    border-radius: 9999px;
+    padding: 7px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    z-index: 25;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+/* Responsive Scaling for Tablets and Mobile */
+@media (max-width: 820px) {
+    .moroccan-cities-stage {
+        height: 360px;
+    }
+    .city-sticker {
+        font-size: 26px !important;
+        padding: 8px 18px !important;
+    }
+    .sticker-marrakech {
+        font-size: 30px !important;
+    }
+    .sticker-casablanca {
+        font-size: 28px !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .moroccan-cities-stage {
+        height: 290px;
+        border-radius: 16px;
+    }
+    .city-sticker {
+        font-size: 17px !important;
+        padding: 5px 12px !important;
+    }
+    .sticker-marrakech {
+        font-size: 20px !important;
+        left: 14% !important;
+    }
+    .sticker-casablanca {
+        font-size: 19px !important;
+        left: 30% !important;
+    }
+    .sticker-tanger {
+        left: 62% !important;
+    }
+    .sticker-meknes {
+        left: 60% !important;
+    }
+    .city-leads-bubble {
+        font-size: 11px;
+        padding: 5px 14px;
+        width: 90%;
+        justify-content: center;
+    }
+}
+
+
 
 
 
