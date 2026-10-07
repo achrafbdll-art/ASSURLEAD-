@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Génération de Leads Organiques & SEO au Maroc | ASSURLEAD</title>
-    <meta name="description" content="ASSURLEAD : Agence leader en création de site web à Casablanca et partout au Maroc. Nous concevons des sites internet ultra-performants et optimisés pour le SEO Google local afin de capter un flux continu de clients prêts à signer.">
-    <meta name="keywords" content="création de site web Casablanca, agence web Maroc, création site internet Maroc, SEO local Google Maroc, génération de leads Maroc, référencement naturel Maroc, acquisition clients assurance">
+    <meta name="description" content="ASSURLEAD : Agence de génération de leads organiques au Maroc. Nous créons des sites web optimisés pour Google afin de transformer votre visibilité en leads et vos leads en clients.">
+    <meta name="keywords" content="Génération de leads Maroc, agence SEO Maroc, création site web optimisé Google, référencement naturel Casablanca, création site internet Casablanca, acquisition leads Maroc, SEO local Maroc, création site internet agence assurance Maroc">
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="MA">
     <meta name="geo.placename" content="Casablanca, Rabat, Marrakech, Tanger, Maroc">
@@ -23,7 +23,7 @@
     <!-- Open Graph / Meta Réseaux Sociaux -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Génération de Leads Organiques & SEO au Maroc | ASSURLEAD">
-    <meta property="og:description" content="Agence leader en création de site web à Casablanca et partout au Maroc. Sites ultra-performants et optimisés pour le SEO Google local.">
+    <meta property="og:description" content="Nous créons des sites web optimisés pour Google afin de transformer votre visibilité en leads et vos leads en clients au Maroc.">
     <meta property="og:locale" content="fr_MA">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Génération de Leads Organiques & SEO au Maroc | ASSURLEAD">
@@ -114,6 +114,7 @@
                 <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
+                <li><a href="#plaquette-modal" class="nav-plaquette-chip" id="open-nav-plaquette"><i class="fas fa-file-pdf"></i> Plaquette</a></li>
                 <li><a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav_start">Audit Gratuit</a></li>
             </ul>
             <div class="nav-right">
@@ -154,12 +155,9 @@
         </div>
         <div class="container hero-grid">
             <div class="hero-content">
-                <span class="badge hero-badge-shooting" data-i18n="hero_badge"><span class="badge-flag">🇲🇦</span> Agence de création de site web et Génération de Leads Organiques au Maroc <i class="fas fa-meteor shooting-icon"></i></span>
+                <span class="badge hero-badge-shooting" data-i18n="hero_badge"><span class="badge-flag">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <i class="fas fa-meteor shooting-icon"></i></span>
                 <h1 data-i18n="hero_title">Prenez la 1ère place sur Google.<br><span class="neon">Captez vos clients dès aujourd'hui.</span> <span class="morocco-flag-badge" aria-label="Maroc" title="Maroc"><svg class="morocco-flag-svg" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="30" height="20" rx="3" fill="#C1272D"/><path d="M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z" fill="none" stroke="#00FF41" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h1>
-                <p class="hero-paragraph-two-lines" data-i18n="hero_paragraph">
-                    <span class="hero-p-lead">Agence leader en création de site web à Casablanca et partout au Maroc.</span>
-                    <span class="hero-p-sub">Nous concevons des sites internet ultra-performants et optimisés pour le SEO Google local afin de capter un flux continu de clients prêts à signer.</span>
-                </p>
+                <p data-i18n="hero_paragraph">Nous créons des sites web optimisés pour Google afin de transformer votre visibilité en leads et vos leads en clients. Un moteur d'acquisition pérenne conçu pour le marché marocain.</p>
                 
                 <!-- Le Mécanisme Commercial Visuel -->
                 <div class="hero-mechanism-strip">
@@ -198,54 +196,87 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <!-- Advisor Card with the 4 Peach CTA Pills Stack (Design Conforme à la Référence) -->
-                <div class="hero-advisor-card">
-                    <div class="hero-advisor-img-box">
-                        <img src="/header_advisor_photo.jpg" alt="Conseiller ASSURLEAD - Solutions d'Acquisition Maroc" class="hero-advisor-img" width="480" height="600" loading="eager">
-                        <div class="hero-advisor-vignette"></div>
+                <!-- Header View Switcher (Accès Rapide par défaut / Performance Live) -->
+                <div class="hero-card-switcher" role="tablist" aria-label="Affichage Header">
+                    <button class="switcher-tab active" id="tab-action-card" data-target="action-card-view" role="tab" aria-selected="true">
+                        <i class="fas fa-bolt"></i> Actions Directes
+                    </button>
+                    <button class="switcher-tab" id="tab-metrics-card" data-target="metrics-card-view" role="tab" aria-selected="false">
+                        <i class="fas fa-chart-line"></i> Dashboard Live
+                    </button>
+                </div>
+
+                <!-- 1. Header Action Card (100% Identique à la maquette de référence) -->
+                <div class="header-action-card hero-view-pane active" id="action-card-view" role="tabpanel">
+                    <div class="header-action-bg">
+                        <img src="/header_advisor_photo.jpg" alt="Conseillère ASSURLEAD au Maroc" class="header-action-photo" loading="eager" width="440" height="520">
+                        <div class="header-action-overlay"></div>
                     </div>
-
-                    <!-- Top Glass Badge -->
-                    <div class="hero-advisor-badge-top">
-                        <span class="live-dot-pulse"></span>
-                        <span data-i18n="hero_advisor_online">Conseiller Dédié • En Ligne</span>
-                    </div>
-
-                    <!-- The 4 CTA Pill Buttons Stack (Design Conforme à la Photo) -->
-                    <div class="hero-cta-pills-stack" role="group" aria-label="Actions rapides">
-                        <!-- 1. Plaquette -->
-                        <a href="#plaquette-modal" class="hero-pill-cta pill-plaquette" id="pill-plaquette-trigger" role="button">
-                            <span class="pill-text" data-i18n="cta_pill_plaquette">Consultez la plaquette</span>
-                            <i class="fas fa-file-alt pill-icon"></i>
-                        </a>
-
-                        <!-- 2. Postulez -->
-                        <a href="#questionnaire" class="hero-pill-cta pill-postulez" id="pill-postulez-trigger">
-                            <span class="pill-text" data-i18n="cta_pill_postulez">Postulez</span>
-                            <i class="fas fa-bolt pill-icon"></i>
-                        </a>
-
-                        <!-- 3. Contactez-nous -->
-                        <a href="#contact" class="hero-pill-cta pill-contact" id="pill-contact-trigger">
-                            <span class="pill-text" data-i18n="cta_pill_contact">Contactez-nous</span>
-                            <i class="fas fa-envelope pill-icon"></i>
-                        </a>
-
-                        <!-- 4. Nous Rencontrer -->
-                        <a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20planifier%20un%20rendez-vous%20avec%20l'%C3%A9quipe%20ASSURLEAD" target="_blank" rel="noopener" class="hero-pill-cta pill-rencontrer" id="pill-rencontrer-trigger">
-                            <span class="pill-text" data-i18n="cta_pill_rencontrer">Nous Rencontrer</span>
-                            <i class="fas fa-calendar-alt pill-icon"></i>
-                        </a>
-                    </div>
-
-                    <!-- Bottom Floating Live Performance Metric Badge -->
-                    <div class="hero-advisor-badge-bottom">
-                        <div class="mini-chart-dots">
-                            <span class="m-dot"></span>
-                            <span class="m-dot"></span>
-                            <span class="m-dot"></span>
+                    <div class="header-action-content">
+                        <div class="header-action-badge">
+                            <span class="live-pulse-dot"></span> Équipe Disponible • Casablanca & Maroc
                         </div>
-                        <span class="bottom-badge-txt"><strong class="neon">+38 leads</strong> / mois • 100% Organique</span>
+                        <div class="header-action-pills">
+                            <!-- 1. Consultez la plaquette -->
+                            <a href="#plaquette-modal" class="header-pill-btn pill-plaquette" id="btn-plaquette" role="button" aria-label="Consultez la plaquette">
+                                <span class="pill-label">Consultez la plaquette</span>
+                                <i class="fas fa-file-pdf pill-icon"></i>
+                            </a>
+                            <!-- 2. Postulez -->
+                            <a href="#postulez-modal" class="header-pill-btn pill-postulez" id="btn-postulez" role="button" aria-label="Postulez">
+                                <span class="pill-label">Postulez</span>
+                                <i class="fas fa-bolt pill-icon"></i>
+                            </a>
+                            <!-- 3. Contactez-nous -->
+                            <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20vous%20contacter%20directement" target="_blank" rel="noopener" class="header-pill-btn pill-contact" id="btn-contact-header" aria-label="Contactez-nous">
+                                <span class="pill-label">Contactez-nous</span>
+                                <i class="fas fa-envelope pill-icon"></i>
+                            </a>
+                            <!-- 4. Nous Rencontrer -->
+                            <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20planifier%20un%20rendez-vous%20pour%20nous%20rencontrer%20et%20%C3%A9changer" target="_blank" rel="noopener" class="header-pill-btn pill-rencontrer" id="btn-rencontrer" aria-label="Nous Rencontrer">
+                                <span class="pill-label">Nous Rencontrer</span>
+                                <i class="fas fa-calendar-alt pill-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Dashboard Card Live -->
+                <div class="dashboard-card hero-view-pane" id="metrics-card-view" role="tabpanel" style="display: none;">
+                    <div class="dashboard-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="live-indicator">
+                            <span class="pulse"></span>
+                            <span data-i18n="dash_live_indicator">Moteur Organique Actif</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-body">
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-label" data-i18n="dash_leads_label">Demandes / Mois</span>
+                                <span class="stat-val neon">+38</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label" data-i18n="dash_conv_label">Taux de Contact</span>
+                                <span class="stat-val">18.4%</span>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="bar" style="height: 40%;"></div>
+                            <div class="bar" style="height: 60%;"></div>
+                            <div class="bar" style="height: 55%;"></div>
+                            <div class="bar" style="height: 80%;"></div>
+                            <div class="bar" style="height: 75%;"></div>
+                            <div class="bar" style="height: 92%;"></div>
+                            <div class="bar" style="height: 100%;"></div>
+                        </div>
+                        <div style="margin-top: 14px; padding: 10px; background: rgba(0,255,65,0.06); border: 1px solid rgba(0,255,65,0.2); border-radius: 4px; font-size: 11px; color: var(--zinc-300); text-align: center;">
+                            <i class="fas fa-check-circle" style="color: var(--brand-neon);"></i> <strong>Acquisition 100% Organique</strong> — Flux continu sans payer au clic
+                        </div>
                     </div>
                 </div>
             </div>
@@ -875,40 +906,58 @@
         </div>
     </div>
 
-    <!-- Plaquette Offre & Solutions Modal -->
-    <div id="plaquette-modal" class="modal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
+    <!-- Plaquette Modal -->
+    <div id="plaquette-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="plaquette-modal-title">
+        <div class="modal-backdrop" id="close-plaquette-backdrop"></div>
+        <div class="modal-content modal-custom-card">
             <button id="close-plaquette-modal" class="close-btn" aria-label="Fermer"><i class="fas fa-times"></i></button>
             <div class="modal-inner">
-                <div class="modal-logo-header">
-                    <div class="logo-icon modal-logo-icon">
-                        <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="44" height="48">
-                    </div>
-                    <span class="logo-text modal-logo-brand">ASSUR<span class="neon">LEAD</span>COM</span>
-                </div>
-                <span class="badge" data-i18n="plaquette_badge">Documentation Stratégique</span>
-                <h2 data-i18n="plaquette_title">Plaquette Officielle <span class="neon">ASSURLEAD Maroc</span></h2>
-                <p data-i18n="plaquette_desc">Découvrez notre méthodologie éprouvée pour transformer les recherches Google d'assurance dans votre ville en flux régulier de clients qualifiés, avec garantie d'exclusivité territoriale.</p>
+                <div class="modal-pill-tag"><i class="fas fa-file-pdf"></i> DOCUMENTATION OFFICIELLE</div>
+                <h2 id="plaquette-modal-title">Plaquette Stratégique <span class="neon">ASSURLEAD 2026</span></h2>
+                <p>Découvrez notre framework exclusif d'acquisition de leads pour courtiers et agents d'assurance au Maroc : méthode en 9 étapes, comparatifs CPL, études de cas réelles et engagements de performance.</p>
                 
-                <div class="plaquette-features-list">
-                    <div class="plaquette-feat-item">
-                        <i class="fas fa-check-circle" style="color: var(--brand-neon);"></i>
-                        <span data-i18n="plaquette_f1">Audit des volumes de recherche d'assurance au Maroc</span>
-                    </div>
-                    <div class="plaquette-feat-item">
-                        <i class="fas fa-check-circle" style="color: var(--brand-neon);"></i>
-                        <span data-i18n="plaquette_f2">Architecture web haute conversion (&lt; 1.2s mobile)</span>
-                    </div>
-                    <div class="plaquette-feat-item">
-                        <i class="fas fa-check-circle" style="color: var(--brand-neon);"></i>
-                        <span data-i18n="plaquette_f3">Contrat d'exclusivité territoriale par zone commerciale</span>
-                    </div>
+                <div class="plaquette-feature-list">
+                    <div class="p-feat-item"><i class="fas fa-check-circle neon"></i> Architecture SEO & Tunnels de conversion mobile</div>
+                    <div class="p-feat-item"><i class="fas fa-check-circle neon"></i> Analyse des volumes de recherche par ville au Maroc</div>
+                    <div class="p-feat-item"><i class="fas fa-check-circle neon"></i> Clauses d'exclusivité territoriale stricte</div>
                 </div>
 
-                <a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20recevoir%20la%20plaquette%20strat%C3%A9gique%20ASSURLEAD%20(PDF)%20sur%20WhatsApp" target="_blank" rel="noopener" class="btn btn-primary full-width" data-i18n="plaquette_wa_btn">
-                    Recevoir la Plaquette sur WhatsApp <i class="fab fa-whatsapp"></i>
-                </a>
+                <div class="modal-action-stack">
+                    <a href="/assurlead-plaquette-2026.pdf" download="Plaquette_ASSURLEAD_2026.pdf" class="btn btn-primary full-width modal-btn-pulse">
+                        <i class="fas fa-download"></i> Télécharger la plaquette (PDF)
+                    </a>
+                    <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20recevoir%20la%20plaquette%20commerciale%20directement%20sur%20WhatsApp" target="_blank" rel="noopener" class="btn btn-whatsapp full-width">
+                        <i class="fab fa-whatsapp"></i> Recevoir instantanément sur WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Postulez Modal -->
+    <div id="postulez-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="postulez-modal-title">
+        <div class="modal-backdrop" id="close-postulez-backdrop"></div>
+        <div class="modal-content modal-custom-card">
+            <button id="close-postulez-modal" class="close-btn" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <div class="modal-inner">
+                <div class="modal-pill-tag"><i class="fas fa-bolt"></i> RECRUTEMENT & PARTENARIATS</div>
+                <h2 id="postulez-modal-title">Rejoignez l'équipe <span class="neon">ASSURLEAD</span></h2>
+                <p>Nous recherchons des talents passionnés par le web, le SEO et la croissance commerciale : <strong>Experts SEO Maroc, Développeurs Web, Consultants Acquisition & Courtiers Partenaires</strong>.</p>
+
+                <div class="postulez-perks-grid">
+                    <div class="perk-box"><i class="fas fa-briefcase"></i> Postes & Missions freelance</div>
+                    <div class="perk-box"><i class="fas fa-handshake"></i> Partenariat rémunéré au résultat</div>
+                    <div class="perk-box"><i class="fas fa-map-marker-alt"></i> Casablanca / Remote Maroc</div>
+                </div>
+
+                <div class="modal-action-stack">
+                    <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20postuler%20et%20proposer%20mon%20profil%20pour%20collaborer%20avec%20vous" target="_blank" rel="noopener" class="btn btn-primary full-width">
+                        <i class="fab fa-whatsapp"></i> Postuler directement via WhatsApp
+                    </a>
+                    <a href="mailto:contact@assurleadcom.com?subject=Candidature%20ASSURLEAD&body=Bonjour,%20je%20souhaite%20postuler..." class="btn btn-outline full-width">
+                        <i class="fas fa-envelope"></i> Envoyer mon CV par Email
+                    </a>
+                </div>
             </div>
         </div>
     </div>

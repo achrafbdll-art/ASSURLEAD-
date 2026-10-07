@@ -71,6 +71,11 @@ const translations = {
         en: "Our Approach",
         ar: "نهجنا"
     },
+    nav_plaquette: {
+        fr: "<i class=\"fas fa-file-pdf\"></i> Plaquette",
+        en: "<i class=\"fas fa-file-pdf\"></i> Brochure",
+        ar: "<i class=\"fas fa-file-pdf\"></i> الكتيب"
+    },
     footer_seo_realisation: {
         fr: "Réalisation : Assurances El Omrani",
         en: "Case Study: Assurances El Omrani",
@@ -608,9 +613,9 @@ const translations = {
     },
     // Hero
     hero_badge: {
-        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de création de site web et Génération de Leads Organiques au Maroc <i class=\"fas fa-meteor shooting-icon\"></i>",
-        en: "<span class=\"badge-flag\">🇲🇦</span> Website Creation & Organic Lead Generation Agency in Morocco <i class=\"fas fa-meteor shooting-icon\"></i>",
-        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة إنشاء المواقع واستقطاب العملاء وتصدر غوغل بالمغرب <i class=\"fas fa-meteor shooting-icon\"></i>"
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <i class=\"fas fa-meteor shooting-icon\"></i>",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco <i class=\"fas fa-meteor shooting-icon\"></i>",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <i class=\"fas fa-meteor shooting-icon\"></i>"
     },
     hero_title: {
         fr: "Prenez la 1ère place sur Google.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
@@ -618,9 +623,9 @@ const translations = {
         ar: "تصدر المرتبة الأولى في غوغل.<br><span class=\"neon\">استقطب عملاءك ابتداءً من اليوم.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
-        fr: "<span class=\"hero-p-lead\">Agence leader en création de site web à Casablanca et partout au Maroc.</span><span class=\"hero-p-sub\">Nous concevons des sites internet ultra-performants et optimisés pour le SEO Google local afin de capter un flux continu de clients prêts à signer.</span>",
-        en: "<span class=\"hero-p-lead\">Top agency for website creation in Casablanca and across Morocco.</span><span class=\"hero-p-sub\">We build high-speed, SEO-engineered websites designed to capture a continuous stream of ready-to-sign clients.</span>",
-        ar: "<span class=\"hero-p-lead\">الوكالة الرائدة في إنشاء المواقع الإلكترونية بالدار البيضاء وكافة مدن المغرب.</span><span class=\"hero-p-sub\">نبني مواقع فائقة السرعة ومتوافقة مع خوارزميات غوغل لجذب تدفق مستمر من العملاء المستعدين للتعاقد.</span>"
+        fr: "Agence leader en création de site web à Casablanca et partout au Maroc. Nous concevons des sites internet ultra-performants et optimisés pour le SEO Google local afin de capter un flux continu de clients prêts à signer.",
+        en: "Top agency for website creation in Casablanca and across Morocco. We build high-speed, SEO-engineered websites designed to rank #1 on Google and turn local search demand into qualified clients.",
+        ar: "الوكالة الرائدة في إنشاء المواقع الإلكترونية بالدار البيضاء وكافة مدن المغرب. نبني مواقع فائقة السرعة ومتوافقة مع خوارزميات غوغل لتصدر نتائج البحث وتحويل الزوار لعملاء فعليين."
     },
     hero_btn_growth: {
         fr: "Demander un audit gratuit (15 min) <i class=\"fas fa-arrow-right\"></i>",
@@ -642,66 +647,6 @@ const translations = {
         fr: "Pipeline d'Acquisition Actif",
         en: "Active Acquisition Pipeline",
         ar: "مسار الاستقطاب النشط"
-    },
-    hero_advisor_online: {
-        fr: "Conseiller Dédié • En Ligne",
-        en: "Dedicated Advisor • Online",
-        ar: "مستشار مخصص • متاح الآن"
-    },
-    cta_pill_plaquette: {
-        fr: "Consultez la plaquette",
-        en: "View Brochure",
-        ar: "اطّلع على الكتيّب"
-    },
-    cta_pill_postulez: {
-        fr: "Postulez",
-        en: "Apply Now",
-        ar: "قدّم طلبك"
-    },
-    cta_pill_contact: {
-        fr: "Contactez-nous",
-        en: "Contact Us",
-        ar: "تواصل معنا"
-    },
-    cta_pill_rencontrer: {
-        fr: "Nous Rencontrer",
-        en: "Meet With Us",
-        ar: "احجز موعداً معنا"
-    },
-    plaquette_badge: {
-        fr: "Documentation Stratégique",
-        en: "Strategic Overview",
-        ar: "وثيقة استراتيجية"
-    },
-    plaquette_title: {
-        fr: "Plaquette Officielle <span class=\"neon\">ASSURLEAD Maroc</span>",
-        en: "Official Brochure <span class=\"neon\">ASSURLEAD Morocco</span>",
-        ar: "الكتيّب الرسمي <span class=\"neon\">ASSURLEAD المغرب</span>"
-    },
-    plaquette_desc: {
-        fr: "Découvrez notre méthodologie éprouvée pour transformer les recherches Google d'assurance dans votre ville en flux régulier de clients qualifiés, avec garantie d'exclusivité territoriale.",
-        en: "Discover our proven methodology to transform local Google insurance searches into a steady stream of qualified clients, with guaranteed territorial exclusivity.",
-        ar: "اكتشف منهجيتنا المجرّبة لتحويل عمليات بحث غوغل عن التأمين في مدينتك إلى تدفق مستمر من العملاء المؤهلين، مع حصرية جغرافية تامة."
-    },
-    plaquette_f1: {
-        fr: "Audit des volumes de recherche d'assurance au Maroc",
-        en: "Insurance search volume audit in Morocco",
-        ar: "تدقيق حجم البحث عن التأمين بالمغرب"
-    },
-    plaquette_f2: {
-        fr: "Architecture web haute conversion (< 1.2s mobile)",
-        en: "High-conversion web architecture (< 1.2s mobile)",
-        ar: "بنية موقع فائقة التحويل (أقل من 1.2 ثانية على الهاتف)"
-    },
-    plaquette_f3: {
-        fr: "Contrat d'exclusivité territoriale par zone commerciale",
-        en: "Territorial exclusivity agreement per commercial area",
-        ar: "عقد حصرية جغرافية لكل منطقة تجارية"
-    },
-    plaquette_wa_btn: {
-        fr: "Recevoir la Plaquette sur WhatsApp <i class=\"fab fa-whatsapp\"></i>",
-        en: "Get Brochure via WhatsApp <i class=\"fab fa-whatsapp\"></i>",
-        ar: "استلام الكتيّب عبر واتساب <i class=\"fab fa-whatsapp\"></i>"
     },
     dash_leads_label: {
         fr: "Leads Qualifiés / Mois",
@@ -1792,7 +1737,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save selection
         localStorage.setItem('assurlead_lang', lang);
-        window.dispatchEvent(new Event('resize'));
         
         // Trigger ROI calculation
         try {
@@ -1871,8 +1815,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderer.setSize(container.clientWidth, container.clientHeight);
         container.appendChild(renderer.domElement);
 
-        const hero3DGroup = new THREE.Group();
-
         const geometry = new THREE.IcosahedronGeometry(2, 1);
         const material = new THREE.MeshStandardMaterial({ 
             color: 0x00ff00, 
@@ -1881,7 +1823,7 @@ document.addEventListener('DOMContentLoaded', () => {
             emissiveIntensity: 0.8
         });
         const mesh = new THREE.Mesh(geometry, material);
-        hero3DGroup.add(mesh);
+        scene.add(mesh);
 
         const particlesGeometry = new THREE.BufferGeometry();
         const particlesCount = 500;
@@ -1898,9 +1840,7 @@ document.addEventListener('DOMContentLoaded', () => {
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
         const particlesMaterial = new THREE.PointsMaterial({ size: 0.02, color: 0x00ff00 });
         const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        hero3DGroup.add(particlesMesh);
-
-        scene.add(hero3DGroup);
+        scene.add(particlesMesh);
 
         const light = new THREE.PointLight(0x00ff00, 100);
         light.position.set(5, 5, 5);
@@ -1908,24 +1848,6 @@ document.addEventListener('DOMContentLoaded', () => {
         scene.add(new THREE.AmbientLight(0xffffff, 0.2));
 
         camera.position.z = 5;
-
-        // Position 3D design distinctly to the right of the header
-        const update3DPosition = () => {
-            const isRTL = document.body.getAttribute('dir') === 'rtl';
-            const width = window.innerWidth;
-            let targetX = 3.4;
-            if (width <= 640) {
-                targetX = 1.6;
-            } else if (width <= 1024) {
-                targetX = 2.4;
-            } else {
-                targetX = 3.4;
-            }
-            hero3DGroup.position.x = isRTL ? -targetX : targetX;
-            light.position.x = hero3DGroup.position.x + 2;
-        };
-        update3DPosition();
-        window.addEventListener('resize', update3DPosition);
 
         let frameId;
         function animate() {
@@ -2210,26 +2132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         window.addEventListener('click', triggerModal);
         setTimeout(() => { if (!modalTriggered) showModal(); }, 8000);
-    }
-
-    // Plaquette Modal
-    const plaquetteModal = document.getElementById('plaquette-modal');
-    const openPlaquetteBtn = document.getElementById('pill-plaquette-trigger');
-    const closePlaquetteBtn = document.getElementById('close-plaquette-modal');
-    if (plaquetteModal) {
-        const showPlaquette = (e) => {
-            if (e) e.preventDefault();
-            plaquetteModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        };
-        const hidePlaquette = () => {
-            plaquetteModal.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-        if (openPlaquetteBtn) openPlaquetteBtn.addEventListener('click', showPlaquette);
-        if (closePlaquetteBtn) closePlaquetteBtn.addEventListener('click', hidePlaquette);
-        const pBackdrop = plaquetteModal.querySelector('.modal-backdrop');
-        if (pBackdrop) pBackdrop.addEventListener('click', hidePlaquette);
     }
 
     // --- CONFETTI CELEBRATION ENGINE ---
@@ -3268,6 +3170,84 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Header View Switcher & Action Modals (Plaquette & Postulez)
+    const initHeaderActionPills = () => {
+        // Tab Switcher (Actions Directes / Dashboard Live)
+        const tabs = document.querySelectorAll('.switcher-tab');
+        const panes = document.querySelectorAll('.hero-view-pane');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetId = tab.getAttribute('data-target');
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                panes.forEach(p => {
+                    p.style.display = 'none';
+                    p.classList.remove('active');
+                });
+
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                const targetPane = document.getElementById(targetId);
+                if (targetPane) {
+                    targetPane.style.display = targetId === 'action-card-view' ? 'flex' : 'block';
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Plaquette Modal
+        const plaquetteModal = document.getElementById('plaquette-modal');
+        const openPlaquetteBtns = [
+            document.getElementById('btn-plaquette'),
+            document.getElementById('open-nav-plaquette')
+        ];
+        const closePlaquetteBtn = document.getElementById('close-plaquette-modal');
+        const closePlaquetteBackdrop = document.getElementById('close-plaquette-backdrop');
+
+        const openPlaquette = (e) => {
+            if (e) e.preventDefault();
+            if (plaquetteModal) plaquetteModal.classList.add('active');
+        };
+        const closePlaquette = () => {
+            if (plaquetteModal) plaquetteModal.classList.remove('active');
+        };
+
+        openPlaquetteBtns.forEach(btn => {
+            if (btn) btn.addEventListener('click', openPlaquette);
+        });
+        if (closePlaquetteBtn) closePlaquetteBtn.addEventListener('click', closePlaquette);
+        if (closePlaquetteBackdrop) closePlaquetteBackdrop.addEventListener('click', closePlaquette);
+
+        // Postulez Modal
+        const postulezModal = document.getElementById('postulez-modal');
+        const openPostulezBtn = document.getElementById('btn-postulez');
+        const closePostulezBtn = document.getElementById('close-postulez-modal');
+        const closePostulezBackdrop = document.getElementById('close-postulez-backdrop');
+
+        const openPostulez = (e) => {
+            if (e) e.preventDefault();
+            if (postulezModal) postulezModal.classList.add('active');
+        };
+        const closePostulez = () => {
+            if (postulezModal) postulezModal.classList.remove('active');
+        };
+
+        if (openPostulezBtn) openPostulezBtn.addEventListener('click', openPostulez);
+        if (closePostulezBtn) closePostulezBtn.addEventListener('click', closePostulez);
+        if (closePostulezBackdrop) closePostulezBackdrop.addEventListener('click', closePostulez);
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePlaquette();
+                closePostulez();
+            }
+        });
+    };
+
     // Interactive Moroccan Cities Stickers Cluster
     const initCityStickersInteractive = () => {
         const stickers = document.querySelectorAll('.city-sticker');
@@ -3303,4 +3283,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initFaqAccordion();
     initSpecialOfferToggle();
     initCityStickersInteractive();
+    initHeaderActionPills();
 });
