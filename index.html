@@ -114,7 +114,6 @@
                 <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
-                <li><a href="#plaquette-modal" class="nav-plaquette-chip" id="open-nav-plaquette"><i class="fas fa-file-pdf"></i> Plaquette</a></li>
                 <li><a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav_start">Audit Gratuit</a></li>
             </ul>
             <div class="nav-right">
@@ -196,53 +195,7 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <!-- Header View Switcher (Accès Rapide par défaut / Performance Live) -->
-                <div class="hero-card-switcher" role="tablist" aria-label="Affichage Header">
-                    <button class="switcher-tab active" id="tab-action-card" data-target="action-card-view" role="tab" aria-selected="true">
-                        <i class="fas fa-bolt"></i> Actions Directes
-                    </button>
-                    <button class="switcher-tab" id="tab-metrics-card" data-target="metrics-card-view" role="tab" aria-selected="false">
-                        <i class="fas fa-chart-line"></i> Dashboard Live
-                    </button>
-                </div>
-
-                <!-- 1. Header Action Card (100% Identique à la maquette de référence) -->
-                <div class="header-action-card hero-view-pane active" id="action-card-view" role="tabpanel">
-                    <div class="header-action-bg">
-                        <img src="/header_advisor_photo.jpg" alt="Conseillère ASSURLEAD au Maroc" class="header-action-photo" loading="eager" width="440" height="520">
-                        <div class="header-action-overlay"></div>
-                    </div>
-                    <div class="header-action-content">
-                        <div class="header-action-badge">
-                            <span class="live-pulse-dot"></span> Équipe Disponible • Casablanca & Maroc
-                        </div>
-                        <div class="header-action-pills">
-                            <!-- 1. Consultez la plaquette -->
-                            <a href="#plaquette-modal" class="header-pill-btn pill-plaquette" id="btn-plaquette" role="button" aria-label="Consultez la plaquette">
-                                <span class="pill-label">Consultez la plaquette</span>
-                                <i class="fas fa-file-pdf pill-icon"></i>
-                            </a>
-                            <!-- 2. Postulez -->
-                            <a href="#postulez-modal" class="header-pill-btn pill-postulez" id="btn-postulez" role="button" aria-label="Postulez">
-                                <span class="pill-label">Postulez</span>
-                                <i class="fas fa-bolt pill-icon"></i>
-                            </a>
-                            <!-- 3. Contactez-nous -->
-                            <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20vous%20contacter%20directement" target="_blank" rel="noopener" class="header-pill-btn pill-contact" id="btn-contact-header" aria-label="Contactez-nous">
-                                <span class="pill-label">Contactez-nous</span>
-                                <i class="fas fa-envelope pill-icon"></i>
-                            </a>
-                            <!-- 4. Nous Rencontrer -->
-                            <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20planifier%20un%20rendez-vous%20pour%20nous%20rencontrer%20et%20%C3%A9changer" target="_blank" rel="noopener" class="header-pill-btn pill-rencontrer" id="btn-rencontrer" aria-label="Nous Rencontrer">
-                                <span class="pill-label">Nous Rencontrer</span>
-                                <i class="fas fa-calendar-alt pill-icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Dashboard Card Live -->
-                <div class="dashboard-card hero-view-pane" id="metrics-card-view" role="tabpanel" style="display: none;">
+                <div class="dashboard-card">
                     <div class="dashboard-header">
                         <div class="dots">
                             <span class="dot red"></span>
@@ -902,62 +855,6 @@
                 <p data-i18n="modal_p">Réservez votre <strong>audit de visibilité gratuit de 15 minutes</strong> pour analyser votre présence sur Google et déployer un <span class="neon">moteur d'acquisition de leads organiques</span> pour votre activité au Maroc.</p>
                 <a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20audit%20de%20visibilit%C3%A9%20Google%20gratuit" target="_blank" class="btn btn-primary full-width" data-i18n="modal_btn">Réserver mon Audit Gratuit</a>
                 <div class="modal-timer"><i class="fas fa-clock"></i> <span data-i18n="modal_timer">Plus que 3 créneaux cette semaine</span></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Plaquette Modal -->
-    <div id="plaquette-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="plaquette-modal-title">
-        <div class="modal-backdrop" id="close-plaquette-backdrop"></div>
-        <div class="modal-content modal-custom-card">
-            <button id="close-plaquette-modal" class="close-btn" aria-label="Fermer"><i class="fas fa-times"></i></button>
-            <div class="modal-inner">
-                <div class="modal-pill-tag"><i class="fas fa-file-pdf"></i> DOCUMENTATION OFFICIELLE</div>
-                <h2 id="plaquette-modal-title">Plaquette Stratégique <span class="neon">ASSURLEAD 2026</span></h2>
-                <p>Découvrez notre framework exclusif d'acquisition de leads pour courtiers et agents d'assurance au Maroc : méthode en 9 étapes, comparatifs CPL, études de cas réelles et engagements de performance.</p>
-                
-                <div class="plaquette-feature-list">
-                    <div class="p-feat-item"><i class="fas fa-check-circle neon"></i> Architecture SEO & Tunnels de conversion mobile</div>
-                    <div class="p-feat-item"><i class="fas fa-check-circle neon"></i> Analyse des volumes de recherche par ville au Maroc</div>
-                    <div class="p-feat-item"><i class="fas fa-check-circle neon"></i> Clauses d'exclusivité territoriale stricte</div>
-                </div>
-
-                <div class="modal-action-stack">
-                    <a href="/assurlead-plaquette-2026.pdf" download="Plaquette_ASSURLEAD_2026.pdf" class="btn btn-primary full-width modal-btn-pulse">
-                        <i class="fas fa-download"></i> Télécharger la plaquette (PDF)
-                    </a>
-                    <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20recevoir%20la%20plaquette%20commerciale%20directement%20sur%20WhatsApp" target="_blank" rel="noopener" class="btn btn-whatsapp full-width">
-                        <i class="fab fa-whatsapp"></i> Recevoir instantanément sur WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Postulez Modal -->
-    <div id="postulez-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="postulez-modal-title">
-        <div class="modal-backdrop" id="close-postulez-backdrop"></div>
-        <div class="modal-content modal-custom-card">
-            <button id="close-postulez-modal" class="close-btn" aria-label="Fermer"><i class="fas fa-times"></i></button>
-            <div class="modal-inner">
-                <div class="modal-pill-tag"><i class="fas fa-bolt"></i> RECRUTEMENT & PARTENARIATS</div>
-                <h2 id="postulez-modal-title">Rejoignez l'équipe <span class="neon">ASSURLEAD</span></h2>
-                <p>Nous recherchons des talents passionnés par le web, le SEO et la croissance commerciale : <strong>Experts SEO Maroc, Développeurs Web, Consultants Acquisition & Courtiers Partenaires</strong>.</p>
-
-                <div class="postulez-perks-grid">
-                    <div class="perk-box"><i class="fas fa-briefcase"></i> Postes & Missions freelance</div>
-                    <div class="perk-box"><i class="fas fa-handshake"></i> Partenariat rémunéré au résultat</div>
-                    <div class="perk-box"><i class="fas fa-map-marker-alt"></i> Casablanca / Remote Maroc</div>
-                </div>
-
-                <div class="modal-action-stack">
-                    <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20postuler%20et%20proposer%20mon%20profil%20pour%20collaborer%20avec%20vous" target="_blank" rel="noopener" class="btn btn-primary full-width">
-                        <i class="fab fa-whatsapp"></i> Postuler directement via WhatsApp
-                    </a>
-                    <a href="mailto:contact@assurleadcom.com?subject=Candidature%20ASSURLEAD&body=Bonjour,%20je%20souhaite%20postuler..." class="btn btn-outline full-width">
-                        <i class="fas fa-envelope"></i> Envoyer mon CV par Email
-                    </a>
-                </div>
             </div>
         </div>
     </div>

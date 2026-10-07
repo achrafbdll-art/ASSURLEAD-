@@ -71,11 +71,6 @@ const translations = {
         en: "Our Approach",
         ar: "نهجنا"
     },
-    nav_plaquette: {
-        fr: "<i class=\"fas fa-file-pdf\"></i> Plaquette",
-        en: "<i class=\"fas fa-file-pdf\"></i> Brochure",
-        ar: "<i class=\"fas fa-file-pdf\"></i> الكتيب"
-    },
     footer_seo_realisation: {
         fr: "Réalisation : Assurances El Omrani",
         en: "Case Study: Assurances El Omrani",
@@ -3170,84 +3165,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Header View Switcher & Action Modals (Plaquette & Postulez)
-    const initHeaderActionPills = () => {
-        // Tab Switcher (Actions Directes / Dashboard Live)
-        const tabs = document.querySelectorAll('.switcher-tab');
-        const panes = document.querySelectorAll('.hero-view-pane');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetId = tab.getAttribute('data-target');
-                tabs.forEach(t => {
-                    t.classList.remove('active');
-                    t.setAttribute('aria-selected', 'false');
-                });
-                panes.forEach(p => {
-                    p.style.display = 'none';
-                    p.classList.remove('active');
-                });
-
-                tab.classList.add('active');
-                tab.setAttribute('aria-selected', 'true');
-                const targetPane = document.getElementById(targetId);
-                if (targetPane) {
-                    targetPane.style.display = targetId === 'action-card-view' ? 'flex' : 'block';
-                    targetPane.classList.add('active');
-                }
-            });
-        });
-
-        // Plaquette Modal
-        const plaquetteModal = document.getElementById('plaquette-modal');
-        const openPlaquetteBtns = [
-            document.getElementById('btn-plaquette'),
-            document.getElementById('open-nav-plaquette')
-        ];
-        const closePlaquetteBtn = document.getElementById('close-plaquette-modal');
-        const closePlaquetteBackdrop = document.getElementById('close-plaquette-backdrop');
-
-        const openPlaquette = (e) => {
-            if (e) e.preventDefault();
-            if (plaquetteModal) plaquetteModal.classList.add('active');
-        };
-        const closePlaquette = () => {
-            if (plaquetteModal) plaquetteModal.classList.remove('active');
-        };
-
-        openPlaquetteBtns.forEach(btn => {
-            if (btn) btn.addEventListener('click', openPlaquette);
-        });
-        if (closePlaquetteBtn) closePlaquetteBtn.addEventListener('click', closePlaquette);
-        if (closePlaquetteBackdrop) closePlaquetteBackdrop.addEventListener('click', closePlaquette);
-
-        // Postulez Modal
-        const postulezModal = document.getElementById('postulez-modal');
-        const openPostulezBtn = document.getElementById('btn-postulez');
-        const closePostulezBtn = document.getElementById('close-postulez-modal');
-        const closePostulezBackdrop = document.getElementById('close-postulez-backdrop');
-
-        const openPostulez = (e) => {
-            if (e) e.preventDefault();
-            if (postulezModal) postulezModal.classList.add('active');
-        };
-        const closePostulez = () => {
-            if (postulezModal) postulezModal.classList.remove('active');
-        };
-
-        if (openPostulezBtn) openPostulezBtn.addEventListener('click', openPostulez);
-        if (closePostulezBtn) closePostulezBtn.addEventListener('click', closePostulez);
-        if (closePostulezBackdrop) closePostulezBackdrop.addEventListener('click', closePostulez);
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closePlaquette();
-                closePostulez();
-            }
-        });
-    };
-
     // Interactive Moroccan Cities Stickers Cluster
     const initCityStickersInteractive = () => {
         const stickers = document.querySelectorAll('.city-sticker');
@@ -3283,5 +3200,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initFaqAccordion();
     initSpecialOfferToggle();
     initCityStickersInteractive();
-    initHeaderActionPills();
 });
