@@ -620,34 +620,32 @@ body[dir="rtl"] .track-4 {
 }
 
 .hero-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 40px;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 48px;
     position: relative;
     z-index: 10;
-    max-width: 1040px;
+    max-width: 1260px;
     margin: 0 auto;
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
 }
 
 .hero-content h1 {
-    font-size: clamp(32px, 4.4vw, 54px);
+    font-size: clamp(30px, 3.8vw, 50px);
     line-height: 1.15;
     letter-spacing: -0.025em;
-    margin: 0 auto 18px auto;
+    margin: 0 0 16px 0;
     font-weight: 900;
-    text-align: center;
-    max-width: 980px;
+    text-align: left;
+    max-width: 100%;
 }
 
 .morocco-flag-badge {
@@ -693,21 +691,39 @@ body[dir="rtl"] .badge-flag {
 }
 
 .hero-content p {
-    font-size: clamp(16px, 1.7vw, 19px);
+    font-size: clamp(15px, 1.5vw, 17.5px);
     color: var(--zinc-300);
-    margin: 0 auto 24px auto;
-    max-width: 800px;
+    margin: 0 0 20px 0;
+    max-width: 100%;
     font-weight: 400;
     line-height: 1.6;
-    text-align: center;
+    text-align: left;
+}
+
+.hero-p-lead {
+    display: block;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-size: clamp(16px, 1.6vw, 18.5px);
+    line-height: 1.4;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.hero-p-sub {
+    display: block;
+    font-weight: 400;
+    color: var(--zinc-300);
+    font-size: clamp(14px, 1.4vw, 16px);
+    line-height: 1.55;
 }
 
 .hero-btns {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 16px;
-    margin: 0 auto 32px auto;
+    gap: 14px;
+    margin: 0 0 28px 0;
     flex-wrap: wrap;
 }
 
@@ -736,8 +752,347 @@ body[dir="rtl"] .badge-flag {
     background: rgba(0, 255, 65, 0.06);
 }
 
+/* ========================================================
+   HERO ADVISOR CARD & THE 4 PEACH PILL CTAs (DESIGN PHOTO)
+   ======================================================== */
 .hero-visual {
-    display: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    perspective: 1000px;
+}
+
+.hero-advisor-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 520px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #090e0c;
+    border: 1.5px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 255, 65, 0.09);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 20px;
+    isolation: isolate;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hero-advisor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 45px rgba(0, 255, 65, 0.15);
+    border-color: rgba(0, 255, 65, 0.35);
+}
+
+.hero-advisor-img-box {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-advisor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    transform: scale(1.03);
+    filter: brightness(0.88) contrast(1.05);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-advisor-card:hover .hero-advisor-img {
+    transform: scale(1.07);
+}
+
+.hero-advisor-vignette {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(5, 8, 7, 0.5) 0%,
+        rgba(5, 8, 7, 0.2) 30%,
+        rgba(5, 8, 7, 0.4) 65%,
+        rgba(5, 8, 7, 0.85) 100%
+    );
+    pointer-events: none;
+}
+
+/* Top Glass Badge */
+.hero-advisor-badge-top {
+    position: relative;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(12, 18, 15, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.live-dot-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--brand-neon);
+    box-shadow: 0 0 10px var(--brand-neon);
+    animation: liveDotBlink 1.6s infinite ease-in-out;
+}
+
+@keyframes liveDotBlink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.7); }
+}
+
+/* The 4 Peach Pill Buttons Stack (Identique à la Photo) */
+.hero-cta-pills-stack {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    margin: auto 0;
+}
+
+.hero-pill-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 88%;
+    max-width: 320px;
+    padding: 13.5px 24px;
+    background-color: #FFD6CE;
+    color: #111111;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 15.5px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    border: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.38), 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.22s ease, 
+                background-color 0.22s ease;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hero-pill-cta:hover {
+    background-color: #FFE2DA;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 214, 206, 0.4);
+    color: #000000;
+}
+
+.hero-pill-cta:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.hero-pill-cta .pill-text {
+    line-height: 1.2;
+}
+
+.hero-pill-cta .pill-icon {
+    font-size: 15px;
+    color: #111111;
+    transition: transform 0.22s ease;
+}
+
+.hero-pill-cta:hover .pill-icon {
+    transform: scale(1.22);
+}
+
+/* Bottom Floating Performance Indicator */
+.hero-advisor-badge-bottom {
+    position: relative;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 18px;
+    background: rgba(10, 15, 12, 0.85);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 9999px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    font-size: 12.5px;
+    color: #F4F4F5;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 15px rgba(0, 255, 65, 0.15);
+}
+
+.mini-chart-dots {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 12px;
+}
+
+.mini-chart-dots .m-dot {
+    width: 3px;
+    border-radius: 1px;
+    background: var(--brand-neon);
+}
+.mini-chart-dots .m-dot:nth-child(1) { height: 6px; }
+.mini-chart-dots .m-dot:nth-child(2) { height: 9px; }
+.mini-chart-dots .m-dot:nth-child(3) { height: 12px; }
+
+/* Plaquette Features List inside Modal */
+.plaquette-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0 24px 0;
+    text-align: left;
+}
+
+.plaquette-feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--zinc-300);
+    line-height: 1.45;
+}
+
+.plaquette-feat-item i {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Responsive adjustments for 2-column Hero */
+@media (max-width: 1080px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+    .hero-content h1 {
+        text-align: center;
+        margin: 0 auto 16px auto;
+    }
+    .hero-content p {
+        text-align: center;
+        margin: 0 auto 20px auto;
+    }
+    .hero-btns {
+        justify-content: center;
+    }
+    .hero-advisor-card {
+        max-width: 390px;
+        height: 480px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-advisor-card {
+        max-width: 360px;
+        height: 470px;
+        border-radius: 24px;
+        padding: 20px 16px;
+    }
+    .hero-advisor-badge-top {
+        font-size: 11.5px;
+        padding: 6px 14px;
+    }
+    .hero-cta-pills-stack {
+        gap: 10px;
+    }
+    .hero-pill-cta {
+        width: 90%;
+        max-width: 285px;
+        padding: 12px 16px;
+        font-size: 13.8px;
+        min-height: 44px;
+    }
+    .hero-advisor-badge-bottom {
+        font-size: 11.5px;
+        padding: 7px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-advisor-card {
+        max-width: 100%;
+        height: 450px;
+        border-radius: 20px;
+        padding: 18px 14px;
+    }
+    .hero-advisor-badge-top {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
+    .hero-cta-pills-stack {
+        gap: 9px;
+    }
+    .hero-pill-cta {
+        width: 92%;
+        max-width: 275px;
+        padding: 11px 14px;
+        font-size: 13px;
+        min-height: 42px;
+    }
+    .hero-advisor-badge-bottom {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-advisor-card {
+        height: 430px;
+        padding: 14px 10px;
+    }
+    .hero-cta-pills-stack {
+        gap: 8px;
+    }
+    .hero-pill-cta {
+        width: 95%;
+        padding: 9.5px 12px;
+        font-size: 12px;
+        min-height: 40px;
+    }
+}
+
+/* RTL Support */
+body[dir="rtl"] .hero-grid {
+    grid-template-columns: 0.88fr 1.12fr;
+}
+
+body[dir="rtl"] .hero-content {
+    align-items: flex-start;
+    text-align: right;
+}
+
+body[dir="rtl"] .hero-content h1,
+body[dir="rtl"] .hero-content p {
+    text-align: right;
+}
+
+body[dir="rtl"] .hero-btns {
+    justify-content: flex-start;
 }
 
 /* Partners Marquee */
@@ -3699,30 +4054,93 @@ footer .container {
     }
 
     .hero-visual {
-        display: none !important;
+        display: flex !important;
+        width: 100%;
+        margin: 24px auto 0 auto;
+        justify-content: center;
+        align-items: center;
     }
 
     .hero {
-        padding: 110px 0 50px;
+        padding: 95px 0 40px;
+    }
+
+    .hero-badge-shooting {
+        font-size: 11px !important;
+        letter-spacing: 0.03em !important;
+        padding: 6px 12px !important;
+        line-height: 1.45 !important;
+        text-align: center !important;
+        white-space: normal !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-bottom: 14px !important;
     }
 
     .hero-content h1 {
-        font-size: clamp(24px, 5.8vw, 34px);
-        line-height: 1.22;
+        font-size: clamp(23px, 6.5vw, 32px);
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        text-align: center;
+        margin-bottom: 14px;
+    }
+
+    .morocco-flag-svg {
+        width: 28px !important;
+        vertical-align: middle;
+    }
+
+    .hero-paragraph-two-lines {
+        margin: 0 auto 20px auto;
+        max-width: 100%;
         text-align: center;
     }
 
-    .hero-content p {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 24px;
+    .hero-p-lead {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 6px !important;
+    }
+
+    .hero-p-sub {
+        font-size: 13.5px !important;
+        line-height: 1.5 !important;
+    }
+
+    .hero-mechanism-strip {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 8px 12px !important;
+        margin: 0 auto 20px auto !important;
+        font-size: 10px !important;
+        border-radius: 6px !important;
+        max-width: 100% !important;
+    }
+
+    .hero-mechanism-strip .mech-step {
+        width: auto !important;
+        padding: 4px 8px !important;
+        font-size: 10px !important;
+        border-radius: 4px !important;
+    }
+
+    .hero-mechanism-strip .mech-arrow {
+        font-size: 8px !important;
+        transform: none !important;
+        margin: 0 !important;
     }
 
     .hero-btns {
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 12px;
+        max-width: 360px;
+        margin: 0 auto 24px auto;
+        gap: 10px;
         align-items: stretch;
     }
 
@@ -3732,8 +4150,8 @@ footer .container {
         max-width: 100%;
         justify-content: center;
         min-height: 48px;
-        padding: 14px 20px;
-        font-size: 15px;
+        padding: 13px 18px;
+        font-size: 13.5px;
         box-sizing: border-box;
     }
 
@@ -7053,6 +7471,70 @@ body[dir="rtl"] .offers-title-aligned {
     }
     .nav-wa-text {
         display: none;
+    }
+}
+
+/* ========================================================
+   GLOBAL MOBILE POLISH & TOUCH OPTIMIZATIONS (<= 768px)
+   ======================================================== */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Plaquette Modal on Mobile */
+    .modal-content {
+        width: 94% !important;
+        max-width: 440px !important;
+        max-height: 90vh !important;
+        padding: 24px 18px !important;
+        border-radius: 18px !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-header h3 {
+        font-size: 19px !important;
+    }
+
+    .plaquette-features-list {
+        margin: 16px 0 !important;
+        gap: 10px !important;
+    }
+
+    .plaquette-feat-item {
+        font-size: 13px !important;
+    }
+
+    /* Floating WhatsApp Button Touch Comfort */
+    .whatsapp-float {
+        bottom: 20px !important;
+        right: 18px !important;
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 26px !important;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45) !important;
+    }
+
+    /* Diagnostic Pulse Nav Button */
+    .nav-diag-btn {
+        padding: 10px 16px !important;
+        font-size: 14px !important;
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    /* Table Horizontal Scrollbar Styling */
+    .diff-table-wrapper {
+        -webkit-overflow-scrolling: touch;
+        border-radius: 12px !important;
+        margin-top: 24px !important;
+    }
+
+    .diff-table th, .diff-table td {
+        padding: 14px 16px !important;
+        font-size: 12.5px !important;
     }
 }
 
