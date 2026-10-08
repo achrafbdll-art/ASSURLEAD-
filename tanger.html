@@ -130,6 +130,13 @@
       ]
     }
     </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body class="approche-page-body">
 
@@ -141,12 +148,12 @@
                 <span class="logo-text">ASSUR<span class="neon">LEAD</span>COM</span>
             </a>
             <ul class="nav-links">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/creation-site-web-casablanca.html">Casablanca</a></li>
-                <li><a href="/creation-site-web-maroc.html">Maroc</a></li>
-                <li><a href="/realisations.html">Réalisations</a></li>
-                <li><a href="/processus.html">Processus</a></li>
-                <li><a href="/approche.html">Notre Approche</a></li>
+                <li><a href="/" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="/creation-site-web-casablanca.html" data-i18n="nav_casablanca">Casablanca</a></li>
+                <li><a href="/creation-site-web-maroc.html" data-i18n="nav_maroc">Maroc</a></li>
+                <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
+                <li><a href="/processus.html" data-i18n="nav_processus">Processus</a></li>
+                <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
                 <li><a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Tanger" target="_blank" class="btn btn-primary btn-sm">Devis WhatsApp</a></li>
             </ul>
@@ -172,32 +179,47 @@
 
     <!-- Main Content -->
     <main class="approche-main-wrapper">
+        <!-- Shooting Stars Design (Étoiles Filantes) -->
+                <!-- 3D Canvas Background & Constellation -->
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div class="hero-shooting-stars" aria-hidden="true">
+            <div class="shooting-star-track track-1">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-2">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-3">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-4">
+                <div class="shooting-star-meteor"></div>
+            </div>
+        </div>
         <div class="container approche-container">
 
             <!-- Breadcrumb Navigation -->
             <div class="diag-back-link-wrapper" style="margin-bottom: 24px; text-align: left;">
-                <a href="/" class="diag-back-link">
-                    <i class="fas fa-arrow-left"></i> <span>Revenir à l'accueil</span>
-                </a>
+                <a href="/" class="diag-back-link" data-i18n="breadcrumb_back"><i class="fas fa-arrow-left"></i> <span>Revenir à l\'accueil du site</span></a>
             </div>
 
             <!-- Hero Header -->
             <header class="approche-hero-header">
-                <div class="approche-badge-pill">
+                <div class="approche-badge-pill" data-i18n="tgr_hero_badge">
                     <span class="badge-flag">🇲🇦</span> TANGER, TANGER MED & ZONES FRANCHES
                 </div>
                 
-                <h1 class="approche-hero-title">
+                <h1 class="approche-hero-title" data-i18n="tgr_hero_title">
                     Création de Site Web à Tanger :<br>
                     <span class="neon">Industrie, Logistique & Croissance B2B</span>
                 </h1>
 
-                <p class="approche-hero-sub">
+                <p class="approche-hero-sub" data-i18n="tgr_hero_sub">
                     Vous recherchez une agence spécialisée en <strong>création de site internet à Tanger</strong> pour accélérer vos opportunités d'affaires dans le nord du Maroc ? Hub logistique de premier plan connecté à l'Europe grâce au complexe portuaire Tanger Med, Tanger accueille des géants de l'automobile, de l'aéronautique et du transport maritime. Nous concevons des sites web professionnels robustes, rapides et parfaitement référencés sur Google pour attirer des partenaires nationaux et internationaux.
                 </p>
 
                 <div class="realisation-hero-actions" style="margin-top: 28px; justify-content: center; display: flex; gap: 14px; flex-wrap: wrap;">
-                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Tanger" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Tanger" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="tgr_btn_whatsapp">
                         <i class="fab fa-whatsapp"></i> Devis Tanger sur WhatsApp
                     </a>
                     <a href="/creation-site-web-casablanca.html" class="btn btn-outline">
@@ -212,40 +234,40 @@
             <!-- Key Performance Metrics Strip -->
             <section class="realisation-kpi-grid" style="margin-bottom: 60px;">
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">&lt; 1.2s</div>
-                    <div class="realisation-kpi-title">Vitesse Mobile</div>
-                    <p class="realisation-kpi-desc">Performance instantanée adaptée aux décideurs B2B en déplacement.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_speed_val">&lt; 1.2s</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_speed_title">Temps de Chargement</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_speed_desc">Vitesse mobile ultra-rapide validée sur les Core Web Vitals de Google.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">B2B & Export</div>
-                    <div class="realisation-kpi-title">Standard International</div>
-                    <p class="realisation-kpi-desc">Architecture multilingue français/anglais/espagnol pour l'Europe.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_delay_val">10 - 14j</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_delay_title">Délai Garanti</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_delay_desc">Livraison clé en main avec nom de domaine, hébergement SSL et SEO configuré.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">10 - 14j</div>
-                    <div class="realisation-kpi-title">Délai Garanti</div>
-                    <p class="realisation-kpi-desc">Mise en ligne rapide avec hébergement sécurisé SSL et nom de domaine.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_owner_val">100%</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_owner_title">Propriété Exclusive</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_owner_desc">Code source et leads 100% propriétaires à votre entreprise, sans dépendance tierce.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">WhatsApp</div>
-                    <div class="realisation-kpi-title">Devis Express</div>
-                    <p class="realisation-kpi-desc">Tunnel direct facilitant la demande de cotations logistiques et industrielles.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_whatsapp_val">1 clic</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_whatsapp_title">Tunnel WhatsApp</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_whatsapp_desc">Routage instantané des visiteurs vers vos commerciaux sans friction.</p>
                 </div>
             </section>
 
             <!-- Secteurs Clés à Tanger -->
             <div class="realisation-section-header">
-                <span class="badge">Pôles d'Excellence du Détroit</span>
-                <h2>Des plateformes calibrées pour l'économie tangéroise</h2>
-                <p>Une présence numérique à la hauteur du dynamisme économique de la région du Nord.</p>
+                <span class="badge" data-i18n="tgr_sec_badge">Pôles d'Excellence du Détroit</span>
+                <h2 data-i18n="tgr_sec_title">Des plateformes calibrées pour l'économie tangéroise</h2>
+                <p data-i18n="tgr_sec_desc">Une présence numérique à la hauteur du dynamisme économique de la région du Nord.</p>
             </div>
 
             <div class="approche-cards-grid" style="margin-bottom: 70px;">
                 <div class="approche-card">
                     <div class="approche-card-icon-box"><i class="fas fa-truck-fast"></i></div>
                     <div class="approche-card-body">
-                        <h3 class="approche-card-title">Logistique, Fret & Tanger Med</h3>
-                        <p class="approche-card-desc">Sites B2B pour transitaires, transporteurs internationaux et commissionnaires en douane opérant sur le corridor Maroc-Europe.</p>
+                        <h3 class="approche-card-title" data-i18n="tgr_s1_title">Logistique, Fret & Tanger Med</h3>
+                        <p class="approche-card-desc" data-i18n="tgr_s1_desc">Sites B2B pour transitaires, transporteurs internationaux et commissionnaires en douane opérant sur le corridor Maroc-Europe.</p>
                     </div>
                 </div>
 
@@ -302,44 +324,38 @@
             <!-- FAQ Section -->
             <section id="faq" class="faq-section" style="margin-bottom: 70px;">
                 <div class="section-header text-center">
-                    <span class="badge">FAQ Tanger</span>
-                    <h2 class="section-title">Questions fréquentes sur la <span class="neon">création de site web à Tanger</span></h2>
+                    <span class="badge" data-i18n="tgr_faq_badge">FAQ Tanger</span>
+                    <h2 class="section-title" data-i18n="tgr_faq_title">Questions fréquentes sur la <span class="neon">création de site web à Tanger</span></h2>
                     <p class="section-subtitle">Toutes les informations utiles pour réussir votre digitalisation à Tanger.</p>
                 </div>
                 
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Pourquoi une entreprise logistique ou industrielle à Tanger doit-elle avoir un site web optimisé ?</span>
+                        <button class="faq-trigger"><span data-i18n="tgr_faq_q1">Pourquoi une entreprise logistique ou industrielle à Tanger doit-elle avoir un site web optimisé ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>À Tanger, carrefour mondial du détroit et pôle industriel avec Tanger Med et les zones franches, les donneurs d'ordre internationaux recherchent des prestataires fiables et certifiés. Un site web bilingue rapide et bien référencé est indispensable pour décrocher des contrats B2B.</p>
+                            <div class="faq-answer"><p data-i18n="tgr_faq_a1">À Tanger, carrefour mondial du détroit et pôle industriel avec Tanger Med et les zones franches, les donneurs d'ordre internationaux recherchent des prestataires fiables et certifiés. Un site web bilingue rapide et bien référencé est indispensable pour décrocher des contrats B2B.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Combien de temps faut-il pour concevoir un site web professionnel à Tanger ?</span>
+                        <button class="faq-trigger"><span data-i18n="tgr_faq_q2">Combien de temps faut-il pour concevoir un site web professionnel à Tanger ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Nos projets sont livrés en 10 à 14 jours ouvrés, comprenant le design responsive, la rédaction technique, le balisage Schema.org et la configuration du nom de domaine et hébergement.</p>
+                            <div class="faq-answer"><p data-i18n="tgr_faq_a2">Nos projets sont livrés en 10 à 14 jours ouvrés, comprenant le design responsive, la rédaction technique, le balisage Schema.org et la configuration du nom de domaine et hébergement.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Quels sont vos tarifs pour la création d'un site à Tanger ?</span>
+                        <button class="faq-trigger"><span data-i18n="tgr_faq_q3">Quels sont vos tarifs pour la création d'un site à Tanger ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Nos forfaits démarrent avec une offre de lancement à 1 500 DH pour une présence essentielle (valable jusqu'au 31/10/2026), 2 000 DH pour la formule Starter, 4 500 DH pour la formule Growth avec SEO localisé, et 8 000 DH pour la formule Lead Engine B2B/e-commerce.</p>
+                            <div class="faq-answer"><p data-i18n="tgr_faq_a3">Nos forfaits démarrent avec une offre de lancement à 1 500 DH pour une présence essentielle (valable jusqu'au 31/10/2026), 2 000 DH pour la formule Starter, 4 500 DH pour la formule Growth avec SEO localisé, et 8 000 DH pour la formule Lead Engine B2B/e-commerce.</p>
                             </div>
                         </div>
                     </div>
@@ -356,7 +372,7 @@
                     </div>
 
                     <div class="approche-consultation-actions">
-                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Tanger" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Tanger" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="tgr_btn_whatsapp">
                             Devis Tanger sur WhatsApp <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="/realisations.html" class="btn btn-outline">
@@ -388,7 +404,7 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-seo-section">
-                <span class="footer-seo-title">Expertise Digitale & Référencement au Maroc</span>
+                <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
                 <div class="footer-seo-tags">
                     <a href="/creation-site-web-casablanca.html" class="seo-tag seo-tag-highlight" title="Création site internet Casablanca">
                         <i class="fas fa-map-marker-alt"></i> <span>Création site web Casablanca</span>
@@ -431,7 +447,7 @@
                     </a>
                 </div>
             </div>
-            <p class="footer-copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
+            <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
         </div>
     </footer>
 

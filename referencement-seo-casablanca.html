@@ -132,6 +132,13 @@
       ]
     }
     </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body class="approche-page-body">
 
@@ -143,12 +150,12 @@
                 <span class="logo-text">ASSUR<span class="neon">LEAD</span>COM</span>
             </a>
             <ul class="nav-links">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/creation-site-web-casablanca.html">Casablanca</a></li>
-                <li><a href="/creation-site-web-maroc.html">Maroc</a></li>
-                <li><a href="/realisations.html">Réalisations</a></li>
-                <li><a href="/processus.html">Processus</a></li>
-                <li><a href="/approche.html">Notre Approche</a></li>
+                <li><a href="/" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="/creation-site-web-casablanca.html" data-i18n="nav_casablanca">Casablanca</a></li>
+                <li><a href="/creation-site-web-maroc.html" data-i18n="nav_maroc">Maroc</a></li>
+                <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
+                <li><a href="/processus.html" data-i18n="nav_processus">Processus</a></li>
+                <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
                 <li><a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20audit%20SEO%20pour%20mon%20site%20%C3%A0%20Casablanca" target="_blank" class="btn btn-primary btn-sm">Audit WhatsApp</a></li>
             </ul>
@@ -174,32 +181,47 @@
 
     <!-- Main Content -->
     <main class="approche-main-wrapper">
+        <!-- Shooting Stars Design (Étoiles Filantes) -->
+                <!-- 3D Canvas Background & Constellation -->
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div class="hero-shooting-stars" aria-hidden="true">
+            <div class="shooting-star-track track-1">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-2">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-3">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-4">
+                <div class="shooting-star-meteor"></div>
+            </div>
+        </div>
         <div class="container approche-container">
 
             <!-- Breadcrumb Navigation -->
             <div class="diag-back-link-wrapper" style="margin-bottom: 24px; text-align: left;">
-                <a href="/" class="diag-back-link">
-                    <i class="fas fa-arrow-left"></i> <span>Revenir à l'accueil</span>
-                </a>
+                <a href="/" class="diag-back-link" data-i18n="breadcrumb_back"><i class="fas fa-arrow-left"></i> <span>Revenir à l\'accueil du site</span></a>
             </div>
 
             <!-- Hero Header -->
             <header class="approche-hero-header">
-                <div class="approche-badge-pill">
+                <div class="approche-badge-pill" data-i18n="seo_casa_hero_badge">
                     <span class="badge-flag">🇲🇦</span> EXPERTISE SEO GOOGLE MAROC
                 </div>
                 
-                <h1 class="approche-hero-title">
+                <h1 class="approche-hero-title" data-i18n="seo_casa_hero_title">
                     Référencement SEO à Casablanca :<br>
                     <span class="neon">Dominez la 1ère Page Google & Générez des Leads</span>
                 </h1>
 
-                <p class="approche-hero-sub">
+                <p class="approche-hero-sub" data-i18n="seo_casa_hero_sub">
                     Vous possédez déjà un site internet mais il reste invisible dans les résultats de recherche ? Le <strong>référencement SEO à Casablanca</strong> est le levier d'acquisition le plus rentable pour les entreprises marocaines. Dans la métropole économique où la concurrence est vive entre cabinets, cliniques et PME, apparaître en première position sur les requêtes décisives de vos clients vous assure un flux régulier de demandes de devis qualifiées sans payer chaque clic publicitaire.
                 </p>
 
                 <div class="realisation-hero-actions" style="margin-top: 28px; justify-content: center; display: flex; gap: 14px; flex-wrap: wrap;">
-                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20audit%20SEO%20pour%20mon%20site%20%C3%A0%20Casablanca" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20audit%20SEO%20pour%20mon%20site%20%C3%A0%20Casablanca" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="seo_casa_btn_whatsapp">
                         <i class="fab fa-whatsapp"></i> Demander mon Audit SEO WhatsApp
                     </a>
                     <a href="/creation-site-web-casablanca.html" class="btn btn-outline">
@@ -214,40 +236,40 @@
             <!-- Key Performance Metrics Strip -->
             <section class="realisation-kpi-grid" style="margin-bottom: 60px;">
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">1ère Page</div>
-                    <div class="realisation-kpi-title">Positionnement Google</div>
-                    <p class="realisation-kpi-desc">Présence en tête sur les intentions d'achat à Casablanca.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_speed_val">&lt; 1.2s</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_speed_title">Temps de Chargement</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_speed_desc">Vitesse mobile ultra-rapide validée sur les Core Web Vitals de Google.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">0 DH</div>
-                    <div class="realisation-kpi-title">Coût par Clic</div>
-                    <p class="realisation-kpi-desc">Trafic organique gratuit et durable, indépendant des annonces payantes.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_delay_val">10 - 14j</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_delay_title">Délai Garanti</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_delay_desc">Livraison clé en main avec nom de domaine, hébergement SSL et SEO configuré.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">&lt; 1.2s</div>
-                    <div class="realisation-kpi-title">Core Web Vitals</div>
-                    <p class="realisation-kpi-desc">Optimisation technique garantissant le score d'indexation maximal.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_owner_val">100%</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_owner_title">Propriété Exclusive</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_owner_desc">Code source et leads 100% propriétaires à votre entreprise, sans dépendance tierce.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">24/7</div>
-                    <div class="realisation-kpi-title">Génération de Leads</div>
-                    <p class="realisation-kpi-desc">Votre site capte des opportunités commerciales jour et nuit.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_whatsapp_val">1 clic</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_whatsapp_title">Tunnel WhatsApp</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_whatsapp_desc">Routage instantané des visiteurs vers vos commerciaux sans friction.</p>
                 </div>
             </section>
 
             <!-- Approche Cards Grid (Les piliers du SEO) -->
             <div class="realisation-section-header">
-                <span class="badge">Mécanique de Référencement</span>
-                <h2>Notre stratégie de référencement naturel à Casablanca</h2>
-                <p>Une approche scientifique combinant audit technique, optimisation on-page et SEO local.</p>
+                <span class="badge" data-i18n="seo_casa_sec_badge">Mécanique de Référencement</span>
+                <h2 data-i18n="seo_casa_sec_title">Notre stratégie de référencement naturel à Casablanca</h2>
+                <p data-i18n="seo_casa_sec_desc">Une approche scientifique combinant audit technique, optimisation on-page et SEO local.</p>
             </div>
 
             <div class="approche-cards-grid" style="margin-bottom: 70px;">
                 <div class="approche-card">
                     <div class="approche-card-icon-box"><i class="fas fa-stethoscope"></i></div>
                     <div class="approche-card-body">
-                        <h3 class="approche-card-title">Audit Technique & Vitesse</h3>
-                        <p class="approche-card-desc">Nettoyage du code, passage des Core Web Vitals sous 1.2s, structure HTML5 sémantique et balisage Schema.org irréprochable.</p>
+                        <h3 class="approche-card-title" data-i18n="seo_casa_s1_title">Audit Technique & Vitesse</h3>
+                        <p class="approche-card-desc" data-i18n="seo_casa_s1_desc">Nettoyage du code, passage des Core Web Vitals sous 1.2s, structure HTML5 sémantique et balisage Schema.org irréprochable.</p>
                     </div>
                 </div>
 
@@ -304,44 +326,38 @@
             <!-- FAQ Section -->
             <section id="faq" class="faq-section" style="margin-bottom: 70px;">
                 <div class="section-header text-center">
-                    <span class="badge">FAQ SEO</span>
-                    <h2 class="section-title">Questions fréquentes sur le <span class="neon">SEO à Casablanca</span></h2>
-                    <p class="section-subtitle">Toutes les réponses pour comprendre le fonctionnement du référencement naturel.</p>
+                    <span class="badge" data-i18n="seo_casa_faq_badge">FAQ SEO</span>
+                    <h2 class="section-title" data-i18n="seo_casa_faq_title">Questions fréquentes sur la <span class="neon">SEO à Casablanca</span></h2>
+                    <p class="section-subtitle" data-i18n="seo_casa_faq_sub">Toutes les réponses pour préparer votre projet web en toute sérénité.</p>
                 </div>
                 
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Combien de temps faut-il pour voir des résultats SEO à Casablanca ?</span>
+                        <button class="faq-trigger"><span data-i18n="seo_casa_faq_q1">Combien de temps faut-il pour voir des résultats SEO à Casablanca ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Sur des requêtes locales précises à Casablanca, les premiers gains de positions apparaissent dès 4 à 8 semaines après la correction technique et sémantique. Sur des marchés concurrentiels, la maturité s'établit entre 3 et 6 mois.</p>
+                            <div class="faq-answer"><p data-i18n="seo_casa_faq_a1">Sur des requêtes locales précises à Casablanca, les premiers gains de positions apparaissent dès 4 à 8 semaines après la correction technique et sémantique. Sur des marchés concurrentiels, la maturité s'établit entre 3 et 6 mois.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Quelle est la différence entre référencement payant (Google Ads) et référencement naturel (SEO) ?</span>
+                        <button class="faq-trigger"><span data-i18n="seo_casa_faq_q2">Quelle est la différence entre référencement payant (Google Ads) et référencement naturel (SEO) ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Google Ads stoppe vos visites dès que vous arrêtez le budget publicitaire. Le référencement naturel SEO construit un actif durable qui génère des prospects qualifiés chaque mois sans coût par clic.</p>
+                            <div class="faq-answer"><p data-i18n="seo_casa_faq_a2">Google Ads stoppe vos visites dès que vous arrêtez le budget publicitaire. Le référencement naturel SEO construit un actif durable qui génère des prospects qualifiés chaque mois sans coût par clic.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Faites-vous des audits SEO de sites web existants ?</span>
+                        <button class="faq-trigger"><span data-i18n="seo_casa_faq_q3">Faites-vous des audits SEO de sites web existants ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Oui, nous réalisons un audit complet (vitesse mobile Core Web Vitals, indexation, structure sémantique, balisage Schema.org et profil de liens) avec plan d'action concret sous 48 heures.</p>
+                            <div class="faq-answer"><p data-i18n="seo_casa_faq_a3">Oui, nous réalisons un audit complet (vitesse mobile Core Web Vitals, indexation, structure sémantique, balisage Schema.org et profil de liens) avec plan d'action concret sous 48 heures.</p>
                             </div>
                         </div>
                     </div>
@@ -358,7 +374,7 @@
                     </div>
 
                     <div class="approche-consultation-actions">
-                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20audit%20SEO%20pour%20mon%20site%20%C3%A0%20Casablanca" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20audit%20SEO%20pour%20mon%20site%20%C3%A0%20Casablanca" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="seo_casa_btn_whatsapp">
                             Demander mon Audit sur WhatsApp <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="/creation-site-web-casablanca.html" class="btn btn-outline">
@@ -390,7 +406,7 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-seo-section">
-                <span class="footer-seo-title">Expertise Digitale & Référencement au Maroc</span>
+                <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
                 <div class="footer-seo-tags">
                     <a href="/creation-site-web-casablanca.html" class="seo-tag seo-tag-highlight" title="Création site internet Casablanca">
                         <i class="fas fa-map-marker-alt"></i> <span>Création site web Casablanca</span>
@@ -433,7 +449,7 @@
                     </a>
                 </div>
             </div>
-            <p class="footer-copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
+            <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
         </div>
     </footer>
 

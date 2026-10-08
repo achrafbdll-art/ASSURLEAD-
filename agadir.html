@@ -131,6 +131,13 @@
       ]
     }
     </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body class="approche-page-body">
 
@@ -142,12 +149,12 @@
                 <span class="logo-text">ASSUR<span class="neon">LEAD</span>COM</span>
             </a>
             <ul class="nav-links">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/creation-site-web-casablanca.html">Casablanca</a></li>
-                <li><a href="/creation-site-web-maroc.html">Maroc</a></li>
-                <li><a href="/realisations.html">Réalisations</a></li>
-                <li><a href="/processus.html">Processus</a></li>
-                <li><a href="/approche.html">Notre Approche</a></li>
+                <li><a href="/" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="/creation-site-web-casablanca.html" data-i18n="nav_casablanca">Casablanca</a></li>
+                <li><a href="/creation-site-web-maroc.html" data-i18n="nav_maroc">Maroc</a></li>
+                <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
+                <li><a href="/processus.html" data-i18n="nav_processus">Processus</a></li>
+                <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
                 <li><a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Agadir" target="_blank" class="btn btn-primary btn-sm">Devis WhatsApp</a></li>
             </ul>
@@ -173,32 +180,47 @@
 
     <!-- Main Content -->
     <main class="approche-main-wrapper">
+        <!-- Shooting Stars Design (Étoiles Filantes) -->
+                <!-- 3D Canvas Background & Constellation -->
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div class="hero-shooting-stars" aria-hidden="true">
+            <div class="shooting-star-track track-1">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-2">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-3">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-4">
+                <div class="shooting-star-meteor"></div>
+            </div>
+        </div>
         <div class="container approche-container">
 
             <!-- Breadcrumb Navigation -->
             <div class="diag-back-link-wrapper" style="margin-bottom: 24px; text-align: left;">
-                <a href="/" class="diag-back-link">
-                    <i class="fas fa-arrow-left"></i> <span>Revenir à l'accueil</span>
-                </a>
+                <a href="/" class="diag-back-link" data-i18n="breadcrumb_back"><i class="fas fa-arrow-left"></i> <span>Revenir à l\'accueil du site</span></a>
             </div>
 
             <!-- Hero Header -->
             <header class="approche-hero-header">
-                <div class="approche-badge-pill">
+                <div class="approche-badge-pill" data-i18n="aga_hero_badge">
                     <span class="badge-flag">🇲🇦</span> AGADIR, TAGHAZOUT & SOUSS-MASSA
                 </div>
                 
-                <h1 class="approche-hero-title">
+                <h1 class="approche-hero-title" data-i18n="aga_hero_title">
                     Création de Site Web à Agadir :<br>
                     <span class="neon">Tourisme Balnéaire, Terroir & Agro-industrie</span>
                 </h1>
 
-                <p class="approche-hero-sub">
+                <p class="approche-hero-sub" data-i18n="aga_hero_sub">
                     Vous recherchez une agence spécialisée en <strong>création de site internet à Agadir</strong> pour accélérer la visibilité de votre activité ? Premier pôle balnéaire et capitale agricole du Maroc, Agadir et la région Souss-Massa concentrent un écosystème dynamique alliant tourisme sportif à Taghazout et Tamraght, coopératives d'huile d'argan et de cosmétiques bio, agro-industrie d'export et entreprises maritimes. Nous concevons des sites internet rapides, attractifs et ultra-optimisés pour attirer des clients marocains et internationaux.
                 </p>
 
                 <div class="realisation-hero-actions" style="margin-top: 28px; justify-content: center; display: flex; gap: 14px; flex-wrap: wrap;">
-                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Agadir" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Agadir" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="aga_btn_whatsapp">
                         <i class="fab fa-whatsapp"></i> Devis Agadir sur WhatsApp
                     </a>
                     <a href="/creation-site-web-casablanca.html" class="btn btn-outline">
@@ -213,40 +235,40 @@
             <!-- Key Performance Metrics Strip -->
             <section class="realisation-kpi-grid" style="margin-bottom: 60px;">
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">&lt; 1.2s</div>
-                    <div class="realisation-kpi-title">Vitesse Mobile</div>
-                    <p class="realisation-kpi-desc">Expérience instantanée pour touristes et acheteurs internationaux.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_speed_val">&lt; 1.2s</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_speed_title">Temps de Chargement</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_speed_desc">Vitesse mobile ultra-rapide validée sur les Core Web Vitals de Google.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">E-Commerce</div>
-                    <div class="realisation-kpi-title">Export Terroir</div>
-                    <p class="realisation-kpi-desc">Paiements sécurisés CMI / Stripe pour produits du terroir et séjours.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_delay_val">10 - 14j</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_delay_title">Délai Garanti</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_delay_desc">Livraison clé en main avec nom de domaine, hébergement SSL et SEO configuré.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">10 - 14j</div>
-                    <div class="realisation-kpi-title">Délai Garanti</div>
-                    <p class="realisation-kpi-desc">Mise en ligne rapide avec hébergement sécurisé SSL et nom de domaine.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_owner_val">100%</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_owner_title">Propriété Exclusive</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_owner_desc">Code source et leads 100% propriétaires à votre entreprise, sans dépendance tierce.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">WhatsApp</div>
-                    <div class="realisation-kpi-title">Réservations Directes</div>
-                    <p class="realisation-kpi-desc">Canal direct facilitant les échanges sans intermédiaires commissionnés.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_whatsapp_val">1 clic</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_whatsapp_title">Tunnel WhatsApp</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_whatsapp_desc">Routage instantané des visiteurs vers vos commerciaux sans friction.</p>
                 </div>
             </section>
 
             <!-- Secteurs Clés à Agadir -->
             <div class="realisation-section-header">
-                <span class="badge">Écosystème du Souss</span>
-                <h2>Des solutions web adaptées aux moteurs économiques d'Agadir</h2>
-                <p>Valorisez votre positionnement touristique et vos filières agricoles d'excellence.</p>
+                <span class="badge" data-i18n="aga_sec_badge">Écosystème du Souss</span>
+                <h2 data-i18n="aga_sec_title">Des solutions web adaptées aux moteurs économiques d'Agadir</h2>
+                <p data-i18n="aga_sec_desc">Valorisez votre positionnement touristique et vos filières agricoles d'excellence.</p>
             </div>
 
             <div class="approche-cards-grid" style="margin-bottom: 70px;">
                 <div class="approche-card">
                     <div class="approche-card-icon-box"><i class="fas fa-water"></i></div>
                     <div class="approche-card-body">
-                        <h3 class="approche-card-title">Tourisme, Surf Camps & Hôtels</h3>
-                        <p class="approche-card-desc">Sites captivants pour surf camps, écolodges et résidences hôtelières à Taghazout Bay, Tamraght et la baie d'Agadir.</p>
+                        <h3 class="approche-card-title" data-i18n="aga_s1_title">Tourisme, Surf Camps & Hôtels</h3>
+                        <p class="approche-card-desc" data-i18n="aga_s1_desc">Sites captivants pour surf camps, écolodges et résidences hôtelières à Taghazout Bay, Tamraght et la baie d'Agadir.</p>
                     </div>
                 </div>
 
@@ -303,44 +325,38 @@
             <!-- FAQ Section -->
             <section id="faq" class="faq-section" style="margin-bottom: 70px;">
                 <div class="section-header text-center">
-                    <span class="badge">FAQ Agadir</span>
-                    <h2 class="section-title">Questions fréquentes sur la <span class="neon">création de site web à Agadir</span></h2>
+                    <span class="badge" data-i18n="aga_faq_badge">FAQ Agadir</span>
+                    <h2 class="section-title" data-i18n="aga_faq_title">Questions fréquentes sur la <span class="neon">création de site web à Agadir</span></h2>
                     <p class="section-subtitle">Toutes les informations nécessaires avant de démarrer votre projet web à Agadir.</p>
                 </div>
                 
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Comment un site web peut-il attirer des clients européens pour un surf camp à Taghazout ou Agadir ?</span>
+                        <button class="faq-trigger"><span data-i18n="aga_faq_q1">Comment un site web peut-il attirer des clients européens pour un surf camp à Taghazout ou Agadir ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Avec un site responsive bilingue anglais/français, des modules de réservation directe clairs, une vitesse mobile ultra-rapide et un SEO ciblé sur les recherches de vacances sportives et séjours à Taghazout.</p>
+                            <div class="faq-answer"><p data-i18n="aga_faq_a1">Avec un site responsive bilingue anglais/français, des modules de réservation directe clairs, une vitesse mobile ultra-rapide et un SEO ciblé sur les recherches de vacances sportives et séjours à Taghazout.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Développez-vous des boutiques en ligne pour les coopératives d'huile d'argan et cosmétiques du Souss ?</span>
+                        <button class="faq-trigger"><span data-i18n="aga_faq_q2">Développez-vous des boutiques en ligne pour les coopératives d'huile d'argan et cosmétiques du Souss ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Oui, nous concevons des boutiques e-commerce sécurisées avec paiement en dirhams (CMI) et devises internationales (Stripe/PayPal), optimisées pour l'export et conformes aux exigences SEO.</p>
+                            <div class="faq-answer"><p data-i18n="aga_faq_a2">Oui, nous concevons des boutiques e-commerce sécurisées avec paiement en dirhams (CMI) et devises internationales (Stripe/PayPal), optimisées pour l'export et conformes aux exigences SEO.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Combien de temps faut-il pour créer et publier un site web à Agadir ?</span>
+                        <button class="faq-trigger"><span data-i18n="aga_faq_q3">Combien de temps faut-il pour créer et publier un site web à Agadir ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Comptez 10 à 14 jours ouvrés pour une formule Starter ou Growth complète, incluant le nom de domaine, l'hébergement sécurisé SSL et l'intégration WhatsApp.</p>
+                            <div class="faq-answer"><p data-i18n="aga_faq_a3">Comptez 10 à 14 jours ouvrés pour une formule Starter ou Growth complète, incluant le nom de domaine, l'hébergement sécurisé SSL et l'intégration WhatsApp.</p>
                             </div>
                         </div>
                     </div>
@@ -357,7 +373,7 @@
                     </div>
 
                     <div class="approche-consultation-actions">
-                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Agadir" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20Agadir" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="aga_btn_whatsapp">
                             Devis Agadir sur WhatsApp <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="/realisations.html" class="btn btn-outline">
@@ -389,7 +405,7 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-seo-section">
-                <span class="footer-seo-title">Expertise Digitale & Référencement au Maroc</span>
+                <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
                 <div class="footer-seo-tags">
                     <a href="/creation-site-web-casablanca.html" class="seo-tag seo-tag-highlight" title="Création site internet Casablanca">
                         <i class="fas fa-map-marker-alt"></i> <span>Création site web Casablanca</span>
@@ -432,7 +448,7 @@
                     </a>
                 </div>
             </div>
-            <p class="footer-copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
+            <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
         </div>
     </footer>
 

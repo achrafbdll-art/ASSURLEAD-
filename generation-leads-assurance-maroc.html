@@ -131,6 +131,13 @@
       ]
     }
     </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body class="approche-page-body">
 
@@ -142,12 +149,12 @@
                 <span class="logo-text">ASSUR<span class="neon">LEAD</span>COM</span>
             </a>
             <ul class="nav-links">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/creation-site-web-casablanca.html">Casablanca</a></li>
-                <li><a href="/creation-site-web-maroc.html">Maroc</a></li>
-                <li><a href="/realisations.html">Réalisations</a></li>
-                <li><a href="/processus.html">Processus</a></li>
-                <li><a href="/approche.html">Notre Approche</a></li>
+                <li><a href="/" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="/creation-site-web-casablanca.html" data-i18n="nav_casablanca">Casablanca</a></li>
+                <li><a href="/creation-site-web-maroc.html" data-i18n="nav_maroc">Maroc</a></li>
+                <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
+                <li><a href="/processus.html" data-i18n="nav_processus">Processus</a></li>
+                <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
                 <li><a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20dispositif%20d'acquisition%20de%20leads%20assurance%20au%20Maroc" target="_blank" class="btn btn-primary btn-sm">Devis Courtage</a></li>
             </ul>
@@ -173,32 +180,47 @@
 
     <!-- Main Content -->
     <main class="approche-main-wrapper">
+        <!-- Shooting Stars Design (Étoiles Filantes) -->
+                <!-- 3D Canvas Background & Constellation -->
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div class="hero-shooting-stars" aria-hidden="true">
+            <div class="shooting-star-track track-1">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-2">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-3">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-4">
+                <div class="shooting-star-meteor"></div>
+            </div>
+        </div>
         <div class="container approche-container">
 
             <!-- Breadcrumb Navigation -->
             <div class="diag-back-link-wrapper" style="margin-bottom: 24px; text-align: left;">
-                <a href="/" class="diag-back-link">
-                    <i class="fas fa-arrow-left"></i> <span>Revenir à l'accueil</span>
-                </a>
+                <a href="/" class="diag-back-link" data-i18n="breadcrumb_back"><i class="fas fa-arrow-left"></i> <span>Revenir à l\'accueil du site</span></a>
             </div>
 
             <!-- Hero Header -->
             <header class="approche-hero-header">
-                <div class="approche-badge-pill">
+                <div class="approche-badge-pill" data-i18n="leads_hero_badge">
                     <span class="badge-flag">🇲🇦</span> SPÉCIALITÉ ASSURANCE & COURTAGE MAROC
                 </div>
                 
-                <h1 class="approche-hero-title">
+                <h1 class="approche-hero-title" data-i18n="leads_hero_title">
                     Génération de Leads Assurance au Maroc :<br>
                     <span class="neon">Dispositifs d'Acquisition Exclusifs pour Cabinets</span>
                 </h1>
 
-                <p class="approche-hero-sub">
+                <p class="approche-hero-sub" data-i18n="leads_hero_sub">
                     Vous dirigez un cabinet de courtage ou une agence générale au Maroc et souhaitez sécuriser un flux régulier de clients sans dépendre du démarchage à froid ? La <strong>génération de leads en assurance au Maroc</strong> exige une expertise pointue combinant clarté réglementaire, crédibilité institutionnelle et tunnels de qualification performants. Nous créons des plateformes web sur mesure qui transforment les chefs d'entreprise et particuliers marocains en demandes de devis d'assurance hautement qualifiées.
                 </p>
 
                 <div class="realisation-hero-actions" style="margin-top: 28px; justify-content: center; display: flex; gap: 14px; flex-wrap: wrap;">
-                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20dispositif%20d'acquisition%20de%20leads%20assurance%20au%20Maroc" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20dispositif%20d'acquisition%20de%20leads%20assurance%20au%20Maroc" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="leads_btn_whatsapp">
                         <i class="fab fa-whatsapp"></i> Échanger avec un Expert Assurance
                     </a>
                     <a href="/realisation-el-omrani.html" class="btn btn-outline">
@@ -213,40 +235,40 @@
             <!-- Key Performance Metrics Strip -->
             <section class="realisation-kpi-grid" style="margin-bottom: 60px;">
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">100%</div>
-                    <div class="realisation-kpi-title">Leads Exclusifs</div>
-                    <p class="realisation-kpi-desc">Zéro contact revendu : vos prospects n'appartiennent qu'à votre cabinet.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_speed_val">&lt; 1.2s</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_speed_title">Temps de Chargement</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_speed_desc">Vitesse mobile ultra-rapide validée sur les Core Web Vitals de Google.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">&lt; 10 min</div>
-                    <div class="realisation-kpi-title">Réactivité WhatsApp</div>
-                    <p class="realisation-kpi-desc">Routage instantané des cotations d'assurance sur mobile.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_delay_val">10 - 14j</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_delay_title">Délai Garanti</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_delay_desc">Livraison clé en main avec nom de domaine, hébergement SSL et SEO configuré.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">-45%</div>
-                    <div class="realisation-kpi-title">Coût d'Acquisition</div>
-                    <p class="realisation-kpi-desc">Économie directe face à l'achat de leads non exclusifs sur plateformes tierces.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_owner_val">100%</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_owner_title">Propriété Exclusive</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_owner_desc">Code source et leads 100% propriétaires à votre entreprise, sans dépendance tierce.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">B2B & B2C</div>
-                    <div class="realisation-kpi-title">Multi-Branches</div>
-                    <p class="realisation-kpi-desc">Santé groupe, flottes automobiles, MRP et RC Décennale.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_whatsapp_val">1 clic</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_whatsapp_title">Tunnel WhatsApp</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_whatsapp_desc">Routage instantané des visiteurs vers vos commerciaux sans friction.</p>
                 </div>
             </section>
 
             <!-- Approche Cards Grid (Les branches d'assurance) -->
             <div class="realisation-section-header">
-                <span class="badge">Branches Prioritaires</span>
-                <h2>Des tunnels de qualification adaptés à vos produits d'assurance</h2>
-                <p>Captez les professionnels et particuliers ayant un besoin immédiat de couverture au Maroc.</p>
+                <span class="badge" data-i18n="leads_sec_badge">Branches Prioritaires</span>
+                <h2 data-i18n="leads_sec_title">Des tunnels de qualification adaptés à vos produits d'assurance</h2>
+                <p data-i18n="leads_sec_desc">Captez les professionnels et particuliers ayant un besoin immédiat de couverture au Maroc.</p>
             </div>
 
             <div class="approche-cards-grid" style="margin-bottom: 70px;">
                 <div class="approche-card">
                     <div class="approche-card-icon-box"><i class="fas fa-truck-moving"></i></div>
                     <div class="approche-card-body">
-                        <h3 class="approche-card-title">Flotte Automobile & Transport</h3>
-                        <p class="approche-card-desc">Simulateurs pour parcs de véhicules d'entreprises, transport de marchandises et logistique avec calcul du parc et bonus-malus.</p>
+                        <h3 class="approche-card-title" data-i18n="leads_s1_title">Flotte Automobile & Transport</h3>
+                        <p class="approche-card-desc" data-i18n="leads_s1_desc">Simulateurs pour parcs de véhicules d'entreprises, transport de marchandises et logistique avec calcul du parc et bonus-malus.</p>
                     </div>
                 </div>
 
@@ -303,44 +325,38 @@
             <!-- FAQ Section -->
             <section id="faq" class="faq-section" style="margin-bottom: 70px;">
                 <div class="section-header text-center">
-                    <span class="badge">FAQ Courtage</span>
-                    <h2 class="section-title">Questions fréquentes sur nos dispositifs de <span class="neon">leads assurance</span></h2>
+                    <span class="badge" data-i18n="leads_faq_badge">FAQ Courtage</span>
+                    <h2 class="section-title" data-i18n="leads_faq_title">Questions fréquentes sur la <span class="neon">leads assurance</span></h2>
                     <p class="section-subtitle">Toutes les garanties sur notre accompagnement dédié aux intermédiaires d'assurance.</p>
                 </div>
                 
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Comment qualifiez-vous les prospects en assurance avant transmission ?</span>
+                        <button class="faq-trigger"><span data-i18n="leads_faq_q1">Comment qualifiez-vous les prospects en assurance avant transmission ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Nos formulaires dynamiques filtrent les demandes par type de risque (santé, multirisque, flotte automobile), chiffre d'affaires, effectif et échéance de contrat, garantissant des contacts intentionnistes et exploitables.</p>
+                            <div class="faq-answer"><p data-i18n="leads_faq_a1">Nos formulaires dynamiques filtrent les demandes par type de risque (santé, multirisque, flotte automobile), chiffre d'affaires, effectif et échéance de contrat, garantissant des contacts intentionnistes et exploitables.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Les leads générés sont-ils exclusifs à mon cabinet de courtage ?</span>
+                        <button class="faq-trigger"><span data-i18n="leads_faq_q2">Les leads générés sont-ils exclusifs à mon cabinet de courtage ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Absolument. Contrairement aux centrales d'achat de leads revendus à plusieurs cabinets, le site internet et les tunnels déployés vous appartiennent à 100%. Chaque prospect contacte uniquement votre cabinet.</p>
+                            <div class="faq-answer"><p data-i18n="leads_faq_a2">Absolument. Contrairement aux centrales d'achat de leads revendus à plusieurs cabinets, le site internet et les tunnels déployés vous appartiennent à 100%. Chaque prospect contacte uniquement votre cabinet.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Quels résultats un courtier d'assurance peut-il attendre ?</span>
+                        <button class="faq-trigger"><span data-i18n="leads_faq_q3">Quels résultats un courtier d'assurance peut-il attendre ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Notre déploiement de référence chez Assurances El Omrani a permis de générer un flux continu de demandes ciblées en assurance professionnelle et santé au Maroc dès les premières semaines de mise en ligne.</p>
+                            <div class="faq-answer"><p data-i18n="leads_faq_a3">Notre déploiement de référence chez Assurances El Omrani a permis de générer un flux continu de demandes ciblées en assurance professionnelle et santé au Maroc dès les premières semaines de mise en ligne.</p>
                             </div>
                         </div>
                     </div>
@@ -357,7 +373,7 @@
                     </div>
 
                     <div class="approche-consultation-actions">
-                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20dispositif%20d'acquisition%20de%20leads%20assurance%20au%20Maroc" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20dispositif%20d'acquisition%20de%20leads%20assurance%20au%20Maroc" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="leads_btn_whatsapp">
                             Échanger sur WhatsApp <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="/realisation-el-omrani.html" class="btn btn-outline">
@@ -389,7 +405,7 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-seo-section">
-                <span class="footer-seo-title">Expertise Digitale & Référencement au Maroc</span>
+                <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
                 <div class="footer-seo-tags">
                     <a href="/creation-site-web-casablanca.html" class="seo-tag seo-tag-highlight" title="Création site internet Casablanca">
                         <i class="fas fa-map-marker-alt"></i> <span>Création site web Casablanca</span>
@@ -432,7 +448,7 @@
                     </a>
                 </div>
             </div>
-            <p class="footer-copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
+            <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
         </div>
     </footer>
 

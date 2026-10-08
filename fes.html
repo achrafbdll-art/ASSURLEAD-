@@ -130,6 +130,13 @@
       ]
     }
     </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body class="approche-page-body">
 
@@ -141,12 +148,12 @@
                 <span class="logo-text">ASSUR<span class="neon">LEAD</span>COM</span>
             </a>
             <ul class="nav-links">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/creation-site-web-casablanca.html">Casablanca</a></li>
-                <li><a href="/creation-site-web-maroc.html">Maroc</a></li>
-                <li><a href="/realisations.html">Réalisations</a></li>
-                <li><a href="/processus.html">Processus</a></li>
-                <li><a href="/approche.html">Notre Approche</a></li>
+                <li><a href="/" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="/creation-site-web-casablanca.html" data-i18n="nav_casablanca">Casablanca</a></li>
+                <li><a href="/creation-site-web-maroc.html" data-i18n="nav_maroc">Maroc</a></li>
+                <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
+                <li><a href="/processus.html" data-i18n="nav_processus">Processus</a></li>
+                <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
                 <li><a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20F%C3%A8s" target="_blank" class="btn btn-primary btn-sm">Devis WhatsApp</a></li>
             </ul>
@@ -172,32 +179,47 @@
 
     <!-- Main Content -->
     <main class="approche-main-wrapper">
+        <!-- Shooting Stars Design (Étoiles Filantes) -->
+                <!-- 3D Canvas Background & Constellation -->
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div class="hero-shooting-stars" aria-hidden="true">
+            <div class="shooting-star-track track-1">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-2">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-3">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-4">
+                <div class="shooting-star-meteor"></div>
+            </div>
+        </div>
         <div class="container approche-container">
 
             <!-- Breadcrumb Navigation -->
             <div class="diag-back-link-wrapper" style="margin-bottom: 24px; text-align: left;">
-                <a href="/" class="diag-back-link">
-                    <i class="fas fa-arrow-left"></i> <span>Revenir à l'accueil</span>
-                </a>
+                <a href="/" class="diag-back-link" data-i18n="breadcrumb_back"><i class="fas fa-arrow-left"></i> <span>Revenir à l\'accueil du site</span></a>
             </div>
 
             <!-- Hero Header -->
             <header class="approche-hero-header">
-                <div class="approche-badge-pill">
+                <div class="approche-badge-pill" data-i18n="fes_hero_badge">
                     <span class="badge-flag">🇲🇦</span> FÈS, MÉDINA & RÉGION FÈS-MEKNÈS
                 </div>
                 
-                <h1 class="approche-hero-title">
+                <h1 class="approche-hero-title" data-i18n="fes_hero_title">
                     Création de Site Web à Fès :<br>
                     <span class="neon">Artisanat, Tourisme & Essor Industriel</span>
                 </h1>
 
-                <p class="approche-hero-sub">
+                <p class="approche-hero-sub" data-i18n="fes_hero_sub">
                     Vous cherchez une agence spécialisée en <strong>création de site internet à Fès</strong> pour digitaliser votre activité artisanale, hôtelière ou industrielle ? Capitale culturelle et artisanale du Maroc, Fès recèle un patrimoine exceptionnel qui mérite une présence numérique à la hauteur de son prestige. Que vous dirigiez un riad dans la médina historique, une coopérative de poterie et dinanderie tournée vers l'export, ou une PME dans les parcs industriels de Sidi Brahim et Bensouda, nous concevons des sites web rapides, élégants et optimisés pour le référencement Google.
                 </p>
 
                 <div class="realisation-hero-actions" style="margin-top: 28px; justify-content: center; display: flex; gap: 14px; flex-wrap: wrap;">
-                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20F%C3%A8s" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20F%C3%A8s" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="fes_btn_whatsapp">
                         <i class="fab fa-whatsapp"></i> Devis Fès sur WhatsApp
                     </a>
                     <a href="/creation-site-web-casablanca.html" class="btn btn-outline">
@@ -212,40 +234,40 @@
             <!-- Key Performance Metrics Strip -->
             <section class="realisation-kpi-grid" style="margin-bottom: 60px;">
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">&lt; 1.2s</div>
-                    <div class="realisation-kpi-title">Vitesse Mobile</div>
-                    <p class="realisation-kpi-desc">Core Web Vitals optimisés pour smartphones 4G/5G.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_speed_val">&lt; 1.2s</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_speed_title">Temps de Chargement</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_speed_desc">Vitesse mobile ultra-rapide validée sur les Core Web Vitals de Google.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">Export & Vente</div>
-                    <div class="realisation-kpi-title">Rayonnement Mondial</div>
-                    <p class="realisation-kpi-desc">Boutiques et vitrines multilingues français/anglais/arabe.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_delay_val">10 - 14j</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_delay_title">Délai Garanti</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_delay_desc">Livraison clé en main avec nom de domaine, hébergement SSL et SEO configuré.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">10 - 14j</div>
-                    <div class="realisation-kpi-title">Délai Garanti</div>
-                    <p class="realisation-kpi-desc">Mise en ligne rapide avec hébergement sécurisé SSL et nom de domaine.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_owner_val">100%</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_owner_title">Propriété Exclusive</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_owner_desc">Code source et leads 100% propriétaires à votre entreprise, sans dépendance tierce.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">WhatsApp</div>
-                    <div class="realisation-kpi-title">Commandes Directes</div>
-                    <p class="realisation-kpi-desc">Canal direct facilitant les échanges commerciaux et devis sur-mesure.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_whatsapp_val">1 clic</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_whatsapp_title">Tunnel WhatsApp</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_whatsapp_desc">Routage instantané des visiteurs vers vos commerciaux sans friction.</p>
                 </div>
             </section>
 
             <!-- Secteurs Clés à Fès -->
             <div class="realisation-section-header">
-                <span class="badge">Savoir-faire Fassi</span>
-                <h2>Des sites web taillés pour les spécificités de Fès</h2>
-                <p>Valorisez votre héritage culturel et vos compétences industrielles en ligne.</p>
+                <span class="badge" data-i18n="fes_sec_badge">Savoir-faire Fassi</span>
+                <h2 data-i18n="fes_sec_title">Des sites web taillés pour les spécificités de Fès</h2>
+                <p data-i18n="fes_sec_desc">Valorisez votre héritage culturel et vos compétences industrielles en ligne.</p>
             </div>
 
             <div class="approche-cards-grid" style="margin-bottom: 70px;">
                 <div class="approche-card">
                     <div class="approche-card-icon-box"><i class="fas fa-hotel"></i></div>
                     <div class="approche-card-body">
-                        <h3 class="approche-card-title">Tourisme, Riads & Médina</h3>
-                        <p class="approche-card-desc">Sites immersifs pour riads, maisons d'hôtes et guides culturels avec système de réservation directe sans commission excessive.</p>
+                        <h3 class="approche-card-title" data-i18n="fes_s1_title">Tourisme, Riads & Médina</h3>
+                        <p class="approche-card-desc" data-i18n="fes_s1_desc">Sites immersifs pour riads, maisons d'hôtes et guides culturels avec système de réservation directe sans commission excessive.</p>
                     </div>
                 </div>
 
@@ -302,44 +324,38 @@
             <!-- FAQ Section -->
             <section id="faq" class="faq-section" style="margin-bottom: 70px;">
                 <div class="section-header text-center">
-                    <span class="badge">FAQ Fès</span>
-                    <h2 class="section-title">Questions fréquentes sur la <span class="neon">création de site web à Fès</span></h2>
-                    <p class="section-subtitle">Toutes les réponses pour réussir la mise en ligne de votre site à Fès.</p>
+                    <span class="badge" data-i18n="fes_faq_badge">FAQ Fès</span>
+                    <h2 class="section-title" data-i18n="fes_faq_title">Questions fréquentes sur la <span class="neon">création de site web à Fès</span></h2>
+                    <p class="section-subtitle" data-i18n="fes_faq_sub">Toutes les réponses pour préparer votre projet web en toute sérénité.</p>
                 </div>
                 
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Quel type de site web fonctionne le mieux pour un commerce ou un artisanat à Fès ?</span>
+                        <button class="faq-trigger"><span data-i18n="fes_faq_q1">Quel type de site web fonctionne le mieux pour un commerce ou un artisanat à Fès ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Pour les commerces, riads et coopératives artisanales de Fès (céramique, cuir, dinanderie), un site vitrine multilingue valorisant le savoir-faire avec réservation directe ou catalogue export génère les meilleurs résultats.</p>
+                            <div class="faq-answer"><p data-i18n="fes_faq_a1">Pour les commerces, riads et coopératives artisanales de Fès (céramique, cuir, dinanderie), un site vitrine multilingue valorisant le savoir-faire avec réservation directe ou catalogue export génère les meilleurs résultats.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Comment attirer des clients locaux et internationaux avec un site basé à Fès ?</span>
+                        <button class="faq-trigger"><span data-i18n="fes_faq_q2">Comment attirer des clients locaux et internationaux avec un site basé à Fès ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>En combinant une structure multilingue (français, anglais, arabe), une fiche Google Business Profile optimisée à Fès et un référencement naturel SEO ciblé sur les intentions touristiques et commerciales.</p>
+                            <div class="faq-answer"><p data-i18n="fes_faq_a2">En combinant une structure multilingue (français, anglais, arabe), une fiche Google Business Profile optimisée à Fès et un référencement naturel SEO ciblé sur les intentions touristiques et commerciales.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Quels sont les tarifs de création de site web à Fès ?</span>
+                        <button class="faq-trigger"><span data-i18n="fes_faq_q3">Quels sont les tarifs de création de site web à Fès ?</span>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </button>
                         <div class="faq-answer-container">
-                            <div class="faq-answer">
-                                <p>Nos solutions commencent avec une offre de lancement à 1 500 DH pour un site de présentation simple (valable jusqu'au 31/10/2026), 2 000 DH en formule Starter, 4 500 DH en formule Growth, jusqu'à 8 000 DH pour des sites e-commerce et génération de leads complexes.</p>
+                            <div class="faq-answer"><p data-i18n="fes_faq_a3">Nos solutions commencent avec une offre de lancement à 1 500 DH pour un site de présentation simple (valable jusqu'au 31/10/2026), 2 000 DH en formule Starter, 4 500 DH en formule Growth, jusqu'à 8 000 DH pour des sites e-commerce et génération de leads complexes.</p>
                             </div>
                         </div>
                     </div>
@@ -356,7 +372,7 @@
                     </div>
 
                     <div class="approche-consultation-actions">
-                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20F%C3%A8s" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main">
+                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d'un%20site%20web%20%C3%A0%20F%C3%A8s" target="_blank" rel="noopener" class="btn btn-primary diag-btn-main" data-i18n="fes_btn_whatsapp">
                             Devis Fès sur WhatsApp <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="/realisations.html" class="btn btn-outline">
@@ -388,7 +404,7 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-seo-section">
-                <span class="footer-seo-title">Expertise Digitale & Référencement au Maroc</span>
+                <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
                 <div class="footer-seo-tags">
                     <a href="/creation-site-web-casablanca.html" class="seo-tag seo-tag-highlight" title="Création site internet Casablanca">
                         <i class="fas fa-map-marker-alt"></i> <span>Création site web Casablanca</span>
@@ -431,7 +447,7 @@
                     </a>
                 </div>
             </div>
-            <p class="footer-copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
+            <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
         </div>
     </footer>
 

@@ -32,6 +32,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body class="approche-page-body">
 
@@ -43,14 +51,14 @@
                 <span class="logo-text">ASSUR<span class="neon">LEAD</span>COM</span>
             </a>
             <ul class="nav-links">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/creation-site-web-casablanca.html">Casablanca</a></li>
-                <li><a href="/creation-site-web-maroc.html">Maroc</a></li>
-                <li><a href="/realisations.html">Réalisations</a></li>
-                <li><a href="/processus.html" class="active nav-diag-active">Processus</a></li>
-                <li><a href="/approche.html">Notre Approche</a></li>
-                <li><a href="/diagnostic.html" class="nav-diag-btn"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
-                <li><a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20un%20%C3%A9change%20sur%20votre%20processus%20d'acquisition" target="_blank" class="btn btn-primary btn-sm">Consultation Gratuite</a></li>
+                <li><a href="/" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="/creation-site-web-casablanca.html" data-i18n="nav_casablanca">Casablanca</a></li>
+                <li><a href="/creation-site-web-maroc.html" data-i18n="nav_maroc">Maroc</a></li>
+                <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
+                <li><a href="/processus.html" class="active nav-diag-active" data-i18n="nav_processus">Processus</a></li>
+                <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
+                <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
+                <li><a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20un%20%C3%A9change%20sur%20votre%20processus%20d'acquisition" target="_blank" class="btn btn-primary btn-sm" data-i18n="nav_consultation">Consultation Gratuite</a></li>
             </ul>
             <div class="nav-right">
                 <div class="lang-selector">
@@ -74,6 +82,23 @@
 
     <!-- Main Processus Wrapper -->
     <main class="approche-main-wrapper">
+        <!-- 3D Canvas Background & Constellation -->
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <!-- Shooting Stars Design (Étoiles Filantes) -->
+        <div class="hero-shooting-stars" aria-hidden="true">
+            <div class="shooting-star-track track-1">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-2">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-3">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-4">
+                <div class="shooting-star-meteor"></div>
+            </div>
+        </div>
         <div class="container approche-container">
 
             <!-- Hero Header -->
@@ -94,7 +119,7 @@
 
             <!-- Horizontal Pipeline Tracker Strip -->
             <div class="agency-pipeline-strip" aria-label="Étapes du pipeline d'acquisition AssurLead">
-                <a href="#etape-01" class="pipeline-step-node">
+                <a href="#etape-01" class="pipeline-step-node active">
                     <span class="node-num">01</span>
                     <span data-i18n="funnel_s1_name">Prospection</span>
                 </a>
@@ -152,13 +177,15 @@
             <div class="funnel-phase-block">
                 <div class="funnel-phase-header">
                     <span class="phase-pill-badge phase-1-badge"><i class="fas fa-handshake"></i> <span data-i18n="funnel_phase1_badge">Phase 1 : Cadrage & Contrat</span></span>
-                    <span class="phase-meta-info"><i class="fas fa-clock"></i> Délais : 24 à 48 heures</span>
+                    <span class="phase-meta-info"><i class="fas fa-clock"></i> <span data-i18n="funnel_phase1_timing">Délais : 24 à 48 heures</span></span>
                 </div>
-                <div class="funnel-grid-5">
+                
+                <!-- Sub-row: Étapes 01 à 03 -->
+                <div class="funnel-grid-3">
                     <!-- Step 01 -->
                     <div class="funnel-card phase-1-card" id="etape-01">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge">ÉTAPE 01</span>
+                            <span class="funnel-num-badge" data-i18n="funnel_step_01">ÉTAPE 01</span>
                             <div class="funnel-icon-wrap"><i class="fas fa-crosshairs"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s1_title">01. Prospection Ciblée</h3>
@@ -166,32 +193,43 @@
                         <div class="funnel-card-tag"><i class="fas fa-bullseye"></i> <span data-i18n="funnel_s1_tag">Ciblage 100% Assurance</span></div>
                     </div>
 
-                    <!-- Step 02 -->
-                    <div class="funnel-card phase-1-card" id="etape-02" style="border-color: rgba(0,255,65,0.4); background: radial-gradient(circle at top right, rgba(0,255,65,0.1), transparent 75%), #0D130F; box-shadow: 0 0 25px rgba(0,255,65,0.12);">
+                    <!-- Step 02 (Highlight Spotlight) -->
+                    <div class="funnel-card phase-1-card node-highlight" id="etape-02" style="border-color: rgba(0,255,65,0.45); background: radial-gradient(circle at top right, rgba(0,255,65,0.12), transparent 75%), #0D130F; box-shadow: 0 0 28px rgba(0,255,65,0.15);">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge" style="background: var(--brand-neon); color: black; font-weight: 900;">OFFERT</span>
+                            <span class="funnel-num-badge" style="background: var(--brand-neon); color: black; font-weight: 900;" data-i18n="funnel_s2_offert">100% OFFERT</span>
                             <div class="funnel-icon-wrap" style="background: rgba(0,255,65,0.15); border-color: rgba(0,255,65,0.45);"><i class="fas fa-chart-pie neon"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s2_title">02. Audit Gratuit (15 min)</h3>
                         <p class="funnel-card-desc" data-i18n="funnel_s2_desc">Analyse sémantique complète offerte : volume réel de recherches locales de devis, positions des concurrents et potentiel d'acquisition immédiat.</p>
                         <div class="funnel-card-tag" style="background: rgba(0,255,65,0.15); border-color: rgba(0,255,65,0.35);"><i class="fas fa-gift"></i> <span data-i18n="funnel_s2_tag">100% Offert & Sans Engagement</span></div>
+                        <a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20audit%20gratuit%20de%2015%20minutes" target="_blank" class="funnel-step-btn" data-i18n="funnel_s2_cta">
+                            <i class="fab fa-whatsapp"></i> Réserver cet Audit (Offert) <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
 
                     <!-- Step 03 -->
                     <div class="funnel-card phase-1-card" id="etape-03">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge">ÉTAPE 03</span>
+                            <span class="funnel-num-badge" data-i18n="funnel_step_03">ÉTAPE 03</span>
                             <div class="funnel-icon-wrap"><i class="fab fa-whatsapp"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s3_title">03. Appel WhatsApp / Téléphone</h3>
                         <p class="funnel-card-desc" data-i18n="funnel_s3_desc">Échange direct de 15 min avec notre directeur d'acquisition pour débriefer l'audit, cerner vos objectifs de rentabilité et définir votre territoire exclusif.</p>
                         <div class="funnel-card-tag"><i class="fas fa-phone-volume"></i> <span data-i18n="funnel_s3_tag">Échange Direct 15 min</span></div>
                     </div>
+                </div>
 
+                <!-- Funnel Flow Connector Strip -->
+                <div class="funnel-flow-connector">
+                    <i class="fas fa-chevron-down"></i> <span data-i18n="funnel_flow_contract">Contractualisation & Verrouillage Territoire</span> <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <!-- Sub-row: Étapes 04 & 05 -->
+                <div class="funnel-grid-2">
                     <!-- Step 04 -->
                     <div class="funnel-card phase-1-card" id="etape-04">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge">ÉTAPE 04</span>
+                            <span class="funnel-num-badge" data-i18n="funnel_step_04">ÉTAPE 04</span>
                             <div class="funnel-icon-wrap"><i class="fas fa-file-signature"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s4_title">04. Proposition Commerciale</h3>
@@ -202,7 +240,7 @@
                     <!-- Step 05 -->
                     <div class="funnel-card phase-1-card" id="etape-05">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge">ÉTAPE 05</span>
+                            <span class="funnel-num-badge" data-i18n="funnel_step_05">ÉTAPE 05</span>
                             <div class="funnel-icon-wrap"><i class="fas fa-shield-halved"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s5_title">05. 50 % d'Acompte</h3>
@@ -216,13 +254,13 @@
             <div class="funnel-phase-block">
                 <div class="funnel-phase-header">
                     <span class="phase-pill-badge phase-2-badge"><i class="fas fa-bolt"></i> <span data-i18n="funnel_phase2_badge">Phase 2 : Déploiement & Lancement</span></span>
-                    <span class="phase-meta-info"><i class="fas fa-stopwatch"></i> Sprint garanti : 7 à 10 jours ouvrés</span>
+                    <span class="phase-meta-info"><i class="fas fa-stopwatch"></i> <span data-i18n="funnel_phase2_timing">Sprint garanti : 7 à 10 jours ouvrés</span></span>
                 </div>
                 <div class="funnel-grid-2">
                     <!-- Step 06 -->
                     <div class="funnel-card phase-2-card" id="etape-06">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge">ÉTAPE 06</span>
+                            <span class="funnel-num-badge" data-i18n="funnel_step_06">ÉTAPE 06</span>
                             <div class="funnel-icon-wrap"><i class="fas fa-laptop-code"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s6_title">06. Production & Intégration</h3>
@@ -233,7 +271,7 @@
                     <!-- Step 07 -->
                     <div class="funnel-card phase-2-card" id="etape-07">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge">ÉTAPE 07</span>
+                            <span class="funnel-num-badge" data-i18n="funnel_step_07">ÉTAPE 07</span>
                             <div class="funnel-icon-wrap"><i class="fas fa-rocket"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s7_title">07. Mise en Ligne & Recette</h3>
@@ -247,13 +285,13 @@
             <div class="funnel-phase-block">
                 <div class="funnel-phase-header">
                     <span class="phase-pill-badge phase-3-badge"><i class="fas fa-chart-line"></i> <span data-i18n="funnel_phase3_badge">Phase 3 : Croissance & Récurrence</span></span>
-                    <span class="phase-meta-info"><i class="fas fa-arrows-spin"></i> Modèle agence : mensuel récurrent sans engagement</span>
+                    <span class="phase-meta-info"><i class="fas fa-arrows-spin"></i> <span data-i18n="funnel_phase3_timing">Modèle agence : mensuel récurrent sans engagement</span></span>
                 </div>
                 <div class="funnel-grid-2">
                     <!-- Step 08 -->
                     <div class="funnel-card phase-3-card" id="etape-08">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge">ÉTAPE 08</span>
+                            <span class="funnel-num-badge" data-i18n="funnel_step_08">ÉTAPE 08</span>
                             <div class="funnel-icon-wrap"><i class="fas fa-ranking-star"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s8_title">08. SEO & Visibilité Google</h3>
@@ -264,7 +302,7 @@
                     <!-- Step 09 -->
                     <div class="funnel-card phase-3-card" id="etape-09" style="border-color: rgba(245,158,11,0.35); background: radial-gradient(circle at top right, rgba(245,158,11,0.08), transparent 75%), #11100C; box-shadow: 0 0 25px rgba(245,158,11,0.08);">
                         <div class="funnel-card-header">
-                            <span class="funnel-num-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; border-color: rgba(245,158,11,0.4); font-weight: 800;">RÉCURRENCE AGENCE</span>
+                            <span class="funnel-num-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; border-color: rgba(245,158,11,0.4); font-weight: 800;" data-i18n="funnel_s9_badge">RÉCURRENCE AGENCE</span>
                             <div class="funnel-icon-wrap" style="color: #fbbf24; background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.35);"><i class="fas fa-repeat"></i></div>
                         </div>
                         <h3 class="funnel-card-title" data-i18n="funnel_s9_title">09. Abonnement Mensuel</h3>
@@ -276,25 +314,25 @@
 
             <!-- Agency Governance & Guarantees Strip -->
             <div class="funnel-agency-guarantees">
-                <h3 class="funnel-guarantees-title">
+                <h3 class="funnel-guarantees-title" data-i18n="funnel_guar_title">
                     <i class="fas fa-award neon"></i> Pourquoi ce système fait d'AssurLead une vraie agence structurée ?
                 </h3>
                 <div class="funnel-guarantees-grid">
                     <div class="funnel-guarantee-card">
-                        <strong><i class="fas fa-shield-halved"></i> Exclusivité Territoriale</strong>
-                        <p>Un seul courtier partenaire par zone géographique pour éviter tout conflit d'intérêts direct.</p>
+                        <strong><i class="fas fa-shield-halved"></i> <span data-i18n="funnel_g1_title">Exclusivité Territoriale</span></strong>
+                        <p data-i18n="funnel_g1_desc">Un seul courtier partenaire par zone géographique pour éviter tout conflit d'intérêts direct.</p>
                     </div>
                     <div class="funnel-guarantee-card">
-                        <strong><i class="fas fa-file-contract"></i> Contrat & Acompte 50%</strong>
-                        <p>Un cadre juridique clair avec calendrier d'exécution strict et protection financière mutuelle.</p>
+                        <strong><i class="fas fa-file-contract"></i> <span data-i18n="funnel_g2_title">Contrat & Acompte 50%</span></strong>
+                        <p data-i18n="funnel_g2_desc">Un cadre juridique clair avec calendrier d'exécution strict et protection financière mutuelle.</p>
                     </div>
                     <div class="funnel-guarantee-card">
-                        <strong><i class="fas fa-gauge-high"></i> Sprint Industriel 7-10j</strong>
-                        <p>Une chaîne de production normée, sans retard et validée selon les Core Web Vitals de Google.</p>
+                        <strong><i class="fas fa-gauge-high"></i> <span data-i18n="funnel_g3_title">Sprint Industriel 7-10j</span></strong>
+                        <p data-i18n="funnel_g3_desc">Une chaîne de production normée, sans retard et validée selon les Core Web Vitals de Google.</p>
                     </div>
                     <div class="funnel-guarantee-card">
-                        <strong><i class="fas fa-chart-line"></i> Accompagnement MRR</strong>
-                        <p>Un abonnement mensuel transparent centré sur le coût par lead qualifié et le retour sur investissement.</p>
+                        <strong><i class="fas fa-chart-line"></i> <span data-i18n="funnel_g4_title">Accompagnement MRR</span></strong>
+                        <p data-i18n="funnel_g4_desc">Un abonnement mensuel transparent centré sur le coût par lead qualifié et le retour sur investissement.</p>
                     </div>
                 </div>
             </div>
@@ -318,9 +356,9 @@
                     </div>
 
                     <div class="diag-consultation-trust">
-                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="appr_trust_1">Délai garanti 7-10 jours</span></div>
-                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="appr_trust_2">Sans engagement de durée</span></div>
-                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="appr_trust_3">Paiement 50/50 sécurisé</span></div>
+                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="consult_trust_1">Délai garanti 7-10 jours</span></div>
+                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="consult_trust_2">Sans engagement de durée</span></div>
+                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="consult_trust_3">Paiement 50/50 sécurisé</span></div>
                     </div>
 
                     <div class="diag-back-link-wrapper">
@@ -338,7 +376,7 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-seo-section">
-                <span class="footer-seo-title">Expertise Digitale & Référencement au Maroc</span>
+                <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
                 <div class="footer-seo-tags">
                     <a href="/creation-site-web-casablanca.html" class="seo-tag seo-tag-highlight" title="Création site internet Casablanca">
                         <i class="fas fa-map-marker-alt"></i> <span>Création site web Casablanca</span>
@@ -381,7 +419,7 @@
                     </a>
                 </div>
             </div>
-            <p class="footer-copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
+            <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
         </div>
     </footer>
 

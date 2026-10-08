@@ -46,6 +46,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body class="realisation-page-body">
 
@@ -57,12 +64,12 @@
                 <span class="logo-text">ASSUR<span class="neon">LEAD</span>COM</span>
             </a>
             <ul class="nav-links">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/creation-site-web-casablanca.html">Casablanca</a></li>
-                <li><a href="/creation-site-web-maroc.html">Maroc</a></li>
-                <li><a href="/realisations.html" class="active nav-diag-active">Réalisations</a></li>
-                <li><a href="/processus.html">Processus</a></li>
-                <li><a href="/approche.html">Notre Approche</a></li>
+                <li><a href="/" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="/creation-site-web-casablanca.html" data-i18n="nav_casablanca">Casablanca</a></li>
+                <li><a href="/creation-site-web-maroc.html" data-i18n="nav_maroc">Maroc</a></li>
+                <li><a href="/realisations.html" class="active nav-diag-active" data-i18n="nav_realisations">Réalisations</a></li>
+                <li><a href="/processus.html" data-i18n="nav_processus">Processus</a></li>
+                <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
                 <li><a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20sur%20un%20site%20comme%20assuranceselomrani.com" target="_blank" class="btn btn-primary btn-sm">Consultation Gratuite</a></li>
             </ul>
@@ -88,6 +95,23 @@
 
     <!-- Main Content -->
     <main class="realisation-main-wrapper">
+        <!-- Shooting Stars Design (Étoiles Filantes) -->
+                <!-- 3D Canvas Background & Constellation -->
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div class="hero-shooting-stars" aria-hidden="true">
+            <div class="shooting-star-track track-1">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-2">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-3">
+                <div class="shooting-star-meteor"></div>
+            </div>
+            <div class="shooting-star-track track-4">
+                <div class="shooting-star-meteor"></div>
+            </div>
+        </div>
         <div class="container realisation-container">
 
             <!-- Breadcrumb Navigation -->
@@ -179,28 +203,26 @@
             </section>
 
             <!-- Key Performance Metrics Grid -->
-            <section class="realisation-kpi-grid">
+            <section class="realisation-kpi-grid" style="margin-bottom: 60px;">
                 <div class="realisation-kpi-card">
-                    <!-- À COMPLÉTER : vraie statistique -->
-                    <div class="realisation-kpi-val">+340%</div>
-                    <div class="realisation-kpi-title" data-i18n="rea_kpi1_title">Demandes de Devis</div>
-                    <p class="realisation-kpi-desc" data-i18n="rea_kpi1_desc">Augmentation mensuelle des cotations entrantes (Auto, Moto, Santé, Habitation).</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_speed_val">&lt; 1.2s</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_speed_title">Temps de Chargement</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_speed_desc">Vitesse mobile ultra-rapide validée sur les Core Web Vitals de Google.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">1ère Page</div>
-                    <div class="realisation-kpi-title" data-i18n="rea_kpi2_title">SEO Google Local</div>
-                    <p class="realisation-kpi-desc" data-i18n="rea_kpi2_desc">Positionnement prioritaire sur les requêtes d'assurance géolocalisées à Casablanca.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_delay_val">10 - 14j</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_delay_title">Délai Garanti</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_delay_desc">Livraison clé en main avec nom de domaine, hébergement SSL et SEO configuré.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <!-- À COMPLÉTER : vraie statistique -->
-                    <div class="realisation-kpi-val">-45%</div>
-                    <div class="realisation-kpi-title" data-i18n="rea_kpi3_title">Coût par Lead</div>
-                    <p class="realisation-kpi-desc" data-i18n="rea_kpi3_desc">Économie directe par rapport à l'achat de leads non exclusifs sur les plateformes tierces.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_owner_val">100%</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_owner_title">Propriété Exclusive</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_owner_desc">Code source et leads 100% propriétaires à votre entreprise, sans dépendance tierce.</p>
                 </div>
                 <div class="realisation-kpi-card">
-                    <div class="realisation-kpi-val">&lt; 10 min</div>
-                    <div class="realisation-kpi-title" data-i18n="rea_kpi4_title">Réactivité WhatsApp</div>
-                    <p class="realisation-kpi-desc" data-i18n="rea_kpi4_desc">Délai moyen de prise en charge d'un prospect chaud grâce au routage instantané.</p>
+                    <div class="realisation-kpi-val" data-i18n="kpi_whatsapp_val">1 clic</div>
+                    <div class="realisation-kpi-title" data-i18n="kpi_whatsapp_title">Tunnel WhatsApp</div>
+                    <p class="realisation-kpi-desc" data-i18n="kpi_whatsapp_desc">Routage instantané des visiteurs vers vos commerciaux sans friction.</p>
                 </div>
             </section>
 
@@ -434,9 +456,9 @@
                     </div>
 
                     <div class="diag-consultation-trust">
-                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="appr_trust_1">Délai garanti 14 jours</span></div>
-                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="appr_trust_2">Sans engagement de durée</span></div>
-                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="appr_trust_3">Assistance 7j/7 au Maroc</span></div>
+                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="consult_trust_1">Délai garanti 7-10 jours</span></div>
+                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="consult_trust_2">Sans engagement de durée</span></div>
+                        <div class="trust-item"><i class="fas fa-check"></i> <span data-i18n="consult_trust_3">Paiement 50/50 sécurisé</span></div>
                     </div>
 
                     <div class="diag-back-link-wrapper" style="margin-top: 15px;">
@@ -454,7 +476,7 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-seo-section">
-                <span class="footer-seo-title">Expertise Digitale & Référencement au Maroc</span>
+                <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
                 <div class="footer-seo-tags">
                     <a href="/creation-site-web-casablanca.html" class="seo-tag seo-tag-highlight" title="Création site internet Casablanca">
                         <i class="fas fa-map-marker-alt"></i> <span>Création site web Casablanca</span>
@@ -497,7 +519,7 @@
                     </a>
                 </div>
             </div>
-            <p class="footer-copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
+            <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD COM — Agence de création de sites web professionnels & référencement SEO au Maroc 🇲🇦</p>
         </div>
     </footer>
 
