@@ -1483,9 +1483,9 @@ const translations = {
         ar: "حجز التدقيق المجاني الآن"
     },
     modal_timer: {
-        fr: "Exclusivité territoriale par zone géographique",
-        en: "Strict territorial exclusivity per zone",
-        ar: "حصرية جغرافية مشروطة لكل منطقة"
+        fr: "Audit gratuit de 15 minutes, sur rendez-vous",
+        en: "Free 15-minute audit, by appointment",
+        ar: "تدقيق مجاني لمدة 15 دقيقة، بموعد مسبق"
     },
     // Chat & WhatsApp Widget
     chat_badge: {
@@ -1558,6 +1558,93 @@ const translations = {
         fr: "À Casablanca et au Maroc, plus de 85% des recherches s'effectuent sur smartphone, avec une attente d'interaction immédiate par WhatsApp ou téléphone. Un site web performant à Casablanca doit allier un chargement ultra-rapide (< 1s), un balisage Google Maps local (Maârif, Anfa, Sidi Maârouf, etc.) et des tunnels de conversion adaptés aux habitudes d'achat marocaines.",
         en: "In Casablanca and Morocco, over 85% of searches occur on smartphones, with an expectation of instant contact via WhatsApp or phone. A top-performing site in Casablanca requires lightning-fast loading (< 1s), local Google Maps markup, and conversion funnels tuned for Moroccan buying habits.",
         ar: "في الدار البيضاء والمغرب، أكثر من 85% من عمليات البحث تتم عبر الهواتف الذكية مع رغبة في التواصل الفوري عبر واتساب أو الهاتف. نجاح الموقع يتطلب سرعة خارقة (أقل من ثانية)، تهيئة جغرافية دقيقة في خرائط غوغل وتصميماً مخصصاً لسلوك المستهلك المغربي."
+    },
+    // Processus Funnel Translations
+    proc_hero_badge: {
+        fr: "PIPELINE COMMERCIAL & OPÉRATIONNEL",
+        en: "COMMERCIAL & OPERATIONAL PIPELINE",
+        ar: "مسار الاستقطاب التجاري والعملياتي"
+    },
+    proc_hero_title: {
+        fr: "Le Tunnel Commercial en 9 Étapes <span class=\"neon\">d'AssurLead.</span>",
+        en: "The 9-Step Acquisition Funnel <span class=\"neon\">by AssurLead.</span>",
+        ar: "قمع الاستقطاب التجاري في 9 خطوات <span class=\"neon\">من أسورليد.</span>"
+    },
+    proc_hero_desc: {
+        fr: "Prospection → Audit gratuit → Appel WhatsApp/téléphone → Proposition → 50 % d'acompte → Production → Mise en ligne → SEO → Abonnement mensuel.<br>Le modèle éprouvé qui transforme l'acquisition de courtiers d'assurance en système prévisible et pérenne.",
+        en: "Prospecting → Free Audit → WhatsApp/Phone Call → Proposal → 50% Deposit → Production → Launch → SEO → Monthly Retainer.<br>The proven blueprint turning insurance broker acquisition into a predictable asset.",
+        ar: "التنقيب ← التدقيق المجاني ← مكالمة واتساب/هاتف ← العرض التجاري ← دفعة 50% ← الإنتاج البرمجي ← الإطلاق ← السيو ← المتابعة الشهرية.<br>النموذج المجرب الذي يحول استقطاب العملاء إلى نظام متوقع ومستمر."
+    },
+    funnel_phase1_badge: {
+        fr: "PHASE 1 : AMORÇAGE & QUALIFICATION",
+        en: "PHASE 1: PRIMING & QUALIFICATION",
+        ar: "المرحلة 1: الانطلاق والتأهيل"
+    },
+    funnel_phase2_badge: {
+        fr: "PHASE 2 : ENGAGEMENT & PRODUCTION",
+        en: "PHASE 2: COMMITMENT & PRODUCTION",
+        ar: "المرحلة 2: الالتزام والإنتاج"
+    },
+    funnel_phase3_badge: {
+        fr: "PHASE 3 : RÉSULTATS & PÉRENNITÉ",
+        en: "PHASE 3: RESULTS & LONGEVITY",
+        ar: "المرحلة 3: النتائج والاستمرارية"
+    },
+    funnel_s1_name: { fr: "Prospection", en: "Prospecting", ar: "التنقيب" },
+    funnel_s1_tag: { fr: "Étape 01", en: "Step 01", ar: "الخطوة 01" },
+    funnel_s1_title: { fr: "Prise de Contact Directe", en: "Direct Contact", ar: "التواصل المباشر" },
+    funnel_s1_desc: { fr: "Identification des courtiers et agents généraux mal positionnés sur Google au Maroc.", en: "Identification of brokers and general agents poorly positioned on Google in Morocco.", ar: "تحديد الوسطاء والوكلاء العامين ذوي التموضع الضعيف على غوغل في المغرب." },
+    funnel_s2_name: { fr: "Audit Gratuit", en: "Free Audit", ar: "تدقيق مجاني" },
+    funnel_s2_tag: { fr: "Étape 02", en: "Step 02", ar: "الخطوة 02" },
+    funnel_s2_title: { fr: "Audit de Visibilité 15 Min", en: "15-Min Visibility Audit", ar: "تدقيق الرؤية 15 دقيقة" },
+    funnel_s2_desc: { fr: "Analyse en direct de votre positionnement, de vos concurrents locaux et des requêtes perdues.", en: "Live analysis of your ranking, local competitors, and lost search opportunities.", ar: "تحليل مباشر لموقعك ومنافسيك والفرص الضائعة في منطقتك." },
+    funnel_s3_name: { fr: "Appel WhatsApp / Tél", en: "WhatsApp / Phone Call", ar: "مكالمة واتساب / هاتف" },
+    funnel_s3_tag: { fr: "Étape 03", en: "Step 03", ar: "الخطوة 03" },
+    funnel_s3_title: { fr: "Échange Stratégique", en: "Strategic Alignment", ar: "التبادل الاستراتيجي" },
+    funnel_s3_desc: { fr: "Diagnostic des objectifs commerciaux, des branches cibles (auto, santé, pro) et du territoire.", en: "Assessment of commercial targets, key insurance lines (auto, health, pro), and territory.", ar: "تشخيص الأهداف التجارية والفروع المستهدفة ونطاق التغطية." },
+    funnel_s4_name: { fr: "Proposition", en: "Proposal", ar: "العرض التجاري" },
+    funnel_s4_tag: { fr: "Étape 04", en: "Step 04", ar: "الخطوة 04" },
+    funnel_s4_title: { fr: "Offre Chiffrée & Clé en Main", en: "Turnkey Fixed Quote", ar: "عرض مفصل وشامل" },
+    funnel_s4_desc: { fr: "Présentation de la formule adaptée (Starter, Growth, Lead Engine) sans frais cachés.", en: "Presentation of the best suited plan (Starter, Growth, Lead Engine) with no hidden fees.", ar: "تقديم الباقة المناسبة (Starter، Growth، Lead Engine) بكل شفافية." },
+    funnel_s5_name: { fr: "50% Acompte", en: "50% Deposit", ar: "دفعة 50%" },
+    funnel_s5_tag: { fr: "Étape 05", en: "Step 05", ar: "الخطوة 05" },
+    funnel_s5_title: { fr: "Validation & Démarrage", en: "Validation & Kickoff", ar: "التأكيد والانطلاق" },
+    funnel_s5_desc: { fr: "Sécurisation du créneau, signature du contrat d'engagement et versement de l'acompte.", en: "Slot reservation, mutual commitment agreement, and initiation deposit.", ar: "تثبيت الموعد وتوقيع العقد ودفع الدفعة الأولى للانطلاق." },
+    funnel_s6_name: { fr: "Production", en: "Production", ar: "الإنتاج" },
+    funnel_s6_tag: { fr: "Étape 06", en: "Step 06", ar: "الخطوة 06" },
+    funnel_s6_title: { fr: "Développement & Rédaction", en: "Development & Copywriting", ar: "التطوير البرمجي والتحرير" },
+    funnel_s6_desc: { fr: "Design responsive sur-mesure, rédaction persuasive orientée conversion et configuration technique.", en: "Custom responsive design, conversion copywriting, and technical setup.", ar: "تصميم متجاوب عصري، صياغة محتوى موجه للتحويل وتهيئة تقنية." },
+    funnel_s7_name: { fr: "Mise en Ligne", en: "Deployment", ar: "الإطلاق" },
+    funnel_s7_tag: { fr: "Étape 07", en: "Step 07", ar: "الخطوة 07" },
+    funnel_s7_title: { fr: "Déploiement en 10-14 Jours", en: "Deployment in 10-14 Days", ar: "الإطلاق في 10-14 يوماً" },
+    funnel_s7_desc: { fr: "Mise en production sur hébergement ultra-rapide avec domaine .ma ou .com et SSL actif.", en: "Live deployment on high-speed servers with .ma/.com domain and active SSL.", ar: "النشر على استضافة سريعة ونطاق .ma أو .com وتفعيل شهادة الأمان SSL." },
+    funnel_s8_name: { fr: "SEO", en: "Local SEO", ar: "السيو المحلي" },
+    funnel_s8_tag: { fr: "Étape 08", en: "Step 08", ar: "الخطوة 08" },
+    funnel_s8_title: { fr: "Indexation & Google Business", en: "Indexing & Google Maps", ar: "الفهرسة وخرائط غوغل" },
+    funnel_s8_desc: { fr: "Indexation 1ère page, balisage Schema.org LocalBusiness et optimisation de la fiche Maps.", en: "1st page indexing, Schema.org LocalBusiness markup, and Google Maps profile tuning.", ar: "الفهرسة في الصفحة الأولى وتهيئة بيانات Schema.org وحساب Google Maps." },
+    funnel_s9_name: { fr: "Abonnement", en: "Maintenance", ar: "المتابعة الشهرية" },
+    funnel_s9_tag: { fr: "Étape 09", en: "Step 09", ar: "الخطوة 09" },
+    funnel_s9_title: { fr: "Suivi & Croissance Continue", en: "Continuous Growth & Monitoring", ar: "المتابعة والنمو المستمر" },
+    funnel_s9_desc: { fr: "Maintenance technique, optimisation continue des conversions et assistance WhatsApp 7j/7.", en: "Technical maintenance, continuous CRO, and 7/7 priority WhatsApp support.", ar: "صيانة تقنية، تحسين مستمر لمعدلات التحويل ودعم واتساب 7 أيام في الأسبوع." },
+    funnel_cta_title: {
+        fr: "Prêt à enclencher le tunnel pour votre agence ?",
+        en: "Ready to launch the acquisition funnel for your agency?",
+        ar: "هل أنت مستعد لتفعيل مسار الاستقطاب لوكالتك؟"
+    },
+    funnel_cta_desc: {
+        fr: "Démarrez par votre audit gratuit de 15 minutes pour vérifier le potentiel de votre zone géographique.",
+        en: "Start with your free 15-minute audit to evaluate the potential of your local territory.",
+        ar: "ابدأ بتدقيق مجاني لمدة 15 دقيقة للتحقق من إمكانات منطقتك الجغرافية."
+    },
+    funnel_cta_btn: {
+        fr: "Réserver mon Audit Gratuit",
+        en: "Book My Free Audit",
+        ar: "حجز تدقيقي المجاني الآن"
+    },
+    projets_card_google_badge: {
+        fr: "Positionnement Google",
+        en: "Google Ranking",
+        ar: "الترتيب على غوغل"
     }
 };
 
@@ -2079,9 +2166,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    if (mobileMenuToggle) {
+    if (mobileMenuToggle && navLinks) {
         mobileMenuToggle.addEventListener('click', () => {
             const isActive = navLinks.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active', isActive);
             document.body.style.overflow = isActive ? 'hidden' : '';
             const icon = mobileMenuToggle.querySelector('i');
             if (icon) {
@@ -2093,6 +2181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
                 document.body.style.overflow = '';
                 const icon = mobileMenuToggle.querySelector('i');
                 if (icon) {
@@ -2307,75 +2396,62 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             if (!validateStep()) return;
             
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.disabled = true;
+            // Honeypot validation
+            const honeyInput = form.querySelector('[name="_honey"]') || form.querySelector('[name="website"]');
+            if (honeyInput && honeyInput.value.trim() !== "") {
+                return; // Bot detected, quietly abort
+            }
 
-            const lang = localStorage.getItem('assurlead_lang') || 'fr';
-            const sendingText = {
-                fr: '<i class="fas fa-spinner fa-spin"></i> ENVOI...',
-                en: '<i class="fas fa-spinner fa-spin"></i> SENDING...',
-                ar: '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...'
-            };
-            submitBtn.innerHTML = sendingText[lang];
+            const nameVal = (form.querySelector('[name="name"]')?.value || '').trim();
+            const emailVal = (form.querySelector('[name="email"]')?.value || '').trim();
+            const phoneVal = (form.querySelector('[name="phone"]')?.value || '').trim();
+            const agencyVal = (form.querySelector('[name="agency"]')?.value || '').trim();
+            const cityVal = (form.querySelector('[name="city"]')?.value || '').trim();
+            const messageVal = (form.querySelector('[name="message"]')?.value || '').trim();
 
-            const nameVal = form.querySelector('[name="name"]').value;
-            const emailVal = form.querySelector('[name="email"]').value;
-            const phoneVal = form.querySelector('[name="phone"]').value;
-            const agencyVal = form.querySelector('[name="agency"]').value;
-            const messageVal = form.querySelector('[name="message"]').value;
-
-            // Submit values to FormSubmit via AJAX API
-            const payload = {
-                name: nameVal,
-                email: emailVal,
-                phone: phoneVal,
-                agency: agencyVal,
-                message: messageVal,
-                _subject: `Nouveau Lead Assurlead - ${nameVal} (${agencyVal})`,
-                _honey: ""
-            };
-
-            fetch("https://formsubmit.co/ajax/achrafbdll@gmail.com", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify(payload)
-            })
-            .then(response => {
-                if (response.ok) {
-                    triggerConfetti();
-                    const alertText = formSubmitAlert[lang] || formSubmitAlert.fr;
-                    setTimeout(() => {
-                        alert(alertText);
-                    }, 250);
-                    form.reset();
-                    currentStep = 0;
-                    updateSteps();
-                } else {
-                    const errorText = {
-                        fr: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
-                        en: "An error occurred while sending. Please try again.",
-                        ar: "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى."
-                    };
-                    alert(errorText[lang] || errorText.fr);
+            // JS validation: phone format check
+            const phoneInput = form.querySelector('[name="phone"]');
+            const cleanPhone = phoneVal.replace(/[^0-9+]/g, '');
+            if (cleanPhone.length < 8) {
+                if (phoneInput) {
+                    phoneInput.classList.add('error-shake');
+                    phoneInput.style.borderColor = 'var(--error-red, #ff4136)';
+                    setTimeout(() => phoneInput.classList.remove('error-shake'), 500);
                 }
-            })
-            .catch(err => {
-                console.error("Form submit error:", err);
-                const errorText = {
-                    fr: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
-                    en: "An error occurred while sending. Please try again.",
-                    ar: "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى."
+                return;
+            }
+
+            // Trigger visual feedback and redirect to WhatsApp with prefilled message
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                const lang = localStorage.getItem('assurlead_lang') || 'fr';
+                const redirectText = {
+                    fr: '<i class="fab fa-whatsapp"></i> REDIRECTION WHATSAPP...',
+                    en: '<i class="fab fa-whatsapp"></i> REDIRECTING TO WHATSAPP...',
+                    ar: '<i class="fab fa-whatsapp"></i> تحويل إلى واتساب...'
                 };
-                alert(errorText[lang] || errorText.fr);
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            });
+                submitBtn.innerHTML = redirectText[lang] || redirectText.fr;
+            }
+
+            triggerConfetti();
+
+            const waText = `*Nouvelle Demande de Contact (Formulaire)*%0A%0A` +
+                           `👤 *Nom :* ${encodeURIComponent(nameVal)}%0A` +
+                           `🏢 *Entreprise/Agence :* ${encodeURIComponent(agencyVal)}%0A` +
+                           `📍 *Ville :* ${encodeURIComponent(cityVal || 'Non précisée')}%0A` +
+                           `📱 *Tél :* ${encodeURIComponent(phoneVal)}%0A` +
+                           `✉️ *Email :* ${encodeURIComponent(emailVal)}%0A` +
+                           `💬 *Message :* ${encodeURIComponent(messageVal || 'Demande de renseignement')}`;
+
+            setTimeout(() => {
+                window.location.href = `https://wa.me/212707573162?text=${waText}`;
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                }
+            }, 600);
         });
     };
 
@@ -2601,75 +2677,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LIVE LEAD TICKER (REACTIVELY MULTILINGUAL) ---
-    let tickerInterval = null;
-    let updateTickerDOM = null;
-
+    // --- LIVE LEAD TICKER (DÉSACTIVÉ - TRANSPARENCE SEO) ---
     const renderLeads = () => {
         const ticker = document.getElementById('lead-ticker');
-        if (!ticker) return;
-
-        const names = ["Amine B.", "Youssef K.", "Sara L.", "Hassan M.", "Imane T.", "Omar D."];
-        const rawCities = ["Casablanca", "Rabat", "Marrakech", "Tanger", "Agadir"];
-        const rawProducts = ["Auto", "Santé", "Habitation", "Retraite"];
-
-        // State trackers for active ticker items so change of language reactively displays the new translation instantly
-        let activeName = "Amine B.";
-        let activeCity = "Casablanca";
-        let activeProduct = "Auto";
-
-        updateTickerDOM = () => {
-            const lang = localStorage.getItem('assurlead_lang') || 'fr';
-            
-            // Translate City
-            let translatedCity = activeCity;
-            if (tickerTranslations.cities[activeCity] && tickerTranslations.cities[activeCity][lang]) {
-                translatedCity = tickerTranslations.cities[activeCity][lang];
-            }
-
-            // Translate Product
-            let translatedProduct = activeProduct;
-            if (tickerTranslations.products[activeProduct] && tickerTranslations.products[activeProduct][lang]) {
-                translatedProduct = tickerTranslations.products[activeProduct][lang];
-            }
-
-            // Fetch generic action strings
-            const localizedTitle = tickerTranslations.title[lang] || tickerTranslations.title.fr;
-            const localizedAction = tickerTranslations.action[lang] || tickerTranslations.action.fr;
-
-            const detailsHTML = lang === 'ar' ? 
-                `<strong>${activeName}</strong> من مدينة <strong>${translatedCity}</strong> ${localizedAction} <strong>${translatedProduct}</strong>` :
-                `<strong>${activeName}</strong> (${translatedCity}) ${localizedAction} <strong>${translatedProduct}</strong>`;
-
-            ticker.innerHTML = `
-                <div class="ticker-icon"><i class="fas fa-bolt"></i></div>
-                <div class="ticker-info">
-                    <div class="ticker-label">${localizedTitle}</div>
-                    <div class="ticker-text">${detailsHTML}</div>
-                </div>
-            `;
-        };
-
-        const showNewLead = () => {
-            activeName = names[Math.floor(Math.random() * names.length)];
-            activeCity = rawCities[Math.floor(Math.random() * rawCities.length)];
-            activeProduct = rawProducts[Math.floor(Math.random() * rawProducts.length)];
-            
-            updateTickerDOM();
-            
-            ticker.classList.add('active');
-            
-            setTimeout(() => {
-                ticker.classList.remove('active');
-            }, 5000);
-        };
-
-        // Initialize ticker DOM and schedule regular randomized tick
-        setTimeout(() => {
-            showNewLead();
-            if (tickerInterval) clearInterval(tickerInterval);
-            tickerInterval = setInterval(showNewLead, 15000);
-        }, 5000);
+        if (ticker) {
+            ticker.style.display = 'none';
+        }
     };
 
     // --- ZELLIGE TECH CANVAS DESIGN ---
