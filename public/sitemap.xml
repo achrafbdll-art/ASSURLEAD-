@@ -9,22 +9,6 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Requête A : Création Site Web Casablanca -->
-    <url>
-        <loc>https://www.assurleadcom.com/creation-site-web-casablanca.html</loc>
-        <lastmod>2026-10-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-
-    <!-- Requête B : Création Site Web Maroc -->
-    <url>
-        <loc>https://www.assurleadcom.com/creation-site-web-maroc.html</loc>
-        <lastmod>2026-10-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-
     <!-- Pages Villes SEO Local -->
     <url>
         <loc>https://www.assurleadcom.com/rabat.html</loc>
