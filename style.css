@@ -4699,11 +4699,7 @@ body[dir="rtl"] .diagnostic-callout-left {
     padding-bottom: 80px;
     position: relative;
     overflow-x: hidden;
-    background: 
-        radial-gradient(circle at 50% 120px, rgba(0, 255, 65, 0.13), transparent 60%),
-        radial-gradient(circle at 85% 260px, rgba(0, 210, 53, 0.06), transparent 48%),
-        radial-gradient(circle at 15% 380px, rgba(0, 255, 65, 0.04), transparent 42%),
-        radial-gradient(circle at 50% 60%, rgba(0, 255, 65, 0.02), transparent 50%);
+    background: transparent;
 }
 
 .diag-container {
@@ -5026,11 +5022,7 @@ body[dir="rtl"] .diag-green-banner {
     padding-bottom: 80px;
     position: relative;
     overflow-x: hidden;
-    background: 
-        radial-gradient(circle at 50% 120px, rgba(0, 255, 65, 0.13), transparent 60%),
-        radial-gradient(circle at 85% 260px, rgba(0, 210, 53, 0.06), transparent 48%),
-        radial-gradient(circle at 15% 380px, rgba(0, 255, 65, 0.04), transparent 42%),
-        radial-gradient(circle at 50% 60%, rgba(0, 255, 65, 0.02), transparent 50%);
+    background: transparent;
 }
 
 .approche-main-wrapper > .container,
@@ -6299,11 +6291,7 @@ body[dir="rtl"] .funnel-card-tag {
     padding-bottom: 90px;
     position: relative;
     overflow-x: hidden;
-    background: 
-        radial-gradient(circle at 50% 120px, rgba(0, 255, 65, 0.13), transparent 60%),
-        radial-gradient(circle at 85% 260px, rgba(0, 210, 53, 0.06), transparent 48%),
-        radial-gradient(circle at 15% 380px, rgba(0, 255, 65, 0.04), transparent 42%),
-        radial-gradient(circle at 50% 60%, rgba(0, 255, 65, 0.02), transparent 50%);
+    background: transparent;
 }
 
 .realisation-container {

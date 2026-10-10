@@ -2344,14 +2344,14 @@ const translations = {
         ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <i class=\"fas fa-meteor shooting-icon\"></i>"
     },
     hero_title: {
-        fr: "Prenez la 1ère place sur Google.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        en: "Take #1 Rank on Google.<br><span class=\"neon\">Capture your clients starting today.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        ar: "تصدر المرتبة الأولى في غوغل.<br><span class=\"neon\">استقطب عملاءك ابتداءً من اليوم.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
+        fr: "Création de Site Web Sur Mesure au Maroc.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        en: "Custom Website Creation in Morocco.<br><span class=\"neon\">Capture your clients starting today.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        ar: "إنشاء مواقع إلكترونية حسب الطلب بالمغرب.<br><span class=\"neon\">استقطب عملاءك ابتداءً من اليوم.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
-        fr: "Agence leader en création de site web à Casablanca et partout au Maroc. Nous concevons des sites internet ultra-performants et optimisés pour le SEO Google local afin de capter un flux continu de clients prêts à signer.",
-        en: "Top agency for website creation in Casablanca and across Morocco. We build high-speed, SEO-engineered websites designed to rank #1 on Google and turn local search demand into qualified clients.",
-        ar: "الوكالة الرائدة في إنشاء المواقع الإلكترونية بالدار البيضاء وكافة مدن المغرب. نبني مواقع فائقة السرعة ومتوافقة مع خوارزميات غوغل لتصدر نتائج البحث وتحويل الزوار لعملاء فعليين."
+        fr: "Générez Plus de Prospects & Vendez Plus. Nous concevons des sites web haut de gamme, ultra rapides, optimisés pour Google (SEO) et taillés pour convertir vos visiteurs en clients.",
+        en: "Generate More Leads & Sell More. We craft high-end, lightning-fast websites engineered for Google SEO and tailored to convert your visitors into paying clients.",
+        ar: "استقطب المزيد من العملاء وحقق مبيعات أعلى. نصمم مواقع إلكترونية راقية وفائقة السرعة، متوافقة مع محركات البحث (SEO) ومصممة لتحويل الزوار إلى زبائن فعليين."
     },
     hero_btn_growth: {
         fr: "Demander un audit gratuit (15 min) <i class=\"fas fa-arrow-right\"></i>",
@@ -5107,63 +5107,274 @@ document.addEventListener('DOMContentLoaded', () => {
         return observer;
     };
 
+    // --- WEBGL DETECTION & SAFE FALLBACKS ---
+    const isWebGLSupported = () => {
+        try {
+            if (!window.WebGLRenderingContext) return false;
+            const canvas = document.createElement('canvas');
+            const gl = canvas.getContext('webgl', { failIfMajorPerformanceCaveat: false }) || 
+                       canvas.getContext('experimental-webgl', { failIfMajorPerformanceCaveat: false });
+            return Boolean(gl);
+        } catch (e) {
+            return false;
+        }
+    };
+
+    // 2D Cyber Canvas Fallback for Hero when WebGL is blocked or unavailable
+    const init2DHeroFallback = (container) => {
+        if (!container) return;
+        container.innerHTML = '';
+        const canvas = document.createElement('canvas');
+        canvas.className = 'hero-fallback-canvas';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.pointerEvents = 'none';
+        container.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        let width = container.clientWidth || 800;
+        let height = container.clientHeight || 600;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.scale(dpr, dpr);
+
+        window.addEventListener('resize', () => {
+            if (!container) return;
+            width = container.clientWidth || 800;
+            height = container.clientHeight || 600;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            ctx.scale(dpr, dpr);
+        });
+
+        // Floating cyber nodes
+        const nodes = Array.from({ length: 40 }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            r: Math.random() * 2 + 1,
+            pulse: Math.random() * Math.PI * 2
+        }));
+
+        // Vertices of an icosahedron-like polyhedron in 3D
+        const phi = (1 + Math.sqrt(5)) / 2;
+        const baseVertices = [
+            [-1,  phi, 0], [ 1,  phi, 0], [-1, -phi, 0], [ 1, -phi, 0],
+            [ 0, -1,  phi], [ 0,  1,  phi], [ 0, -1, -phi], [ 0,  1, -phi],
+            [ phi, 0, -1], [ phi, 0,  1], [-phi, 0, -1], [-phi, 0,  1]
+        ].map(([x, y, z]) => {
+            const len = Math.hypot(x, y, z);
+            return [x / len, y / len, z / len];
+        });
+
+        let angle = 0;
+        let animId;
+
+        const animate2D = () => {
+            animId = requestAnimationFrame(animate2D);
+            ctx.clearRect(0, 0, width, height);
+
+            // Update & draw background particles
+            nodes.forEach(n => {
+                n.x += n.vx;
+                n.y += n.vy;
+                n.pulse += 0.03;
+                if (n.x < 0) n.x = width;
+                if (n.x > width) n.x = 0;
+                if (n.y < 0) n.y = height;
+                if (n.y > height) n.y = 0;
+
+                const alpha = 0.2 + 0.35 * Math.sin(n.pulse);
+                ctx.beginPath();
+                ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 255, 65, ${alpha})`;
+                ctx.shadowColor = '#00ff41';
+                ctx.shadowBlur = 6;
+                ctx.fill();
+            });
+
+            // Geometric connections between nearby nodes
+            ctx.shadowBlur = 0;
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const d = Math.hypot(dx, dy);
+                    if (d < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.strokeStyle = `rgba(0, 255, 65, ${0.15 * (1 - d / 100)})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Central rotating holographic neon wireframe
+            const cx = width > 768 ? width * 0.72 : width * 0.5;
+            const cy = height * 0.5;
+            const scale = Math.min(width, height) * 0.22;
+            angle += 0.008;
+
+            const rotY = angle;
+            const rotX = angle * 0.6;
+            const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+            const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+
+            const proj = baseVertices.map(([x, y, z]) => {
+                // Rotate around Y
+                const x1 = x * cosY + z * sinY;
+                const z1 = -x * sinY + z * cosY;
+                // Rotate around X
+                const y2 = y * cosX - z1 * sinX;
+                const z2 = y * sinX + z1 * cosX;
+                // Perspective projection
+                const persp = 3 / (3 + z2);
+                return [cx + x1 * scale * persp, cy + y2 * scale * persp, z2];
+            });
+
+            // Draw wireframe edges
+            ctx.shadowColor = '#00ff41';
+            ctx.shadowBlur = 10;
+            ctx.strokeStyle = 'rgba(0, 255, 65, 0.45)';
+            ctx.lineWidth = 1.2;
+
+            for (let i = 0; i < proj.length; i++) {
+                for (let j = i + 1; j < proj.length; j++) {
+                    const dist3D = Math.hypot(
+                        baseVertices[i][0] - baseVertices[j][0],
+                        baseVertices[i][1] - baseVertices[j][1],
+                        baseVertices[i][2] - baseVertices[j][2]
+                    );
+                    if (dist3D < 1.15) {
+                        ctx.beginPath();
+                        ctx.moveTo(proj[i][0], proj[i][1]);
+                        ctx.lineTo(proj[j][0], proj[j][1]);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Draw glowing vertex points
+            proj.forEach(([px, py]) => {
+                ctx.beginPath();
+                ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#00ff41';
+                ctx.fill();
+            });
+            ctx.shadowBlur = 0;
+        };
+
+        animate2D();
+    };
+
     // --- HERO & CONTACT 3D SCENES ---
     const init3DHeroStyle = (containerId) => {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        container.appendChild(renderer.domElement);
-
-        const geometry = new THREE.IcosahedronGeometry(2, 1);
-        const material = new THREE.MeshStandardMaterial({ 
-            color: 0x00ff00, 
-            wireframe: true,
-            emissive: 0x00ff00,
-            emissiveIntensity: 0.8
-        });
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 500;
-        const posArray = new Float32Array(particlesCount * 3);
-        const randArray = new Float32Array(particlesCount);
-        
-        for(let i=0; i<particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 10;
+        // If THREE is unavailable or WebGL is not supported, safely use 2D fallback
+        if (typeof THREE === 'undefined' || !isWebGLSupported()) {
+            init2DHeroFallback(container);
+            return;
         }
-        for(let i=0; i<particlesCount; i++) {
-            randArray[i] = Math.random();
+
+        let scene, camera, renderer, frameId;
+        try {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({
+                antialias: true,
+                alpha: true,
+                powerPreference: "default",
+                failIfMajorPerformanceCaveat: false
+            });
+        } catch (err) {
+            console.warn('WebGL context creation failed for Hero 3D, activating 2D fallback:', err);
+            init2DHeroFallback(container);
+            return;
         }
-        
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        const particlesMaterial = new THREE.PointsMaterial({ size: 0.02, color: 0x00ff00 });
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
 
-        const light = new THREE.PointLight(0x00ff00, 100);
-        light.position.set(5, 5, 5);
-        scene.add(light);
-        scene.add(new THREE.AmbientLight(0xffffff, 0.2));
-
-        camera.position.z = 5;
-
-        let frameId;
-        function animate() {
-            frameId = requestAnimationFrame(animate);
-            mesh.rotation.x += 0.002;
-            mesh.rotation.y += 0.003;
-            particlesMesh.rotation.y += 0.001;
-            renderer.render(scene, camera);
+        if (!renderer || !renderer.domElement) {
+            init2DHeroFallback(container);
+            return;
         }
-        animate();
 
-        setupResizeHandler(container, camera, renderer);
+        // Handle context loss gracefully
+        renderer.domElement.addEventListener('webglcontextlost', (event) => {
+            event.preventDefault();
+            console.warn('WebGL context lost for Hero 3D, falling back to 2D canvas');
+            if (frameId) cancelAnimationFrame(frameId);
+            init2DHeroFallback(container);
+        }, false);
+
+        try {
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.innerHTML = '';
+            container.appendChild(renderer.domElement);
+
+            const geometry = new THREE.IcosahedronGeometry(2, 1);
+            const material = new THREE.MeshStandardMaterial({ 
+                color: 0x00ff00, 
+                wireframe: true,
+                emissive: 0x00ff00,
+                emissiveIntensity: 0.8
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 500;
+            const posArray = new Float32Array(particlesCount * 3);
+            const randArray = new Float32Array(particlesCount);
+            
+            for(let i=0; i<particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 10;
+            }
+            for(let i=0; i<particlesCount; i++) {
+                randArray[i] = Math.random();
+            }
+            
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            const particlesMaterial = new THREE.PointsMaterial({ size: 0.02, color: 0x00ff00 });
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particlesMesh);
+
+            const light = new THREE.PointLight(0x00ff00, 100);
+            light.position.set(5, 5, 5);
+            scene.add(light);
+            scene.add(new THREE.AmbientLight(0xffffff, 0.2));
+
+            camera.position.z = 5;
+
+            function animate() {
+                frameId = requestAnimationFrame(animate);
+                mesh.rotation.x += 0.002;
+                mesh.rotation.y += 0.003;
+                particlesMesh.rotation.y += 0.001;
+                try {
+                    renderer.render(scene, camera);
+                } catch (e) {
+                    cancelAnimationFrame(frameId);
+                    init2DHeroFallback(container);
+                }
+            }
+            animate();
+
+            setupResizeHandler(container, camera, renderer);
+        } catch (initErr) {
+            console.warn('Hero 3D setup exception:', initErr);
+            init2DHeroFallback(container);
+        }
     };
 
     // --- 3D ROI SCENE ---
@@ -5173,121 +5384,152 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('roi-canvas-container');
         if (!container) return;
 
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x050505);
-        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        container.appendChild(renderer.domElement);
+        if (typeof THREE === 'undefined' || !isWebGLSupported()) {
+            return;
+        }
 
-        // Grid
-        const grid = new THREE.GridHelper(20, 20, 0x00ff00, 0x111111);
-        grid.position.y = -2;
-        scene.add(grid);
-
-        // Single Hexagonal Neon Pillar
-        const hexSegments = 6;
-        const outerGeometry = new THREE.CylinderGeometry(1.2, 1.2, 4, hexSegments);
-        const innerGeometry = new THREE.CylinderGeometry(0.6, 0.6, 4, hexSegments);
-        
-        const outerMaterial = new THREE.MeshStandardMaterial({ 
-            color: 0x00ff00, 
-            transparent: true, 
-            opacity: 0.2,
-            metalness: 0.9,
-            roughness: 0.1
-        });
-        
-        const innerMaterial = new THREE.MeshStandardMaterial({ 
-            color: 0x00ff00, 
-            emissive: 0x00ff00, 
-            emissiveIntensity: 1
-        });
-
-        roiBar = new THREE.Group();
-        const outerMesh = new THREE.Mesh(outerGeometry, outerMaterial);
-        const innerMesh = new THREE.Mesh(innerGeometry, innerMaterial);
-        
-        const wireframeGeometry = new THREE.EdgesGeometry(outerGeometry);
-        const wireframeMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 0.8 });
-        const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
-        
-        roiBar.add(outerMesh);
-        roiBar.add(innerMesh);
-        roiBar.add(wireframe);
-        
-        roiBar.position.y = -2;
-        roiBar.scale.y = 0.1;
-        
-        scene.add(roiBar);
-
-        // Tornado Currency Symbols
-        const createSymbolTexture = (text) => {
-            const canvas = document.createElement('canvas');
-            canvas.width = 128;
-            canvas.height = 128;
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, 128, 128);
-            ctx.font = 'bold 80px Inter, sans-serif';
-            ctx.fillStyle = '#00ff00';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(text, 64, 64);
-            return new THREE.CanvasTexture(canvas);
-        };
-
-        const madTexture = createSymbolTexture('MAD');
-        const dollarTexture = createSymbolTexture('$');
-
-        for (let i = 0; i < 40; i++) {
-            const sprMat = new THREE.SpriteMaterial({ 
-                map: i % 2 === 0 ? madTexture : dollarTexture,
-                transparent: true,
-                opacity: 0.8
+        let scene, camera, renderer, roiFrameId;
+        try {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x050505);
+            camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({
+                antialias: true,
+                powerPreference: "default",
+                failIfMajorPerformanceCaveat: false
             });
-            const sprite = new THREE.Sprite(sprMat);
+        } catch (err) {
+            console.warn('WebGL context creation failed for ROI 3D:', err);
+            return;
+        }
+
+        if (!renderer || !renderer.domElement) return;
+
+        renderer.domElement.addEventListener('webglcontextlost', (event) => {
+            event.preventDefault();
+            console.warn('WebGL context lost for ROI 3D');
+            if (roiFrameId) cancelAnimationFrame(roiFrameId);
+        }, false);
+
+        try {
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            // Grid
+            const grid = new THREE.GridHelper(20, 20, 0x00ff00, 0x111111);
+            grid.position.y = -2;
+            scene.add(grid);
+
+            // Single Hexagonal Neon Pillar
+            const hexSegments = 6;
+            const outerGeometry = new THREE.CylinderGeometry(1.2, 1.2, 4, hexSegments);
+            const innerGeometry = new THREE.CylinderGeometry(0.6, 0.6, 4, hexSegments);
             
-            const angle = Math.random() * Math.PI * 2;
-            const radius = 2 + Math.random() * 4;
-            const height = (Math.random() - 0.5) * 10;
+            const outerMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0x00ff00, 
+                transparent: true, 
+                opacity: 0.2,
+                metalness: 0.9,
+                roughness: 0.1
+            });
             
-            sprite.position.set(Math.cos(angle) * radius, height, Math.sin(angle) * radius);
-            sprite.scale.set(0.5, 0.5, 1);
-            sprite.userData = {
-                angle, radius,
-                speed: 0.01 + Math.random() * 0.02,
-                vSpeed: (Math.random() - 0.5) * 0.01
+            const innerMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0x00ff00, 
+                emissive: 0x00ff00, 
+                emissiveIntensity: 1
+            });
+
+            roiBar = new THREE.Group();
+            const outerMesh = new THREE.Mesh(outerGeometry, outerMaterial);
+            const innerMesh = new THREE.Mesh(innerGeometry, innerMaterial);
+            
+            const wireframeGeometry = new THREE.EdgesGeometry(outerGeometry);
+            const wireframeMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 0.8 });
+            const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
+            
+            roiBar.add(outerMesh);
+            roiBar.add(innerMesh);
+            roiBar.add(wireframe);
+            
+            roiBar.position.y = -2;
+            roiBar.scale.y = 0.1;
+            
+            scene.add(roiBar);
+
+            // Tornado Currency Symbols
+            const createSymbolTexture = (text) => {
+                const canvas = document.createElement('canvas');
+                canvas.width = 128;
+                canvas.height = 128;
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, 128, 128);
+                ctx.font = 'bold 80px Inter, sans-serif';
+                ctx.fillStyle = '#00ff00';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(text, 64, 64);
+                return new THREE.CanvasTexture(canvas);
             };
-            
-            scene.add(sprite);
-            currencySymbols.push(sprite);
-        }
 
-        const light = new THREE.PointLight(0x00ff00, 50);
-        light.position.set(5, 5, 5);
-        scene.add(light);
-        scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+            const madTexture = createSymbolTexture('MAD');
+            const dollarTexture = createSymbolTexture('$');
 
-        camera.position.set(0, 5, 12);
-        camera.lookAt(0, 0, 0);
-
-        function animate() {
-            requestAnimationFrame(animate);
-            currencySymbols.forEach(symbol => {
-                symbol.userData.angle += symbol.userData.speed;
-                symbol.position.x = Math.cos(symbol.userData.angle) * symbol.userData.radius;
-                symbol.position.z = Math.sin(symbol.userData.angle) * symbol.userData.radius;
-                symbol.position.y += symbol.userData.vSpeed;
+            for (let i = 0; i < 40; i++) {
+                const sprMat = new THREE.SpriteMaterial({ 
+                    map: i % 2 === 0 ? madTexture : dollarTexture,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const sprite = new THREE.Sprite(sprMat);
                 
-                if (symbol.position.y > 5) symbol.position.y = -5;
-                if (symbol.position.y < -5) symbol.position.y = 5;
-            });
-            renderer.render(scene, camera);
-        }
-        animate();
+                const angle = Math.random() * Math.PI * 2;
+                const radius = 2 + Math.random() * 4;
+                const height = (Math.random() - 0.5) * 10;
+                
+                sprite.position.set(Math.cos(angle) * radius, height, Math.sin(angle) * radius);
+                sprite.scale.set(0.5, 0.5, 1);
+                sprite.userData = {
+                    angle, radius,
+                    speed: 0.01 + Math.random() * 0.02,
+                    vSpeed: (Math.random() - 0.5) * 0.01
+                };
+                
+                scene.add(sprite);
+                currencySymbols.push(sprite);
+            }
 
-        setupResizeHandler(container, camera, renderer);
+            const light = new THREE.PointLight(0x00ff00, 50);
+            light.position.set(5, 5, 5);
+            scene.add(light);
+            scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+
+            camera.position.set(0, 5, 12);
+            camera.lookAt(0, 0, 0);
+
+            function animate() {
+                roiFrameId = requestAnimationFrame(animate);
+                currencySymbols.forEach(symbol => {
+                    symbol.userData.angle += symbol.userData.speed;
+                    symbol.position.x = Math.cos(symbol.userData.angle) * symbol.userData.radius;
+                    symbol.position.z = Math.sin(symbol.userData.angle) * symbol.userData.radius;
+                    symbol.position.y += symbol.userData.vSpeed;
+                    
+                    if (symbol.position.y > 5) symbol.position.y = -5;
+                    if (symbol.position.y < -5) symbol.position.y = 5;
+                });
+                try {
+                    renderer.render(scene, camera);
+                } catch (e) {
+                    cancelAnimationFrame(roiFrameId);
+                }
+            }
+            animate();
+
+            setupResizeHandler(container, camera, renderer);
+        } catch (roiErr) {
+            console.warn('ROI 3D setup exception:', roiErr);
+        }
     };
 
     // ROI Calculator Logic
@@ -6181,17 +6423,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Initialize items
-    init3DHeroStyle('hero-canvas-container');
-    initROIScene();
-    initZelligeTechCanvas('zellige-tech-canvas', 'offres');
-    initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section');
-    initZelligeTechCanvas('zellige-tech-faq-canvas', 'faq');
-    initZelligeTechCanvas('zellige-tech-footer-canvas', 'footer');
-    initQuestionnaire();
-    initCtaConfetti();
-    updateROI();
-    renderLeads();
+    // Initialize items safely
+    try { init3DHeroStyle('hero-canvas-container'); } catch (e) { console.warn('Hero canvas init warning:', e); }
+    try { initROIScene(); } catch (e) { console.warn('ROI scene init warning:', e); }
+    try { initZelligeTechCanvas('zellige-tech-canvas', 'offres'); } catch (e) { console.warn('Offres canvas init warning:', e); }
+    try { initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section'); } catch (e) { console.warn('Stats canvas init warning:', e); }
+    try { initZelligeTechCanvas('zellige-tech-faq-canvas', 'faq'); } catch (e) { console.warn('FAQ canvas init warning:', e); }
+    try { initZelligeTechCanvas('zellige-tech-footer-canvas', 'footer'); } catch (e) { console.warn('Footer canvas init warning:', e); }
+    try { initQuestionnaire(); } catch (e) { console.warn('Questionnaire init warning:', e); }
+    try { initCtaConfetti(); } catch (e) { console.warn('Confetti init warning:', e); }
+    try { updateROI(); } catch (e) { console.warn('ROI update warning:', e); }
+    try { renderLeads(); } catch (e) { console.warn('Leads render warning:', e); }
 
     // --- ANIMATED INCREMENTAL COUNTER FOR STATS ---
     const initStatsCounter = () => {
