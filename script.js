@@ -3518,6 +3518,14 @@ const fullTextDictionary = {
     "en": "2. Engineering & Content",
     "ar": "2. الهندسة وصياغة المحتوى"
   },
+  "+ 4 projets livrés": {
+    "en": "+ 4 Projects Delivered",
+    "ar": "+ 4 مشاريع منجزة"
+  },
+  "+4 projets livrés": {
+    "en": "+ 4 Projects Delivered",
+    "ar": "+ 4 مشاريع منجزة"
+  },
   "3 projets livrés": {
     "en": "3 Projects Delivered",
     "ar": "3 مشاريع منجزة"
