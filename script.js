@@ -5655,37 +5655,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Modal - Affichage après 20 secondes
+    // Modal
     const modal = document.getElementById('cta-modal');
     const closeModal = document.getElementById('close-modal');
     if (modal && closeModal) {
-        let modalClosedByUser = false;
         const showModal = () => {
-            if (modalClosedByUser || sessionStorage.getItem('assurlead_modal_dismissed') === 'true') return;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         };
         const hideModal = () => {
-            modalClosedByUser = true;
-            sessionStorage.setItem('assurlead_modal_dismissed', 'true');
             modal.classList.remove('active');
             document.body.style.overflow = '';
         };
         closeModal.addEventListener('click', hideModal);
-        const backdrop = modal.querySelector('.modal-backdrop');
-        if (backdrop) {
-            backdrop.addEventListener('click', hideModal);
-        }
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                hideModal();
-            }
-        });
+        modal.querySelector('.modal-backdrop').addEventListener('click', hideModal);
 
-        // Déclenchement automatique après 20 secondes (20000 ms)
-        setTimeout(() => {
-            showModal();
-        }, 20000);
+        let modalTriggered = false;
+        const triggerModal = () => {
+            if (!modalTriggered) {
+                showModal();
+                modalTriggered = true;
+                window.removeEventListener('click', triggerModal);
+            }
+        };
+        window.addEventListener('click', triggerModal);
+        setTimeout(() => { if (!modalTriggered) showModal(); }, 8000);
     }
 
     // --- CONFETTI CELEBRATION ENGINE ---
