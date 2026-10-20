@@ -2339,9 +2339,9 @@ const translations = {
     },
     // Hero
     hero_badge: {
-        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <i class=\"fas fa-meteor shooting-icon\"></i>",
-        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco <i class=\"fas fa-meteor shooting-icon\"></i>",
-        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <i class=\"fas fa-meteor shooting-icon\"></i>"
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>"
     },
     hero_title: {
         fr: "Création de Site Web Sur Mesure au Maroc.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
@@ -5655,31 +5655,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Modal
+    // Modal - Affichage après 20 secondes
     const modal = document.getElementById('cta-modal');
     const closeModal = document.getElementById('close-modal');
     if (modal && closeModal) {
+        let modalClosedByUser = false;
         const showModal = () => {
+            if (modalClosedByUser || sessionStorage.getItem('assurlead_modal_dismissed') === 'true') return;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         };
         const hideModal = () => {
+            modalClosedByUser = true;
+            sessionStorage.setItem('assurlead_modal_dismissed', 'true');
             modal.classList.remove('active');
             document.body.style.overflow = '';
         };
         closeModal.addEventListener('click', hideModal);
-        modal.querySelector('.modal-backdrop').addEventListener('click', hideModal);
-
-        let modalTriggered = false;
-        const triggerModal = () => {
-            if (!modalTriggered) {
-                showModal();
-                modalTriggered = true;
-                window.removeEventListener('click', triggerModal);
+        const backdrop = modal.querySelector('.modal-backdrop');
+        if (backdrop) {
+            backdrop.addEventListener('click', hideModal);
+        }
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                hideModal();
             }
-        };
-        window.addEventListener('click', triggerModal);
-        setTimeout(() => { if (!modalTriggered) showModal(); }, 8000);
+        });
+
+        // Déclenchement automatique après 20 secondes (20000 ms)
+        setTimeout(() => {
+            showModal();
+        }, 20000);
     }
 
     // --- CONFETTI CELEBRATION ENGINE ---
