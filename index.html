@@ -110,9 +110,52 @@
             </a>
             <ul class="nav-links">
                 <li><a href="/" class="active" data-i18n="nav_home">Accueil</a></li>
+                <li class="nav-dropdown">
+                    <a href="javascript:void(0)" class="nav-dropdown-toggle" id="nav-expertise-toggle" role="button" aria-expanded="false">
+                        <span data-i18n="nav_expertise">Expertise</span> <i class="fas fa-chevron-down nav-dropdown-arrow"></i>
+                    </a>
+                    <div class="nav-dropdown-menu" id="nav-expertise-menu">
+                        <div class="nav-dropdown-inner">
+                            <div class="nav-dropdown-group">
+                                <span class="nav-dropdown-header"><i class="fas fa-map-marker-alt"></i> VILLES & CRÉATION WEB</span>
+                                <a href="/rabat.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Rabat</span>
+                                </a>
+                                <a href="/marrakech.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Marrakech</span>
+                                </a>
+                                <a href="/tanger.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Tanger</span>
+                                </a>
+                                <a href="/fes.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Fès</span>
+                                </a>
+                                <a href="/agadir.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Agadir</span>
+                                </a>
+                            </div>
+                            <div class="nav-dropdown-group">
+                                <span class="nav-dropdown-header"><i class="fas fa-chart-line"></i> STRATÉGIE & ACQUISITION</span>
+                                <a href="/referencement-seo-casablanca.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Référencement SEO Casablanca</span>
+                                </a>
+                                <a href="/generation-leads-assurance-maroc.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Leads Assurance Maroc</span>
+                                </a>
+                                <a href="/realisations.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Réalisations & Études de Cas</span>
+                                </a>
+                                <a href="/diagnostic.html" class="nav-dropdown-item highlight-item">
+                                    <span class="nav-dropdown-title"><span class="diag-pulse-dot"></span> Diagnostic de Visibilité</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
+                <li><a href="#offres" class="nav-offer-badge-link" data-open-special-offer><span class="nav-offer-fire"><i class="fas fa-fire"></i></span> <span data-i18n="nav_offer_tag">Moins de 8j • Offre</span></a></li>
                 <li><a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav_start">Audit Gratuit</a></li>
             </ul>
             <div class="nav-right">
@@ -193,6 +236,14 @@
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary" data-i18n="hero_btn_growth">Demander un audit gratuit (15 min) <i class="fas fa-arrow-right"></i></a>
                     <a href="#methode" class="btn btn-outline" data-i18n="hero_btn_audit">Voir comment ça fonctionne</a>
+                </div>
+                <!-- Tag Offre Spéciale Urgence -->
+                <div class="hero-urgency-tag-wrapper">
+                    <a href="#offres" class="hero-urgency-tag" data-open-special-offer>
+                        <span class="hero-urgency-badge"><i class="fas fa-fire"></i> OFFRE LIMITÉE</span>
+                        <span class="hero-urgency-text" data-i18n="hero_urgency_tag">Moins de 8 jours • Fin de l'offre, profitez-en !</span>
+                        <i class="fas fa-arrow-right hero-urgency-arrow"></i>
+                    </a>
                 </div>
                 <div class="partners">
                     <span class="partners-label" data-i18n="hero_partners_label">Secteurs & Réseaux Accompagnés au Maroc</span>
@@ -422,7 +473,7 @@
                     <button type="button" class="btn-special-offer-cta" id="toggle-special-offer-btn" aria-expanded="false" aria-controls="special-offer-banner">
                         <span class="special-offer-cta-icon-sparkle"><i class="fas fa-bolt"></i></span>
                         <span class="special-offer-cta-text" data-i18n="special_offer_btn">Profiter d'une offre à prix spécial</span>
-                        <span class="special-offer-cta-date-badge" data-i18n="special_offer_deadline">Offre valable jusqu'au 31/10/2026</span>
+                        <span class="special-offer-cta-date-badge special-offer-urgency-tag" data-i18n="special_offer_deadline"><i class="fas fa-fire"></i> Moins de 8 jours • Fin de l'offre, profitez-en !</span>
                         <span class="special-offer-cta-arrow"><i class="fas fa-chevron-down"></i></span>
                     </button>
                 </div>
@@ -439,7 +490,7 @@
                             <div class="promo-logo-icon">
                                 <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="26" height="26">
                             </div>
-                            <span class="promo-badge" data-i18n="promo_badge">OFFRE VALABLE JUSQU'AU 31/10/2026</span>
+                            <span class="promo-badge promo-badge-urgent" data-i18n="promo_badge"><i class="fas fa-clock"></i> MOINS DE 8 JOURS • FIN DE L'OFFRE (31/10/2026) — PROFITEZ-EN !</span>
                         </div>
                         <h3 class="promo-title" data-i18n="promo_title">CRÉATION DE SITES<br>INTERNET<br>PROFESSIONNELS</h3>
                         <p class="promo-desc" data-i18n="promo_desc">Site vitrine essentiel moderne, ultra-rapide et pensé pour rassurer vos visiteurs et capter vos premiers contacts commerciaux.</p>

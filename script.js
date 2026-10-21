@@ -1792,6 +1792,11 @@ const translations = {
         en: "Diagnostic",
         ar: "التشخيص"
     },
+    nav_expertise: {
+        fr: "Expertise",
+        en: "Expertise",
+        ar: "خبراتنا"
+    },
     nav_realisations: {
         fr: "Réalisations",
         en: "Case Studies",
@@ -2661,14 +2666,24 @@ const translations = {
         ar: "الاستفادة من عرض بسعر خاص"
     },
     special_offer_deadline: {
-        fr: "jusqu'au 31/10/2026",
-        en: "until 31/10/2026",
-        ar: "حتى 31/10/2026"
+        fr: "<i class=\"fas fa-fire\"></i> Moins de 8 jours • Fin de l'offre, profitez-en !",
+        en: "<i class=\"fas fa-fire\"></i> Less than 8 days left • Offer ending soon, take advantage!",
+        ar: "<i class=\"fas fa-fire\"></i> أقل من 8 أيام • نهاية العرض، استفد الآن!"
     },
     promo_badge: {
-        fr: "OFFRE SPÉCIALE",
-        en: "SPECIAL OFFER",
-        ar: "عرض خاص"
+        fr: "<i class=\"fas fa-clock\"></i> MOINS DE 8 JOURS • FIN DE L'OFFRE (31/10/2026) — PROFITEZ-EN !",
+        en: "<i class=\"fas fa-clock\"></i> LESS THAN 8 DAYS LEFT • END OF OFFER (31/10/2026) — TAKE ADVANTAGE!",
+        ar: "<i class=\"fas fa-clock\"></i> أقل من 8 أيام • نهاية العرض (31/10/2026) — استفد الآن!"
+    },
+    hero_urgency_tag: {
+        fr: "Moins de 8 jours • Fin de l'offre, profitez-en !",
+        en: "Less than 8 days left • Offer ending soon, take advantage!",
+        ar: "أقل من 8 أيام • نهاية العرض، استفد الآن!"
+    },
+    nav_offer_tag: {
+        fr: "Moins de 8j • Offre",
+        en: "Offer: < 8 days",
+        ar: "العرض: أقل من 8 أيام"
     },
     promo_title: {
         fr: "CRÉATION DE SITES<br>INTERNET<br>PROFESSIONNELS",
@@ -6648,6 +6663,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeOffer();
             });
         }
+
+        document.querySelectorAll('[data-open-special-offer]').forEach(el => {
+            el.addEventListener('click', (e) => {
+                openOffer();
+            });
+        });
     };
 
     // Interactive Moroccan Cities Stickers Cluster
@@ -6684,6 +6705,52 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initFaqAccordion();
     initSpecialOfferToggle();
+
+    // Nav Dropdown (Expertise)
+    const initNavDropdown = () => {
+        const dropdowns = document.querySelectorAll('.nav-dropdown');
+        dropdowns.forEach(dd => {
+            const toggle = dd.querySelector('.nav-dropdown-toggle');
+            const menu = dd.querySelector('.nav-dropdown-menu');
+            if (!toggle || !menu) return;
+
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const isOpen = dd.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!dd.contains(e.target)) {
+                    dd.classList.remove('is-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && dd.classList.contains('is-open')) {
+                    dd.classList.remove('is-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            menu.querySelectorAll('.nav-dropdown-item').forEach(link => {
+                link.addEventListener('click', () => {
+                    dd.classList.remove('is-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    const navLinks = document.querySelector('.nav-links');
+                    const mobileToggle = document.getElementById('mobile-menu-toggle');
+                    if (navLinks && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        if (mobileToggle) mobileToggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+        });
+    };
+    initNavDropdown();
 
     
     // --- PIPELINE TRACKER & PHASE TABS (PROCESSUS.HTML) ---
