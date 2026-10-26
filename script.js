@@ -306,6 +306,26 @@ const translations = {
         en: "Home",
         ar: "الرئيسية"
     },
+    nav_expertise: {
+        fr: "Expertise",
+        en: "Expertise",
+        ar: "مجالات الخبرة"
+    },
+    exp_badge: {
+        fr: "<span class=\"badge-flag\">🇲🇦</span> NOS PÔLES D'EXPERTISE AU MAROC",
+        en: "<span class=\"badge-flag\">🇲🇦</span> OUR AREAS OF EXPERTISE IN MOROCCO",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> مجالات خبرتنا الرقمية في المغرب"
+    },
+    exp_hero_title: {
+        fr: "Architecture Web, SEO &<br><span class=\"neon\">Acquisition Commerciale.</span>",
+        en: "Web Architecture, SEO &<br><span class=\"neon\">Commercial Customer Acquisition.</span>",
+        ar: "هندسة المواقع، السيو و<br><span class=\"neon\">استقطاب العملاء والمبيعات.</span>"
+    },
+    exp_hero_sub: {
+        fr: "Chaque région, chaque secteur et chaque projet répond à des exigences techniques et concurrentielles uniques. Explorez nos <strong>9 pôles d'excellence</strong> conçus pour positionner votre entreprise en leader digital au Maroc.",
+        en: "Each region, sector and project meets unique technical and competitive challenges. Explore our <strong>9 centers of excellence</strong> engineered to position your business as a digital leader in Morocco.",
+        ar: "تتميز كل جهة وقطاع ومشروع بمتطلبات تقنية وتنافسية فريدة. اكتشف <strong>محاورنا الـ 9 الرائدة</strong> والمصممة لوضع شركتك في صدارة المشهد الرقمي بالمغرب."
+    },
     nav_casablanca: {
         fr: "Casablanca",
         en: "Casablanca",
@@ -1796,6 +1816,21 @@ const translations = {
         fr: "Expertise",
         en: "Expertise",
         ar: "خبراتنا"
+    },
+    exp_badge: {
+        fr: "<span class=\"badge-flag\">🇲🇦</span> NOS PÔLES D'EXPERTISE AU MAROC",
+        en: "<span class=\"badge-flag\">🇲🇦</span> OUR DIGITAL EXPERTISE IN MOROCCO",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> مجالات خبرتنا الرقمية في المغرب"
+    },
+    exp_hero_title: {
+        fr: "Architecture Web, SEO &<br><span class=\"neon\">Acquisition Commerciale.</span>",
+        en: "Web Architecture, SEO &<br><span class=\"neon\">Commercial Acquisition.</span>",
+        ar: "هندسة المواقع، السيو و<br><span class=\"neon\">جلب الزبائن التجاريين.</span>"
+    },
+    exp_hero_sub: {
+        fr: "Chaque région, chaque secteur et chaque projet répond à des exigences techniques et concurrentielles uniques. Explorez nos 9 pôles d'excellence conçus pour positionner votre entreprise en leader digital au Maroc.",
+        en: "Every region, sector and project responds to unique technical and competitive requirements. Explore our 9 centers of excellence designed to position your business as a digital leader in Morocco.",
+        ar: "تستجيب كل جهة وقطاع لمتطلبات تقنية وتنافسية فريدة. اكتشف مجالات تميزنا الـ 9 المصممة لترسيخ ريادة مقاولتك الرقمية في المغرب."
     },
     nav_realisations: {
         fr: "Réalisations",
@@ -5024,6 +5059,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Réalisations & Études de Cas": { en: "Portfolio & Case Studies", ar: "الإنجازات ودراسات الحالة" },
             "Processus & Méthodologie": { en: "Process & Methodology", ar: "المسار والمنهجية" },
             "Diagnostic de Visibilité": { en: "Visibility Diagnostic", ar: "تشخيص الرؤية الرقمية" },
+            "Nos Expertises Digitales": { en: "Our Digital Expertise", ar: "مجالات خبرتنا الرقمية" },
             "Notre Approche Digitale": { en: "Our Digital Approach", ar: "منهجيتنا الرقمية" }
         };
         document.querySelectorAll('.footer-seo-tags a span').forEach(span => {
@@ -5051,6 +5087,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Référencement SEO": { en: "Google SEO in Casablanca | ASSURLEAD", ar: "السيو والتموضع على غوغل بالدار البيضاء | أسورليد" },
             "Génération de Leads": { en: "Insurance Leads in Morocco | ASSURLEAD", ar: "جلب عملاء التأمين في المغرب | أسورليد" },
             "Diagnostic": { en: "Google Visibility Diagnostic | ASSURLEAD", ar: "تشخيص الرؤية الرقمية على غوغل | أسورليد" },
+            "Expertise": { en: "Our Digital & SEO Expertise in Morocco | ASSURLEAD", ar: "مجالات خبرتنا الرقمية والسيو بالمغرب | أسورليد" },
             "Réalisations": { en: "Client Portfolio & Case Studies | ASSURLEAD", ar: "إنجازاتنا ودراسات الحالة | أسورليد" }
         };
         const curTitle = document.title;
@@ -6711,34 +6748,59 @@ document.addEventListener('DOMContentLoaded', () => {
         const dropdowns = document.querySelectorAll('.nav-dropdown');
         dropdowns.forEach(dd => {
             const toggle = dd.querySelector('.nav-dropdown-toggle');
+            const arrowBtn = dd.querySelector('.nav-dropdown-arrow-btn');
             const menu = dd.querySelector('.nav-dropdown-menu');
-            if (!toggle || !menu) return;
+            if (!menu) return;
 
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const isOpen = dd.classList.toggle('is-open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
+            // Link click: if placeholder, toggle; if real link (/expertise.html), allow navigation
+            if (toggle) {
+                toggle.addEventListener('click', (e) => {
+                    const href = toggle.getAttribute('href');
+                    if (!href || href === 'javascript:void(0)' || href === '#') {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const isOpen = dd.classList.toggle('is-open');
+                        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                        if (arrowBtn) arrowBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    }
+                });
+            }
 
+            // Arrow button: explicit toggle
+            if (arrowBtn) {
+                arrowBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const isOpen = dd.classList.toggle('is-open');
+                    arrowBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    if (toggle) toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+
+            // Close when clicking outside
             document.addEventListener('click', (e) => {
                 if (!dd.contains(e.target)) {
                     dd.classList.remove('is-open');
-                    toggle.setAttribute('aria-expanded', 'false');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
                 }
             });
 
+            // Close on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && dd.classList.contains('is-open')) {
                     dd.classList.remove('is-open');
-                    toggle.setAttribute('aria-expanded', 'false');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
                 }
             });
 
-            menu.querySelectorAll('.nav-dropdown-item').forEach(link => {
+            // Close when any link inside the menu is clicked
+            menu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     dd.classList.remove('is-open');
-                    toggle.setAttribute('aria-expanded', 'false');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
                     const navLinks = document.querySelector('.nav-links');
                     const mobileToggle = document.getElementById('mobile-menu-toggle');
                     if (navLinks && navLinks.classList.contains('active')) {
