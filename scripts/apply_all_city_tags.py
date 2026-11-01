@@ -10,7 +10,7 @@ PAGE_CONFIGS = {
     "tanger.html": "tgr",
     "fes.html": "fes",
     "agadir.html": "aga",
-    "expertise.html": "exp",
+    "creation-site-web-maroc.html": "maroc",
     "referencement-seo-casablanca.html": "seo_casa",
     "generation-leads-assurance-maroc.html": "leads",
 }

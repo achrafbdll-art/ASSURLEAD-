@@ -69,27 +69,12 @@
         <priority>0.80</priority>
     </url>
 
-    <!-- Hub Expertise & Casablanca -->
-    <url>
-        <loc>https://www.assurleadcom.com/expertise.html</loc>
-        <lastmod>2026-11-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-    <url>
-        <loc>https://www.assurleadcom.com/creation-site-web-casablanca.html</loc>
-        <lastmod>2026-11-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-
     <!-- Diagnostic, Processus, Approche -->
     <url>
         <loc>https://www.assurleadcom.com/diagnostic.html</loc>
         <lastmod>2026-10-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
-    </url>
     <url>
         <loc>https://www.assurleadcom.com/approche.html</loc>
         <lastmod>2026-10-08</lastmod>
