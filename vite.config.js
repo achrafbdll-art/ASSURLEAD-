@@ -24,7 +24,7 @@ export default defineConfig({
         realisations: resolve(__dirname, 'realisations.html'),
         realisation_el_omrani: resolve(__dirname, 'realisation-el-omrani.html'),
         creation_site_web_casablanca: resolve(__dirname, 'creation-site-web-casablanca.html'),
-        creation_site_web_maroc: resolve(__dirname, 'creation-site-web-maroc.html'),
+        expertise: resolve(__dirname, 'expertise.html'),
         rabat: resolve(__dirname, 'rabat.html'),
         marrakech: resolve(__dirname, 'marrakech.html'),
         tanger: resolve(__dirname, 'tanger.html'),

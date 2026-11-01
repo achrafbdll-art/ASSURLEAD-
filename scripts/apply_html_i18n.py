@@ -9,7 +9,7 @@ def update_nav(html):
     # Standardize links
     html = re.sub(r'<a\s+href="/"([^>]*)>Accueil</a>', r'<a href="/\1 data-i18n="nav_home">Accueil</a>', html)
     html = re.sub(r'<a\s+href="/creation-site-web-casablanca\.html"([^>]*)>Casablanca</a>', r'<a href="/creation-site-web-casablanca.html"\1 data-i18n="nav_casablanca">Casablanca</a>', html)
-    html = re.sub(r'<a\s+href="/creation-site-web-maroc\.html"([^>]*)>Maroc</a>', r'<a href="/creation-site-web-maroc.html"\1 data-i18n="nav_maroc">Maroc</a>', html)
+    html = re.sub(r'<a\s+href="/expertise\.html"([^>]*)>Expertise</a>', r'<a href="/expertise.html"\1 data-i18n="nav_expertise">Expertise</a>', html)
     html = re.sub(r'<a\s+href="/realisations\.html"([^>]*)>Réalisations</a>', r'<a href="/realisations.html"\1 data-i18n="nav_realisations">Réalisations</a>', html)
     html = re.sub(r'<a\s+href="/processus\.html"([^>]*)>Processus</a>', r'<a href="/processus.html"\1 data-i18n="nav_processus">Processus</a>', html)
     html = re.sub(r'<a\s+href="/approche\.html"([^>]*)>Notre Approche</a>', r'<a href="/approche.html"\1 data-i18n="nav_approche">Notre Approche</a>', html)
