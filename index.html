@@ -44,7 +44,7 @@
       "description": "Agence de génération de leads organiques au Maroc grâce à la création de sites web optimisés pour Google.",
       "url": "https://www.assurleadcom.com",
       "telephone": "+212707573162",
-      "email": "achrafbdll@gmail.com",
+      "email": "contact@assurleadcom.com",
       "priceRange": "1500 MAD - 12000 MAD",
       "address": {
         "@type": "PostalAddress",
@@ -110,11 +110,62 @@
             </a>
             <ul class="nav-links">
                 <li><a href="/" class="active" data-i18n="nav_home">Accueil</a></li>
-                <li><a href="/creation-site-web-casablanca.html" data-i18n="nav_casablanca">Casablanca</a></li>
-                <li><a href="/creation-site-web-maroc.html" data-i18n="nav_maroc">Maroc</a></li>
+                <li class="nav-dropdown">
+                    <a href="/expertise.html" class="nav-dropdown-toggle" id="nav-expertise-toggle">
+                        <span data-i18n="nav_expertise">Expertise</span>
+                    </a>
+                    <button type="button" class="nav-dropdown-arrow-btn" aria-label="Afficher les sous-expertises" aria-expanded="false">
+                        <i class="fas fa-chevron-down nav-dropdown-arrow"></i>
+                    </button>
+                    <div class="nav-dropdown-menu" id="nav-expertise-menu">
+                        <div class="nav-dropdown-banner">
+                            <a href="/expertise.html" class="nav-dropdown-hub-link">
+                                <i class="fas fa-compass"></i>
+                                <span><strong>Hub Expertise</strong> — Vue d'ensemble de tous nos pôles</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="nav-dropdown-inner">
+                            <div class="nav-dropdown-group">
+                                <span class="nav-dropdown-header"><i class="fas fa-map-marker-alt"></i> VILLES & CRÉATION WEB</span>
+                                <a href="/rabat.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Rabat</span>
+                                </a>
+                                <a href="/marrakech.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Marrakech</span>
+                                </a>
+                                <a href="/tanger.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Tanger</span>
+                                </a>
+                                <a href="/fes.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Fès</span>
+                                </a>
+                                <a href="/agadir.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Création site web Agadir</span>
+                                </a>
+                            </div>
+                            <div class="nav-dropdown-group">
+                                <span class="nav-dropdown-header"><i class="fas fa-chart-line"></i> STRATÉGIE & ACQUISITION</span>
+                                <a href="/referencement-seo-casablanca.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Référencement SEO Casablanca</span>
+                                </a>
+                                <a href="/generation-leads-assurance-maroc.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Leads Assurance Maroc</span>
+                                </a>
+                                <a href="/realisations.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">Réalisations & Études de Cas</span>
+                                </a>
+                                <a href="/diagnostic.html" class="nav-dropdown-item highlight-item">
+                                    <span class="nav-dropdown-title"><span class="diag-pulse-dot"></span> Diagnostic de Visibilité</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
+                <li><a href="#offres" class="nav-offer-badge-link" data-open-special-offer><span class="nav-offer-fire"><i class="fas fa-fire"></i></span> <span data-i18n="nav_offer_tag">Moins de 8j • Offre</span></a></li>
                 <li><a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav_start">Audit Gratuit</a></li>
             </ul>
             <div class="nav-right">
@@ -157,9 +208,27 @@
         </div>
         <div class="container hero-grid">
             <div class="hero-content">
-                <span class="badge hero-badge-shooting" data-i18n="hero_badge"><span class="badge-flag">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <i class="fas fa-meteor shooting-icon"></i></span>
-                <h1 data-i18n="hero_title">Prenez la 1ère place sur Google.<br><span class="neon">Captez vos clients dès aujourd'hui.</span> <span class="morocco-flag-badge" aria-label="Maroc" title="Maroc"><svg class="morocco-flag-svg" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="30" height="20" rx="3" fill="#C1272D"/><path d="M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z" fill="none" stroke="#00FF41" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h1>
-                <p data-i18n="hero_paragraph">Nous créons des sites web optimisés pour Google afin de transformer votre visibilité en leads et vos leads en clients. Un moteur d'acquisition pérenne conçu pour le marché marocain.</p>
+                <div class="hero-rubrique-card">
+                    <div class="hero-rubrique-top">
+                        <span class="badge hero-badge-shooting" data-i18n="hero_badge"><span class="badge-flag">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <span class="badge-pulse-box"><img src="/assets/aistudio/image_93f7aae1.png" class="badge-pulse-icon" alt="Pulse"></span></span>
+                    </div>
+                    <h1 data-i18n="hero_title">Création de Site Web Sur Mesure au Maroc.<br><span class="neon">Captez vos clients dès aujourd'hui.</span> <span class="morocco-flag-badge" aria-label="Maroc" title="Maroc"><svg class="morocco-flag-svg" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="30" height="20" rx="3" fill="#C1272D"/><path d="M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z" fill="none" stroke="#00FF41" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h1>
+                    
+                    <div class="hero-pulse-divider" aria-hidden="true">
+                        <div class="hero-pulse-icon-badge">
+                            <img src="/assets/aistudio/image_93f7aae1.png" alt="Flux d'acquisition" class="hero-pulse-main-img">
+                            <span class="pulse-live-text"><span class="pulse-live-dot"></span> LIVE ACQUISITION</span>
+                        </div>
+                        <div class="hero-pulse-wave-track">
+                            <svg class="hero-pulse-wave-svg" viewBox="0 0 240 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="hero-pulse-wave-line" d="M 0 19 L 60 19 L 72 26 L 88 4 L 106 34 L 120 12 L 132 23 L 142 19 L 240 19" stroke="#00FF41" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <circle class="hero-pulse-wave-dot" cx="88" cy="4" r="3.5" fill="#00FF41" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <p data-i18n="hero_paragraph">Générez Plus de Prospects & Vendez Plus. Nous concevons des sites web haut de gamme, ultra rapides, optimisés pour Google (SEO) et taillés pour convertir vos visiteurs en clients.</p>
+                </div>
                 
                 <!-- Le Mécanisme Commercial Visuel -->
                 <div class="hero-mechanism-strip">
@@ -177,6 +246,14 @@
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary" data-i18n="hero_btn_growth">Demander un audit gratuit (15 min) <i class="fas fa-arrow-right"></i></a>
                     <a href="#methode" class="btn btn-outline" data-i18n="hero_btn_audit">Voir comment ça fonctionne</a>
+                </div>
+                <!-- Tag Offre Spéciale Urgence -->
+                <div class="hero-urgency-tag-wrapper">
+                    <a href="#offres" class="hero-urgency-tag" data-open-special-offer>
+                        <span class="hero-urgency-badge"><i class="fas fa-fire"></i> OFFRE LIMITÉE</span>
+                        <span class="hero-urgency-text" data-i18n="hero_urgency_tag">Moins de 8 jours • Fin de l'offre, profitez-en !</span>
+                        <i class="fas fa-arrow-right hero-urgency-arrow"></i>
+                    </a>
                 </div>
                 <div class="partners">
                     <span class="partners-label" data-i18n="hero_partners_label">Secteurs & Réseaux Accompagnés au Maroc</span>
@@ -254,8 +331,8 @@
                 <span class="stripe-label">Vitesse Mobile Optimale</span>
             </div>
             <div class="stripe-stat">
-                <span class="stripe-num neon">3</span>
-                <span class="stripe-label">3 projets livrés <!-- À COMPLÉTER : vraie statistique --></span>
+                <span class="stripe-num neon">+4</span>
+                <span class="stripe-label">+ 4 projets livrés</span>
             </div>
         </div>
     </section>
@@ -406,7 +483,7 @@
                     <button type="button" class="btn-special-offer-cta" id="toggle-special-offer-btn" aria-expanded="false" aria-controls="special-offer-banner">
                         <span class="special-offer-cta-icon-sparkle"><i class="fas fa-bolt"></i></span>
                         <span class="special-offer-cta-text" data-i18n="special_offer_btn">Profiter d'une offre à prix spécial</span>
-                        <span class="special-offer-cta-date-badge" data-i18n="special_offer_deadline">Offre valable jusqu'au 31/10/2026</span>
+                        <span class="special-offer-cta-date-badge special-offer-urgency-tag" data-i18n="special_offer_deadline"><i class="fas fa-fire"></i> Moins de 8 jours • Fin de l'offre, profitez-en !</span>
                         <span class="special-offer-cta-arrow"><i class="fas fa-chevron-down"></i></span>
                     </button>
                 </div>
@@ -423,7 +500,7 @@
                             <div class="promo-logo-icon">
                                 <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="26" height="26">
                             </div>
-                            <span class="promo-badge" data-i18n="promo_badge">OFFRE VALABLE JUSQU'AU 31/10/2026</span>
+                            <span class="promo-badge promo-badge-urgent" data-i18n="promo_badge"><i class="fas fa-clock"></i> MOINS DE 8 JOURS • FIN DE L'OFFRE (31/10/2026) — PROFITEZ-EN !</span>
                         </div>
                         <h3 class="promo-title" data-i18n="promo_title">CRÉATION DE SITES<br>INTERNET<br>PROFESSIONNELS</h3>
                         <p class="promo-desc" data-i18n="promo_desc">Site vitrine essentiel moderne, ultra-rapide et pensé pour rassurer vos visiteurs et capter vos premiers contacts commerciaux.</p>
@@ -741,11 +818,11 @@
                     </div>
 
                     <div class="contact-methods">
-                        <a href="mailto:achrafbdll@gmail.com" class="contact-method-card">
+                        <a href="mailto:contact@assurleadcom.com" class="contact-method-card">
                             <div class="method-icon"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <span class="method-label" data-i18n="contact_email_label">Email Dédié</span>
-                                <span class="method-val">achrafbdll@gmail.com</span>
+                                <span class="method-val">contact@assurleadcom.com</span>
                             </div>
                         </a>
                         <a href="https://wa.me/212707573162" target="_blank" rel="noopener" class="contact-method-card">
@@ -758,15 +835,9 @@
                     </div>
                 </div>
             <div class="contact-form-container">
-                <form id="questionnaire" class="questionnaire" action="https://formsubmit.co/achrafbdll@gmail.com" method="POST">
-                    <!-- Configuration FormSubmit pour réception directe à achrafbdll@gmail.com -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="[ASSURLEAD] Nouvelle demande de devis & contact">
-                    <input type="hidden" name="_next" value="#form-success">
-                    <!-- Invisible honeypot fields -->
+                <form id="questionnaire" class="questionnaire">
+                    <!-- Invisible honeypot field -->
                     <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
                     
                     <div class="steps-progress">
                         <div class="step-dot active"></div>
@@ -801,32 +872,10 @@
                         <textarea rows="4" name="message" data-i18n-placeholder="form_goal_placeholder" placeholder="VOTRE OBJECTIF DE CROISSANCE (EX: 20 LEADS/MOIS)"></textarea>
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline prev-btn" data-i18n="form_btn_back">RETOUR</button>
-                            <button type="submit" class="btn btn-primary" data-i18n="form_btn_submit">DEMANDER MON AUDIT <i class="fas fa-paper-plane"></i></button>
+                            <button type="submit" class="btn btn-primary" data-i18n="form_btn_submit">DEMANDER MON AUDIT <i class="fab fa-whatsapp"></i></button>
                         </div>
                     </div>
                 </form>
-
-                <div id="form-success" class="form-success-card hidden">
-                    <div class="success-icon-wrap">
-                        <i class="fas fa-check-circle success-icon"></i>
-                    </div>
-                    <h3 class="success-title" data-i18n="form_success_title">Demande envoyée avec succès !</h3>
-                    <p class="success-desc" data-i18n="form_success_desc">
-                        Votre demande a été transmise directement par email à <strong>achrafbdll@gmail.com</strong>. Notre équipe vous recontactera sous 24h ouvrées.
-                    </p>
-                    <div class="success-meta">
-                        <span data-i18n="form_success_sent"><i class="fas fa-envelope-circle-check"></i> Envoi direct garanti à achrafbdll@gmail.com</span>
-                        <span data-i18n="form_success_time"><i class="fas fa-clock"></i> Réponse sous 24h ouvrées</span>
-                    </div>
-                    <div class="success-actions">
-                        <a id="success-wa-btn" href="#" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="form_success_whatsapp">
-                            Discuter sur WhatsApp <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <button type="button" id="reset-form-btn" class="btn btn-outline" data-i18n="form_success_reset">
-                            Nouvelle demande <i class="fas fa-redo"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -838,8 +887,8 @@
             <div class="footer-seo-section">
                 <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
                 <div class="footer-seo-tags">
-                    <a href="/creation-site-web-casablanca.html" class="seo-tag seo-tag-highlight" title="Création site internet Casablanca">
-                        <i class="fas fa-map-marker-alt"></i> <span data-i18n="seo_tag_casa">Création site internet Casablanca</span>
+                    <a href="/expertise.html" class="seo-tag seo-tag-highlight" title="Nos Expertises Digitales">
+                        <i class="fas fa-compass"></i> <span>Nos Expertises Digitales</span>
                     </a>
                     <a href="/rabat.html" class="seo-tag" title="Création site internet Rabat">
                         <i class="fas fa-map-marker-alt"></i> <span data-i18n="seo_tag_rabat">Création site internet Rabat</span>
@@ -855,9 +904,6 @@
                     </a>
                     <a href="/agadir.html" class="seo-tag" title="Création site internet Agadir">
                         <i class="fas fa-map-marker-alt"></i> <span>Création site internet Agadir</span>
-                    </a>
-                    <a href="/creation-site-web-maroc.html" class="seo-tag seo-tag-highlight" title="Agence web Maroc">
-                        <i class="fas fa-globe"></i> <span data-i18n="seo_tag_agence">Agence web Maroc</span>
                     </a>
                     <a href="/referencement-seo-casablanca.html" class="seo-tag" title="Référencement SEO Casablanca">
                         <i class="fas fa-search"></i> <span data-i18n="seo_tag_seo">Référencement SEO Casablanca</span>

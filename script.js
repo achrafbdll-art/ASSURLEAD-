@@ -306,6 +306,26 @@ const translations = {
         en: "Home",
         ar: "الرئيسية"
     },
+    nav_expertise: {
+        fr: "Expertise",
+        en: "Expertise",
+        ar: "مجالات الخبرة"
+    },
+    exp_badge: {
+        fr: "<span class=\"badge-flag\">🇲🇦</span> NOS PÔLES D'EXPERTISE AU MAROC",
+        en: "<span class=\"badge-flag\">🇲🇦</span> OUR AREAS OF EXPERTISE IN MOROCCO",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> مجالات خبرتنا الرقمية في المغرب"
+    },
+    exp_hero_title: {
+        fr: "Architecture Web, SEO &<br><span class=\"neon\">Acquisition Commerciale.</span>",
+        en: "Web Architecture, SEO &<br><span class=\"neon\">Commercial Customer Acquisition.</span>",
+        ar: "هندسة المواقع، السيو و<br><span class=\"neon\">استقطاب العملاء والمبيعات.</span>"
+    },
+    exp_hero_sub: {
+        fr: "Chaque région, chaque secteur et chaque projet répond à des exigences techniques et concurrentielles uniques. Explorez nos <strong>9 pôles d'excellence</strong> conçus pour positionner votre entreprise en leader digital au Maroc.",
+        en: "Each region, sector and project meets unique technical and competitive challenges. Explore our <strong>9 centers of excellence</strong> engineered to position your business as a digital leader in Morocco.",
+        ar: "تتميز كل جهة وقطاع ومشروع بمتطلبات تقنية وتنافسية فريدة. اكتشف <strong>محاورنا الـ 9 الرائدة</strong> والمصممة لوضع شركتك في صدارة المشهد الرقمي بالمغرب."
+    },
     nav_casablanca: {
         fr: "Casablanca",
         en: "Casablanca",
@@ -1792,6 +1812,26 @@ const translations = {
         en: "Diagnostic",
         ar: "التشخيص"
     },
+    nav_expertise: {
+        fr: "Expertise",
+        en: "Expertise",
+        ar: "خبراتنا"
+    },
+    exp_badge: {
+        fr: "<span class=\"badge-flag\">🇲🇦</span> NOS PÔLES D'EXPERTISE AU MAROC",
+        en: "<span class=\"badge-flag\">🇲🇦</span> OUR DIGITAL EXPERTISE IN MOROCCO",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> مجالات خبرتنا الرقمية في المغرب"
+    },
+    exp_hero_title: {
+        fr: "Architecture Web, SEO &<br><span class=\"neon\">Acquisition Commerciale.</span>",
+        en: "Web Architecture, SEO &<br><span class=\"neon\">Commercial Acquisition.</span>",
+        ar: "هندسة المواقع، السيو و<br><span class=\"neon\">جلب الزبائن التجاريين.</span>"
+    },
+    exp_hero_sub: {
+        fr: "Chaque région, chaque secteur et chaque projet répond à des exigences techniques et concurrentielles uniques. Explorez nos 9 pôles d'excellence conçus pour positionner votre entreprise en leader digital au Maroc.",
+        en: "Every region, sector and project responds to unique technical and competitive requirements. Explore our 9 centers of excellence designed to position your business as a digital leader in Morocco.",
+        ar: "تستجيب كل جهة وقطاع لمتطلبات تقنية وتنافسية فريدة. اكتشف مجالات تميزنا الـ 9 المصممة لترسيخ ريادة مقاولتك الرقمية في المغرب."
+    },
     nav_realisations: {
         fr: "Réalisations",
         en: "Case Studies",
@@ -2339,19 +2379,19 @@ const translations = {
     },
     // Hero
     hero_badge: {
-        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <i class=\"fas fa-meteor shooting-icon\"></i>",
-        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco <i class=\"fas fa-meteor shooting-icon\"></i>",
-        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <i class=\"fas fa-meteor shooting-icon\"></i>"
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>"
     },
     hero_title: {
-        fr: "Prenez la 1ère place sur Google.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        en: "Take #1 Rank on Google.<br><span class=\"neon\">Capture your clients starting today.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        ar: "تصدر المرتبة الأولى في غوغل.<br><span class=\"neon\">استقطب عملاءك ابتداءً من اليوم.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
+        fr: "Création de Site Web Sur Mesure au Maroc.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        en: "Custom Website Creation in Morocco.<br><span class=\"neon\">Capture your clients starting today.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        ar: "إنشاء مواقع إلكترونية حسب الطلب بالمغرب.<br><span class=\"neon\">استقطب عملاءك ابتداءً من اليوم.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
-        fr: "Agence leader en création de site web à Casablanca et partout au Maroc. Nous concevons des sites internet ultra-performants et optimisés pour le SEO Google local afin de capter un flux continu de clients prêts à signer.",
-        en: "Top agency for website creation in Casablanca and across Morocco. We build high-speed, SEO-engineered websites designed to rank #1 on Google and turn local search demand into qualified clients.",
-        ar: "الوكالة الرائدة في إنشاء المواقع الإلكترونية بالدار البيضاء وكافة مدن المغرب. نبني مواقع فائقة السرعة ومتوافقة مع خوارزميات غوغل لتصدر نتائج البحث وتحويل الزوار لعملاء فعليين."
+        fr: "Générez Plus de Prospects & Vendez Plus. Nous concevons des sites web haut de gamme, ultra rapides, optimisés pour Google (SEO) et taillés pour convertir vos visiteurs en clients.",
+        en: "Generate More Leads & Sell More. We craft high-end, lightning-fast websites engineered for Google SEO and tailored to convert your visitors into paying clients.",
+        ar: "استقطب المزيد من العملاء وحقق مبيعات أعلى. نصمم مواقع إلكترونية راقية وفائقة السرعة، متوافقة مع محركات البحث (SEO) ومصممة لتحويل الزوار إلى زبائن فعليين."
     },
     hero_btn_growth: {
         fr: "Demander un audit gratuit (15 min) <i class=\"fas fa-arrow-right\"></i>",
@@ -2661,14 +2701,24 @@ const translations = {
         ar: "الاستفادة من عرض بسعر خاص"
     },
     special_offer_deadline: {
-        fr: "jusqu'au 31/10/2026",
-        en: "until 31/10/2026",
-        ar: "حتى 31/10/2026"
+        fr: "<i class=\"fas fa-fire\"></i> Moins de 8 jours • Fin de l'offre, profitez-en !",
+        en: "<i class=\"fas fa-fire\"></i> Less than 8 days left • Offer ending soon, take advantage!",
+        ar: "<i class=\"fas fa-fire\"></i> أقل من 8 أيام • نهاية العرض، استفد الآن!"
     },
     promo_badge: {
-        fr: "OFFRE SPÉCIALE",
-        en: "SPECIAL OFFER",
-        ar: "عرض خاص"
+        fr: "<i class=\"fas fa-clock\"></i> MOINS DE 8 JOURS • FIN DE L'OFFRE (31/10/2026) — PROFITEZ-EN !",
+        en: "<i class=\"fas fa-clock\"></i> LESS THAN 8 DAYS LEFT • END OF OFFER (31/10/2026) — TAKE ADVANTAGE!",
+        ar: "<i class=\"fas fa-clock\"></i> أقل من 8 أيام • نهاية العرض (31/10/2026) — استفد الآن!"
+    },
+    hero_urgency_tag: {
+        fr: "Moins de 8 jours • Fin de l'offre, profitez-en !",
+        en: "Less than 8 days left • Offer ending soon, take advantage!",
+        ar: "أقل من 8 أيام • نهاية العرض، استفد الآن!"
+    },
+    nav_offer_tag: {
+        fr: "Moins de 8j • Offre",
+        en: "Offer: < 8 days",
+        ar: "العرض: أقل من 8 أيام"
     },
     promo_title: {
         fr: "CRÉATION DE SITES<br>INTERNET<br>PROFESSIONNELS",
@@ -3137,39 +3187,9 @@ const translations = {
         ar: "المنتجات المستهدفة (سيارات، صحة، شركات) وعدد العقود الشهرية المرجوة..."
     },
     form_btn_submit: {
-        fr: "DEMANDER MON AUDIT <i class=\"fas fa-paper-plane\"></i>",
-        en: "REQUEST MY AUDIT <i class=\"fas fa-paper-plane\"></i>",
-        ar: "طلب التدقيق المجاني <i class=\"fas fa-paper-plane\"></i>"
-    },
-    form_success_title: {
-        fr: "Demande envoyée avec succès !",
-        en: "Request sent successfully!",
-        ar: "تم إرسال الطلب بنجاح!"
-    },
-    form_success_desc: {
-        fr: "Votre demande a été transmise directement par email à <strong>achrafbdll@gmail.com</strong>. Notre équipe vous recontactera sous 24h ouvrées.",
-        en: "Your request has been delivered directly to <strong>achrafbdll@gmail.com</strong>. Our team will contact you within 24 business hours.",
-        ar: "تم إرسال طلبك مباشرة عبر البريد الإلكتروني إلى <strong>achrafbdll@gmail.com</strong>. سيتواصل معك فريقنا خلال 24 ساعة عمل."
-    },
-    form_success_sent: {
-        fr: "<i class=\"fas fa-envelope-circle-check\"></i> Envoi direct garanti à achrafbdll@gmail.com",
-        en: "<i class=\"fas fa-envelope-circle-check\"></i> Direct delivery guaranteed to achrafbdll@gmail.com",
-        ar: "<i class=\"fas fa-envelope-circle-check\"></i> إرسال مباشر ومضمون إلى achrafbdll@gmail.com"
-    },
-    form_success_time: {
-        fr: "<i class=\"fas fa-clock\"></i> Réponse sous 24h ouvrées",
-        en: "<i class=\"fas fa-clock\"></i> Response within 24 business hours",
-        ar: "<i class=\"fas fa-clock\"></i> رد خلال 24 ساعة عمل"
-    },
-    form_success_whatsapp: {
-        fr: "Discuter sur WhatsApp <i class=\"fab fa-whatsapp\"></i>",
-        en: "Chat on WhatsApp <i class=\"fab fa-whatsapp\"></i>",
-        ar: "محادثة عبر واتساب <i class=\"fab fa-whatsapp\"></i>"
-    },
-    form_success_reset: {
-        fr: "Nouvelle demande <i class=\"fas fa-redo\"></i>",
-        en: "New request <i class=\"fas fa-redo\"></i>",
-        ar: "طلب جديد <i class=\"fas fa-redo\"></i>"
+        fr: "DEMANDER MON AUDIT <i class=\"fas fa-bolt\"></i>",
+        en: "REQUEST MY AUDIT <i class=\"fas fa-bolt\"></i>",
+        ar: "طلب التدقيق المجاني <i class=\"fas fa-bolt\"></i>"
     },
     // Footer
     footer_seo_title: {
@@ -3547,6 +3567,14 @@ const fullTextDictionary = {
   "2. Ingénierie & Contenus": {
     "en": "2. Engineering & Content",
     "ar": "2. الهندسة وصياغة المحتوى"
+  },
+  "+ 4 projets livrés": {
+    "en": "+ 4 Projects Delivered",
+    "ar": "+ 4 مشاريع منجزة"
+  },
+  "+4 projets livrés": {
+    "en": "+ 4 Projects Delivered",
+    "ar": "+ 4 مشاريع منجزة"
   },
   "3 projets livrés": {
     "en": "3 Projects Delivered",
@@ -4764,13 +4792,9 @@ const fullTextDictionary = {
     "en": "with LocalBusiness / ProfessionalService Schema.org tagging.",
     "ar": "مع بيانات Schema.org المنظمة للمقاولات والخدمات المهنية."
   },
-  "achrafbdll@gmail.com": {
-    "en": "achrafbdll@gmail.com",
-    "ar": "achrafbdll@gmail.com"
-  },
   "contact@assurleadcom.com": {
-    "en": "achrafbdll@gmail.com",
-    "ar": "achrafbdll@gmail.com"
+    "en": "contact@assurleadcom.com",
+    "ar": "contact@assurleadcom.com"
   },
   "création de site web au Maroc": {
     "en": "website creation in Morocco",
@@ -5035,6 +5059,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Réalisations & Études de Cas": { en: "Portfolio & Case Studies", ar: "الإنجازات ودراسات الحالة" },
             "Processus & Méthodologie": { en: "Process & Methodology", ar: "المسار والمنهجية" },
             "Diagnostic de Visibilité": { en: "Visibility Diagnostic", ar: "تشخيص الرؤية الرقمية" },
+            "Nos Expertises Digitales": { en: "Our Digital Expertise", ar: "مجالات خبرتنا الرقمية" },
             "Notre Approche Digitale": { en: "Our Digital Approach", ar: "منهجيتنا الرقمية" }
         };
         document.querySelectorAll('.footer-seo-tags a span').forEach(span => {
@@ -5062,6 +5087,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Référencement SEO": { en: "Google SEO in Casablanca | ASSURLEAD", ar: "السيو والتموضع على غوغل بالدار البيضاء | أسورليد" },
             "Génération de Leads": { en: "Insurance Leads in Morocco | ASSURLEAD", ar: "جلب عملاء التأمين في المغرب | أسورليد" },
             "Diagnostic": { en: "Google Visibility Diagnostic | ASSURLEAD", ar: "تشخيص الرؤية الرقمية على غوغل | أسورليد" },
+            "Expertise": { en: "Our Digital & SEO Expertise in Morocco | ASSURLEAD", ar: "مجالات خبرتنا الرقمية والسيو بالمغرب | أسورليد" },
             "Réalisations": { en: "Client Portfolio & Case Studies | ASSURLEAD", ar: "إنجازاتنا ودراسات الحالة | أسورليد" }
         };
         const curTitle = document.title;
@@ -5890,27 +5916,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Reset button handler to allow new submissions
-        const resetBtn = document.getElementById('reset-form-btn');
-        if (resetBtn) {
-            resetBtn.addEventListener('click', () => {
-                form.reset();
-                currentStep = 0;
-                updateSteps();
-                const successCard = document.getElementById('form-success');
-                if (successCard) successCard.classList.add('hidden');
-                form.classList.remove('hidden');
-                const firstInput = form.querySelector('input');
-                if (firstInput) firstInput.focus();
-            });
-        }
-
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
             if (!validateStep()) return;
             
             // Honeypot validation
-            const honeyInput = form.querySelector('[name="_honey"]') || form.querySelector('[name="_gotcha"]') || form.querySelector('[name="website"]');
+            const honeyInput = form.querySelector('[name="_honey"]') || form.querySelector('[name="website"]');
             if (honeyInput && honeyInput.value.trim() !== "") {
                 return; // Bot detected, quietly abort
             }
@@ -5934,21 +5945,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Target recipient email directly requested by client
-            const TARGET_EMAIL = 'achrafbdll@gmail.com';
-
+            // Trigger visual feedback and redirect to WhatsApp with prefilled message
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn ? submitBtn.innerHTML : '';
             if (submitBtn) {
                 submitBtn.disabled = true;
                 const lang = localStorage.getItem('assurlead_lang') || 'fr';
-                const sendingText = {
-                    fr: '<i class="fas fa-circle-notch fa-spin"></i> ENVOI DIRECT À ' + TARGET_EMAIL + '...',
-                    en: '<i class="fas fa-circle-notch fa-spin"></i> SENDING DIRECTLY TO ' + TARGET_EMAIL + '...',
-                    ar: '<i class="fas fa-circle-notch fa-spin"></i> جاري الإرسال المباشر إلى البريد...'
+                const redirectText = {
+                    fr: '<i class="fab fa-whatsapp"></i> REDIRECTION WHATSAPP...',
+                    en: '<i class="fab fa-whatsapp"></i> REDIRECTING TO WHATSAPP...',
+                    ar: '<i class="fab fa-whatsapp"></i> تحويل إلى واتساب...'
                 };
-                submitBtn.innerHTML = sendingText[lang] || sendingText.fr;
+                submitBtn.innerHTML = redirectText[lang] || redirectText.fr;
             }
+
+            triggerConfetti();
 
             const waText = `*Nouvelle Demande de Contact (Formulaire)*%0A%0A` +
                            `👤 *Nom :* ${encodeURIComponent(nameVal)}%0A` +
@@ -5958,79 +5969,13 @@ document.addEventListener('DOMContentLoaded', () => {
                            `✉️ *Email :* ${encodeURIComponent(emailVal)}%0A` +
                            `💬 *Message :* ${encodeURIComponent(messageVal || 'Demande de renseignement')}`;
 
-            // Prepare payload for direct email delivery to achrafbdll@gmail.com
-            const payload = {
-                "Nom Complet": nameVal,
-                "Email": emailVal,
-                "Téléphone": phoneVal,
-                "Activité / Ville": agencyVal,
-                "Message / Objectif": messageVal || 'Demande d\'audit et devis',
-                "_subject": `[ASSURLEAD Contact] ${nameVal} - ${agencyVal || 'Prospect'}`,
-                "_template": "table",
-                "_captcha": "false",
-                "_replyto": emailVal,
-                "Date de réception": new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablanca' })
-            };
-
-            let sentSuccess = false;
-            try {
-                const response = await fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    if (data.success === 'true' || data.success === true || response.status === 200) {
-                        sentSuccess = true;
-                    }
+            setTimeout(() => {
+                window.location.href = `https://wa.me/212707573162?text=${waText}`;
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
                 }
-            } catch (err) {
-                console.warn('FormSubmit AJAX notice:', err);
-            }
-
-            // Fallback via FormData if AJAX json wasn't confirmed
-            if (!sentSuccess) {
-                try {
-                    const fd = new FormData();
-                    Object.keys(payload).forEach(key => fd.append(key, payload[key]));
-                    const fbResp = await fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
-                        method: 'POST',
-                        body: fd,
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    if (fbResp.ok) {
-                        sentSuccess = true;
-                    }
-                } catch (e) {
-                    console.warn('Fallback submit attempt:', e);
-                }
-            }
-
-            triggerConfetti();
-
-            // Display rich success message
-            const successCard = document.getElementById('form-success');
-            const waBtn = document.getElementById('success-wa-btn');
-            if (waBtn) {
-                waBtn.href = `https://wa.me/212707573162?text=${waText}`;
-            }
-
-            if (successCard) {
-                form.classList.add('hidden');
-                successCard.classList.remove('hidden');
-                successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            } else {
-                alert('Merci ! Votre demande a été transmise directement par email à ' + TARGET_EMAIL);
-            }
-
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            }
+            }, 600);
         });
     };
 
@@ -6755,6 +6700,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeOffer();
             });
         }
+
+        document.querySelectorAll('[data-open-special-offer]').forEach(el => {
+            el.addEventListener('click', (e) => {
+                openOffer();
+            });
+        });
     };
 
     // Interactive Moroccan Cities Stickers Cluster
@@ -6791,6 +6742,77 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initFaqAccordion();
     initSpecialOfferToggle();
+
+    // Nav Dropdown (Expertise)
+    const initNavDropdown = () => {
+        const dropdowns = document.querySelectorAll('.nav-dropdown');
+        dropdowns.forEach(dd => {
+            const toggle = dd.querySelector('.nav-dropdown-toggle');
+            const arrowBtn = dd.querySelector('.nav-dropdown-arrow-btn');
+            const menu = dd.querySelector('.nav-dropdown-menu');
+            if (!menu) return;
+
+            // Link click: if placeholder, toggle; if real link (/expertise.html), allow navigation
+            if (toggle) {
+                toggle.addEventListener('click', (e) => {
+                    const href = toggle.getAttribute('href');
+                    if (!href || href === 'javascript:void(0)' || href === '#') {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const isOpen = dd.classList.toggle('is-open');
+                        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                        if (arrowBtn) arrowBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    }
+                });
+            }
+
+            // Arrow button: explicit toggle
+            if (arrowBtn) {
+                arrowBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const isOpen = dd.classList.toggle('is-open');
+                    arrowBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    if (toggle) toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!dd.contains(e.target)) {
+                    dd.classList.remove('is-open');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && dd.classList.contains('is-open')) {
+                    dd.classList.remove('is-open');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close when any link inside the menu is clicked
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    dd.classList.remove('is-open');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
+                    const navLinks = document.querySelector('.nav-links');
+                    const mobileToggle = document.getElementById('mobile-menu-toggle');
+                    if (navLinks && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        if (mobileToggle) mobileToggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+        });
+    };
+    initNavDropdown();
 
     
     // --- PIPELINE TRACKER & PHASE TABS (PROCESSUS.HTML) ---
