@@ -587,24 +587,9 @@ const translations = {
         ar: "أسعار واضحة وبدون أي رسوم خفية"
     },
     pricing_section_desc: {
-        fr: "Nos formules répondent aux besoins réels des entreprises du Maroc, du lancement au système d'acquisition complet.",
-        en: "Our plans fit the real needs of Moroccan businesses, from early launch to full-scale lead machines.",
-        ar: "باقاتنا تلبي الاحتياجات الحقيقية للشركات في المغرب، من الانطلاقة وحتى منظومة الاستقطاب المتكاملة."
-    },
-    price_launch_badge: {
-        fr: "OFFRE DE LANCEMENT",
-        en: "LAUNCH OFFER",
-        ar: "عرض الإطلاق"
-    },
-    price_p1_title: {
-        fr: "Vitrine Essentielle — 1 500 DH",
-        en: "Essential Showcase — 1,500 DH",
-        ar: "الموقع التعريفي الأساسي — 1500 درهم"
-    },
-    price_p1_desc: {
-        fr: "Offre valable jusqu'au 31/10/2026. Idéale pour démarrer avec une page de présentation soignée (n'inclut pas de SEO avancé ni de pages services dédiées).",
-        en: "Offer valid until 31/10/2026. Ideal to start with a polished single landing page (excludes advanced SEO and dedicated service subpages).",
-        ar: "عرض ساري حتى 31/10/2026. مثالي للانطلاق بصفحة تعريفية أنيقة (لا يشمل السيو المتقدم أو صفحات فرعية متعددة)."
+        fr: "Nos formules répondent aux besoins réels des entreprises du Maroc, du site professionnel au système d'acquisition complet.",
+        en: "Our plans fit the real needs of Moroccan businesses, from professional showcase to full-scale lead machines.",
+        ar: "باقاتنا تلبي الاحتياجات الحقيقية للشركات في المغرب، من الموقع الاحترافي وحتى منظومة الاستقطاب المتكاملة."
     },
     price_starter_badge: {
         fr: "FORMULE STARTER",
@@ -650,6 +635,21 @@ const translations = {
         fr: "Moteur d'acquisition intensif, fonctionnalités e-commerce ou formulaires de devis avancés pour PME et cabinets ambitieux.",
         en: "High-performance acquisition engine, e-commerce or advanced quote funnels for ambitious companies.",
         ar: "منظومة استقطاب مكثفة، إمكانات تجارة إلكترونية أو استمارات تسعير متطورة للشركات الطموحة."
+    },
+    price_acquisition_badge: {
+        fr: "SUR MESURE",
+        en: "CUSTOM BESPOKE",
+        ar: "حسب الطلب"
+    },
+    price_p5_title: {
+        fr: "Acquisition — 12 000 DH+",
+        en: "Acquisition — 12,000 DH+",
+        ar: "باقة الاستقطاب — 12000 درهم+"
+    },
+    price_p5_desc: {
+        fr: "Dispositif complet sur-mesure, SEO multi-villes avancé, tunnels d'acquisition organique et stratégie de contenu pérenne.",
+        en: "Full custom system, advanced multi-city SEO, organic acquisition funnels, and long-term content strategy.",
+        ar: "منظومة متكاملة مخصصة، سيو متقدم لعدة مدن، مسارات استقطاب طبيعية واستراتيجية محتوى مستدامة."
     },
     case_callout_badge: {
         fr: "<span class=\"badge-flag\">🇲🇦</span> Étude de Cas Réelle",
@@ -847,9 +847,9 @@ const translations = {
         ar: "كم تبلغ تكلفة إنشاء موقع إلكتروني في الدار البيضاء؟"
     },
     casa_faq_a1: {
-        fr: "Chez ASSURLEAD, notre offre d'appel débute à 1 500 DH pour une page de présentation essentielle (valable jusqu'au 31/10/2026). Nos formules complètes s'échelonnent ensuite selon vos objectifs : Starter à 2 000 DH, Growth à 4 500 DH avec référencement naturel local, Lead Engine à 8 000 DH pour un moteur commercial avancé, et Formule Acquisition sur-mesure à partir de 12 000 DH.",
-        en: "At ASSURLEAD, our entry offer starts at 1,500 DH for an essential showcase page (valid until 31/10/2026). Our full plans scale based on your goals: Starter at 2,000 DH, Growth at 4,500 DH with local SEO, Lead Engine at 8,000 DH for advanced commercial lead engines, and custom Acquisition plans from 12,000 DH.",
-        ar: "في أسورليد، تبدأ عروضنا من 1500 درهم لصفحة تعريفية أساسية (سارية حتى 31/10/2026). وتتوزع باقاتنا المتكاملة حسب أهدافك: Starter بـ 2000 درهم، Growth بـ 4500 درهم مع سيو محلي، Lead Engine بـ 8000 درهم لمحرك تجاري متطور، وباقة الاستقطاب المخصصة ابتداءً من 12000 درهم."
+        fr: "Chez ASSURLEAD, nos formules complètes débutent à 2 000 DH pour la formule Starter, 4 500 DH pour la formule Growth avec référencement naturel local, 8 000 DH pour Lead Engine (moteur commercial avancé), et Formule Acquisition sur-mesure à partir de 12 000 DH.",
+        en: "At ASSURLEAD, our full plans scale based on your goals: Starter at 2,000 DH, Growth at 4,500 DH with local SEO, Lead Engine at 8,000 DH for advanced commercial lead engines, and custom Acquisition plans from 12,000 DH.",
+        ar: "في أسورليد، تتوزع باقاتنا المتكاملة حسب أهدافك: Starter بـ 2000 درهم، Growth بـ 4500 درهم مع سيو محلي، Lead Engine بـ 8000 درهم لمحرك تجاري متطور، وباقة الاستقطاب المخصصة ابتداءً من 12000 درهم."
     },
     casa_faq_q2: {
         fr: "Combien de temps faut-il pour livrer un site internet à Casablanca ?",
@@ -997,9 +997,9 @@ const translations = {
         ar: "أسعار مضمونة"
     },
     rabat_p4_desc: {
-        fr: "Grille forfaitaire sans surprise : à partir de 1 500 DH pour l'offre vitrine jusqu'aux dispositifs complets d'acquisition.",
-        en: "Fixed transparent pricing: starting from 1,500 DH up to complete inbound acquisition systems.",
-        ar: "أسعار ثابتة بدون مفاجآت: ابتداءً من 1500 درهم للباقة التعريفية وصولاً لمنظومة الاستقطاب."
+        fr: "Grille forfaitaire sans surprise : à partir de 2 000 DH pour la formule Starter jusqu'aux dispositifs complets d'acquisition.",
+        en: "Fixed transparent pricing: starting from 2,000 DH for Starter up to complete inbound acquisition systems.",
+        ar: "أسعار ثابتة بدون مفاجآت: ابتداءً من 2000 درهم لباقة Starter وصولاً لمنظومة الاستقطاب."
     },
     rabat_faq_title: {
         fr: "Questions fréquentes sur la <span class=\"neon\">création de site web à Rabat</span>",
@@ -1492,9 +1492,9 @@ const translations = {
         ar: "أسعار واضحة ومناسبة"
     },
     fes_p4_desc: {
-        fr: "Des offres adaptées aux budgets des PME et artisans fassis, à partir de 1 500 DH.",
-        en: "Packages tailored for Fez SMEs and craftsmen budgets, starting from 1,500 DH.",
-        ar: "باقات مدروسة تناسب ميزانيات مقاولات وصناع فاس، ابتداءً من 1500 درهم."
+        fr: "Des offres adaptées aux budgets des PME et artisans fassis, à partir de 2 000 DH.",
+        en: "Packages tailored for Fez SMEs and craftsmen budgets, starting from 2,000 DH.",
+        ar: "باقات مدروسة تناسب ميزانيات مقاولات وصناع فاس، ابتداءً من 2000 درهم."
     },
     fes_faq_title: {
         fr: "Questions fréquentes sur la <span class=\"neon\">création de site web à Fès</span>",
@@ -1692,9 +1692,9 @@ const translations = {
         ar: "كم تبلغ تكلفة موقع مهني في أكادير؟"
     },
     aga_faq_a3: {
-        fr: "Notre offre démarre à 1 500 DH pour une vitrine essentielle, 2 000 DH pour la formule Starter, 4 500 DH pour la formule Growth avec SEO, et 8 000 DH pour un moteur d'acquisition complet.",
-        en: "Our packages start at 1,500 DH for essential showcases, 2,000 DH for Starter, 4,500 DH for Growth with SEO, and 8,000 DH for complete lead machines.",
-        ar: "تبدأ باقاتنا من 1500 درهم للموقع التعريفي، 2000 درهم لباقة Starter، 4500 درهم لباقة Growth مع السيو، و8000 درهم للمنظومة المتكاملة."
+        fr: "Notre offre démarre à 2 000 DH pour la formule Starter, 4 500 DH pour la formule Growth avec SEO, et 8 000 DH pour un moteur d'acquisition complet.",
+        en: "Our packages start at 2,000 DH for Starter, 4,500 DH for Growth with SEO, and 8,000 DH for complete lead machines.",
+        ar: "تبدأ باقاتنا من 2000 درهم لباقة Starter، 4500 درهم لباقة Growth مع السيو، و8000 درهم للمنظومة المتكاملة."
     },
     aga_cta_title: {
         fr: "Prêt à booster votre visibilité à Agadir ?",
@@ -2379,9 +2379,9 @@ const translations = {
     },
     // Hero
     hero_badge: {
-        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>",
-        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>",
-        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب <span class=\"badge-pulse-box\"><img src=\"/assets/aistudio/image_93f7aae1.png\" class=\"badge-pulse-icon\" alt=\"Pulse\"></span>"
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب"
     },
     hero_title: {
         fr: "Création de Site Web Sur Mesure au Maroc.<br><span class=\"neon\">Captez vos clients dès aujourd'hui.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
@@ -2693,82 +2693,6 @@ const translations = {
         fr: "Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.",
         en: "Select the ideal tier aligned with your growth targets across your target territory.",
         ar: "اختر الباقة المناسبة لطموحاتك وتوسع وكالتك في رقعتك الجغرافية."
-    },
-    // Promotional Banner (Offre Spéciale)
-    special_offer_btn: {
-        fr: "Profiter d'une offre à prix spécial",
-        en: "Claim a Special Price Offer",
-        ar: "الاستفادة من عرض بسعر خاص"
-    },
-    special_offer_deadline: {
-        fr: "<i class=\"fas fa-fire\"></i> Moins de 8 jours • Fin de l'offre, profitez-en !",
-        en: "<i class=\"fas fa-fire\"></i> Less than 8 days left • Offer ending soon, take advantage!",
-        ar: "<i class=\"fas fa-fire\"></i> أقل من 8 أيام • نهاية العرض، استفد الآن!"
-    },
-    promo_badge: {
-        fr: "<i class=\"fas fa-clock\"></i> MOINS DE 8 JOURS • FIN DE L'OFFRE (31/10/2026) — PROFITEZ-EN !",
-        en: "<i class=\"fas fa-clock\"></i> LESS THAN 8 DAYS LEFT • END OF OFFER (31/10/2026) — TAKE ADVANTAGE!",
-        ar: "<i class=\"fas fa-clock\"></i> أقل من 8 أيام • نهاية العرض (31/10/2026) — استفد الآن!"
-    },
-    hero_urgency_tag: {
-        fr: "Moins de 8 jours • Fin de l'offre, profitez-en !",
-        en: "Less than 8 days left • Offer ending soon, take advantage!",
-        ar: "أقل من 8 أيام • نهاية العرض، استفد الآن!"
-    },
-    nav_offer_tag: {
-        fr: "Moins de 8j • Offre",
-        en: "Offer: < 8 days",
-        ar: "العرض: أقل من 8 أيام"
-    },
-    promo_title: {
-        fr: "CRÉATION DE SITES<br>INTERNET<br>PROFESSIONNELS",
-        en: "PROFESSIONAL<br>WEBSITE<br>CREATION",
-        ar: "إنشاء مواقع<br>إلكترونية<br>احترافية"
-    },
-    promo_desc: {
-        fr: "Nous créons des sites modernes, ultra-rapides et pensés dès la première ligne de code pour inspirer confiance et convertir vos visiteurs en demandes de devis.",
-        en: "We build modern, ultra-fast websites designed from the very first line of code to inspire trust and convert your visitors into quote requests.",
-        ar: "نصمم مواقع عصرية، فائقة السرعة ومبرمجة من السطر الأول لبناء الثقة وتحويل زوارك إلى طلبات عروض أسعار فعلية."
-    },
-    promo_price_unit: {
-        fr: "DH (Offre d'appel)",
-        en: "DH (Intro Offer)",
-        ar: "درهم (عرض انطلاق)"
-    },
-    promo_btn: {
-        fr: "Profiter de l'offre <i class=\"fab fa-whatsapp\"></i>",
-        en: "Claim This Offer <i class=\"fab fa-whatsapp\"></i>",
-        ar: "الاستفادة من العرض <i class=\"fab fa-whatsapp\"></i>"
-    },
-    promo_f1: {
-        fr: "Design UX/UI haute conversion",
-        en: "High-converting UX/UI design",
-        ar: "تصميم UX/UI عالي التحويل"
-    },
-    promo_f2: {
-        fr: "Bouton WhatsApp commercial direct",
-        en: "Direct commercial WhatsApp button",
-        ar: "زر واتساب تجاري مباشر"
-    },
-    promo_f3: {
-        fr: "Formulaire de devis interactif",
-        en: "Interactive quote request form",
-        ar: "نموذج طلب تسعيرة تفاعلي"
-    },
-    promo_f4: {
-        fr: "100% Responsive smartphone & tablette",
-        en: "100% Responsive smartphone & tablet",
-        ar: "متوافق 100% مع الهواتف والأجهزة اللوحية"
-    },
-    promo_f5: {
-        fr: "Vitesse de chargement &lt; 1.2s",
-        en: "Loading speed &lt; 1.2s",
-        ar: "سرعة تحميل أقل من 1.2 ثانية"
-    },
-    promo_f6: {
-        fr: "Hébergement sécurisé SSL HTTPS",
-        en: "Secure SSL HTTPS hosting",
-        ar: "استضافة آمنة بشهادة SSL HTTPS"
     },
     // 1. 🚀 STARTER (2 000 DH)
     offer_starter_badge: {
@@ -4252,21 +4176,17 @@ const fullTextDictionary = {
     "en": "Receive a detailed proposal and accurate quote within 24 hours for your Casablanca business.",
     "ar": "احصل على عرض مفصل وتسعير دقيق خلال 24 ساعة لشركتك بالدار البيضاء."
   },
-  "Offre d'appel à 1 500 DH (jusqu'au 31/10/2026), Starter à 2 000 DH, Growth à 4 500 DH et Lead Engine à 8 000 DH avec livraison en 10-14 jours.": {
-    "en": "Entry offer at 1,500 MAD (valid until 10/31/2026), Starter at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD delivered in 10-14 days.",
-    "ar": "عرض تمهيدي بـ 1,500 درهم (حتى 31/10/2026)، باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم مع تسليم في 10-14 يوماً."
+  "Formule Starter à 2 000 DH, Growth à 4 500 DH et Lead Engine à 8 000 DH avec livraison en 10-14 jours.": {
+    "en": "Starter plan at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD delivered in 10-14 days.",
+    "ar": "باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم مع تسليم في 10-14 يوماً."
   },
-  "Offre d'appel à 1 500 DH (jusqu'au 31/10/2026), Starter à 2 000 DH, Growth à 4 500 DH et Lead Engine à 8 000 DH livrés en 10 à 14 jours.": {
-    "en": "Entry offer at 1,500 MAD (until 10/31/2026), Starter at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD delivered in 10 to 14 days.",
-    "ar": "عرض تمهيدي بـ 1,500 درهم (حتى 31/10/2026)، باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم مع تسليم خلال 10 إلى 14 يوماً."
+  "Formule Starter à 2 000 DH, Growth à 4 500 DH et Lead Engine à 8 000 DH livrés en 10 à 14 jours.": {
+    "en": "Starter plan at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD delivered in 10 to 14 days.",
+    "ar": "باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم مع تسليم خلال 10 إلى 14 يوماً."
   },
-  "Offre d'appel à 1 500 DH (jusqu'au 31/10/2026), Starter à 2 000 DH, Growth à 4 500 DH et Lead Engine à 8 000 DH livrés en 10-14 jours.": {
-    "en": "Entry offer at 1,500 MAD (until 10/31/2026), Starter at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD delivered in 10-14 days.",
-    "ar": "عرض تمهيدي بـ 1,500 درهم (حتى 31/10/2026)، باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم مع تسليم في 10-14 يوماً."
-  },
-  "Offre valable jusqu'au 31/10/2026. Page de présentation soignée et responsive (n'inclut pas de SEO multi-villes ni de sous-pages de service).": {
-    "en": "Offer valid until 10/31/2026. Polished, mobile-responsive showcase page (does not include multi-city SEO or sub-service pages).",
-    "ar": "العرض سارٍ حتى 31/10/2026. صفحة تعريفية أنيقة ومتجاوبة (لا تشمل سيو المدن المتعددة أو صفحات الخدمات الفرعية)."
+  "Formule Starter à 2 000 DH, Growth à 4 500 DH et Lead Engine à 8 000 DH livrés en 10-14 jours.": {
+    "en": "Starter plan at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD delivered in 10-14 days.",
+    "ar": "باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم مع تسليم في 10-14 يوماً."
   },
   "Optimisation de votre présence sur Google Maps pour capter les requêtes à proximité immédiate dans la métropole casablancaise.": {
     "en": "Optimization of your presence on Google Maps to capture nearby searches across Casablanca metropolis.",
@@ -4719,10 +4639,6 @@ const fullTextDictionary = {
   "Vitesse de chargement optimale, architecture épurée et conformité avec les critères algorithmiques stricts de Google.": {
     "en": "Optimal loading speed, sleek architecture, and full compliance with strict Google algorithm standards.",
     "ar": "سرعة تحميل مثالية، بنية تقنية نقية وتوافق كامل مع خوارزميات غوغل الصارمة."
-  },
-  "Vitrine Essentielle — 1 500 DH": {
-    "en": "Essential Showcase — 1,500 MAD",
-    "ar": "الواجهة الأساسية — 1,500 درهم"
   },
   "Vitrines B2B pour producteurs d'agrumes, primeurs, conserveurs et entreprises de l'Agropôle Souss-Massa.": {
     "en": "B2B web showcases for citrus growers, produce exporters, canners, and Souss-Massa Agropole firms.",
@@ -6662,52 +6578,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
     };
 
-    // --- SPECIAL OFFER COLLAPSIBLE TRIGGER ---
-    const initSpecialOfferToggle = () => {
-        const toggleBtn = document.getElementById('toggle-special-offer-btn');
-        const closeBtn = document.getElementById('close-special-offer-btn');
-        const banner = document.getElementById('special-offer-banner');
-
-        if (!toggleBtn || !banner) return;
-
-        const openOffer = () => {
-            banner.classList.add('is-open');
-            toggleBtn.classList.add('active');
-            toggleBtn.setAttribute('aria-expanded', 'true');
-            setTimeout(() => {
-                banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 100);
-        };
-
-        const closeOffer = () => {
-            banner.classList.remove('is-open');
-            toggleBtn.classList.remove('active');
-            toggleBtn.setAttribute('aria-expanded', 'false');
-        };
-
-        toggleBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (banner.classList.contains('is-open')) {
-                closeOffer();
-            } else {
-                openOffer();
-            }
-        });
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                closeOffer();
-            });
-        }
-
-        document.querySelectorAll('[data-open-special-offer]').forEach(el => {
-            el.addEventListener('click', (e) => {
-                openOffer();
-            });
-        });
-    };
-
     // Interactive Moroccan Cities Stickers Cluster
     const initCityStickersInteractive = () => {
         const stickers = document.querySelectorAll('.city-sticker');
@@ -6741,7 +6611,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initStatsCounter();
     initScrollReveal();
     initFaqAccordion();
-    initSpecialOfferToggle();
 
     // Nav Dropdown (Expertise)
     const initNavDropdown = () => {
