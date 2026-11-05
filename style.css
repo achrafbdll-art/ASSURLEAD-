@@ -7185,6 +7185,32 @@ body[dir="rtl"] .pillar-card {
     color: var(--brand-neon);
 }
 
+.diff-table-hint {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .diff-table {
+        min-width: 520px;
+    }
+    .diff-table th, .diff-table td {
+        padding: 13px 15px;
+        font-size: 12.5px;
+    }
+    .diff-table-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        color: var(--zinc-400);
+        margin-top: 12px;
+        padding: 5px 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+    }
+}
+
 /* Offers Section Header */
 .offers .section-header.text-center {
     max-width: 1100px;

@@ -2522,6 +2522,111 @@ const translations = {
         en: "<span class=\"diff-sub-phrase\">Why 90% of business websites in Morocco fail to generate clients</span> <span class=\"diff-sub-phrase\">— and how our architecture reverses the equation.</span>",
         ar: "<span class=\"diff-sub-phrase\">لماذا 90% من المواقع بالمغرب لا تجلب أي عميل</span> <span class=\"diff-sub-phrase\">— وكيف يقلب نظامنا المعادلة لصالحك.</span>"
     },
+    diff_col_feature: {
+        fr: "Critère",
+        en: "Key Metric",
+        ar: "المعيار"
+    },
+    diff_col_classic: {
+        fr: "<i class=\"fas fa-times-circle\"></i> Site Vitrine Classique",
+        en: "<i class=\"fas fa-times-circle\"></i> Traditional Showcase Site",
+        ar: "<i class=\"fas fa-times-circle\"></i> الموقع التقليدي"
+    },
+    diff_col_assurlead: {
+        fr: "<i class=\"fas fa-check-circle\"></i> Moteur d'Acquisition ASSURLEAD",
+        en: "<i class=\"fas fa-check-circle\"></i> ASSURLEAD Acquisition Engine",
+        ar: "<i class=\"fas fa-check-circle\"></i> محرك استقطاب ASSURLEAD"
+    },
+    diff_r1_feat: {
+        fr: "Objectif",
+        en: "Core Purpose",
+        ar: "الهدف"
+    },
+    diff_r1_classic: {
+        fr: "Simple brochure décorative sans contact.",
+        en: "Passive online brochure with no active leads.",
+        ar: "مجرد واجهة تعريفية دون تفاعل أو زبائن."
+    },
+    diff_r1_assurlead: {
+        fr: "<strong>Génération continue de devis</strong> et de clients qualifiés.",
+        en: "<strong>Consistent stream of quotes</strong> and high-intent clients.",
+        ar: "<strong>جلب مستمر لطلبات عروض الأسعار</strong> والزبائن المؤهلين."
+    },
+    diff_r2_feat: {
+        fr: "Visibilité Google",
+        en: "Google Visibility",
+        ar: "الظهور على غوغل"
+    },
+    diff_r2_classic: {
+        fr: "Invisible si on ne tape pas déjà le nom de votre entreprise.",
+        en: "Invisible unless users already know your exact business name.",
+        ar: "غير مرئي إلا إذا كان الزبون يعرف اسم شركتك مسبقاً."
+    },
+    diff_r2_assurlead: {
+        fr: "<strong>1ère page Google</strong> sur les recherches de vos futurs clients.",
+        en: "<strong>Google Page 1</strong> ranking on searches for your services.",
+        ar: "<strong>الصفحة الأولى على غوغل</strong> في عمليات بحث عملائك المستهدفين."
+    },
+    diff_r3_feat: {
+        fr: "Vitesse Mobile",
+        en: "Mobile Speed",
+        ar: "السرعة على الهاتف"
+    },
+    diff_r3_classic: {
+        fr: "Lenteur sur smartphone (> 3s) : les visiteurs repartent.",
+        en: "Slow on mobile (> 3s): visitors leave immediately.",
+        ar: "بطء شديد على الهاتف (> 3 ثوانٍ): الزائر يغادر فوراً."
+    },
+    diff_r3_assurlead: {
+        fr: "<strong>Chargement instantané (&lt; 1,2s)</strong>, fluide et sans attente.",
+        en: "<strong>Instant load (&lt; 1.2s)</strong>, ultra-smooth smartphone experience.",
+        ar: "<strong>تحميل فوري (أقل من 1.2 ثانية)</strong> وتصفح سلس وسريع."
+    },
+    diff_r4_feat: {
+        fr: "Prise de Contact",
+        en: "Contact Journey",
+        ar: "طريقة التواصل"
+    },
+    diff_r4_classic: {
+        fr: "Formulaire lourd de 8 champs rarement rempli.",
+        en: "Cumbersome 8-field form that visitors abandon.",
+        ar: "استمارة معقدة من 8 خانات نادراً ما يتم ملؤها."
+    },
+    diff_r4_assurlead: {
+        fr: "<strong>WhatsApp direct &amp; appel en 1 clic</strong> pour convertir vite.",
+        en: "<strong>Direct WhatsApp &amp; 1-click call</strong> for fast conversion.",
+        ar: "<strong>واتساب مباشر واتصال بنقرة واحدة</strong> لإغلاق الصفقات بسرعة."
+    },
+    diff_r5_feat: {
+        fr: "Fiche Google Maps",
+        en: "Google Maps Presence",
+        ar: "خرائط غوغل"
+    },
+    diff_r5_classic: {
+        fr: "Fiche locale abandonnée et isolée du site.",
+        en: "Neglected local listing disconnected from the website.",
+        ar: "ملف خرائط مهمل ومنفصل عن الموقع."
+    },
+    diff_r5_assurlead: {
+        fr: "<strong>Google Maps synchronisé</strong> pour capter les appels locaux.",
+        en: "<strong>Synchronized Google Profile</strong> to capture local phone calls.",
+        ar: "<strong>ملف غوغل متزامن مع الموقع</strong> لاستقطاب المكالمات المحلية."
+    },
+    diff_r6_feat: {
+        fr: "Rentabilité",
+        en: "Financial Return",
+        ar: "العائد المالي"
+    },
+    diff_r6_classic: {
+        fr: "Coût à perte sans retour sur investissement mesurable.",
+        en: "Dead cost with zero measurable return on investment.",
+        ar: "مصاريف ضائعة دون أي عائد مالي ملموس."
+    },
+    diff_r6_assurlead: {
+        fr: "<strong>Actif commercial rentable</strong> qui attire des prospects en continu.",
+        en: "<strong>Profitable business asset</strong> generating ongoing revenue.",
+        ar: "<strong>أصل تجاري مربح</strong> يجلب زبائن جدد باستمرار دون دفع مقابل كل نقرة."
+    },
     methode_badge: {
         fr: "Processus Éprouvé",
         en: "Proven Process",
