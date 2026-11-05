@@ -3712,6 +3712,11 @@ footer .container {
     .nav-dropdown-item:hover {
         transform: none;
     }
+
+    .project-details-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
 }
 
 @media (max-width: 768px) {

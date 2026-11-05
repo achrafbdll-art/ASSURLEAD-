@@ -23,6 +23,7 @@ export default defineConfig({
         approche: resolve(__dirname, 'approche.html'),
         realisations: resolve(__dirname, 'realisations.html'),
         realisation_el_omrani: resolve(__dirname, 'realisation-el-omrani.html'),
+        realisation_sechkili: resolve(__dirname, 'realisation-sechkili.html'),
         creation_site_web_casablanca: resolve(__dirname, 'creation-site-web-casablanca.html'),
         expertise: resolve(__dirname, 'expertise.html'),
         rabat: resolve(__dirname, 'rabat.html'),

@@ -1853,34 +1853,34 @@ const translations = {
         ar: "<span class=\"badge-flag\">🇲🇦</span> دراسة حالة • وكيل تأمين بالمغرب"
     },
     rea_hero_title: {
-        fr: "Cabinet Assurances El Omrani<br><span class=\"neon\">Site Web & Système d'Acquisition.</span>",
-        en: "Assurances El Omrani Agency<br><span class=\"neon\">Website & Lead Acquisition Engine.</span>",
-        ar: "وكالة تأمينات العمراني<br><span class=\"neon\">موقع إلكتروني ومنظومة استقطاب عملاء.</span>"
+        fr: "Cabinet Assurance Sechkili<br><span class=\"neon\">Plateforme d'Assurance & Concrétisation en Ligne.</span>",
+        en: "Cabinet Assurance Sechkili<br><span class=\"neon\">Insurance Platform & Online Policy Conversion.</span>",
+        ar: "وكالة تأمينات الشكيلي<br><span class=\"neon\">منصة التأمين وإتمام التعاقدات أونلاين.</span>"
     },
     rea_hero_sub: {
-        fr: "Déploiement complet d'un site web sur-mesure ultra-rapide (<a href=\"https://www.assuranceselomrani.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assuranceselomrani.com</a>), référencement local 1ère page Google et tunnel de conversion WhatsApp pour l'agence d'assurance à Casablanca.",
-        en: "Full deployment of a high-speed custom website (<a href=\"https://www.assuranceselomrani.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assuranceselomrani.com</a>), local Google 1st page ranking, and WhatsApp conversion funnel for the insurance agency in Casablanca.",
-        ar: "إطلاق شامل لموقع إلكتروني فائق السرعة ومخصص (<a href=\"https://www.assuranceselomrani.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assuranceselomrani.com</a>)، مع تصدر الصفحة الأولى في غوغل محلياً وتفعيل مسار تحويل مباشر عبر واتساب لوكالة التأمين بالدار البيضاء."
+        fr: "Déploiement complet d'une plateforme web haut de gamme (<a href=\"https://www.assurancesechkili.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assurancesechkili.com</a>) permettant d'obtenir des demandes de devis d'assurance en ligne, de réaliser des concrétisations directes sur internet et de générer un flux continu d'appels téléphoniques qualifiés pour le cabinet d'assurance à Marrakech.",
+        en: "Full deployment of a high-end web platform (<a href=\"https://www.assurancesechkili.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assurancesechkili.com</a>) enabling online insurance quote requests, direct contract completion online, and continuous qualified phone calls for the Marrakech agency.",
+        ar: "إطلاق شامل لمنصة إلكترونية متطورة (<a href=\"https://www.assurancesechkili.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--brand-neon); font-weight: 700; text-decoration: underline;\">www.assurancesechkili.com</a>) تتيح طلب عروض أسعار التأمين عبر الإنترنت، إتمام التعاقدات مباشرة رقمياً، وتوليد تدفق مستمر للمكالمات الهاتفية المؤهلة لوكالة مراكش."
     },
     rea_meta_client: {
-        fr: "Client : <strong>Assurances El Omrani</strong>",
-        en: "Client: <strong>Assurances El Omrani</strong>",
-        ar: "العميل: <strong>تأمينات العمراني</strong>"
+        fr: "Client : <strong>Cabinet Assurance Sechkili</strong>",
+        en: "Client: <strong>Cabinet Assurance Sechkili</strong>",
+        ar: "العميل: <strong>وكالة تأمينات الشكيلي</strong>"
     },
     rea_meta_comp: {
-        fr: "Réseau : <strong>AXA Assurance Maroc</strong>",
-        en: "Network: <strong>AXA Assurance Morocco</strong>",
-        ar: "الشبكة: <strong>أكسا للتأمين المغرب</strong>"
+        fr: "Activité : <strong>Courtage & Assurance Particuliers & Pro</strong>",
+        en: "Activity: <strong>Brokerage & Personal / Commercial Insurance</strong>",
+        ar: "النشاط: <strong>وساطة وتأمينات الأفراد والمهنيين</strong>"
     },
     rea_meta_city: {
-        fr: "Zone : <strong>Casablanca & Maroc</strong>",
-        en: "Zone: <strong>Casablanca & Morocco</strong>",
-        ar: "المنطقة: <strong>الدار البيضاء والمغرب</strong>"
+        fr: "Zone : <strong>Marrakech • Maroc</strong>",
+        en: "Zone: <strong>Marrakech • Morocco</strong>",
+        ar: "المنطقة: <strong>مراكش • المغرب</strong>"
     },
     rea_btn_visit: {
-        fr: "Visiter www.assuranceselomrani.com",
-        en: "Visit www.assuranceselomrani.com",
-        ar: "زيارة الموقع www.assuranceselomrani.com"
+        fr: "Visiter www.assurancesechkili.com",
+        en: "Visit www.assurancesechkili.com",
+        ar: "زيارة الموقع www.assurancesechkili.com"
     },
     rea_btn_whatsapp: {
         fr: "Déployer pour mon agence",
@@ -2083,9 +2083,9 @@ const translations = {
         ar: "متابعة لحظية للنقرات، اتصالات واتساب، وتكلفة توقيع كل عقد تأميني."
     },
     rea_quote_text: {
-        fr: "« Grâce à notre site www.assuranceselomrani.com et à la stratégie d'acquisition digitale déployée par ASSURLEAD, notre agence reçoit quotidiennement des demandes de devis qualifiées directement sur WhatsApp. Les clients apprécient la rapidité du site et la facilité de contact. C'est un véritable accélérateur pour notre portefeuille à Casablanca. »",
-        en: "“Thanks to our website www.assuranceselomrani.com and the digital strategy deployed by ASSURLEAD, our agency receives daily qualified quote requests straight to WhatsApp. Clients love the speed of the site and easy contact. It has been a true growth accelerator for our Casablanca portfolio.”",
-        ar: "«بفضل موقعنا www.assuranceselomrani.com وخطة الاستقطاب الرقمية التي طورتها ASSURLEAD، أصبحت وكالتنا تستقبل يومياً طلبات تسعير مؤهلة مباشرة عبر واتساب. سرعة الموقع وسهولة التواصل صنعت فارقاً حقيقياً في نمو محفظة عملائنا بالدار البيضاء.»"
+        fr: "« Depuis la mise en ligne de notre site www.assurancesechkili.com conçu par ASSURLEAD, notre cabinet à Marrakech enregistre chaque semaine de nombreuses demandes de devis qualifiées et des concrétisations directement en ligne. Le flux d'appels téléphoniques entrants nous permet de clore des souscriptions immédiatement avec des assurés locaux et nationaux. C'est un puissant accélérateur pour notre agence. »",
+        en: "“Since the launch of our website www.assurancesechkili.com designed by ASSURLEAD, our agency in Marrakech generates numerous qualified quote requests and direct online policy conversions every week. The inbound phone call stream enables us to close subscriptions immediately with local and national clients. It has been a powerful growth accelerator for our firm.”",
+        ar: "«منذ إطلاق موقعنا www.assurancesechkili.com المصمم من طرف ASSURLEAD، تسجل وكالتنا بمراكش أسبوعياً العديد من طلبات عروض الأسعار المؤهلة وتوقيع العقود مباشرة عبر الإنترنت. كما أن تدفق المكالمات الهاتفية الواردة يمكننا من إتمام الاكتتابات فورياً مع العملاء محلياً ووطنياً. إنها رافعة نمو حقيقية لنشاطنا.»"
     },
     rea_quote_author: {
         fr: "Direction du Cabinet",
@@ -2093,9 +2093,9 @@ const translations = {
         ar: "إدارة الوكالة"
     },
     rea_quote_agency: {
-        fr: "Cabinet Assurances El Omrani • Agent AXA",
-        en: "Assurances El Omrani • AXA Agent",
-        ar: "وكالة تأمينات العمراني • وكيل أكسا"
+        fr: "Cabinet Assurance Sechkili • Assurances Marrakech",
+        en: "Cabinet Assurance Sechkili • Marrakech Insurance",
+        ar: "وكالة تأمينات الشكيلي • تأمينات مراكش"
     },
     rea_cta_title: {
         fr: "Vous voulez le même système pour votre agence d'assurance ?",
@@ -2113,9 +2113,9 @@ const translations = {
         ar: "ابدأ مشروع وكالتك عبر واتساب <i class=\"fab fa-whatsapp\"></i>"
     },
     rea_cta_btn_site: {
-        fr: "Voir le site live : assuranceselomrani.com <i class=\"fas fa-external-link-alt\"></i>",
-        en: "View live site: assuranceselomrani.com <i class=\"fas fa-external-link-alt\"></i>",
-        ar: "زيارة الموقع المباشر: assuranceselomrani.com <i class=\"fas fa-external-link-alt\"></i>"
+        fr: "Voir le site live : assurancesechkili.com <i class=\"fas fa-external-link-alt\"></i>",
+        en: "View live site: assurancesechkili.com <i class=\"fas fa-external-link-alt\"></i>",
+        ar: "زيارة الموقع المباشر: assurancesechkili.com <i class=\"fas fa-external-link-alt\"></i>"
     },
     appr_badge: {
         fr: "NOTRE APPROCHE",
