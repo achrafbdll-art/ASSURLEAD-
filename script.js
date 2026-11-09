@@ -6311,7 +6311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify({
                     message: text,
-                    history: chatHistory,
+                    history: chatHistory.slice(0, -1),
                     lang: lang
                 })
             });
@@ -6339,7 +6339,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 600);
 
         } catch (err) {
-            console.warn('[Omar Chat] Fallback to local intelligence:', err);
+            console.info('[Omar Chat] Handled by offline client engine:', err?.message || err);
             if (typingDiv.parentNode) typingDiv.parentNode.removeChild(typingDiv);
 
             // Execute local fallback engine immediately
