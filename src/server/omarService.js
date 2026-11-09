@@ -199,16 +199,16 @@ export async function handleOmarChat({ message, history = [], lang = 'fr' }) {
         }
       });
 
-      // Filter previous history to only valid alternating user/model turns without duplicating current message
+      // Format messages history for Gemini API
       const formattedContents = [];
       if (Array.isArray(history)) {
         for (const item of history.slice(-6)) {
-          const role = item?.role === 'user' ? 'user' : item?.role === 'model' ? 'model' : null;
-          const textContent = (item?.parts?.[0]?.text || item?.text || '').trim();
-          if (role && textContent && textContent !== message.trim()) {
+          if (item && item.role && item.parts) {
+            formattedContents.push(item);
+          } else if (item && item.text) {
             formattedContents.push({
-              role,
-              parts: [{ text: textContent }]
+              role: item.role === 'user' ? 'user' : 'model',
+              parts: [{ text: item.text }]
             });
           }
         }
@@ -216,7 +216,7 @@ export async function handleOmarChat({ message, history = [], lang = 'fr' }) {
       formattedContents.push({ role: 'user', parts: [{ text: message }] });
 
       const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('AI generation timeout')), 15000)
+        setTimeout(() => reject(new Error('AI generation timeout')), 5000)
       );
 
       const response = await Promise.race([
@@ -224,9 +224,7 @@ export async function handleOmarChat({ message, history = [], lang = 'fr' }) {
           model: 'gemini-3.8-flash',
           contents: formattedContents,
           config: {
-            systemInstruction: OMAR_SYSTEM_INSTRUCTION,
-            maxOutputTokens: 450,
-            temperature: 0.7
+            systemInstruction: OMAR_SYSTEM_INSTRUCTION
           }
         }),
         timeoutPromise
@@ -275,7 +273,7 @@ export async function handleOmarChat({ message, history = [], lang = 'fr' }) {
         };
       }
     } catch (err) {
-      console.info('[Omar API] Request handled by local response engine:', err?.message || 'fallback');
+      console.warn('[Omar API] Gemini API error, using smart fallback engine:', err.message);
     }
   }
 
