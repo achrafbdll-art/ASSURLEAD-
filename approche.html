@@ -329,59 +329,12 @@
         </div>
     </div>
 
-    <!-- Chatbot Omar & Action Engine -->
+    <!-- Floating WhatsApp Widget -->
     <div id="chat-widget" class="chat-widget">
-        <!-- Floating Teaser -->
-        <div id="chat-teaser" class="chat-teaser" role="button" aria-label="Ouvrir le chat avec Omar" style="display: none;">
-            <span>👋 Besoin de plus de clients ? <strong>Discutez avec Omar</strong></span>
-            <button id="chat-teaser-close" class="chat-teaser-close" aria-label="Fermer le message"><i class="fas fa-times"></i></button>
-        </div>
-
-        <!-- Toggle Button -->
-        <button id="chat-toggle" class="chat-toggle" aria-label="Ouvrir le chat avec Omar">
-            <div class="chat-toggle-icon">
-                <i class="fas fa-comment-dots"></i>
-                <span class="chat-online-dot"></span>
-            </div>
-            <span class="chat-badge">Omar 💬</span>
-        </button>
-
-        <!-- Chat Window -->
-        <div id="chat-window" class="chat-window hidden" role="dialog" aria-label="Chat avec Omar">
-            <div class="chat-header">
-                <div class="chat-header-info">
-                    <div class="chat-avatar-wrap">
-                        <div class="chat-avatar">O</div>
-                        <span class="chat-online-dot"></span>
-                    </div>
-                    <div class="chat-header-text">
-                        <h4>Omar <span style="font-size: 11px; font-weight: normal; color: var(--zinc-400);">• ASSURLEAD</span></h4>
-                        <div class="chat-status">
-                            <span class="chat-status-pulse"></span> En ligne • Répond en 1s
-                        </div>
-                    </div>
-                </div>
-                <div class="chat-header-actions">
-                    <a href="https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20%C3%A9change%20pour%20mon%20site%20web" target="_blank" rel="noopener noreferrer" class="chat-wa-direct-btn" title="Basculer sur WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <button id="chat-close" class="chat-close" aria-label="Fermer le chat">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div id="chat-messages" class="chat-messages"></div>
-
-            <div id="chat-suggestions" class="chat-suggestions"></div>
-
-            <div class="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Posez votre question à Omar..." autocomplete="off">
-                <button id="chat-send" class="chat-send" aria-label="Envoyer le message">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
+        <a href="https://wa.me/212707573162?text=Bonjour,%20j'ai%20consult%C3%A9%20votre%20page%20Notre%20Approche" target="_blank" class="chat-toggle" style="background-color: #25D366; box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4); text-decoration: none;">
+            <i class="fab fa-whatsapp" style="font-size: 32px; color: white;"></i>
+            <span class="chat-badge" data-i18n="chat_badge" style="background-color: #ffffff; color: #25D366; font-weight: bold; border: 1px solid rgba(0,0,0,0.05);">WhatsApp</span>
+        </a>
     </div>
 
     <script type="module" src="script.js"></script>

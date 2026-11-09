@@ -2,51 +2,9 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { handleOmarChat } from './src/server/omarService.js';
-
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-function omarApiPlugin() {
-  return {
-    name: 'omar-api-plugin',
-    configureServer(server) {
-      server.middlewares.use('/api/omar', async (req, res) => {
-        if (req.method !== 'POST') {
-          res.statusCode = 405;
-          res.setHeader('Content-Type', 'application/json');
-          res.end(JSON.stringify({ error: 'Method not allowed' }));
-          return;
-        }
-
-        let body = '';
-        req.on('data', chunk => {
-          body += chunk;
-        });
-
-        req.on('end', async () => {
-          try {
-            const data = JSON.parse(body || '{}');
-            const result = await handleOmarChat({
-              message: data.message || '',
-              history: data.history || [],
-              lang: data.lang || 'fr'
-            });
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(result));
-          } catch (error) {
-            res.statusCode = 500;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify({ error: 'Internal server error', details: error.message }));
-          }
-        });
-      });
-    }
-  };
-}
-
 export default defineConfig({
-  plugins: [omarApiPlugin()],
   server: {
     port: 3000,
     host: '0.0.0.0',

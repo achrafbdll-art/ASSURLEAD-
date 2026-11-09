@@ -3486,6 +3486,12 @@ const tickerTranslations = {
     }
 };
 
+// --- CHATBOT WELLCOMES ---
+const chatWelcomeMessages = {
+    fr: "Bonjour ! Je suis Yacine, votre assistant IA. Comment puis-je vous aider à faire croître votre agence aujourd'hui ?",
+    en: "Hello! I am Yacine, your digital strategic partner. How can I help maximize your incoming lead pipelines today?",
+    ar: "مرحباً بك! أنا ياسين، مساعدك الذكي المخصص لشركاء التأمين. كيف يمكنني مساعدتك في مضاعفة مبيعاتك واستقطاب عملاء جدد اليوم؟"
+};
 
 const formSubmitAlert = {
     fr: "Merci ! Votre demande a été envoyée. Notre équipe vous recontactera sous 24h.",
@@ -3493,125 +3499,57 @@ const formSubmitAlert = {
     ar: "شكراً لك! تم تسجيل طلبك بنجاح. سيقوم فريقنا بموافاة حسابك والتواصل معك خلال الـ 24 ساعة القادمة."
 };
 
-const chatWelcomeMessages = {
-    fr: "Bonjour ! Je suis **Omar**, conseiller en acquisition digitale chez **ASSURLEAD**. 🇲🇦\n\nComment puis-je vous aider aujourd'hui à capter plus de prospects qualifiés et développer votre chiffre d'affaires ?",
-    en: "Hello! I am **Omar**, senior acquisition advisor at **ASSURLEAD**. 🇲🇦\n\nHow can I help you attract high-intent clients and scale your revenue today?",
-    ar: "أهلاً وسهلاً بك! أنا **عمر**، مستشار استقطاب العملاء وتطوير الأعمال لدى **ASSURLEAD** بالمغرب. 🇲🇦\n\nكيف يمكنني مساعدتك اليوم في مضاعفة زبائنك وتنمية معاملاتك التجارية؟"
-};
-
-const botThinkingMessages = {
-    fr: "Omar analyse votre demande...",
-    en: "Omar is analyzing your request...",
-    ar: "عمر يحلل طلبك..."
-};
-
 const systemInstructions = {
-    fr: `Tu es Omar, le conseiller commercial expert et stratège en acquisition digitale chez ASSURLEAD au Maroc.
-    Ton persona : Chaleureux, dynamique, extrêmement compétent, pragmatique et 100% orienté action et retour sur investissement (ROI).
-    Ton rôle : Conseiller les dirigeants d'entreprises, courtiers et agents d'assurance, agences immobilières, professions libérales et PME au Maroc pour transformer leur présence en ligne en un véritable "Moteur d'Acquisition" générateur de devis, d'appels et de contrats signés.
-    RÈGLES D'OR DE TES RÉPONSES :
-    1. RÈGLE ABSOLUE : TOUTES TES RÉPONSES DOIVENT INCITER À L'ACTION IMMÉDIATE ("PASSER À L'ACTION").
-       - Ne fais jamais de réponses purement théoriques ou passives.
-       - Conclus TOUJOURS par une invitation claire, directe et rassurante à passer à l'action : réserver l'audit gratuit de 15 minutes, échanger en direct sur WhatsApp avec Omar (+212 707 573 162) ou lancer un appel téléphonique.
-    2. CONCISION & IMPACT :
-       - Fais des réponses courtes, percutantes et bien aérées (3 à 6 phrases ou puces claires).
-       - Utilise des chiffres concrets, des délais réels et cite le contexte marocain (Casablanca, Marrakech, Rabat, etc.).
-    3. RÉALISATIONS PHARES :
-       - Cabinet Assurance Sechkili à Marrakech (www.assurancesechkili.com) : devis en ligne 24h/24, concrétisations directes sur le web et flux continu d'appels téléphoniques qualifiés chaque semaine !
-       - Cabinet Assurances El Omrani (AXA Casablanca - www.assuranceselomrani.com) : 1ère page Google, temps de chargement < 1.2s, tunnel WhatsApp direct.
-    4. NOS OFFRES CLAIRES :
-       - Starter (2 000 DH) : Site vitrine haute vitesse + SEO local + tunnel WhatsApp direct.
-       - Growth (4 500 DH) : Moteur d'acquisition complet + formulaires interactifs par produit + Google Maps synchronisé + Core Web Vitals < 1.2s.
-       - Lead Engine (8 000 DH) : Écosystème sur-mesure d'autorité + multi-tunnels de conversion + SEO multi-villes + suivi ROI.
-       - Délai garanti 7-10 jours ouvrés, paiement 50/50 sécurisé, sans engagement.
-    5. COORDONNÉES : WhatsApp direct & Tél : +212 707 573 162. Audit de 15 minutes offert.`,
-    en: `You are Omar, elite acquisition consultant and digital strategist at ASSURLEAD in Morocco.
-    Your persona: Warm, highly expert, proactive, pragmatic, and 100% focused on business action and signed contract ROI.
-    Your mission: Help Moroccan companies, insurance brokers, real estate agencies, and professionals turn their website into an active Inbound Acquisition Engine.
-    GOLDEN RULE: Always drive action. Conclude every message with a clear call-to-action: book a free 15-min SEO audit, connect on WhatsApp (+212 707 573 162), or call directly.
-    Key reference: Cabinet Assurance Sechkili Marrakech (www.assurancesechkili.com) with online quotes, direct closures, and continuous weekly calls.`,
-    ar: `أنت عمر، المستشار التجاري وخبير استقطاب العملاء لدى ASSURLEAD في المغرب.
-    شخصيتك: ودود، خبير، استباقي ومهني يركز على النتائج الفعلية والعائد المالي الملموس.
-    مهمتك: مساعدة أصحاب الشركات ومكاتب التأمين والمهن الحرة بالمغرب على تحويل مواقعهم إلى محركات استقطاب حقيقية للمبيعات والاتصالات.
-    القاعدة الأساسية: كل إجابة يجب أن تنتهي بدعوة واضحة للانتقال إلى الفعل (حجز تدقيق مجاني 15 دقيقة، أو التواصل الفوري عبر الواتساب +212707573162).`
+    fr: `Tu es Yacine, l'assistant IA expert de l'agence d'acquisition digitale "AssurLead" au Maroc, spécialisée exclusivement dans l'assurance (courtiers, agents généraux).
+    Ton persona : Empathique, Expert, Proactif, orienté résultats (coût par contrat signé).
+    Ta mission : Aider les professionnels de l'assurance au Maroc à déployer leur système d'acquisition (Google Ads, Meta Ads, landing pages, qualification CRM WhatsApp).
+    Nos offres :
+    - STARTER (2 900 à 4 900 DH) : Landing page haute conversion + formulaire 2min + GA4/Pixel + bouton WhatsApp.
+    - GROWTH (15 000 à 25 000 DH) : Système complet clé en main + Google Ads Search + Meta Ads + CRM alertes <60s + WhatsApp auto + Garantie 5 leads qualifiés min le 1er mois.
+    - SCALE (4 000 à 8 000 DH/mois) : Pilotage et optimisation continue des campagnes + A/B testing + reporting bimensuel.
+    Ta règle d'or : Sois précis, professionnel, et encourage la réservation de l'audit gratuit territorial de 15 minutes ou l'essai du simulateur ROI.
+    Réponds en français de manière fluide, chaleureuse et professionnelle.`,
+    en: `You are Yacine, the elite AI acquisition advisor at "AssurLead" in Morocco, specialized exclusively in insurance customer acquisition (brokers, agents).
+    Your persona: Empathetic, highly expert, proactive, and focused on signed contract ROI.
+    Our packages:
+    - STARTER (2,900 to 4,900 MAD): High-converting landing page + 2-min quote form + GA4/Meta Pixel + WhatsApp CTA.
+    - GROWTH (15,000 to 25,000 MAD): Turnkey acquisition system + Google Ads Search + Meta Ads + CRM alerts <60s + automated WhatsApp + 5 guaranteed leads min in Month 1.
+    - SCALE (4,000 to 8,000 MAD/month): Continuous campaign management, A/B testing & CAC reduction.
+    Always reply clearly, elegantly, and fluently in English.`,
+    ar: `أنت ياسين، المستشار والمساعد الذكي الخبير لوكالة "AssurLead" المتخصصة حصرياً في استقطاب عملاء التأمين بالمغرب (وسطاء، وكلاء عامون).
+    شخصيتك: ودود، خبير، استباقي ومهني يركز على تكلفة العقد النهائي الموقع.
+    باقاتنا الرئيسية:
+    - باقة STARTER (من 2,900 إلى 4,900 درهم): صفحة هبوط عالية التحويل + استمارة تسعير سريعة + تتبع Pixel + زر واتساب.
+    - باقة GROWTH (من 15,000 إلى 25,000 درهم): نظام استقطاب متكامل + إعلانات غوغل وميتا + نظام CRM بإشعارات أقل من دقيقة + أتمتة الواتساب + ضمان 5 عملاء مؤهلين كحد أدنى.
+    - باقة SCALE (من 4,000 إلى 8,000 درهم شهرياً): إدارة وتحسين مستمر للحملات وخفض تكلفة العقود الموقعة.
+    أجب دائماً بلغة عربية راقية ومتقنة وشجع المستخدمين على طلب التدقيق المجاني لمنطقتهم.`
 };
 
 const multiLangSuggestions = {
     fr: {
-        initial: [
-            "Comment avoir plus de clients ?",
-            "Quels sont vos tarifs ?",
-            "Cas d'assurance (Sechkili Marrakech)",
-            "Réserver un audit gratuit (15 min)",
-            "Discuter sur WhatsApp"
-        ],
-        pricing: [
-            "Formule Starter (2 000 DH)",
-            "Formule Growth (4 500 DH)",
-            "Formule Lead Engine (8 000 DH)",
-            "Délai & Garantie 7-10 jours"
-        ],
-        projects: [
-            "Cabinet Sechkili (Marrakech)",
-            "Cabinet El Omrani (Casablanca)",
-            "Comment démarrer mon projet ?"
-        ],
-        seo: [
-            "Comment être en 1ère page Google ?",
-            "Fiche Google Maps & SEO local",
-            "Réserver un audit SEO gratuit"
-        ]
+        initial: ["Comment fonctionne le système ?", "Quels sont les tarifs ?", "Étude de cas El Omrani", "Simuler mon ROI"],
+        pricing: ["Pack Starter", "Pack Growth (Recommandé)", "Audit gratuit 15min"],
+        projects: ["Assurances El Omrani", "Garantie 5 leads", "Comment démarrer ?"],
+        roisim: ["Calculer mon volume", "Taux de conversion ?", "Coût par lead (28 DH)"]
     },
     en: {
-        initial: [
-            "How to get more clients?",
-            "What are your rates?",
-            "Insurance case study (Sechkili Marrakech)",
-            "Book a free audit (15 min)",
-            "Chat on WhatsApp"
-        ],
-        pricing: [
-            "Starter Pack (2,000 MAD)",
-            "Growth Pack (4,500 MAD)",
-            "Lead Engine (8,000 MAD)",
-            "Timeline & Guarantees"
-        ],
-        projects: [
-            "Sechkili Brokerage (Marrakech)",
-            "El Omrani Agency (Casablanca)",
-            "How do we start?"
-        ],
-        seo: [
-            "How to reach Google Page 1?",
-            "Google Maps local listing",
-            "Book free SEO audit"
-        ]
+        initial: ["How does the system work?", "What are the rates?", "El Omrani Case Study", "Calculate my ROI"],
+        pricing: ["Starter Tier", "Growth Tier (Recommended)", "Free 15-min audit"],
+        projects: ["El Omrani Insurance", "5 Leads Guarantee", "How to begin?"],
+        roisim: ["Calculate my revenue", "Conversion rate?", "Cost per lead (28 MAD)"]
     },
     ar: {
-        initial: [
-            "كيف أحصل على زبائن جدد؟",
-            "ما هي أسعار الباقات؟",
-            "دراسة حالة التأمين (الشكيلي بمراكش)",
-            "حجز تدقيق مجاني (15 دقيقة)",
-            "محادثة عبر واتساب"
-        ],
-        pricing: [
-            "باقة Starter (2 000 درهم)",
-            "باقة Growth (4 500 درهم)",
-            "باقة Lead Engine (8 000 درهم)",
-            "مدة التسليم والضمانات"
-        ],
-        projects: [
-            "تأمينات الشكيلي (مراكش)",
-            "تأمينات العمراني (الدار البيضاء)",
-            "كيف نبدأ العمل معاً؟"
-        ],
-        seo: [
-            "كيف أتصدر نتائج غوغل؟",
-            "مزامنة خرائط غوغل",
-            "حجز تدقيق السيو المجاني"
-        ]
+        initial: ["كيف يعمل النظام؟", "ما هي الأسعار والباقات؟", "دراسة حالة العمراني", "حساب أرباحي"],
+        pricing: ["باقة Starter", "باقة Growth (الأكثر طلباً)", "تدقيق مجاني 15 دقيقة"],
+        projects: ["تأمين العمراني", "ضمان 5 عملاء", "كيف نبدأ العمل؟"],
+        roisim: ["احسب عائدي المالي", "معدل التحويل؟", "تكلفة العميل (28 درهم)"]
     }
+};
+
+const botThinkingMessages = {
+    fr: "Yacine réfléchit...",
+    en: "Yacine is thinking...",
+    ar: "ياسين يفكر..."
 };
 
 const fullTextDictionary = {
@@ -6093,7 +6031,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     setInterval(updateHeroDashboard, 5000);
 
-    // --- CHATBOT OMAR & ACTION ENGINE ---
+    // --- CHATBOT YACINE & CONTEXT ENGINE ---
     const chatToggle = document.getElementById('chat-toggle');
     const chatWindow = document.getElementById('chat-window');
     const chatClose = document.getElementById('chat-close');
@@ -6101,319 +6039,181 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatSend = document.getElementById('chat-send');
     const chatMessages = document.getElementById('chat-messages');
     const chatSuggestions = document.getElementById('chat-suggestions');
-    const chatTeaser = document.getElementById('chat-teaser');
-    const chatTeaserClose = document.getElementById('chat-teaser-close');
 
+    // Context tracking for proactive suggestions
     let chatHistory = [];
-
-    // Helper: Format message text safely with bold & linebreaks
-    const formatMessageContent = (rawText) => {
-        if (!rawText) return '';
-        // Escape HTML tags to prevent injection while allowing markdown bold & linebreaks
-        const escaped = rawText
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;');
-        // Convert **bold** to <strong>
-        const bolded = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        // Convert \n\n to paragraph breaks and \n to <br>
-        const paragraphs = bolded.split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
-        return paragraphs;
+    let userInteractions = {
+        askedPricing: false,
+        viewedROI: false,
+        viewedProjects: false,
+        isAgent: false
     };
 
-    // Client-side fallback engine if server is unreachable
-    const getOfflineOmarReply = (text, lang) => {
-        const q = (text || '').toLowerCase();
-
-        if (/tarif|prix|combien|co[uû]t|budget|formule|pack|devis|سعر|باقة|كم|ثمن|price|cost/.test(q)) {
-            return {
-                reply: `Nos formules chez ASSURLEAD sont transparentes et taillées pour rentabiliser votre investissement :\n\n• **Starter (2 000 DH)** : Site vitrine haute vitesse (< 1.2s), SEO local et bouton WhatsApp direct.\n• **Growth (4 500 DH)** : Moteur complet avec tunnels de devis par produit et synchronisation Google Maps.\n• **Lead Engine (8 000 DH)** : Dispositif sur-mesure d'autorité et captation intensive de prospects.\n\n⚡ **Délai 7 à 10 jours garanti**, paiement 50/50 sécurisé, sans engagement.`,
-                actions: [
-                    { label: "🟢 Lancer mon projet sur WhatsApp (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20devis%20pour%20mon%20site" },
-                    { label: "⚡ Réserver mon Audit SEO Gratuit (15 min)", type: "modal" },
-                    { label: "📞 Appeler Omar (+212 707 573 162)", type: "call", url: "tel:+212707573162" }
-                ]
-            };
-        }
-
-        if (/assurance|courtier|courtage|axa|rma|sanlam|wafa|sechkili|el omrani|auto|sant[eé]|تأمين|insurance/.test(q)) {
-            return {
-                reply: `L'assurance est notre grande spécialité au Maroc ! Nous équipons les courtiers et agents pour convertir les visiteurs en souscriptions réelles.\n\n🏆 **Exemple concret en ligne :**\n• **Cabinet Assurance Sechkili à Marrakech (www.assurancesechkili.com)** : Demandes de devis 24h/24, concrétisations directes sur le web et appels téléphoniques qualifiés chaque semaine !\n• **Cabinet Assurances El Omrani (AXA Casablanca)** : 1ère page Google et réactivité WhatsApp.\n\n⚡ **Passez à l'action :** Nous pouvons déployer votre moteur en 10 jours ouvrés.`,
-                actions: [
-                    { label: "🛡️ Découvrir le site Sechkili Marrakech", type: "link", url: "/realisation-sechkili.html" },
-                    { label: "🟢 Échanger sur WhatsApp pour mon cabinet", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20site%20pour%20mon%20cabinet%20d'assurance" },
-                    { label: "⚡ Réserver mon Audit Spécial Assurance", type: "modal" }
-                ]
-            };
-        }
-
-        if (/seo|r[eé]f[eé]rencement|google|visibilit[eé]|premi[eè]re page|سيو|غوغل/.test(q)) {
-            return {
-                reply: `90% des internautes marocains choisissent un prestataire sur la 1ère page Google.\n\nNotre stratégie SEO combine :\n1. Mots-clés ciblés par ville (ex: devis assurance Casablanca, avocat Rabat, agence Marrakech).\n2. Fiche Google Business Profile / Maps optimisée pour capter les appels entrants.\n3. Temps de chargement < 1.2s validé par Google.\n\n⚡ **Action recommandée :** Je réalise un diagnostic gratuit de 15 minutes sur votre visibilité.`,
-                actions: [
-                    { label: "⚡ Réserver mon Audit SEO Gratuit (15 min)", type: "modal" },
-                    { label: "🟢 Analyser mon site sur WhatsApp", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20audit%20SEO%20de%20mon%20site" },
-                    { label: "📈 Voir notre méthode SEO", type: "link", url: "/referencement-seo-casablanca.html" }
-                ]
-            };
-        }
-
-        if (/d[eé]lai|temps|combien de temps|livraison|garantie|وقت|مدة/.test(q)) {
-            return {
-                reply: `Nos engagements sont contractuels et garantis :\n\n• **Livraison complète en 7 à 10 jours ouvrés**.\n• **Paiement 50/50 sécurisé** (acompte de démarrage, solde à la livraison après validation).\n• **Sans engagement** : vous êtes propriétaire de votre site et de votre nom de domaine à 100%.\n\n⚡ **Envie de démarrer cette semaine ?** Bloquons votre créneau sur WhatsApp.`,
-                actions: [
-                    { label: "🚀 Bloquer mon créneau de développement", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20veux%20d%C3%A9marrer%20mon%20site%20cette%20semaine" },
-                    { label: "⚡ Réserver l'Audit Gratuit (15 min)", type: "modal" },
-                    { label: "📞 Appeler Omar (+212 707 573 162)", type: "call", url: "tel:+212707573162" }
-                ]
-            };
-        }
-
-        return {
-          reply: `Chez ASSURLEAD, nous créons des sites web taillés pour attirer des clients qualifiés et générer des opportunités commerciales mesurables chaque semaine.\n\n⚡ **Passons à l'action ensemble :** Je vous invite à réserver un audit gratuit de 15 minutes ou à me contacter directement sur WhatsApp pour échanger sur vos objectifs.`,
-          actions: [
-            { label: "🟢 Échanger avec Omar sur WhatsApp (+212 707 573 162)", type: "whatsapp", url: `https://wa.me/212707573162?text=Bonjour%20Omar%2C%20discutons%20de%20mon%20projet%20web` },
-            { label: "⚡ Réserver mon Audit SEO Gratuit (15 min)", type: "modal" },
-            { label: "📞 Appeler Omar directement", type: "call", url: "tel:+212707573162" },
-            { label: "📂 Voir nos réalisations en ligne", type: "link", url: "/realisations.html" }
-          ]
-        };
-    };
-
-    // Render an Action Button
-    const createActionButton = (action) => {
-        const btn = document.createElement('a');
-        btn.className = `chat-action-btn action-${action.type}`;
-
-        let iconHtml = '<i class="fas fa-arrow-right"></i>';
-        if (action.type === 'whatsapp') iconHtml = '<i class="fab fa-whatsapp" style="font-size: 14px;"></i>';
-        else if (action.type === 'modal') iconHtml = '<i class="fas fa-bolt" style="font-size: 13px;"></i>';
-        else if (action.type === 'call') iconHtml = '<i class="fas fa-phone-alt" style="font-size: 13px;"></i>';
-        else if (action.type === 'link') iconHtml = '<i class="fas fa-external-link-alt" style="font-size: 12px;"></i>';
-        else if (action.type === 'prompt') iconHtml = '<i class="fas fa-comment-dots" style="font-size: 12px;"></i>';
-
-        btn.innerHTML = `${iconHtml} <span>${action.label}</span>`;
-
-        if (action.type === 'whatsapp' || action.type === 'call') {
-            btn.href = action.url || '#';
-            btn.target = action.type === 'whatsapp' ? '_blank' : '_self';
-            btn.rel = 'noopener noreferrer';
-        } else if (action.type === 'modal') {
-            btn.href = '#';
-            btn.onclick = (e) => {
-                e.preventDefault();
-                const modal = document.getElementById('cta-modal');
-                if (modal) modal.classList.add('active');
-            };
-        } else if (action.type === 'link') {
-            btn.href = action.url || '#';
-            btn.onclick = (e) => {
-                if (action.url && action.url.startsWith('/#')) {
-                    e.preventDefault();
-                    const targetEl = document.querySelector(action.url.replace('/', ''));
-                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
-                    chatWindow.classList.add('hidden');
-                }
-            };
-        } else if (action.type === 'prompt') {
-            btn.href = '#';
-            btn.onclick = (e) => {
-                e.preventDefault();
-                if (chatInput) {
-                    chatInput.value = action.text || action.label;
-                    handleChat();
-                }
-            };
-        }
-
-        return btn;
-    };
-
-    // Add message to chat display
-    const addMessage = (content, sender, actions = []) => {
-        if (!chatMessages) return;
-        const msgDiv = document.createElement('div');
-        msgDiv.classList.add('message', sender);
-
-        if (sender === 'bot') {
-            msgDiv.innerHTML = formatMessageContent(content);
-
-            // Append action buttons if provided
-            if (actions && actions.length > 0) {
-                const actionsContainer = document.createElement('div');
-                actionsContainer.className = 'chat-actions-container';
-                actions.forEach(action => {
-                    actionsContainer.appendChild(createActionButton(action));
-                });
-                msgDiv.appendChild(actionsContainer);
-            }
-        } else {
-            msgDiv.textContent = content;
-        }
-
-        chatMessages.appendChild(msgDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    };
-
-    // Show suggestion chips
     const showSuggestions = (type = 'initial') => {
         if (!chatSuggestions) return;
         chatSuggestions.innerHTML = '';
-
+        
         const lang = localStorage.getItem('assurlead_lang') || 'fr';
         const activeSugs = multiLangSuggestions[lang] || multiLangSuggestions.fr;
         const list = activeSugs[type] || activeSugs.initial;
-
+        
         list.forEach(text => {
             const btn = document.createElement('button');
-            btn.type = 'button';
             btn.className = 'suggestion-btn';
             btn.textContent = text;
             btn.onclick = () => {
-                if (chatInput) {
-                    chatInput.value = text;
-                    handleChat();
-                }
+                chatInput.value = text;
+                handleChat();
             };
             chatSuggestions.appendChild(btn);
         });
-
+        
         chatSuggestions.classList.remove('hidden');
     };
 
-    // Main Chat Handler
-    const handleChat = async () => {
-        if (!chatInput) return;
-        const text = chatInput.value.trim();
-        if (!text) return;
-
-        // Display user message
-        addMessage(text, 'user');
-        chatInput.value = '';
-        chatHistory.push({ role: "user", parts: [{ text }] });
-        if (chatSuggestions) chatSuggestions.classList.add('hidden');
-
-        const lang = localStorage.getItem('assurlead_lang') || 'fr';
-
-        // Display animated typing indicator
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'chat-typing';
-        typingDiv.innerHTML = '<span class="chat-typing-dot"></span><span class="chat-typing-dot"></span><span class="chat-typing-dot"></span>';
-        chatMessages.appendChild(typingDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        try {
-            // Send request to server-side Omar API
-            const response = await fetch('/api/omar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    message: text,
-                    history: chatHistory,
-                    lang: lang
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (typingDiv.parentNode) typingDiv.parentNode.removeChild(typingDiv);
-
-            const botReply = data.reply || "Bonjour ! Comment puis-je vous aider ?";
-            const botActions = data.actions || [];
-
-            addMessage(botReply, 'bot', botActions);
-            chatHistory.push({ role: "model", parts: [{ text: botReply }] });
-
-            // Contextual post-response suggestion update
-            setTimeout(() => {
-                const lower = botReply.toLowerCase();
-                if (/tarif|prix|formule|2 000|4 500|8 000|سعر/.test(lower)) showSuggestions('pricing');
-                else if (/sechkili|omrani|assurance|courtier|courtage|تأمين/.test(lower)) showSuggestions('projects');
-                else if (/seo|google|visibilité|page|سيو/.test(lower)) showSuggestions('seo');
-                else showSuggestions('initial');
-            }, 600);
-
-        } catch (err) {
-            console.warn('[Omar Chat] Fallback to local intelligence:', err);
-            if (typingDiv.parentNode) typingDiv.parentNode.removeChild(typingDiv);
-
-            // Execute local fallback engine immediately
-            const fallback = getOfflineOmarReply(text, lang);
-            addMessage(fallback.reply, 'bot', fallback.actions);
-            chatHistory.push({ role: "model", parts: [{ text: fallback.reply }] });
-
-            setTimeout(() => {
-                showSuggestions('initial');
-            }, 600);
-        }
-    };
-
-    // Chat Toggle & Events
-    if (chatToggle && chatWindow) {
+    if (chatToggle && chatWindow && chatClose) {
         chatToggle.addEventListener('click', () => {
             chatWindow.classList.toggle('hidden');
-            if (chatTeaser) chatTeaser.style.display = 'none';
-
             if (!chatWindow.classList.contains('hidden')) {
-                if (chatInput) chatInput.focus();
-
-                // Load initial welcome message if first time
-                if (chatMessages && chatMessages.children.length === 0) {
+                chatInput.focus();
+                if (chatMessages.children.length === 0) {
                     const lang = localStorage.getItem('assurlead_lang') || 'fr';
-                    const welcomeText = chatWelcomeMessages[lang] || chatWelcomeMessages.fr;
-                    const initialActions = [
-                        { label: "🚀 Comment avoir plus de clients ?", type: "prompt", text: "Comment avoir plus de clients au Maroc ?" },
-                        { label: "💰 Quels sont vos tarifs ?", type: "prompt", text: "Quels sont vos tarifs pour créer un site web ?" },
-                        { label: "🛡️ Cas Assurance (Sechkili Marrakech)", type: "link", url: "/realisation-sechkili.html" },
-                        { label: "⚡ Réserver l'Audit SEO Gratuit (15 min)", type: "modal" },
-                        { label: "💬 Discuter sur WhatsApp", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20%C3%A9change%20pour%20mon%20activit%C3%A9" }
-                    ];
-                    addMessage(welcomeText, 'bot', initialActions);
+                    const activeWelcome = chatWelcomeMessages[lang] || chatWelcomeMessages.fr;
+                    addMessage(activeWelcome, 'bot');
                 }
                 showSuggestions('initial');
             }
         });
-    }
 
-    if (chatClose && chatWindow) {
         chatClose.addEventListener('click', () => {
             chatWindow.classList.add('hidden');
         });
     }
 
-    if (chatTeaser && chatWindow) {
-        chatTeaser.addEventListener('click', (e) => {
-            if (e.target.closest('#chat-teaser-close')) return;
-            chatWindow.classList.remove('hidden');
-            chatTeaser.style.display = 'none';
-            if (chatInput) chatInput.focus();
-            if (chatMessages && chatMessages.children.length === 0) {
-                const lang = localStorage.getItem('assurlead_lang') || 'fr';
-                const welcomeText = chatWelcomeMessages[lang] || chatWelcomeMessages.fr;
-                addMessage(welcomeText, 'bot');
+    const addMessage = (text, sender) => {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message', sender);
+        msgDiv.textContent = text;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    const handleChat = async () => {
+        if (!chatInput) return;
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        addMessage(text, 'user');
+        chatInput.value = '';
+        chatHistory.push({ role: "user", parts: [{ text }] });
+        chatSuggestions.classList.add('hidden');
+
+        // Interaction Tracking for better AI context
+        const lowerText = text.toLowerCase();
+        if (/tarif|prix|mad|combien|coût|سعر|باقة/.test(lowerText)) userInteractions.askedPricing = true;
+        if (/projet|exemple|réalisation|portfolio|مشروع/.test(lowerText)) userInteractions.viewedProjects = true;
+        if (/roi|calcul|simulateur|prévision|أرباح/.test(lowerText)) userInteractions.viewedROI = true;
+
+        const lang = localStorage.getItem('assurlead_lang') || 'fr';
+
+        const loadingDiv = document.createElement('div');
+        loadingDiv.classList.add('message', 'bot', 'loading');
+        loadingDiv.textContent = botThinkingMessages[lang] || botThinkingMessages.fr;
+        chatMessages.appendChild(loadingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        try {
+            let apiKey = null;
+
+            // 1. Try URL parameters
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                apiKey = urlParams.get('api_key') || urlParams.get('gemini_api_key') || urlParams.get('apikey');
+            } catch (e) {}
+
+            // 2. Try localStorage
+            if (!apiKey) {
+                try {
+                     apiKey = localStorage.getItem('VITE_GEMINI_API_KEY') || localStorage.getItem('GEMINI_API_KEY');
+                } catch (e) {}
             }
-            showSuggestions('initial');
-        });
-    }
 
-    if (chatTeaserClose && chatTeaser) {
-        chatTeaserClose.addEventListener('click', (e) => {
-            e.stopPropagation();
-            chatTeaser.style.display = 'none';
-        });
-    }
+            // 3. Try Vite import.meta.env
+            if (!apiKey) {
+                try {
+                    apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+                } catch (e) {}
+            }
 
-    // Auto-show teaser after 3 seconds on first visit
-    setTimeout(() => {
-        if (chatTeaser && chatWindow && chatWindow.classList.contains('hidden')) {
-            chatTeaser.style.display = 'flex';
+            // 4. Try legacy process.env
+            if (!apiKey) {
+                try {
+                     apiKey = process.env.GEMINI_API_KEY;
+                } catch (e) {}
+            }
+
+            if (!apiKey) {
+                const missingKeyErr = {
+                    fr: "Clé API Gemini manquante. Veuillez configurer la variable d'environnement VITE_GEMINI_API_KEY, utiliser le localStorage ou joindre ?api_key=VOTRE_CLE à l'URL.",
+                    en: "Gemini API Key is missing. Please configure VITE_GEMINI_API_KEY in your environment, use localStorage, or append ?api_key=YOUR_KEY to the url.",
+                    ar: "مفتاح واجهة برمجة تطبيقات Gemini مفقود. يرجى تهيئة متغير البيئة VITE_GEMINI_API_KEY، أو استخدام التخزين المحلي، أو إضافة ?api_key=YOUR_KEY إلى عنوان URL."
+                };
+                throw new Error(missingKeyErr[lang] || missingKeyErr.fr);
+            }
+
+            const ai = new GoogleGenAI({ 
+                apiKey: apiKey,
+                httpOptions: {
+                    headers: {
+                        'User-Agent': 'aistudio-build'
+                    }
+                }
+            });
+
+            const activeInstructions = systemInstructions[lang] || systemInstructions.fr;
+
+            const response = await ai.models.generateContent({
+                model: "gemini-3.5-flash",
+                contents: chatHistory,
+                config: {
+                    systemInstruction: `${activeInstructions}\nContexte additionnel : ${JSON.stringify(userInteractions)}.`,
+                    temperature: 0.8,
+                    topP: 0.95,
+                    topK: 40,
+                    maxOutputTokens: 1024,
+                }
+            });
+
+            const botResponse = response.text || (lang === 'ar' ? "عذرًا، لم أتمكن من الحصول على رد." : lang === 'en' ? "Sorry, I couldn't formulate tag response." : "Désolé, je n'ai pas pu générer de réponse.");
+
+            chatMessages.removeChild(loadingDiv);
+            addMessage(botResponse, 'bot');
+            chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
+
+            // Post-response suggestions
+            setTimeout(() => {
+                const bText = botResponse.toLowerCase();
+                if (/tarif|pack|mad|سعر|باقة|درهم/.test(bText)) showSuggestions('pricing');
+                else if (/projet|exemple|réalisation|مشروع|مثال/.test(bText)) showSuggestions('projects');
+                else if (/roi|Calcul|simulateur|أرباح|حساب/.test(bText)) showSuggestions('roisim');
+                else showSuggestions('initial');
+            }, 800);
+
+        } catch (error) {
+            console.error('Chat error:', error);
+            if (loadingDiv.parentNode) chatMessages.removeChild(loadingDiv);
+            if (error.message && (error.message.includes("Clé API") || error.message.includes("API Key") || error.message.includes("مفتاح"))) {
+                addMessage(error.message, 'bot');
+            } else {
+                const fallbackErrorMsg = {
+                    fr: "Oups ! Une petite coupure technique. Je reviens vers vous dans un instant. En attendant, n'hésitez pas à simuler votre ROI !",
+                    en: "Oops! We encountered tag slight technical disconnect. I'll be back in tag flash. In the meantime, don't hesitate to play with the interactive ROI calculator!",
+                    ar: "عذراً! واجهنا انقطاعًا فنيًا بسيطًا وسأعود للتواصل معك فورًا. في غضون ذلك، لا تتردد في محاكاة وتقدير أرباحك وعائداتك التفاعلية!"
+                };
+                addMessage(fallbackErrorMsg[lang] || fallbackErrorMsg.fr, 'bot');
+            }
         }
-    }, 3000);
+    };
 
     if (chatSend) chatSend.addEventListener('click', handleChat);
     if (chatInput) {
