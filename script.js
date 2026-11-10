@@ -5662,7 +5662,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `• CA Potentiel : ${Math.floor(revenue).toLocaleString()} MAD (+${Math.floor(roi)}% ROI)\n\n` +
                 `Je souhaite valider ce plan d'acquisition pour mon agence.`
             );
-            simWhatsappBtn.href = `https://wa.me/212707573162?text=${encodedMsg}`;
+            simWhatsappBtn.href = `https://wa.me/212714716278?text=${encodedMsg}`;
         }
 
         // Update 3D Bar
@@ -5991,7 +5991,7 @@ document.addEventListener('DOMContentLoaded', () => {
                            `💬 *Message :* ${encodeURIComponent(messageVal || 'Demande de renseignement')}`;
 
             setTimeout(() => {
-                window.location.href = `https://wa.me/212707573162?text=${waText}`;
+                window.location.href = `https://wa.me/212714716278?text=${waText}`;
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalText;
