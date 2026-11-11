@@ -46,6 +46,7 @@ function omarApiPlugin() {
 }
 
 export default defineConfig({
+  base: '/',
   plugins: [omarApiPlugin()],
   server: {
     port: 3000,
