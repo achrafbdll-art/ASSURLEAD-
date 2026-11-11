@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { GoogleGenAI } from "@google/genai";
 
 // Safely suppress benign ResizeObserver loop notification messages
 window.addEventListener('error', (e) => {
@@ -3486,6 +3485,12 @@ const tickerTranslations = {
     }
 };
 
+// --- CHATBOT WELCOMES (OMAR) ---
+const chatWelcomeMessages = {
+    fr: "Bonjour ! Je suis Omar, conseiller commercial & acquisition chez ASSURLEAD. Comment puis-je vous aider à accélérer votre visibilité et capter de nouveaux clients aujourd'hui ?",
+    en: "Hello! I am Omar, lead acquisition advisor at ASSURLEAD. How can I help boost your client acquisition today?",
+    ar: "مرحباً بك! أنا عمر، مستشار استقطاب العملاء لدى ASSURLEAD. كيف يمكنني مساعدتك في تطوير نشاطك وجلب زبائن جدد اليوم؟"
+};
 
 const formSubmitAlert = {
     fr: "Merci ! Votre demande a été envoyée. Notre équipe vous recontactera sous 24h.",
@@ -3493,55 +3498,11 @@ const formSubmitAlert = {
     ar: "شكراً لك! تم تسجيل طلبك بنجاح. سيقوم فريقنا بموافاة حسابك والتواصل معك خلال الـ 24 ساعة القادمة."
 };
 
-const chatWelcomeMessages = {
-    fr: "Bonjour ! Je suis **Omar**, conseiller en acquisition digitale chez **ASSURLEAD**. 🇲🇦\n\nComment puis-je vous aider aujourd'hui à capter plus de prospects qualifiés et développer votre chiffre d'affaires ?",
-    en: "Hello! I am **Omar**, senior acquisition advisor at **ASSURLEAD**. 🇲🇦\n\nHow can I help you attract high-intent clients and scale your revenue today?",
-    ar: "أهلاً وسهلاً بك! أنا **عمر**، مستشار استقطاب العملاء وتطوير الأعمال لدى **ASSURLEAD** بالمغرب. 🇲🇦\n\nكيف يمكنني مساعدتك اليوم في مضاعفة زبائنك وتنمية معاملاتك التجارية؟"
-};
-
-const botThinkingMessages = {
-    fr: "Omar analyse votre demande...",
-    en: "Omar is analyzing your request...",
-    ar: "عمر يحلل طلبك..."
-};
-
-const systemInstructions = {
-    fr: `Tu es Omar, le conseiller commercial expert et stratège en acquisition digitale chez ASSURLEAD au Maroc.
-    Ton persona : Chaleureux, dynamique, extrêmement compétent, pragmatique et 100% orienté action et retour sur investissement (ROI).
-    Ton rôle : Conseiller les dirigeants d'entreprises, courtiers et agents d'assurance, agences immobilières, professions libérales et PME au Maroc pour transformer leur présence en ligne en un véritable "Moteur d'Acquisition" générateur de devis, d'appels et de contrats signés.
-    RÈGLES D'OR DE TES RÉPONSES :
-    1. RÈGLE ABSOLUE : TOUTES TES RÉPONSES DOIVENT INCITER À L'ACTION IMMÉDIATE ("PASSER À L'ACTION").
-       - Ne fais jamais de réponses purement théoriques ou passives.
-       - Conclus TOUJOURS par une invitation claire, directe et rassurante à passer à l'action : réserver l'audit gratuit de 15 minutes, échanger en direct sur WhatsApp avec Omar (+212 707 573 162) ou lancer un appel téléphonique.
-    2. CONCISION & IMPACT :
-       - Fais des réponses courtes, percutantes et bien aérées (3 à 6 phrases ou puces claires).
-       - Utilise des chiffres concrets, des délais réels et cite le contexte marocain (Casablanca, Marrakech, Rabat, etc.).
-    3. RÉALISATIONS PHARES :
-       - Cabinet Assurance Sechkili à Marrakech (www.assurancesechkili.com) : devis en ligne 24h/24, concrétisations directes sur le web et flux continu d'appels téléphoniques qualifiés chaque semaine !
-       - Cabinet Assurances El Omrani (AXA Casablanca - www.assuranceselomrani.com) : 1ère page Google, temps de chargement < 1.2s, tunnel WhatsApp direct.
-    4. NOS OFFRES CLAIRES :
-       - Starter (2 000 DH) : Site vitrine haute vitesse + SEO local + tunnel WhatsApp direct.
-       - Growth (4 500 DH) : Moteur d'acquisition complet + formulaires interactifs par produit + Google Maps synchronisé + Core Web Vitals < 1.2s.
-       - Lead Engine (8 000 DH) : Écosystème sur-mesure d'autorité + multi-tunnels de conversion + SEO multi-villes + suivi ROI.
-       - Délai garanti 7-10 jours ouvrés, paiement 50/50 sécurisé, sans engagement.
-    5. COORDONNÉES : WhatsApp direct & Tél : +212 707 573 162. Audit de 15 minutes offert.`,
-    en: `You are Omar, elite acquisition consultant and digital strategist at ASSURLEAD in Morocco.
-    Your persona: Warm, highly expert, proactive, pragmatic, and 100% focused on business action and signed contract ROI.
-    Your mission: Help Moroccan companies, insurance brokers, real estate agencies, and professionals turn their website into an active Inbound Acquisition Engine.
-    GOLDEN RULE: Always drive action. Conclude every message with a clear call-to-action: book a free 15-min SEO audit, connect on WhatsApp (+212 707 573 162), or call directly.
-    Key reference: Cabinet Assurance Sechkili Marrakech (www.assurancesechkili.com) with online quotes, direct closures, and continuous weekly calls.`,
-    ar: `أنت عمر، المستشار التجاري وخبير استقطاب العملاء لدى ASSURLEAD في المغرب.
-    شخصيتك: ودود، خبير، استباقي ومهني يركز على النتائج الفعلية والعائد المالي الملموس.
-    مهمتك: مساعدة أصحاب الشركات ومكاتب التأمين والمهن الحرة بالمغرب على تحويل مواقعهم إلى محركات استقطاب حقيقية للمبيعات والاتصالات.
-    القاعدة الأساسية: كل إجابة يجب أن تنتهي بدعوة واضحة للانتقال إلى الفعل (حجز تدقيق مجاني 15 دقيقة، أو التواصل الفوري عبر الواتساب +212707573162).`
-};
-
 const multiLangSuggestions = {
     fr: {
         initial: [
-            "Comment avoir plus de clients ?",
-            "Quels sont vos tarifs ?",
-            "Cas d'assurance (Sechkili Marrakech)",
+            "Combien coûte un site web ?",
+            "Cas Sechkili Marrakech",
             "Réserver un audit gratuit (15 min)",
             "Discuter sur WhatsApp"
         ],
@@ -3564,9 +3525,8 @@ const multiLangSuggestions = {
     },
     en: {
         initial: [
-            "How to get more clients?",
-            "What are your rates?",
-            "Insurance case study (Sechkili Marrakech)",
+            "How much does a website cost?",
+            "Insurance case (Sechkili Marrakech)",
             "Book a free audit (15 min)",
             "Chat on WhatsApp"
         ],
@@ -3574,7 +3534,7 @@ const multiLangSuggestions = {
             "Starter Pack (2,000 MAD)",
             "Growth Pack (4,500 MAD)",
             "Lead Engine (8,000 MAD)",
-            "Timeline & Guarantees"
+            "7-10 days Turnaround"
         ],
         projects: [
             "Sechkili Brokerage (Marrakech)",
@@ -3582,16 +3542,15 @@ const multiLangSuggestions = {
             "How do we start?"
         ],
         seo: [
-            "How to reach Google Page 1?",
-            "Google Maps local listing",
-            "Book free SEO audit"
+            "Rank on Google Page 1",
+            "Google Maps Local SEO",
+            "Book Free SEO Audit"
         ]
     },
     ar: {
         initial: [
-            "كيف أحصل على زبائن جدد؟",
-            "ما هي أسعار الباقات؟",
-            "دراسة حالة التأمين (الشكيلي بمراكش)",
+            "كم تكلفة الموقع؟",
+            "دراسة حالة الشكيلي بمراكش",
             "حجز تدقيق مجاني (15 دقيقة)",
             "محادثة عبر واتساب"
         ],
@@ -3599,7 +3558,7 @@ const multiLangSuggestions = {
             "باقة Starter (2 000 درهم)",
             "باقة Growth (4 500 درهم)",
             "باقة Lead Engine (8 000 درهم)",
-            "مدة التسليم والضمانات"
+            "التسليم في 7-10 أيام"
         ],
         projects: [
             "تأمينات الشكيلي (مراكش)",
@@ -3607,11 +3566,17 @@ const multiLangSuggestions = {
             "كيف نبدأ العمل معاً؟"
         ],
         seo: [
-            "كيف أتصدر نتائج غوغل؟",
+            "تصدر نتائج غوغل",
             "مزامنة خرائط غوغل",
             "حجز تدقيق السيو المجاني"
         ]
     }
+};
+
+const botThinkingMessages = {
+    fr: "Omar vous répond...",
+    en: "Omar is typing...",
+    ar: "عمر يكتب..."
 };
 
 const fullTextDictionary = {
@@ -5724,7 +5689,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `• CA Potentiel : ${Math.floor(revenue).toLocaleString()} MAD (+${Math.floor(roi)}% ROI)\n\n` +
                 `Je souhaite valider ce plan d'acquisition pour mon agence.`
             );
-            simWhatsappBtn.href = `https://wa.me/212707573162?text=${encodedMsg}`;
+            simWhatsappBtn.href = `https://wa.me/212714716278?text=${encodedMsg}`;
         }
 
         // Update 3D Bar
@@ -6053,7 +6018,7 @@ document.addEventListener('DOMContentLoaded', () => {
                            `💬 *Message :* ${encodeURIComponent(messageVal || 'Demande de renseignement')}`;
 
             setTimeout(() => {
-                window.location.href = `https://wa.me/212707573162?text=${waText}`;
+                window.location.href = `https://wa.me/212714716278?text=${waText}`;
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalText;
@@ -6109,14 +6074,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Helper: Format message text safely with bold & linebreaks
     const formatMessageContent = (rawText) => {
         if (!rawText) return '';
-        // Escape HTML tags to prevent injection while allowing markdown bold & linebreaks
         const escaped = rawText
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
-        // Convert **bold** to <strong>
         const bolded = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        // Convert \n\n to paragraph breaks and \n to <br>
         const paragraphs = bolded.split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
         return paragraphs;
     };
@@ -6353,72 +6315,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Chat Toggle & Events
-    if (chatToggle && chatWindow) {
+    // Chat Window Toggle & Listeners
+    if (chatToggle && chatWindow && chatClose) {
         chatToggle.addEventListener('click', () => {
             chatWindow.classList.toggle('hidden');
-            if (chatTeaser) chatTeaser.style.display = 'none';
-
             if (!chatWindow.classList.contains('hidden')) {
+                if (chatTeaser) chatTeaser.style.display = 'none';
                 if (chatInput) chatInput.focus();
-
-                // Load initial welcome message if first time
                 if (chatMessages && chatMessages.children.length === 0) {
                     const lang = localStorage.getItem('assurlead_lang') || 'fr';
-                    const welcomeText = chatWelcomeMessages[lang] || chatWelcomeMessages.fr;
-                    const initialActions = [
-                        { label: "🚀 Comment avoir plus de clients ?", type: "prompt", text: "Comment avoir plus de clients au Maroc ?" },
-                        { label: "💰 Quels sont vos tarifs ?", type: "prompt", text: "Quels sont vos tarifs pour créer un site web ?" },
-                        { label: "🛡️ Cas Assurance (Sechkili Marrakech)", type: "link", url: "/realisation-sechkili.html" },
-                        { label: "⚡ Réserver l'Audit SEO Gratuit (15 min)", type: "modal" },
-                        { label: "💬 Discuter sur WhatsApp", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20%C3%A9change%20pour%20mon%20activit%C3%A9" }
-                    ];
-                    addMessage(welcomeText, 'bot', initialActions);
+                    const activeWelcome = chatWelcomeMessages[lang] || chatWelcomeMessages.fr;
+                    addMessage(activeWelcome, 'bot');
                 }
                 showSuggestions('initial');
             }
         });
-    }
 
-    if (chatClose && chatWindow) {
         chatClose.addEventListener('click', () => {
             chatWindow.classList.add('hidden');
         });
     }
 
-    if (chatTeaser && chatWindow) {
-        chatTeaser.addEventListener('click', (e) => {
-            if (e.target.closest('#chat-teaser-close')) return;
-            chatWindow.classList.remove('hidden');
-            chatTeaser.style.display = 'none';
-            if (chatInput) chatInput.focus();
-            if (chatMessages && chatMessages.children.length === 0) {
-                const lang = localStorage.getItem('assurlead_lang') || 'fr';
-                const welcomeText = chatWelcomeMessages[lang] || chatWelcomeMessages.fr;
-                addMessage(welcomeText, 'bot');
-            }
-            showSuggestions('initial');
-        });
-    }
-
-    if (chatTeaserClose && chatTeaser) {
-        chatTeaserClose.addEventListener('click', (e) => {
-            e.stopPropagation();
-            chatTeaser.style.display = 'none';
-        });
-    }
-
-    // Auto-show teaser after 3 seconds on first visit
-    setTimeout(() => {
-        if (chatTeaser && chatWindow && chatWindow.classList.contains('hidden')) {
-            chatTeaser.style.display = 'flex';
-        }
-    }, 3000);
-
     if (chatSend) chatSend.addEventListener('click', handleChat);
     if (chatInput) {
         chatInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') handleChat();
+        });
+    }
+
+    // Chat Teaser timer
+    if (chatTeaser) {
+        setTimeout(() => {
+            if (chatWindow && chatWindow.classList.contains('hidden')) {
+                chatTeaser.style.display = 'flex';
+            }
+        }, 3500);
+
+        chatTeaser.addEventListener('click', (e) => {
+            if (e.target.closest('#chat-teaser-close')) {
+                chatTeaser.style.display = 'none';
+                return;
+            }
+            if (chatToggle) chatToggle.click();
         });
     }
 
