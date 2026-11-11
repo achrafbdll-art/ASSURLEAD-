@@ -120,7 +120,7 @@
                 <li><a href="/realisations.html" class="active nav-diag-active" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
-                <li><a href="https://wa.me/212714716278?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20sur%20un%20site%20comme%20assurancesechkili.com" target="_blank" class="btn btn-primary btn-sm" data-i18n="diag_nav_cta">Consultation Gratuite</a></li>
+                <li><a href="https://wa.me/212707573162?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20sur%20un%20site%20comme%20assurancesechkili.com" target="_blank" class="btn btn-primary btn-sm" data-i18n="diag_nav_cta">Consultation Gratuite</a></li>
             </ul>
             <div class="nav-right">
                 <div class="lang-selector">
@@ -213,7 +213,7 @@
                     <a href="https://www.assurancesechkili.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary diag-btn-main">
                         <i class="fas fa-external-link-alt"></i> <span>Visiter www.assurancesechkili.com</span>
                     </a>
-                    <a href="https://wa.me/212714716278?text=Bonjour%2C%20j'ai%20vu%20votre%20r%C3%A9alisation%20pour%20Cabinet%20Assurance%20Sechkili%20Marrakech%20(www.assurancesechkili.com)%20et%20je%20souhaite%20un%20dispositif%20analogue" target="_blank" class="btn btn-outline">
+                    <a href="https://wa.me/212707573162?text=Bonjour%2C%20j'ai%20vu%20votre%20r%C3%A9alisation%20pour%20Cabinet%20Assurance%20Sechkili%20Marrakech%20(www.assurancesechkili.com)%20et%20je%20souhaite%20un%20dispositif%20analogue" target="_blank" class="btn btn-outline">
                         <i class="fab fa-whatsapp"></i> <span>Déployer pour mon agence</span>
                     </a>
                 </div>
@@ -414,7 +414,7 @@
                     </div>
 
                     <div class="approche-consultation-actions">
-                        <a href="https://wa.me/212714716278?text=Bonjour%2C%20j'ai%20consult%C3%A9%20la%20r%C3%A9alisation%20assurancesechkili.com%20(Cabinet%20Assurance%20Sechkili%20Marrakech)%20et%20je%20souhaite%20un%20devis%20pour%20mon%20cabinet" target="_blank" class="btn btn-primary diag-btn-main">
+                        <a href="https://wa.me/212707573162?text=Bonjour%2C%20j'ai%20consult%C3%A9%20la%20r%C3%A9alisation%20assurancesechkili.com%20(Cabinet%20Assurance%20Sechkili%20Marrakech)%20et%20je%20souhaite%20un%20devis%20pour%20mon%20cabinet" target="_blank" class="btn btn-primary diag-btn-main">
                             Lancer mon Projet sur WhatsApp <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="https://www.assurancesechkili.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
@@ -442,12 +442,59 @@
         </div>
     </main>
 
-    <!-- Floating WhatsApp Widget -->
+    <!-- Chatbot Omar — Conseiller Commercial & Acquisition ASSURLEAD -->
     <div id="chat-widget" class="chat-widget">
-        <a href="https://wa.me/212714716278?text=Bonjour%2C%20j'ai%20consult%C3%A9%20la%20page%20r%C3%A9alisation%20assurancesechkili.com" target="_blank" class="chat-toggle" style="background-color: #25D366; box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4); text-decoration: none;" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp" style="font-size: 32px; color: white;"></i>
-            <span class="chat-badge" style="background-color: #ffffff; color: #25D366; font-weight: bold; border: 1px solid rgba(0,0,0,0.05);">WhatsApp</span>
-        </a>
+        <!-- Floating Teaser -->
+        <div id="chat-teaser" class="chat-teaser" role="button" aria-label="Ouvrir le chat avec Omar" style="display: none;">
+            <span>👋 Une question sur le cas Sechkili ? <strong>Discutez avec Omar</strong></span>
+            <button id="chat-teaser-close" class="chat-teaser-close" aria-label="Fermer le message"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Toggle Button -->
+        <button id="chat-toggle" class="chat-toggle" aria-label="Ouvrir le chat avec Omar">
+            <div class="chat-toggle-icon">
+                <i class="fas fa-comment-dots"></i>
+                <span class="chat-online-dot"></span>
+            </div>
+            <span class="chat-badge">Omar 💬</span>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window" class="chat-window hidden" role="dialog" aria-label="Chat avec Omar">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar-wrap">
+                        <div class="chat-avatar">O</div>
+                        <span class="chat-online-dot"></span>
+                    </div>
+                    <div class="chat-header-text">
+                        <h4>Omar <span style="font-size: 11px; font-weight: normal; color: var(--zinc-400);">• ASSURLEAD</span></h4>
+                        <div class="chat-status">
+                            <span class="chat-status-pulse"></span> En ligne • Répond en 1s
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <a href="https://wa.me/212707573162?text=Bonjour%20Omar%2C%20j'ai%20consult%C3%A9%20le%20cas%20Sechkili%20et%20je%20souhaite%20un%20devis" target="_blank" rel="noopener noreferrer" class="chat-wa-direct-btn" title="Basculer sur WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <button id="chat-close" class="chat-close" aria-label="Fermer le chat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="chat-messages" class="chat-messages"></div>
+
+            <div id="chat-suggestions" class="chat-suggestions"></div>
+
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Posez votre question à Omar..." autocomplete="off">
+                <button id="chat-send" class="chat-send" aria-label="Envoyer le message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="script.js"></script>

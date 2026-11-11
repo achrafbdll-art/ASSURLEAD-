@@ -127,7 +127,7 @@
                 <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
-                <li><a href="https://wa.me/212714716278?text=Bonjour,%20je%20souhaite%20un%20%C3%A9change%20sur%20vos%20expertises%20web%20au%20Maroc" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-i18n="nav_start">Audit Gratuit</a></li>
+                <li><a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20un%20%C3%A9change%20sur%20vos%20expertises%20web%20au%20Maroc" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-i18n="nav_start">Audit Gratuit</a></li>
             </ul>
             <div class="nav-right">
                 <div class="lang-selector">
@@ -578,8 +578,8 @@
                         <p>Recevez une consultation technique gratuite de 15 minutes et un plan d'action personnalisé pour votre secteur et votre zone géographique au Maroc.</p>
                         
                         <div class="cta-actions-row">
-                            <a href="https://wa.me/212714716278?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20un%20%C3%A9change%20sur%20vos%20expertises%20pour%20mon%20entreprise." target="_blank" rel="noopener" class="btn btn-primary btn-cta-lg">
-                                <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp (+212 714-716278)
+                            <a href="https://wa.me/212707573162?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20un%20%C3%A9change%20sur%20vos%20expertises%20pour%20mon%20entreprise." target="_blank" rel="noopener" class="btn btn-primary btn-cta-lg">
+                                <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp (+212 707-573162)
                             </a>
                             <a href="/diagnostic.html" class="btn btn-outline btn-cta-lg">
                                 <span class="diag-pulse-dot"></span> Réserver mon Diagnostic Gratuit
@@ -636,7 +636,7 @@
                     <div class="footer-col">
                         <h4>Contact Direct</h4>
                         <ul>
-                            <li><a href="https://wa.me/212714716278" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> +212 714-716278</a></li>
+                            <li><a href="https://wa.me/212707573162" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> +212 707-573162</a></li>
                             <li><span style="color: var(--zinc-400);"><i class="fas fa-map-marker-alt"></i> Casablanca & Maroc</span></li>
                             <li><span style="color: var(--brand-neon);"><i class="fas fa-bolt"></i> Réponse garantie &lt; 2h</span></li>
                         </ul>
@@ -688,12 +688,62 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Action -->
-    <a href="https://wa.me/212714716278?text=Bonjour%20ASSURLEAD,%20je%20souhaite%20un%20renseignement%20sur%20vos%20expertises%20web" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contacter sur WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Chatbot Omar & Action Engine -->
+    <div id="chat-widget" class="chat-widget">
+        <!-- Floating Teaser -->
+        <div id="chat-teaser" class="chat-teaser" role="button" aria-label="Ouvrir le chat avec Omar" style="display: none;">
+            <span>👋 Besoin de plus de clients ? <strong>Discutez avec Omar</strong></span>
+            <button id="chat-teaser-close" class="chat-teaser-close" aria-label="Fermer le message"><i class="fas fa-times"></i></button>
+        </div>
 
-    <script src="script.js"></script>
+        <!-- Toggle Button -->
+        <button id="chat-toggle" class="chat-toggle" aria-label="Ouvrir le chat avec Omar">
+            <div class="chat-toggle-icon">
+                <i class="fas fa-comment-dots"></i>
+                <span class="chat-online-dot"></span>
+            </div>
+            <span class="chat-badge">Omar 💬</span>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window" class="chat-window hidden" role="dialog" aria-label="Chat avec Omar">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar-wrap">
+                        <div class="chat-avatar">O</div>
+                        <span class="chat-online-dot"></span>
+                    </div>
+                    <div class="chat-header-text">
+                        <h4>Omar <span style="font-size: 11px; font-weight: normal; color: var(--zinc-400);">• ASSURLEAD</span></h4>
+                        <div class="chat-status">
+                            <span class="chat-status-pulse"></span> En ligne • Répond en 1s
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <a href="https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20%C3%A9change%20pour%20mon%20site%20web" target="_blank" rel="noopener noreferrer" class="chat-wa-direct-btn" title="Basculer sur WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <button id="chat-close" class="chat-close" aria-label="Fermer le chat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="chat-messages" class="chat-messages"></div>
+
+            <div id="chat-suggestions" class="chat-suggestions"></div>
+
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Posez votre question à Omar..." autocomplete="off">
+                <button id="chat-send" class="chat-send" aria-label="Envoyer le message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
     <script>
         // Interactive Filter Tabs logic on Expertise page
         document.addEventListener('DOMContentLoaded', () => {

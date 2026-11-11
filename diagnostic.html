@@ -100,7 +100,7 @@
                 <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
                 <li><a href="/diagnostic.html" class="active nav-diag-active">Diagnostic</a></li>
-                <li><a href="https://wa.me/212714716278?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20diagnostic%20de%20visibilit%C3%A9%20gratuit" target="_blank" class="btn btn-primary btn-sm">Consultation Gratuite</a></li>
+                <li><a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20diagnostic%20de%20visibilit%C3%A9%20gratuit" target="_blank" class="btn btn-primary btn-sm">Consultation Gratuite</a></li>
             </ul>
             <div class="nav-right">
                 <div class="lang-selector">
@@ -233,7 +233,7 @@
                     </div>
 
                     <div class="diag-consultation-actions">
-                        <a href="https://wa.me/212714716278?text=Bonjour,%20j'ai%20consult%C3%A9%20votre%20diagnostic%20de%20visibilit%C3%A9%20et%20je%20souhaite%20r%C3%A9server%20mon%20audit%20gratuit%20de%2010%20minutes" target="_blank" class="btn btn-primary diag-btn-main" data-i18n="diag_cta_whatsapp">
+                        <a href="https://wa.me/212707573162?text=Bonjour,%20j'ai%20consult%C3%A9%20votre%20diagnostic%20de%20visibilit%C3%A9%20et%20je%20souhaite%20r%C3%A9server%20mon%20audit%20gratuit%20de%2010%20minutes" target="_blank" class="btn btn-primary diag-btn-main" data-i18n="diag_cta_whatsapp">
                             Lancer mon Diagnostic Gratuit (10 min) <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="/#offres" class="btn btn-outline" data-i18n="diag_cta_offers">
@@ -318,18 +318,65 @@
                 <span class="badge" data-i18n="modal_badge">Audit de Visibilité Google</span>
                 <h2 data-i18n="modal_title">Multipliez vos Devis <span class="neon">grâce au SEO local.</span></h2>
                 <p data-i18n="modal_p">Réservez votre <strong>audit de visibilité gratuit de 15 minutes</strong> pour analyser votre présence sur Google et déployer un <span class="neon">moteur d'acquisition de leads organiques</span> pour votre activité au Maroc.</p>
-                <a href="https://wa.me/212714716278?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20audit%20de%20visibilit%C3%A9%20Google%20gratuit" target="_blank" class="btn btn-primary full-width" data-i18n="modal_btn">Réserver mon Audit Gratuit</a>
+                <a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20audit%20de%20visibilit%C3%A9%20Google%20gratuit" target="_blank" class="btn btn-primary full-width" data-i18n="modal_btn">Réserver mon Audit Gratuit</a>
                 <div class="modal-timer"><i class="fas fa-clock"></i> <span data-i18n="modal_timer">Audit gratuit de 15 minutes, sur rendez-vous</span></div>
             </div>
         </div>
     </div>
 
-    <!-- Floating WhatsApp Widget -->
+    <!-- Chatbot Omar & Action Engine -->
     <div id="chat-widget" class="chat-widget">
-        <a href="https://wa.me/212714716278?text=Bonjour,%20j'ai%20consult%C3%A9%20le%20diagnostic%20de%20visibilit%C3%A9%20et%20je%20souhaite%20un%20audit" target="_blank" class="chat-toggle" style="background-color: #25D366; box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4); text-decoration: none;">
-            <i class="fab fa-whatsapp" style="font-size: 32px; color: white;"></i>
-            <span class="chat-badge" data-i18n="chat_badge" style="background-color: #ffffff; color: #25D366; font-weight: bold; border: 1px solid rgba(0,0,0,0.05);">WhatsApp</span>
-        </a>
+        <!-- Floating Teaser -->
+        <div id="chat-teaser" class="chat-teaser" role="button" aria-label="Ouvrir le chat avec Omar" style="display: none;">
+            <span>👋 Besoin de plus de clients ? <strong>Discutez avec Omar</strong></span>
+            <button id="chat-teaser-close" class="chat-teaser-close" aria-label="Fermer le message"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Toggle Button -->
+        <button id="chat-toggle" class="chat-toggle" aria-label="Ouvrir le chat avec Omar">
+            <div class="chat-toggle-icon">
+                <i class="fas fa-comment-dots"></i>
+                <span class="chat-online-dot"></span>
+            </div>
+            <span class="chat-badge">Omar 💬</span>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window" class="chat-window hidden" role="dialog" aria-label="Chat avec Omar">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar-wrap">
+                        <div class="chat-avatar">O</div>
+                        <span class="chat-online-dot"></span>
+                    </div>
+                    <div class="chat-header-text">
+                        <h4>Omar <span style="font-size: 11px; font-weight: normal; color: var(--zinc-400);">• ASSURLEAD</span></h4>
+                        <div class="chat-status">
+                            <span class="chat-status-pulse"></span> En ligne • Répond en 1s
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <a href="https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20%C3%A9change%20pour%20mon%20site%20web" target="_blank" rel="noopener noreferrer" class="chat-wa-direct-btn" title="Basculer sur WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <button id="chat-close" class="chat-close" aria-label="Fermer le chat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="chat-messages" class="chat-messages"></div>
+
+            <div id="chat-suggestions" class="chat-suggestions"></div>
+
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Posez votre question à Omar..." autocomplete="off">
+                <button id="chat-send" class="chat-send" aria-label="Envoyer le message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="script.js"></script>
