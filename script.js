@@ -601,9 +601,9 @@ const translations = {
         ar: "باقة Starter — 2000 درهم"
     },
     price_p2_desc: {
-        fr: "Site professionnel clé en main, hébergement et nom de domaine inclus la 1ère année, responsive mobile et contact WhatsApp.",
-        en: "Complete turnkey website, domain and hosting included for year 1, mobile responsive and direct WhatsApp button.",
-        ar: "موقع احترافي متكامل، الاستضافة والنطاق مجاناً للسنة الأولى، متجاوب مع الهواتف وزر واتساب مباشر."
+        fr: "Site professionnel clé en main, nom de domaine inclus la 1ère année, responsive mobile et contact WhatsApp (maintenance & hébergement : 100 DH/mois).",
+        en: "Complete turnkey website, domain included for year 1, mobile responsive and WhatsApp button (maintenance & hosting: 100 DH/mo).",
+        ar: "موقع احترافي متكامل، النطاق مجاناً للسنة الأولى، متجاوب مع الهواتف وواتساب (الصيانة والاستضافة: 100 درهم/شهر)."
     },
     price_growth_badge: {
         fr: "LE PLUS POPULAIRE",
@@ -846,9 +846,9 @@ const translations = {
         ar: "كم تبلغ تكلفة إنشاء موقع إلكتروني في الدار البيضاء؟"
     },
     casa_faq_a1: {
-        fr: "Chez ASSURLEAD, nos formules complètes débutent à 2 000 DH pour la formule Starter, 4 500 DH pour la formule Growth avec référencement naturel local, 8 000 DH pour Lead Engine (moteur commercial avancé), et Formule Acquisition sur-mesure à partir de 12 000 DH.",
-        en: "At ASSURLEAD, our full plans scale based on your goals: Starter at 2,000 DH, Growth at 4,500 DH with local SEO, Lead Engine at 8,000 DH for advanced commercial lead engines, and custom Acquisition plans from 12,000 DH.",
-        ar: "في أسورليد، تتوزع باقاتنا المتكاملة حسب أهدافك: Starter بـ 2000 درهم، Growth بـ 4500 درهم مع سيو محلي، Lead Engine بـ 8000 درهم لمحرك تجاري متطور، وباقة الاستقطاب المخصصة ابتداءً من 12000 درهم."
+        fr: "Chez ASSURLEAD, nos formules complètes débutent à 2 000 DH pour la formule Starter, 4 500 DH pour la formule Growth avec référencement naturel local, 8 000 DH pour Lead Engine (moteur commercial avancé), et Formule Acquisition sur-mesure à partir de 12 000 DH, avec un forfait mensuel de maintenance, hébergement et sécurité entre 100 et 200 DH/mois selon l'offre.",
+        en: "At ASSURLEAD, our full plans scale based on your goals: Starter at 2,000 DH, Growth at 4,500 DH with local SEO, Lead Engine at 8,000 DH for advanced commercial lead engines, and custom Acquisition plans from 12,000 DH, plus a transparent 100 to 200 DH/month maintenance, hosting and security fee.",
+        ar: "في أسورليد، تتوزع باقاتنا المتكاملة حسب أهدافك: Starter بـ 2000 درهم، Growth بـ 4500 درهم مع سيو محلي، Lead Engine بـ 8000 درهم لمحرك تجاري متطور، وباقة الاستقطاب المخصصة ابتداءً من 12000 درهم، مع مصاريف شهرية للصيانة والاستضافة والأمان تتراوح بين 100 و200 درهم/شهرياً."
     },
     casa_faq_q2: {
         fr: "Combien de temps faut-il pour livrer un site internet à Casablanca ?",
@@ -1361,9 +1361,9 @@ const translations = {
         ar: "هل تقدمون خدمة الصيانة بعد الإطلاق؟"
     },
     tgr_faq_a3: {
-        fr: "Oui, notre abonnement mensuel agence couvre les sauvegardes, la sécurité, les mises à jour et le support prioritaire 7j/7.",
-        en: "Yes, our monthly agency retainer covers backups, security, updates, and 7/7 priority support.",
-        ar: "نعم، يشمل اشتراكنا الشهري النسخ الاحتياطي، الحماية، التحديثات والدعم الفني طيلة أيام الأسبوع."
+        fr: "Oui, notre forfait mensuel (entre 100 et 200 DH / mois selon la formule) couvre l'hébergement haute performance, le certificat SSL/HTTPS, les sauvegardes, la sécurité active et les mises à jour techniques.",
+        en: "Yes, our monthly fee (100 to 200 DH / month depending on your plan) covers high-speed hosting, SSL/HTTPS security, backups, active protection, and technical updates.",
+        ar: "نعم، يغطي اشتراكنا الشهري (بين 100 و200 درهم / شهرياً حسب الباقة) الاستضافة السريعة، شهادة الأمان SSL، النسخ الاحتياطي، الحماية المستمرة والتحديثات التقنية."
     },
     tgr_cta_title: {
         fr: "Prêt à accélérer vos opportunités B2B à Tanger ?",
@@ -2965,6 +2965,36 @@ const translations = {
         en: "Choose Acquisition",
         ar: "اختيار باقة Acquisition"
     },
+    offer_maint_100: {
+        fr: "+ <strong>100 DH / mois</strong> • Maintenance, Hébergement &amp; Sécurité",
+        en: "+ <strong>100 DH / mo</strong> • Maintenance, Hosting &amp; Security",
+        ar: "+ <strong>100 درهم / شهر</strong> • الصيانة، الاستضافة والأمان"
+    },
+    offer_maint_150: {
+        fr: "+ <strong>150 DH / mois</strong> • Maintenance, Hébergement &amp; Sécurité",
+        en: "+ <strong>150 DH / mo</strong> • Maintenance, Hosting &amp; Security",
+        ar: "+ <strong>150 درهم / شهر</strong> • الصيانة، الاستضافة والأمان"
+    },
+    offer_maint_200: {
+        fr: "+ <strong>200 DH / mois</strong> • Maintenance, Hébergement &amp; Sécurité",
+        en: "+ <strong>200 DH / mo</strong> • Maintenance, Hosting &amp; Security",
+        ar: "+ <strong>200 درهم / شهر</strong> • الصيانة، الاستضافة والأمان"
+    },
+    offers_maint_title: {
+        fr: "Frais de Maintenance, Hébergement &amp; Sécurité : <span class=\"neon\">100 à 200 DH / mois</span>",
+        en: "Website Maintenance, Hosting &amp; Security: <span class=\"neon\">100 to 200 DH / month</span>",
+        ar: "مصاريف الصيانة، الاستضافة والأمان: <span class=\"neon\">100 إلى 200 درهم / شهرياً</span>"
+    },
+    offers_maint_desc: {
+        fr: "Forfait mensuel transparent selon la formule (Starter 100 DH • Growth 150 DH • Lead Engine &amp; Acquisition 200 DH) couvrant l'hébergement haute performance, le certificat SSL/HTTPS, les sauvegardes automatiques, les mises à jour techniques et la sécurité active.",
+        en: "Transparent monthly fee based on your plan (Starter 100 DH • Growth 150 DH • Lead Engine &amp; Acquisition 200 DH) covering high-speed hosting, SSL/HTTPS security certificate, automated backups, technical updates, and active protection.",
+        ar: "اشتراك شهري شفاف حسب الباقة (Starter بـ 100 درهم • Growth بـ 150 درهم • Lead Engine و Acquisition بـ 200 درهم) يشمل الاستضافة فائقة السرعة، شهادة الأمان SSL/HTTPS، النسخ الاحتياطي التلقائي، التحديثات التقنية والحماية المستمرة."
+    },
+    offers_maint_btn: {
+        fr: "Demander un devis",
+        en: "Request a quote",
+        ar: "طلب عرض سعر"
+    },
     // Sectors / Multi-industry
     sec_badge: {
         fr: "Multi-Secteurs",
@@ -4312,6 +4342,14 @@ const fullTextDictionary = {
     "en": "Starter plan at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD delivered in 10-14 days.",
     "ar": "باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم مع تسليم في 10-14 يوماً."
   },
+  "Formule Starter à 2 000 DH, Growth à 4 500 DH et Lead Engine à 8 000 DH (+ 100 à 200 DH/mois maintenance, hébergement & sécurité) avec livraison en 10-14 jours.": {
+    "en": "Starter plan at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD (+ 100 to 200 MAD/month maintenance, hosting & security) delivered in 10-14 days.",
+    "ar": "باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم (+ 100 إلى 200 درهم/شهر للصيانة، الاستضافة والأمان) مع تسليم في 10-14 يوماً."
+  },
+  "Maintenance, Hébergement & Sécurité (100–200 DH/mois)": {
+    "en": "Maintenance, Hosting & Security (100–200 DH/mo)",
+    "ar": "الصيانة، الاستضافة والأمان (100–200 درهم/شهر)"
+  },
   "Formule Starter à 2 000 DH, Growth à 4 500 DH et Lead Engine à 8 000 DH livrés en 10 à 14 jours.": {
     "en": "Starter plan at 2,000 MAD, Growth at 4,500 MAD, and Lead Engine at 8,000 MAD delivered in 10 to 14 days.",
     "ar": "باقة Starter بـ 2,000 درهم، Growth بـ 4,500 درهم وLead Engine بـ 8,000 درهم مع تسليم خلال 10 إلى 14 يوماً."
@@ -4536,9 +4574,9 @@ const fullTextDictionary = {
     "en": "Turnkey 1-page professional website, hosting and domain included for year 1, mobile-responsive with direct WhatsApp contact.",
     "ar": "موقع مهني متكامل من صفحة واحدة، استضافة واسم نطاق مجاناً للسنة الأولى، وتوافق تام مع الهواتف وواتساب."
   },
-  "Site professionnel clé en main, hébergement et nom de domaine inclus la 1ère année, responsive mobile et contact WhatsApp.": {
-    "en": "Turnkey professional website, hosting and domain included for year 1, mobile responsive, and WhatsApp contact.",
-    "ar": "موقع مهني متكامل، استضافة واسم نطاق للسنة الأولى، تصميم متجاوب واتصال واتساب."
+  "Site professionnel clé en main, nom de domaine inclus la 1ère année, responsive mobile et contact WhatsApp (maintenance & hébergement : 100 DH/mois).": {
+    "en": "Turnkey professional website, domain included for year 1, mobile responsive, and WhatsApp contact (maintenance & hosting: 100 DH/mo).",
+    "ar": "موقع مهني متكامل، النطاق مجاناً للسنة الأولى، تصميم متجاوب واتصال واتساب (الصيانة والاستضافة: 100 درهم/شهر)."
   },
   "Sites attractifs avec menus digitaux, circuits vers Agafay et galeries photos haute définition optimisées pour Google Images et Maps.": {
     "en": "Engaging websites with digital menus, Agafay tour booking, and high-definition galleries optimized for Google Images and Maps.",
@@ -6087,9 +6125,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const getOfflineOmarReply = (text, lang) => {
         const q = (text || '').toLowerCase();
 
+        if (/maintenance|h[eé]bergement|ssl|s[eé]curit[eé]|sauvegarde|hosting|security|صيانة|استضافة|أمان/.test(q)) {
+            if (lang === 'ar') {
+                return {
+                    reply: `مصاريف **الصيانة، الاستضافة والأمان** لدينا شفافة وتقع بين **100 و 200 درهم / شهرياً** حسب الباقة المختارة:\n\n• **Starter** : + 100 درهم / شهر\n• **Growth** : + 150 درهم / شهر\n• **Lead Engine & Acquisition** : + 200 درهم / شهر\n\n🛡️ يشمل هذا الاشتراك: استضافة عالية السرعة، شهادة الأمان SSL/HTTPS، النسخ الاحتياطي التلقائي، التحديثات التقنية والحماية النشطة للموقع على مدار الساعة.`,
+                    actions: [
+                        { label: "💬 استفسر عبر واتساب (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20j'ai%20une%20question%20sur%20la%20maintenance%20(100-200%20DH%2Fmois)" },
+                        { label: "⚡ حجز تدقيق مجاني (15 دقيقة)", type: "modal" },
+                        { label: "📞 اتصال هاتفي مباشر", type: "call", url: "tel:+212707573162" }
+                    ]
+                };
+            }
+            if (lang === 'en') {
+                return {
+                    reply: `Our monthly **Website Maintenance, Hosting & Security** fee is transparent and ranges between **100 and 200 DH / month** depending on your package:\n\n• **Starter**: + 100 DH / month\n• **Growth**: + 150 DH / month\n• **Lead Engine & Acquisition**: + 200 DH / month\n\n🛡️ Includes high-speed hosting, SSL/HTTPS certificate, automated backups, technical updates, and active security monitoring.`,
+                    actions: [
+                        { label: "🟢 Chat on WhatsApp (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Hello%20Omar%2C%20I%20have%20a%20question%20about%20the%20100-200%20DH%2Fmo%20maintenance%20plan" },
+                        { label: "⚡ Book Free 15-min Audit", type: "modal" },
+                        { label: "📞 Call Omar (+212 707 573 162)", type: "call", url: "tel:+212707573162" }
+                    ]
+                };
+            }
+            return {
+                reply: `Nos **frais de maintenance, hébergement et sécurité** sont transparents et compris entre **100 et 200 DH / mois** selon votre formule :\n\n• **Starter** : + 100 DH / mois\n• **Growth** : + 150 DH / mois\n• **Lead Engine & Acquisition** : + 200 DH / mois\n\n🛡️ **Ce forfait inclut :** hébergement haute vitesse, certificat SSL/HTTPS, sauvegardes automatiques, mises à jour techniques et sécurité active 24/7.`,
+                actions: [
+                    { label: "🟢 Choisir ma formule sur WhatsApp (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20des%20infos%20sur%20le%20forfait%20maintenance%20100-200%20DH%2Fmois" },
+                    { label: "⚡ Réserver mon Audit SEO Gratuit (15 min)", type: "modal" },
+                    { label: "📞 Appeler Omar (+212 707 573 162)", type: "call", url: "tel:+212707573162" }
+                ]
+            };
+        }
+
         if (/tarif|prix|combien|co[uû]t|budget|formule|pack|devis|سعر|باقة|كم|ثمن|price|cost/.test(q)) {
             return {
-                reply: `Nos formules chez ASSURLEAD sont transparentes et taillées pour rentabiliser votre investissement :\n\n• **Starter (2 000 DH)** : Site vitrine haute vitesse (< 1.2s), SEO local et bouton WhatsApp direct.\n• **Growth (4 500 DH)** : Moteur complet avec tunnels de devis par produit et synchronisation Google Maps.\n• **Lead Engine (8 000 DH)** : Dispositif sur-mesure d'autorité et captation intensive de prospects.\n\n⚡ **Délai 7 à 10 jours garanti**, paiement 50/50 sécurisé, sans engagement.`,
+                reply: `Nos formules chez ASSURLEAD sont transparentes et taillées pour rentabiliser votre investissement :\n\n• **Starter (2 000 DH + 100 DH/mois)** : Site vitrine haute vitesse (< 1.2s), SEO local et bouton WhatsApp direct.\n• **Growth (4 500 DH + 150 DH/mois)** : Moteur complet avec tunnels de devis par produit et synchronisation Google Maps.\n• **Lead Engine (8 000 DH + 200 DH/mois)** : Dispositif sur-mesure d'autorité et captation intensive de prospects.\n• **Acquisition (12 000 DH+ + 200 DH/mois)** : Écosystème complet sur mesure.\n\n🛡️ **Maintenance, Hébergement & Sécurité : 100 à 200 DH / mois** (SSL/HTTPS, sauvegardes, mises à jour et protection active).\n⚡ **Délai 7 à 10 jours garanti**, paiement 50/50 sécurisé, sans engagement.`,
                 actions: [
                     { label: "🟢 Lancer mon projet sur WhatsApp (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20devis%20pour%20mon%20site" },
                     { label: "⚡ Réserver mon Audit SEO Gratuit (15 min)", type: "modal" },

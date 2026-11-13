@@ -2483,7 +2483,7 @@ body[dir="rtl"] .roi-disclaimer i {
 .price {
     font-size: 32px;
     font-weight: 900;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     letter-spacing: -0.02em;
 }
 
@@ -2492,6 +2492,89 @@ body[dir="rtl"] .roi-disclaimer i {
     color: var(--brand-neon);
     margin-left: 4px;
     font-weight: 700;
+}
+
+.price-maintenance {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--zinc-400);
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.16);
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-bottom: 26px;
+    line-height: 1.4;
+}
+
+.price-maintenance strong,
+.price-maintenance .neon {
+    color: var(--brand-neon);
+    font-weight: 800;
+}
+
+.maintenance-callout {
+    margin-top: 28px;
+    background: rgba(13, 14, 18, 0.85);
+    border: 1px solid rgba(0, 255, 65, 0.28);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(0, 255, 65, 0.05);
+}
+
+.maintenance-callout-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 10px;
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    color: var(--brand-neon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.maintenance-callout-content {
+    flex: 1;
+}
+
+.maintenance-callout-content h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 6px;
+    text-transform: none;
+    letter-spacing: -0.01em;
+}
+
+.maintenance-callout-content p {
+    font-size: 13px;
+    color: var(--zinc-400);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.maintenance-callout .btn {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .maintenance-callout {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .maintenance-callout .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .features {

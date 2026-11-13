@@ -2,8 +2,6 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { handleOmarChat } from './src/server/omarService.js';
-
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 function omarApiPlugin() {
@@ -25,6 +23,7 @@ function omarApiPlugin() {
 
         req.on('end', async () => {
           try {
+            const { handleOmarChat } = await server.ssrLoadModule('/src/server/omarService.js');
             const data = JSON.parse(body || '{}');
             const result = await handleOmarChat({
               message: data.message || '',

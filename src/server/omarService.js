@@ -19,9 +19,11 @@ RÈGLES D'OR DE TES RÉPONSES :
    - Cabinet Assurances El Omrani (AXA Casablanca - www.assuranceselomrani.com) : 1ère page Google, temps de chargement < 1.2s, tunnel WhatsApp direct.
    - Agence Immobilière Maarif Casablanca : moteur d'acquisition de mandats locaux.
 4. NOS OFFRES CLAIRES :
-   - Starter (2 000 DH) : Site vitrine haute vitesse + SEO local + tunnel WhatsApp direct.
-   - Growth (4 500 DH) : Moteur d'acquisition complet + formulaires interactifs par produit + Google Maps synchronisé + Core Web Vitals < 1.2s.
-   - Lead Engine (8 000 DH) : Écosystème sur-mesure d'autorité + multi-tunnels de conversion + SEO multi-villes + suivi ROI.
+   - Starter (2 000 DH + 100 DH/mois) : Site vitrine haute vitesse + SEO local + tunnel WhatsApp direct.
+   - Growth (4 500 DH + 150 DH/mois) : Moteur d'acquisition complet + formulaires interactifs par produit + Google Maps synchronisé + Core Web Vitals < 1.2s.
+   - Lead Engine (8 000 DH + 200 DH/mois) : Écosystème sur-mesure d'autorité + multi-tunnels de conversion + SEO multi-villes + suivi ROI.
+   - Acquisition (12 000 DH+ + 200 DH/mois) : Dispositif complet sur-mesure, SEO avancé et contenu stratégique.
+   - Frais de maintenance du site, hébergement & sécurité : entre 100 et 200 DH / mois (100 DH Starter, 150 DH Growth, 200 DH Lead Engine & Acquisition), incluant hébergement haute vitesse, certificat SSL/HTTPS, sauvegardes automatiques, mises à jour techniques et sécurité active.
    - Garanties : Délai 7-10 jours ouvrés garanti, sans engagement de durée, paiement 50/50 sécurisé, code propriétaire.
 5. COORDONNÉES DIRECTES :
    - Téléphone & WhatsApp : +212 707 573 162
@@ -34,11 +36,43 @@ RÈGLES D'OR DE TES RÉPONSES :
 export function getLocalOmarResponse(userMessage, lang = 'fr') {
   const q = (userMessage || '').toLowerCase().trim();
 
+  // 0. Maintenance / Hébergement / Sécurité
+  if (/maintenance|h[eé]bergement|ssl|s[eé]curit[eé]|sauvegarde|hosting|security|صيانة|استضافة|أمان/.test(q)) {
+    if (lang === 'ar') {
+      return {
+        reply: `تتراوح مصاريف **صيانة الموقع، الاستضافة والأمان** لدينا بين **100 و 200 درهم / شهرياً** حسب الباقة المختارة:\n\n• **باقة Starter** : + 100 درهم / شهر\n• **باقة Growth** : + 150 درهم / شهر\n• **باقة Lead Engine و Acquisition** : + 200 درهم / شهر\n\n🛡️ يشمل هذا الاشتراك الشهري: استضافة فائقة السرعة، شهادة الأمان SSL/HTTPS، النسخ الاحتياطي التلقائي، التحديثات التقنية والحماية المستمرة للموقع.\n\nهل تود اختيار الباقة الأنسب لنشاطك عبر واتساب أو حجز تدقيق مجاني لمدة 15 دقيقة؟`,
+        actions: [
+          { label: "💬 تواصل عبر واتساب (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20des%20informations%20sur%20la%20maintenance%20(100-200%20DH%2Fmois)" },
+          { label: "⚡ حجز تدقيق مجاني (15 دقيقة)", type: "modal" },
+          { label: "📞 اتصال هاتفي مباشر", type: "call", url: "tel:+212707573162" }
+        ]
+      };
+    }
+    if (lang === 'en') {
+      return {
+        reply: `Our monthly **Website Maintenance, Hosting & Security** fee is clear and ranges from **100 to 200 MAD / month** depending on your plan:\n\n• **Starter**: + 100 MAD / month\n• **Growth**: + 150 MAD / month\n• **Lead Engine & Acquisition**: + 200 MAD / month\n\n🛡️ This covers high-speed hosting, SSL/HTTPS security certificate, automated backups, technical updates, and active security protection.\n\nWould you like to book a free 15-minute audit or message me directly on WhatsApp?`,
+        actions: [
+          { label: "💬 Chat with Omar on WhatsApp", type: "whatsapp", url: "https://wa.me/212707573162?text=Hello%20Omar%2C%20I%20would%20like%20details%20about%20the%20100-200%20MAD%20maintenance%20plan" },
+          { label: "⚡ Book Free 15-min Audit", type: "modal" },
+          { label: "📞 Call Omar directly", type: "call", url: "tel:+212707573162" }
+        ]
+      };
+    }
+    return {
+      reply: `Nos **frais de maintenance, hébergement et sécurité** sont transparents et compris entre **100 et 200 DH / mois** selon votre formule :\n\n• **Starter** : + 100 DH / mois\n• **Growth** : + 150 DH / mois\n• **Lead Engine & Acquisition** : + 200 DH / mois\n\n🛡️ **Inclus chaque mois :** hébergement haute vitesse, certificat SSL/HTTPS, sauvegardes automatiques, mises à jour techniques et sécurité active 24/7.\n\n**Passons à l'action :** Souhaitez-vous que je vous recommande la formule idéale sur WhatsApp ou lors d'un audit gratuit de 15 minutes ?`,
+      actions: [
+        { label: "🟢 Échanger sur WhatsApp (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20des%20informations%20sur%20le%20forfait%20maintenance%20100-200%20DH%2Fmois" },
+        { label: "⚡ Réserver mon Audit SEO Gratuit (15 min)", type: "modal" },
+        { label: "📞 Appeler Omar directement", type: "call", url: "tel:+212707573162" }
+      ]
+    };
+  }
+
   // 1. Tarifs / Prix / Budget
   if (/tarif|prix|combien|co[uû]t|budget|payer|formule|pack|devis|سعر|باقة|كم|ثمن|price|cost|how much/.test(q)) {
     if (lang === 'ar') {
       return {
-        reply: `مرحباً بك! في ASSURLEAD نقدم باقات واضحة وشفافة بدون مصاريف خفية:\n\n• **باقة Starter (2 000 درهم)** : موقع سريع وفائق الأداء + سيو محلي + ربط مباشر بالواتساب.\n• **باقة Growth (4 500 درهم)** : محرك استقطاب متكامل + استمارات تسعير ذكية + مزامنة خرائط غوغل.\n• **باقة Lead Engine (8 000 درهم)** : منظومة حصرية للشركات ومكاتب التأمين لتصدر غوغل في عدة مدن.\n\n⚡ **التسليم في 7 إلى 10 أيام مضمون**، وأداء بنسبة 50/50 وبدون أي التزام زمني.\n\nهل تفضل أن نقوم بتدقيق مجاني لموقعك الحالي، أم نتواصل مباشرة عبر واتساب لتحديد الباقة المناسبة؟`,
+        reply: `مرحباً بك! في ASSURLEAD نقدم باقات واضحة وشفافة بدون مصاريف خفية:\n\n• **باقة Starter (2 000 درهم + 100 درهم/شهر)** : موقع سريع وفائق الأداء + سيو محلي + ربط مباشر بالواتساب.\n• **باقة Growth (4 500 درهم + 150 درهم/شهر)** : محرك استقطاب متكامل + استمارات تسعير ذكية + مزامنة خرائط غوغل.\n• **باقة Lead Engine (8 000 درهم + 200 درهم/شهر)** : منظومة حصرية للشركات ومكاتب التأمين لتصدر غوغل في عدة مدن.\n• **باقة Acquisition (ابتداءً من 12 000 درهم + 200 درهم/شهر)** : منظومة استقطاب شاملة ومخصصة.\n\n🛡️ **مصاريف الصيانة، الاستضافة والأمان : 100 إلى 200 درهم / شهرياً** (استضافة عالية السرعة، شهادة SSL، نسخ احتياطي وحماية نشطة).\n⚡ **التسليم في 7 إلى 10 أيام مضمون**، وأداء بنسبة 50/50 وبدون أي التزام زمني.\n\nهل تفضل أن نقوم بتدقيق مجاني لموقعك الحالي، أم نتواصل مباشرة عبر واتساب لتحديد الباقة المناسبة؟`,
         actions: [
           { label: "💬 تواصل عبر واتساب (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20devis%20pour%20mon%20projet" },
           { label: "⚡ حجز تدقيق مجاني (15 دقيقة)", type: "modal" },
@@ -48,7 +82,7 @@ export function getLocalOmarResponse(userMessage, lang = 'fr') {
     }
     if (lang === 'en') {
       return {
-        reply: `Hello! At ASSURLEAD, we build websites specifically designed to generate clients with transparent pricing:\n\n• **Starter (2,000 MAD)**: High-speed site + local SEO + direct WhatsApp conversion funnel.\n• **Growth (4,500 MAD)**: Complete acquisition engine + product quote forms + Google Maps synchronization.\n• **Lead Engine (8,000 MAD)**: Bespoke authoritative system + multi-city SEO + ROI tracking.\n\n⚡ **Guaranteed 7-10 business days delivery**, secure 50/50 payment, and no long-term lock-in.\n\nShall we run a quick 15-minute free SEO audit for your business, or chat directly on WhatsApp?`,
+        reply: `Hello! At ASSURLEAD, we build websites specifically designed to generate clients with transparent pricing:\n\n• **Starter (2,000 MAD + 100 MAD/mo)**: High-speed site + local SEO + direct WhatsApp conversion funnel.\n• **Growth (4,500 MAD + 150 MAD/mo)**: Complete acquisition engine + product quote forms + Google Maps synchronization.\n• **Lead Engine (8,000 MAD + 200 MAD/mo)**: Bespoke authoritative system + multi-city SEO + ROI tracking.\n• **Acquisition (12,000+ MAD + 200 MAD/mo)**: Full custom organic acquisition ecosystem.\n\n🛡️ **Maintenance, Hosting & Security: 100 to 200 MAD / month** (high-speed hosting, SSL/HTTPS, automated backups, updates & active security).\n⚡ **Guaranteed 7-10 business days delivery**, secure 50/50 payment, and no long-term lock-in.\n\nShall we run a quick 15-minute free SEO audit for your business, or chat directly on WhatsApp?`,
         actions: [
           { label: "💬 Chat with Omar on WhatsApp", type: "whatsapp", url: "https://wa.me/212707573162?text=Hello%20Omar%2C%20I'd%20like%20a%20quote%20for%20my%20website%20project" },
           { label: "⚡ Book Free 15-min SEO Audit", type: "modal" },
@@ -57,7 +91,7 @@ export function getLocalOmarResponse(userMessage, lang = 'fr') {
       };
     }
     return {
-      reply: `Chez ASSURLEAD, nous ne vendons pas de simples vitrines passives, mais des **Moteurs d'Acquisition** avec un retour sur investissement rapide :\n\n• **Formule Starter (2 000 DH)** : Site web ultra-rapide (< 1.2s), optimisé mobile, SEO local Google et tunnel WhatsApp direct.\n• **Formule Growth (4 500 DH)** : Moteur complet avec tunnels de devis par produit, fiches Google Business synchronisées et réactivité maximale.\n• **Formule Lead Engine (8 000 DH)** : Dispositif sur-mesure d'autorité, multi-villes et captation intensive de prospects qualifiés.\n\n⚡ **Délai garanti 7 à 10 jours**, paiement 50/50 sécurisé et sans engagement de durée.\n\n**Passons à l'action :** Quel est votre secteur d'activité, ou souhaitez-vous que je vous fasse une simulation sur WhatsApp ?`,
+      reply: `Chez ASSURLEAD, nous ne vendons pas de simples vitrines passives, mais des **Moteurs d'Acquisition** avec un retour sur investissement rapide :\n\n• **Formule Starter (2 000 DH + 100 DH/mois)** : Site web ultra-rapide (< 1.2s), optimisé mobile, SEO local Google et tunnel WhatsApp direct.\n• **Formule Growth (4 500 DH + 150 DH/mois)** : Moteur complet avec tunnels de devis par produit, fiches Google Business synchronisées et réactivité maximale.\n• **Formule Lead Engine (8 000 DH + 200 DH/mois)** : Dispositif sur-mesure d'autorité, multi-villes et captation intensive de prospects qualifiés.\n• **Formule Acquisition (12 000 DH+ + 200 DH/mois)** : Écosystème complet sur-mesure.\n\n🛡️ **Maintenance, Hébergement & Sécurité : 100 à 200 DH / mois** (hébergement haute vitesse, SSL/HTTPS, sauvegardes automatiques, mises à jour et sécurité active).\n⚡ **Délai garanti 7 à 10 jours**, paiement 50/50 sécurisé et sans engagement de durée.\n\n**Passons à l'action :** Quel est votre secteur d'activité, ou souhaitez-vous que je vous fasse une simulation sur WhatsApp ?`,
       actions: [
         { label: "🟢 Lancer mon projet sur WhatsApp (+212 707 573 162)", type: "whatsapp", url: "https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20devis%20personnalis%C3%A9%20pour%20mon%20site%20web" },
         { label: "⚡ Réserver mon Audit SEO Gratuit (15 min)", type: "modal" },
@@ -225,7 +259,7 @@ export async function handleOmarChat({ message, history = [], lang = 'fr' }) {
           contents: formattedContents,
           config: {
             systemInstruction: OMAR_SYSTEM_INSTRUCTION,
-            maxOutputTokens: 450,
+            maxOutputTokens: 2048,
             temperature: 0.7
           }
         }),
