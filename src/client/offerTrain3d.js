@@ -104,7 +104,7 @@ const PILLAR_CARRIAGES = [
     }
 ];
 
-// Pre-allocated math helpers (Zero GC inside render loop)
+// Zero-GC pre-allocated math utilities
 const _raycaster = new THREE.Raycaster();
 _raycaster.layers.set(1);
 const _pointer = new THREE.Vector2(-99, -99);
@@ -134,44 +134,43 @@ function isWebGLAvailable() {
     }
 }
 
-function createCyberFloorTexture(maxAnisotropy) {
+function createQuantumGridTexture(maxAnisotropy) {
     const canvas = document.createElement('canvas');
     canvas.width = 512;
     canvas.height = 512;
     const ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = '#030805';
+    ctx.fillStyle = '#07170f';
     ctx.fillRect(0, 0, 512, 512);
 
-    ctx.strokeStyle = 'rgba(0, 255, 65, 0.22)';
-    ctx.lineWidth = 2;
-    const step = 64;
-    for (let i = 0; i <= 512; i += step) {
+    // Crisp luminous sci-fi grid lines
+    ctx.strokeStyle = 'rgba(0, 255, 65, 0.38)';
+    ctx.lineWidth = 2.2;
+    for (let i = 0; i <= 512; i += 64) {
         ctx.beginPath();
         ctx.moveTo(i, 0);
         ctx.lineTo(i, 512);
         ctx.stroke();
-
         ctx.beginPath();
         ctx.moveTo(0, i);
         ctx.lineTo(512, i);
         ctx.stroke();
     }
 
-    // Fine sub-grid
-    ctx.strokeStyle = 'rgba(0, 255, 65, 0.08)';
-    ctx.lineWidth = 1;
-    for (let i = 32; i < 512; i += step) {
-        ctx.beginPath();
-        ctx.moveTo(i, 0);
-        ctx.lineTo(i, 512);
-        ctx.stroke();
+    // Bright glowing intersection nodes
+    ctx.fillStyle = 'rgba(134, 255, 175, 0.85)';
+    for (let x = 0; x <= 512; x += 64) {
+        for (let y = 0; y <= 512; y += 64) {
+            ctx.beginPath();
+            ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+            ctx.fill();
+        }
     }
 
     const tex = new THREE.CanvasTexture(canvas);
     tex.wrapS = THREE.RepeatWrapping;
     tex.wrapT = THREE.RepeatWrapping;
-    tex.repeat.set(32, 6);
+    tex.repeat.set(34, 7);
     tex.colorSpace = THREE.SRGBColorSpace;
     tex.anisotropy = maxAnisotropy;
     tex.needsUpdate = true;
@@ -181,75 +180,59 @@ function createCyberFloorTexture(maxAnisotropy) {
 function createLocoPlaqueTexture(lang, maxAnisotropy) {
     const canvas = document.createElement('canvas');
     canvas.width = 1024;
-    canvas.height = 256;
+    canvas.height = 288;
     const ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = '#040d07';
+    // Luminous high-contrast HUD card backdrop
+    ctx.fillStyle = '#0c2919';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grad.addColorStop(0, 'rgba(0, 255, 65, 0.34)');
-    grad.addColorStop(0.5, 'rgba(0, 255, 65, 0.06)');
-    grad.addColorStop(1, 'rgba(0, 255, 65, 0.28)');
+    grad.addColorStop(0, 'rgba(0, 255, 65, 0.42)');
+    grad.addColorStop(0.5, 'rgba(22, 68, 44, 0.32)');
+    grad.addColorStop(1, 'rgba(0, 255, 65, 0.36)');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Subtle HUD scanlines
-    ctx.fillStyle = 'rgba(0, 255, 65, 0.06)';
-    for (let y = 12; y < canvas.height; y += 16) {
-        ctx.fillRect(14, y, canvas.width - 28, 2);
-    }
-
-    // Sci-fi chamfered double frame
+    // Full luminous neon border
     ctx.strokeStyle = '#00FF41';
-    ctx.lineWidth = 5;
-    ctx.beginPath();
-    ctx.moveTo(28, 10);
-    ctx.lineTo(canvas.width - 10, 10);
-    ctx.lineTo(canvas.width - 10, canvas.height - 28);
-    ctx.lineTo(canvas.width - 28, canvas.height - 10);
-    ctx.lineTo(10, canvas.height - 10);
-    ctx.lineTo(10, 28);
-    ctx.closePath();
-    ctx.stroke();
+    ctx.lineWidth = 8;
+    ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
 
-    // Brand mark
     ctx.fillStyle = '#ffffff';
-    ctx.font = '900 58px Inter, system-ui, sans-serif';
+    ctx.font = '900 66px Inter, system-ui, sans-serif';
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'left';
-    ctx.fillText('ASSUR', 44, 96);
+    ctx.fillText('ASSUR', 44, 108);
     const wAssur = ctx.measureText('ASSUR').width;
     ctx.fillStyle = '#00FF41';
-    ctx.fillText('LEAD', 44 + wAssur, 96);
+    ctx.fillText('LEAD', 44 + wAssur, 108);
 
     const sub =
         lang === 'ar'
-            ? 'SEO · الشبكات الاجتماعية · GEO 3D'
+            ? 'مونورايل 3D · سيو · شبكات · GEO'
             : lang === 'en'
-              ? 'HYPER-CORE · SEO · SOCIAL · GEO 3D'
-              : 'HYPER-CORE · SEO · RÉSEAUX · GEO 3D';
+              ? 'QUANTUM MONORAIL · SEO · SOCIAL · GEO'
+              : 'MONORAIL 3D · SEO · SOCIAL · GEO';
 
-    ctx.fillStyle = '#d1fae5';
+    ctx.fillStyle = '#ecfdf5';
     ctx.font = '700 28px "JetBrains Mono", monospace';
-    ctx.fillText(sub, 44, 174);
+    ctx.fillText(sub, 44, 202);
 
-    // Futuristic telemetry speed chevrons
+    // Sleek ring telemetry emblem on right
+    ctx.strokeStyle = '#00FF41';
+    ctx.lineWidth = 7;
+    ctx.beginPath();
+    ctx.arc(890, 144, 62, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.lineWidth = 3.5;
+    ctx.beginPath();
+    ctx.arc(890, 144, 40, -0.6, Math.PI * 1.3);
+    ctx.stroke();
     ctx.fillStyle = '#00FF41';
-    for (let i = 0; i < 4; i++) {
-        const bx = 770 + i * 48;
-        ctx.globalAlpha = 0.45 + i * 0.18;
-        ctx.beginPath();
-        ctx.moveTo(bx, 72);
-        ctx.lineTo(bx + 28, 128);
-        ctx.lineTo(bx, 184);
-        ctx.lineTo(bx + 18, 184);
-        ctx.lineTo(bx + 46, 128);
-        ctx.lineTo(bx + 18, 72);
-        ctx.closePath();
-        ctx.fill();
-    }
-    ctx.globalAlpha = 1;
+    ctx.font = '900 32px "JetBrains Mono", monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('360°', 890, 146);
 
     const texture = new THREE.CanvasTexture(canvas);
     texture.colorSpace = THREE.SRGBColorSpace;
@@ -263,89 +246,71 @@ function drawCarriageBoardCanvas(canvas, pillar, lang) {
     const copy = pillar.labels[lang] || pillar.labels.fr;
     const accent = pillar.accent || '#00FF41';
 
-    // Deep holographic glass backing
-    ctx.fillStyle = pillar.highlight ? '#05150b' : '#050c08';
+    ctx.fillStyle = pillar.highlight ? '#103822' : '#0b2919';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const bgGrad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    bgGrad.addColorStop(0, 'rgba(0, 255, 65, 0.28)');
-    bgGrad.addColorStop(0.5, 'rgba(5, 16, 10, 0.22)');
-    bgGrad.addColorStop(1, 'rgba(0, 255, 65, 0.24)');
+    bgGrad.addColorStop(0, 'rgba(0, 255, 65, 0.36)');
+    bgGrad.addColorStop(0.5, 'rgba(20, 62, 40, 0.28)');
+    bgGrad.addColorStop(1, 'rgba(0, 255, 65, 0.42)');
     ctx.fillStyle = bgGrad;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Cyber HUD horizontal scanlines
-    ctx.fillStyle = 'rgba(0, 255, 65, 0.055)';
-    for (let y = 10; y < canvas.height; y += 14) {
-        ctx.fillRect(12, y, canvas.width - 24, 2);
-    }
-
-    // Chamfered neon outer border
+    // Full luminous outer card border + top/bottom thick neon bars
     ctx.strokeStyle = '#00FF41';
-    ctx.lineWidth = pillar.highlight ? 7 : 5;
-    ctx.beginPath();
-    ctx.moveTo(28, 8);
-    ctx.lineTo(canvas.width - 8, 8);
-    ctx.lineTo(canvas.width - 8, canvas.height - 28);
-    ctx.lineTo(canvas.width - 28, canvas.height - 8);
-    ctx.lineTo(8, canvas.height - 8);
-    ctx.lineTo(8, 28);
-    ctx.closePath();
-    ctx.stroke();
+    ctx.lineWidth = 8;
+    ctx.strokeRect(8, 8, canvas.width - 16, canvas.height - 16);
 
-    // Glowing reticle corner brackets
     ctx.fillStyle = '#00FF41';
-    ctx.fillRect(20, 16, 56, 5);
-    ctx.fillRect(20, canvas.height - 21, 56, 5);
+    ctx.fillRect(24, 12, canvas.width - 48, 8);
+    ctx.fillRect(24, canvas.height - 20, canvas.width - 48, 8);
+
+    // Left vertical glowing indicator bar
+    ctx.fillRect(16, 40, 10, canvas.height - 80);
 
     // Top kicker
     ctx.fillStyle = accent;
-    ctx.font = '800 25px "JetBrains Mono", Inter, sans-serif';
+    ctx.font = '800 30px "JetBrains Mono", Inter, sans-serif';
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'left';
-    ctx.fillText(copy.kicker, 40, 52);
+    ctx.fillText(copy.kicker, 48, 68);
 
-    // Main pillar title
+    // Main title (large & high-contrast)
     ctx.fillStyle = '#ffffff';
-    ctx.font = '900 54px Inter, system-ui, sans-serif';
-    ctx.fillText(copy.title, 40, 126);
+    ctx.font = '900 66px Inter, system-ui, sans-serif';
+    ctx.fillText(copy.title, 48, 162);
 
-    // Subtitle line
-    ctx.fillStyle = '#a7f3d0';
-    ctx.font = '600 25px Inter, system-ui, sans-serif';
-    ctx.fillText(copy.subtitle, 40, 198);
+    // Subtitle
+    ctx.fillStyle = '#ecfdf5';
+    ctx.font = '700 29px Inter, system-ui, sans-serif';
+    ctx.fillText(copy.subtitle, 48, 256);
 
-    // Right Chamfered Holographic Metric Pod
-    const boxW = 312;
-    const boxX = canvas.width - boxW - 30;
-    ctx.fillStyle = 'rgba(0, 255, 65, 0.16)';
+    // Right Highlighted Metric Badge Card
+    const cx = canvas.width - 178;
+    const cy = 168;
+    ctx.fillStyle = 'rgba(0, 255, 65, 0.22)';
     ctx.beginPath();
-    ctx.moveTo(boxX + 18, 38);
-    ctx.lineTo(boxX + boxW, 38);
-    ctx.lineTo(boxX + boxW, 200);
-    ctx.lineTo(boxX + boxW - 18, 218);
-    ctx.lineTo(boxX, 218);
-    ctx.lineTo(boxX, 56);
-    ctx.closePath();
+    ctx.roundRect?.(cx - 144, 52, 288, 232, 24);
+    if (!ctx.roundRect) ctx.rect(cx - 144, 52, 288, 232);
     ctx.fill();
     ctx.strokeStyle = '#00FF41';
-    ctx.lineWidth = 4;
+    ctx.lineWidth = 5;
     ctx.stroke();
 
     ctx.fillStyle = '#00FF41';
-    ctx.font = '900 48px Inter, system-ui, sans-serif';
+    ctx.font = '900 54px Inter, system-ui, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(pillar.badge, boxX + boxW / 2, 108);
+    ctx.fillText(pillar.badge, cx, cy - 24);
 
-    ctx.fillStyle = '#f8fafc';
-    ctx.font = '700 21px "JetBrains Mono", monospace';
-    ctx.fillText(pillar.badgeSub, boxX + boxW / 2, 174);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '800 24px "JetBrains Mono", monospace';
+    ctx.fillText(pillar.badgeSub, cx, cy + 52);
 }
 
 function createCarriageBoardTexture(pillar, lang, maxAnisotropy) {
     const canvas = document.createElement('canvas');
     canvas.width = 1024;
-    canvas.height = 256;
+    canvas.height = 336;
     drawCarriageBoardCanvas(canvas, pillar, lang);
     const texture = new THREE.CanvasTexture(canvas);
     texture.colorSpace = THREE.SRGBColorSpace;
@@ -372,11 +337,11 @@ function init2DOfferTrainFallback(container, options = {}) {
         <div class="train-2d-track">
             <div class="train-2d-marquee">
                 <div class="train-2d-consist">
-                    <div class="train-2d-loco">ASSUR<span>LEAD</span> 3D</div>
+                    <div class="train-2d-loco">ASSUR<span>LEAD</span> MONORAIL</div>
                     ${itemsHtml}
                 </div>
                 <div class="train-2d-consist" aria-hidden="true">
-                    <div class="train-2d-loco">ASSUR<span>LEAD</span> 3D</div>
+                    <div class="train-2d-loco">ASSUR<span>LEAD</span> MONORAIL</div>
                     ${itemsHtml}
                 </div>
             </div>
@@ -435,23 +400,23 @@ export function initOfferTrain3D(containerId, options = {}) {
     }
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x030805, 0.0145);
+    scene.fog = new THREE.FogExp2(0x071a10, 0.0085);
 
     const width = Math.max(container.clientWidth, 320);
     const height = Math.max(container.clientHeight, 140);
     const aspect = width / height;
 
-    // Cinematic low 3/4 sci-fi angle emphasizing 3D hyperloop depth & holographic beacons
+    // Closer Shinkansen Monorail framing so wagon cards are large & crystal-clear
     const camera = new THREE.PerspectiveCamera(36, aspect, 0.1, 150);
-    const baseCamX = -1.85;
-    const baseCamY = 1.44;
-    const baseCamZ = aspect < 3.0 ? 11.8 : 9.35;
+    const baseCamX = -1.35;
+    const baseCamY = 1.46;
+    const baseCamZ = aspect < 3.0 ? 9.35 : 7.4;
     camera.position.set(baseCamX, baseCamY, baseCamZ);
-    camera.lookAt(0.55, 0.16, 0);
+    camera.lookAt(0.45, 0.24, 0);
 
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.28;
+    renderer.toneMappingExposure = 1.48;
     renderer.setPixelRatio(isSoftwareGl ? 1 : Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(width, height);
     renderer.shadowMap.enabled = !isSoftwareGl;
@@ -459,7 +424,7 @@ export function initOfferTrain3D(containerId, options = {}) {
 
     const maxAnisotropy = Math.min(renderer.capabilities.getMaxAnisotropy?.() || 1, 8);
 
-    // Mandatory studio environment map for PBR reflections
+    // Studio Reflection Environment
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
     const roomEnv = new RoomEnvironment();
     const envRenderTarget = pmremGenerator.fromScene(roomEnv, 0.04);
@@ -467,12 +432,12 @@ export function initOfferTrain3D(containerId, options = {}) {
     roomEnv.dispose();
     pmremGenerator.dispose();
 
-    // Futuristic 3-Point + Cyber Emerald Rim Rig
-    const hemiLight = new THREE.HemisphereLight(0x86efac, 0x020604, 1.0);
+    // Lighting Rig: Bright Studio Key + Front Fill + Mint Hemisphere + Emerald Rim
+    const hemiLight = new THREE.HemisphereLight(0xe6fff0, 0x163826, 1.85);
     scene.add(hemiLight);
 
-    const keyLight = new THREE.DirectionalLight(0xf0fdf4, 2.45);
-    keyLight.position.set(9, 14, 11);
+    const keyLight = new THREE.DirectionalLight(0xffffff, 3.15);
+    keyLight.position.set(8, 16, 12);
     if (!isSoftwareGl) {
         keyLight.castShadow = true;
         keyLight.shadow.mapSize.width = 1024;
@@ -488,317 +453,238 @@ export function initOfferTrain3D(containerId, options = {}) {
     }
     scene.add(keyLight);
 
-    const neonRimLight = new THREE.DirectionalLight(0x00ff41, 2.8);
-    neonRimLight.position.set(-11, 7, -8);
+    const frontFillLight = new THREE.DirectionalLight(0xe2fbe9, 1.9);
+    frontFillLight.position.set(-4, 4, 14);
+    scene.add(frontFillLight);
+
+    const neonRimLight = new THREE.DirectionalLight(0x00ff41, 3.3);
+    neonRimLight.position.set(-12, 6.5, -8);
     scene.add(neonRimLight);
 
-    const underBounceLight = new THREE.DirectionalLight(0x00ff41, 1.15);
-    underBounceLight.position.set(3, -3, 8);
-    scene.add(underBounceLight);
+    const frontGlowLight = new THREE.DirectionalLight(0x34d399, 1.65);
+    frontGlowLight.position.set(3, -1.5, 9);
+    scene.add(frontGlowLight);
 
-    // Futuristic Hyperloop Maglev Corridor
-    const trackGroup = new THREE.Group();
-    scene.add(trackGroup);
+    // Central Elevated Monorail Guideway + Stargate Ring Portal Corridor
+    const worldGroup = new THREE.Group();
+    scene.add(worldGroup);
 
-    const trackLength = 110;
+    const trackLength = 114;
 
-    // Cybernetic perspective grid horizon floor below viaduct
-    const cyberFloorTex = createCyberFloorTexture(maxAnisotropy);
-    const cyberFloorMat = new THREE.MeshBasicMaterial({
-        map: cyberFloorTex,
+    // Quantum perspective grid horizon floor
+    const gridTex = createQuantumGridTexture(maxAnisotropy);
+    const gridFloorMat = new THREE.MeshBasicMaterial({
+        map: gridTex,
         transparent: true,
-        opacity: 0.72,
+        opacity: 0.9,
         depthWrite: false
     });
-    const cyberFloor = new THREE.Mesh(new THREE.PlaneGeometry(trackLength, 18), cyberFloorMat);
-    cyberFloor.rotation.x = -Math.PI / 2;
-    cyberFloor.position.set(0, -1.28, -2.5);
-    trackGroup.add(cyberFloor);
+    const gridFloor = new THREE.Mesh(new THREE.PlaneGeometry(trackLength, 20), gridFloorMat);
+    gridFloor.rotation.x = -Math.PI / 2;
+    gridFloor.position.set(0, -1.36, -2.0);
+    worldGroup.add(gridFloor);
 
-    // Elevated obsidian maglev bridge deck
-    const trackDeckMat = new THREE.MeshStandardMaterial({
-        color: 0x070d0a,
-        metalness: 0.58,
-        roughness: 0.52
+    // Central Elevated Monorail Spine Beam (bright metallic gunmetal-emerald)
+    const beamMat = new THREE.MeshPhysicalMaterial({
+        color: 0x26382f,
+        metalness: 0.78,
+        roughness: 0.26,
+        clearcoat: 0.85
     });
-    const trackDeck = new THREE.Mesh(new THREE.BoxGeometry(trackLength, 0.22, 3.6), trackDeckMat);
-    trackDeck.position.set(0, -1.03, 0);
-    trackDeck.receiveShadow = !isSoftwareGl;
-    trackGroup.add(trackDeck);
+    const mainSpineBeam = new THREE.Mesh(new THREE.BoxGeometry(trackLength, 0.36, 0.62), beamMat);
+    mainSpineBeam.position.set(0, -0.84, 0);
+    mainSpineBeam.receiveShadow = !isSoftwareGl;
+    worldGroup.add(mainSpineBeam);
 
-    // Grounding shadow strip + additive plasma levitation glow
-    const contactMat = new THREE.MeshBasicMaterial({
-        color: 0x000000,
-        transparent: true,
-        opacity: 0.65,
-        depthWrite: false,
-        polygonOffset: true,
-        polygonOffsetFactor: -1,
-        polygonOffsetUnits: -1
-    });
-    const contactStrip = new THREE.Mesh(new THREE.PlaneGeometry(trackLength, 1.45), contactMat);
-    contactStrip.rotation.x = -Math.PI / 2;
-    contactStrip.position.set(0, -0.91, 0);
-    trackGroup.add(contactStrip);
-
-    const neonFloorGlowMat = new THREE.MeshBasicMaterial({
-        color: 0x00ff41,
-        transparent: true,
-        opacity: 0.2,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false
-    });
-    const neonFloorGlow = new THREE.Mesh(new THREE.PlaneGeometry(trackLength, 2.55), neonFloorGlowMat);
-    neonFloorGlow.rotation.x = -Math.PI / 2;
-    neonFloorGlow.position.set(0, -0.905, 0);
-    trackGroup.add(neonFloorGlow);
-
-    // Instanced Angled Maglev Induction Coils (96 ties in 2 draw calls)
-    const coilCount = 96;
-    const coilShellGeo = new THREE.BoxGeometry(0.24, 0.08, 1.85);
-    const coilShellMat = new THREE.MeshStandardMaterial({
-        color: 0x13221a,
-        metalness: 0.65,
-        roughness: 0.42
-    });
-    const coilCoreGeo = new THREE.BoxGeometry(0.08, 0.095, 1.42);
-    const neonGuideMat = new THREE.MeshStandardMaterial({
-        color: 0x00ff41,
-        emissive: 0x00ff41,
-        emissiveIntensity: 2.55,
-        roughness: 0.18,
-        metalness: 0.1
-    });
-
-    const coilShellMesh = new THREE.InstancedMesh(coilShellGeo, coilShellMat, coilCount);
-    const coilCoreMesh = new THREE.InstancedMesh(coilCoreGeo, neonGuideMat, coilCount);
-    coilShellMesh.receiveShadow = !isSoftwareGl;
-
-    for (let i = 0; i < coilCount; i++) {
-        const cx = -trackLength / 2 + i * (trackLength / coilCount);
-        _dummy.position.set(cx, -0.885, 0);
-        _dummy.rotation.set(0, 0.14, 0);
-        _dummy.scale.set(1, 1, 1);
-        _dummy.updateMatrix();
-        coilShellMesh.setMatrixAt(i, _dummy.matrix);
-
-        _dummy.position.set(cx, -0.88, 0);
-        _dummy.updateMatrix();
-        coilCoreMesh.setMatrixAt(i, _dummy.matrix);
-    }
-    coilShellMesh.instanceMatrix.needsUpdate = true;
-    coilCoreMesh.instanceMatrix.needsUpdate = true;
-    coilShellMesh.computeBoundingSphere();
-    coilCoreMesh.computeBoundingSphere();
-    trackGroup.add(coilShellMesh, coilCoreMesh);
-
-    // Twin Polished Maglev Chrome Rails + Quad Green Neon Laser Beams
-    const railMat = new THREE.MeshStandardMaterial({
-        color: 0xd1fae5,
-        metalness: 0.96,
-        roughness: 0.12
-    });
-    const railGeo = new THREE.BoxGeometry(trackLength, 0.08, 0.07);
-    const frontRail = new THREE.Mesh(railGeo, railMat);
-    frontRail.position.set(0, -0.81, 0.46);
-    const rearRail = new THREE.Mesh(railGeo, railMat);
-    rearRail.position.set(0, -0.81, -0.46);
-    trackGroup.add(frontRail, rearRail);
-
-    const neonGuideCenter = new THREE.Mesh(new THREE.BoxGeometry(trackLength, 0.04, 0.12), neonGuideMat);
-    neonGuideCenter.position.set(0, -0.84, 0);
-    const neonEdgeFront = new THREE.Mesh(new THREE.BoxGeometry(trackLength, 0.035, 0.06), neonGuideMat);
-    neonEdgeFront.position.set(0, -0.9, 1.74);
-    const neonEdgeRear = new THREE.Mesh(new THREE.BoxGeometry(trackLength, 0.035, 0.06), neonGuideMat);
-    neonEdgeRear.position.set(0, -0.9, -1.74);
-    trackGroup.add(neonGuideCenter, neonEdgeFront, neonEdgeRear);
-
-    // Instanced Futuristic Cantilever Hyperloop Portal Ribs (20 arches in 4 draw calls)
-    const archCount = 20;
-    const archSpacing = trackLength / archCount;
-    const strutGeo = new THREE.BoxGeometry(0.11, 2.05, 0.12);
-    const archMat = new THREE.MeshStandardMaterial({
-        color: 0x101c16,
-        metalness: 0.88,
-        roughness: 0.24
-    });
-    const archBeamGeo = new THREE.BoxGeometry(0.12, 0.09, 2.85);
-    const archNeonTubeGeo = new THREE.BoxGeometry(0.055, 0.04, 2.65);
-    const archSideNeonGeo = new THREE.BoxGeometry(0.055, 1.55, 0.05);
-
-    const archStruts = new THREE.InstancedMesh(strutGeo, archMat, archCount);
-    const archBeams = new THREE.InstancedMesh(archBeamGeo, archMat, archCount);
-    const archNeonTops = new THREE.InstancedMesh(archNeonTubeGeo, neonGuideMat, archCount);
-    const archNeonSides = new THREE.InstancedMesh(archSideNeonGeo, neonGuideMat, archCount);
-
-    for (let i = 0; i < archCount; i++) {
-        const px = -trackLength / 2 + 2.4 + i * archSpacing;
-        // Slanted futuristic rear pylon strut
-        _dummy.position.set(px, 0.04, -1.52);
-        _dummy.rotation.set(0.18, 0, 0);
-        _dummy.updateMatrix();
-        archStruts.setMatrixAt(i, _dummy.matrix);
-
-        // Cantilevered overhead wing beam
-        _dummy.position.set(px, 1.04, -0.22);
-        _dummy.rotation.set(0, 0, 0);
-        _dummy.updateMatrix();
-        archBeams.setMatrixAt(i, _dummy.matrix);
-
-        // Glowing neon underside tube
-        _dummy.position.set(px, 0.99, -0.22);
-        _dummy.rotation.set(0, 0, 0);
-        _dummy.updateMatrix();
-        archNeonTops.setMatrixAt(i, _dummy.matrix);
-
-        // Glowing neon spine strip on rear strut
-        _dummy.position.set(px, -0.02, -1.44);
-        _dummy.rotation.set(0.18, 0, 0);
-        _dummy.updateMatrix();
-        archNeonSides.setMatrixAt(i, _dummy.matrix);
-    }
-    archStruts.instanceMatrix.needsUpdate = true;
-    archBeams.instanceMatrix.needsUpdate = true;
-    archNeonTops.instanceMatrix.needsUpdate = true;
-    archNeonSides.instanceMatrix.needsUpdate = true;
-    archStruts.computeBoundingSphere();
-    archBeams.computeBoundingSphere();
-    archNeonTops.computeBoundingSphere();
-    archNeonSides.computeBoundingSphere();
-    trackGroup.add(archStruts, archBeams, archNeonTops, archNeonSides);
-
-    // Instanced Volumetric 3D Data Photon Streaks (44 particles in 1 draw call)
-    const particleCount = 44;
-    const particleGeo = new THREE.BoxGeometry(0.45, 0.025, 0.025);
-    const particleMat = new THREE.MeshBasicMaterial({
-        color: 0x00ff41,
-        transparent: true,
-        opacity: 0.72,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false
-    });
-    const particleMesh = new THREE.InstancedMesh(particleGeo, particleMat, particleCount);
-    const particleX = new Float32Array(particleCount);
-    const particleY = new Float32Array(particleCount);
-    const particleZ = new Float32Array(particleCount);
-    const particleSpd = new Float32Array(particleCount);
-    const particleScale = new Float32Array(particleCount);
-
-    for (let i = 0; i < particleCount; i++) {
-        particleX[i] = -24 + ((i * 7.3) % 48);
-        particleY[i] = -0.5 + ((i * 0.37) % 2.1);
-        particleZ[i] = -3.8 + ((i * 1.13) % 5.4);
-        particleSpd[i] = 2.6 + (i % 5) * 0.95;
-        particleScale[i] = 0.65 + (i % 4) * 0.45;
-    }
-    trackGroup.add(particleMesh);
-
-    // Shared Futuristic PBR + Green Neon Materials for Train Consist
-    const bodyPaintMat = new THREE.MeshPhysicalMaterial({
-        color: 0x070d0a,
-        metalness: 0.92,
-        roughness: 0.16,
-        clearcoat: 1.0,
-        clearcoatRoughness: 0.05
-    });
-    const featuredBodyMat = new THREE.MeshPhysicalMaterial({
-        color: 0x091c12,
-        metalness: 0.94,
-        roughness: 0.14,
-        clearcoat: 1.0,
-        clearcoatRoughness: 0.04
-    });
+    // Twin Polished Titanium Guide Rails embedded on monorail shoulders
     const chromeTrimMat = new THREE.MeshStandardMaterial({
-        color: 0xe2e8f0,
-        metalness: 0.97,
-        roughness: 0.1
+        color: 0xf8fafc,
+        metalness: 0.92,
+        roughness: 0.08
     });
-    const darkChassisMat = new THREE.MeshStandardMaterial({
-        color: 0x050806,
-        metalness: 0.65,
-        roughness: 0.55
-    });
-    const glassMat = new THREE.MeshPhysicalMaterial({
-        color: 0x031a0e,
-        metalness: 0.15,
-        roughness: 0.04,
-        clearcoat: 1.0,
-        transmission: isSoftwareGl ? 0 : 0.48,
-        transparent: true,
-        opacity: isSoftwareGl ? 0.82 : 1
-    });
+    const spineCap = new THREE.Mesh(new THREE.BoxGeometry(trackLength, 0.07, 0.72), chromeTrimMat);
+    spineCap.position.set(0, -0.64, 0);
+    worldGroup.add(spineCap);
+
+    // Glowing Green Neon Power Busbars running along both sides & bottom of monorail beam
     const neonEmissiveMat = new THREE.MeshStandardMaterial({
         color: 0x00ff41,
         emissive: 0x00ff41,
-        emissiveIntensity: 3.0,
-        roughness: 0.15
+        emissiveIntensity: 3.3,
+        roughness: 0.12
+    });
+    const frontBusbar = new THREE.Mesh(new THREE.BoxGeometry(trackLength, 0.045, 0.04), neonEmissiveMat);
+    frontBusbar.position.set(0, -0.78, 0.325);
+    const rearBusbar = new THREE.Mesh(new THREE.BoxGeometry(trackLength, 0.045, 0.04), neonEmissiveMat);
+    rearBusbar.position.set(0, -0.78, -0.325);
+    const underAuraMat = new THREE.MeshBasicMaterial({
+        color: 0x00ff41,
+        transparent: true,
+        opacity: 0.32,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+    });
+    const underAuraPlane = new THREE.Mesh(new THREE.PlaneGeometry(trackLength, 2.3), underAuraMat);
+    underAuraPlane.rotation.x = -Math.PI / 2;
+    underAuraPlane.position.set(0, -1.34, 0);
+    worldGroup.add(frontBusbar, rearBusbar, underAuraPlane);
+
+    // Instanced Monorail Support Pillars + Glowing Stargate Ring Portals (18 rings in 3 draw calls!)
+    const ringCount = 18;
+    const ringSpacing = trackLength / ringCount;
+    const pillarGeo = new THREE.CylinderGeometry(0.14, 0.22, 0.65, 10);
+    const pillarMat = new THREE.MeshStandardMaterial({
+        color: 0x2d4237,
+        metalness: 0.8,
+        roughness: 0.24
+    });
+    // Open Overhead Stargate Ring Arches (never cross in front of train cards!)
+    const outerRingGeo = new THREE.TorusGeometry(2.08, 0.056, 10, 28, Math.PI * 1.16);
+    outerRingGeo.rotateZ(-0.34);
+    const innerNeonRingGeo = new THREE.TorusGeometry(1.96, 0.03, 8, 28, Math.PI * 1.16);
+    innerNeonRingGeo.rotateZ(-0.34);
+
+    const pillarInst = new THREE.InstancedMesh(pillarGeo, pillarMat, ringCount);
+    const outerRingInst = new THREE.InstancedMesh(outerRingGeo, pillarMat, ringCount);
+    const innerRingInst = new THREE.InstancedMesh(innerNeonRingGeo, neonEmissiveMat, ringCount);
+
+    for (let i = 0; i < ringCount; i++) {
+        const rx = -trackLength / 2 + 3.0 + i * ringSpacing;
+        _dummy.position.set(rx, -1.12, 0);
+        _dummy.rotation.set(0, 0, 0);
+        _dummy.scale.set(1, 1, 1);
+        _dummy.updateMatrix();
+        pillarInst.setMatrixAt(i, _dummy.matrix);
+
+        // Open overhead arch behind & above the train
+        _dummy.position.set(rx, 0.28, 0);
+        _dummy.rotation.set(0, Math.PI / 2, 0);
+        _dummy.updateMatrix();
+        outerRingInst.setMatrixAt(i, _dummy.matrix);
+        innerRingInst.setMatrixAt(i, _dummy.matrix);
+    }
+    pillarInst.instanceMatrix.needsUpdate = true;
+    outerRingInst.instanceMatrix.needsUpdate = true;
+    innerRingInst.instanceMatrix.needsUpdate = true;
+    pillarInst.computeBoundingSphere();
+    outerRingInst.computeBoundingSphere();
+    innerRingInst.computeBoundingSphere();
+    worldGroup.add(pillarInst, outerRingInst, innerRingInst);
+
+    // Instanced Neon Quantum Speed Streaks kept behind/above the train cards
+    const streakCount = 46;
+    const streakGeo = new THREE.BoxGeometry(0.65, 0.022, 0.022);
+    const streakMat = new THREE.MeshBasicMaterial({
+        color: 0x00ff41,
+        transparent: true,
+        opacity: 0.72,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+    });
+    const streakMesh = new THREE.InstancedMesh(streakGeo, streakMat, streakCount);
+    const streakX = new Float32Array(streakCount);
+    const streakY = new Float32Array(streakCount);
+    const streakZ = new Float32Array(streakCount);
+    const streakSpd = new Float32Array(streakCount);
+    const streakLen = new Float32Array(streakCount);
+
+    for (let i = 0; i < streakCount; i++) {
+        const angle = (i * 1.37) % Math.PI;
+        const radius = 1.65 + (i % 4) * 0.35;
+        streakX[i] = -26 + ((i * 6.9) % 52);
+        streakY[i] = 0.75 + Math.sin(angle) * radius * 0.7;
+        streakZ[i] = -0.6 - Math.abs(Math.cos(angle)) * radius;
+        streakSpd[i] = 3.6 + (i % 5) * 1.1;
+        streakLen[i] = 0.6 + (i % 4) * 0.45;
+    }
+    worldGroup.add(streakMesh);
+
+    // Shared Bright Pearl-Silver, Slate-Titanium & Luminous Emerald Glass Materials
+    const pearlTitaniumMat = new THREE.MeshPhysicalMaterial({
+        color: 0xdbe7e1,
+        metalness: 0.72,
+        roughness: 0.18,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.05
+    });
+    const deepObsidianMat = new THREE.MeshPhysicalMaterial({
+        color: 0x3b4f44,
+        metalness: 0.78,
+        roughness: 0.25,
+        clearcoat: 0.85
+    });
+    const glassDomeMat = new THREE.MeshPhysicalMaterial({
+        color: 0x34d399,
+        emissive: 0x064e3b,
+        emissiveIntensity: 0.38,
+        metalness: 0.1,
+        roughness: 0.05,
+        clearcoat: 1.0,
+        transmission: isSoftwareGl ? 0 : 0.56,
+        transparent: true,
+        opacity: isSoftwareGl ? 0.82 : 1
     });
     const headlightMat = new THREE.MeshStandardMaterial({
-        color: 0xd1fae5,
+        color: 0xecfdf5,
         emissive: 0x00ff41,
-        emissiveIntensity: 3.5
+        emissiveIntensity: 4.0
     });
 
-    // Futuristic Mag-Rotor Turbine Rings (replace standard flat discs)
-    const wheelRimGeo = new THREE.TorusGeometry(0.19, 0.045, 10, 24);
-    const wheelHubGeo = new THREE.CylinderGeometry(0.11, 0.11, 0.09, 12);
-    wheelHubGeo.rotateX(Math.PI / 2);
-    const wheelRimMat = new THREE.MeshStandardMaterial({
-        color: 0xcbd5e1,
-        metalness: 0.95,
-        roughness: 0.15
-    });
-
-    // Holographic Wireframe Octahedron Geometry (shared across wagons)
-    const holoGeo = new THREE.OctahedronGeometry(0.17, 0);
-    const holoMat = new THREE.MeshBasicMaterial({
+    // Counter-Rotating Monorail Gyro-Turbine Geometry
+    const gyroRingGeo = new THREE.TorusGeometry(0.18, 0.032, 8, 22);
+    const gyroCoreGeo = new THREE.OctahedronGeometry(0.09, 0);
+    const holoDiamondGeo = new THREE.OctahedronGeometry(0.15, 0);
+    const holoWireMat = new THREE.MeshBasicMaterial({
         color: 0x00ff41,
         wireframe: true,
         transparent: true,
-        opacity: 0.88
+        opacity: 0.92
     });
 
-    const rotatingWheels = [];
-    const holographicBeacons = [];
+    const rotatingGyros = [];
+    const floatingOrbs = [];
     const suspensionBodies = [];
     const interactiveProxies = [];
     const boardRecords = [];
     const carriageNeonMats = new Map();
 
-    function buildMaglevBogie(xPos) {
-        const bogie = new THREE.Group();
-        bogie.position.set(xPos, -0.55, 0);
+    // Monorail Straddle Saddle + Spinning Gyro Turbines (replaces conventional wheels)
+    function buildMonorailSaddlePod(xPos) {
+        const pod = new THREE.Group();
+        pod.position.set(xPos, -0.54, 0);
 
-        const frame = new THREE.Mesh(new THREE.BoxGeometry(1.25, 0.14, 1.02), darkChassisMat);
-        bogie.add(frame);
+        // Straddle saddle clamping around the central monorail beam
+        const leftClamp = new THREE.Mesh(new THREE.BoxGeometry(1.18, 0.34, 0.16), deepObsidianMat);
+        leftClamp.position.set(0, -0.1, 0.43);
+        const rightClamp = new THREE.Mesh(new THREE.BoxGeometry(1.18, 0.34, 0.16), deepObsidianMat);
+        rightClamp.position.set(0, -0.1, -0.43);
+        const topBridge = new THREE.Mesh(new THREE.BoxGeometry(1.22, 0.12, 0.96), chromeTrimMat);
+        topBridge.position.set(0, 0.08, 0);
+        pod.add(leftClamp, rightClamp, topBridge);
 
-        // Hovering plasma repulsor neon pad underneath bogie
-        const repulsorPad = new THREE.Mesh(new THREE.BoxGeometry(1.08, 0.045, 0.86), neonEmissiveMat);
-        repulsorPad.position.set(0, -0.14, 0);
-        bogie.add(repulsorPad);
+        // Glowing neon mag-lev cushion pads facing the beam
+        const glowPadF = new THREE.Mesh(new THREE.BoxGeometry(1.02, 0.05, 0.06), neonEmissiveMat);
+        glowPadF.position.set(0, -0.22, 0.44);
+        const glowPadR = new THREE.Mesh(new THREE.BoxGeometry(1.02, 0.05, 0.06), neonEmissiveMat);
+        glowPadR.position.set(0, -0.22, -0.44);
+        pod.add(glowPadF, glowPadR);
 
-        // Twin glowing side flux bars
-        const bogieNeon = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.035, 1.06), neonEmissiveMat);
-        bogieNeon.position.set(0, 0.02, 0);
-        bogie.add(bogieNeon);
-
-        const axleOffsets = [-0.38, 0.38];
-        const zOffsets = [-0.47, 0.47];
-        for (const ax of axleOffsets) {
-            for (const az of zOffsets) {
-                const rotorGroup = new THREE.Group();
-                rotorGroup.position.set(ax, -0.02, az);
-                const ring = new THREE.Mesh(wheelRimGeo, wheelRimMat);
-                const core = new THREE.Mesh(wheelHubGeo, neonEmissiveMat);
-                rotorGroup.add(ring, core);
-                bogie.add(rotorGroup);
-                rotatingWheels.push(rotorGroup);
+        // Twin spinning magnetic gyro-turbines on front and rear straddle flanks
+        for (const gx of [-0.34, 0.34]) {
+            for (const gz of [-0.53, 0.53]) {
+                const gyroGroup = new THREE.Group();
+                gyroGroup.position.set(gx, -0.06, gz);
+                const outerGyro = new THREE.Mesh(gyroRingGeo, chromeTrimMat);
+                const innerGyro = new THREE.Mesh(gyroCoreGeo, neonEmissiveMat);
+                gyroGroup.add(outerGyro, innerGyro);
+                pod.add(gyroGroup);
+                rotatingGyros.push(gyroGroup);
             }
         }
-        return bogie;
+        return pod;
     }
 
-    // Build Hyper-Futuristic Stealth Bullet Locomotive
+    // Build Quantum Shinkansen Capsule Monorail Train
     const trainGroup = new THREE.Group();
     scene.add(trainGroup);
 
@@ -806,222 +692,233 @@ export function initOfferTrain3D(containerId, options = {}) {
     const locoGroup = new THREE.Group();
     trainGroup.add(locoGroup);
 
-    const locoShape = new THREE.Shape();
-    locoShape.moveTo(-2.85, -0.44);
-    locoShape.lineTo(2.92, -0.44);
-    locoShape.lineTo(3.25, -0.24);
-    locoShape.quadraticCurveTo(2.45, 0.42, 0.95, 0.74);
-    locoShape.lineTo(-2.85, 0.74);
-    locoShape.closePath();
-
-    const locoBodyGeo = new THREE.ExtrudeGeometry(locoShape, {
-        steps: 1,
-        depth: 1.2,
-        bevelEnabled: true,
-        bevelThickness: 0.07,
-        bevelSize: 0.055,
-        bevelSegments: 4
-    });
-    locoBodyGeo.translate(0, 0, -0.6);
-
     const locoShell = new THREE.Group();
     locoGroup.add(locoShell);
     suspensionBodies.push(locoShell);
 
-    const locoHull = new THREE.Mesh(locoBodyGeo, bodyPaintMat);
+    // Cylindrical Capsule Rear Hull + Lathe-sculpted Aerodynamic Bullet Nose Cone!
+    const locoCylinderGeo = new THREE.CylinderGeometry(0.66, 0.68, 3.3, 24, 1, false);
+    locoCylinderGeo.rotateZ(Math.PI / 2);
+    const locoHull = new THREE.Mesh(locoCylinderGeo, pearlTitaniumMat);
+    locoHull.position.set(-1.15, 0.14, 0);
+    locoHull.scale.set(1, 0.92, 1.06);
     locoHull.castShadow = !isSoftwareGl;
     locoShell.add(locoHull);
 
-    // Chrome aerodynamic lower skirt + forward laser splitter blade
-    const skirtMesh = new THREE.Mesh(new THREE.BoxGeometry(5.55, 0.13, 1.34), chromeTrimMat);
-    skirtMesh.position.set(0.02, -0.46, 0);
-    locoShell.add(skirtMesh);
+    // Sculpted Lathe Bullet Cone Nose (smooth Shinkansen curvature)
+    const nosePoints = [
+        new THREE.Vector2(0.01, 2.35),
+        new THREE.Vector2(0.22, 2.05),
+        new THREE.Vector2(0.42, 1.5),
+        new THREE.Vector2(0.58, 0.8),
+        new THREE.Vector2(0.67, 0.0)
+    ];
+    const noseGeo = new THREE.LatheGeometry(nosePoints, 24);
+    noseGeo.rotateZ(-Math.PI / 2);
+    const noseMesh = new THREE.Mesh(noseGeo, pearlTitaniumMat);
+    noseMesh.position.set(0.5, 0.14, 0);
+    noseMesh.scale.set(1, 0.92, 1.06);
+    noseMesh.castShadow = !isSoftwareGl;
+    locoShell.add(noseMesh);
 
-    const noseSplitter = new THREE.Mesh(new THREE.BoxGeometry(0.72, 0.08, 1.3), neonEmissiveMat);
-    noseSplitter.position.set(2.96, -0.41, 0);
-    locoShell.add(noseSplitter);
+    // Dark obsidian lower aerodynamic keel & side aero winglets
+    const locoKeel = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.24, 1.38), deepObsidianMat);
+    locoKeel.position.set(-0.25, -0.3, 0);
+    locoShell.add(locoKeel);
 
-    // Swept dorsal holographic stabilizer fin
-    const dorsalFin = new THREE.Mesh(new THREE.BoxGeometry(1.75, 0.24, 0.07), chromeTrimMat);
-    dorsalFin.position.set(-1.35, 0.9, 0);
-    dorsalFin.rotation.z = 0.08;
-    const dorsalFinNeon = new THREE.Mesh(new THREE.BoxGeometry(1.82, 0.045, 0.095), neonEmissiveMat);
-    dorsalFinNeon.position.set(-1.35, 1.03, 0);
-    dorsalFinNeon.rotation.z = 0.08;
-    locoShell.add(dorsalFin, dorsalFinNeon);
+    const wingGeo = new THREE.BoxGeometry(2.2, 0.06, 1.66);
+    const frontWings = new THREE.Mesh(wingGeo, chromeTrimMat);
+    frontWings.position.set(0.35, -0.26, 0);
+    const wingNeonTrim = new THREE.Mesh(new THREE.BoxGeometry(2.26, 0.035, 1.7), neonEmissiveMat);
+    wingNeonTrim.position.set(0.35, -0.22, 0);
+    locoShell.add(frontWings, wingNeonTrim);
 
-    // Continuous neon top & lower flank energy conduits
-    const locoTopNeon = new THREE.Mesh(new THREE.BoxGeometry(3.85, 0.04, 1.28), neonEmissiveMat);
-    locoTopNeon.position.set(-0.92, 0.71, 0);
-    const locoBottomNeon = new THREE.Mesh(new THREE.BoxGeometry(5.2, 0.065, 1.37), neonEmissiveMat);
-    locoBottomNeon.position.set(-0.18, -0.28, 0);
-    locoShell.add(locoTopNeon, locoBottomNeon);
+    // Panoramic Wrap-Around Smoked Glass Cockpit Visor Dome
+    const visorGeo = new THREE.SphereGeometry(0.64, 24, 14, 0, Math.PI * 2, 0, Math.PI * 0.55);
+    const visor = new THREE.Mesh(visorGeo, glassDomeMat);
+    visor.position.set(0.65, 0.2, 0);
+    visor.scale.set(1.75, 0.82, 0.98);
+    locoShell.add(visor);
 
-    // Slatted glowing emerald plasma reactor vents along front nose flank
-    for (let v = 0; v < 4; v++) {
-        const vent = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.36, 1.34), neonEmissiveMat);
-        vent.position.set(1.15 + v * 0.22, -0.02, 0);
-        vent.rotation.z = -0.35;
-        locoShell.add(vent);
-    }
+    // Glowing Emerald Nose Ring Collar + Twin V-Optic Laser Headlights
+    const collarRing = new THREE.Mesh(new THREE.TorusGeometry(0.67, 0.035, 10, 28), neonEmissiveMat);
+    collarRing.rotation.y = Math.PI / 2;
+    collarRing.scale.set(1.04, 0.9, 1);
+    collarRing.position.set(0.5, 0.14, 0);
+    locoShell.add(collarRing);
 
-    // Sleek stealth cockpit canopy
-    const canopyGeo = new THREE.BoxGeometry(1.55, 0.28, 1.16);
-    const canopy = new THREE.Mesh(canopyGeo, glassMat);
-    canopy.position.set(1.52, 0.37, 0);
-    canopy.rotation.z = -0.38;
-    locoShell.add(canopy);
+    const opticGeo = new THREE.BoxGeometry(0.45, 0.06, 0.16);
+    const opticF = new THREE.Mesh(opticGeo, headlightMat);
+    opticF.position.set(2.28, 0.02, 0.28);
+    opticF.rotation.y = -0.28;
+    const opticR = new THREE.Mesh(opticGeo, headlightMat);
+    opticR.position.set(2.28, 0.02, -0.28);
+    opticR.rotation.y = 0.28;
+    locoShell.add(opticF, opticR);
 
-    // Twin Laser Headlights + Volumetric Additive Plasma Cones
-    const headlightGeo = new THREE.BoxGeometry(0.18, 0.09, 0.24);
-    const hlFront = new THREE.Mesh(headlightGeo, headlightMat);
-    hlFront.position.set(3.16, -0.22, 0.38);
-    const hlRear = new THREE.Mesh(headlightGeo, headlightMat);
-    hlRear.position.set(3.16, -0.22, -0.38);
-    locoShell.add(hlFront, hlRear);
+    // Swept dorsal photon antenna fin + volumetric twin beam
+    const fin = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.22, 0.06), chromeTrimMat);
+    fin.position.set(-1.7, 0.82, 0);
+    const finGlow = new THREE.Mesh(new THREE.BoxGeometry(1.48, 0.04, 0.09), neonEmissiveMat);
+    finGlow.position.set(-1.7, 0.95, 0);
+    locoShell.add(fin, finGlow);
 
-    const beamGeo = new THREE.ConeGeometry(0.72, 4.8, 18, 1, true);
+    const beamGeo = new THREE.ConeGeometry(0.68, 4.6, 18, 1, true);
     beamGeo.rotateZ(Math.PI / 2);
-    const beamMat = new THREE.MeshBasicMaterial({
+    const headlightBeamMat = new THREE.MeshBasicMaterial({
         color: 0x00ff41,
         transparent: true,
-        opacity: 0.2,
+        opacity: 0.18,
         blending: THREE.AdditiveBlending,
         side: THREE.DoubleSide,
         depthWrite: false
     });
-    const lightBeam = new THREE.Mesh(beamGeo, beamMat);
-    lightBeam.position.set(5.45, -0.22, 0);
+    const lightBeam = new THREE.Mesh(beamGeo, headlightBeamMat);
+    lightBeam.position.set(5.1, -0.02, 0);
     locoShell.add(lightBeam);
 
-    // High-DPI Cyber Locomotive Plaque
+    // Locomotive Holographic Side Plaque (self-illuminated & oversized for instant legibility)
     let locoPlaqueTexture = createLocoPlaqueTexture(currentLang, maxAnisotropy);
     const locoPlaqueMat = new THREE.MeshStandardMaterial({
         map: locoPlaqueTexture,
+        emissiveMap: locoPlaqueTexture,
+        emissive: 0xffffff,
+        emissiveIntensity: 0.92,
         roughness: 0.22,
-        metalness: 0.16,
-        emissive: 0x0a4a1f,
-        emissiveIntensity: 0.8,
+        metalness: 0.08,
         polygonOffset: true,
         polygonOffsetFactor: -1,
         polygonOffsetUnits: -1
     });
-    const locoPlaque = new THREE.Mesh(new THREE.PlaneGeometry(3.35, 0.76), locoPlaqueMat);
-    locoPlaque.position.set(-0.92, 0.18, 0.69);
+    const locoPlaque = new THREE.Mesh(new THREE.PlaneGeometry(3.35, 0.96), locoPlaqueMat);
+    locoPlaque.position.set(-1.12, 0.24, 0.78);
+    locoPlaque.rotation.x = -0.06;
     locoShell.add(locoPlaque);
 
-    locoGroup.add(buildMaglevBogie(-1.62), buildMaglevBogie(1.52));
+    locoGroup.add(buildMonorailSaddlePod(-1.7), buildMonorailSaddlePod(1.05));
 
-    // Build 4 Futuristic Cyber-Pod Carriages
-    const carriageSpacing = 5.48;
-    const carriageLength = 4.92;
-    const carriageShape = new THREE.Shape();
-    carriageShape.moveTo(-carriageLength / 2, -0.44);
-    carriageShape.lineTo(carriageLength / 2, -0.44);
-    carriageShape.lineTo(carriageLength / 2 - 0.08, 0.6);
-    carriageShape.lineTo(carriageLength / 2 - 0.24, 0.74);
-    carriageShape.lineTo(-carriageLength / 2 + 0.24, 0.74);
-    carriageShape.lineTo(-carriageLength / 2 + 0.08, 0.6);
-    carriageShape.closePath();
+    // Build 4 Futuristic Capsule Glass-Dome Monorail Coaches
+    const carriageSpacing = 5.55;
+    const carriageLength = 4.82;
+    const capsuleCylGeo = new THREE.CylinderGeometry(0.65, 0.67, carriageLength - 0.35, 24);
+    capsuleCylGeo.rotateZ(Math.PI / 2);
 
-    const carriageBodyGeo = new THREE.ExtrudeGeometry(carriageShape, {
-        steps: 1,
-        depth: 1.2,
-        bevelEnabled: true,
-        bevelThickness: 0.06,
-        bevelSize: 0.05,
-        bevelSegments: 3
-    });
-    carriageBodyGeo.translate(0, 0, -0.6);
-
-    const couplerRingGeo = new THREE.TorusGeometry(0.46, 0.045, 8, 20);
+    const capSphereGeo = new THREE.SphereGeometry(0.65, 20, 14);
+    const orbCouplerGeo = new THREE.SphereGeometry(0.24, 16, 12);
+    const couplerRingGeo = new THREE.TorusGeometry(0.42, 0.032, 8, 22);
     couplerRingGeo.rotateY(Math.PI / 2);
-    const bellowsGeo = new THREE.BoxGeometry(0.56, 0.88, 0.86);
-    const proxyGeo = new THREE.BoxGeometry(carriageLength, 1.65, 1.6);
+
+    const proxyGeo = new THREE.BoxGeometry(carriageLength, 2.1, 1.85);
     const proxyMat = new THREE.MeshBasicMaterial({ visible: false });
 
     PILLAR_CARRIAGES.forEach((pillar, idx) => {
-        const centerX = -5.65 - idx * carriageSpacing;
+        const centerX = -5.75 - idx * carriageSpacing;
         const carriageGroup = new THREE.Group();
         carriageGroup.position.set(centerX, 0, 0);
         trainGroup.add(carriageGroup);
 
-        // Glowing plasma ring coupler connecting forward
-        const coupler = new THREE.Mesh(bellowsGeo, darkChassisMat);
-        coupler.position.set(carriageLength / 2 + 0.28, 0.12, 0);
-        const couplerRing = new THREE.Mesh(couplerRingGeo, neonEmissiveMat);
-        couplerRing.position.set(carriageLength / 2 + 0.28, 0.12, 0);
-        carriageGroup.add(coupler, couplerRing);
+        // Glowing Plasma Sphere + Dual Ring Magnetic Coupler (replaces accordion bellows)
+        const orbCoupler = new THREE.Mesh(orbCouplerGeo, neonEmissiveMat);
+        orbCoupler.position.set(carriageLength / 2 + 0.36, 0.12, 0);
+        const cRing = new THREE.Mesh(couplerRingGeo, chromeTrimMat);
+        cRing.position.set(carriageLength / 2 + 0.36, 0.12, 0);
+        carriageGroup.add(orbCoupler, cRing);
 
         const cShell = new THREE.Group();
         carriageGroup.add(cShell);
         suspensionBodies.push(cShell);
 
-        const hull = new THREE.Mesh(carriageBodyGeo, pillar.highlight ? featuredBodyMat : bodyPaintMat);
-        hull.castShadow = !isSoftwareGl;
-        cShell.add(hull);
+        // Capsule body + rounded hemispherical end caps
+        const capsuleMat = pillar.highlight ? pearlTitaniumMat : deepObsidianMat;
+        const capsuleBody = new THREE.Mesh(capsuleCylGeo, capsuleMat);
+        capsuleBody.position.set(0, 0.14, 0);
+        capsuleBody.scale.set(1, 0.92, 1.06);
+        capsuleBody.castShadow = !isSoftwareGl;
 
-        // Brushed titanium aero roof wing + lower skirt
-        const cRoof = new THREE.Mesh(new THREE.BoxGeometry(carriageLength - 0.55, 0.08, 0.86), chromeTrimMat);
-        cRoof.position.set(0, 0.84, 0);
-        const cSkirt = new THREE.Mesh(new THREE.BoxGeometry(carriageLength - 0.12, 0.12, 1.32), chromeTrimMat);
-        cSkirt.position.set(0, -0.46, 0);
-        cShell.add(cRoof, cSkirt);
+        const frontCap = new THREE.Mesh(capSphereGeo, capsuleMat);
+        frontCap.position.set((carriageLength - 0.35) / 2, 0.14, 0);
+        frontCap.scale.set(0.32, 0.92, 1.06);
+        const rearCap = new THREE.Mesh(capSphereGeo, capsuleMat);
+        rearCap.position.set(-(carriageLength - 0.35) / 2, 0.14, 0);
+        rearCap.scale.set(0.32, 0.92, 1.06);
+        cShell.add(capsuleBody, frontCap, rearCap);
 
-        // Per-carriage Neon Green material (amplifies on hover)
+        // Smoked Glass Skylight Canopy arching over upper half
+        const roofDomeGeo = new THREE.CylinderGeometry(0.67, 0.67, carriageLength - 0.7, 20, 1, false, -Math.PI * 0.35, Math.PI * 0.7);
+        roofDomeGeo.rotateZ(Math.PI / 2);
+        roofDomeGeo.rotateX(Math.PI / 2);
+        const roofDome = new THREE.Mesh(roofDomeGeo, glassDomeMat);
+        roofDome.position.set(0, 0.24, 0);
+        cShell.add(roofDome);
+
+        // Lower titanium aero keel + flanking maglev fins
+        const keel = new THREE.Mesh(new THREE.BoxGeometry(carriageLength - 0.25, 0.2, 1.34), deepObsidianMat);
+        keel.position.set(0, -0.32, 0);
+        const stabWing = new THREE.Mesh(new THREE.BoxGeometry(carriageLength - 0.9, 0.05, 1.56), chromeTrimMat);
+        stabWing.position.set(0, -0.26, 0);
+        cShell.add(keel, stabWing);
+
+        // Per-carriage Neon Green material (brightens smoothly on hover)
         const cNeonMat = new THREE.MeshStandardMaterial({
             color: pillar.accent,
             emissive: pillar.accent,
-            emissiveIntensity: pillar.highlight ? 3.1 : 2.35,
-            roughness: 0.16
+            emissiveIntensity: pillar.highlight ? 3.2 : 2.4,
+            roughness: 0.15
         });
-        carriageNeonMats.set(pillar.id, { mat: cNeonMat, baseIntensity: pillar.highlight ? 3.1 : 2.35 });
+        carriageNeonMats.set(pillar.id, { mat: cNeonMat, baseIntensity: pillar.highlight ? 3.2 : 2.4 });
 
-        // Top, bottom & angled corner neon light bars
-        const cBottomStripe = new THREE.Mesh(new THREE.BoxGeometry(carriageLength - 0.04, 0.06, 1.36), cNeonMat);
-        cBottomStripe.position.set(0, -0.34, 0);
-        const cTopStripe = new THREE.Mesh(new THREE.BoxGeometry(carriageLength - 0.36, 0.04, 1.3), cNeonMat);
-        cTopStripe.position.set(0, 0.69, 0);
-        const cLeftRib = new THREE.Mesh(new THREE.BoxGeometry(0.055, 1.0, 1.35), cNeonMat);
-        cLeftRib.position.set(-carriageLength / 2 + 0.16, 0.17, 0);
-        const cRightRib = new THREE.Mesh(new THREE.BoxGeometry(0.055, 1.0, 1.35), cNeonMat);
-        cRightRib.position.set(carriageLength / 2 - 0.16, 0.17, 0);
-        cShell.add(cBottomStripe, cTopStripe, cLeftRib, cRightRib);
+        // Continuous neon wing trim + twin glowing capsule collar rings
+        const wingNeon = new THREE.Mesh(new THREE.BoxGeometry(carriageLength - 0.85, 0.03, 1.6), cNeonMat);
+        wingNeon.position.set(0, -0.22, 0);
+        const collarF = new THREE.Mesh(new THREE.TorusGeometry(0.66, 0.028, 8, 26), cNeonMat);
+        collarF.rotation.y = Math.PI / 2;
+        collarF.scale.set(1.06, 0.92, 1);
+        collarF.position.set(carriageLength / 2 - 0.28, 0.14, 0);
+        const collarR = new THREE.Mesh(new THREE.TorusGeometry(0.66, 0.028, 8, 26), cNeonMat);
+        collarR.rotation.y = Math.PI / 2;
+        collarR.scale.set(1.06, 0.92, 1);
+        collarR.position.set(-carriageLength / 2 + 0.28, 0.14, 0);
+        cShell.add(wingNeon, collarF, collarR);
 
-        // Panoramic upper glass strip
-        const winBand = new THREE.Mesh(new THREE.BoxGeometry(carriageLength - 0.52, 0.18, 1.32), glassMat);
-        winBand.position.set(0, 0.56, 0);
-        cShell.add(winBand);
+        // Spinning 3D Holographic Diamond Orb floating cleanly above taller card
+        const holoOrb = new THREE.Mesh(holoDiamondGeo, holoWireMat);
+        holoOrb.position.set(0, 1.42, 0);
+        cShell.add(holoOrb);
+        floatingOrbs.push({ mesh: holoOrb, id: pillar.id, phase: idx * 1.6 });
 
-        // Floating 3D Wireframe Holographic Beacon rotating above each pod
-        const holoBeacon = new THREE.Mesh(holoGeo, holoMat);
-        holoBeacon.position.set(0, 1.12, 0);
-        cShell.add(holoBeacon);
-        holographicBeacons.push({ mesh: holoBeacon, id: pillar.id, phase: idx * 1.4 });
-
-        // High-DPI Holographic Board
+        // Prominent High-Visibility 3D Pillar Card (large, self-illuminated, angled to camera)
         const { canvas: boardCanvas, texture: boardTexture } = createCarriageBoardTexture(pillar, currentLang, maxAnisotropy);
         const boardMat = new THREE.MeshStandardMaterial({
             map: boardTexture,
+            emissiveMap: boardTexture,
+            emissive: 0xffffff,
+            emissiveIntensity: 0.92,
             roughness: 0.2,
-            metalness: 0.14,
-            emissive: 0x093b1a,
-            emissiveIntensity: 0.8,
+            metalness: 0.06,
             polygonOffset: true,
             polygonOffsetFactor: -1,
             polygonOffsetUnits: -1
         });
-        const boardMesh = new THREE.Mesh(new THREE.PlaneGeometry(4.36, 0.9), boardMat);
-        boardMesh.position.set(0, 0.08, 0.685);
-        cShell.add(boardMesh);
+        const cardGroup = new THREE.Group();
+        cardGroup.position.set(0, 0.34, 0.82);
+        cardGroup.rotation.x = -0.07;
+
+        const boardNeonEdge = new THREE.Mesh(new THREE.BoxGeometry(4.7, 1.54, 0.035), cNeonMat);
+        boardNeonEdge.position.set(0, 0, -0.025);
+        const boardFrame = new THREE.Mesh(new THREE.BoxGeometry(4.62, 1.48, 0.045), deepObsidianMat);
+        boardFrame.position.set(0, 0, -0.01);
+        const boardMesh = new THREE.Mesh(new THREE.PlaneGeometry(4.54, 1.42), boardMat);
+        boardMesh.position.set(0, 0, 0.025);
+        cardGroup.add(boardNeonEdge, boardFrame, boardMesh);
+        cShell.add(cardGroup);
         boardRecords.push({ offer: pillar, canvas: boardCanvas, texture: boardTexture, boardMat });
 
-        // Futuristic maglev repulsor bogies
-        carriageGroup.add(buildMaglevBogie(-1.55), buildMaglevBogie(1.55));
+        // Monorail Straddle Gyro Pods
+        carriageGroup.add(buildMonorailSaddlePod(-1.5), buildMonorailSaddlePod(1.5));
 
         // Raycast proxy (layer 1)
         const proxy = new THREE.Mesh(proxyGeo, proxyMat);
-        proxy.position.set(0, 0.22, 0);
+        proxy.position.set(0, 0.2, 0);
         proxy.layers.set(1);
         proxy.userData = { offer: pillar, index: idx };
         carriageGroup.add(proxy);
@@ -1040,8 +937,8 @@ export function initOfferTrain3D(containerId, options = {}) {
     }
 
     // Animation & Interaction State
-    let trainX = 4.5;
-    let currentSpeed = prefersReducedMotion ? 1.15 : 3.45;
+    let trainX = 4.8;
+    let currentSpeed = prefersReducedMotion ? 1.15 : 3.55;
     let isPaused = false;
     let isHovered = false;
     let hoveredOfferId = null;
@@ -1049,7 +946,6 @@ export function initOfferTrain3D(containerId, options = {}) {
     let pointerNormY = 0;
     let camTargetX = baseCamX;
     let camTargetY = baseCamY;
-    let totalTravel = 0;
     let totalElapsed = 0;
     let isInViewport = true;
     let isTabVisible = !document.hidden;
@@ -1060,16 +956,16 @@ export function initOfferTrain3D(containerId, options = {}) {
     const getLoopBounds = () => {
         const halfW = Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5)) * camera.position.z * camera.aspect;
         const minX = -halfW - 4.8;
-        const maxX = halfW + 27.8;
+        const maxX = halfW + 28.2;
         return { minX, maxX };
     };
 
     const updateHoveredVisuals = (activeId) => {
         carriageNeonMats.forEach((entry, id) => {
-            entry.mat.emissiveIntensity = id === activeId ? 4.6 : entry.baseIntensity;
+            entry.mat.emissiveIntensity = id === activeId ? 4.8 : entry.baseIntensity;
         });
         boardRecords.forEach(({ offer, boardMat }) => {
-            boardMat.emissiveIntensity = offer.id === activeId ? 1.3 : 0.8;
+            boardMat.emissiveIntensity = offer.id === activeId ? 1.35 : 0.92;
         });
     };
 
@@ -1184,22 +1080,21 @@ export function initOfferTrain3D(containerId, options = {}) {
         }
     }
 
-    function updateParticles(delta) {
-        const speedFactor = isPaused ? 0.15 : 1.0;
-        for (let i = 0; i < particleCount; i++) {
-            particleX[i] -= particleSpd[i] * speedFactor * delta;
-            if (particleX[i] < -26) particleX[i] = 26;
-            _dummy.position.set(particleX[i], particleY[i], particleZ[i]);
+    function updateStreaks(delta) {
+        const speedFactor = isPaused ? 0.12 : 1.0;
+        for (let i = 0; i < streakCount; i++) {
+            streakX[i] -= streakSpd[i] * speedFactor * delta;
+            if (streakX[i] < -26) streakX[i] = 26;
+            _dummy.position.set(streakX[i], streakY[i], streakZ[i]);
             _dummy.rotation.set(0, 0, 0);
-            _dummy.scale.set(particleScale[i], 1, 1);
+            _dummy.scale.set(streakLen[i], 1, 1);
             _dummy.updateMatrix();
-            particleMesh.setMatrixAt(i, _dummy.matrix);
+            streakMesh.setMatrixAt(i, _dummy.matrix);
         }
-        particleMesh.instanceMatrix.needsUpdate = true;
+        streakMesh.instanceMatrix.needsUpdate = true;
     }
 
-    // Populate initial particle matrices before first render
-    updateParticles(0);
+    updateStreaks(0);
 
     function tick() {
         if (disposed || !isInViewport || !isTabVisible) {
@@ -1211,13 +1106,12 @@ export function initOfferTrain3D(containerId, options = {}) {
         lastTime = now;
         totalElapsed += delta;
 
-        const baseTarget = prefersReducedMotion ? 1.15 : 3.45;
+        const baseTarget = prefersReducedMotion ? 1.15 : 3.55;
         const targetSpeed = isPaused ? 0 : isHovered ? 0.95 : baseTarget;
         currentSpeed = THREE.MathUtils.damp(currentSpeed, targetSpeed, 5.5, delta);
 
         const dx = currentSpeed * delta;
         trainX += dx;
-        totalTravel += dx;
 
         const { minX, maxX } = getLoopBounds();
         if (trainX > maxX) {
@@ -1225,38 +1119,37 @@ export function initOfferTrain3D(containerId, options = {}) {
         }
         trainGroup.position.x = trainX;
 
-        // Mag-rotor turbine spin (r = 0.19)
-        const dTheta = dx / 0.19;
-        for (let i = 0; i < rotatingWheels.length; i++) {
-            rotatingWheels[i].rotation.z -= dTheta;
+        // Spin monorail gyro-turbines smoothly
+        const dTheta = dx / 0.18;
+        for (let i = 0; i < rotatingGyros.length; i++) {
+            rotatingGyros[i].rotation.z -= dTheta;
         }
 
-        // Smooth maglev levitation wave
+        // Smooth magnetic levitation float
         for (let i = 0; i < suspensionBodies.length; i++) {
-            suspensionBodies[i].position.y = Math.sin(totalElapsed * 3.1 + i * 1.1) * 0.012;
+            suspensionBodies[i].position.y = Math.sin(totalElapsed * 3.0 + i * 1.2) * 0.014;
         }
 
-        // Spin holographic 3D beacons above carriages
-        for (let i = 0; i < holographicBeacons.length; i++) {
-            const b = holographicBeacons[i];
-            const spinMult = b.id === hoveredOfferId ? 3.2 : 1.0;
-            b.mesh.rotation.y += delta * 1.65 * spinMult;
-            b.mesh.rotation.x = Math.sin(totalElapsed * 1.8 + b.phase) * 0.25;
-            b.mesh.position.y = 1.12 + Math.sin(totalElapsed * 2.8 + b.phase) * 0.04;
+        // Spin holographic orbs above capsules
+        for (let i = 0; i < floatingOrbs.length; i++) {
+            const b = floatingOrbs[i];
+            const mult = b.id === hoveredOfferId ? 3.4 : 1.0;
+            b.mesh.rotation.y += delta * 1.8 * mult;
+            b.mesh.rotation.z = Math.sin(totalElapsed * 1.6 + b.phase) * 0.22;
+            b.mesh.position.y = 1.42 + Math.sin(totalElapsed * 2.9 + b.phase) * 0.04;
         }
 
-        // Scroll floor cyber-grid subtly & stream 3D photon streaks
         if (!isPaused) {
-            cyberFloorTex.offset.x = (cyberFloorTex.offset.x - dx * 0.04) % 1;
+            gridTex.offset.x = (gridTex.offset.x - dx * 0.045) % 1;
         }
-        updateParticles(delta);
+        updateStreaks(delta);
 
-        // Smooth cinematic 3D camera parallax
-        camTargetX = THREE.MathUtils.damp(camTargetX, baseCamX + pointerNormX * 0.55, 4.0, delta);
+        // Smooth 3D parallax camera
+        camTargetX = THREE.MathUtils.damp(camTargetX, baseCamX + pointerNormX * 0.58, 4.0, delta);
         camTargetY = THREE.MathUtils.damp(camTargetY, baseCamY + pointerNormY * 0.18, 4.0, delta);
         camera.position.x = camTargetX;
         camera.position.y = camTargetY;
-        camera.lookAt(0.55 + (camTargetX - baseCamX) * 0.35, 0.16, 0);
+        camera.lookAt(0.45 + (camTargetX - baseCamX) * 0.35, 0.24, 0);
 
         renderer.render(scene, camera);
         scheduleNextFrame();
@@ -1299,7 +1192,7 @@ export function initOfferTrain3D(containerId, options = {}) {
         const newH = Math.max(container.clientHeight, 140);
         const newAspect = newW / newH;
         camera.aspect = newAspect;
-        camera.position.z = newAspect < 3.0 ? 11.8 : 9.35;
+        camera.position.z = newAspect < 3.0 ? 9.35 : 7.4;
         camera.updateProjectionMatrix();
         renderer.setSize(newW, newH);
         renderer.setPixelRatio(isSoftwareGl ? 1 : Math.min(window.devicePixelRatio || 1, 2));
@@ -1324,7 +1217,6 @@ export function initOfferTrain3D(containerId, options = {}) {
     };
     renderer.domElement.addEventListener('webglcontextlost', onContextLost, false);
 
-    // Draw initial frame immediately and start loop
     trainGroup.position.x = trainX;
     renderer.render(scene, camera);
     startLoop();
@@ -1372,7 +1264,7 @@ export function initOfferTrain3D(containerId, options = {}) {
                     });
                 }
             });
-            cyberFloorTex.dispose();
+            gridTex.dispose();
             envRenderTarget.dispose();
             renderer.dispose();
         }
