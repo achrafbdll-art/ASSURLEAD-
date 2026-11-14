@@ -145,6 +145,18 @@
                             </div>
                             <div class="nav-dropdown-group">
                                 <span class="nav-dropdown-header"><i class="fas fa-chart-line"></i> STRATÉGIE & ACQUISITION</span>
+                                <a href="/audit-geo-local.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">01 / Audit &amp; GEO Local</span>
+                                </a>
+                                <a href="/seo-optimisation.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">02 / SEO Optimisation</span>
+                                </a>
+                                <a href="/referencement-google.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">03 / Référencement Google</span>
+                                </a>
+                                <a href="/targeting-reseaux-sociaux.html" class="nav-dropdown-item">
+                                    <span class="nav-dropdown-title">04 / Targeting &amp; Réseaux Sociaux</span>
+                                </a>
                                 <a href="/referencement-seo-casablanca.html" class="nav-dropdown-item">
                                     <span class="nav-dropdown-title">Référencement SEO Casablanca</span>
                                 </a>
@@ -314,6 +326,33 @@
         </div>
     </section>
 
+    <!-- 3D Express Train Section : Moteur d'Acquisition 360° (SEO, Référencement, Targeting Réseaux Sociaux & GEO 3D) -->
+    <section id="offer-train-header" class="offer-train-header" aria-label="Pôles SEO, Référencement, Targeting Réseaux Sociaux et GEO">
+        <div class="container offer-train-topbar">
+            <div class="offer-train-meta">
+                <span class="offer-train-eyebrow" data-i18n="train_header_eyebrow">Moteur d'Acquisition 360°</span>
+                <span class="offer-train-sep" aria-hidden="true">·</span>
+                <span class="offer-train-validity" data-i18n="train_header_validity">SEO · Référencement · Targeting Réseaux Sociaux · GEO</span>
+                <span class="offer-train-sep hide-mobile" aria-hidden="true">·</span>
+                <span class="offer-train-hint hide-mobile" id="offer-train-status" data-i18n="train_header_hint">Survolez un wagon 3D ou cliquez pour explorer le pôle</span>
+            </div>
+            <div class="offer-train-controls">
+                <div class="offer-train-jumps" role="group" aria-label="Accès rapide aux pôles d'expertise">
+                    <button type="button" class="train-jump-btn" data-offer-target="pillar-seo-optimisation">SEO Optimisation <span>99/100</span></button>
+                    <button type="button" class="train-jump-btn is-featured" data-offer-target="pillar-referencement">Référencement <span>Top 3</span></button>
+                    <button type="button" class="train-jump-btn" data-offer-target="pillar-targeting-social">Targeting Social <span>Réseaux</span></button>
+                    <button type="button" class="train-jump-btn is-featured" data-offer-target="pillar-geo-design">GEO <span>Design 3D</span></button>
+                </div>
+                <button type="button" id="offer-train-toggle" class="train-ctrl-btn" aria-pressed="false" title="Mettre en pause l'animation 3D">
+                    <i class="fas fa-pause"></i>
+                    <span data-i18n="train_btn_pause">Pause</span>
+                </button>
+                <a href="#methode" class="btn btn-primary btn-sm train-cta-btn" data-i18n="train_btn_cta">Notre Méthode</a>
+            </div>
+        </div>
+        <div id="offer-train-canvas-container" class="offer-train-viewport"></div>
+    </section>
+
     <!-- Diagnostic Callout Section (Appel à la consultation de la page Diagnostic) -->
     <section class="diagnostic-callout-section">
         <div class="container">
@@ -418,32 +457,36 @@
             </div>
 
             <div class="methode-grid-4">
-                <div class="methode-step-card">
-                    <span class="methode-step-num">01 / AUDIT & SÉMANTIQUE</span>
-                    <h3>Recherche d'Intentions Locales</h3>
-                    <p>Nous étudions précisément les termes recherchés par vos clients sur Google dans votre ville pour identifier les opportunités de marché prioritaires.</p>
-                    <div class="step-tag"><i class="fas fa-search"></i> Mots-clés locaux</div>
+                <div class="methode-step-card" id="pillar-geo-design">
+                    <span class="methode-step-num">01 / AUDIT &amp; GEO LOCAL</span>
+                    <h3>Recherche d'Intentions &amp; GEO</h3>
+                    <p>Nous étudions précisément les termes recherchés par vos clients sur Google et les moteurs IA dans votre ville pour identifier les opportunités prioritaires.</p>
+                    <div class="step-tag"><i class="fas fa-search"></i> GEO &amp; Mots-clés locaux</div>
+                    <a href="/audit-geo-local.html" class="pillar-dedicated-link">Page dédiée <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="methode-step-card">
-                    <span class="methode-step-num">02 / ARCHITECTURE WEB</span>
-                    <h3>Vitesse & Code Optimisé</h3>
+                <div class="methode-step-card" id="pillar-seo-optimisation">
+                    <span class="methode-step-num">02 / SEO OPTIMISATION</span>
+                    <h3>Vitesse &amp; Code Optimisé</h3>
                     <p>Développement technique sur-mesure, respect strict des Core Web Vitals de Google, responsive mobile irréprochable et temps de réponse ultra-rapide (&lt; 1.2s).</p>
                     <div class="step-tag"><i class="fas fa-gauge-high"></i> Performance pure</div>
+                    <a href="/seo-optimisation.html" class="pillar-dedicated-link">Page dédiée <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="methode-step-card">
-                    <span class="methode-step-num">03 / SEO ORGANIQUE</span>
-                    <h3>Balisage & Siloing Local</h3>
+                <div class="methode-step-card" id="pillar-referencement">
+                    <span class="methode-step-num">03 / RÉFÉRENCEMENT GOOGLE</span>
+                    <h3>Balisage &amp; Siloing Local</h3>
                     <p>Création de pages de services dédiées, balisage Schema.org, maillage interne ciblé et synchronisation avec Google Business Profile.</p>
                     <div class="step-tag"><i class="fas fa-map-location-dot"></i> Visibilité Google</div>
+                    <a href="/referencement-google.html" class="pillar-dedicated-link">Page dédiée <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="methode-step-card">
-                    <span class="methode-step-num">04 / CONVERSION DIRECTE</span>
-                    <h3>Tunnels WhatsApp & Devis</h3>
-                    <p>Intégration de points de contact sans friction : WhatsApp pré-rempli, appel téléphonique direct et formulaire de qualification rapide.</p>
-                    <div class="step-tag"><i class="fab fa-whatsapp"></i> Prospects qualifiés</div>
+                <div class="methode-step-card" id="pillar-targeting-social">
+                    <span class="methode-step-num">04 / TARGETING &amp; RÉSEAUX SOCIAUX</span>
+                    <h3>Social Ads, WhatsApp &amp; Devis</h3>
+                    <p>Ciblage précis sur les réseaux sociaux (Meta, LinkedIn) et tunnels sans friction : WhatsApp pré-rempli, appel direct et qualification rapide.</p>
+                    <div class="step-tag"><i class="fas fa-bullseye"></i> Targeting &amp; Conversion</div>
+                    <a href="/targeting-reseaux-sociaux.html" class="pillar-dedicated-link">Page dédiée <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -454,15 +497,15 @@
         <canvas id="zellige-tech-canvas" class="section-bg-canvas"></canvas>
         <div class="container">
             <div class="section-header text-center">
-                <span class="badge" data-i18n="offers_badge">Grille Tarifaire</span>
+                <span class="badge" data-i18n="offers_badge">Grille Tarifaire · Fin d'Année 2026</span>
                 <h2 data-i18n="offers_title" class="offers-title-aligned"><span class="nowrap-phrase">4 Formules Claires.</span> <span class="nowrap-phrase neon">Zéro Frais Cachés.</span></h2>
-                <p data-i18n="offers_p">Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.</p>
+                <p data-i18n="offers_p">Offres actualisées valables jusqu'à la fin de l'année. Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.</p>
             </div>
 
             <!-- Offers 4-tier Grid -->
             <div class="offers-grid">
                 <!-- 1. Starter -->
-                <div class="price-card">
+                <div class="price-card" id="offer-card-starter">
                     <span class="badge" data-i18n="offer_starter_badge">Essentiel</span>
                     <div class="card-icon"><i class="fas fa-rocket"></i></div>
                     <h3 data-i18n="offer_starter_title">🚀 STARTER</h3>
@@ -479,7 +522,7 @@
                 </div>
 
                 <!-- 2. Growth (Highlighted) -->
-                <div class="price-card highlighted">
+                <div class="price-card highlighted" id="offer-card-growth">
                     <span class="badge" data-i18n="offer_growth_badge">Recommandé • Plus Populaire</span>
                     <div class="card-icon"><i class="fas fa-chart-line"></i></div>
                     <h3 data-i18n="offer_growth_title">📈 GROWTH</h3>
@@ -496,7 +539,7 @@
                 </div>
 
                 <!-- 3. Lead Engine -->
-                <div class="price-card">
+                <div class="price-card" id="offer-card-lead-engine">
                     <span class="badge" data-i18n="offer_lead_engine_badge">Moteur Actif</span>
                     <div class="card-icon"><i class="fas fa-fire"></i></div>
                     <h3 data-i18n="offer_lead_engine_title">🔥 LEAD ENGINE</h3>
@@ -513,7 +556,7 @@
                 </div>
 
                 <!-- 4. Acquisition -->
-                <div class="price-card">
+                <div class="price-card" id="offer-card-acquisition">
                     <span class="badge" data-i18n="offer_acquisition_badge">Sur Mesure</span>
                     <div class="card-icon"><i class="fas fa-trophy"></i></div>
                     <h3 data-i18n="offer_acquisition_title">🏆 ACQUISITION</h3>
@@ -842,6 +885,18 @@
                     </a>
                     <a href="/realisations.html" class="seo-tag seo-tag-highlight" title="Réalisations & Études de Cas">
                         <i class="fas fa-check-circle"></i> <span>Réalisations & Études de Cas</span>
+                    </a>
+                    <a href="/audit-geo-local.html" class="seo-tag seo-tag-highlight" title="01 Audit & GEO Local">
+                        <i class="fas fa-search"></i> <span>01 / Audit &amp; GEO Local</span>
+                    </a>
+                    <a href="/seo-optimisation.html" class="seo-tag seo-tag-highlight" title="02 SEO Optimisation">
+                        <i class="fas fa-gauge-high"></i> <span>02 / SEO Optimisation</span>
+                    </a>
+                    <a href="/referencement-google.html" class="seo-tag seo-tag-highlight" title="03 Référencement Google">
+                        <i class="fas fa-map-location-dot"></i> <span>03 / Référencement Google</span>
+                    </a>
+                    <a href="/targeting-reseaux-sociaux.html" class="seo-tag seo-tag-highlight" title="04 Targeting & Réseaux Sociaux">
+                        <i class="fas fa-bullseye"></i> <span>04 / Targeting &amp; Réseaux Sociaux</span>
                     </a>
                 </div>
             </div>

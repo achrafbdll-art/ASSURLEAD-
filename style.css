@@ -643,10 +643,336 @@ nav.scrolled {
     background-color: var(--brand-neon);
 }
 
+/* 3D Express Offer Train Header */
+.offer-train-header {
+    position: relative;
+    margin: 0;
+    background: linear-gradient(180deg, rgba(4, 14, 8, 0.98) 0%, rgba(5, 8, 7, 0.97) 100%);
+    border-top: 1px solid rgba(0, 255, 65, 0.52);
+    border-bottom: 1px solid rgba(0, 255, 65, 0.56);
+    box-shadow: 0 0 42px rgba(0, 255, 65, 0.18), 0 18px 46px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(0, 255, 65, 0.35), inset 0 -1px 0 rgba(0, 255, 65, 0.25);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.offer-train-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 255, 65, 0.1) 0%, transparent 18%, transparent 82%, rgba(0, 255, 65, 0.1) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.offer-train-topbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.14);
+}
+
+.offer-train-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--zinc-400);
+}
+
+.offer-train-eyebrow {
+    color: var(--brand-neon);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.offer-train-validity {
+    color: var(--white);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.offer-train-sep {
+    color: var(--zinc-600);
+}
+
+.offer-train-hint {
+    color: var(--zinc-500);
+    font-size: 11.5px;
+    transition: color 0.2s ease;
+}
+
+.offer-train-hint.is-active {
+    color: var(--brand-neon);
+    font-weight: 600;
+}
+
+.offer-train-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.offer-train-jumps {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.train-jump-btn {
+    background: rgba(0, 255, 65, 0.04);
+    border: 1px solid rgba(0, 255, 65, 0.22);
+    color: var(--zinc-200);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.train-jump-btn span {
+    color: var(--brand-neon);
+    font-family: 'JetBrains Mono', monospace;
+    margin-left: 4px;
+    font-variant-numeric: tabular-nums;
+}
+
+.train-jump-btn.is-featured {
+    border-color: rgba(0, 255, 65, 0.55);
+    background: rgba(0, 255, 65, 0.1);
+    color: var(--white);
+    box-shadow: 0 0 14px rgba(0, 255, 65, 0.16);
+}
+
+.train-jump-btn:hover,
+.train-jump-btn:focus-visible {
+    border-color: var(--brand-neon);
+    color: var(--white);
+    background: rgba(0, 255, 65, 0.18);
+    box-shadow: 0 0 18px rgba(0, 255, 65, 0.3);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.train-ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 255, 65, 0.04);
+    border: 1px solid rgba(0, 255, 65, 0.24);
+    color: var(--zinc-200);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.train-ctrl-btn:hover,
+.train-ctrl-btn[aria-pressed="true"] {
+    border-color: var(--brand-neon);
+    color: var(--brand-neon);
+    background: rgba(0, 255, 65, 0.12);
+}
+
+.train-cta-btn {
+    padding: 7px 14px;
+    font-size: 10.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+
+.offer-train-viewport {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    background:
+        radial-gradient(ellipse at 50% 68%, rgba(0, 255, 65, 0.22) 0%, rgba(0, 255, 65, 0.05) 45%, rgba(4, 10, 6, 0) 78%),
+        linear-gradient(180deg, rgba(2, 6, 4, 0.3) 0%, rgba(4, 12, 7, 0.55) 100%);
+    overflow: hidden;
+}
+
+.offer-train-viewport::before,
+.offer-train-viewport::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-color: rgba(0, 255, 65, 0.65);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.offer-train-viewport::before {
+    top: 10px;
+    left: 16px;
+    border-width: 2px 0 0 2px;
+}
+
+.offer-train-viewport::after {
+    bottom: 10px;
+    right: 16px;
+    border-width: 0 2px 2px 0;
+}
+
+/* 2D Fallback Express Track */
+.train-2d-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.train-2d-track {
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 2px solid rgba(0, 255, 65, 0.35);
+    background: rgba(12, 14, 19, 0.92);
+    overflow: hidden;
+}
+
+.train-2d-marquee {
+    display: flex;
+    width: max-content;
+    animation: train2dGlide 28s linear infinite;
+}
+
+.train-2d-track:hover .train-2d-marquee {
+    animation-play-state: paused;
+}
+
+.train-2d-consist {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-right: 48px;
+}
+
+.train-2d-loco {
+    padding: 16px 26px;
+    background: linear-gradient(135deg, #151923, #0b0d12);
+    border: 1px solid rgba(0, 255, 65, 0.55);
+    color: var(--white);
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    clip-path: polygon(0 0, 88% 0, 100% 50%, 92% 100%, 0 100%);
+    white-space: nowrap;
+}
+
+.train-2d-loco span {
+    color: var(--brand-neon);
+}
+
+.train-2d-wagon {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    background: #10131a;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: var(--white);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.train-2d-wagon.is-featured {
+    border-color: var(--brand-neon);
+    background: #0d1612;
+}
+
+.train-2d-wagon:hover {
+    border-color: var(--brand-neon);
+    transform: translateY(-2px);
+}
+
+.train-2d-title {
+    font-weight: 900;
+    font-size: 13px;
+}
+
+.train-2d-price {
+    color: var(--brand-neon);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.train-2d-maint {
+    color: var(--zinc-400);
+    font-size: 11px;
+}
+
+@keyframes train2dGlide {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+@media (max-width: 1180px) {
+    .offer-train-jumps {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .offer-train-header {
+        margin: 0;
+    }
+
+    .offer-train-topbar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 8px;
+    }
+
+    .offer-train-meta {
+        font-size: 11px;
+    }
+
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .offer-train-viewport {
+        height: 156px;
+    }
+}
+
+body[dir="rtl"] .train-jump-btn span {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+body[dir="rtl"] .train-2d-marquee {
+    direction: ltr;
+}
+
 /* Hero Section */
 .hero {
     background-color: transparent;
-    padding: 130px 0 70px;
+    padding: 124px 0 64px;
     position: relative;
     overflow: hidden;
 }
@@ -2167,6 +2493,13 @@ body[dir="rtl"] .sage-arcs-sectors {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px -10px rgba(0, 255, 65, 0.25);
     z-index: 2;
+}
+
+.price-card.is-train-selected {
+    border-color: var(--brand-neon);
+    box-shadow: 0 0 0 1px rgba(0, 255, 65, 0.45), 0 22px 46px -12px rgba(0, 255, 65, 0.32);
+    transform: translateY(-6px);
+    z-index: 3;
 }
 
 /* System Funnel Section */
@@ -4098,7 +4431,7 @@ footer .container {
     }
 
     .hero {
-        padding: 110px 0 50px;
+        padding: 104px 0 44px;
     }
 
     .hero-content h1 {
@@ -7604,6 +7937,13 @@ body[dir="rtl"] .offers-title-aligned {
     box-shadow: 0 15px 30px rgba(0, 255, 65, 0.1);
 }
 
+.methode-step-card.is-train-selected {
+    border-color: var(--brand-neon);
+    box-shadow: 0 0 0 1px rgba(0, 255, 65, 0.5), 0 22px 46px -10px rgba(0, 255, 65, 0.34);
+    transform: translateY(-6px);
+    z-index: 3;
+}
+
 .methode-step-num {
     font-size: 12px;
     font-weight: 900;
@@ -7639,6 +7979,34 @@ body[dir="rtl"] .offers-title-aligned {
     display: flex;
     align-items: center;
     gap: 6px;
+}
+
+.pillar-dedicated-link {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.pillar-dedicated-link i {
+    color: var(--brand-neon);
+    transition: transform 0.2s ease;
+}
+
+.pillar-dedicated-link:hover {
+    color: var(--brand-neon);
+}
+
+.pillar-dedicated-link:hover i {
+    transform: translateX(4px);
 }
 
 @media (max-width: 1024px) {

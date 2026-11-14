@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { initOfferTrain3D } from './src/client/offerTrain3d.js';
 
 // Safely suppress benign ResizeObserver loop notification messages
 window.addEventListener('error', (e) => {
@@ -2782,11 +2783,42 @@ const translations = {
         en: '<i class="fas fa-info-circle"></i> Indicative simulation based on the entered parameters. Actual results vary depending on the sector, area, offer, advertising budget, and conversion rate.',
         ar: '<i class="fas fa-info-circle"></i> محاكاة تقديرية مبنية على المعطيات المحددة. تختلف النتائج الفعلية حسب القطاع، المنطقة، العرض، الميزانية الإعلانية ونسبة التحويل.'
     },
+    // 3D Train Header
+    train_header_eyebrow: {
+        fr: "Moteur d'Acquisition 360°",
+        en: "360° Growth Engine",
+        ar: "محرك النمو الرقمي 360°"
+    },
+    train_header_validity: {
+        fr: "SEO · Référencement · Targeting Réseaux Sociaux · GEO",
+        en: "SEO · Search Ranking · Social Targeting · GEO",
+        ar: "تحسين السيو · تصدر جوجل · استهداف الشبكات الاجتماعية · GEO"
+    },
+    train_header_hint: {
+        fr: "Survolez un wagon 3D ou cliquez pour explorer le pôle",
+        en: "Hover a 3D carriage or click to explore the pillar",
+        ar: "مرر الفأرة فوق العربة أو انقر لاستكشاف المحور"
+    },
+    train_btn_pause: {
+        fr: "Pause",
+        en: "Pause",
+        ar: "إيقاف"
+    },
+    train_btn_play: {
+        fr: "Reprendre",
+        en: "Resume",
+        ar: "استئناف"
+    },
+    train_btn_cta: {
+        fr: "Notre Méthode",
+        en: "Our Method",
+        ar: "منهجيتنا"
+    },
     // Offers Header
     offers_badge: {
-        fr: "Grille Tarifaire",
-        en: "Pricing & Packages",
-        ar: "الباقات والأسعار"
+        fr: "Grille Tarifaire · Fin d'Année 2026",
+        en: "Pricing & Packages · End of 2026",
+        ar: "الباقات والأسعار · عروض نهاية 2026"
     },
     offers_title: {
         fr: "<span class=\"nowrap-phrase\">4 Formules Claires.</span> <span class=\"nowrap-phrase neon\">Zéro Frais Cachés.</span>",
@@ -2794,9 +2826,9 @@ const translations = {
         ar: "<span class=\"nowrap-phrase\">4 باقات واضحة.</span> <span class=\"nowrap-phrase neon\">بدون أي مصاريف خفية.</span>"
     },
     offers_p: {
-        fr: "Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.",
-        en: "Select the ideal tier aligned with your growth targets across your target territory.",
-        ar: "اختر الباقة المناسبة لطموحاتك وتوسع وكالتك في رقعتك الجغرافية."
+        fr: "Offres actualisées valables jusqu'à la fin de l'année. Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.",
+        en: "Updated offers valid through the end of the year. Select the ideal tier aligned with your growth targets across your target territory.",
+        ar: "عروض محدثة صالحة إلى غاية نهاية السنة. اختر الباقة المناسبة لطموحاتك وتوسع وكالتك في رقعتك الجغرافية."
     },
     // 1. 🚀 STARTER (2 000 DH)
     offer_starter_badge: {
@@ -5013,6 +5045,7 @@ const fullTextDictionary = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    let offerTrainController = null;
     // --- MULTILINGUAL ENGINE ---
 
     const translateUntaggedElements = (lang) => {
@@ -5192,6 +5225,13 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             if (typeof updateROI === 'function') {
                 updateROI();
+            }
+        } catch(e) {}
+
+        // Sync 3D Offer Train labels with active language
+        try {
+            if (offerTrainController && typeof offerTrainController.setLanguage === 'function') {
+                offerTrainController.setLanguage(lang);
             }
         } catch(e) {}
 
@@ -6710,6 +6750,68 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
+
+    // Initialize 3D Growth Train Header
+    try {
+        const focusOfferCard = (targetId) => {
+            const card = document.getElementById(targetId);
+            if (!card) return;
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            document.querySelectorAll('.price-card.is-train-selected, .methode-step-card.is-train-selected').forEach((c) => c.classList.remove('is-train-selected'));
+            card.classList.add('is-train-selected');
+            window.setTimeout(() => card.classList.remove('is-train-selected'), 2000);
+        };
+
+        const statusEl = document.getElementById('offer-train-status');
+        const toggleBtn = document.getElementById('offer-train-toggle');
+        const initialTrainLang = localStorage.getItem('assurlead_lang') || document.documentElement.lang || 'fr';
+
+        offerTrainController = initOfferTrain3D('offer-train-canvas-container', {
+            initialLang: initialTrainLang,
+            onSelectOffer: focusOfferCard,
+            onHoverOffer: (pillar) => {
+                if (!statusEl) return;
+                const lang = localStorage.getItem('assurlead_lang') || 'fr';
+                if (pillar) {
+                    const copy = pillar.labels[lang] || pillar.labels.fr;
+                    statusEl.textContent = `${copy.title} (${pillar.badge}) · ${copy.subtitle}`;
+                    statusEl.classList.add('is-active');
+                } else {
+                    statusEl.innerHTML = translations.train_header_hint?.[lang] || translations.train_header_hint.fr;
+                    statusEl.classList.remove('is-active');
+                }
+            },
+            onPauseChange: (paused) => {
+                if (!toggleBtn) return;
+                const lang = localStorage.getItem('assurlead_lang') || 'fr';
+                toggleBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+                const icon = toggleBtn.querySelector('i');
+                const label = toggleBtn.querySelector('span');
+                if (icon) icon.className = paused ? 'fas fa-play' : 'fas fa-pause';
+                if (label) {
+                    label.setAttribute('data-i18n', paused ? 'train_btn_play' : 'train_btn_pause');
+                    label.textContent = paused
+                        ? (translations.train_btn_play?.[lang] || 'Reprendre')
+                        : (translations.train_btn_pause?.[lang] || 'Pause');
+                }
+            }
+        });
+
+        if (toggleBtn && offerTrainController) {
+            toggleBtn.addEventListener('click', () => {
+                offerTrainController.setPaused(!offerTrainController.isPaused());
+            });
+        }
+
+        document.querySelectorAll('.train-jump-btn[data-offer-target]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-offer-target');
+                if (targetId) focusOfferCard(targetId);
+            });
+        });
+    } catch (e) {
+        console.warn('Offer train 3D init warning:', e);
+    }
 
     // Initialize items safely
     try { init3DHeroStyle('hero-canvas-container'); } catch (e) { console.warn('Hero canvas init warning:', e); }

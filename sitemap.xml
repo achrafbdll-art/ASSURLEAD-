@@ -102,4 +102,30 @@
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
+
+    <!-- 4 Pôles d'Acquisition 360° -->
+    <url>
+        <loc>https://www.assurleadcom.com/audit-geo-local.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.92</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/seo-optimisation.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.92</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/referencement-google.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.92</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/targeting-reseaux-sociaux.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.92</priority>
+    </url>
 </urlset>
