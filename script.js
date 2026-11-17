@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { initHeroViscousLiquid } from './src/client/heroViscousLiquid.js';
+import { initHeroCyberWave } from './src/client/heroCyberWave.js';
 
 // Safely suppress benign ResizeObserver loop notification messages
 window.addEventListener('error', (e) => {
@@ -3189,6 +3190,11 @@ const translations = {
         en: "Direct WhatsApp Line",
         ar: "خط الواتساب المباشر"
     },
+    contact_fb_label: {
+        fr: "Facebook Officiel",
+        en: "Official Facebook",
+        ar: "صفحتنا على فيسبوك"
+    },
     // Form Questionnaire
     form_identity_label: {
         fr: "VOTRE IDENTITÉ",
@@ -5426,6 +5432,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- HERO & CONTACT 3D SCENES ---
     const init3DHeroStyle = (containerId) => {
         initHeroViscousLiquid(containerId, init2DHeroFallback);
+        const heroCanvasEl = document.getElementById(containerId);
+        const heroHost = heroCanvasEl?.closest('.hero') || heroCanvasEl?.parentElement;
+        if (heroHost) {
+            let waveContainer = heroHost.querySelector('#hero-top-wave-container, .hero-top-wave');
+            if (!waveContainer) {
+                waveContainer = document.createElement('div');
+                waveContainer.id = 'hero-top-wave-container';
+                waveContainer.className = 'hero-top-wave';
+                waveContainer.setAttribute('aria-hidden', 'true');
+                heroCanvasEl.insertAdjacentElement('afterend', waveContainer);
+            }
+            initHeroCyberWave(waveContainer);
+        }
     };
 
     // --- 3D ROI SCENE ---

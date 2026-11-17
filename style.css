@@ -671,6 +671,26 @@ nav.scrolled {
     z-index: 1;
 }
 
+.hero-top-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 470px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.92;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.92) 62%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.92) 62%, rgba(0, 0, 0, 0) 100%);
+}
+
+@media (max-width: 768px) {
+    .hero-top-wave {
+        height: 360px;
+    }
+}
+
 /* Shooting Stars Field (Étoiles Filantes) */
 .hero-shooting-stars {
     position: absolute;
@@ -2783,6 +2803,17 @@ body[dir="rtl"] .sage-arcs-contact {
     box-shadow: 0 0 18px rgba(37, 211, 102, 0.45);
 }
 
+.contact-method-card .facebook-icon {
+    color: #1877F2;
+    background-color: rgba(24, 119, 242, 0.12);
+    border-color: rgba(24, 119, 242, 0.35);
+}
+
+.contact-method-card:hover .facebook-icon {
+    background-color: rgba(24, 119, 242, 0.24);
+    box-shadow: 0 0 18px rgba(24, 119, 242, 0.48);
+}
+
 .method-label {
     display: block;
     font-size: 11px;
@@ -3217,6 +3248,26 @@ footer .container {
 
 .seo-tag-highlight i {
     color: var(--brand-neon);
+}
+
+.footer-fb-tag {
+    border-color: rgba(24, 119, 242, 0.42);
+    background: rgba(24, 119, 242, 0.1);
+    color: #FFFFFF;
+}
+
+.footer-fb-tag i {
+    color: #3b82f6;
+}
+
+.footer-fb-tag:hover {
+    background: rgba(24, 119, 242, 0.22);
+    border-color: #3b82f6;
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.28);
+}
+
+.footer-fb-tag:hover i {
+    color: #ffffff;
 }
 
 .footer-copy {
@@ -4550,9 +4601,31 @@ input:focus, textarea:focus {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     z-index: 1002;
     position: relative;
+}
+
+.nav-social-btn {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(24, 119, 242, 0.45);
+    background: rgba(24, 119, 242, 0.12);
+    color: #60a5fa;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-social-btn:hover {
+    background: #1877F2;
+    border-color: #1877F2;
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(24, 119, 242, 0.5);
+    transform: translateY(-1px);
 }
 
 .lang-selector {
