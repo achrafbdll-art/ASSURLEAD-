@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { initOfferTrain3D } from './src/client/offerTrain3d.js';
-import { initViscousLiquidBg } from './src/client/viscousLiquidBg.js';
+import { initHeroViscousLiquid } from './src/client/heroViscousLiquid.js';
 
 // Safely suppress benign ResizeObserver loop notification messages
 window.addEventListener('error', (e) => {
@@ -5465,103 +5465,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- HERO & CONTACT 3D SCENES ---
     const init3DHeroStyle = (containerId) => {
-        const container = document.getElementById(containerId);
-        if (!container) return;
-
-        // If THREE is unavailable or WebGL is not supported, safely use 2D fallback
-        if (typeof THREE === 'undefined' || !isWebGLSupported()) {
-            init2DHeroFallback(container);
-            return;
-        }
-
-        let scene, camera, renderer, frameId;
-        try {
-            scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-            renderer = new THREE.WebGLRenderer({
-                antialias: true,
-                alpha: true,
-                powerPreference: "default",
-                failIfMajorPerformanceCaveat: false
-            });
-        } catch (err) {
-            console.warn('WebGL context creation failed for Hero 3D, activating 2D fallback:', err);
-            init2DHeroFallback(container);
-            return;
-        }
-
-        if (!renderer || !renderer.domElement) {
-            init2DHeroFallback(container);
-            return;
-        }
-
-        // Handle context loss gracefully
-        renderer.domElement.addEventListener('webglcontextlost', (event) => {
-            event.preventDefault();
-            console.warn('WebGL context lost for Hero 3D, falling back to 2D canvas');
-            if (frameId) cancelAnimationFrame(frameId);
-            init2DHeroFallback(container);
-        }, false);
-
-        try {
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            container.innerHTML = '';
-            container.appendChild(renderer.domElement);
-
-            const geometry = new THREE.IcosahedronGeometry(2, 1);
-            const material = new THREE.MeshStandardMaterial({ 
-                color: 0x00ff00, 
-                wireframe: true,
-                emissive: 0x00ff00,
-                emissiveIntensity: 0.8
-            });
-            const mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
-
-            const particlesGeometry = new THREE.BufferGeometry();
-            const particlesCount = 500;
-            const posArray = new Float32Array(particlesCount * 3);
-            const randArray = new Float32Array(particlesCount);
-            
-            for(let i=0; i<particlesCount * 3; i++) {
-                posArray[i] = (Math.random() - 0.5) * 10;
-            }
-            for(let i=0; i<particlesCount; i++) {
-                randArray[i] = Math.random();
-            }
-            
-            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-            const particlesMaterial = new THREE.PointsMaterial({ size: 0.02, color: 0x00ff00 });
-            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-            scene.add(particlesMesh);
-
-            const light = new THREE.PointLight(0x00ff00, 100);
-            light.position.set(5, 5, 5);
-            scene.add(light);
-            scene.add(new THREE.AmbientLight(0xffffff, 0.2));
-
-            camera.position.z = 5;
-
-            function animate() {
-                frameId = requestAnimationFrame(animate);
-                mesh.rotation.x += 0.002;
-                mesh.rotation.y += 0.003;
-                particlesMesh.rotation.y += 0.001;
-                try {
-                    renderer.render(scene, camera);
-                } catch (e) {
-                    cancelAnimationFrame(frameId);
-                    init2DHeroFallback(container);
-                }
-            }
-            animate();
-
-            setupResizeHandler(container, camera, renderer);
-        } catch (initErr) {
-            console.warn('Hero 3D setup exception:', initErr);
-            init2DHeroFallback(container);
-        }
+        initHeroViscousLiquid(containerId, init2DHeroFallback);
     };
 
     // --- 3D ROI SCENE ---
@@ -6815,7 +6719,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize items safely
-    try { initViscousLiquidBg(); } catch (e) { console.warn('Viscous liquid background init warning:', e); }
     try { init3DHeroStyle('hero-canvas-container'); } catch (e) { console.warn('Hero canvas init warning:', e); }
     try { initROIScene(); } catch (e) { console.warn('ROI scene init warning:', e); }
     try { initZelligeTechCanvas('zellige-tech-canvas', 'offres'); } catch (e) { console.warn('Offres canvas init warning:', e); }
