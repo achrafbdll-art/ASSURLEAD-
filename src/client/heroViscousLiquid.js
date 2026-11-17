@@ -165,8 +165,8 @@ export function initHeroViscousLiquid(containerId, fallbackFn) {
         renderer.compile(scene, camera);
     }
 
-    // Cursor tracking attached to parent hero section so UI remains 100% clickable
-    const hostSection = container.closest('.hero') || container.parentElement || window;
+    // Cursor tracking attached to parent section/hero so UI remains 100% clickable
+    const hostSection = container.closest('.hero, section, header') || container.parentElement || window;
     let cursorActive = false;
     let targetWorldX = 0;
     let targetWorldZ = 0;
