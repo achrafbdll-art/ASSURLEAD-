@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { initOfferTrain3D } from './src/client/offerTrain3d.js';
+import { initViscousLiquidBg } from './src/client/viscousLiquidBg.js';
 
 // Safely suppress benign ResizeObserver loop notification messages
 window.addEventListener('error', (e) => {
@@ -6814,6 +6815,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize items safely
+    try { initViscousLiquidBg(); } catch (e) { console.warn('Viscous liquid background init warning:', e); }
     try { init3DHeroStyle('hero-canvas-container'); } catch (e) { console.warn('Hero canvas init warning:', e); }
     try { initROIScene(); } catch (e) { console.warn('ROI scene init warning:', e); }
     try { initZelligeTechCanvas('zellige-tech-canvas', 'offres'); } catch (e) { console.warn('Offres canvas init warning:', e); }
