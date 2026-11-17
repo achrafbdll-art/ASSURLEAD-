@@ -105,16 +105,17 @@ export function initHeroViscousLiquid(containerId, fallbackFn) {
     cursorLight.position.set(0, 1.8, 0);
     scene.add(cursorLight);
 
-    // Viscous Liquid Bead Grid (64 x 34 = 2,176 tightly packed droplets in 1 draw call)
-    const COLS = 64;
-    const ROWS = 34;
+    // Adaptive Viscous Liquid Bead Grid (1,104 desktop / 612 mobile droplets in 1 draw call)
+    const isCompactViewport = window.innerWidth < 768;
+    const COLS = isCompactViewport ? 34 : 46;
+    const ROWS = isCompactViewport ? 18 : 24;
     const TOTAL = COLS * ROWS;
-    const SPACING_X = 0.34;
-    const SPACING_Z = 0.34;
+    const SPACING_X = 0.45;
+    const SPACING_Z = 0.45;
     const FIELD_W = (COLS - 1) * SPACING_X;
     const FIELD_D = (ROWS - 1) * SPACING_Z;
 
-    const beadGeo = new THREE.SphereGeometry(0.245, 12, 9);
+    const beadGeo = new THREE.SphereGeometry(0.31, 12, 8);
     const beadMat = new THREE.MeshPhysicalMaterial({
         color: 0xffffff,
         metalness: 0.84,
@@ -183,11 +184,19 @@ export function initHeroViscousLiquid(containerId, fallbackFn) {
     let frameId = 0;
     let lastTime = performance.now();
 
+    let cachedRect = container.getBoundingClientRect();
+    let rectDirty = false;
+    const markRectDirty = () => { rectDirty = true; };
+    window.addEventListener('scroll', markRectDirty, { passive: true });
+
     const projectPointer = (clientX, clientY) => {
-        const rect = container.getBoundingClientRect();
-        if (rect.width <= 0 || rect.height <= 0) return;
-        _pointer.x = ((clientX - rect.left) / rect.width) * 2 - 1;
-        _pointer.y = -((clientY - rect.top) / rect.height) * 2 + 1;
+        if (rectDirty) {
+            cachedRect = container.getBoundingClientRect();
+            rectDirty = false;
+        }
+        if (cachedRect.width <= 0 || cachedRect.height <= 0) return;
+        _pointer.x = ((clientX - cachedRect.left) / cachedRect.width) * 2 - 1;
+        _pointer.y = -((clientY - cachedRect.top) / cachedRect.height) * 2 + 1;
         _raycaster.setFromCamera(_pointer, camera);
         if (_raycaster.ray.intersectPlane(_groundPlane, _hitPoint)) {
             targetWorldX = THREE.MathUtils.clamp(_hitPoint.x, -FIELD_W * 0.55, FIELD_W * 0.55);
@@ -385,7 +394,7 @@ export function initHeroViscousLiquid(containerId, fallbackFn) {
                     loopActive = false;
                 }
             },
-            { threshold: 0.02 }
+            { rootMargin: '140px 0px', threshold: 0.01 }
         );
         observer.observe(container);
     }
@@ -411,6 +420,7 @@ export function initHeroViscousLiquid(containerId, fallbackFn) {
         camera.updateProjectionMatrix();
         renderer.setSize(newW, newH);
         renderer.setPixelRatio(isSoftwareGl ? 1 : Math.min(window.devicePixelRatio || 1, 2));
+        rectDirty = true;
     };
 
     if ('ResizeObserver' in window) {
@@ -440,6 +450,7 @@ export function initHeroViscousLiquid(containerId, fallbackFn) {
             observer?.disconnect();
             resizeObserver?.disconnect();
             window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', markRectDirty);
             document.removeEventListener('visibilitychange', onVisibilityChange);
             hostSection.removeEventListener('pointermove', onPointerMove);
             hostSection.removeEventListener('pointerdown', onPointerDown);
