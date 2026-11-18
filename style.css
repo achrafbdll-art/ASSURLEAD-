@@ -201,8 +201,8 @@ nav {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 12px 0;
-    background: rgba(8, 8, 12, 0.86);
+    padding: 14px 0;
+    background: rgba(8, 8, 12, 0.84);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -213,29 +213,25 @@ nav.scrolled {
     background-color: rgba(6, 6, 9, 0.96);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: 9px 0;
+    padding: 10px 0;
     border-bottom: 1px solid rgba(0, 255, 65, 0.15);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.container.nav-container,
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: clamp(10px, 1.4vw, 22px);
-    max-width: none;
-    margin: 0;
-    padding: 0 clamp(10px, 1.4vw, 22px);
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 9px;
-    margin-right: auto;
+    gap: 10px;
     text-decoration: none;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     flex-shrink: 0;
@@ -310,7 +306,7 @@ nav.scrolled {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: clamp(9px, 1.15vw, 18px);
+    gap: clamp(10px, 1.3vw, 20px);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -319,16 +315,11 @@ nav.scrolled {
 .nav-links a:not(.btn) {
     text-decoration: none;
     color: var(--zinc-400);
-    font-size: clamp(10px, 0.85vw, 11.5px);
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     transition: color 0.2s;
-    white-space: nowrap;
-}
-
-.nav-links .btn-sm {
-    padding: 8px 15px;
     white-space: nowrap;
 }
 
@@ -4135,10 +4126,8 @@ footer .container {
         padding: 12px 0;
     }
 
-    .container.nav-container,
     .nav-container {
-        padding: 0 12px;
-        gap: 8px;
+        padding: 0 16px;
     }
 
     .nav-left {
@@ -4146,8 +4135,7 @@ footer .container {
     }
 
     .logo {
-        gap: 7px;
-        margin-right: auto;
+        gap: 8px;
     }
 
     .logo-icon {
@@ -4160,17 +4148,7 @@ footer .container {
     }
 
     .logo-text {
-        font-size: clamp(17px, 4.4vw, 20px);
-    }
-
-    .nav-right {
-        gap: 8px;
-    }
-
-    .nav-social-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 12px;
+        font-size: 20px;
     }
 
     .lang-selector {
@@ -4751,13 +4729,8 @@ body[dir="rtl"] .hero-grid {
     }
 }
 
-body[dir="rtl"] .logo {
-    margin-right: 0;
-    margin-left: auto;
-}
-
 body[dir="rtl"] .nav-links {
-    margin-right: initial;
+    margin-right: auto;
     margin-left: initial;
 }
 
