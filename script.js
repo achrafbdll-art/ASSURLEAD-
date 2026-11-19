@@ -1,5 +1,4 @@
-import * as THREE from 'three';
-import { initHeroViscousLiquid } from './src/client/heroViscousLiquid.js';
+import { initHero3DScene } from './src/client/hero3dScene.js';
 
 // Safely suppress benign ResizeObserver loop notification messages
 window.addEventListener('error', (e) => {
@@ -5238,43 +5237,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setLanguage(savedLang);
     }, 100);
 
-    // --- UTILS ---
-    const setupResizeHandler = (container, camera, renderer) => {
-        let animationFrameId = null;
-        const observer = new ResizeObserver(() => {
-            if (animationFrameId) {
-                window.cancelAnimationFrame(animationFrameId);
-            }
-            animationFrameId = window.requestAnimationFrame(() => {
-                if (!container) return;
-                const width = container.clientWidth;
-                const height = container.clientHeight;
-                if (width === 0 || height === 0) return;
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-                renderer.setSize(width, height, false);
-            });
-        });
-        observer.observe(container);
-        return observer;
-    };
-
-    // --- WEBGL DETECTION & SAFE FALLBACKS ---
-    const isWebGLSupported = () => {
-        try {
-            if (!window.WebGLRenderingContext) return false;
-            const canvas = document.createElement('canvas');
-            const gl = canvas.getContext('webgl', { failIfMajorPerformanceCaveat: false }) || 
-                       canvas.getContext('experimental-webgl', { failIfMajorPerformanceCaveat: false });
-            return Boolean(gl);
-        } catch (e) {
-            return false;
-        }
-    };
-
-    // 2D Cyber Canvas Fallback for Hero when WebGL is blocked or unavailable
-    const init2DHeroFallback = (container) => {
+    // --- PURE 2D AMBIENT CYBER NETWORK (SANS 3D) ---
+    const init2DAmbientCanvas = (containerId) => {
+        const container = document.getElementById(containerId);
         if (!container) return;
+
         container.innerHTML = '';
         const canvas = document.createElement('canvas');
         canvas.className = 'hero-fallback-canvas';
@@ -5289,302 +5256,111 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        let width = container.clientWidth || 800;
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let width = container.clientWidth || window.innerWidth || 800;
         let height = container.clientHeight || 600;
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        ctx.scale(dpr, dpr);
+        let dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-        window.addEventListener('resize', () => {
+        const resizeCanvas = () => {
             if (!container) return;
-            width = container.clientWidth || 800;
-            height = container.clientHeight || 600;
-            canvas.width = width * dpr;
-            canvas.height = height * dpr;
-            ctx.scale(dpr, dpr);
-        });
+            width = Math.max(container.clientWidth, 320);
+            height = Math.max(container.clientHeight, 320);
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+            canvas.width = Math.floor(width * dpr);
+            canvas.height = Math.floor(height * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        resizeCanvas();
 
-        // Floating cyber nodes
-        const nodes = Array.from({ length: 40 }, () => ({
+        if (typeof ResizeObserver !== 'undefined') {
+            const ro = new ResizeObserver(() => resizeCanvas());
+            ro.observe(container);
+        } else {
+            window.addEventListener('resize', resizeCanvas, { passive: true });
+        }
+
+        const hostSection = container.closest('section') || container.parentElement;
+        let mouseX = -9999;
+        let mouseY = -9999;
+        if (hostSection && !prefersReducedMotion) {
+            hostSection.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                mouseX = e.clientX - rect.left;
+                mouseY = e.clientY - rect.top;
+            }, { passive: true });
+            hostSection.addEventListener('mouseleave', () => {
+                mouseX = -9999;
+                mouseY = -9999;
+            }, { passive: true });
+        }
+
+        const nodeCount = width < 768 ? 24 : 42;
+        const nodes = Array.from({ length: nodeCount }, () => ({
             x: Math.random() * width,
             y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.6,
-            vy: (Math.random() - 0.5) * 0.6,
-            r: Math.random() * 2 + 1,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            r: Math.random() * 1.8 + 0.9,
             pulse: Math.random() * Math.PI * 2
         }));
 
-        // Vertices of an icosahedron-like polyhedron in 3D
-        const phi = (1 + Math.sqrt(5)) / 2;
-        const baseVertices = [
-            [-1,  phi, 0], [ 1,  phi, 0], [-1, -phi, 0], [ 1, -phi, 0],
-            [ 0, -1,  phi], [ 0,  1,  phi], [ 0, -1, -phi], [ 0,  1, -phi],
-            [ phi, 0, -1], [ phi, 0,  1], [-phi, 0, -1], [-phi, 0,  1]
-        ].map(([x, y, z]) => {
-            const len = Math.hypot(x, y, z);
-            return [x / len, y / len, z / len];
-        });
-
-        let angle = 0;
-        let animId;
-
-        const animate2D = () => {
-            animId = requestAnimationFrame(animate2D);
+        const drawFrame = () => {
             ctx.clearRect(0, 0, width, height);
 
-            // Update & draw background particles
-            nodes.forEach(n => {
-                n.x += n.vx;
-                n.y += n.vy;
-                n.pulse += 0.03;
-                if (n.x < 0) n.x = width;
-                if (n.x > width) n.x = 0;
-                if (n.y < 0) n.y = height;
-                if (n.y > height) n.y = 0;
+            // Soft radial emerald pointer aura
+            if (mouseX >= 0 && mouseY >= 0 && mouseX <= width && mouseY <= height) {
+                const aura = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 180);
+                aura.addColorStop(0, 'rgba(0, 255, 65, 0.08)');
+                aura.addColorStop(1, 'rgba(0, 255, 65, 0)');
+                ctx.fillStyle = aura;
+                ctx.fillRect(0, 0, width, height);
+            }
 
-                const alpha = 0.2 + 0.35 * Math.sin(n.pulse);
+            // Update & draw 2D nodes
+            for (let i = 0; i < nodes.length; i++) {
+                const n = nodes[i];
+                if (!prefersReducedMotion) {
+                    n.x += n.vx;
+                    n.y += n.vy;
+                    n.pulse += 0.025;
+                    if (n.x < 0) n.x = width;
+                    if (n.x > width) n.x = 0;
+                    if (n.y < 0) n.y = height;
+                    if (n.y > height) n.y = 0;
+                }
+
+                const alpha = 0.18 + 0.28 * Math.sin(n.pulse);
                 ctx.beginPath();
                 ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
                 ctx.fillStyle = `rgba(0, 255, 65, ${alpha})`;
-                ctx.shadowColor = '#00ff41';
-                ctx.shadowBlur = 6;
                 ctx.fill();
-            });
+            }
 
-            // Geometric connections between nearby nodes
-            ctx.shadowBlur = 0;
+            // Geometric 2D connections
+            ctx.lineWidth = 0.65;
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
                     const dx = nodes[i].x - nodes[j].x;
                     const dy = nodes[i].y - nodes[j].y;
                     const d = Math.hypot(dx, dy);
-                    if (d < 100) {
+                    if (d < 120) {
                         ctx.beginPath();
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.strokeStyle = `rgba(0, 255, 65, ${0.15 * (1 - d / 100)})`;
-                        ctx.lineWidth = 0.6;
+                        ctx.strokeStyle = `rgba(0, 255, 65, ${0.14 * (1 - d / 120)})`;
                         ctx.stroke();
                     }
                 }
             }
-
-            // Central rotating holographic neon wireframe
-            const cx = width > 768 ? width * 0.72 : width * 0.5;
-            const cy = height * 0.5;
-            const scale = Math.min(width, height) * 0.22;
-            angle += 0.008;
-
-            const rotY = angle;
-            const rotX = angle * 0.6;
-            const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
-            const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
-
-            const proj = baseVertices.map(([x, y, z]) => {
-                // Rotate around Y
-                const x1 = x * cosY + z * sinY;
-                const z1 = -x * sinY + z * cosY;
-                // Rotate around X
-                const y2 = y * cosX - z1 * sinX;
-                const z2 = y * sinX + z1 * cosX;
-                // Perspective projection
-                const persp = 3 / (3 + z2);
-                return [cx + x1 * scale * persp, cy + y2 * scale * persp, z2];
-            });
-
-            // Draw wireframe edges
-            ctx.shadowColor = '#00ff41';
-            ctx.shadowBlur = 10;
-            ctx.strokeStyle = 'rgba(0, 255, 65, 0.45)';
-            ctx.lineWidth = 1.2;
-
-            for (let i = 0; i < proj.length; i++) {
-                for (let j = i + 1; j < proj.length; j++) {
-                    const dist3D = Math.hypot(
-                        baseVertices[i][0] - baseVertices[j][0],
-                        baseVertices[i][1] - baseVertices[j][1],
-                        baseVertices[i][2] - baseVertices[j][2]
-                    );
-                    if (dist3D < 1.15) {
-                        ctx.beginPath();
-                        ctx.moveTo(proj[i][0], proj[i][1]);
-                        ctx.lineTo(proj[j][0], proj[j][1]);
-                        ctx.stroke();
-                    }
-                }
-            }
-
-            // Draw glowing vertex points
-            proj.forEach(([px, py]) => {
-                ctx.beginPath();
-                ctx.arc(px, py, 2.5, 0, Math.PI * 2);
-                ctx.fillStyle = '#00ff41';
-                ctx.fill();
-            });
-            ctx.shadowBlur = 0;
         };
 
-        animate2D();
-    };
-
-    // --- HERO & CONTACT 3D SCENES ---
-    const init3DHeroStyle = (containerId) => {
-        initHeroViscousLiquid(containerId, init2DHeroFallback);
-    };
-
-    // --- 3D ROI SCENE ---
-    let roiBar;
-    let currencySymbols = [];
-    const initROIScene = () => {
-        const container = document.getElementById('roi-canvas-container');
-        if (!container) return;
-
-        if (typeof THREE === 'undefined' || !isWebGLSupported()) {
-            return;
-        }
-
-        let scene, camera, renderer, roiFrameId;
-        try {
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x050505);
-            camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-            renderer = new THREE.WebGLRenderer({
-                antialias: true,
-                powerPreference: "default",
-                failIfMajorPerformanceCaveat: false
-            });
-        } catch (err) {
-            console.warn('WebGL context creation failed for ROI 3D:', err);
-            return;
-        }
-
-        if (!renderer || !renderer.domElement) return;
-
-        renderer.domElement.addEventListener('webglcontextlost', (event) => {
-            event.preventDefault();
-            console.warn('WebGL context lost for ROI 3D');
-            if (roiFrameId) cancelAnimationFrame(roiFrameId);
-        }, false);
-
-        try {
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            container.appendChild(renderer.domElement);
-
-            // Grid
-            const grid = new THREE.GridHelper(20, 20, 0x00ff00, 0x111111);
-            grid.position.y = -2;
-            scene.add(grid);
-
-            // Single Hexagonal Neon Pillar
-            const hexSegments = 6;
-            const outerGeometry = new THREE.CylinderGeometry(1.2, 1.2, 4, hexSegments);
-            const innerGeometry = new THREE.CylinderGeometry(0.6, 0.6, 4, hexSegments);
-            
-            const outerMaterial = new THREE.MeshStandardMaterial({ 
-                color: 0x00ff00, 
-                transparent: true, 
-                opacity: 0.2,
-                metalness: 0.9,
-                roughness: 0.1
-            });
-            
-            const innerMaterial = new THREE.MeshStandardMaterial({ 
-                color: 0x00ff00, 
-                emissive: 0x00ff00, 
-                emissiveIntensity: 1
-            });
-
-            roiBar = new THREE.Group();
-            const outerMesh = new THREE.Mesh(outerGeometry, outerMaterial);
-            const innerMesh = new THREE.Mesh(innerGeometry, innerMaterial);
-            
-            const wireframeGeometry = new THREE.EdgesGeometry(outerGeometry);
-            const wireframeMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 0.8 });
-            const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
-            
-            roiBar.add(outerMesh);
-            roiBar.add(innerMesh);
-            roiBar.add(wireframe);
-            
-            roiBar.position.y = -2;
-            roiBar.scale.y = 0.1;
-            
-            scene.add(roiBar);
-
-            // Tornado Currency Symbols
-            const createSymbolTexture = (text) => {
-                const canvas = document.createElement('canvas');
-                canvas.width = 128;
-                canvas.height = 128;
-                const ctx = canvas.getContext('2d');
-                ctx.clearRect(0, 0, 128, 128);
-                ctx.font = 'bold 80px Inter, sans-serif';
-                ctx.fillStyle = '#00ff00';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillText(text, 64, 64);
-                return new THREE.CanvasTexture(canvas);
+        drawFrame();
+        if (!prefersReducedMotion) {
+            const loop = () => {
+                drawFrame();
+                requestAnimationFrame(loop);
             };
-
-            const madTexture = createSymbolTexture('MAD');
-            const dollarTexture = createSymbolTexture('$');
-
-            for (let i = 0; i < 40; i++) {
-                const sprMat = new THREE.SpriteMaterial({ 
-                    map: i % 2 === 0 ? madTexture : dollarTexture,
-                    transparent: true,
-                    opacity: 0.8
-                });
-                const sprite = new THREE.Sprite(sprMat);
-                
-                const angle = Math.random() * Math.PI * 2;
-                const radius = 2 + Math.random() * 4;
-                const height = (Math.random() - 0.5) * 10;
-                
-                sprite.position.set(Math.cos(angle) * radius, height, Math.sin(angle) * radius);
-                sprite.scale.set(0.5, 0.5, 1);
-                sprite.userData = {
-                    angle, radius,
-                    speed: 0.01 + Math.random() * 0.02,
-                    vSpeed: (Math.random() - 0.5) * 0.01
-                };
-                
-                scene.add(sprite);
-                currencySymbols.push(sprite);
-            }
-
-            const light = new THREE.PointLight(0x00ff00, 50);
-            light.position.set(5, 5, 5);
-            scene.add(light);
-            scene.add(new THREE.AmbientLight(0xffffff, 0.5));
-
-            camera.position.set(0, 5, 12);
-            camera.lookAt(0, 0, 0);
-
-            function animate() {
-                roiFrameId = requestAnimationFrame(animate);
-                currencySymbols.forEach(symbol => {
-                    symbol.userData.angle += symbol.userData.speed;
-                    symbol.position.x = Math.cos(symbol.userData.angle) * symbol.userData.radius;
-                    symbol.position.z = Math.sin(symbol.userData.angle) * symbol.userData.radius;
-                    symbol.position.y += symbol.userData.vSpeed;
-                    
-                    if (symbol.position.y > 5) symbol.position.y = -5;
-                    if (symbol.position.y < -5) symbol.position.y = 5;
-                });
-                try {
-                    renderer.render(scene, camera);
-                } catch (e) {
-                    cancelAnimationFrame(roiFrameId);
-                }
-            }
-            animate();
-
-            setupResizeHandler(container, camera, renderer);
-        } catch (roiErr) {
-            console.warn('ROI 3D setup exception:', roiErr);
+            requestAnimationFrame(loop);
         }
     };
 
@@ -5637,33 +5413,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `• CA Potentiel : ${Math.floor(revenue).toLocaleString()} MAD (+${Math.floor(roi)}% ROI)\n\n` +
                 `Je souhaite valider ce plan d'acquisition pour mon agence.`
             );
-            simWhatsappBtn.href = `https://wa.me/212714716278?text=${encodedMsg}`;
-        }
-
-        // Update 3D Bar
-        if (roiBar) {
-            const targetHeight = Math.max(0.1, (revenue / 60000) * 3);
-            roiBar.scale.y = targetHeight;
-            roiBar.position.y = -2 + (targetHeight * 2); 
-            
-            // Update materials
-            const outerMesh = roiBar.children[0];
-            const innerMesh = roiBar.children[1];
-            if (innerMesh && innerMesh.material) {
-                innerMesh.material.emissiveIntensity = 0.5 + (targetHeight / 2);
-            }
-            if (outerMesh && outerMesh.material) {
-                outerMesh.material.opacity = 0.1 + (targetHeight / 10);
-            }
-        }
-
-        // Update Tornado Intensity
-        if (currencySymbols.length > 0) {
-            const intensity = Math.min(2, revenue / 30000);
-            currencySymbols.forEach(symbol => {
-                symbol.material.opacity = 0.3 + (intensity * 0.3);
-                symbol.scale.set(0.3 + intensity * 0.2, 0.3 + intensity * 0.2, 1);
-            });
+            simWhatsappBtn.href = `https://wa.me/212707573162?text=${encodedMsg}`;
         }
     };
 
@@ -5675,13 +5425,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }, { passive: true });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    }
 
     // Mobile Menu
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -5711,31 +5463,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Modal
+    // Modal (opens only via explicit triggers or once per session after delay without hijacking clicks)
     const modal = document.getElementById('cta-modal');
     const closeModal = document.getElementById('close-modal');
     if (modal && closeModal) {
-        const showModal = () => {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        };
         const hideModal = () => {
             modal.classList.remove('active');
             document.body.style.overflow = '';
         };
         closeModal.addEventListener('click', hideModal);
-        modal.querySelector('.modal-backdrop').addEventListener('click', hideModal);
-
-        let modalTriggered = false;
-        const triggerModal = () => {
-            if (!modalTriggered) {
-                showModal();
-                modalTriggered = true;
-                window.removeEventListener('click', triggerModal);
+        const backdrop = modal.querySelector('.modal-backdrop');
+        if (backdrop) backdrop.addEventListener('click', hideModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                hideModal();
             }
-        };
-        window.addEventListener('click', triggerModal);
-        setTimeout(() => { if (!modalTriggered) showModal(); }, 8000);
+        });
     }
 
     // --- CONFETTI CELEBRATION ENGINE ---
@@ -6621,11 +6364,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Initialize items safely
-    try { init3DHeroStyle('hero-canvas-container'); } catch (e) { console.warn('Hero canvas init warning:', e); }
-    try { initHeroViscousLiquid('secteurs-canvas-container', init2DHeroFallback); } catch (e) { console.warn('Secteurs canvas init warning:', e); }
-    try { initHeroViscousLiquid('contact-canvas-container', init2DHeroFallback); } catch (e) { console.warn('Contact canvas init warning:', e); }
-    try { initROIScene(); } catch (e) { console.warn('ROI scene init warning:', e); }
+    // Initialize items safely (High-visibility 3D WebGL with 2D fallback)
+    try { initHero3DScene('hero-canvas-container', init2DAmbientCanvas); } catch (e) { console.warn('Hero 3D init warning:', e); init2DAmbientCanvas('hero-canvas-container'); }
+    try { initHero3DScene('secteurs-canvas-container', init2DAmbientCanvas); } catch (e) { console.warn('Secteurs 3D init warning:', e); init2DAmbientCanvas('secteurs-canvas-container'); }
+    try { initHero3DScene('contact-canvas-container', init2DAmbientCanvas); } catch (e) { console.warn('Contact 3D init warning:', e); init2DAmbientCanvas('contact-canvas-container'); }
     try { initZelligeTechCanvas('zellige-tech-canvas', 'offres'); } catch (e) { console.warn('Offres canvas init warning:', e); }
     try { initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section'); } catch (e) { console.warn('Stats canvas init warning:', e); }
     try { initZelligeTechCanvas('zellige-tech-faq-canvas', 'faq'); } catch (e) { console.warn('FAQ canvas init warning:', e); }
