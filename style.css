@@ -225,8 +225,8 @@ nav.scrolled {
     justify-content: space-between;
     max-width: 100%;
     margin: 0;
-    padding: 0 8px;
-    padding-inline: 8px 8px;
+    padding: 0 12px 0 0;
+    padding-inline: 0 12px;
     width: 100%;
 }
 
@@ -4132,8 +4132,8 @@ footer .container {
 
     .container.nav-container,
     .nav-container {
-        padding: 0 14px 0 8px;
-        padding-inline: 8px 14px;
+        padding: 0 14px 0 0;
+        padding-inline: 0 14px;
     }
 
     .nav-left {
