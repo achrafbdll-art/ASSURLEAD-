@@ -222,9 +222,11 @@ nav.scrolled {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1280px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 24px 0 10px;
+    padding-inline-start: 10px;
+    padding-inline-end: 24px;
     width: 100%;
 }
 
@@ -4160,7 +4162,9 @@ footer .container {
     }
 
     .nav-container {
-        padding: 0 16px;
+        padding: 0 12px 0 6px;
+        padding-inline-start: 6px;
+        padding-inline-end: 12px;
     }
 
     .nav-left {
