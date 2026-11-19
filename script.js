@@ -3194,6 +3194,11 @@ const translations = {
         en: "Official Facebook",
         ar: "صفحتنا على فيسبوك"
     },
+    contact_ig_label: {
+        fr: "Instagram Officiel",
+        en: "Official Instagram",
+        ar: "صفحتنا على إنستغرام"
+    },
     // Form Questionnaire
     form_identity_label: {
         fr: "VOTRE IDENTITÉ",
