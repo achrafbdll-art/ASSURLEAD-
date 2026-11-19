@@ -963,6 +963,47 @@ body[dir="rtl"] .badge-flag {
     text-align: center;
 }
 
+.hero-content p.hero-paragraph-glow {
+    position: relative;
+    isolation: isolate;
+    display: inline-block;
+    max-width: 820px;
+    margin: 6px auto 28px auto;
+    padding: 15px 28px;
+    background: linear-gradient(180deg, rgba(16, 17, 22, 0.96) 0%, rgba(10, 11, 15, 0.98) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: #f3f4f6;
+    font-size: clamp(14.5px, 1.45vw, 17px);
+    font-weight: 500;
+    line-height: 1.55;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        -14px 8px 28px rgba(0, 118, 255, 0.24),
+        14px 8px 28px rgba(192, 38, 211, 0.22);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-content p.hero-paragraph-glow::before {
+    content: "";
+    position: absolute;
+    inset: 2px -4px -5px -4px;
+    z-index: -1;
+    border-radius: 14px;
+    background: linear-gradient(90deg, rgba(0, 122, 255, 0.65) 0%, rgba(99, 102, 241, 0.45) 45%, rgba(217, 70, 239, 0.6) 100%);
+    filter: blur(16px);
+    opacity: 0.72;
+    pointer-events: none;
+}
+
+.hero-content p.hero-paragraph-glow:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        -16px 10px 34px rgba(0, 118, 255, 0.34),
+        16px 10px 34px rgba(192, 38, 211, 0.32);
+}
+
 .hero-btns {
     display: flex;
     justify-content: center;
@@ -4223,6 +4264,12 @@ footer .container {
         font-size: 15px;
         line-height: 1.6;
         margin-bottom: 24px;
+    }
+
+    .hero-content p.hero-paragraph-glow {
+        padding: 12px 16px;
+        font-size: 14px;
+        border-radius: 10px;
     }
 
     .hero-btns {
