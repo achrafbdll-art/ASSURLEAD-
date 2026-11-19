@@ -14,8 +14,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
-    const { message = '', history = [], lang = 'fr' } = body;
+    const { message = '', history = [], lang = 'fr' } = req.body || {};
     const result = await handleOmarChat({ message, history, lang });
     return res.status(200).json(result);
   } catch (err) {

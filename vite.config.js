@@ -52,11 +52,6 @@ export default defineConfig({
     host: '0.0.0.0',
     strictPort: true,
     allowedHosts: true,
-    hmr: false,
-  },
-  optimizeDeps: {
-    entries: ['index.html'],
-    include: ['three', 'three/examples/jsm/environments/RoomEnvironment.js'],
   },
   preview: {
     allowedHosts: true,

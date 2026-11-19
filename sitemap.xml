@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://www.assurleadcom.com/</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Pages Villes SEO Local -->
+    <url>
+        <loc>https://www.assurleadcom.com/rabat.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/marrakech.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/tanger.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/fes.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/agadir.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <!-- Services Spécialisés SEO & Leads -->
+    <url>
+        <loc>https://www.assurleadcom.com/referencement-seo-casablanca.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/generation-leads-assurance-maroc.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <!-- Réalisations & Études de Cas -->
+    <url>
+        <loc>https://www.assurleadcom.com/realisations.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/realisation-el-omrani.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/realisation-sechkili.html</loc>
+        <lastmod>2026-11-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Hub Expertise & Casablanca -->
+    <url>
+        <loc>https://www.assurleadcom.com/expertise.html</loc>
+        <lastmod>2026-11-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/creation-site-web-casablanca.html</loc>
+        <lastmod>2026-11-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+    <!-- Diagnostic, Processus, Approche -->
+    <url>
+        <loc>https://www.assurleadcom.com/diagnostic.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/approche.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- 4 Pôles d'Acquisition 360° -->
+    <url>
+        <loc>https://www.assurleadcom.com/audit-geo-local.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.92</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/seo-optimisation.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.92</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/referencement-google.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.92</priority>
+    </url>
+    <url>
+        <loc>https://www.assurleadcom.com/targeting-reseaux-sociaux.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.92</priority>
+    </url>
+</urlset>

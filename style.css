@@ -218,15 +218,13 @@ nav.scrolled {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.container.nav-container,
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 100%;
-    margin: 0;
-    padding: 0 12px 0 0;
-    padding-inline: 0 12px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
     width: 100%;
 }
 
@@ -310,8 +308,7 @@ nav.scrolled {
     align-items: center;
     gap: clamp(10px, 1.3vw, 20px);
     list-style: none;
-    margin: 0 16px 0 auto;
-    margin-inline: auto 16px;
+    margin: 0;
     padding: 0;
 }
 
@@ -661,7 +658,7 @@ nav.scrolled {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 1;
+    opacity: 0.92;
     overflow: hidden;
 }
 
@@ -669,7 +666,7 @@ nav.scrolled {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(9, 9, 11, 0.14) 0%, rgba(9, 9, 11, 0.04) 55%, rgba(9, 9, 11, 0.48) 100%);
+    background: linear-gradient(180deg, rgba(9, 9, 11, 0.36) 0%, rgba(9, 9, 11, 0.14) 52%, rgba(9, 9, 11, 0.84) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -1994,7 +1991,7 @@ body[dir="rtl"] .sage-arcs-bg {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 1;
+    opacity: 0.9;
     overflow: hidden;
 }
 
@@ -2002,7 +1999,7 @@ body[dir="rtl"] .sage-arcs-bg {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(9, 9, 11, 0.35) 0%, rgba(9, 9, 11, 0.06) 50%, rgba(9, 9, 11, 0.45) 100%);
+    background: linear-gradient(180deg, rgba(9, 9, 11, 0.72) 0%, rgba(9, 9, 11, 0.18) 48%, rgba(9, 9, 11, 0.82) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -2666,7 +2663,7 @@ body[dir="rtl"] .sage-arcs-contact {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 1;
+    opacity: 0.9;
     overflow: hidden;
 }
 
@@ -2674,7 +2671,7 @@ body[dir="rtl"] .sage-arcs-contact {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(9, 9, 11, 0.35) 0%, rgba(9, 9, 11, 0.05) 50%, rgba(9, 9, 11, 0.48) 100%);
+    background: linear-gradient(180deg, rgba(9, 9, 11, 0.72) 0%, rgba(9, 9, 11, 0.16) 45%, rgba(9, 9, 11, 0.84) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -3990,7 +3987,6 @@ footer .container {
         width: 100%;
         height: 100vh;
         height: 100dvh;
-        margin: 0;
         background-color: rgba(6, 9, 8, 0.98);
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
@@ -4130,10 +4126,8 @@ footer .container {
         padding: 12px 0;
     }
 
-    .container.nav-container,
     .nav-container {
-        padding: 0 14px 0 0;
-        padding-inline: 0 14px;
+        padding: 0 16px;
     }
 
     .nav-left {
@@ -4592,52 +4586,6 @@ input:focus, textarea:focus {
     position: relative;
 }
 
-@media (min-width: 1025px) {
-    .nav-container .logo {
-        order: 1;
-        margin-inline-end: 0;
-    }
-
-    .nav-container .nav-right {
-        order: 2;
-        margin-inline: 14px auto;
-    }
-
-    .nav-container .nav-links {
-        order: 3;
-        margin: 0 0 0 auto;
-        margin-inline: auto 0;
-    }
-
-    .nav-container .lang-dropdown {
-        left: 0;
-        right: auto;
-    }
-
-    body[dir="rtl"] .nav-container .lang-dropdown {
-        right: 0;
-        left: auto;
-    }
-
-    .nav-container .nav-dropdown-menu {
-        left: auto;
-        right: -200px;
-        transform: none;
-        animation-name: navDropdownFadeAligned;
-    }
-}
-
-@keyframes navDropdownFadeAligned {
-    from {
-        opacity: 0;
-        transform: translateY(-6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .nav-social-btn {
     width: 34px;
     height: 34px;
@@ -4782,8 +4730,8 @@ body[dir="rtl"] .hero-grid {
 }
 
 body[dir="rtl"] .nav-links {
-    margin: 0 auto 0 0;
-    margin-inline: auto 0;
+    margin-right: auto;
+    margin-left: initial;
 }
 
 body[dir="rtl"] .lang-dropdown {
