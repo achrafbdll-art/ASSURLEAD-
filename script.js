@@ -6476,6 +6476,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatTeaser = document.getElementById('chat-teaser');
     const chatTeaserClose = document.getElementById('chat-teaser-close');
 
+    // Apply Omar vector avatar consistently across all pages
+    if (chatToggle) {
+        const iconWrap = chatToggle.querySelector('.chat-toggle-icon');
+        if (iconWrap && !iconWrap.querySelector('.chat-avatar-img')) {
+            iconWrap.innerHTML = '<img src="/omar-avatar.svg" alt="Omar — Conseiller ASSURLEAD" class="chat-avatar-img">';
+        }
+        if (!chatToggle.querySelector(':scope > .chat-online-dot')) {
+            const dot = document.createElement('span');
+            dot.className = 'chat-online-dot';
+            chatToggle.appendChild(dot);
+        }
+    }
+    const chatHeaderAvatar = document.querySelector('#chat-window .chat-avatar');
+    if (chatHeaderAvatar && !chatHeaderAvatar.querySelector('.chat-avatar-img')) {
+        chatHeaderAvatar.innerHTML = '<img src="/omar-avatar.svg" alt="Omar" class="chat-avatar-img">';
+    }
+
     let chatHistory = [];
 
     // Helper: Format message text safely with bold & linebreaks

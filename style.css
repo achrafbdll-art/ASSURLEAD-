@@ -3579,14 +3579,15 @@ footer .container {
 }
 
 .chat-toggle {
-    width: 60px;
-    height: 60px;
-    background: #0d0e12;
-    color: var(--brand-neon);
-    border: 2px solid var(--brand-neon);
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    background: #ea6640;
+    color: #ffffff;
+    border: 2.5px solid #d4382c;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 65, 0.3);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 0 18px rgba(234, 102, 64, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3598,27 +3599,40 @@ footer .container {
 
 .chat-toggle:hover {
     transform: scale(1.08);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 255, 65, 0.5);
-    border-color: #55ff7f;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65), 0 0 24px rgba(234, 102, 64, 0.42);
+    border-color: #ef4444;
 }
 
 .chat-toggle-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 
+.chat-avatar-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .chat-online-dot {
     position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 12px;
-    height: 12px;
-    background: #00FF41;
+    bottom: -1px;
+    right: -1px;
+    width: 15px;
+    height: 15px;
+    background: #16c35b;
     border-radius: 50%;
-    border: 2px solid #0d0e12;
-    box-shadow: 0 0 8px #00FF41;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 2;
 }
 
 .chat-badge {
@@ -3676,15 +3690,24 @@ footer .container {
 .chat-avatar {
     width: 100%;
     height: 100%;
-    background: rgba(0, 255, 65, 0.12);
-    border: 1.5px solid var(--brand-neon);
-    color: var(--brand-neon);
+    background: #ea6640;
+    border: 2px solid #d4382c;
+    color: #ffffff;
     border-radius: 50%;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 900;
     font-size: 18px;
+}
+
+.chat-avatar-wrap .chat-online-dot {
+    width: 12px;
+    height: 12px;
+    bottom: -1px;
+    right: -1px;
+    border: 2px solid #111217;
 }
 
 .chat-header-text h4 {
@@ -4531,8 +4554,8 @@ footer .container {
     }
 
     .chat-toggle {
-        width: 52px;
-        height: 52px;
+        width: 56px;
+        height: 56px;
         font-size: 22px;
     }
 
