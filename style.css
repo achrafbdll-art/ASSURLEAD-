@@ -100,6 +100,22 @@ body::after {
     pointer-events: none;
 }
 
+/* Remove decorative page background on all secondary pages (keep only on index.html) */
+body.approche-page-body::before,
+body.approche-page-body::after,
+body.diagnostic-page-body::before,
+body.diagnostic-page-body::after,
+body.expertise-page-body::before,
+body.expertise-page-body::after,
+body.realisation-page-body::before,
+body.realisation-page-body::after,
+body.seo-landing-body::before,
+body.seo-landing-body::after {
+    content: none;
+    display: none;
+    background-image: none;
+}
+
 .container {
     max-width: 1280px;
     margin: 0 auto;

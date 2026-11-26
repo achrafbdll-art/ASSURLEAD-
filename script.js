@@ -2243,19 +2243,19 @@ const translations = {
         ar: "استشارة مجانية"
     },
     diag_callout_badge: {
-        fr: "DIAGNOSTIC DE VISIBILITÉ",
-        en: "VISIBILITY DIAGNOSTIC",
-        ar: "تشخيص الرؤية الرقمية"
+        fr: "ANALYSE GRATUITE & DIAGNOSTIC SOUS 48H",
+        en: "FREE ANALYSIS & 48H DIAGNOSTIC",
+        ar: "تحليل مجاني وتشخيص خلال 48 ساعة"
     },
     diag_callout_title: {
-        fr: "Pourquoi vos futurs clients ne vous trouvent pas ?",
-        en: "Why your future clients aren't finding you?",
-        ar: "لماذا لا يجدك عملاؤك المستقبليون؟"
+        fr: "Pourquoi vos visiteurs ne se transforment-ils pas en demandes clients ?",
+        en: "Why aren't your website visitors turning into client inquiries?",
+        ar: "لماذا لا يتحول زوار موقعك إلى طلبات عملاء فعليين؟"
     },
     diag_callout_desc: {
-        fr: "Dans un marché où 91% des décisions d'achat commencent sur smartphone, l'absence de dispositif digital vous rend invisible. Consultez le diagnostic complet et découvrez les solutions.",
-        en: "In a market where 91% of buying decisions begin on smartphones, lack of a digital setup makes you invisible. Check out the complete diagnostic and discover the solutions.",
-        ar: "في سوق تبدأ فيه 91% من قرارات الشراء على الهاتف الذكي، فإن غياب المنظومة الرقمية يجعلك غير مرئي. اطلع على التشخيص الكامل واكتشف الحلول."
+        fr: "Sur smartphone au Maroc, pages lentes, manque de réassurance ou bouton WhatsApp absent font fuir vos prospects. Identifiez vos points de fuite face à 3 concurrents locaux actifs.",
+        en: "On smartphones in Morocco, slow pages, missing trust signals, or no WhatsApp button drive prospects away. Identify conversion leaks against 3 active local competitors.",
+        ar: "على الهواتف بالمغرب، الصفحات البطيئة أو غياب زر واتساب تفقدك العملاء. اكتشف نقاط التسرب مقارنة بـ 3 منافسين محليين نشطين."
     },
     diag_callout_btn: {
         fr: "Consulter le Diagnostic <i class=\"fas fa-arrow-right\"></i>",
@@ -2379,50 +2379,50 @@ const translations = {
     },
     // Hero
     hero_badge: {
-        fr: "<span class=\"badge-flag\">🇲🇦</span> Agence de Génération de Leads Organiques au Maroc",
-        en: "<span class=\"badge-flag\">🇲🇦</span> Organic Lead Generation Agency in Morocco",
-        ar: "<span class=\"badge-flag\">🇲🇦</span> وكالة استقطاب العملاء وتصدر غوغل بالمغرب"
+        fr: "<span class=\"badge-flag\">🇲🇦</span> Maroc · Conversion Digitale &amp; Acquisition Locale",
+        en: "<span class=\"badge-flag\">🇲🇦</span> Morocco · Digital Conversion &amp; Local Acquisition",
+        ar: "<span class=\"badge-flag\">🇲🇦</span> المغرب · التحويل الرقمي والاستقطاب المحلي"
     },
     hero_title: {
-        fr: "Nous transformons votre présence digitale<br><span class=\"neon\">en opportunités commerciales.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        en: "We Transform Your Digital Presence<br><span class=\"neon\">Into Commercial Opportunities.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        ar: "نحوّل حضوركم الرقمي<br><span class=\"neon\">إلى فرص تجارية.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
+        fr: "Transformez votre présence en ligne<br><span class=\"neon\">en demandes clients qualifiées.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        en: "Turn Your Online Presence<br><span class=\"neon\">Into Qualified Client Inquiries.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        ar: "حوّل حضورك على الإنترنت<br><span class=\"neon\">إلى طلبات عملاء مؤهلين.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
-        fr: "Nous accompagnons les entreprises marocaines dans leur croissance grâce à des sites web performants, au référencement Google et à des stratégies d'acquisition de clients.",
-        en: "We support Moroccan businesses in their growth through high-performance websites, Google SEO, and customer acquisition strategies.",
-        ar: "نواكب الشركات المغربية في نموها وتوسعها من خلال مواقع إلكترونية عالية الأداء، تصدر نتائج غوغل واستراتيجيات استقطاب العملاء."
+        fr: "AssurLeadCom accompagne les entreprises marocaines pour faire de leur site Internet un véritable outil commercial : meilleure visibilité sur Google, intégration directe de WhatsApp et parcours conçus pour générer des appels, messages et demandes de devis.",
+        en: "AssurLeadCom helps Moroccan businesses turn their website into a true sales engine: higher Google visibility, direct WhatsApp integration, and user journeys built to generate calls, messages, and quote requests.",
+        ar: "تواكب AssurLeadCom الشركات المغربية لجعل موقعها أداة تجارية حقيقية: ظهور أقوى على غوغل، ربط مباشر بواتساب ومسارات مصممة لتوليد المكالمات والرسائل وطلبات عروض الأسعار."
     },
     hero_btn_growth: {
-        fr: "Demander un audit gratuit (15 min) <i class=\"fas fa-arrow-right\"></i>",
-        en: "Get a Free SEO Audit (15 min) <i class=\"fas fa-arrow-right\"></i>",
-        ar: "طلب تدقيق مجاني للظهور (15 دقيقة) <i class=\"fas fa-arrow-right\"></i>"
+        fr: "Demander mon analyse gratuite <i class=\"fas fa-arrow-right\"></i>",
+        en: "Request My Free Analysis <i class=\"fas fa-arrow-right\"></i>",
+        ar: "اطلب تحليلي المجاني <i class=\"fas fa-arrow-right\"></i>"
     },
     hero_btn_audit: {
-        fr: "Voir comment ça fonctionne",
-        en: "See how it works",
-        ar: "اكتشف كيف يعمل نظامنا"
+        fr: "Découvrir la proposition",
+        en: "Explore the Proposal",
+        ar: "اكتشف المقترح"
     },
     hero_partners_label: {
-        fr: "Secteurs & Réseaux Accompagnés au Maroc",
-        en: "Sectors & Networks in Morocco",
-        ar: "القطاعات والشبكات المواكبة في المغرب"
+        fr: "Secteurs &amp; Entreprises Accompagnés au Maroc",
+        en: "Industries &amp; Businesses Served in Morocco",
+        ar: "القطاعات والشركات المواكبة في المغرب"
     },
     // Dashboard Card
     dash_live_indicator: {
-        fr: "Pipeline d'Acquisition Actif",
-        en: "Active Acquisition Pipeline",
-        ar: "مسار الاستقطاب النشط"
+        fr: "Système Commercial Actif",
+        en: "Active Sales System",
+        ar: "المنظومة التجارية نشطة"
     },
     dash_leads_label: {
-        fr: "Leads Qualifiés / Mois",
-        en: "Qualified Leads / Month",
-        ar: "عملاء مؤهلون / شهر"
+        fr: "Contacts Qualifiés",
+        en: "Qualified Leads",
+        ar: "عملاء محتملون مؤهلون"
     },
     dash_conv_label: {
-        fr: "Taux de Contact",
-        en: "Contact Rate",
-        ar: "نسبة التواصل الفوري"
+        fr: "Visibilité Maps",
+        en: "Maps Visibility",
+        ar: "الظهور على الخرائط"
     },
     // Stats
     stat_ca: {
@@ -2508,19 +2508,19 @@ const translations = {
     },
     // Comparison Matrix & Difference
     diff_badge: {
-        fr: "La Vraie Différence",
-        en: "The Real Difference",
-        ar: "الفرق الجوهري"
+        fr: "Proposition Recommandée",
+        en: "Recommended Proposal",
+        ar: "المقترح الموصى به"
     },
     diff_title: {
-        fr: "<span class=\"nowrap-phrase\">Site Vitrine Classique</span> <span class=\"nowrap-phrase\">vs <span class=\"neon\">Moteur d'Acquisition</span></span>",
-        en: "<span class=\"nowrap-phrase\">Classic Showcase Site</span> <span class=\"nowrap-phrase\">vs <span class=\"neon\">Acquisition Engine</span></span>",
-        ar: "<span class=\"nowrap-phrase\">الموقع التقليدي</span> <span class=\"nowrap-phrase\">مقابل <span class=\"neon\">محرك استقطاب العملاء</span></span>"
+        fr: "<span class=\"nowrap-phrase\">Simple Vitrine</span> <span class=\"nowrap-phrase\">vs <span class=\"neon\">Système Commercial Complet</span></span>",
+        en: "<span class=\"nowrap-phrase\">Simple Showcase</span> <span class=\"nowrap-phrase\">vs <span class=\"neon\">Complete Sales System</span></span>",
+        ar: "<span class=\"nowrap-phrase\">موقع عادي</span> <span class=\"nowrap-phrase\">مقابل <span class=\"neon\">منظومة تجارية متكاملة</span></span>"
     },
     diff_p: {
-        fr: "<span class=\"diff-sub-phrase\">Pourquoi 90% des sites web d'entreprises au Maroc ne génèrent aucun client</span> <span class=\"diff-sub-phrase\">— et comment notre architecture inverse l'équation.</span>",
-        en: "<span class=\"diff-sub-phrase\">Why 90% of business websites in Morocco fail to generate clients</span> <span class=\"diff-sub-phrase\">— and how our architecture reverses the equation.</span>",
-        ar: "<span class=\"diff-sub-phrase\">لماذا 90% من المواقع بالمغرب لا تجلب أي عميل</span> <span class=\"diff-sub-phrase\">— وكيف يقلب نظامنا المعادلة لصالحك.</span>"
+        fr: "<span class=\"diff-sub-phrase\">Chaque étape est pensée pour capter la demande locale au Maroc</span> <span class=\"diff-sub-phrase\">— et transformer vos visiteurs en appels, messages WhatsApp et devis.</span>",
+        en: "<span class=\"diff-sub-phrase\">Every step is engineered to capture local demand in Morocco</span> <span class=\"diff-sub-phrase\">— turning visitors into calls, WhatsApp messages, and quote requests.</span>",
+        ar: "<span class=\"diff-sub-phrase\">كل خطوة مصممة لاقتناص الطلب المحلي في المغرب</span> <span class=\"diff-sub-phrase\">— وتحويل الزوار إلى مكالمات ورسائل واتساب وعروض أسعار.</span>"
     },
     diff_col_feature: {
         fr: "Critère",
@@ -2528,14 +2528,14 @@ const translations = {
         ar: "المعيار"
     },
     diff_col_classic: {
-        fr: "<i class=\"fas fa-times-circle\"></i> Site Vitrine Classique",
-        en: "<i class=\"fas fa-times-circle\"></i> Traditional Showcase Site",
-        ar: "<i class=\"fas fa-times-circle\"></i> الموقع التقليدي"
+        fr: "<i class=\"fas fa-times-circle\"></i> Simple Site Vitrine",
+        en: "<i class=\"fas fa-times-circle\"></i> Simple Showcase Site",
+        ar: "<i class=\"fas fa-times-circle\"></i> الموقع التعريفي البسيط"
     },
     diff_col_assurlead: {
-        fr: "<i class=\"fas fa-check-circle\"></i> Moteur d'Acquisition ASSURLEAD",
-        en: "<i class=\"fas fa-check-circle\"></i> ASSURLEAD Acquisition Engine",
-        ar: "<i class=\"fas fa-check-circle\"></i> محرك استقطاب ASSURLEAD"
+        fr: "<i class=\"fas fa-check-circle\"></i> Système Commercial ASSURLEADCOM",
+        en: "<i class=\"fas fa-check-circle\"></i> ASSURLEADCOM Sales System",
+        ar: "<i class=\"fas fa-check-circle\"></i> منظومة ASSURLEADCOM التجارية"
     },
     diff_r1_feat: {
         fr: "Objectif",
@@ -2543,14 +2543,14 @@ const translations = {
         ar: "الهدف"
     },
     diff_r1_classic: {
-        fr: "Simple brochure décorative sans contact.",
-        en: "Passive online brochure with no active leads.",
-        ar: "مجرد واجهة تعريفية دون تفاعل أو زبائن."
+        fr: "Exister pour la forme sans générer d'appels ni de devis.",
+        en: "Exists just for show without generating calls or quotes.",
+        ar: "مجرد واجهة شكلية لا تجلب مكالمات ولا عروض أسعار."
     },
     diff_r1_assurlead: {
-        fr: "<strong>Génération continue de devis</strong> et de clients qualifiés.",
-        en: "<strong>Consistent stream of quotes</strong> and high-intent clients.",
-        ar: "<strong>جلب مستمر لطلبات عروض الأسعار</strong> والزبائن المؤهلين."
+        fr: "<strong>Outil commercial actif</strong> générant appels, WhatsApp et devis.",
+        en: "<strong>Active sales engine</strong> generating calls, WhatsApp, and quotes.",
+        ar: "<strong>أداة تجارية فعالة</strong> تولد مكالمات ورسائل واتساب وعروض أسعار."
     },
     diff_r2_feat: {
         fr: "Visibilité Google",
@@ -2558,89 +2558,89 @@ const translations = {
         ar: "الظهور على غوغل"
     },
     diff_r2_classic: {
-        fr: "Invisible si on ne tape pas déjà le nom de votre entreprise.",
-        en: "Invisible unless users already know your exact business name.",
-        ar: "غير مرئي إلا إذا كان الزبون يعرف اسم شركتك مسبقاً."
+        fr: "Invisible sur les recherches « service + ville » locales.",
+        en: "Invisible on local 'service + city' Google searches.",
+        ar: "غير مرئي في عمليات البحث المحلية (الخدمة + المدينة)."
     },
     diff_r2_assurlead: {
-        fr: "<strong>1ère page Google</strong> sur les recherches de vos futurs clients.",
-        en: "<strong>Google Page 1</strong> ranking on searches for your services.",
-        ar: "<strong>الصفحة الأولى على غوغل</strong> في عمليات بحث عملائك المستهدفين."
+        fr: "<strong>Top 3 Google &amp; Maps</strong> à Casablanca, Rabat, Tanger, Marrakech.",
+        en: "<strong>Top 3 Google &amp; Maps</strong> in Casablanca, Rabat, Tangier, Marrakech.",
+        ar: "<strong>أول 3 نتائج على غوغل والخرائط</strong> بالدار البيضاء، الرباط، طنجة ومراكش."
     },
     diff_r3_feat: {
-        fr: "Vitesse Mobile",
-        en: "Mobile Speed",
-        ar: "السرعة على الهاتف"
+        fr: "Parcours Mobile",
+        en: "Mobile Journey",
+        ar: "التصفح على الهاتف"
     },
     diff_r3_classic: {
-        fr: "Lenteur sur smartphone (> 3s) : les visiteurs repartent.",
-        en: "Slow on mobile (> 3s): visitors leave immediately.",
-        ar: "بطء شديد على الهاتف (> 3 ثوانٍ): الزائر يغادر فوراً."
+        fr: "Pages lentes (&gt; 3s) et manque de réassurance dès l'ouverture.",
+        en: "Slow pages (&gt; 3s) and weak trust signals above the fold.",
+        ar: "صفحات بطيئة (&gt; 3 ثوانٍ) وغياب عناصر الثقة منذ الشاشة الأولى."
     },
     diff_r3_assurlead: {
-        fr: "<strong>Chargement instantané (&lt; 1,2s)</strong>, fluide et sans attente.",
-        en: "<strong>Instant load (&lt; 1.2s)</strong>, ultra-smooth smartphone experience.",
-        ar: "<strong>تحميل فوري (أقل من 1.2 ثانية)</strong> وتصفح سلس وسريع."
+        fr: "<strong>Chargement rapide (&lt; 1,2s)</strong> et appels à l'action visibles dès le 1er écran.",
+        en: "<strong>Fast loading (&lt; 1.2s)</strong> with clear CTAs on the first screen.",
+        ar: "<strong>تحميل سريع (أقل من 1.2 ثانية)</strong> وأزرار تواصل واضحة فوراً."
     },
     diff_r4_feat: {
-        fr: "Prise de Contact",
-        en: "Contact Journey",
-        ar: "طريقة التواصل"
+        fr: "WhatsApp &amp; Devis",
+        en: "WhatsApp &amp; Quotes",
+        ar: "واتساب وطلبات التسعير"
     },
     diff_r4_classic: {
-        fr: "Formulaire lourd de 8 champs rarement rempli.",
-        en: "Cumbersome 8-field form that visitors abandon.",
-        ar: "استمارة معقدة من 8 خانات نادراً ما يتم ملؤها."
+        fr: "Formulaire introuvable ou rigide, sans relais WhatsApp.",
+        en: "Hard-to-find or rigid form without direct WhatsApp routing.",
+        ar: "استمارة مخفية أو معقدة دون ربط مباشر بواتساب."
     },
     diff_r4_assurlead: {
-        fr: "<strong>WhatsApp direct &amp; appel en 1 clic</strong> pour convertir vite.",
-        en: "<strong>Direct WhatsApp &amp; 1-click call</strong> for fast conversion.",
-        ar: "<strong>واتساب مباشر واتصال بنقرة واحدة</strong> لإغلاق الصفقات بسرعة."
+        fr: "<strong>WhatsApp pré-rempli par service</strong> &amp; formulaire court qualifiant.",
+        en: "<strong>Service-prefilled WhatsApp</strong> &amp; short qualifying quote form.",
+        ar: "<strong>واتساب معبأ مسبقاً حسب الخدمة</strong> واستمارة تسعير سريعة ومؤهلة."
     },
     diff_r5_feat: {
-        fr: "Fiche Google Maps",
-        en: "Google Maps Presence",
-        ar: "خرائط غوغل"
+        fr: "Google Business Profile",
+        en: "Google Business Profile",
+        ar: "ملف خرائط غوغل"
     },
     diff_r5_classic: {
-        fr: "Fiche locale abandonnée et isolée du site.",
-        en: "Neglected local listing disconnected from the website.",
-        ar: "ملف خرائط مهمل ومنفصل عن الموقع."
+        fr: "Fiche Google Maps négligée et déconnectée de vos services.",
+        en: "Neglected Google Maps listing disconnected from your offers.",
+        ar: "ملف خرائط غوغل مهمل ومنفصل عن خدماتك."
     },
     diff_r5_assurlead: {
-        fr: "<strong>Google Maps synchronisé</strong> pour capter les appels locaux.",
-        en: "<strong>Synchronized Google Profile</strong> to capture local phone calls.",
-        ar: "<strong>ملف غوغل متزامن مع الموقع</strong> لاستقطاب المكالمات المحلية."
+        fr: "<strong>Fiche Google optimisée &amp; avis</strong> pour capter la demande de proximité.",
+        en: "<strong>Optimized Google profile &amp; reviews</strong> capturing nearby buyers.",
+        ar: "<strong>ملف غوغل مهيأ مع التقييمات</strong> لجذب الطلب القريب منك."
     },
     diff_r6_feat: {
-        fr: "Rentabilité",
-        en: "Financial Return",
-        ar: "العائد المالي"
+        fr: "Suivi &amp; Pilotage",
+        en: "Tracking &amp; Guidance",
+        ar: "المتابعة والقيادة"
     },
     diff_r6_classic: {
-        fr: "Coût à perte sans retour sur investissement mesurable.",
-        en: "Dead cost with zero measurable return on investment.",
-        ar: "مصاريف ضائعة دون أي عائد مالي ملموس."
+        fr: "Aucune mesure des appels, clics ni retours sur investissement.",
+        en: "Zero measurement of calls, clicks, or commercial return.",
+        ar: "انعدام قياس المكالمات والنقرات أو العائد التجاري."
     },
     diff_r6_assurlead: {
-        fr: "<strong>Actif commercial rentable</strong> qui attire des prospects en continu.",
-        en: "<strong>Profitable business asset</strong> generating ongoing revenue.",
-        ar: "<strong>أصل تجاري مربح</strong> يجلب زبائن جدد باستمرار دون دفع مقابل كل نقرة."
+        fr: "<strong>Accompagnement personnalisé</strong> avec suivi appels, clics et devis.",
+        en: "<strong>Dedicated support</strong> tracking calls, WhatsApp clicks, and quotes.",
+        ar: "<strong>مواكبة شخصية</strong> مع تتبع شهري للمكالمات والنقرات وطلبات التسعير."
     },
     methode_badge: {
-        fr: "Processus Éprouvé",
-        en: "Proven Process",
-        ar: "منهجية مثبتة"
+        fr: "Déploiement Pragmatique",
+        en: "Pragmatic Deployment",
+        ar: "منهجية عملية واضحة"
     },
     methode_title: {
-        fr: "<span class=\"nowrap-phrase\">Notre Méthode d'Acquisition</span> <span class=\"nowrap-phrase neon\">en 4 Étapes.</span>",
-        en: "<span class=\"nowrap-phrase\">Our Acquisition Method</span> <span class=\"nowrap-phrase neon\">in 4 Steps.</span>",
-        ar: "<span class=\"nowrap-phrase\">منهجيتنا في الاستقطاب</span> <span class=\"nowrap-phrase neon\">في 4 خطوات.</span>"
+        fr: "<span class=\"nowrap-phrase\">De l'Audit Initial</span> <span class=\"nowrap-phrase neon\">aux Premiers Appels Entrants.</span>",
+        en: "<span class=\"nowrap-phrase\">From Initial Audit</span> <span class=\"nowrap-phrase neon\">to First Inbound Calls.</span>",
+        ar: "<span class=\"nowrap-phrase\">من التدقيق الأولي</span> <span class=\"nowrap-phrase neon\">إلى أولى المكالمات الواردة.</span>"
     },
     methode_p: {
-        fr: "Une démarche d'ingénierie web et de référencement naturel rigoureuse pour positionner votre entreprise face à ses futurs clients.",
-        en: "A rigorous web engineering and organic SEO process to position your business in front of future clients.",
-        ar: "هندسة رقمية دقيقة وتهيئة غوغل محكمة لوضع وكالتك أمام عملائك المستقبليين."
+        fr: "Une méthodologie claire pour les dirigeants de PME et cabinets au Maroc qui veulent des résultats commerciaux mesurables sans gérer la technique.",
+        en: "A clear methodology for Moroccan SME leaders and firms who want measurable sales results without managing technical complexity.",
+        ar: "منهجية واضحة لمسيري الشركات والمكاتب بالمغرب الباحثين عن نتائج تجارية ملموسة دون الانشغال بالتفاصيل التقنية."
     },
     comp_classic_title: {
         fr: "Agence Web Classique",
@@ -2998,74 +2998,74 @@ const translations = {
     },
     // Sectors / Multi-industry
     sec_badge: {
-        fr: "Multi-Secteurs",
-        en: "Cross-Industry",
-        ar: "قطاعات متعددة"
+        fr: "Preuves &amp; Cas Clients au Maroc",
+        en: "Client Proof &amp; Case Studies in Morocco",
+        ar: "نتائج وحالات عملاء بالمغرب"
     },
     sec_top_line: {
-        fr: "Au-delà de l'assurance",
-        en: "Beyond Insurance",
-        ar: "إلى جانب قطاع التأمين"
+        fr: "Des retombées chiffrées",
+        en: "Measurable Results",
+        ar: "نتائج تجارية مرقمة"
     },
     sec_title: {
-        fr: "Nous accompagnons<br>également",
-        en: "We Also Scale<br>Other Key Sectors",
-        ar: "نواكب ونطور<br>قطاعات رئيسية أخرى"
+        fr: "Pour les entreprises<br>marocaines",
+        en: "For Moroccan<br>Companies",
+        ar: "للشركات المغربية<br>الباحثة عن"
     },
     sec_bottom_line: {
-        fr: "d'autres secteurs clés",
-        en: "to drive sustainable digital growth",
-        ar: "لتعزيز نموها الرقمي"
+        fr: "orientées résultats",
+        en: "focused on measurable growth",
+        ar: "نمو تجاري ملموس"
     },
     sec_p: {
-        fr: "Notre expertise s'étend à d'autres secteurs clés pour propulser leur croissance digitale.",
-        en: "Our customer acquisition expertise expands to other key industries to drive digital scale.",
-        ar: "خبرتنا في استقطاب العملاء تمتد إلى قطاعات حيوية أخرى لمضاعفة مبيعاتها الرقمية."
+        fr: "Génie climatique, santé, immobilier ou assurance : nos dispositifs transforment votre présence locale en appels, rendez-vous WhatsApp et demandes de devis vérifiables.",
+        en: "HVAC & B2B, healthcare, real estate or insurance: our systems turn your local visibility into calls, WhatsApp bookings, and verifiable quote requests.",
+        ar: "التبريد الصناعي، الصحة، العقار أو التأمين: منظومتنا تحوّل حضورك المحلي إلى مكالمات ومواعيد واتساب وطلبات عروض أسعار موثوقة."
     },
     sec_cta_btn: {
-        fr: "Je demande un devis <i class=\"fas fa-arrow-right\"></i>",
-        en: "Request a quote <i class=\"fas fa-arrow-right\"></i>",
-        ar: "أطلب عرض سعر <i class=\"fas fa-arrow-right\"></i>"
+        fr: "Demander mon analyse gratuite <i class=\"fas fa-arrow-right\"></i>",
+        en: "Request my free analysis <i class=\"fas fa-arrow-right\"></i>",
+        ar: "أطلب تحليلي المجاني <i class=\"fas fa-arrow-right\"></i>"
     },
     sec_immobilier_title: {
-        fr: "Immobilier",
-        en: "Real Estate",
-        ar: "العقارات"
+        fr: "Immobilier &amp; Architecture",
+        en: "Real Estate &amp; Architecture",
+        ar: "العقار والهندسة المعمارية"
     },
     sec_immobilier_p: {
-        fr: "Acquisition de leads qualifiés pour les promoteurs et agents immobiliers.",
-        en: "High-intent lead acquisition for developers and real estate brokers.",
-        ar: "استقطاب مشترين ومستثمرين مؤهلين للمنعشين العقاريين والوكالات."
+        fr: "Marrakech &amp; Rabat : pages programmes ciblées Google (Top 3 local) et formulaires d'estimation pour réduire la dépendance aux portails payants.",
+        en: "Marrakech &amp; Rabat: Google-targeted project pages (local Top 3) and valuation forms to reduce dependence on paid portals.",
+        ar: "مراكش والرباط: صفحات مشاريع موجهة لغوغل (أول 3 نتائج) واستمارات تقييم لتقليل الاعتماد على المنصات المدفوعة."
     },
     sec_restauration_title: {
-        fr: "Restauration",
-        en: "Hospitality & Dining",
-        ar: "المطاعم والضيافة"
+        fr: "Génie Climatique &amp; B2B",
+        en: "HVAC Engineering &amp; B2B",
+        ar: "التكييف الصناعي وقطاع الأعمال"
     },
     sec_restauration_p: {
-        fr: "Système de réservation en ligne et visibilité locale accrue pour restaurants premium.",
-        en: "Direct table reservation funnels and local dominance for premium dining.",
-        ar: "أنظمة حجز طاولات إلكترونية وريادة الظهور المحلي للمطاعم المتميزة."
+        fr: "Tanger &amp; Casablanca : refonte orientée appels d'offres, fiche Google Maps locale et devis rapide par type de bâtiment (+42 devis qualifiés/mois).",
+        en: "Tangier &amp; Casablanca: tender-oriented redesign, local Google Maps profile and fast quote by building type (+42 qualified quotes/month).",
+        ar: "طنجة والدار البيضاء: إعادة تصميم موجهة للمناقصات وملف خرائط غوغل وطلب عرض سعر سريع (+42 طلباً شهرياً)."
     },
     sec_sante_title: {
-        fr: "Santé & Cliniques",
-        en: "Healthcare & Clinics",
-        ar: "الصحة والعيادات"
+        fr: "Santé &amp; Esthétique",
+        en: "Healthcare &amp; Aesthetics",
+        ar: "الصحة والتجميل والعيادات"
     },
     sec_sante_p: {
-        fr: "Solutions d'acquisition de patients et de prise de rendez-vous pour cliniques.",
-        en: "Qualified patient acquisition and automated booking for specialized clinics.",
-        ar: "حلول حجز المواعيد واستقطاب المرضى للعيادات والمراكز الطبية."
+        fr: "Casablanca &amp; centres spécialisés : parcours mobile simplifié, intégration WhatsApp directe par soin et SEO local (+180 % de rendez-vous).",
+        en: "Casablanca &amp; specialized clinics: streamlined mobile journey, direct WhatsApp per treatment and local SEO (+180% bookings).",
+        ar: "الدار البيضاء والمراكز الطبية: مسار مبسط على الهاتف وواتساب مباشر حسب التخصص (+180% في المواعيد)."
     },
     sec_auto_title: {
-        fr: "Automobile",
-        en: "Automotive",
-        ar: "قطاع السيارات"
+        fr: "Assurance &amp; Services B2B",
+        en: "Insurance &amp; B2B Services",
+        ar: "التأمين وخدمات الشركات"
     },
     sec_auto_p: {
-        fr: "Génération de leads qualifiés pour concessionnaires, garages et services auto.",
-        en: "Qualified buyer generation for dealerships, garages, and auto services.",
-        ar: "توليد طلبات شراء واستفسارات مؤكدة لوكلاء وتجار السيارات ومراكز الصيانة."
+        fr: "Cabinets &amp; PME : fiches locales Google, liens WhatsApp par prestation et suivi mensuel pour recevoir des demandes ciblées chaque semaine.",
+        en: "Firms &amp; SMEs: local Google profiles, service-specific WhatsApp links, and monthly tracking to receive targeted leads weekly.",
+        ar: "المكاتب والشركات: ملفات غوغل المحلية وروابط واتساب لكل خدمة مع متابعة شهرية لاستقبال طلبات مستهدفة أسبوعياً."
     },
     // Case Study
     case_badge: {
@@ -3135,49 +3135,49 @@ const translations = {
     },
     // Contact & Exclusivity
     contact_badge: {
-        fr: "AUDIT STRATÉGIQUE OFFERT",
-        en: "FREE STRATEGIC AUDIT",
-        ar: "تدقيق استراتيجي مجاني"
+        fr: "ANALYSE GRATUITE &amp; SANS ENGAGEMENT",
+        en: "FREE ANALYSIS &amp; NO OBLIGATION",
+        ar: "تحليل مجاني بدون أي التزام"
     },
     contact_top_line: {
-        fr: "Analysons votre",
-        en: "Let's Analyze Your",
-        ar: "دعنا نحلل"
+        fr: "Obtenez votre diagnostic",
+        en: "Get Your Diagnostic",
+        ar: "احصل على تشخيصك"
     },
     contact_title: {
-        fr: "Zone Commerciale.",
-        en: "Commercial Territory.",
-        ar: "منطقتك التجارية."
+        fr: "Sous 48 Heures.",
+        en: "Within 48 Hours.",
+        ar: "خلال 48 ساعة."
     },
     contact_bottom_line: {
-        fr: "et votre potentiel de leads",
-        en: "and your lead growth potential",
-        ar: "وفرص استقطاب العقود"
+        fr: "personnalisé pour votre ville",
+        en: "tailored to your city in Morocco",
+        ar: "مخصص لمدينتك بالمغرب"
     },
     contact_city_hint: {
-        fr: "Cliquez sur votre ville pour échanger directement sur WhatsApp",
-        en: "Click on your city to connect directly on WhatsApp",
-        ar: "اضغط على مدينتك للتواصل الفوري معنا عبر واتساب"
+        fr: "Cliquez sur votre ville pour recevoir votre analyse directement sur WhatsApp",
+        en: "Click your city to receive your analysis directly on WhatsApp",
+        ar: "اضغط على مدينتك لتلقي تحليلك مباشرة عبر واتساب"
     },
     contact_p: {
-        fr: "Réservez votre audit d'acquisition de 15 minutes. Nous analysons les volumes de recherche d'assurance dans votre ville et vous présentons le potentiel de leads mensuel.",
-        en: "Book your 15-minute acquisition audit. We examine local insurance search volumes in your city and map out your monthly lead pipeline.",
-        ar: "احجز جلسة تدقيق مدتها 15 دقيقة لتحليل حجم البحث عن التأمين في مدينتك وتقدير عدد العقود الممكن استقطابها شهرياً."
+        fr: "Recevez votre audit visuel et plan d'action chiffré par WhatsApp ou téléphone : évaluation de votre visibilité Google &amp; Maps, parcours mobile et leviers de conversion prioritaires.",
+        en: "Receive your visual audit and actionable plan via WhatsApp or phone: Google &amp; Maps visibility check, mobile journey review, and top conversion levers.",
+        ar: "احصل على تشخيصك المرئي وخطة عمل واضحة عبر واتساب أو الهاتف: تقييم ظهورك على غوغل والخرائط وتجربة الهاتف وأولويات التحويل."
     },
     contact_cta_btn: {
-        fr: "Je demande mon audit <i class=\"fas fa-arrow-down\"></i>",
-        en: "Claim My Free Audit <i class=\"fas fa-arrow-down\"></i>",
-        ar: "أطلب تدقيقي المجاني <i class=\"fas fa-arrow-down\"></i>"
+        fr: "Recevoir mon analyse gratuite <i class=\"fas fa-arrow-down\"></i>",
+        en: "Get My Free Analysis <i class=\"fas fa-arrow-down\"></i>",
+        ar: "أطلب تحليلي المجاني <i class=\"fas fa-arrow-down\"></i>"
     },
     contact_excl_title: {
-        fr: "Exclusivité Territoriale Garantie",
-        en: "Guaranteed Territorial Exclusivity",
-        ar: "حصرية جغرافية مضمونة"
+        fr: "Audit Offert Sans Engagement",
+        en: "Complimentary No-Obligation Audit",
+        ar: "تدقيق مجاني بدون التزام"
     },
     contact_exclusivity: {
-        fr: "Afin de garantir la performance de nos campagnes et d'éviter tout conflit d'intérêts, nous limitons strictement le nombre d'agences partenaires par zone géographique.",
-        en: "To guarantee campaign performance and avoid conflicts of interest, we strictly limit partner agency intake per geographical area.",
-        ar: "لضمان أقصى أداء للحملات ومنع أي تضارب للمصالح، نلتزم بحصر عدد محدود جداً من الوكالات الشريكة في كل منطقة جغرافية."
+        fr: "Vos coordonnées servent uniquement à préparer et vous transmettre votre diagnostic visuel sous 48h ouvrées avec un plan d'action prioritaire adapté à votre ville.",
+        en: "Your details are used solely to prepare and deliver your visual diagnostic within 48 business hours along with a city-specific action plan.",
+        ar: "تُستخدم بياناتك فقط لإعداد وإرسال التشخيص المرئي خلال 48 ساعة عمل مع خطة عمل مخصصة لمدينتك."
     },
     contact_email_label: {
         fr: "Email Dédié",
@@ -3185,9 +3185,9 @@ const translations = {
         ar: "البريد الإلكتروني"
     },
     contact_phone_label: {
-        fr: "Ligne Directe WhatsApp",
-        en: "Direct WhatsApp Line",
-        ar: "خط الواتساب المباشر"
+        fr: "Écrire sur WhatsApp",
+        en: "Message on WhatsApp",
+        ar: "راسلنا على واتساب"
     },
     contact_fb_label: {
         fr: "Facebook Officiel",
@@ -3196,14 +3196,14 @@ const translations = {
     },
     // Form Questionnaire
     form_identity_label: {
-        fr: "VOTRE IDENTITÉ",
-        en: "YOUR IDENTITY",
-        ar: "الاسم والنسب"
+        fr: "NOM COMPLET",
+        en: "FULL NAME",
+        ar: "الاسم الكامل"
     },
     form_identity_placeholder: {
-        fr: "VOTRE NOM ET PRÉNOM",
-        en: "YOUR FULL NAME",
-        ar: "اكتب اسمك الكامل هنا"
+        fr: "Ex. Salma El Idrissi",
+        en: "e.g. Salma El Idrissi",
+        ar: "مثال: سلمى الإدريسي"
     },
     form_btn_next: {
         fr: "SUIVANT <i class=\"fas fa-chevron-right\"></i>",
@@ -3211,9 +3211,9 @@ const translations = {
         ar: "التالي <i class=\"fas fa-chevron-right\"></i>"
     },
     form_contact_label: {
-        fr: "COORDONNÉES PROFESSIONNELLES",
-        en: "PROFESSIONAL CONTACT",
-        ar: "بيانات التواصل المهنية"
+        fr: "TÉLÉPHONE / WHATSAPP &amp; EMAIL",
+        en: "PHONE / WHATSAPP &amp; EMAIL",
+        ar: "الهاتف / واتساب والبريد الإلكتروني"
     },
     form_contact_placeholder: {
         fr: "EMAIL PROFESSIONNEL",
@@ -3221,9 +3221,9 @@ const translations = {
         ar: "البريد الإلكتروني المهني"
     },
     form_phone_placeholder: {
-        fr: "NUMÉRO WHATSAPP / MOBILE",
-        en: "WHATSAPP / MOBILE NUMBER",
-        ar: "رقم الواتساب أو الهاتف"
+        fr: "06 12 34 56 78 (WHATSAPP)",
+        en: "06 12 34 56 78 (WHATSAPP)",
+        ar: "06 12 34 56 78 (واتساب)"
     },
     form_btn_back: {
         fr: "RETOUR",
@@ -3231,29 +3231,29 @@ const translations = {
         ar: "رجوع"
     },
     form_agency_label: {
-        fr: "VOTRE AGENCE / VILLE",
-        en: "YOUR AGENCY / CITY",
-        ar: "اسم الوكالة والمدينة"
+        fr: "ENTREPRISE / VILLE AU MAROC",
+        en: "COMPANY / CITY IN MOROCCO",
+        ar: "اسم الشركة والمدينة بالمغرب"
     },
     form_agency_placeholder: {
-        fr: "NOM DU CABINET & VILLE (Ex: AXA Casablanca)",
-        en: "AGENCY NAME & CITY (e.g. AXA Casablanca)",
-        ar: "اسم المكتب أو الوكالة والمدينة (مثال: أكسا الدار البيضاء)"
+        fr: "Ex. Cabinet Atlas Conseils · Casablanca",
+        en: "e.g. Cabinet Atlas Conseils · Casablanca",
+        ar: "مثال: مكتب أطلس للاستشارات · الدار البيضاء"
     },
     form_goal_label: {
-        fr: "OBJECTIF COMMERCIAL",
-        en: "COMMERCIAL GOAL",
-        ar: "الهدف التجاري والمنتجات"
+        fr: "SITE ACTUEL &amp; OBJECTIF PRIORITAIRE",
+        en: "CURRENT SITE &amp; PRIORITY GOAL",
+        ar: "الموقع الحالي والهدف الأساسي"
     },
     form_goal_placeholder: {
-        fr: "Produits ciblés (Auto, Santé, Entreprise) et objectifs de contrats mensuels...",
-        en: "Target insurance lines (Auto, Health, Commercial) and monthly contract targets...",
-        ar: "المنتجات المستهدفة (سيارات، صحة، شركات) وعدد العقود الشهرية المرجوة..."
+        fr: "Ex. Recevoir plus de demandes de devis sur Casablanca et apparaître sur Google Maps.",
+        en: "e.g. Receive more quote requests in Casablanca and rank on Google Maps.",
+        ar: "مثال: استقبال المزيد من طلبات عروض الأسعار بالدار البيضاء والظهور على خرائط غوغل."
     },
     form_btn_submit: {
-        fr: "DEMANDER MON AUDIT <i class=\"fas fa-bolt\"></i>",
-        en: "REQUEST MY AUDIT <i class=\"fas fa-bolt\"></i>",
-        ar: "طلب التدقيق المجاني <i class=\"fas fa-bolt\"></i>"
+        fr: "RECEVOIR MON ANALYSE GRATUITE <i class=\"fab fa-whatsapp\"></i>",
+        en: "GET MY FREE ANALYSIS <i class=\"fab fa-whatsapp\"></i>",
+        ar: "الحصول على تحليلي المجاني <i class=\"fab fa-whatsapp\"></i>"
     },
     // Footer
     footer_seo_title: {
@@ -3302,35 +3302,35 @@ const translations = {
         ar: "توليد عملاء محتملين للتأمين بالمغرب"
     },
     footer_copy: {
-        fr: "ASSURLEAD - Création de sites internet et génération de leads au Maroc 🇲🇦",
-        en: "ASSURLEAD - Website Creation & Lead Generation in Morocco 🇲🇦",
-        ar: "ASSURLEAD - إنشاء المواقع الإلكترونية وتوليد العملاء المحتملين في المغرب 🇲🇦"
+        fr: "ASSURLEADCOM — Conception de sites commerciaux, visibilité locale sur Google et systèmes de conversion au Maroc 🇲🇦",
+        en: "ASSURLEADCOM — Commercial websites, local Google visibility & conversion systems in Morocco 🇲🇦",
+        ar: "ASSURLEADCOM — تصميم المواقع التجارية والظهور المحلي على غوغل وأنظمة التحويل في المغرب 🇲🇦"
     },
     // Modal
     modal_badge: {
-        fr: "Audit Stratégique d'Acquisition",
-        en: "Strategic Acquisition Audit",
-        ar: "تدقيق استراتيجي للاستقطاب"
+        fr: "Analyse Gratuite sous 48h",
+        en: "Free Analysis Within 48h",
+        ar: "تحليل مجاني خلال 48 ساعة"
     },
     modal_title: {
-        fr: "Multipliez vos Devis <span class=\"neon\">grâce au SEO local.</span>",
-        en: "Multiply Your Quotes <span class=\"neon\">With Local SEO.</span>",
-        ar: "ضاعف عروض أسعارك <span class=\"neon\">بفضل السيو المحلي.</span>"
+        fr: "Transformez votre site <span class=\"neon\">en outil commercial.</span>",
+        en: "Turn Your Website <span class=\"neon\">Into a Sales Tool.</span>",
+        ar: "حوّل موقعك <span class=\"neon\">إلى أداة تجارية فعالة.</span>"
     },
     modal_p: {
-        fr: "Réservez votre <strong>audit de visibilité Google gratuit</strong> pour découvrir le volume de recherches de prospects dans votre ville et déployer votre moteur d'acquisition organique.",
-        en: "Book your <strong>free Google visibility audit</strong> to discover the exact search volume of prospects in your city and launch your organic acquisition engine.",
-        ar: "احجز <strong>تدقيقك المجاني للظهور في غوغل</strong> لاكتشاف حجم طلبات العملاء في مدينتك وبناء محرك استقطاب عضوي متكامل."
+        fr: "Recevez votre <strong>diagnostic personnalisé sous 48 heures</strong> : analyse de votre visibilité Google &amp; Maps, parcours mobile et points de fuite, avec un plan d'action clair sans engagement.",
+        en: "Receive your <strong>personalized diagnostic within 48 hours</strong>: Google &amp; Maps visibility check, mobile journey &amp; leaks audit, and a clear action plan with zero obligation.",
+        ar: "احصل على <strong>تشخيصك المخصص خلال 48 ساعة</strong>: تقييم ظهورك على غوغل والخرائط وتجربة الهاتف مع خطة عمل واضحة دون التزام."
     },
     modal_btn: {
-        fr: "Réservez mon Audit Gratuit",
-        en: "Book My Free Audit",
-        ar: "حجز التدقيق المجاني الآن"
+        fr: "Recevoir mon Analyse Gratuite",
+        en: "Get My Free Analysis",
+        ar: "احصل على تحليلي المجاني"
     },
     modal_timer: {
-        fr: "Audit gratuit de 15 minutes, sur rendez-vous",
-        en: "Free 15-minute audit, by appointment",
-        ar: "تدقيق مجاني لمدة 15 دقيقة، بموعد مسبق"
+        fr: "Remise personnalisée sous 48h ouvrées · Sans engagement",
+        en: "Delivered within 48 business hours · No obligation",
+        ar: "تسليم مخصص خلال 48 ساعة عمل · بدون التزام"
     },
     // Chat & WhatsApp Widget
     chat_badge: {
@@ -3340,8 +3340,8 @@ const translations = {
     },
     // FAQ Section
     faq_badge: {
-        fr: "FAQ Spécialisée",
-        en: "Specialized FAQ",
+        fr: "FAQ",
+        en: "FAQ",
         ar: "الأسئلة الشائعة"
     },
     faq_title: {
@@ -3350,49 +3350,49 @@ const translations = {
         ar: "الأسئلة <span class=\"neon\">الشائعة.</span>"
     },
     faq_p: {
-        fr: "Tout ce que vous devez savoir sur notre système d'acquisition et nos engagements de performance.",
-        en: "Everything you need to know about our specialized acquisition framework and performance commitments.",
-        ar: "كل ما تحتاج معرفته عن نظام الاستقطاب وضمانات الأداء الخاصة بنا."
+        fr: "Tout comprendre sur notre système commercial, l'audit gratuit sous 48h et le suivi de vos demandes au Maroc.",
+        en: "Everything about our sales system, free 48h audit, and ongoing tracking of your client inquiries in Morocco.",
+        ar: "كل ما تحتاج معرفته عن منظومتنا التجارية والتحليل المجاني خلال 48 ساعة ومتابعة طلباتك بالمغرب."
     },
     faq_q1: {
-        fr: "Quelle est la différence entre ASSURLEAD et une agence web généraliste ?",
-        en: "What is the difference between ASSURLEAD and a generic web agency?",
-        ar: "ما هو الفرق بين ASSURLEAD ووكالة ويب عامة؟"
+        fr: "En quoi votre système commercial diffère-t-il d'une simple vitrine ?",
+        en: "How does your sales system differ from a simple showcase website?",
+        ar: "كيف تختلف منظومتكم التجارية عن الموقع التعريفي البسيط؟"
     },
     faq_a1: {
-        fr: "Une agence généraliste vous vend des clics ou une maquette de site web sans se soucier des contrats signés. ASSURLEAD est 100% spécialisée dans l'assurance au Maroc : nous concevons les tunnels, qualifions les prospects, installons le CRM et optimisons le système jusqu'à la signature de la police d'assurance.",
-        en: "A generic agency sells traffic or static templates with no regard for signed policies. ASSURLEAD is 100% dedicated to Moroccan insurance: we engineer funnels, qualify prospects, deploy CRMs, and optimize the entire path to signed contracts.",
-        ar: "الوكالات العامة تبيعك مجرد نقرات أو تصاميم دون اهتمام بالعقود الموقعة. أما ASSURLEAD فمتخصصة 100% في قطاع التأمين بالمغرب: نصمم أقماع التحويل، نؤهل العملاء، نربط CRM ونحسن التكلفة حتى توقيع العقد النهائي."
+        fr: "Un site vitrine classique existe uniquement pour la forme. Nous concevons un véritable outil commercial : structure orientée confiance, appels à l'action dès le premier écran, fiche Google Business Profile optimisée et boutons WhatsApp pré-remplis par service pour générer des appels, messages et demandes de devis qualifiés.",
+        en: "A classic showcase site exists only for show. We build a true commercial tool: trust-driven structure, clear CTAs on the first screen, optimized Google Business Profile, and service-prefilled WhatsApp buttons to generate calls, messages, and qualified quote requests.",
+        ar: "الموقع التقليدي يقتصر على الشكل فقط. نحن نبني أداة تجارية حقيقية: هيكلة مبنية على الثقة، أزرار تواصل واضحة منذ الشاشة الأولى، ملف غوغل مهيأ وأزرار واتساب معبأة حسب الخدمة لتوليد المكالمات وطلبات عروض الأسعار."
     },
     faq_q2: {
-        fr: "Qu'est-ce qu'un lead qualifié selon votre charte ?",
-        en: "What defines a verified qualified lead?",
-        ar: "ما هو تعريف العميل المؤهل (Lead Qualifié) لديكم؟"
+        fr: "Que comprend l'analyse gratuite remise sous 48 heures ?",
+        en: "What is included in the free analysis delivered within 48 hours?",
+        ar: "ماذا يشمل التحليل المجاني المسلّم خلال 48 ساعة؟"
     },
     faq_a2: {
-        fr: "Un lead qualifié est un prospect ayant formulé une demande explicite (type de véhicule, date d'échéance ou besoin santé/pro), avec un numéro de téléphone marocain vérifié et situé dans votre zone géographique cible. Les faux numéros ou doublons sont automatiquement écartés.",
-        en: "A qualified lead is a prospect who submitted an explicit request (vehicle details, renewal date, health/pro coverage), with a verified phone number located in your target territory.",
-        ar: "العميل المؤهل هو شخص قدم طلباً صريحاً لتسعيرة (نوع المركبة، تاريخ التجديد، أو التغطية الصحية)، مع رقم هاتف مغربي مؤكد وضمن منطقتك الجغرافية المستهدفة."
+        fr: "Nous analysons votre positionnement actuel sur Google et Google Maps dans votre ville, testons votre parcours sur smartphone (4G/5G Maroc), comparons 3 concurrents locaux actifs et listons les points de fuite prioritaires avec un diagnostic visuel et plan d'action chiffré, sans engagement.",
+        en: "We evaluate your current rankings on Google and Google Maps in your city, test your mobile journey on Moroccan 4G/5G networks, benchmark 3 active local competitors, and highlight priority conversion leaks with a visual diagnostic and action plan.",
+        ar: "نحلل ترتيبك الحالي على غوغل والخرائط بمدينتك، ونختبر تجربة الهاتف على شبكات المغرب، ونقارن مع 3 منافسين محليين مع تحديد نقاط التسرب وخطة عمل واضحة دون أي التزام."
     },
     faq_q3: {
-        fr: "Les prospects générés sont-ils exclusifs à mon agence ?",
-        en: "Are the generated leads strictly exclusive to my agency?",
-        ar: "هل العملاء المتولدون حصريون لوكالتي فقط؟"
+        fr: "Combien de temps faut-il pour déployer le site et recevoir des demandes ?",
+        en: "How long does it take to deploy the website and start receiving inquiries?",
+        ar: "كم يستغرق إطلاق الموقع والبدء في استقبال طلبات العملاء؟"
     },
     faq_a3: {
-        fr: "Oui, à 100%. Contrairement aux plateformes de comparateurs qui revendent le même prospect à 4 ou 5 assureurs simultanément, chaque prospect généré par votre tunnel est strictement exclusif à votre agence et transmis directement à votre équipe.",
-        en: "Yes, 100%. Unlike comparison platforms that resell the same prospect to 4 or 5 competitors, each lead generated by your funnel is completely exclusive to your agency.",
-        ar: "نعم، 100%. على عكس منصات المقارنة التي تعيد بيع نفس الزبون لعدة شركات في نفس الوقت، كل عميل يطلبه قمعك هو حصري تماماً لوكالتك ويصل مباشرة إلى فريقك."
+        fr: "Une page commerciale ou une refonte ciblée est livrée en 10 à 14 jours (2 à 3 semaines pour un dispositif multi-services complet). Dès la mise en ligne, les boutons WhatsApp contextuels, l'appel en 1 clic et votre fiche Google Maps permettent de convertir vos visiteurs sans friction.",
+        en: "A targeted sales page or redesign launches in 10 to 14 days (2 to 3 weeks for a complete multi-service platform). Right from launch, contextual WhatsApp buttons, 1-click calls, and your Google Maps profile convert visitors effortlessly.",
+        ar: "يتم تسليم الصفحة التجارية أو إعادة التصميم في 10 إلى 14 يوماً (أسبوعان إلى 3 أسابيع للمواقع المتكاملة). وبمجرد الإطلاق، تحوّل أزرار واتساب والاتصال المباشر وخرائط غوغل الزوار إلى عملاء بدون تعقيد."
     },
     faq_q4: {
-        fr: "Quel budget publicitaire mensuel minimum faut-il prévoir ?",
-        en: "What minimum monthly advertising budget should be anticipated?",
-        ar: "ما هي الميزانية الإعلانية الشهرية المقترحة للبداية؟"
+        fr: "Comment sont suivis les appels, messages WhatsApp et devis reçus ?",
+        en: "How are calls, WhatsApp messages, and quote requests tracked?",
+        ar: "كيف يتم تتبع المكالمات ورسائل واتساب وطلبات عروض الأسعار؟"
     },
     faq_a4: {
-        fr: "Nous recommandons un budget média de départ compris entre 2 000 et 4 000 DH par mois pour Google et Meta Ads. Ce budget est payé directement aux plateformes publicitaires et permet de générer entre 60 et 120 demandes de devis selon votre ville et le mix de produits ciblés.",
-        en: "We recommend an initial monthly media spend between 2,000 and 4,000 MAD for Google and Meta Ads. This is paid directly to ad platforms and yields 60 to 120 qualified quote requests depending on the city and product mix.",
-        ar: "نقترح ميزانية إعلانية أولية تتراوح بين 2,000 و 4,000 درهم شهرياً لإعلانات غوغل وميتا، وتدفع مباشرة للمنصات وتتيح استقطاب ما بين 60 إلى 120 طلب تسعيرة شهرياً."
+        fr: "Chaque visiteur choisit son canal préféré 24h/24 (WhatsApp pré-qualifié, appel direct ou formulaire court vers email &amp; CRM). Un interlocuteur dédié mesure chaque mois vos clics, appels et positions Google pour ajuster vos pages et pérenniser votre flux de clients.",
+        en: "Every visitor chooses their preferred channel 24/7 (pre-qualified WhatsApp, direct call, or short form to email &amp; CRM). A dedicated advisor tracks your monthly clicks, calls, and Google rankings to optimize pages and sustain client flow.",
+        ar: "يختار كل زائر قناته المفضلة على مدار الساعة (واتساب معبأ، اتصال مباشر أو استمارة سريعة). ويتابع مستشار مخصص شهرياً نقراتك ومكالماتك وترتيبك لتحسين النتائج وضمان استمرارية تدفق العملاء."
     },
     faq_q5: {
         fr: "Pourquoi la création d'un site web à Casablanca nécessite-t-elle une approche SEO spécifique au Maroc ?",
