@@ -3194,11 +3194,6 @@ const translations = {
         en: "Official Facebook",
         ar: "صفحتنا على فيسبوك"
     },
-    contact_ig_label: {
-        fr: "Instagram Officiel",
-        en: "Official Instagram",
-        ar: "صفحتنا على إنستغرام"
-    },
     // Form Questionnaire
     form_identity_label: {
         fr: "VOTRE IDENTITÉ",
@@ -5219,20 +5214,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const langDropdown = document.getElementById('lang-dropdown');
     
     if (langBtn && langDropdown) {
+        const setLangMenuState = (open) => {
+            langDropdown.classList.toggle('active', open);
+            langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+
         langBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            langDropdown.classList.toggle('active');
+            setLangMenuState(!langDropdown.classList.contains('active'));
         });
         
         document.addEventListener('click', () => {
-            langDropdown.classList.remove('active');
+            setLangMenuState(false);
         });
         
         langDropdown.querySelectorAll('.lang-option').forEach(opt => {
-            opt.addEventListener('click', (e) => {
+            opt.addEventListener('click', () => {
                 const selectedLang = opt.getAttribute('data-lang');
                 setLanguage(selectedLang);
-                langDropdown.classList.remove('active');
+                langDropdown.querySelectorAll('.lang-option').forEach(o => {
+                    o.setAttribute('aria-selected', o === opt ? 'true' : 'false');
+                });
+                setLangMenuState(false);
             });
         });
     }
@@ -6142,48 +6145,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 
-    // Mobile Menu
+    // Mobile Menu (RGAA aria-expanded sync + Escape key close)
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     if (mobileMenuToggle && navLinks) {
-        mobileMenuToggle.addEventListener('click', () => {
-            const isActive = navLinks.classList.toggle('active');
+        const syncMobileMenuState = (isActive) => {
+            navLinks.classList.toggle('active', isActive);
             mobileMenuToggle.classList.toggle('active', isActive);
+            mobileMenuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
             document.body.style.overflow = isActive ? 'hidden' : '';
             const icon = mobileMenuToggle.querySelector('i');
             if (icon) {
                 icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
             }
+        };
+
+        mobileMenuToggle.addEventListener('click', () => {
+            syncMobileMenuState(!navLinks.classList.contains('active'));
         });
 
         // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-                document.body.style.overflow = '';
-                const icon = mobileMenuToggle.querySelector('i');
-                if (icon) {
-                    icon.className = 'fas fa-bars';
-                }
-            });
+            link.addEventListener('click', () => syncMobileMenuState(false));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                syncMobileMenuState(false);
+                mobileMenuToggle.focus();
+            }
         });
     }
 
-    // Modal
+    // Modal (RGAA aria-hidden + focus management + Escape key close)
     const modal = document.getElementById('cta-modal');
     const closeModal = document.getElementById('close-modal');
     if (modal && closeModal) {
+        let lastFocusedBeforeModal = null;
         const showModal = () => {
+            lastFocusedBeforeModal = document.activeElement;
             modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+            setTimeout(() => closeModal.focus({ preventScroll: true }), 50);
         };
         const hideModal = () => {
             modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            if (lastFocusedBeforeModal && typeof lastFocusedBeforeModal.focus === 'function') {
+                lastFocusedBeforeModal.focus({ preventScroll: true });
+            }
         };
         closeModal.addEventListener('click', hideModal);
-        modal.querySelector('.modal-backdrop').addEventListener('click', hideModal);
+        const modalBackdrop = modal.querySelector('.modal-backdrop');
+        if (modalBackdrop) modalBackdrop.addEventListener('click', hideModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                hideModal();
+            }
+        });
 
         let modalTriggered = false;
         const triggerModal = () => {
@@ -6313,6 +6334,30 @@ document.addEventListener('DOMContentLoaded', () => {
         update();
     };
 
+    // Silent B2B Morocco Conversion Analytics Helper
+    const trackB2BEvent = (eventName, params = {}) => {
+        try {
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', eventName, {
+                    page_path: window.location.pathname,
+                    lang: localStorage.getItem('assurlead_lang') || 'fr',
+                    ...params
+                });
+            }
+        } catch (_) {}
+    };
+
+    const normalizeMoroccanPhone = (raw) => {
+        const cleaned = (raw || '').replace(/[^\d+]/g, '');
+        if (/^0[567]\d{8}$/.test(cleaned)) {
+            return '+212 ' + cleaned.slice(1);
+        }
+        if (/^212[567]\d{8}$/.test(cleaned)) {
+            return '+' + cleaned;
+        }
+        return raw;
+    };
+
     // --- FORM HANDLING ---
     const initQuestionnaire = () => {
         const form = document.getElementById('questionnaire');
@@ -6326,6 +6371,7 @@ document.addEventListener('DOMContentLoaded', () => {
             steps.forEach((s, i) => {
                 const isActive = i === currentStep;
                 s.classList.toggle('hidden', !isActive);
+                s.setAttribute('aria-hidden', isActive ? 'false' : 'true');
                 if (isActive) {
                     s.classList.add('fade-in');
                     const firstInput = s.querySelector('input, textarea');
@@ -6339,7 +6385,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const inputs = steps[currentStep].querySelectorAll('input, textarea');
             let valid = true;
             inputs.forEach(input => {
-                if (input.hasAttribute('required') && !input.value.trim()) {
+                const hasError = input.hasAttribute('required') && !input.value.trim();
+                input.setAttribute('aria-invalid', hasError ? 'true' : 'false');
+                if (hasError) {
                     valid = false;
                     input.classList.add('error-shake');
                     input.style.borderColor = 'var(--error-red, #ff4136)';
@@ -6356,6 +6404,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 if (validateStep() && currentStep < steps.length - 1) {
                     currentStep++;
+                    trackB2BEvent('b2b_audit_form_step', { step: currentStep + 1 });
                     updateSteps();
                 }
             });
@@ -6376,14 +6425,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!validateStep()) return;
             
             // Honeypot validation
-            const honeyInput = form.querySelector('[name="_honey"]') || form.querySelector('[name="website"]');
+            const honeyInput = form.querySelector('[name="_honey"]') || form.querySelector('[name="website"]') || form.querySelector('[name="_gotcha"]');
             if (honeyInput && honeyInput.value.trim() !== "") {
                 return; // Bot detected, quietly abort
             }
 
             const nameVal = (form.querySelector('[name="name"]')?.value || '').trim();
             const emailVal = (form.querySelector('[name="email"]')?.value || '').trim();
-            const phoneVal = (form.querySelector('[name="phone"]')?.value || '').trim();
+            const phoneVal = normalizeMoroccanPhone((form.querySelector('[name="phone"]')?.value || '').trim());
             const agencyVal = (form.querySelector('[name="agency"]')?.value || '').trim();
             const cityVal = (form.querySelector('[name="city"]')?.value || '').trim();
             const messageVal = (form.querySelector('[name="message"]')?.value || '').trim();
@@ -6393,12 +6442,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const cleanPhone = phoneVal.replace(/[^0-9+]/g, '');
             if (cleanPhone.length < 8) {
                 if (phoneInput) {
+                    phoneInput.setAttribute('aria-invalid', 'true');
                     phoneInput.classList.add('error-shake');
                     phoneInput.style.borderColor = 'var(--error-red, #ff4136)';
                     setTimeout(() => phoneInput.classList.remove('error-shake'), 500);
                 }
                 return;
             }
+            if (phoneInput) phoneInput.setAttribute('aria-invalid', 'false');
 
             // Trigger visual feedback and redirect to WhatsApp with prefilled message
             const submitBtn = form.querySelector('button[type="submit"]');
@@ -6407,12 +6458,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = true;
                 const lang = localStorage.getItem('assurlead_lang') || 'fr';
                 const redirectText = {
-                    fr: '<i class="fab fa-whatsapp"></i> REDIRECTION WHATSAPP...',
-                    en: '<i class="fab fa-whatsapp"></i> REDIRECTING TO WHATSAPP...',
-                    ar: '<i class="fab fa-whatsapp"></i> تحويل إلى واتساب...'
+                    fr: '<i class="fab fa-whatsapp" aria-hidden="true"></i> REDIRECTION WHATSAPP...',
+                    en: '<i class="fab fa-whatsapp" aria-hidden="true"></i> REDIRECTING TO WHATSAPP...',
+                    ar: '<i class="fab fa-whatsapp" aria-hidden="true"></i> تحويل إلى واتساب...'
                 };
                 submitBtn.innerHTML = redirectText[lang] || redirectText.fr;
             }
+
+            trackB2BEvent('b2b_audit_form_submit', {
+                agency_city: agencyVal || cityVal || 'Maroc'
+            });
 
             triggerConfetti();
 
@@ -6770,11 +6825,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Chat Window Toggle & Listeners
+    // Chat Window Toggle & Listeners (RGAA aria-expanded & aria-hidden sync + Escape)
     if (chatToggle && chatWindow && chatClose) {
-        chatToggle.addEventListener('click', () => {
-            chatWindow.classList.toggle('hidden');
-            if (!chatWindow.classList.contains('hidden')) {
+        const setChatOpen = (open) => {
+            chatWindow.classList.toggle('hidden', !open);
+            chatWindow.setAttribute('aria-hidden', open ? 'false' : 'true');
+            chatToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) {
                 if (chatTeaser) chatTeaser.style.display = 'none';
                 if (chatInput) chatInput.focus();
                 if (chatMessages && chatMessages.children.length === 0) {
@@ -6783,11 +6840,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     addMessage(activeWelcome, 'bot');
                 }
                 showSuggestions('initial');
+                trackB2BEvent('omar_chat_open');
             }
+        };
+
+        chatToggle.addEventListener('click', () => {
+            setChatOpen(chatWindow.classList.contains('hidden'));
         });
 
         chatClose.addEventListener('click', () => {
-            chatWindow.classList.add('hidden');
+            setChatOpen(false);
+            chatToggle.focus();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !chatWindow.classList.contains('hidden')) {
+                setChatOpen(false);
+                chatToggle.focus();
+            }
         });
     }
 
@@ -7087,25 +7157,81 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animate);
     };
 
-    // Initialize WhatsApp button listeners for confetti celebration
+    // Initialize WhatsApp, Call & Email B2B conversion listeners + confetti
     const initCtaConfetti = () => {
         const ctaLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
         ctaLinks.forEach(link => {
             link.addEventListener('click', () => {
                 triggerConfetti();
+                const cityAttr = link.getAttribute('data-city');
+                trackB2BEvent('whatsapp_lead_click', {
+                    city: cityAttr || 'general',
+                    label: (link.textContent || '').trim().slice(0, 60)
+                });
+            });
+        });
+
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                trackB2BEvent('phone_call_click', { phone: link.getAttribute('href') });
+            });
+        });
+
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                trackB2BEvent('email_lead_click');
             });
         });
     };
 
-    // Initialize items safely
+    // Performance: Lazy-initialize below-the-fold canvases only when scrolled near viewport
+    const observeAndInitCanvas = (elementId, initFn) => {
+        const el = document.getElementById(elementId);
+        if (!el) return;
+        const runInit = () => {
+            try { initFn(); } catch (e) { console.warn(elementId + ' init warning:', e); }
+        };
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver((entries) => {
+                if (entries.some(entry => entry.isIntersecting)) {
+                    obs.disconnect();
+                    runInit();
+                }
+            }, { rootMargin: '320px 0px', threshold: 0.01 });
+            obs.observe(el);
+        } else if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(runInit, { timeout: 1500 });
+        } else {
+            setTimeout(runInit, 200);
+        }
+    };
+
+    // Global RGAA Hygiene across all pages (decorative icons/canvases + external link rel security)
+    const applyGlobalRgaaHygiene = () => {
+        document.querySelectorAll('i.fas, i.fab, i.far, canvas').forEach(node => {
+            if (!node.hasAttribute('aria-label') && !node.hasAttribute('aria-labelledby')) {
+                node.setAttribute('aria-hidden', 'true');
+            }
+        });
+        document.querySelectorAll('a[target="_blank"]').forEach(a => {
+            const rel = a.getAttribute('rel') || '';
+            const parts = new Set(rel.split(/\s+/).filter(Boolean));
+            parts.add('noopener');
+            parts.add('noreferrer');
+            a.setAttribute('rel', Array.from(parts).join(' '));
+        });
+    };
+
+    // Initialize items safely (hero first for optimal LCP, below-the-fold deferred)
+    try { applyGlobalRgaaHygiene(); } catch (e) {}
     try { init3DHeroStyle('hero-canvas-container'); } catch (e) { console.warn('Hero canvas init warning:', e); }
-    try { initHeroViscousLiquid('secteurs-canvas-container', init2DHeroFallback); } catch (e) { console.warn('Secteurs canvas init warning:', e); }
-    try { initHeroViscousLiquid('contact-canvas-container', init2DHeroFallback); } catch (e) { console.warn('Contact canvas init warning:', e); }
-    try { initROIScene(); } catch (e) { console.warn('ROI scene init warning:', e); }
-    try { initZelligeTechCanvas('zellige-tech-canvas', 'offres'); } catch (e) { console.warn('Offres canvas init warning:', e); }
-    try { initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section'); } catch (e) { console.warn('Stats canvas init warning:', e); }
-    try { initZelligeTechCanvas('zellige-tech-faq-canvas', 'faq'); } catch (e) { console.warn('FAQ canvas init warning:', e); }
-    try { initZelligeTechCanvas('zellige-tech-footer-canvas', 'footer'); } catch (e) { console.warn('Footer canvas init warning:', e); }
+    observeAndInitCanvas('secteurs-canvas-container', () => initHeroViscousLiquid('secteurs-canvas-container', init2DHeroFallback));
+    observeAndInitCanvas('contact-canvas-container', () => initHeroViscousLiquid('contact-canvas-container', init2DHeroFallback));
+    observeAndInitCanvas('roi-canvas-container', () => initROIScene());
+    observeAndInitCanvas('zellige-tech-canvas', () => initZelligeTechCanvas('zellige-tech-canvas', 'offres'));
+    observeAndInitCanvas('zellige-tech-stats-canvas', () => initZelligeTechCanvas('zellige-tech-stats-canvas', 'stats-stripe-section'));
+    observeAndInitCanvas('zellige-tech-faq-canvas', () => initZelligeTechCanvas('zellige-tech-faq-canvas', 'faq'));
+    observeAndInitCanvas('zellige-tech-footer-canvas', () => initZelligeTechCanvas('zellige-tech-footer-canvas', 'footer'));
     try { initQuestionnaire(); } catch (e) { console.warn('Questionnaire init warning:', e); }
     try { initCtaConfetti(); } catch (e) { console.warn('Confetti init warning:', e); }
     try { updateROI(); } catch (e) { console.warn('ROI update warning:', e); }
@@ -7245,6 +7371,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.classList.remove('active');
+                            const otherTrigger = otherItem.querySelector('.faq-trigger');
+                            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
                             const otherContainer = otherItem.querySelector('.faq-answer-container');
                             if (otherContainer) {
                                 otherContainer.style.maxHeight = null;
@@ -7254,6 +7382,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Toggle current item
                     item.classList.toggle('active');
+                    trigger.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
                     if (!isOpen) {
                         answerContainer.style.maxHeight = answerContainer.scrollHeight + 'px';
                     } else {

@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Génération de Leads Organiques & SEO au Maroc | ASSURLEAD</title>
     <meta name="description" content="ASSURLEAD : Agence de leads organiques au Maroc. Nous créons des sites web optimisés pour Google pour transformer vos visiteurs en clients qualifiés.">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="geo.region" content="MA">
     <meta name="geo.placename" content="Casablanca, Rabat, Marrakech, Tanger, Maroc">
     <link rel="canonical" href="https://www.assurleadcom.com/">
@@ -22,64 +22,134 @@
     <link rel="alternate" hreflang="en" href="https://www.assurleadcom.com/">
     <link rel="alternate" hreflang="ar" href="https://www.assurleadcom.com/">
     <link rel="alternate" hreflang="x-default" href="https://www.assurleadcom.com/">
+
+    <!-- Performance Resource Hints (Preconnect / DNS-Prefetch / Preload) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preload" href="/style.css" as="style">
     
     <!-- Open Graph / Meta Réseaux Sociaux -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ASSURLEAD">
     <meta property="og:url" content="https://www.assurleadcom.com/">
     <meta property="og:title" content="Génération de Leads Organiques & SEO au Maroc | ASSURLEAD">
     <meta property="og:description" content="Nous créons des sites web optimisés pour Google afin de transformer votre visibilité en leads et vos leads en clients au Maroc.">
     <meta property="og:image" content="https://www.assurleadcom.com/logo-premium.png">
+    <meta property="og:image:alt" content="ASSURLEAD — Génération de Leads Organiques & SEO B2B au Maroc">
     <meta property="og:locale" content="fr_MA">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ar_MA">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Génération de Leads Organiques & SEO au Maroc | ASSURLEAD">
     <meta name="twitter:description" content="Création de sites web optimisés pour Google et acquisition de leads qualifiés au Maroc.">
     <meta name="twitter:image" content="https://www.assurleadcom.com/logo-premium.png">
 
-    <!-- Schema.org JSON-LD Structured Data pour le référencement local et national -->
+    <!-- Schema.org JSON-LD Structured Data pour le référencement local, national B2B et FAQ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "ASSURLEAD",
-      "description": "Agence de génération de leads organiques au Maroc grâce à la création de sites web optimisés pour Google.",
-      "url": "https://www.assurleadcom.com",
-      "sameAs": [
-        "https://web.facebook.com/profile.php?id=61561647327344&locale=fr_FR",
-        "https://www.instagram.com/assurleadcom/"
-      ],
-      "telephone": "+212707573162",
-      "email": "contact@assurleadcom.com",
-      "priceRange": "2000 MAD - 12000 MAD",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "MA",
-        "addressLocality": "Casablanca"
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Casablanca"},
-        {"@type": "City", "name": "Rabat"},
-        {"@type": "City", "name": "Marrakech"},
-        {"@type": "City", "name": "Tanger"},
-        {"@type": "City", "name": "Fès"},
-        {"@type": "City", "name": "Agadir"},
-        {"@type": "Country", "name": "Maroc"}
-      ],
-      "knowsAbout": [
-        "Search Engine Optimization (SEO)",
-        "Création de sites web optimisés",
-        "Génération de leads organiques",
-        "SEO Local Google Business Profile"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Solutions d'Acquisition Organique & Création de Sites Web",
-        "itemListElement": [
-          {"@type": "Offer", "name": "Starter (Site professionnel & présence)", "price": "2000", "priceCurrency": "MAD"},
-          {"@type": "Offer", "name": "Growth (Site complet + SEO local)", "price": "4500", "priceCurrency": "MAD"},
-          {"@type": "Offer", "name": "Lead Engine (Moteur SEO actif)", "price": "8000", "priceCurrency": "MAD"},
-          {"@type": "Offer", "name": "Acquisition (Système sur-mesure)", "price": "12000", "priceCurrency": "MAD"}
-        ]
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.assurleadcom.com/#website",
+          "url": "https://www.assurleadcom.com/",
+          "name": "ASSURLEAD",
+          "inLanguage": ["fr-MA", "en", "ar-MA"],
+          "publisher": { "@id": "https://www.assurleadcom.com/#organization" }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.assurleadcom.com/#organization",
+          "name": "ASSURLEAD",
+          "description": "Agence de génération de leads organiques au Maroc grâce à la création de sites web optimisés pour Google.",
+          "url": "https://www.assurleadcom.com",
+          "logo": "https://www.assurleadcom.com/logo-premium.svg",
+          "image": "https://www.assurleadcom.com/logo-premium.png",
+          "sameAs": [
+            "https://web.facebook.com/profile.php?id=61561647327344&locale=fr_FR"
+          ],
+          "telephone": "+212707573162",
+          "email": "contact@assurleadcom.com",
+          "priceRange": "2000 MAD - 12000 MAD",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+212707573162",
+            "contactType": "sales",
+            "areaServed": "MA",
+            "availableLanguage": ["French", "Arabic", "English"]
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "MA",
+            "addressLocality": "Casablanca"
+          },
+          "areaServed": [
+            {"@type": "City", "name": "Casablanca"},
+            {"@type": "City", "name": "Rabat"},
+            {"@type": "City", "name": "Marrakech"},
+            {"@type": "City", "name": "Tanger"},
+            {"@type": "City", "name": "Fès"},
+            {"@type": "City", "name": "Agadir"},
+            {"@type": "Country", "name": "Maroc"}
+          ],
+          "knowsAbout": [
+            "Search Engine Optimization (SEO)",
+            "Création de sites web optimisés",
+            "Génération de leads organiques B2B",
+            "SEO Local Google Business Profile"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Solutions d'Acquisition Organique & Création de Sites Web",
+            "itemListElement": [
+              {"@type": "Offer", "name": "Starter (Site professionnel & présence)", "price": "2000", "priceCurrency": "MAD"},
+              {"@type": "Offer", "name": "Growth (Site complet + SEO local)", "price": "4500", "priceCurrency": "MAD"},
+              {"@type": "Offer", "name": "Lead Engine (Moteur SEO actif)", "price": "8000", "priceCurrency": "MAD"},
+              {"@type": "Offer", "name": "Acquisition (Système sur-mesure)", "price": "12000", "priceCurrency": "MAD"}
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.assurleadcom.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Pourquoi un site optimisé pour Google est-il différent d'un simple site vitrine ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Un site optimisé pour Google est structuré sémantiquement pour répondre aux requêtes de personnes qui cherchent activement vos services dans votre ville (ex. devis assurance Casablanca). Il capte du trafic intentionniste et le transforme en opportunités commerciales sans payer Google à chaque clic."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Pouvez-vous garantir la première place sur Google ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Non, car l'algorithme de Google reste souverain. En revanche, nous appliquons une méthodologie d'ingénierie web stricte : vitesse mobile inférieure à 1,2s, balisage Schema.org, étude de mots-clés locaux, arborescence sémantique et fiche Google Business Profile optimisée."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Combien de temps faut-il pour recevoir les premières demandes ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La mise en ligne technique d'un site complet prend généralement 10 à 14 jours. Dès l'indexation par Google, les premières requêtes locales commencent à générer des visites, converties immédiatement via WhatsApp pré-formaté et appel en 1 clic."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Comment recevons-nous les prospects générés au Maroc ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Directement sur votre smartphone via WhatsApp ou le formulaire de devis en ligne, avec les coordonnées et le besoin précis du prospect pour un rappel immédiat sans friction."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
     <!-- Favicons & App Icons -->
@@ -92,7 +162,7 @@
     <meta name="theme-color" content="#00FF41">
 
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script type="importmap">
         {
@@ -103,22 +173,23 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
 
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="navbar" aria-label="Navigation principale">
         <div class="container nav-container">
-            <a href="/" class="logo">
-                <div class="logo-icon"><img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="22" height="24"></div>
+            <a href="/" class="logo" aria-label="ASSURLEADCOM — Accueil">
+                <div class="logo-icon"><img src="/logo-premium.svg" alt="" class="logo-emblem" width="22" height="24" decoding="async"></div>
                 <span class="logo-text">ASSUR<span class="neon">LEAD</span>COM</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="/" class="active" data-i18n="nav_home">Accueil</a></li>
+            <ul class="nav-links" id="nav-links-menu">
+                <li><a href="/" class="active" data-i18n="nav_home" aria-current="page">Accueil</a></li>
                 <li class="nav-dropdown">
                     <a href="/expertise.html" class="nav-dropdown-toggle" id="nav-expertise-toggle">
                         <span data-i18n="nav_expertise">Expertise</span>
                     </a>
-                    <button type="button" class="nav-dropdown-arrow-btn" aria-label="Afficher les sous-expertises" aria-expanded="false">
-                        <i class="fas fa-chevron-down nav-dropdown-arrow"></i>
+                    <button type="button" class="nav-dropdown-arrow-btn" aria-label="Afficher les sous-expertises" aria-expanded="false" aria-controls="nav-expertise-menu">
+                        <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
                     </button>
                     <div class="nav-dropdown-menu" id="nav-expertise-menu">
                         <div class="nav-dropdown-inner">
@@ -172,27 +243,24 @@
                 </li>
                 <li><a href="/realisations.html" data-i18n="nav_realisations">Réalisations</a></li>
                 <li><a href="/approche.html" data-i18n="nav_approche">Notre Approche</a></li>
-                <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot"></span> Diagnostic</a></li>
+                <li><a href="/diagnostic.html" class="nav-diag-btn" data-i18n="nav_diagnostic"><span class="diag-pulse-dot" aria-hidden="true"></span> Diagnostic</a></li>
                 <li><a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav_start">Audit Gratuit</a></li>
             </ul>
             <div class="nav-right">
                 <a href="https://web.facebook.com/profile.php?id=61561647327344&locale=fr_FR" target="_blank" rel="noopener noreferrer" class="nav-social-btn" aria-label="Page Facebook ASSURLEADCOM" title="Page Facebook ASSURLEADCOM">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/assurleadcom/" target="_blank" rel="noopener noreferrer" class="nav-social-btn nav-social-ig" aria-label="Instagram ASSURLEADCOM" title="Instagram ASSURLEADCOM">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
                 </a>
                 <div class="lang-selector">
-                    <button class="lang-btn" id="lang-btn-current">
-                        <i class="fas fa-globe"></i> <span>FR</span> <i class="fas fa-chevron-down"></i>
+                    <button type="button" class="lang-btn" id="lang-btn-current" aria-label="Changer la langue" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-dropdown">
+                        <i class="fas fa-globe" aria-hidden="true"></i> <span>FR</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </button>
-                    <div class="lang-dropdown" id="lang-dropdown">
-                        <button data-lang="fr" class="lang-option active">FR</button>
-                        <button data-lang="en" class="lang-option">EN</button>
-                        <button data-lang="ar" class="lang-option">العربية</button>
+                    <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Langues disponibles">
+                        <button type="button" data-lang="fr" class="lang-option active" role="option" aria-selected="true">FR</button>
+                        <button type="button" data-lang="en" class="lang-option" role="option" aria-selected="false">EN</button>
+                        <button type="button" data-lang="ar" class="lang-option" role="option" aria-selected="false">العربية</button>
                     </div>
                 </div>
-                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Menu Mobile">
+                <button type="button" id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Menu Mobile" aria-expanded="false" aria-controls="nav-links-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -201,9 +269,10 @@
         </div>
     </nav>
 
+    <main id="main-content" tabindex="-1">
     <!-- Hero Section -->
     <section class="hero">
-        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div id="hero-canvas-container" class="hero-canvas" aria-hidden="true"></div>
         <!-- Shooting Stars Design (Étoiles Filantes) -->
         <div class="hero-shooting-stars" aria-hidden="true">
             <div class="shooting-star-track track-1">
@@ -312,7 +381,7 @@
 
     <!-- Stats Section -->
     <section id="stats-stripe-section" class="stats-stripe">
-        <canvas id="zellige-tech-stats-canvas" class="section-bg-canvas"></canvas>
+        <canvas id="zellige-tech-stats-canvas" class="section-bg-canvas" aria-hidden="true"></canvas>
         <div class="container stats-stripe-grid">
             <div class="stripe-stat">
                 <span class="stripe-num neon">10-14j</span>
@@ -353,7 +422,7 @@
     <!-- Difference Section : Pourquoi un simple site vitrine ne suffit plus -->
     <section id="difference" class="difference-section">
         <div class="difference-photo-backdrop" aria-hidden="true">
-            <img src="/src/assets/images/difference_bg_photo.jpg" alt="Casablanca Finance City & Hub Digital Maroc" class="difference-bg-img" width="1600" height="900" loading="lazy" referrerPolicy="no-referrer">
+            <img src="/src/assets/images/difference_bg_photo.jpg" alt="" class="difference-bg-img" width="1600" height="900" loading="lazy" decoding="async" fetchpriority="low" referrerPolicy="no-referrer">
             <div class="difference-bg-overlay"></div>
             <div class="difference-grid-glow"></div>
         </div>
@@ -470,7 +539,7 @@
 
     <!-- Offers Section : 4 Formules Claires -->
     <section id="offres" class="offers">
-        <canvas id="zellige-tech-canvas" class="section-bg-canvas"></canvas>
+        <canvas id="zellige-tech-canvas" class="section-bg-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge" data-i18n="offers_badge">Grille Tarifaire · Fin d'Année 2026</span>
@@ -620,7 +689,7 @@
 
     <!-- FAQ Section -->
     <section id="faq" class="faq-section">
-        <canvas id="zellige-tech-faq-canvas" class="section-bg-canvas"></canvas>
+        <canvas id="zellige-tech-faq-canvas" class="section-bg-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge" data-i18n="faq_badge">FAQ</span>
@@ -630,11 +699,11 @@
             
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-trigger">
+                    <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-1">
                         <span data-i18n="faq_q1">Pourquoi un site optimisé pour Google est-il différent d'un simple site vitrine ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus" aria-hidden="true"></i></span>
                     </button>
-                    <div class="faq-answer-container">
+                    <div class="faq-answer-container" id="faq-answer-1">
                         <div class="faq-answer">
                             <p data-i18n="faq_a1">Un site vitrine classique attend des visiteurs qui ne viennent jamais s'il n'est pas alimenté par de la publicité payante. Un site optimisé pour Google est structuré sémantiquement pour répondre aux requêtes de personnes qui cherchent activement vos services dans votre ville (ex. devis assurance Casablanca). Il capte du trafic intentionniste et le transforme en opportunités commerciales sans payer Google à chaque clic.</p>
                         </div>
@@ -642,11 +711,11 @@
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-trigger">
+                    <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-2">
                         <span data-i18n="faq_q2">Pouvez-vous garantir la première place sur Google ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus" aria-hidden="true"></i></span>
                     </button>
-                    <div class="faq-answer-container">
+                    <div class="faq-answer-container" id="faq-answer-2">
                         <div class="faq-answer">
                             <p data-i18n="faq_a2">Non, et aucun professionnel honnête ne peut le promettre, car l'algorithme de Google reste souverain. En revanche, nous appliquons une méthodologie d'ingénierie web stricte : vitesse mobile &lt; 1.2s, balisage Schema.org, étude de mots-clés locaux, arborescence sémantique et fiche Google Business Profile optimisée. Ces critères placent concrètement votre entreprise devant la grande majorité des concurrents locaux.</p>
                         </div>
@@ -654,11 +723,11 @@
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-trigger">
+                    <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-3">
                         <span data-i18n="faq_q3">Combien de temps faut-il pour recevoir les premières demandes ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus" aria-hidden="true"></i></span>
                     </button>
-                    <div class="faq-answer-container">
+                    <div class="faq-answer-container" id="faq-answer-3">
                         <div class="faq-answer">
                             <p data-i18n="faq_a3">La mise en ligne technique d'un site complet prend généralement 10 à 14 jours. Dès l'indexation par Google, les premières requêtes locales commencent à générer des visites. La mise en place de canaux directs (bouton WhatsApp pré-formaté et appel en 1 clic) permet de convertir immédiatement chaque visiteur dès ses premières recherches.</p>
                         </div>
@@ -666,11 +735,11 @@
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-trigger">
+                    <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-4">
                         <span data-i18n="faq_q4">Comment recevons-nous les prospects générés au Maroc ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus" aria-hidden="true"></i></span>
                     </button>
-                    <div class="faq-answer-container">
+                    <div class="faq-answer-container" id="faq-answer-4">
                         <div class="faq-answer">
                             <p data-i18n="faq_a4">Directement sur votre smartphone ! Dès qu'un prospect clique sur WhatsApp ou remplit le formulaire de devis en ligne, vous recevez instantanément ses coordonnées et son besoin précis pour un rappel immédiat sans friction.</p>
                         </div>
@@ -783,13 +852,6 @@
                                 <span class="method-val">Page ASSURLEADCOM</span>
                             </div>
                         </a>
-                        <a href="https://www.instagram.com/assurleadcom/" target="_blank" rel="noopener noreferrer" class="contact-method-card">
-                            <div class="method-icon instagram-icon"><i class="fab fa-instagram"></i></div>
-                            <div>
-                                <span class="method-label" data-i18n="contact_ig_label">Instagram Officiel</span>
-                                <span class="method-val">@assurleadcom</span>
-                            </div>
-                        </a>
                     </div>
                 </div>
             <div class="contact-form-container">
@@ -804,43 +866,44 @@
                         <div class="step-dot"></div>
                     </div>
                     <div class="form-step" id="step-1">
-                        <label data-i18n="form_identity_label">IDENTITÉ</label>
-                        <input type="text" name="name" data-i18n-placeholder="form_identity_placeholder" placeholder="VOTRE NOM COMPLET" required>
-                        <button type="button" class="btn btn-primary full-width next-btn" data-i18n="form_btn_next">SUIVANT <i class="fas fa-chevron-right"></i></button>
+                        <label for="q-name" data-i18n="form_identity_label">IDENTITÉ</label>
+                        <input id="q-name" type="text" name="name" autocomplete="name" data-i18n-placeholder="form_identity_placeholder" placeholder="VOTRE NOM COMPLET" aria-required="true" required>
+                        <button type="button" class="btn btn-primary full-width next-btn" data-i18n="form_btn_next">SUIVANT <i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                     </div>
                     <div class="form-step hidden" id="step-2">
-                        <label data-i18n="form_contact_label">CONTACT</label>
-                        <input type="email" name="email" data-i18n-placeholder="form_contact_placeholder" placeholder="EMAIL PROFESSIONNEL" required>
-                        <input type="tel" name="phone" data-i18n-placeholder="form_phone_placeholder" placeholder="NUMÉRO DE TÉLÉPHONE" required>
+                        <label for="q-email" data-i18n="form_contact_label">CONTACT</label>
+                        <input id="q-email" type="email" name="email" autocomplete="email" inputmode="email" data-i18n-placeholder="form_contact_placeholder" placeholder="EMAIL PROFESSIONNEL" aria-required="true" required>
+                        <input id="q-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" aria-label="Numéro de téléphone" data-i18n-placeholder="form_phone_placeholder" placeholder="NUMÉRO DE TÉLÉPHONE" aria-required="true" required>
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline prev-btn" data-i18n="form_btn_back">RETOUR</button>
                             <button type="button" class="btn btn-primary next-btn" data-i18n="form_btn_next">SUIVANT</button>
                         </div>
                     </div>
                     <div class="form-step hidden" id="step-3">
-                        <label data-i18n="form_agency_label">AGENCE</label>
-                        <input type="text" name="agency" data-i18n-placeholder="form_agency_placeholder" placeholder="NOM DE VOTRE ACTIVITÉ / VILLE" required>
+                        <label for="q-agency" data-i18n="form_agency_label">AGENCE</label>
+                        <input id="q-agency" type="text" name="agency" autocomplete="organization" data-i18n-placeholder="form_agency_placeholder" placeholder="NOM DE VOTRE ACTIVITÉ / VILLE" aria-required="true" required>
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline prev-btn" data-i18n="form_btn_back">RETOUR</button>
                             <button type="button" class="btn btn-primary next-btn" data-i18n="form_btn_next">SUIVANT</button>
                         </div>
                     </div>
                     <div class="form-step hidden" id="step-4">
-                        <label data-i18n="form_goal_label">OBJECTIF</label>
-                        <textarea rows="4" name="message" data-i18n-placeholder="form_goal_placeholder" placeholder="VOTRE OBJECTIF DE CROISSANCE (EX: 20 LEADS/MOIS)"></textarea>
+                        <label for="q-goal" data-i18n="form_goal_label">OBJECTIF</label>
+                        <textarea id="q-goal" rows="4" name="message" data-i18n-placeholder="form_goal_placeholder" placeholder="VOTRE OBJECTIF DE CROISSANCE (EX: 20 LEADS/MOIS)"></textarea>
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline prev-btn" data-i18n="form_btn_back">RETOUR</button>
-                            <button type="submit" class="btn btn-primary" data-i18n="form_btn_submit">DEMANDER MON AUDIT <i class="fab fa-whatsapp"></i></button>
+                            <button type="submit" class="btn btn-primary" data-i18n="form_btn_submit">DEMANDER MON AUDIT <i class="fab fa-whatsapp" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer id="footer">
-        <canvas id="zellige-tech-footer-canvas" class="section-bg-canvas"></canvas>
+        <canvas id="zellige-tech-footer-canvas" class="section-bg-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="footer-seo-section">
                 <span class="footer-seo-title" data-i18n="footer_seo_title">Expertise Digitale & Référencement au Maroc</span>
@@ -893,9 +956,6 @@
                     <a href="https://web.facebook.com/profile.php?id=61561647327344&locale=fr_FR" target="_blank" rel="noopener noreferrer" class="seo-tag footer-fb-tag" title="Suivez ASSURLEADCOM sur Facebook">
                         <i class="fab fa-facebook-f"></i> <span>Page Facebook Officielle</span>
                     </a>
-                    <a href="https://www.instagram.com/assurleadcom/" target="_blank" rel="noopener noreferrer" class="seo-tag footer-ig-tag" title="Suivez ASSURLEADCOM sur Instagram">
-                        <i class="fab fa-instagram"></i> <span>Instagram Officiel</span>
-                    </a>
                 </div>
             </div>
             <p class="footer-copy" data-i18n="footer_copy">ASSURLEAD - Agence de génération de leads organiques & création de sites web au Maroc 🇲🇦</p>
@@ -903,22 +963,22 @@
     </footer>
 
     <!-- CTA Modal -->
-    <div id="cta-modal" class="modal">
+    <div id="cta-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cta-modal-title" aria-hidden="true">
         <div class="modal-backdrop"></div>
         <div class="modal-content">
-            <button id="close-modal" class="close-btn" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <button type="button" id="close-modal" class="close-btn" aria-label="Fermer"><i class="fas fa-times" aria-hidden="true"></i></button>
             <div class="modal-inner">
                 <div class="modal-logo-header">
                     <div class="logo-icon modal-logo-icon">
-                        <img src="/logo-premium.svg" alt="ASSURLEAD Logo" class="logo-emblem" width="44" height="48">
+                        <img src="/logo-premium.svg" alt="" class="logo-emblem" width="44" height="48" decoding="async">
                     </div>
                     <span class="logo-text modal-logo-brand">ASSUR<span class="neon">LEAD</span>COM</span>
                 </div>
                 <span class="badge" data-i18n="modal_badge">Audit de Visibilité Google</span>
-                <h2 data-i18n="modal_title">Multipliez vos Devis <span class="neon">grâce au SEO local.</span></h2>
+                <h2 id="cta-modal-title" data-i18n="modal_title">Multipliez vos Devis <span class="neon">grâce au SEO local.</span></h2>
                 <p data-i18n="modal_p">Réservez votre <strong>audit de visibilité gratuit de 15 minutes</strong> pour analyser votre présence sur Google et déployer un <span class="neon">moteur d'acquisition de leads organiques</span> pour votre activité au Maroc.</p>
-                <a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20audit%20de%20visibilit%C3%A9%20Google%20gratuit" target="_blank" class="btn btn-primary full-width" data-i18n="modal_btn">Réserver mon Audit Gratuit</a>
-                <div class="modal-timer"><i class="fas fa-clock"></i> <span data-i18n="modal_timer">Audit gratuit de 15 minutes, sur rendez-vous</span></div>
+                <a href="https://wa.me/212707573162?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20mon%20audit%20de%20visibilit%C3%A9%20Google%20gratuit" target="_blank" rel="noopener noreferrer" class="btn btn-primary full-width" data-i18n="modal_btn">Réserver mon Audit Gratuit</a>
+                <div class="modal-timer"><i class="fas fa-clock" aria-hidden="true"></i> <span data-i18n="modal_timer">Audit gratuit de 15 minutes, sur rendez-vous</span></div>
             </div>
         </div>
     </div>
@@ -927,46 +987,46 @@
     <div id="chat-widget" class="chat-widget">
 
         <!-- Toggle Button -->
-        <button id="chat-toggle" class="chat-toggle" aria-label="Ouvrir le chat avec Omar">
+        <button type="button" id="chat-toggle" class="chat-toggle" aria-label="Ouvrir le chat avec Omar" aria-expanded="false" aria-controls="chat-window">
             <div class="chat-toggle-icon">
-                <img src="/omar-avatar.svg" alt="Omar — Conseiller ASSURLEAD" class="chat-avatar-img">
+                <img src="/omar-avatar.svg" alt="Omar — Conseiller ASSURLEAD" class="chat-avatar-img" width="64" height="64" loading="lazy" decoding="async">
             </div>
-            <span class="chat-online-dot"></span>
+            <span class="chat-online-dot" aria-hidden="true"></span>
         </button>
 
         <!-- Chat Window -->
-        <div id="chat-window" class="chat-window hidden" role="dialog" aria-label="Chat avec Omar">
+        <div id="chat-window" class="chat-window hidden" role="dialog" aria-modal="false" aria-label="Chat avec Omar" aria-hidden="true">
             <div class="chat-header">
                 <div class="chat-header-info">
                     <div class="chat-avatar-wrap">
-                        <div class="chat-avatar"><img src="/omar-avatar.svg" alt="Omar" class="chat-avatar-img"></div>
-                        <span class="chat-online-dot"></span>
+                        <div class="chat-avatar"><img src="/omar-avatar.svg" alt="Omar" class="chat-avatar-img" width="42" height="42" loading="lazy" decoding="async"></div>
+                        <span class="chat-online-dot" aria-hidden="true"></span>
                     </div>
                     <div class="chat-header-text">
                         <h4>Omar <span style="font-size: 11px; font-weight: normal; color: var(--zinc-400);">• ASSURLEAD</span></h4>
                         <div class="chat-status">
-                            <span class="chat-status-pulse"></span> En ligne • Répond en 1s
+                            <span class="chat-status-pulse" aria-hidden="true"></span> En ligne • Répond en 1s
                         </div>
                     </div>
                 </div>
                 <div class="chat-header-actions">
-                    <a href="https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20%C3%A9change%20pour%20mon%20site%20web" target="_blank" rel="noopener noreferrer" class="chat-wa-direct-btn" title="Basculer sur WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/212707573162?text=Bonjour%20Omar%2C%20je%20souhaite%20un%20%C3%A9change%20pour%20mon%20site%20web" target="_blank" rel="noopener noreferrer" class="chat-wa-direct-btn" title="Basculer sur WhatsApp" aria-label="Basculer sur WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
                     </a>
-                    <button id="chat-close" class="chat-close" aria-label="Fermer le chat">
-                        <i class="fas fa-times"></i>
+                    <button type="button" id="chat-close" class="chat-close" aria-label="Fermer le chat">
+                        <i class="fas fa-times" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
 
-            <div id="chat-messages" class="chat-messages"></div>
+            <div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
 
             <div id="chat-suggestions" class="chat-suggestions"></div>
 
             <div class="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Posez votre question à Omar..." autocomplete="off">
-                <button id="chat-send" class="chat-send" aria-label="Envoyer le message">
-                    <i class="fas fa-paper-plane"></i>
+                <input type="text" id="chat-input" placeholder="Posez votre question à Omar..." aria-label="Posez votre question à Omar" autocomplete="off">
+                <button type="button" id="chat-send" class="chat-send" aria-label="Envoyer le message">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
                 </button>
             </div>
         </div>

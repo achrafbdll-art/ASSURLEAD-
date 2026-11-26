@@ -39,6 +39,35 @@ body {
     position: relative;
 }
 
+/* RGAA 12.7 & 10.7: Skip link & keyboard-only focus visibility (zero visual change for pointer users) */
+.skip-to-content {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 10000;
+    padding: 12px 20px;
+    background: var(--brand-neon);
+    color: #000000;
+    font-weight: 800;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 0 0 8px 0;
+}
+
+.skip-to-content:focus {
+    left: 12px;
+    top: 12px;
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--brand-neon);
+    outline-offset: 3px;
+}
+
 /* Fixed background design with elegant network dots and grid pattern */
 body::before {
     content: "";
@@ -2837,19 +2866,6 @@ body[dir="rtl"] .sage-arcs-contact {
     box-shadow: 0 0 18px rgba(24, 119, 242, 0.48);
 }
 
-.contact-method-card .instagram-icon {
-    color: #E4405F;
-    background-color: rgba(228, 64, 95, 0.12);
-    border-color: rgba(228, 64, 95, 0.35);
-}
-
-.contact-method-card:hover .instagram-icon {
-    color: #ffffff;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    border-color: rgba(228, 64, 95, 0.75);
-    box-shadow: 0 0 18px rgba(228, 64, 95, 0.48);
-}
-
 .method-label {
     display: block;
     font-size: 11px;
@@ -3303,26 +3319,6 @@ footer .container {
 }
 
 .footer-fb-tag:hover i {
-    color: #ffffff;
-}
-
-.footer-ig-tag {
-    border-color: rgba(228, 64, 95, 0.42);
-    background: rgba(228, 64, 95, 0.1);
-    color: #FFFFFF;
-}
-
-.footer-ig-tag i {
-    color: #f472b6;
-}
-
-.footer-ig-tag:hover {
-    background: rgba(228, 64, 95, 0.22);
-    border-color: #E4405F;
-    box-shadow: 0 6px 20px rgba(228, 64, 95, 0.28);
-}
-
-.footer-ig-tag:hover i {
     color: #ffffff;
 }
 
@@ -4712,20 +4708,6 @@ input:focus, textarea:focus {
     border-color: #1877F2;
     color: #ffffff;
     box-shadow: 0 0 14px rgba(24, 119, 242, 0.5);
-    transform: translateY(-1px);
-}
-
-.nav-social-ig {
-    border-color: rgba(228, 64, 95, 0.45);
-    background: rgba(228, 64, 95, 0.12);
-    color: #f472b6;
-}
-
-.nav-social-ig:hover {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    border-color: #E4405F;
-    color: #ffffff;
-    box-shadow: 0 0 14px rgba(228, 64, 95, 0.5);
     transform: translateY(-1px);
 }
 

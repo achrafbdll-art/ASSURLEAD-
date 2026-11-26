@@ -65,6 +65,13 @@ export default defineConfig({
     outDir: 'dist',
     minify: 'esbuild',
     rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/three')) {
+            return 'three-vendor';
+          }
+        },
+      },
       input: {
         main: resolve(__dirname, 'index.html'),
         diagnostic: resolve(__dirname, 'diagnostic.html'),
