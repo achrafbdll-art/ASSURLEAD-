@@ -2384,9 +2384,9 @@ const translations = {
         ar: "<span class=\"badge-flag\">🇲🇦</span> المغرب · التحويل الرقمي والاستقطاب المحلي"
     },
     hero_title: {
-        fr: "Transformez votre présence en ligne<br><span class=\"neon\">en demandes clients qualifiées.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        en: "Turn Your Online Presence<br><span class=\"neon\">Into Qualified Client Inquiries.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
-        ar: "حوّل حضورك على الإنترنت<br><span class=\"neon\">إلى طلبات عملاء مؤهلين.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
+        fr: "<span class=\"hero-headline-single\">Transformez votre présence en ligne</span><br><span class=\"neon\">en demandes clients qualifiées.</span> <span class=\"morocco-flag-badge\" aria-label=\"Maroc\" title=\"Maroc\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        en: "<span class=\"hero-headline-single\">Turn Your Online Presence</span><br><span class=\"neon\">Into Qualified Client Inquiries.</span> <span class=\"morocco-flag-badge\" aria-label=\"Morocco\" title=\"Morocco\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>",
+        ar: "<span class=\"hero-headline-single\">حوّل حضورك على الإنترنت</span><br><span class=\"neon\">إلى طلبات عملاء مؤهلين.</span> <span class=\"morocco-flag-badge\" aria-label=\"المغرب\" title=\"المغرب\"><svg class=\"morocco-flag-svg\" viewBox=\"0 0 30 20\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\"><rect width=\"30\" height=\"20\" rx=\"3\" fill=\"#C1272D\"/><path d=\"M15,4.2 L18.53,14.85 L9.29,8.15 L20.71,8.15 L11.47,14.85 Z\" fill=\"none\" stroke=\"#00FF41\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>"
     },
     hero_paragraph: {
         fr: "AssurLeadCom accompagne les entreprises marocaines pour faire de leur site Internet un véritable outil commercial : meilleure visibilité sur Google, intégration directe de WhatsApp et parcours conçus pour générer des appels, messages et demandes de devis.",
@@ -2995,6 +2995,21 @@ const translations = {
         fr: "Demander un devis",
         en: "Request a quote",
         ar: "طلب عرض سعر"
+    },
+    bf_kicker: {
+        fr: "Black Friday",
+        en: "Black Friday",
+        ar: "بلاك فرايداي"
+    },
+    bf_offer: {
+        fr: "Frais de maintenance offerts pour 12 mois",
+        en: "12 months maintenance fees waived",
+        ar: "مصاريف الصيانة مجانية لمدة 12 شهراً"
+    },
+    bf_cta: {
+        fr: "En profiter <i class=\"fas fa-arrow-right\" aria-hidden=\"true\"></i>",
+        en: "Claim offer <i class=\"fas fa-arrow-right\" aria-hidden=\"true\"></i>",
+        ar: "استفد الآن <i class=\"fas fa-arrow-left\" aria-hidden=\"true\"></i>"
     },
     // Sectors / Multi-industry
     sec_badge: {

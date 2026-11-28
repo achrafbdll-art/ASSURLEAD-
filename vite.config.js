@@ -92,6 +92,7 @@ export default defineConfig({
         seo_optimisation: resolve(__dirname, 'seo-optimisation.html'),
         referencement_google: resolve(__dirname, 'referencement-google.html'),
         targeting_reseaux_sociaux: resolve(__dirname, 'targeting-reseaux-sociaux.html'),
+        simulateur_roi_3d: resolve(__dirname, 'simulateur-roi-3d.html'),
       },
     },
   },

@@ -958,7 +958,7 @@ body[dir="rtl"] .track-4 {
     gap: 48px;
     position: relative;
     z-index: 10;
-    max-width: 1040px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
@@ -971,13 +971,26 @@ body[dir="rtl"] .track-4 {
 }
 
 .hero-content h1 {
-    font-size: clamp(32px, 4.4vw, 54px);
-    line-height: 1.15;
+    font-size: clamp(22px, 3.45vw, 46px);
+    line-height: 1.18;
     letter-spacing: -0.025em;
     margin: 0 auto 18px auto;
     font-weight: 900;
     text-align: center;
-    max-width: 980px;
+    max-width: 1140px;
+}
+
+.hero-headline-single {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: clamp(13px, 3.35vw, 44px);
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .hero-headline-single {
+        font-size: clamp(12.5px, 3.75vw, 24px);
+    }
 }
 
 .morocco-flag-badge {
@@ -11506,4 +11519,197 @@ body.theme-light .alc-halftone-rail--right {
 
 body:not(.approche-page-body):not(.diagnostic-page-body):not(.expertise-page-body):not(.realisation-page-body):not(.seo-landing-body) .alc-halftone-borders {
     display: none !important;
+}
+
+/* ==========================================================================
+   BLACK FRIDAY DUCT-TAPE BANNER (Safety Orange Torn Tape Style)
+   ========================================================================== */
+.bf-tape-hero-container {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.bf-tape-offers-wrap {
+    display: flex;
+    justify-content: center;
+    margin: -10px auto 38px;
+    position: relative;
+    z-index: 3;
+}
+
+.bf-tape-banner {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    max-width: 100%;
+    padding: 15px 42px;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    transform: rotate(-1.15deg);
+    transform-origin: center center;
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.55)) drop-shadow(0 4px 12px rgba(255, 84, 0, 0.24));
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s ease;
+    isolation: isolate;
+}
+
+.bf-tape-banner--offers {
+    padding: 18px 50px;
+}
+
+.bf-tape-banner:hover {
+    transform: rotate(-0.35deg) translateY(-2px) scale(1.012);
+    filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.62)) drop-shadow(0 6px 18px rgba(255, 92, 10, 0.38));
+}
+
+/* Torn Gaffer Tape Body with Glossy Vinyl Creases */
+.bf-tape-surface {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(108deg, transparent 12%, rgba(255, 210, 170, 0.24) 13.5%, rgba(165, 38, 0, 0.22) 14.4%, transparent 16.5%),
+        linear-gradient(72deg, transparent 34%, rgba(255, 224, 190, 0.22) 35.2%, rgba(145, 30, 0, 0.2) 36%, transparent 38%),
+        linear-gradient(100deg, transparent 73%, rgba(150, 32, 0, 0.25) 73.8%, rgba(255, 215, 175, 0.28) 74.6%, transparent 76.5%),
+        radial-gradient(ellipse 35% 90% at 88% 45%, rgba(175, 40, 0, 0.28) 0%, transparent 70%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 22%, rgba(0, 0, 0, 0.08) 88%, rgba(0, 0, 0, 0.18) 100%),
+        linear-gradient(96deg, #e54400 0%, #ff5a0a 16%, #ff6614 48%, #f44d00 76%, #ff5c0c 92%, #df3d00 100%);
+    clip-path: polygon(
+        1.2% 2%, 14% 0.5%, 36% 1.4%, 64% 0.4%, 87% 1.3%, 98.6% 0%,
+        99.3% 14%, 98.4% 28%, 99.6% 42%, 98.7% 57%, 99.8% 72%, 98.8% 86%, 99.5% 98%,
+        84% 99.6%, 58% 98.4%, 31% 99.5%, 10% 98.6%, 0.8% 99.2%,
+        0.2% 84%, 1.3% 69%, 0.3% 54%, 1.4% 39%, 0.4% 25%, 1.2% 11%
+    );
+    box-shadow: inset 0 1px 0 rgba(255, 215, 180, 0.35), inset 0 -2px 0 rgba(130, 26, 0, 0.4);
+}
+
+.bf-tape-surface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            124deg,
+            rgba(255, 255, 255, 0.05) 0px,
+            rgba(255, 255, 255, 0.05) 2px,
+            transparent 2px,
+            transparent 18px
+        ),
+        linear-gradient(180deg, rgba(255, 238, 215, 0.16) 0%, transparent 45%);
+    pointer-events: none;
+}
+
+.bf-tape-kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(16px, 2vw, 23px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(120, 24, 0, 0.45);
+    line-height: 1.1;
+}
+
+.bf-tape-sep {
+    font-weight: 900;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1;
+}
+
+.bf-tape-offer {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(12.5px, 1.3vw, 15.5px);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(120, 24, 0, 0.4);
+    line-height: 1.25;
+}
+
+.bf-tape-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 11px;
+    background: rgba(9, 9, 11, 0.88);
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.bf-tape-banner:hover .bf-tape-cta {
+    background: #09090b;
+    transform: translateX(2px);
+}
+
+body[dir="rtl"] .bf-tape-banner {
+    transform: rotate(1.15deg);
+}
+
+body[dir="rtl"] .bf-tape-banner:hover {
+    transform: rotate(0.35deg) translateY(-2px) scale(1.012);
+}
+
+body[dir="rtl"] .bf-tape-banner:hover .bf-tape-cta {
+    transform: translateX(-2px);
+}
+
+body.theme-light .bf-tape-banner {
+    filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.22)) drop-shadow(0 4px 10px rgba(255, 84, 0, 0.2));
+}
+
+body.theme-light .bf-tape-banner:hover {
+    filter: drop-shadow(0 16px 30px rgba(15, 23, 42, 0.28)) drop-shadow(0 6px 14px rgba(255, 84, 0, 0.3));
+}
+
+@media (max-width: 768px) {
+    .bf-tape-hero-container {
+        margin-bottom: 22px;
+    }
+
+    .bf-tape-offers-wrap {
+        margin: -6px auto 28px;
+    }
+
+    .bf-tape-banner,
+    .bf-tape-banner--offers {
+        padding: 13px 26px;
+        gap: 6px 10px;
+        text-align: center;
+        transform: rotate(-0.7deg);
+    }
+
+    .bf-tape-sep {
+        display: none;
+    }
+
+    .bf-tape-kicker {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .bf-tape-offer {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bf-tape-banner,
+    .bf-tape-cta {
+        transition: none;
+    }
 }
