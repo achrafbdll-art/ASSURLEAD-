@@ -6300,16 +6300,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        let modalTriggered = false;
-        const triggerModal = () => {
-            if (!modalTriggered) {
+        // Expose explicit modal trigger without hijacking first user click on page
+        window.alcOpenCtaModal = showModal;
+        document.querySelectorAll('[data-open-modal]').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
                 showModal();
-                modalTriggered = true;
-                window.removeEventListener('click', triggerModal);
-            }
-        };
-        window.addEventListener('click', triggerModal);
-        setTimeout(() => { if (!modalTriggered) showModal(); }, 8000);
+            });
+        });
     }
 
     // --- CONFETTI CELEBRATION ENGINE ---
@@ -6768,17 +6766,38 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.href = '#';
             btn.onclick = (e) => {
                 e.preventDefault();
-                const modal = document.getElementById('cta-modal');
-                if (modal) modal.classList.add('active');
+                if (chatWindow && chatToggle) {
+                    chatWindow.classList.add('hidden');
+                    chatWindow.setAttribute('aria-hidden', 'true');
+                    chatToggle.setAttribute('aria-expanded', 'false');
+                    document.body.classList.remove('alc-chat-open');
+                }
+                if (typeof window.alcOpenCtaModal === 'function') {
+                    window.alcOpenCtaModal();
+                } else {
+                    const contactTarget = document.getElementById('contact') || document.getElementById('questionnaire');
+                    if (contactTarget) {
+                        contactTarget.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.href = '/#contact';
+                    }
+                }
             };
         } else if (action.type === 'link') {
             btn.href = action.url || '#';
             btn.onclick = (e) => {
                 if (action.url && action.url.startsWith('/#')) {
-                    e.preventDefault();
                     const targetEl = document.querySelector(action.url.replace('/', ''));
-                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
-                    chatWindow.classList.add('hidden');
+                    if (targetEl) {
+                        e.preventDefault();
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                        if (chatWindow && chatToggle) {
+                            chatWindow.classList.add('hidden');
+                            chatWindow.setAttribute('aria-hidden', 'true');
+                            chatToggle.setAttribute('aria-expanded', 'false');
+                            document.body.classList.remove('alc-chat-open');
+                        }
+                    }
                 }
             };
         } else if (action.type === 'prompt') {
@@ -6925,6 +6944,7 @@ document.addEventListener('DOMContentLoaded', () => {
             chatWindow.classList.toggle('hidden', !open);
             chatWindow.setAttribute('aria-hidden', open ? 'false' : 'true');
             chatToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            document.body.classList.toggle('alc-chat-open', open);
             if (open) {
                 if (chatTeaser) chatTeaser.style.display = 'none';
                 if (chatInput) chatInput.focus();
@@ -6938,13 +6958,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        chatToggle.addEventListener('click', () => {
+        chatToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             setChatOpen(chatWindow.classList.contains('hidden'));
         });
 
         chatClose.addEventListener('click', () => {
             setChatOpen(false);
             chatToggle.focus();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!chatWindow.classList.contains('hidden') && !chatWindow.contains(e.target) && !chatToggle.contains(e.target)) {
+                setChatOpen(false);
+            }
         });
 
         document.addEventListener('keydown', (e) => {
@@ -7932,8 +7959,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // 6. Circular SVG Scroll Progress & Smooth Back-to-Top
-        const scrollTopBtn = document.getElementById('me-scroll-top');
+        // 6. Circular SVG Scroll Progress & Smooth Back-to-Top (Universal across all 20 pages)
+        let scrollTopBtn = document.getElementById('me-scroll-top');
+        if (!scrollTopBtn) {
+            scrollTopBtn = document.createElement('button');
+            scrollTopBtn.type = 'button';
+            scrollTopBtn.id = 'me-scroll-top';
+            scrollTopBtn.className = 'me-scroll-top';
+            scrollTopBtn.setAttribute('aria-label', 'Remonter en haut de la page');
+            scrollTopBtn.setAttribute('title', 'Remonter en haut');
+            scrollTopBtn.innerHTML =
+                '<svg class="me-scroll-ring" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">' +
+                '<circle class="me-scroll-ring-bg" cx="24" cy="24" r="20"></circle>' +
+                '<circle class="me-scroll-ring-fg" id="me-scroll-ring-fg" cx="24" cy="24" r="20"></circle>' +
+                '</svg>' +
+                '<span class="me-scroll-percent" id="me-scroll-percent">0%</span>';
+            document.body.appendChild(scrollTopBtn);
+        }
         const ringFg = document.getElementById('me-scroll-ring-fg');
         const percentText = document.getElementById('me-scroll-percent');
         if (scrollTopBtn) {
@@ -8089,7 +8131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // 9. Touch/Drag & Keyboard 360° Tech Stack Carousel (Swiper-style)
+        // 9. Touch/Drag & Keyboard 360° Tech Stack Carousel (Swiper-style, RTL-safe)
         const viewport = document.getElementById('me-swiper-viewport');
         const track = document.getElementById('me-swiper-track');
         const prevBtn = document.getElementById('me-swiper-prev');
@@ -8101,6 +8143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!cards[0]) return 320;
                 return cards[0].getBoundingClientRect().width + 20;
             };
+            const isRtl = () => document.body.getAttribute('dir') === 'rtl' || getComputedStyle(viewport).direction === 'rtl';
 
             if (dotsWrap && cards.length > 0) {
                 dotsWrap.innerHTML = '';
@@ -8110,30 +8153,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     dot.className = 'me-swiper-dot' + (idx === 0 ? ' is-active' : '');
                     dot.setAttribute('aria-label', `Carte technologie ${idx + 1}`);
                     dot.addEventListener('click', () => {
-                        viewport.scrollTo({ left: idx * getStep(), behavior: 'smooth' });
+                        const dirMult = isRtl() ? -1 : 1;
+                        viewport.scrollTo({ left: dirMult * idx * getStep(), behavior: 'smooth' });
                     });
                     dotsWrap.appendChild(dot);
                 });
 
                 viewport.addEventListener('scroll', () => {
-                    const idx = Math.round(viewport.scrollLeft / Math.max(getStep(), 1));
+                    const idx = Math.round(Math.abs(viewport.scrollLeft) / Math.max(getStep(), 1));
                     dotsWrap.querySelectorAll('.me-swiper-dot').forEach((d, i) => {
                         d.classList.toggle('is-active', i === Math.min(idx, cards.length - 1));
                     });
                 }, { passive: true });
             }
 
-            if (prevBtn) prevBtn.addEventListener('click', () => viewport.scrollBy({ left: -getStep(), behavior: 'smooth' }));
-            if (nextBtn) nextBtn.addEventListener('click', () => viewport.scrollBy({ left: getStep(), behavior: 'smooth' }));
+            const scrollStep = (dir) => {
+                const dirMult = isRtl() ? -dir : dir;
+                viewport.scrollBy({ left: dirMult * getStep(), behavior: 'smooth' });
+            };
+            if (prevBtn) prevBtn.addEventListener('click', () => scrollStep(-1));
+            if (nextBtn) nextBtn.addEventListener('click', () => scrollStep(1));
             viewport.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowRight') viewport.scrollBy({ left: getStep(), behavior: 'smooth' });
-                if (e.key === 'ArrowLeft') viewport.scrollBy({ left: -getStep(), behavior: 'smooth' });
+                if (e.key === 'ArrowRight') scrollStep(1);
+                if (e.key === 'ArrowLeft') scrollStep(-1);
             });
 
-            // Pointer Drag-to-Scroll
-            let isDown = false, startX = 0, scrollStart = 0;
+            // Pointer Drag-to-Scroll (Mouse only so native touch swipe stays buttery smooth)
+            let isDown = false, startX = 0, scrollStart = 0, didDrag = false;
             viewport.addEventListener('mousedown', (e) => {
                 isDown = true;
+                didDrag = false;
                 viewport.classList.add('is-dragging');
                 startX = e.pageX - viewport.offsetLeft;
                 scrollStart = viewport.scrollLeft;
@@ -8145,8 +8194,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             viewport.addEventListener('mousemove', (e) => {
                 if (!isDown) return;
-                e.preventDefault();
                 const x = e.pageX - viewport.offsetLeft;
+                if (Math.abs(x - startX) > 4) didDrag = true;
+                if (didDrag) e.preventDefault();
                 viewport.scrollLeft = scrollStart - (x - startX) * 1.25;
             });
         }

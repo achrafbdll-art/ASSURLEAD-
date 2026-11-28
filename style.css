@@ -7826,15 +7826,15 @@ body[dir="rtl"] .pillar-card {
     overflow-wrap: break-word;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .offers-title-aligned {
         white-space: nowrap;
-        transform: translateX(-14px);
+        transform: none;
     }
 }
 
 body[dir="rtl"] .offers-title-aligned {
-    transform: translateX(14px);
+    transform: none;
 }
 
 /* Methode Section Header & Grid 4 Steps */
@@ -11713,3 +11713,655 @@ body.theme-light .bf-tape-banner:hover {
         transition: none;
     }
 }
+
+/* ==========================================================================
+   SIMULATEUR ROI 3D (.roi3d-*) — DESKTOP, MOBILE & LIGHT/DARK SUPPORT
+   ========================================================================== */
+.roi3d-main-wrapper {
+    padding: 112px 0 72px;
+    min-height: 100vh;
+}
+
+.roi3d-container {
+    max-width: 1240px;
+}
+
+.roi3d-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-bottom: 24px;
+}
+
+.roi3d-back-offers-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand-neon);
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 65, 0.28);
+    background: rgba(0, 255, 65, 0.06);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.roi3d-back-offers-link:hover {
+    background: rgba(0, 255, 65, 0.14);
+    transform: translateX(-2px);
+}
+
+.roi3d-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.roi3d-header-copy {
+    max-width: 720px;
+}
+
+.roi3d-header-copy h1 {
+    font-size: clamp(28px, 4vw, 46px);
+    line-height: 1.12;
+    margin-bottom: 12px;
+    color: var(--white);
+}
+
+.roi3d-header-copy p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--zinc-400);
+}
+
+.roi3d-kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.roi3d-kpi-card {
+    background: rgba(14, 16, 18, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.roi3d-kpi-highlight {
+    border-color: rgba(0, 255, 65, 0.35);
+    background: radial-gradient(circle at top right, rgba(0, 255, 65, 0.09), rgba(14, 16, 18, 0.95));
+}
+
+.roi3d-kpi-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--zinc-400);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.roi3d-kpi-label i {
+    color: var(--brand-neon);
+}
+
+.roi3d-kpi-value {
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-weight: 900;
+    color: var(--white);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.15;
+}
+
+.roi3d-stage-shell {
+    position: relative;
+    background: #0a0c0e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    margin-bottom: 36px;
+}
+
+.roi3d-stage-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding: 14px 20px;
+    background: rgba(16, 19, 23, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.roi3d-legend {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+}
+
+.roi3d-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--zinc-300);
+}
+
+.roi3d-legend-item i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.roi3d-legend-item .dot-traffic {
+    background: #38bdf8;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
+}
+
+.roi3d-legend-item .dot-leads {
+    background: var(--brand-neon);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.7);
+}
+
+.roi3d-legend-item .dot-base {
+    background: #64748b;
+}
+
+.roi3d-month-readout {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--zinc-300);
+}
+
+.roi3d-canvas-mount {
+    position: relative;
+    width: 100%;
+    height: clamp(380px, 52vh, 540px);
+    background: radial-gradient(circle at 50% 45%, rgba(0, 255, 65, 0.06), transparent 65%);
+}
+
+.roi3d-canvas-mount canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.roi3d-fallback-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 32px;
+    text-align: center;
+    color: var(--zinc-400);
+    font-size: 15px;
+}
+
+.roi3d-tooltip {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    z-index: 20;
+    min-width: 210px;
+    max-width: 250px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(10, 12, 16, 0.94);
+    border: 1px solid rgba(0, 255, 65, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.65);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.16s ease, visibility 0.16s ease;
+}
+
+.roi3d-tooltip.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.roi3d-tt-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--brand-neon);
+    padding-bottom: 7px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.roi3d-tt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--zinc-300);
+    padding: 2px 0;
+}
+
+.roi3d-tt-row strong {
+    color: var(--white);
+    font-variant-numeric: tabular-nums;
+}
+
+.roi3d-tt-row strong.tt-neon {
+    color: var(--brand-neon);
+}
+
+.roi3d-dock {
+    background: rgba(14, 17, 21, 0.96);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 20px 18px;
+}
+
+.roi3d-dock-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.roi3d-dock-toggle:hover {
+    border-color: var(--brand-neon);
+    background: rgba(0, 255, 65, 0.08);
+}
+
+.roi3d-dock-toggle small {
+    opacity: 0.65;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.roi3d-dock.is-collapsed .roi3d-dock-panel {
+    display: none;
+}
+
+.roi3d-dock-panel {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.roi3d-dock-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 24px;
+}
+
+.roi3d-dock-row-params {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 14px 18px;
+    align-items: end;
+}
+
+.roi3d-control-group,
+.roi3d-param-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.roi3d-ctrl-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--zinc-400);
+}
+
+.roi3d-ctrl-label strong {
+    color: var(--brand-neon);
+}
+
+.roi3d-pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.roi3d-pill {
+    padding: 8px 12px;
+    min-height: 36px;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--zinc-200);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.18s ease;
+}
+
+.roi3d-pill:hover {
+    border-color: var(--brand-neon);
+    color: var(--white);
+}
+
+.roi3d-pill.active {
+    background: var(--brand-neon);
+    border-color: var(--brand-neon);
+    color: #050507;
+}
+
+.roi3d-select {
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: #14171c;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.roi3d-slider-field input[type="range"] {
+    width: 100%;
+    accent-color: var(--brand-neon);
+    cursor: pointer;
+}
+
+.roi3d-bottom-card {
+    background: rgba(14, 17, 21, 0.92);
+    border: 1px solid rgba(0, 255, 65, 0.25);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.roi3d-bottom-card h2 {
+    font-size: clamp(20px, 2.4vw, 28px);
+    margin: 8px 0;
+    color: var(--white);
+}
+
+.roi3d-bottom-card p {
+    font-size: 14.5px;
+    color: var(--zinc-400);
+    max-width: 600px;
+}
+
+.roi3d-bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Light mode overrides for Simulateur ROI 3D */
+body.theme-light .roi3d-header-copy h1,
+body.theme-light .roi3d-kpi-value,
+body.theme-light .roi3d-bottom-card h2 {
+    color: #0f172a;
+}
+
+body.theme-light .roi3d-kpi-card,
+body.theme-light .roi3d-stage-shell,
+body.theme-light .roi3d-bottom-card {
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+body.theme-light .roi3d-stage-topbar,
+body.theme-light .roi3d-dock {
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.1);
+}
+
+body.theme-light .roi3d-legend-item,
+body.theme-light .roi3d-month-readout,
+body.theme-light .roi3d-pill,
+body.theme-light .roi3d-dock-toggle,
+body.theme-light .roi3d-select {
+    color: #0f172a;
+}
+
+body.theme-light .roi3d-pill,
+body.theme-light .roi3d-dock-toggle,
+body.theme-light .roi3d-select {
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.16);
+}
+
+body.theme-light .roi3d-pill.active {
+    background: #047857;
+    border-color: #047857;
+    color: #ffffff;
+}
+
+body.theme-light .roi3d-tooltip {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(4, 120, 87, 0.45);
+    color: #0f172a;
+}
+
+body.theme-light .roi3d-tt-row,
+body.theme-light .roi3d-tt-row strong {
+    color: #0f172a;
+}
+
+/* ==========================================================================
+   GLOBAL MOBILE & DESKTOP DISPLAY + FUNCTIONALITY POLISH (ALL 20 PAGES)
+   ========================================================================== */
+.price-card,
+.methode-step-card,
+.sector-card,
+.diag-card,
+.approche-card,
+.expertise-card,
+.seo-service-card,
+.seo-contrast-card,
+.roi-controls,
+.roi-dynamic-frame,
+.contact-form-container,
+.me-tech-card,
+.alc-showcase-card {
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+    .roi3d-kpi-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .roi3d-main-wrapper,
+    .diag-main-wrapper,
+    .approche-main-wrapper,
+    .realisation-main-wrapper,
+    .expertise-main-wrapper {
+        padding-top: 106px;
+        padding-bottom: 60px;
+    }
+
+    .mobile-menu-toggle {
+        min-width: 42px;
+        min-height: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 94px 0 44px;
+    }
+
+    .roi3d-main-wrapper,
+    .diag-main-wrapper,
+    .approche-main-wrapper,
+    .realisation-main-wrapper,
+    .expertise-main-wrapper {
+        padding-top: 92px;
+        padding-bottom: 52px;
+    }
+
+    .roi3d-canvas-mount {
+        height: 320px;
+    }
+
+    .roi3d-stage-topbar,
+    .roi3d-dock {
+        padding: 12px 14px;
+    }
+
+    .roi3d-bottom-card {
+        padding: 24px 18px;
+    }
+
+    .roi3d-header-action,
+    .roi3d-header-action .btn,
+    .roi3d-bottom-actions,
+    .roi3d-bottom-actions .btn,
+    .seo-hero-cta-group,
+    .seo-hero-cta-group .btn,
+    .expertise-hero-actions,
+    .expertise-hero-actions .btn,
+    .cta-actions-row,
+    .cta-actions-row .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .maintenance-callout {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px 18px;
+        gap: 14px;
+    }
+
+    body[dir="rtl"] .maintenance-callout {
+        text-align: right;
+    }
+
+    .maintenance-callout .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .me-swiper-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .me-swiper-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .me-swiper-dot {
+        position: relative;
+        height: 10px;
+    }
+
+    .me-swiper-dot::after {
+        content: "";
+        position: absolute;
+        inset: -10px -6px;
+    }
+
+    /* RTL & Safe Floating Widget Positioning on Mobile */
+    body[dir="rtl"] .me-scroll-top {
+        left: auto;
+        right: 14px;
+    }
+
+    body.alc-chat-open .me-scroll-top {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    .chat-window {
+        overscroll-behavior: contain;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-mechanism-strip .mech-arrow {
+        transform: rotate(90deg);
+        margin: 1px 0;
+    }
+
+    .roi3d-kpi-strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .roi3d-kpi-card {
+        padding: 14px;
+    }
+
+    .filter-header-bar {
+        padding: 14px;
+    }
+
+    .filter-tabs-wrapper {
+        width: 100%;
+    }
+
+    .filter-tab-btn {
+        flex: 1 1 auto;
+        justify-content: center;
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-right {
+        gap: 6px;
+    }
+
+    .nav-social-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .roi3d-kpi-strip {
+        grid-template-columns: 1fr;
+    }
+}
+

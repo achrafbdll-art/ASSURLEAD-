@@ -754,19 +754,10 @@
 
                     cards.forEach(card => {
                         const cat = card.getAttribute('data-category');
-                        if (filter === 'all' || cat === filter) {
-                            card.style.display = 'flex';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 30);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(10px)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 200);
-                        }
+                        const match = filter === 'all' || cat === filter;
+                        card.style.display = match ? 'flex' : 'none';
+                        card.style.opacity = match ? '1' : '0';
+                        card.style.transform = match ? 'translateY(0)' : 'translateY(10px)';
                     });
                 });
             });
@@ -776,10 +767,18 @@
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 if (question) {
+                    question.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
                     question.addEventListener('click', () => {
                         const isOpen = item.classList.contains('active');
-                        faqItems.forEach(i => i.classList.remove('active'));
-                        if (!isOpen) item.classList.add('active');
+                        faqItems.forEach(i => {
+                            i.classList.remove('active');
+                            const q = i.querySelector('.faq-question');
+                            if (q) q.setAttribute('aria-expanded', 'false');
+                        });
+                        if (!isOpen) {
+                            item.classList.add('active');
+                            question.setAttribute('aria-expanded', 'true');
+                        }
                     });
                 }
             });
