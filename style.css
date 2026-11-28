@@ -16,6 +16,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 86px;
 }
 
 * {
@@ -436,13 +437,13 @@ nav.scrolled {
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav-dropdown:hover .nav-dropdown-arrow,
+.nav-dropdown:not(.is-dismissed):hover .nav-dropdown-arrow,
 .nav-dropdown.is-open .nav-dropdown-arrow {
     transform: rotate(180deg);
     color: var(--brand-neon);
 }
 
-.nav-dropdown:hover .nav-dropdown-toggle,
+.nav-dropdown:not(.is-dismissed):hover .nav-dropdown-toggle,
 .nav-dropdown.is-open .nav-dropdown-toggle {
     color: var(--brand-neon);
 }
@@ -453,7 +454,7 @@ nav.scrolled {
     left: 50%;
     transform: translateX(-50%);
     width: 580px;
-    max-width: 90vw;
+    max-width: calc(100vw - 32px);
     background: rgba(9, 11, 14, 0.96);
     border: 1px solid rgba(0, 255, 65, 0.25);
     border-radius: 12px;
@@ -476,10 +477,33 @@ nav.scrolled {
     height: 14px;
 }
 
-.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:not(.is-dismissed):hover .nav-dropdown-menu,
 .nav-dropdown.is-open .nav-dropdown-menu {
     display: block;
     animation: navDropdownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (min-width: 1025px) and (max-width: 1220px) {
+    .nav-container {
+        padding-inline-start: 14px;
+        padding-inline-end: 16px;
+    }
+    .logo-text {
+        font-size: 19px;
+    }
+    .nav-links {
+        gap: 10px;
+    }
+    .nav-links a:not(.btn) {
+        font-size: 10.5px;
+        letter-spacing: 0.05em;
+    }
+    .nav-links .btn-sm {
+        padding: 8px 12px;
+    }
+    .nav-right {
+        gap: 8px;
+    }
 }
 
 @keyframes navDropdownFade {
@@ -624,7 +648,7 @@ nav.scrolled {
     right: 50%;
     transform: translateX(50%);
 }
-[dir="rtl"] .nav-dropdown:hover .nav-dropdown-menu,
+[dir="rtl"] .nav-dropdown:not(.is-dismissed):hover .nav-dropdown-menu,
 [dir="rtl"] .nav-dropdown.is-open .nav-dropdown-menu {
     transform: translateX(50%) translateY(0);
 }
@@ -4094,7 +4118,7 @@ footer .container {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 100%;
         height: 100vh;
         height: 100dvh;
@@ -4106,15 +4130,22 @@ footer .container {
         align-items: center;
         padding: 90px 20px 30px;
         gap: 12px;
-        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translate3d(100%, 0, 0);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease;
+        will-change: transform;
         display: flex;
         z-index: 1001;
         overflow-y: auto;
+        overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
     }
 
     .nav-links.active {
-        right: 0;
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+        pointer-events: auto;
     }
     
     .nav-links a:not(.btn) {
@@ -4171,19 +4202,40 @@ footer .container {
     }
 
     .nav-dropdown-arrow-btn {
-        width: auto;
-        padding: 10px 12px;
+        width: 44px;
+        height: 44px;
+        padding: 0;
         color: var(--zinc-300);
         cursor: pointer;
     }
 
-    .nav-dropdown:hover .nav-dropdown-menu {
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:not(.is-dismissed):hover .nav-dropdown-menu {
         display: none;
     }
 
     .nav-dropdown.is-open .nav-dropdown-menu {
         display: block;
         animation: none;
+    }
+
+    body[dir="rtl"] .nav-links {
+        right: auto;
+        left: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    body[dir="rtl"] .nav-links.active {
+        transform: translate3d(0, 0, 0);
+        left: 0;
+        right: auto;
+    }
+
+    body[dir="rtl"] .nav-dropdown-menu,
+    body[dir="rtl"] .nav-dropdown.is-open .nav-dropdown-menu {
+        transform: none;
+        left: auto;
+        right: auto;
     }
 
     .nav-dropdown-menu {
@@ -4905,16 +4957,6 @@ body[dir="rtl"] .lead-ticker {
     body[dir="rtl"] .lead-ticker {
         right: 12px;
         left: 12px;
-    }
-    
-    body[dir="rtl"] .nav-links {
-        right: auto;
-        left: -100%;
-    }
-    
-    body[dir="rtl"] .nav-links.active {
-        left: 0;
-        right: auto;
     }
 
     body[dir="rtl"] .chat-widget {
@@ -8896,13 +8938,10 @@ body[dir="rtl"] .offers-title-aligned {
     color: var(--zinc-400);
 }
 
-/* 2. Smart Hide-on-Scroll Sticky Navbar */
+/* 2. Always-Visible Sticky Navbar */
 nav#navbar {
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
-}
-
-nav#navbar.me-nav-hidden {
-    transform: translateY(-105%);
+    transform: none;
+    transition: background-color 0.3s ease, padding 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 

@@ -5255,7 +5255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch(e) {}
     };
 
-    // Toggle Language Dropdown
+    // Toggle Language Dropdown (RGAA Escape + mutual exclusion with nav-dropdown)
     const langBtn = document.getElementById('lang-btn-current');
     const langDropdown = document.getElementById('lang-dropdown');
     
@@ -5263,6 +5263,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const setLangMenuState = (open) => {
             langDropdown.classList.toggle('active', open);
             langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) {
+                document.querySelectorAll('.nav-dropdown.is-open').forEach(dd => {
+                    dd.classList.remove('is-open');
+                    dd.querySelectorAll('.nav-dropdown-toggle, .nav-dropdown-arrow-btn').forEach(el => {
+                        el.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
         };
 
         langBtn.addEventListener('click', (e) => {
@@ -5270,8 +5278,17 @@ document.addEventListener('DOMContentLoaded', () => {
             setLangMenuState(!langDropdown.classList.contains('active'));
         });
         
-        document.addEventListener('click', () => {
-            setLangMenuState(false);
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                setLangMenuState(false);
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && langDropdown.classList.contains('active')) {
+                setLangMenuState(false);
+                langBtn.focus();
+            }
         });
         
         langDropdown.querySelectorAll('.lang-option').forEach(opt => {
@@ -6184,36 +6201,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial run to populate values
     updateROI();
 
-    // Navbar scroll effect
+    // Mobile Menu & Unified Navbar Controller (works identically across all 19 pages)
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }, { passive: true });
-
-    // Mobile Menu (RGAA aria-expanded sync + Escape key close)
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (mobileMenuToggle && navLinks) {
-        const syncMobileMenuState = (isActive) => {
-            navLinks.classList.toggle('active', isActive);
-            mobileMenuToggle.classList.toggle('active', isActive);
-            mobileMenuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-            document.body.style.overflow = isActive ? 'hidden' : '';
-            const icon = mobileMenuToggle.querySelector('i');
-            if (icon) {
-                icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
-            }
-        };
+    const navLinks = document.querySelector('#navbar .nav-links') || document.querySelector('.nav-links');
 
-        mobileMenuToggle.addEventListener('click', () => {
+    const syncMobileMenuState = (isActive) => {
+        if (!navLinks || !mobileMenuToggle) return;
+        navLinks.classList.toggle('active', isActive);
+        mobileMenuToggle.classList.toggle('active', isActive);
+        mobileMenuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        document.body.style.overflow = isActive ? 'hidden' : '';
+        if (isActive && navbar) {
+            navbar.classList.remove('me-nav-hidden');
+        }
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) {
+            icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
+        }
+    };
+
+    if (mobileMenuToggle && navLinks) {
+        if (!mobileMenuToggle.hasAttribute('aria-expanded')) {
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             syncMobileMenuState(!navLinks.classList.contains('active'));
         });
 
-        // Close menu when clicking a link
+        // Close drawer when clicking any standard nav link (except dropdown arrow)
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => syncMobileMenuState(false));
         });
@@ -6224,6 +6242,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuToggle.focus();
             }
         });
+
+        // Automatically close mobile drawer if viewport resizes to desktop
+        if (window.matchMedia) {
+            const desktopMq = window.matchMedia('(min-width: 1025px)');
+            const onDesktopSwitch = (ev) => {
+                if (ev.matches && navLinks.classList.contains('active')) {
+                    syncMobileMenuState(false);
+                }
+            };
+            if (desktopMq.addEventListener) desktopMq.addEventListener('change', onDesktopSwitch);
+            else if (desktopMq.addListener) desktopMq.addListener(onDesktopSwitch);
+        }
     }
 
     // Modal (RGAA aria-hidden + focus management + Escape key close)
@@ -7493,7 +7523,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initFaqAccordion();
 
-    // Nav Dropdown (Expertise)
+    // Nav Dropdown (Expertise — Desktop hover/click + Mobile accordion + Escape dismissal)
     const initNavDropdown = () => {
         const dropdowns = document.querySelectorAll('.nav-dropdown');
         dropdowns.forEach(dd => {
@@ -7502,6 +7532,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const menu = dd.querySelector('.nav-dropdown-menu');
             if (!menu) return;
 
+            const setDropdownState = (isOpen) => {
+                dd.classList.toggle('is-open', isOpen);
+                if (isOpen) dd.classList.remove('is-dismissed');
+                if (toggle) toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                if (arrowBtn) arrowBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                if (isOpen) {
+                    const langMenu = document.getElementById('lang-dropdown');
+                    const langBtnEl = document.getElementById('lang-btn-current');
+                    if (langMenu) langMenu.classList.remove('active');
+                    if (langBtnEl) langBtnEl.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            dd.addEventListener('mouseleave', () => {
+                dd.classList.remove('is-dismissed');
+            });
+
             // Link click: if placeholder, toggle; if real link (/expertise.html), allow navigation
             if (toggle) {
                 toggle.addEventListener('click', (e) => {
@@ -7509,55 +7556,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!href || href === 'javascript:void(0)' || href === '#') {
                         e.preventDefault();
                         e.stopPropagation();
-                        const isOpen = dd.classList.toggle('is-open');
-                        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                        if (arrowBtn) arrowBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                        setDropdownState(!dd.classList.contains('is-open'));
                     }
                 });
             }
 
-            // Arrow button: explicit toggle
+            // Arrow button: explicit toggle (also handles keyboard Down/Enter/Space)
             if (arrowBtn) {
                 arrowBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    const isOpen = dd.classList.toggle('is-open');
-                    arrowBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                    if (toggle) toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    setDropdownState(!dd.classList.contains('is-open'));
                 });
             }
 
             // Close when clicking outside
             document.addEventListener('click', (e) => {
                 if (!dd.contains(e.target)) {
-                    dd.classList.remove('is-open');
-                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
-                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
+                    setDropdownState(false);
                 }
             });
 
-            // Close on escape key
+            // Close on Escape (including hovered state until mouse leaves)
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && dd.classList.contains('is-open')) {
-                    dd.classList.remove('is-open');
-                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
-                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
+                if (e.key === 'Escape' && (dd.classList.contains('is-open') || dd.matches(':hover'))) {
+                    setDropdownState(false);
+                    dd.classList.add('is-dismissed');
+                    if (arrowBtn && dd.contains(document.activeElement)) arrowBtn.focus();
                 }
             });
 
-            // Close when any link inside the menu is clicked
+            // Close cleanly when any link inside the menu is clicked
             menu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    dd.classList.remove('is-open');
-                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
-                    if (arrowBtn) arrowBtn.setAttribute('aria-expanded', 'false');
-                    const navLinks = document.querySelector('.nav-links');
-                    const mobileToggle = document.getElementById('mobile-menu-toggle');
-                    if (navLinks && navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        if (mobileToggle) mobileToggle.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
+                    setDropdownState(false);
+                    syncMobileMenuState(false);
                 });
             });
         });
@@ -7793,27 +7826,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // 2. Smart Hide-on-Scroll-Down / Reveal-on-Scroll-Up Navbar
-        const navbar = document.getElementById('navbar');
+        // 2. Always-Visible Sticky Navbar (rAF-throttled scrolled state)
         if (navbar) {
-            let lastY = window.scrollY || 0;
+            navbar.classList.remove('me-nav-hidden');
             let scrollTicking = false;
+
+            const updateNavbarOnScroll = () => {
+                const currentY = Math.max(window.scrollY || 0, 0);
+                navbar.classList.toggle('scrolled', currentY > 20);
+                scrollTicking = false;
+            };
+
             window.addEventListener('scroll', () => {
                 if (scrollTicking) return;
                 scrollTicking = true;
-                requestAnimationFrame(() => {
-                    const currentY = window.scrollY || 0;
-                    const navMenu = document.getElementById('nav-links-menu');
-                    const menuOpen = (navMenu && navMenu.classList.contains('active')) || document.querySelector('.nav-dropdown.is-open');
-                    if (currentY > 180 && currentY > lastY + 8 && !menuOpen) {
-                        navbar.classList.add('me-nav-hidden');
-                    } else if (currentY < lastY - 6 || currentY <= 120) {
-                        navbar.classList.remove('me-nav-hidden');
-                    }
-                    lastY = currentY;
-                    scrollTicking = false;
-                });
+                requestAnimationFrame(updateNavbarOnScroll);
             }, { passive: true });
+
+            // Sync initial scrolled state on reload mid-page
+            updateNavbarOnScroll();
         }
 
         // 3. Persisted Day / Night Theme Sync
