@@ -11450,7 +11450,7 @@ body.theme-light .footer-col a.active {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 72px;
+    width: 38px;
     height: 100%;
     pointer-events: none;
     transition: opacity 0.35s ease, width 0.25s ease;
@@ -11458,16 +11458,16 @@ body.theme-light .footer-col a.active {
 
 .alc-halftone-rail--left {
     left: 0;
-    background: linear-gradient(90deg, rgba(2, 24, 14, 0.56) 0%, rgba(2, 24, 14, 0.22) 55%, rgba(2, 24, 14, 0) 100%);
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 68%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
-    mask-image: linear-gradient(90deg, #000 0%, #000 68%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
+    background: linear-gradient(90deg, rgba(2, 24, 14, 0.34) 0%, rgba(2, 24, 14, 0.1) 55%, rgba(2, 24, 14, 0) 100%);
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 62%, rgba(0, 0, 0, 0.28) 86%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0%, #000 62%, rgba(0, 0, 0, 0.28) 86%, transparent 100%);
 }
 
 .alc-halftone-rail--right {
     right: 0;
-    background: linear-gradient(270deg, rgba(2, 24, 14, 0.56) 0%, rgba(2, 24, 14, 0.22) 55%, rgba(2, 24, 14, 0) 100%);
-    -webkit-mask-image: linear-gradient(270deg, #000 0%, #000 68%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
-    mask-image: linear-gradient(270deg, #000 0%, #000 68%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
+    background: linear-gradient(270deg, rgba(2, 24, 14, 0.34) 0%, rgba(2, 24, 14, 0.1) 55%, rgba(2, 24, 14, 0) 100%);
+    -webkit-mask-image: linear-gradient(270deg, #000 0%, #000 62%, rgba(0, 0, 0, 0.28) 86%, transparent 100%);
+    mask-image: linear-gradient(270deg, #000 0%, #000 62%, rgba(0, 0, 0, 0.28) 86%, transparent 100%);
 }
 
 .alc-halftone-canvas {
@@ -11478,23 +11478,23 @@ body.theme-light .footer-col a.active {
 
 /* Light Mode Adaptation */
 body.theme-light .alc-halftone-rail--left {
-    background: linear-gradient(90deg, rgba(4, 120, 87, 0.14) 0%, rgba(4, 120, 87, 0.05) 55%, rgba(4, 120, 87, 0) 100%);
+    background: linear-gradient(90deg, rgba(4, 120, 87, 0.08) 0%, rgba(4, 120, 87, 0.025) 55%, rgba(4, 120, 87, 0) 100%);
 }
 
 body.theme-light .alc-halftone-rail--right {
-    background: linear-gradient(270deg, rgba(4, 120, 87, 0.14) 0%, rgba(4, 120, 87, 0.05) 55%, rgba(4, 120, 87, 0) 100%);
+    background: linear-gradient(270deg, rgba(4, 120, 87, 0.08) 0%, rgba(4, 120, 87, 0.025) 55%, rgba(4, 120, 87, 0) 100%);
 }
 
 /* Responsive Margin Scaling so dots never intrude on content */
 @media (max-width: 1419px) {
     .alc-halftone-rail {
-        width: 44px;
+        width: 28px;
     }
 }
 
 @media (max-width: 1279px) {
     .alc-halftone-rail {
-        width: 24px;
+        width: 18px;
     }
 }
 

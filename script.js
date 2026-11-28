@@ -8249,11 +8249,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.clearRect(0, 0, w, h);
 
                 const isLight = document.body.classList.contains('theme-light');
-                const step = w >= 60 ? 13.5 : (w >= 36 ? 11.5 : 9.5);
-                const maxRadius = step * 0.485;
-                const minRadius = 0.65;
-                const cols = Math.max(Math.floor(w / step) + 1, 2);
-                const scrollShift = (scrollOffsetPx * 0.28) % step;
+                const step = w >= 34 ? 8.5 : (w >= 24 ? 7.2 : 6.0);
+                const maxRadius = step * 0.40;
+                const minRadius = 0.45;
+                const cols = Math.max(Math.floor(w / (step * 0.88)) + 1, 2);
+                const scrollShift = (scrollOffsetPx * 0.24) % step;
                 const rows = Math.ceil(h / step) + 2;
 
                 // Subtle vertical wave + scroll pulse
@@ -8262,13 +8262,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 for (let c = 0; c < cols; c++) {
                     // norm = 1 at outer viewport edge, 0 at inner content edge
-                    const xFromOuter = c * step * 0.92;
-                    const norm = Math.max(0, Math.min(1, 1 - xFromOuter / Math.max(w * 0.96, 1)));
-                    if (norm <= 0.02) continue;
+                    const xFromOuter = c * step * 0.88;
+                    const norm = Math.max(0, Math.min(1, 1 - xFromOuter / Math.max(w * 0.94, 1)));
+                    if (norm <= 0.03) continue;
 
-                    // Eased power curve matches progressive halftone matrix in reference
-                    const baseFactor = Math.pow(norm, 1.58);
-                    const cx = side === 'left' ? xFromOuter + maxRadius * 0.25 : w - (xFromOuter + maxRadius * 0.25);
+                    // Steeper power curve for a finer progressive halftone gradient
+                    const baseFactor = Math.pow(norm, 1.82);
+                    const cx = side === 'left' ? xFromOuter + maxRadius * 0.28 : w - (xFromOuter + maxRadius * 0.28);
 
                     for (let row = -1; row < rows; row++) {
                         const cy = row * step - scrollShift;
@@ -8277,30 +8277,30 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Ambient travelling ripple along Y & column phase
                         const ripple = prefersReducedMotion
                             ? 0
-                            : Math.sin(cy * 0.022 - waveSpeed + c * 0.55) * 0.5 + 0.5;
+                            : Math.sin(cy * 0.028 - waveSpeed + c * 0.6) * 0.5 + 0.5;
 
                         // Cursor proximity lens when hovering near left/right page edge
                         let prox = 0;
                         if (!prefersReducedMotion && hoverStrength > 0.01 && smoothPointerY > -500) {
                             const dy = Math.abs(cy - smoothPointerY);
-                            if (dy < 165) {
-                                prox = Math.pow(1 - dy / 165, 2) * hoverStrength;
+                            if (dy < 130) {
+                                prox = Math.pow(1 - dy / 130, 2) * hoverStrength;
                             }
                         }
 
-                        const energy = Math.min(1, ripple * 0.28 + kineticBoost * 0.45 + prox * 0.95);
-                        const radiusScale = 1 + (ripple - 0.5) * 0.14 + kineticBoost * 0.16 + prox * 0.34;
-                        const r = Math.min(maxRadius * 1.12, Math.max(minRadius, (minRadius + (maxRadius - minRadius) * baseFactor) * radiusScale));
+                        const energy = Math.min(1, ripple * 0.24 + kineticBoost * 0.42 + prox * 0.92);
+                        const radiusScale = 1 + (ripple - 0.5) * 0.12 + kineticBoost * 0.14 + prox * 0.26;
+                        const r = Math.min(maxRadius * 1.08, Math.max(minRadius, (minRadius + (maxRadius - minRadius) * baseFactor) * radiusScale));
 
-                        // Color blend: crisp metallic slate dots -> emerald neon (#00FF41 dark / #047857 light)
+                        // Color blend: crisp fine slate dots -> emerald neon (#00FF41 dark / #047857 light)
                         if (isLight) {
-                            const alpha = (0.14 + baseFactor * 0.22 + energy * 0.28) * Math.min(1, norm * 1.35);
+                            const alpha = (0.09 + baseFactor * 0.18 + energy * 0.22) * Math.min(1, norm * 1.3);
                             const red = Math.round(15 + (4 - 15) * energy);
                             const green = Math.round(23 + (120 - 23) * energy);
                             const blue = Math.round(42 + (87 - 42) * energy);
                             ctx.fillStyle = `rgba(${red}, ${green}, ${blue}, ${alpha.toFixed(3)})`;
                         } else {
-                            const alpha = (0.12 + baseFactor * 0.28 + energy * 0.38) * Math.min(1, norm * 1.35);
+                            const alpha = (0.08 + baseFactor * 0.22 + energy * 0.30) * Math.min(1, norm * 1.3);
                             const red = Math.round(188 * (1 - energy * 0.85));
                             const green = Math.round(204 + (255 - 204) * energy);
                             const blue = Math.round(218 * (1 - energy * 0.72) + 65 * energy * 0.72);
