@@ -11434,4 +11434,76 @@ body.theme-light .footer-col a.active {
     font-weight: 700;
 }
 
+/* ==========================================================================
+   HALFTONE DOT-MATRIX EDGE BORDERS (Progressive Margin Frame + Effect)
+   ========================================================================== */
+.alc-halftone-borders {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    overflow: hidden;
+    contain: layout style size;
+}
 
+.alc-halftone-rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 72px;
+    height: 100%;
+    pointer-events: none;
+    transition: opacity 0.35s ease, width 0.25s ease;
+}
+
+.alc-halftone-rail--left {
+    left: 0;
+    background: linear-gradient(90deg, rgba(2, 24, 14, 0.56) 0%, rgba(2, 24, 14, 0.22) 55%, rgba(2, 24, 14, 0) 100%);
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 68%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0%, #000 68%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
+}
+
+.alc-halftone-rail--right {
+    right: 0;
+    background: linear-gradient(270deg, rgba(2, 24, 14, 0.56) 0%, rgba(2, 24, 14, 0.22) 55%, rgba(2, 24, 14, 0) 100%);
+    -webkit-mask-image: linear-gradient(270deg, #000 0%, #000 68%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
+    mask-image: linear-gradient(270deg, #000 0%, #000 68%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
+}
+
+.alc-halftone-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Light Mode Adaptation */
+body.theme-light .alc-halftone-rail--left {
+    background: linear-gradient(90deg, rgba(4, 120, 87, 0.14) 0%, rgba(4, 120, 87, 0.05) 55%, rgba(4, 120, 87, 0) 100%);
+}
+
+body.theme-light .alc-halftone-rail--right {
+    background: linear-gradient(270deg, rgba(4, 120, 87, 0.14) 0%, rgba(4, 120, 87, 0.05) 55%, rgba(4, 120, 87, 0) 100%);
+}
+
+/* Responsive Margin Scaling so dots never intrude on content */
+@media (max-width: 1419px) {
+    .alc-halftone-rail {
+        width: 44px;
+    }
+}
+
+@media (max-width: 1279px) {
+    .alc-halftone-rail {
+        width: 24px;
+    }
+}
+
+@media (max-width: 1024px), print {
+    .alc-halftone-borders {
+        display: none !important;
+    }
+}
+
+body:not(.approche-page-body):not(.diagnostic-page-body):not(.expertise-page-body):not(.realisation-page-body):not(.seo-landing-body) .alc-halftone-borders {
+    display: none !important;
+}

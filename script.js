@@ -8173,6 +8173,230 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
+        // 11. Progressive Halftone Dot-Matrix Page Borders (Secondary Pages Only, Interactive & Scroll-Reactive)
+        const initHalftonePageBorders = () => {
+            const isSecondaryPage =
+                document.body.classList.contains('approche-page-body') ||
+                document.body.classList.contains('diagnostic-page-body') ||
+                document.body.classList.contains('expertise-page-body') ||
+                document.body.classList.contains('realisation-page-body') ||
+                document.body.classList.contains('seo-landing-body');
+            if (!isSecondaryPage) return;
+            if (document.getElementById('alc-halftone-borders')) return;
+
+            const wrapper = document.createElement('div');
+            wrapper.id = 'alc-halftone-borders';
+            wrapper.className = 'alc-halftone-borders';
+            wrapper.setAttribute('aria-hidden', 'true');
+
+            const leftRail = document.createElement('div');
+            leftRail.className = 'alc-halftone-rail alc-halftone-rail--left';
+            const leftCanvas = document.createElement('canvas');
+            leftCanvas.className = 'alc-halftone-canvas';
+            leftRail.appendChild(leftCanvas);
+
+            const rightRail = document.createElement('div');
+            rightRail.className = 'alc-halftone-rail alc-halftone-rail--right';
+            const rightCanvas = document.createElement('canvas');
+            rightCanvas.className = 'alc-halftone-canvas';
+            rightRail.appendChild(rightCanvas);
+
+            wrapper.appendChild(leftRail);
+            wrapper.appendChild(rightRail);
+            document.body.appendChild(wrapper);
+
+            const rails = [
+                { el: leftRail, canvas: leftCanvas, ctx: leftCanvas.getContext('2d'), side: 'left', w: 0, h: 0 },
+                { el: rightRail, canvas: rightCanvas, ctx: rightCanvas.getContext('2d'), side: 'right', w: 0, h: 0 }
+            ];
+
+            let dpr = Math.min(window.devicePixelRatio || 1, 2);
+            let rafId = null;
+            let lastScrollY = window.scrollY || 0;
+            let scrollImpulse = 0;
+            let pointerX = -9999;
+            let pointerY = -9999;
+            let smoothPointerY = -9999;
+            let smoothLeftHover = 0;
+            let smoothRightHover = 0;
+            let targetLeftHover = 0;
+            let targetRightHover = 0;
+
+            const resizeRails = () => {
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                const vw = window.innerWidth || 1280;
+                if (vw <= 1024) {
+                    rails.forEach(r => { r.w = 0; r.h = 0; });
+                    return;
+                }
+                rails.forEach(r => {
+                    const rect = r.el.getBoundingClientRect();
+                    r.w = Math.max(Math.round(rect.width), 0);
+                    r.h = Math.max(Math.round(rect.height), 0);
+                    if (r.w > 0 && r.h > 0) {
+                        r.canvas.width = Math.round(r.w * dpr);
+                        r.canvas.height = Math.round(r.h * dpr);
+                        if (r.ctx) r.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                    }
+                });
+            };
+
+            const drawRail = (rail, timeSec, scrollOffsetPx, hoverStrength) => {
+                const { ctx, w, h, side } = rail;
+                if (!ctx || w <= 0 || h <= 0) return;
+
+                ctx.clearRect(0, 0, w, h);
+
+                const isLight = document.body.classList.contains('theme-light');
+                const step = w >= 60 ? 13.5 : (w >= 36 ? 11.5 : 9.5);
+                const maxRadius = step * 0.485;
+                const minRadius = 0.65;
+                const cols = Math.max(Math.floor(w / step) + 1, 2);
+                const scrollShift = (scrollOffsetPx * 0.28) % step;
+                const rows = Math.ceil(h / step) + 2;
+
+                // Subtle vertical wave + scroll pulse
+                const waveSpeed = prefersReducedMotion ? 0 : timeSec * 1.35;
+                const kineticBoost = Math.min(scrollImpulse, 1);
+
+                for (let c = 0; c < cols; c++) {
+                    // norm = 1 at outer viewport edge, 0 at inner content edge
+                    const xFromOuter = c * step * 0.92;
+                    const norm = Math.max(0, Math.min(1, 1 - xFromOuter / Math.max(w * 0.96, 1)));
+                    if (norm <= 0.02) continue;
+
+                    // Eased power curve matches progressive halftone matrix in reference
+                    const baseFactor = Math.pow(norm, 1.58);
+                    const cx = side === 'left' ? xFromOuter + maxRadius * 0.25 : w - (xFromOuter + maxRadius * 0.25);
+
+                    for (let row = -1; row < rows; row++) {
+                        const cy = row * step - scrollShift;
+                        if (cy < -maxRadius || cy > h + maxRadius) continue;
+
+                        // Ambient travelling ripple along Y & column phase
+                        const ripple = prefersReducedMotion
+                            ? 0
+                            : Math.sin(cy * 0.022 - waveSpeed + c * 0.55) * 0.5 + 0.5;
+
+                        // Cursor proximity lens when hovering near left/right page edge
+                        let prox = 0;
+                        if (!prefersReducedMotion && hoverStrength > 0.01 && smoothPointerY > -500) {
+                            const dy = Math.abs(cy - smoothPointerY);
+                            if (dy < 165) {
+                                prox = Math.pow(1 - dy / 165, 2) * hoverStrength;
+                            }
+                        }
+
+                        const energy = Math.min(1, ripple * 0.28 + kineticBoost * 0.45 + prox * 0.95);
+                        const radiusScale = 1 + (ripple - 0.5) * 0.14 + kineticBoost * 0.16 + prox * 0.34;
+                        const r = Math.min(maxRadius * 1.12, Math.max(minRadius, (minRadius + (maxRadius - minRadius) * baseFactor) * radiusScale));
+
+                        // Color blend: crisp metallic slate dots -> emerald neon (#00FF41 dark / #047857 light)
+                        if (isLight) {
+                            const alpha = (0.14 + baseFactor * 0.22 + energy * 0.28) * Math.min(1, norm * 1.35);
+                            const red = Math.round(15 + (4 - 15) * energy);
+                            const green = Math.round(23 + (120 - 23) * energy);
+                            const blue = Math.round(42 + (87 - 42) * energy);
+                            ctx.fillStyle = `rgba(${red}, ${green}, ${blue}, ${alpha.toFixed(3)})`;
+                        } else {
+                            const alpha = (0.12 + baseFactor * 0.28 + energy * 0.38) * Math.min(1, norm * 1.35);
+                            const red = Math.round(188 * (1 - energy * 0.85));
+                            const green = Math.round(204 + (255 - 204) * energy);
+                            const blue = Math.round(218 * (1 - energy * 0.72) + 65 * energy * 0.72);
+                            ctx.fillStyle = `rgba(${red}, ${green}, ${blue}, ${alpha.toFixed(3)})`;
+                        }
+
+                        ctx.beginPath();
+                        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+            };
+
+            const renderFrame = (nowMs) => {
+                if (document.hidden) {
+                    rafId = null;
+                    return;
+                }
+                const currentScrollY = window.scrollY || 0;
+                const deltaScroll = Math.abs(currentScrollY - lastScrollY);
+                lastScrollY = currentScrollY;
+                if (deltaScroll > 0.5) {
+                    scrollImpulse = Math.min(1, scrollImpulse + Math.min(deltaScroll / 80, 0.45));
+                } else {
+                    scrollImpulse *= 0.91;
+                    if (scrollImpulse < 0.005) scrollImpulse = 0;
+                }
+
+                smoothLeftHover += (targetLeftHover - smoothLeftHover) * 0.14;
+                smoothRightHover += (targetRightHover - smoothRightHover) * 0.14;
+                if (pointerY > -500) {
+                    if (smoothPointerY < -500) smoothPointerY = pointerY;
+                    else smoothPointerY += (pointerY - smoothPointerY) * 0.2;
+                }
+
+                const timeSec = nowMs * 0.001;
+                drawRail(rails[0], timeSec, currentScrollY, smoothLeftHover);
+                drawRail(rails[1], timeSec + 1.2, currentScrollY, smoothRightHover);
+
+                if (!prefersReducedMotion) {
+                    rafId = requestAnimationFrame(renderFrame);
+                } else {
+                    rafId = null;
+                }
+            };
+
+            const startLoop = () => {
+                if (prefersReducedMotion) {
+                    renderFrame(performance.now());
+                    return;
+                }
+                if (!rafId && !document.hidden) {
+                    rafId = requestAnimationFrame(renderFrame);
+                }
+            };
+
+            resizeRails();
+            startLoop();
+
+            let resizeTimer = null;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    resizeRails();
+                    if (prefersReducedMotion) renderFrame(performance.now());
+                }, 120);
+            }, { passive: true });
+
+            if (isFinePointer && !prefersReducedMotion) {
+                document.addEventListener('mousemove', (e) => {
+                    pointerX = e.clientX;
+                    pointerY = e.clientY;
+                    const vw = window.innerWidth || 1280;
+                    const zone = 180;
+                    targetLeftHover = pointerX < zone ? Math.max(0, 1 - pointerX / zone) : 0;
+                    targetRightHover = (vw - pointerX) < zone ? Math.max(0, 1 - (vw - pointerX) / zone) : 0;
+                }, { passive: true });
+
+                document.addEventListener('mouseleave', () => {
+                    targetLeftHover = 0;
+                    targetRightHover = 0;
+                }, { passive: true });
+            }
+
+            if (prefersReducedMotion) {
+                window.addEventListener('scroll', () => {
+                    renderFrame(performance.now());
+                }, { passive: true });
+            }
+
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden) startLoop();
+            });
+        };
+
+        initHalftonePageBorders();
     };
 
     initCityStickersInteractive();
