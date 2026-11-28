@@ -161,6 +161,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#00FF41">
 
+    <script>try{if(localStorage.getItem('alc_theme')==='light')document.documentElement.classList.add('theme-light');}catch(_){}</script>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -173,6 +174,21 @@
     </script>
 </head>
 <body>
+    <!-- Preloader Technologique (mediaexperts.ma UX, non-bloquant & 1x/session) -->
+    <div id="me-preloader" class="me-preloader" aria-hidden="true">
+        <div class="me-preloader-inner">
+            <div class="me-preloader-percent"><span id="me-preloader-num">0</span>%</div>
+            <div class="me-preloader-title">
+                <span class="me-letter-stroke">ASSURLEADCOM</span>
+                <span class="me-text-fill" id="me-preloader-fill">ASSURLEADCOM</span>
+            </div>
+            <div class="me-preloader-bar">
+                <div class="me-preloader-progress" id="me-preloader-bar"></div>
+            </div>
+            <span class="me-preloader-caption">CONVERSION DIGITALE &amp; SEO MAROC · 360°</span>
+        </div>
+    </div>
+
     <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
 
     <!-- Navigation -->
@@ -247,7 +263,7 @@
                 <li><a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav_start">Audit Gratuit</a></li>
             </ul>
             <div class="nav-right">
-                <a href="https://web.facebook.com/profile.php?id=61561647327344&locale=fr_FR" target="_blank" rel="noopener noreferrer" class="nav-social-btn" aria-label="Page Facebook ASSURLEADCOM" title="Page Facebook ASSURLEADCOM">
+                <a href="https://web.facebook.com/profile.php?id=61561647327344&locale=fr_FR" target="_blank" rel="noopener noreferrer" class="nav-social-btn" data-magnetic aria-label="Page Facebook ASSURLEADCOM" title="Page Facebook ASSURLEADCOM">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                 </a>
                 <div class="lang-selector">
@@ -271,7 +287,7 @@
 
     <main id="main-content" tabindex="-1">
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="accueil" class="hero" data-section-title="Accueil">
         <div id="hero-canvas-container" class="hero-canvas" aria-hidden="true"></div>
         <!-- Shooting Stars Design (Étoiles Filantes) -->
         <div class="hero-shooting-stars" aria-hidden="true">
@@ -313,8 +329,8 @@
                 </div>
 
                 <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary" data-i18n="hero_btn_growth">Demander mon analyse gratuite <i class="fas fa-arrow-right"></i></a>
-                    <a href="#methode" class="btn btn-outline" data-i18n="hero_btn_audit">Découvrir la proposition</a>
+                    <a href="#contact" class="btn btn-primary" data-magnetic data-cursor-text="AUDIT" data-i18n="hero_btn_growth">Demander mon analyse gratuite <i class="fas fa-arrow-right"></i></a>
+                    <a href="#methode" class="btn btn-outline" data-magnetic data-i18n="hero_btn_audit">Découvrir la proposition</a>
                 </div>
                 <div class="partners">
                     <span class="partners-label" data-i18n="hero_partners_label">Secteurs &amp; Entreprises Accompagnés au Maroc</span>
@@ -335,7 +351,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
+            <div class="hero-visual" data-parallax-depth="0.06">
                 <div class="dashboard-card">
                     <div class="dashboard-header">
                         <div class="dots">
@@ -380,7 +396,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section id="stats-stripe-section" class="stats-stripe">
+    <section id="stats-stripe-section" class="stats-stripe" data-section-title="Chiffres">
         <canvas id="zellige-tech-stats-canvas" class="section-bg-canvas" aria-hidden="true"></canvas>
         <div class="container stats-stripe-grid">
             <div class="stripe-stat">
@@ -420,7 +436,7 @@
     </section>
 
     <!-- Difference Section : Pourquoi un simple site vitrine ne suffit plus -->
-    <section id="difference" class="difference-section">
+    <section id="difference" class="difference-section" data-section-title="Comparatif">
         <div class="difference-photo-backdrop" aria-hidden="true">
             <img src="/src/assets/images/difference_bg_photo.jpg" alt="" class="difference-bg-img" width="1600" height="900" loading="lazy" decoding="async" fetchpriority="low" referrerPolicy="no-referrer">
             <div class="difference-bg-overlay"></div>
@@ -429,7 +445,7 @@
         <div class="container difference-container">
             <div class="section-header text-center">
                 <span class="badge" data-i18n="diff_badge">Proposition Recommandée</span>
-                <h2 data-i18n="diff_title" class="diff-title-single-line"><span class="nowrap-phrase">Simple Vitrine</span> <span class="nowrap-phrase">vs <span class="neon">Système Commercial Complet</span></span></h2>
+                <h2 data-i18n="diff_title" data-split-reveal class="diff-title-single-line"><span class="nowrap-phrase">Simple Vitrine</span> <span class="nowrap-phrase">vs <span class="neon">Système Commercial Complet</span></span></h2>
                 <p data-i18n="diff_p" class="diff-sub-aligned"><span class="diff-sub-phrase">Chaque étape est pensée pour capter la demande locale au Maroc</span> <span class="diff-sub-phrase">— et transformer vos visiteurs en appels, messages WhatsApp et devis.</span></p>
             </div>
 
@@ -483,7 +499,7 @@
     </section>
 
     <!-- Méthode Section : Notre Méthode en 4 Étapes -->
-    <section id="methode" class="methode-section">
+    <section id="methode" class="methode-section" data-section-title="Méthode">
         <div class="sage-arcs-bg sage-arcs-methode" aria-hidden="true">
             <svg class="sage-arcs-svg" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="0" cy="260" r="100" stroke="#00FF41" stroke-width="26" stroke-opacity="0.9"/>
@@ -497,7 +513,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge" data-i18n="methode_badge">Déploiement Pragmatique</span>
-                <h2 data-i18n="methode_title" class="methode-title-aligned"><span class="nowrap-phrase">De l'Audit Initial</span> <span class="nowrap-phrase neon">aux Premiers Appels Entrants.</span></h2>
+                <h2 data-i18n="methode_title" data-split-reveal class="methode-title-aligned"><span class="nowrap-phrase">De l'Audit Initial</span> <span class="nowrap-phrase neon">aux Premiers Appels Entrants.</span></h2>
                 <p data-i18n="methode_p">Une méthodologie claire pour les dirigeants de PME et cabinets au Maroc qui veulent des résultats commerciaux mesurables sans gérer la technique.</p>
             </div>
 
@@ -537,13 +553,171 @@
         </div>
     </section>
 
+    <!-- Technologies 360° & Réalisations Interactives (Inspiré de mediaexperts.ma + Design AssurLeadCom) -->
+    <section id="tech-showcase" class="me-tech-section" data-section-title="Technologies">
+        <div class="container">
+            <div class="me-tech-header">
+                <div class="me-tech-header-left">
+                    <span class="badge" data-i18n="tech_badge">Architecture 360° &amp; Hover-Reveal</span>
+                    <h2 data-i18n="tech_title" data-split-reveal>Technologies Déployées <span class="neon">&amp; Preuves Terrain.</span></h2>
+                </div>
+                <p class="me-tech-lead" data-i18n="tech_p">Filtrez nos déploiements au Maroc et explorez notre pile technique 360° : WebGL, chargement mobile instantané, SEO local et tunnels WhatsApp.</p>
+            </div>
+
+            <!-- Interactive Filter Bar (Isotope-style zero-pill segmented control) -->
+            <div class="me-filter-bar" role="tablist" aria-label="Filtrer les réalisations par technologie">
+                <button type="button" class="me-filter-btn active" data-filter="all" role="tab" aria-selected="true" data-i18n="tech_filter_all">Tout voir</button>
+                <button type="button" class="me-filter-btn" data-filter="web" role="tab" aria-selected="false" data-i18n="tech_filter_web">Web &amp; Conversion</button>
+                <button type="button" class="me-filter-btn" data-filter="seo" role="tab" aria-selected="false" data-i18n="tech_filter_seo">SEO &amp; Google Maps</button>
+                <button type="button" class="me-filter-btn" data-filter="whatsapp" role="tab" aria-selected="false" data-i18n="tech_filter_wa">WhatsApp &amp; B2B</button>
+            </div>
+
+            <!-- Interactive Hover-Reveal Work List (mediaexperts.ma HoverImgFx13) -->
+            <div class="me-work-list" id="me-work-list">
+                <a href="/realisation-sechkili.html" class="me-work-row" data-category="web seo whatsapp" data-cursor-text="EXPLORER" data-hover-img="/src/assets/images/showcase_sechkili_marrakech_1795736968376.jpg">
+                    <div class="me-work-index">01.</div>
+                    <div class="me-work-main">
+                        <div class="me-work-meta">
+                            <span data-i18n="tech_w1_meta">Web &amp; Conversion · SEO Local · Marrakech</span>
+                        </div>
+                        <h3 class="me-work-title" data-i18n="tech_w1_title">Cabinet Assurance Sechkili</h3>
+                    </div>
+                    <div class="me-work-metric" data-i18n="tech_w1_metric">Devis 24h/24 &amp; Appels directs</div>
+                    <div class="me-work-thumb">
+                        <img src="/src/assets/images/showcase_sechkili_marrakech_1795736968376.jpg" alt="Tableau de bord et site web Cabinet Assurance Sechkili à Marrakech" loading="lazy" decoding="async" referrerPolicy="no-referrer">
+                    </div>
+                    <span class="me-work-arrow" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="/realisation-el-omrani.html" class="me-work-row" data-category="seo whatsapp" data-cursor-text="EXPLORER" data-hover-img="/src/assets/images/showcase_elomrani_casa_1795736969024.jpg">
+                    <div class="me-work-index">02.</div>
+                    <div class="me-work-main">
+                        <div class="me-work-meta">
+                            <span data-i18n="tech_w2_meta">Google Maps Top 3 · WhatsApp 1 Clic · Casablanca</span>
+                        </div>
+                        <h3 class="me-work-title" data-i18n="tech_w2_title">Cabinet Assurances El Omrani</h3>
+                    </div>
+                    <div class="me-work-metric" data-i18n="tech_w2_metric">1ère page Google &amp; &lt; 1,2s mobile</div>
+                    <div class="me-work-thumb">
+                        <img src="/src/assets/images/showcase_elomrani_casa_1795736969024.jpg" alt="Interface mobile Google Maps et WhatsApp Business à Casablanca" loading="lazy" decoding="async" referrerPolicy="no-referrer">
+                    </div>
+                    <span class="me-work-arrow" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="/realisations.html" class="me-work-row" data-category="web seo" data-cursor-text="EXPLORER" data-hover-img="/src/assets/images/showcase_nordair_tanger_1795736970111.jpg">
+                    <div class="me-work-index">03.</div>
+                    <div class="me-work-main">
+                        <div class="me-work-meta">
+                            <span data-i18n="tech_w3_meta">Génie Climatique B2B · Fiche Google · Tanger</span>
+                        </div>
+                        <h3 class="me-work-title" data-i18n="tech_w3_title">NordAir Solutions</h3>
+                    </div>
+                    <div class="me-work-metric" data-i18n="tech_w3_metric">+42 devis qualifiés / mois</div>
+                    <div class="me-work-thumb">
+                        <img src="/src/assets/images/showcase_nordair_tanger_1795736970111.jpg" alt="Ingénierie B2B génie climatique NordAir Solutions à Tanger" loading="lazy" decoding="async" referrerPolicy="no-referrer">
+                    </div>
+                    <span class="me-work-arrow" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="/diagnostic.html" class="me-work-row" data-category="web whatsapp" data-cursor-text="EXPLORER" data-hover-img="/src/assets/images/showcase_anfa_dental_1795736970533.jpg">
+                    <div class="me-work-index">04.</div>
+                    <div class="me-work-main">
+                        <div class="me-work-meta">
+                            <span data-i18n="tech_w4_meta">Parcours Mobile · WhatsApp par Soin · Casablanca Anfa</span>
+                        </div>
+                        <h3 class="me-work-title" data-i18n="tech_w4_title">Centre Dentaire Anfa</h3>
+                    </div>
+                    <div class="me-work-metric" data-i18n="tech_w4_metric">+180 % de rendez-vous en 90j</div>
+                    <div class="me-work-thumb">
+                        <img src="/src/assets/images/showcase_anfa_dental_1795736970533.jpg" alt="Réception et borne digitale Centre Dentaire Anfa à Casablanca" loading="lazy" decoding="async" referrerPolicy="no-referrer">
+                    </div>
+                    <span class="me-work-arrow" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+            </div>
+
+            <!-- Interactive 360° Stack Carousel (Swiper-style drag/touch & keyboard control) -->
+            <div class="me-swiper-section">
+                <div class="me-swiper-top">
+                    <div class="me-swiper-label">
+                        <span class="me-swiper-kicker" data-i18n="tech_stack_kicker">INGÉNIERIE 360° INTÉGRÉE</span>
+                        <h3 data-i18n="tech_stack_title">La pile technologique derrière vos résultats</h3>
+                    </div>
+                    <div class="me-swiper-controls">
+                        <button type="button" class="me-swiper-btn" id="me-swiper-prev" aria-label="Technologie précédente"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>
+                        <button type="button" class="me-swiper-btn" id="me-swiper-next" aria-label="Technologie suivante"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <div class="me-swiper-viewport" id="me-swiper-viewport" tabindex="0" aria-label="Carrousel des technologies 360 degrés">
+                    <div class="me-swiper-track" id="me-swiper-track">
+                        <article class="me-tech-card">
+                            <div class="me-tech-card-head">
+                                <span class="me-tech-num">01</span>
+                                <i class="fas fa-bolt" aria-hidden="true"></i>
+                            </div>
+                            <h4 data-i18n="tech_c1_title">Web Performant &amp; Core Vitals</h4>
+                            <p data-i18n="tech_c1_desc">Architecture légère sans thème lourd, préchargement intelligent des liens et affichage sous 1,2 s sur 4G/5G au Maroc.</p>
+                        </article>
+                        <article class="me-tech-card">
+                            <div class="me-tech-card-head">
+                                <span class="me-tech-num">02</span>
+                                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                            </div>
+                            <h4 data-i18n="tech_c2_title">SEO / GEO &amp; Google Maps</h4>
+                            <p data-i18n="tech_c2_desc">Balisage Schema.org avancé, maillage métier + ville et optimisation de fiche Google Business Profile pour le Top 3 local.</p>
+                        </article>
+                        <article class="me-tech-card">
+                            <div class="me-tech-card-head">
+                                <span class="me-tech-num">03</span>
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            </div>
+                            <h4 data-i18n="tech_c3_title">Tunnels WhatsApp &amp; CRM</h4>
+                            <p data-i18n="tech_c3_desc">Boutons WhatsApp pré-remplis par prestation, formulaires courts qualifiants et routage immédiat vers vos conseillers.</p>
+                        </article>
+                        <article class="me-tech-card">
+                            <div class="me-tech-card-head">
+                                <span class="me-tech-num">04</span>
+                                <i class="fas fa-cube" aria-hidden="true"></i>
+                            </div>
+                            <h4 data-i18n="tech_c4_title">Design Conceptuel &amp; WebGL 3D</h4>
+                            <p data-i18n="tech_c4_desc">Scènes Three.js, motifs Zellige dynamiques, parallaxe GPU et micro-interactions magnétiques sans ralentir le mobile.</p>
+                        </article>
+                        <article class="me-tech-card">
+                            <div class="me-tech-card-head">
+                                <span class="me-tech-num">05</span>
+                                <i class="fas fa-universal-access" aria-hidden="true"></i>
+                            </div>
+                            <h4 data-i18n="tech_c5_title">Accessibilité RGAA &amp; Mode Jour/Nuit</h4>
+                            <p data-i18n="tech_c5_desc">Contrastes calibrés AA, navigation clavier complète, support FR / EN / العربية RTL et bascule instantanée Jour / Nuit.</p>
+                        </article>
+                        <article class="me-tech-card">
+                            <div class="me-tech-card-head">
+                                <span class="me-tech-num">06</span>
+                                <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                            </div>
+                            <h4 data-i18n="tech_c6_title">Tracking &amp; Pilotage Continu</h4>
+                            <p data-i18n="tech_c6_desc">Mesure réelle des clics WhatsApp, appels téléphoniques, soumissions de devis et suivi mensuel avec interlocuteur dédié.</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="me-swiper-dots" id="me-swiper-dots" aria-label="Pagination du carrousel"></div>
+            </div>
+        </div>
+        <!-- Floating Hover-Reveal Container (Desktop Pointer) -->
+        <div id="me-hover-reveal" class="me-hover-reveal" aria-hidden="true">
+            <div class="me-hover-reveal-inner">
+                <img src="/src/assets/images/showcase_sechkili_marrakech_1795736968376.jpg" alt="" id="me-hover-reveal-img">
+            </div>
+        </div>
+    </section>
+
     <!-- Offers Section : 4 Formules Claires -->
-    <section id="offres" class="offers">
+    <section id="offres" class="offers" data-section-title="Tarifs">
         <canvas id="zellige-tech-canvas" class="section-bg-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge" data-i18n="offers_badge">Grille Tarifaire · Fin d'Année 2026</span>
-                <h2 data-i18n="offers_title" class="offers-title-aligned"><span class="nowrap-phrase">4 Formules Claires.</span> <span class="nowrap-phrase neon">Zéro Frais Cachés.</span></h2>
+                <h2 data-i18n="offers_title" data-split-reveal class="offers-title-aligned"><span class="nowrap-phrase">4 Formules Claires.</span> <span class="nowrap-phrase neon">Zéro Frais Cachés.</span></h2>
                 <p data-i18n="offers_p">Offres actualisées valables jusqu'à la fin de l'année. Choisissez la formule adaptée à vos ambitions de croissance sur votre zone de chalandise.</p>
             </div>
 
@@ -631,7 +805,7 @@
     </section>
 
     <!-- Sectors Section : Au-delà de l'assurance -->
-    <section id="secteurs" class="sectors-section">
+    <section id="secteurs" class="sectors-section" data-section-title="Secteurs">
         <div id="secteurs-canvas-container" class="sectors-viscous-canvas" aria-hidden="true"></div>
         <div class="sage-arcs-bg sage-arcs-sectors" aria-hidden="true">
             <svg class="sage-arcs-svg" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -688,12 +862,12 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
+    <section id="faq" class="faq-section" data-section-title="FAQ">
         <canvas id="zellige-tech-faq-canvas" class="section-bg-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge" data-i18n="faq_badge">FAQ</span>
-                <h2 data-i18n="faq_title">Questions <span class="neon">Fréquentes.</span></h2>
+                <h2 data-i18n="faq_title" data-split-reveal>Questions <span class="neon">Fréquentes.</span></h2>
                 <p data-i18n="faq_p">Tout comprendre sur notre système commercial, l'audit gratuit sous 48h et le suivi de vos demandes au Maroc.</p>
             </div>
             
@@ -750,7 +924,7 @@
     </section>
 
     <!-- Contact & Audit Gratuit -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" data-section-title="Contact">
         <div id="contact-canvas-container" class="contact-canvas" aria-hidden="true"></div>
         <div class="sage-arcs-bg sage-arcs-contact" aria-hidden="true">
             <svg class="sage-arcs-svg" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -781,7 +955,7 @@
                     <p class="sage-subtitle" data-i18n="contact_p">Recevez votre audit visuel et plan d'action chiffré par WhatsApp ou téléphone : évaluation de votre visibilité Google &amp; Maps, parcours mobile et leviers de conversion prioritaires.</p>
                     
                     <div class="sage-btn-wrapper">
-                        <a href="#questionnaire" class="sage-pill-btn" data-i18n="contact_cta_btn">
+                        <a href="#questionnaire" class="sage-pill-btn" data-magnetic data-i18n="contact_cta_btn">
                             Recevoir mon analyse gratuite <i class="fas fa-arrow-down"></i>
                         </a>
                     </div>
@@ -1031,6 +1205,25 @@
             </div>
         </div>
     </div>
+
+    <!-- Custom Magnetic Cursor (Desktop Fine Pointer Only) -->
+    <div id="me-cursor" class="me-cursor" aria-hidden="true">
+        <div class="me-cursor-ring"></div>
+        <div class="me-cursor-dot"></div>
+        <span class="me-cursor-label" id="me-cursor-label"></span>
+    </div>
+
+    <!-- Circular Scroll Progress & Back-to-Top Indicator -->
+    <button type="button" id="me-scroll-top" class="me-scroll-top" aria-label="Remonter en haut de la page" title="Remonter en haut">
+        <svg class="me-scroll-ring" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+            <circle class="me-scroll-ring-bg" cx="24" cy="24" r="20"></circle>
+            <circle class="me-scroll-ring-fg" id="me-scroll-ring-fg" cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span class="me-scroll-percent" id="me-scroll-percent">0%</span>
+    </button>
+
+    <!-- Smooth Page Transition Curtain (dsn-ajax UX) -->
+    <div id="me-page-curtain" class="me-page-curtain" aria-hidden="true"></div>
 
     <script type="module" src="/script.js"></script>
 </body>

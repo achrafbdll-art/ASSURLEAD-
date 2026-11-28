@@ -3404,6 +3404,52 @@ const translations = {
         en: "In Casablanca and Morocco, over 85% of searches occur on smartphones, with an expectation of instant contact via WhatsApp or phone. A top-performing site in Casablanca requires lightning-fast loading (< 1s), local Google Maps markup, and conversion funnels tuned for Moroccan buying habits.",
         ar: "في الدار البيضاء والمغرب، أكثر من 85% من عمليات البحث تتم عبر الهواتف الذكية مع رغبة في التواصل الفوري عبر واتساب أو الهاتف. نجاح الموقع يتطلب سرعة خارقة (أقل من ثانية)، تهيئة جغرافية دقيقة في خرائط غوغل وتصميماً مخصصاً لسلوك المستهلك المغربي."
     },
+    // Technologies 360° & Hover-Reveal Showcase
+    tech_badge: {
+        fr: "Architecture 360° &amp; Hover-Reveal",
+        en: "360° Architecture &amp; Hover-Reveal",
+        ar: "هندسة 360° ومعاينة تفاعلية"
+    },
+    tech_title: {
+        fr: "Technologies Déployées <span class=\"neon\">&amp; Preuves Terrain.</span>",
+        en: "Deployed Technologies <span class=\"neon\">&amp; Field Proof.</span>",
+        ar: "التقنيات المدمجة <span class=\"neon\">ونتائج الميدان.</span>"
+    },
+    tech_p: {
+        fr: "Filtrez nos déploiements au Maroc et explorez notre pile technique 360° : WebGL, chargement mobile instantané, SEO local et tunnels WhatsApp.",
+        en: "Filter our deployments across Morocco and explore our 360° technical stack: WebGL, instant mobile speed, local SEO, and WhatsApp funnels.",
+        ar: "تصفح مشاريعنا في المغرب واستكشف منظومتنا التقنية 360°: سرعة فائقة، سيو محلي وقنوات واتساب."
+    },
+    tech_filter_all: { fr: "Tout voir", en: "View All", ar: "عرض الكل" },
+    tech_filter_web: { fr: "Web &amp; Conversion", en: "Web &amp; Conversion", ar: "الويب والتحويل" },
+    tech_filter_seo: { fr: "SEO &amp; Google Maps", en: "SEO &amp; Google Maps", ar: "السيو وخرائط غوغل" },
+    tech_filter_wa: { fr: "WhatsApp &amp; B2B", en: "WhatsApp &amp; B2B", ar: "واتساب والأعمال" },
+    tech_w1_meta: { fr: "Web &amp; Conversion · SEO Local · Marrakech", en: "Web &amp; Conversion · Local SEO · Marrakech", ar: "تصميم موقع · سيو محلي · مراكش" },
+    tech_w1_title: { fr: "Cabinet Assurance Sechkili", en: "Sechkili Insurance Brokerage", ar: "مكتب تأمينات الشكيلي" },
+    tech_w1_metric: { fr: "Devis 24h/24 &amp; Appels directs", en: "24/7 Quotes &amp; Direct Calls", ar: "طلبات تسعير 24/24 ومكالمات مباشرة" },
+    tech_w2_meta: { fr: "Google Maps Top 3 · WhatsApp 1 Clic · Casablanca", en: "Google Maps Top 3 · 1-Click WhatsApp · Casablanca", ar: "المرتبة 3 بخرائط غوغل · واتساب مباشر · الدار البيضاء" },
+    tech_w2_title: { fr: "Cabinet Assurances El Omrani", en: "El Omrani Insurance Agency", ar: "مكتب تأمينات العمراني" },
+    tech_w2_metric: { fr: "1ère page Google &amp; &lt; 1,2s mobile", en: "Google Page 1 &amp; &lt; 1.2s mobile", ar: "الصفحة الأولى في غوغل وسرعة أقل من 1.2 ثانية" },
+    tech_w3_meta: { fr: "Génie Climatique B2B · Fiche Google · Tanger", en: "B2B HVAC Engineering · Google Profile · Tangier", ar: "هندسة التكييف B2B · خرائط غوغل · طنجة" },
+    tech_w3_title: { fr: "NordAir Solutions", en: "NordAir Solutions", ar: "نورإير سوليوشنز" },
+    tech_w3_metric: { fr: "+42 devis qualifiés / mois", en: "+42 qualified quotes / month", ar: "+42 طلب تسعيرة مؤهل شهرياً" },
+    tech_w4_meta: { fr: "Parcours Mobile · WhatsApp par Soin · Casablanca Anfa", en: "Mobile Journey · Service WhatsApp · Casablanca Anfa", ar: "تجربة الهاتف · واتساب حسب الخدمة · أنفا الدار البيضاء" },
+    tech_w4_title: { fr: "Centre Dentaire Anfa", en: "Anfa Dental Clinic", ar: "مركز أنفا لطب الأسنان" },
+    tech_w4_metric: { fr: "+180 % de rendez-vous en 90j", en: "+180% appointments in 90d", ar: "+180% من المواعيد خلال 90 يوماً" },
+    tech_stack_kicker: { fr: "INGÉNIERIE 360° INTÉGRÉE", en: "INTEGRATED 360° ENGINEERING", ar: "هندسة رقمية متكاملة 360°" },
+    tech_stack_title: { fr: "La pile technologique derrière vos résultats", en: "The technical stack powering your results", ar: "المنظومة التقنية وراء نتائجك" },
+    tech_c1_title: { fr: "Web Performant &amp; Core Vitals", en: "High-Speed Web &amp; Core Vitals", ar: "مواقع عالية السرعة والأداء" },
+    tech_c1_desc: { fr: "Architecture légère sans thème lourd, préchargement intelligent des liens et affichage sous 1,2 s sur 4G/5G au Maroc.", en: "Lightweight architecture with zero bloat, smart link prefetching, and sub-1.2s loading on 4G/5G in Morocco.", ar: "هندسة خفيفة بدون قوالب ثقيلة، تحميل مسبق ذكي وعرض في أقل من 1.2 ثانية على شبكات 4G/5G بالمغرب." },
+    tech_c2_title: { fr: "SEO / GEO &amp; Google Maps", en: "SEO / GEO &amp; Google Maps", ar: "السيو المحلي وخرائط غوغل" },
+    tech_c2_desc: { fr: "Balisage Schema.org avancé, maillage métier + ville et optimisation de fiche Google Business Profile pour le Top 3 local.", en: "Advanced Schema.org markup, city-plus-service architecture, and Google Business Profile optimization for local Top 3.", ar: "ترميز Schema.org متقدم، صفحات مخصصة للمدن والمهن وتحسين ملف غوغل التجاري للوصول لأعلى النتائج." },
+    tech_c3_title: { fr: "Tunnels WhatsApp &amp; CRM", en: "WhatsApp Funnels &amp; CRM", ar: "قنوات واتساب والربط التجاري" },
+    tech_c3_desc: { fr: "Boutons WhatsApp pré-remplis par prestation, formulaires courts qualifiants et routage immédiat vers vos conseillers.", en: "Pre-filled WhatsApp buttons by service, short qualifying forms, and instant routing to your sales advisors.", ar: "أزرار واتساب معبأة مسبقاً حسب كل خدمة، استمارات سريعة وتوجيه فوري نحو فريقك التجاري." },
+    tech_c4_title: { fr: "Design Conceptuel &amp; WebGL 3D", en: "Conceptual Design &amp; 3D WebGL", ar: "تصميم عصري وتفاعلات ثلاثية الأبعاد" },
+    tech_c4_desc: { fr: "Scènes Three.js, motifs Zellige dynamiques, parallaxe GPU et micro-interactions magnétiques sans ralentir le mobile.", en: "Three.js scenes, dynamic Zellige geometry, GPU parallax, and magnetic micro-interactions without mobile lag.", ar: "مشاهد ثلاثية الأبعاد، أنماط زليج تفاعلية وحركات سلسة دون التأثير على سرعة الهاتف." },
+    tech_c5_title: { fr: "Accessibilité RGAA &amp; Mode Jour/Nuit", en: "Accessibility &amp; Day/Night Mode", ar: "سهولة الوصول والوضع النهاري/الليلي" },
+    tech_c5_desc: { fr: "Contrastes calibrés AA, navigation clavier complète, support FR / EN / العربية RTL et bascule instantanée Jour / Nuit.", en: "AA calibrated contrast, full keyboard support, FR / EN / Arabic RTL switching, and instant Day/Night toggle.", ar: "تباين ألوان مريح، تنقل كامل بلوحة المفاتيح، دعم الفرنسية والإنجليزية والعربية وتبديل فوري بين الوضعين." },
+    tech_c6_title: { fr: "Tracking &amp; Pilotage Continu", en: "Tracking &amp; Ongoing Steering", ar: "التتبع الدقيق والمواكبة المستمرة" },
+    tech_c6_desc: { fr: "Mesure réelle des clics WhatsApp, appels téléphoniques, soumissions de devis et suivi mensuel avec interlocuteur dédié.", en: "Real measurement of WhatsApp clicks, phone calls, quote forms, and monthly guidance with a dedicated advisor.", ar: "قياس فعلي لنقرات واتساب والمكالمات وطلبات التسعير مع متابعة شهرية مخصصة." },
     // Processus Funnel Translations
     proc_hero_badge: {
         fr: "PIPELINE COMMERCIAL & OPÉRATIONNEL",
@@ -5340,6 +5386,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const animate2D = () => {
             animId = requestAnimationFrame(animate2D);
             ctx.clearRect(0, 0, width, height);
+            const isLight = document.body.classList.contains('theme-light');
+            const accentHex = isLight ? '#047857' : '#00ff41';
+            const accentRgb = isLight ? '4, 120, 87' : '0, 255, 65';
 
             // Update & draw background particles
             nodes.forEach(n => {
@@ -5354,9 +5403,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const alpha = 0.2 + 0.35 * Math.sin(n.pulse);
                 ctx.beginPath();
                 ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 255, 65, ${alpha})`;
-                ctx.shadowColor = '#00ff41';
-                ctx.shadowBlur = 6;
+                ctx.fillStyle = `rgba(${accentRgb}, ${alpha})`;
+                ctx.shadowColor = accentHex;
+                ctx.shadowBlur = isLight ? 3 : 6;
                 ctx.fill();
             });
 
@@ -5371,7 +5420,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.beginPath();
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.strokeStyle = `rgba(0, 255, 65, ${0.15 * (1 - d / 100)})`;
+                        ctx.strokeStyle = `rgba(${accentRgb}, ${0.15 * (1 - d / 100)})`;
                         ctx.lineWidth = 0.6;
                         ctx.stroke();
                     }
@@ -5402,9 +5451,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Draw wireframe edges
-            ctx.shadowColor = '#00ff41';
-            ctx.shadowBlur = 10;
-            ctx.strokeStyle = 'rgba(0, 255, 65, 0.45)';
+            ctx.shadowColor = accentHex;
+            ctx.shadowBlur = isLight ? 4 : 10;
+            ctx.strokeStyle = `rgba(${accentRgb}, ${isLight ? 0.35 : 0.45})`;
             ctx.lineWidth = 1.2;
 
             for (let i = 0; i < proj.length; i++) {
@@ -5427,7 +5476,7 @@ document.addEventListener('DOMContentLoaded', () => {
             proj.forEach(([px, py]) => {
                 ctx.beginPath();
                 ctx.arc(px, py, 2.5, 0, Math.PI * 2);
-                ctx.fillStyle = '#00ff41';
+                ctx.fillStyle = accentHex;
                 ctx.fill();
             });
             ctx.shadowBlur = 0;
@@ -6985,19 +7034,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 return this.progress < this.maxProgress;
             }
 
-            draw() {
+            draw(isLight, accentHex) {
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, 1.5, 0, Math.PI * 2);
-                ctx.fillStyle = '#ffffff';
-                ctx.shadowColor = '#00ff41';
-                ctx.shadowBlur = 10;
+                ctx.arc(this.x, this.y, 1.6, 0, Math.PI * 2);
+                ctx.fillStyle = isLight ? '#047857' : '#ffffff';
+                ctx.shadowColor = accentHex;
+                ctx.shadowBlur = isLight ? 4 : 10;
                 ctx.fill();
                 ctx.shadowBlur = 0; // reset
             }
         }
 
         // Draw 8-point star (Khatem)
-        const drawStar8 = (cx, cy, rOut, rIn, rotationAngle, bloomIntensity, fillAlpha) => {
+        const drawStar8 = (cx, cy, rOut, rIn, rotationAngle, bloomIntensity, fillAlpha, accentRgb, accentHex, isLight) => {
             ctx.beginPath();
             for (let i = 0; i < 16; i++) {
                 const angle = rotationAngle + (i * Math.PI) / 8;
@@ -7011,30 +7060,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Fill
             if (fillAlpha > 0) {
-                ctx.fillStyle = `rgba(0, 255, 65, ${fillAlpha})`;
+                ctx.fillStyle = `rgba(${accentRgb}, ${fillAlpha})`;
                 ctx.fill();
             }
 
             // Stroke
             ctx.lineWidth = bloomIntensity > 1.2 ? 1.5 : 1;
-            ctx.strokeStyle = bloomIntensity > 1.2 ? '#00FF41' : 'rgba(0, 255, 65, 0.55)';
+            ctx.strokeStyle = bloomIntensity > 1.2 ? accentHex : `rgba(${accentRgb}, ${isLight ? 0.35 : 0.55})`;
             
             if (bloomIntensity > 1) {
-                ctx.shadowColor = '#00ff41';
-                ctx.shadowBlur = 4 * bloomIntensity;
+                ctx.shadowColor = accentHex;
+                ctx.shadowBlur = (isLight ? 2 : 4) * bloomIntensity;
             }
             ctx.stroke();
             ctx.shadowBlur = 0; // reset
         };
 
         // Draw overlapping tech squares / circuit rings around star
-        const drawTechSquare = (cx, cy, size, rot, bloomIntensity) => {
+        const drawTechSquare = (cx, cy, size, rot, bloomIntensity, accentRgb) => {
             ctx.save();
             ctx.translate(cx, cy);
             ctx.rotate(rot);
             ctx.beginPath();
             ctx.rect(-size/2, -size/2, size, size);
-            ctx.strokeStyle = bloomIntensity > 1.2 ? 'rgba(0, 255, 65, 0.7)' : 'rgba(0, 255, 65, 0.25)';
+            ctx.strokeStyle = bloomIntensity > 1.2 ? `rgba(${accentRgb}, 0.7)` : `rgba(${accentRgb}, 0.25)`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
             ctx.restore();
@@ -7055,6 +7104,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (inViewport) {
                 ctx.clearRect(0, 0, width, height);
+                const isLight = document.body.classList.contains('theme-light');
+                const accentHex = isLight ? '#047857' : '#00FF41';
+                const accentRgb = isLight ? '4, 120, 87' : '0, 255, 65';
 
                 angleAcc += 0.003;
 
@@ -7104,15 +7156,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         fillAlpha += pulseFactor * 0.04;
 
                         // Draw the 8-pointed main stars of Moroccan Zellige
-                        drawStar8(cx, cy, R_out, R_in, currentRot, bloomIntensity, fillAlpha);
+                        drawStar8(cx, cy, R_out, R_in, currentRot, bloomIntensity, fillAlpha, accentRgb, accentHex, isLight);
 
                         // Secondary geometries
-                        drawTechSquare(cx, cy, R_out * 1.4, -currentRot * 0.5, bloomIntensity);
-                        drawTechSquare(cx, cy, R_out * 0.5, currentRot, bloomIntensity);
+                        drawTechSquare(cx, cy, R_out * 1.4, -currentRot * 0.5, bloomIntensity, accentRgb);
+                        drawTechSquare(cx, cy, R_out * 0.5, currentRot, bloomIntensity, accentRgb);
 
                         // Connecting grid lines
                         ctx.beginPath();
-                        ctx.strokeStyle = bloomIntensity > 1.2 ? 'rgba(0, 255, 65, 0.25)' : 'rgba(0, 255, 65, 0.08)';
+                        ctx.strokeStyle = bloomIntensity > 1.2 ? `rgba(${accentRgb}, 0.25)` : `rgba(${accentRgb}, 0.08)`;
                         ctx.lineWidth = 0.5;
                         
                         ctx.moveTo(cx, cy);
@@ -7130,10 +7182,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         ctx.beginPath();
                         ctx.arc(mx, my, R_out * 0.25, 0, Math.PI * 2);
-                        ctx.strokeStyle = midIntensity > 0.5 ? 'rgba(0, 255, 65, 0.5)' : 'rgba(0, 255, 65, 0.16)';
+                        ctx.strokeStyle = midIntensity > 0.5 ? `rgba(${accentRgb}, 0.5)` : `rgba(${accentRgb}, 0.16)`;
                         ctx.stroke();
                         if (midIntensity > 0.1) {
-                            ctx.fillStyle = `rgba(0, 255, 65, ${midIntensity * 0.1})`;
+                            ctx.fillStyle = `rgba(${accentRgb}, ${midIntensity * 0.1})`;
                             ctx.fill();
                         }
                     }
@@ -7146,7 +7198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!active) {
                         pulses.splice(i, 1);
                     } else {
-                        p.draw();
+                        p.draw(isLight, accentHex);
                     }
                 }
             }
@@ -7701,7 +7753,400 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+    // --- MEDIA EXPERTS 360° FRONTEND TECHNOLOGIES (Blended with AssurLeadCom) ---
+    const initMediaExpertsTech = () => {
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isFinePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+        // 1. Branded Non-Blocking Preloader (1x per session, ~550ms)
+        const preloader = document.getElementById('me-preloader');
+        if (preloader) {
+            const alreadySeen = sessionStorage.getItem('alc_me_preloaded') === '1';
+            if (alreadySeen || prefersReducedMotion) {
+                preloader.classList.add('is-done');
+            } else {
+                const numEl = document.getElementById('me-preloader-num');
+                const barEl = document.getElementById('me-preloader-bar');
+                const fillEl = document.getElementById('me-preloader-fill');
+                const start = performance.now();
+                const duration = 560;
+                const finish = () => {
+                    preloader.classList.add('is-done');
+                    try { sessionStorage.setItem('alc_me_preloaded', '1'); } catch (_) {}
+                };
+                preloader.addEventListener('click', finish, { once: true });
+                const tick = (now) => {
+                    const p = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - p, 3);
+                    const pct = Math.round(eased * 100);
+                    if (numEl) numEl.textContent = String(pct);
+                    if (barEl) barEl.style.transform = `scaleX(${eased})`;
+                    if (fillEl) fillEl.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+                    if (p < 1) {
+                        requestAnimationFrame(tick);
+                    } else {
+                        setTimeout(finish, 90);
+                    }
+                };
+                requestAnimationFrame(tick);
+                setTimeout(finish, 1400);
+            }
+        }
+
+        // 2. Smart Hide-on-Scroll-Down / Reveal-on-Scroll-Up Navbar
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            let lastY = window.scrollY || 0;
+            let scrollTicking = false;
+            window.addEventListener('scroll', () => {
+                if (scrollTicking) return;
+                scrollTicking = true;
+                requestAnimationFrame(() => {
+                    const currentY = window.scrollY || 0;
+                    const navMenu = document.getElementById('nav-links-menu');
+                    const menuOpen = (navMenu && navMenu.classList.contains('active')) || document.querySelector('.nav-dropdown.is-open');
+                    if (currentY > 180 && currentY > lastY + 8 && !menuOpen) {
+                        navbar.classList.add('me-nav-hidden');
+                    } else if (currentY < lastY - 6 || currentY <= 120) {
+                        navbar.classList.remove('me-nav-hidden');
+                    }
+                    lastY = currentY;
+                    scrollTicking = false;
+                });
+            }, { passive: true });
+        }
+
+        // 3. Persisted Day / Night Theme Sync
+        const applyThemeClass = (isLight) => {
+            document.documentElement.classList.toggle('theme-light', isLight);
+            document.body.classList.toggle('theme-light', isLight);
+        };
+        try {
+            applyThemeClass(localStorage.getItem('alc_theme') === 'light');
+        } catch (_) {}
+
+        // 4. Magnetic Dual-Ring Cursor & Magnetic Buttons (Desktop Fine Pointers)
+        const cursorEl = document.getElementById('me-cursor');
+        const cursorLabel = document.getElementById('me-cursor-label');
+        if (cursorEl && isFinePointer && !prefersReducedMotion) {
+            let mx = -100, my = -100, cx = -100, cy = -100;
+            let cursorActive = false;
+
+            const renderCursor = () => {
+                cx += (mx - cx) * 0.22;
+                cy += (my - cy) * 0.22;
+                cursorEl.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+                requestAnimationFrame(renderCursor);
+            };
+            requestAnimationFrame(renderCursor);
+
+            document.addEventListener('mousemove', (e) => {
+                mx = e.clientX;
+                my = e.clientY;
+                if (!cursorActive) {
+                    cx = mx;
+                    cy = my;
+                    cursorActive = true;
+                    cursorEl.classList.add('is-active');
+                }
+            }, { passive: true });
+
+            document.addEventListener('mouseleave', () => {
+                cursorActive = false;
+                cursorEl.classList.remove('is-active');
+            });
+
+            document.querySelectorAll('[data-cursor-text]').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    if (cursorLabel) cursorLabel.textContent = el.getAttribute('data-cursor-text') || 'VOIR';
+                    cursorEl.classList.add('cursor-label-mode');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorEl.classList.remove('cursor-label-mode');
+                });
+            });
+
+            document.querySelectorAll('a, button, .faq-trigger, .me-filter-btn').forEach(el => {
+                if (el.hasAttribute('data-cursor-text')) return;
+                el.addEventListener('mouseenter', () => cursorEl.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => cursorEl.classList.remove('cursor-hover'));
+            });
+
+            // Magnetic Pull on [data-magnetic] Controls
+            document.querySelectorAll('[data-magnetic]').forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const r = el.getBoundingClientRect();
+                    const dx = (e.clientX - (r.left + r.width / 2)) * 0.18;
+                    const dy = (e.clientY - (r.top + r.height / 2)) * 0.18;
+                    el.style.transform = `translate3d(${dx.toFixed(1)}px, ${dy.toFixed(1)}px, 0)`;
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.transform = '';
+                });
+            });
+        }
+
+        // 6. Circular SVG Scroll Progress & Smooth Back-to-Top
+        const scrollTopBtn = document.getElementById('me-scroll-top');
+        const ringFg = document.getElementById('me-scroll-ring-fg');
+        const percentText = document.getElementById('me-scroll-percent');
+        if (scrollTopBtn) {
+            const circumference = 2 * Math.PI * 20; // r=20 => 125.66
+            let scrollRaf = false;
+            const updateScrollRing = () => {
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = docHeight > 0 ? Math.min(Math.max(window.scrollY / docHeight, 0), 1) : 0;
+                const pct = Math.round(progress * 100);
+                if (ringFg) ringFg.style.strokeDashoffset = (circumference * (1 - progress)).toFixed(2);
+                if (percentText) percentText.textContent = `${pct}%`;
+                scrollTopBtn.classList.toggle('is-visible', window.scrollY > 260);
+                scrollRaf = false;
+            };
+            window.addEventListener('scroll', () => {
+                if (!scrollRaf) {
+                    scrollRaf = true;
+                    requestAnimationFrame(updateScrollRing);
+                }
+            }, { passive: true });
+            updateScrollRing();
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+            });
+        }
+
+        // 7. Kinetic Split-Text Reveal & GPU Scroll Parallax
+        const splitEls = document.querySelectorAll('[data-split-reveal]');
+        if (splitEls.length > 0 && !prefersReducedMotion) {
+            const wrapWords = (el) => {
+                if (el.dataset.splitDone === '1') return;
+                const walk = (node, delayCounter) => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        const text = node.nodeValue;
+                        if (!text || !text.trim()) return;
+                        const frag = document.createDocumentFragment();
+                        text.split(/(\s+)/).forEach(part => {
+                            if (/^\s+$/.test(part) || part === '') {
+                                frag.appendChild(document.createTextNode(part));
+                            } else {
+                                const wrap = document.createElement('span');
+                                wrap.className = 'me-word-wrap';
+                                const word = document.createElement('span');
+                                word.className = 'me-word';
+                                word.style.setProperty('--me-delay', `${Math.min(delayCounter.val * 38, 360)}ms`);
+                                word.textContent = part;
+                                wrap.appendChild(word);
+                                frag.appendChild(wrap);
+                                delayCounter.val++;
+                            }
+                        });
+                        node.parentNode.replaceChild(frag, node);
+                    } else if (node.nodeType === Node.ELEMENT_NODE && !node.classList.contains('me-word-wrap')) {
+                        Array.from(node.childNodes).forEach(child => walk(child, delayCounter));
+                    }
+                };
+                walk(el, { val: 0 });
+                el.dataset.splitDone = '1';
+            };
+
+            const splitObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        wrapWords(entry.target);
+                        requestAnimationFrame(() => entry.target.classList.add('is-revealed'));
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            splitEls.forEach(el => splitObserver.observe(el));
+        } else {
+            splitEls.forEach(el => el.classList.add('is-revealed'));
+        }
+
+        const parallaxEls = document.querySelectorAll('[data-parallax-depth]');
+        if (parallaxEls.length > 0 && !prefersReducedMotion) {
+            let pTicking = false;
+            window.addEventListener('scroll', () => {
+                if (pTicking) return;
+                pTicking = true;
+                requestAnimationFrame(() => {
+                    const vh = window.innerHeight || 800;
+                    parallaxEls.forEach(el => {
+                        const depth = parseFloat(el.getAttribute('data-parallax-depth') || '0.05');
+                        const rect = el.getBoundingClientRect();
+                        if (rect.bottom > 0 && rect.top < vh) {
+                            const offset = (rect.top - vh * 0.35) * depth;
+                            el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+                        }
+                    });
+                    pTicking = false;
+                });
+            }, { passive: true });
+        }
+
+        // 8. Interactive Filterable Work List & Floating Hover-Reveal (HoverImgFx13)
+        const filterBtns = document.querySelectorAll('.me-filter-btn');
+        const workRows = document.querySelectorAll('.me-work-row');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter') || 'all';
+                filterBtns.forEach(b => {
+                    const active = b === btn;
+                    b.classList.toggle('active', active);
+                    b.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+                workRows.forEach(row => {
+                    const cats = (row.getAttribute('data-category') || '').split(/\s+/);
+                    const match = filter === 'all' || cats.includes(filter);
+                    row.classList.toggle('is-filtered-out', !match);
+                });
+            });
+        });
+
+        const hoverReveal = document.getElementById('me-hover-reveal');
+        const hoverRevealImg = document.getElementById('me-hover-reveal-img');
+        if (hoverReveal && hoverRevealImg && isFinePointer && !prefersReducedMotion) {
+            let hx = 0, hy = 0, tx = 0, ty = 0, rot = 0;
+            let revealing = false;
+
+            const loopReveal = () => {
+                if (!revealing) return;
+                const dx = tx - hx;
+                hx += dx * 0.18;
+                hy += (ty - hy) * 0.18;
+                rot = Math.max(-7, Math.min(7, dx * 0.12));
+                hoverReveal.style.transform = `translate3d(${(hx + 24).toFixed(1)}px, ${(hy - 95).toFixed(1)}px, 0) rotate(${rot.toFixed(2)}deg)`;
+                requestAnimationFrame(loopReveal);
+            };
+
+            workRows.forEach(row => {
+                row.addEventListener('mouseenter', (e) => {
+                    const thumbImg = row.querySelector('.me-work-thumb img');
+                    const imgSrc = (thumbImg && (thumbImg.currentSrc || thumbImg.src)) || row.getAttribute('data-hover-img');
+                    if (imgSrc) hoverRevealImg.src = imgSrc;
+                    tx = e.clientX;
+                    ty = e.clientY;
+                    hx = tx;
+                    hy = ty;
+                    revealing = true;
+                    hoverReveal.classList.add('is-visible');
+                    requestAnimationFrame(loopReveal);
+                });
+                row.addEventListener('mousemove', (e) => {
+                    tx = e.clientX;
+                    ty = e.clientY;
+                }, { passive: true });
+                row.addEventListener('mouseleave', () => {
+                    revealing = false;
+                    hoverReveal.classList.remove('is-visible');
+                });
+            });
+        }
+
+        // 9. Touch/Drag & Keyboard 360° Tech Stack Carousel (Swiper-style)
+        const viewport = document.getElementById('me-swiper-viewport');
+        const track = document.getElementById('me-swiper-track');
+        const prevBtn = document.getElementById('me-swiper-prev');
+        const nextBtn = document.getElementById('me-swiper-next');
+        const dotsWrap = document.getElementById('me-swiper-dots');
+        if (viewport && track) {
+            const cards = Array.from(track.querySelectorAll('.me-tech-card'));
+            const getStep = () => {
+                if (!cards[0]) return 320;
+                return cards[0].getBoundingClientRect().width + 20;
+            };
+
+            if (dotsWrap && cards.length > 0) {
+                dotsWrap.innerHTML = '';
+                cards.forEach((_, idx) => {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'me-swiper-dot' + (idx === 0 ? ' is-active' : '');
+                    dot.setAttribute('aria-label', `Carte technologie ${idx + 1}`);
+                    dot.addEventListener('click', () => {
+                        viewport.scrollTo({ left: idx * getStep(), behavior: 'smooth' });
+                    });
+                    dotsWrap.appendChild(dot);
+                });
+
+                viewport.addEventListener('scroll', () => {
+                    const idx = Math.round(viewport.scrollLeft / Math.max(getStep(), 1));
+                    dotsWrap.querySelectorAll('.me-swiper-dot').forEach((d, i) => {
+                        d.classList.toggle('is-active', i === Math.min(idx, cards.length - 1));
+                    });
+                }, { passive: true });
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => viewport.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+            if (nextBtn) nextBtn.addEventListener('click', () => viewport.scrollBy({ left: getStep(), behavior: 'smooth' }));
+            viewport.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') viewport.scrollBy({ left: getStep(), behavior: 'smooth' });
+                if (e.key === 'ArrowLeft') viewport.scrollBy({ left: -getStep(), behavior: 'smooth' });
+            });
+
+            // Pointer Drag-to-Scroll
+            let isDown = false, startX = 0, scrollStart = 0;
+            viewport.addEventListener('mousedown', (e) => {
+                isDown = true;
+                viewport.classList.add('is-dragging');
+                startX = e.pageX - viewport.offsetLeft;
+                scrollStart = viewport.scrollLeft;
+            });
+            window.addEventListener('mouseup', () => {
+                if (!isDown) return;
+                isDown = false;
+                viewport.classList.remove('is-dragging');
+            });
+            viewport.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - viewport.offsetLeft;
+                viewport.scrollLeft = scrollStart - (x - startX) * 1.25;
+            });
+        }
+
+        // 10. Link Prefetch on Hover & Smooth Page Transition Curtain (dsn-ajax UX)
+        const prefetchedUrls = new Set();
+        const pageCurtain = document.getElementById('me-page-curtain');
+        window.addEventListener('pageshow', () => {
+            if (pageCurtain) pageCurtain.classList.remove('is-entering');
+        });
+
+        document.querySelectorAll('a[href]').forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+            if (link.getAttribute('target') === '_blank') return;
+
+            let url;
+            try { url = new URL(href, window.location.origin); } catch (_) { return; }
+            if (url.origin !== window.location.origin) return;
+
+            link.addEventListener('mouseenter', () => {
+                if (prefetchedUrls.has(url.href)) return;
+                prefetchedUrls.add(url.href);
+                const pf = document.createElement('link');
+                pf.rel = 'prefetch';
+                pf.href = url.href;
+                document.head.appendChild(pf);
+            }, { passive: true });
+
+            if (pageCurtain && !prefersReducedMotion) {
+                link.addEventListener('click', (e) => {
+                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.defaultPrevented) return;
+                    if (url.pathname === window.location.pathname && url.hash) return;
+                    e.preventDefault();
+                    pageCurtain.classList.add('is-entering');
+                    setTimeout(() => {
+                        window.location.href = url.href;
+                    }, 220);
+                });
+            }
+        });
+    };
+
     initCityStickersInteractive();
     initPipelineTracker();
     initDeliverySimulator();
+    try { initMediaExpertsTech(); } catch (e) { console.warn('MediaExperts tech init warning:', e); }
 });
+

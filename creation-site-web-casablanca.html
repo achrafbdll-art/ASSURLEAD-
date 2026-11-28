@@ -44,6 +44,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#00FF41">
 
+    <script>try{if(localStorage.getItem('alc_theme')==='light')document.documentElement.classList.add('theme-light');}catch(_){}</script>
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -472,11 +473,11 @@
 
             <!-- Client Reference Callout (Assurances El Omrani) -->
             <section style="margin-bottom: 70px;">
-                <div class="project-card" style="background: #0d0d10; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; padding: 28px;">
+                <div class="project-card alc-showcase-card">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; align-items: center;">
                         <div>
                             <span class="badge" data-i18n="case_callout_badge"><span class="badge-flag">🇲🇦</span> Étude de Cas Réelle</span>
-                            <h3 style="font-size: 22px; color: white; margin: 12px 0 8px 0;" data-i18n="case_callout_title">Cabinet Assurances El Omrani (AXA Casablanca)</h3>
+                            <h3 class="alc-showcase-title" style="font-size: 22px; margin: 12px 0 8px 0;" data-i18n="case_callout_title">Cabinet Assurances El Omrani (AXA Casablanca)</h3>
                             <p style="font-size: 14px; color: var(--zinc-400); line-height: 1.6; margin-bottom: 16px;" data-i18n="case_callout_desc">
                                 Déploiement du site <a href="https://www.assuranceselomrani.com" target="_blank" rel="noopener noreferrer" style="color: var(--brand-neon); text-decoration: underline;">www.assuranceselomrani.com</a> : un moteur digital ultra-rapide générant des demandes de devis d'assurance en flux continu avec un positionnement en 1ère page Google.
                             </p>
@@ -484,9 +485,9 @@
                                 <i class="fas fa-arrow-right"></i> Lire l'étude de cas complète
                             </a>
                         </div>
-                        <div style="background: #141418; border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 24px; text-align: center;">
+                        <div class="alc-showcase-inner-box" style="padding: 24px; text-align: center;">
                             <div style="font-size: 32px; font-weight: 900; color: var(--brand-neon); margin-bottom: 4px;" data-i18n="case_stat_val">1ère Page</div>
-                            <div style="font-size: 13px; color: white; font-weight: 700; margin-bottom: 10px;" data-i18n="case_stat_label">Google SEO Maroc</div>
+                            <div class="alc-showcase-stat-label" style="font-size: 13px; font-weight: 700; margin-bottom: 10px;" data-i18n="case_stat_label">Google SEO Maroc</div>
                             <p style="font-size: 12px; color: var(--zinc-400);" data-i18n="case_stat_sub">Résultats mesurables et canal de contact direct WhatsApp actif 24h/24.</p>
                         </div>
                     </div>

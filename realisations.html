@@ -43,6 +43,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#00FF41">
 
+    <script>try{if(localStorage.getItem('alc_theme')==='light')document.documentElement.classList.add('theme-light');}catch(_){}</script>
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -387,23 +388,23 @@
                     <p>Déploiement complet d'un site web sur-mesure ultra-rapide, référencement local 1ère page Google et tunnel de conversion WhatsApp pour l'agence d'assurance à Casablanca.</p>
                 </div>
 
-                <div class="project-card" style="background: #0d0d10; border: 1px solid rgba(0,255,65,0.22); border-radius: 14px; overflow: hidden; padding: 32px; box-shadow: 0 16px 40px rgba(0,0,0,0.6);">
+                <div class="project-card alc-showcase-card alc-showcase-card-featured" style="padding: 32px;">
                     <div class="project-details-grid">
-                        <div style="background: #141418; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 36px 24px; text-align: center; position: relative;">
+                        <div class="alc-showcase-inner-box" style="border-radius: 12px; padding: 36px 24px; text-align: center; position: relative;">
                             <div style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; border-radius: 16px; background: rgba(0,255,65,0.1); border: 1px solid rgba(0,255,65,0.3); margin-bottom: 18px;">
                                 <i class="fas fa-building neon" style="font-size: 32px;"></i>
                             </div>
-                            <h3 style="font-size: 22px; color: white; margin-bottom: 6px; font-weight: 800;">Cabinet Assurances El Omrani</h3>
+                            <h3 class="alc-showcase-title" style="font-size: 22px; margin-bottom: 6px; font-weight: 800;">Cabinet Assurances El Omrani</h3>
                             <div style="color: var(--brand-neon); font-size: 14px; font-weight: 700; margin-bottom: 14px;">Agent Général AXA Assurance • Casablanca</div>
                             <div style="margin-bottom: 20px;">
-                                <a href="https://www.assuranceselomrani.com" target="_blank" rel="noopener noreferrer" style="color: #ffffff; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">
+                                <a href="https://www.assuranceselomrani.com" target="_blank" rel="noopener noreferrer" class="alc-showcase-url-pill">
                                 <i class="fas fa-globe neon"></i> www.assuranceselomrani.com <i class="fas fa-external-link-alt" style="font-size: 11px;"></i>
                             </a>
                         </div>
                             <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                                <span style="font-size: 11px; color: var(--zinc-300); background: rgba(0,255,65,0.08); border: 1px solid rgba(0,255,65,0.25); border-radius: 6px; padding: 4px 10px;"><i class="fas fa-check neon"></i> 1ère Page Google</span>
-                                <span style="font-size: 11px; color: var(--zinc-300); background: rgba(0,255,65,0.08); border: 1px solid rgba(0,255,65,0.25); border-radius: 6px; padding: 4px 10px;"><i class="fas fa-check neon"></i> Chargement &lt; 1.2s</span>
-                                <span style="font-size: 11px; color: var(--zinc-300); background: rgba(0,255,65,0.08); border: 1px solid rgba(0,255,65,0.25); border-radius: 6px; padding: 4px 10px;"><i class="fab fa-whatsapp neon"></i> Tunnel WhatsApp</span>
+                                <span class="alc-showcase-feature-pill"><i class="fas fa-check neon"></i> 1ère Page Google</span>
+                                <span class="alc-showcase-feature-pill"><i class="fas fa-check neon"></i> Chargement &lt; 1.2s</span>
+                                <span class="alc-showcase-feature-pill"><i class="fab fa-whatsapp neon"></i> Tunnel WhatsApp</span>
                             </div>
                         </div>
 
@@ -452,11 +453,11 @@
                     <p>Déploiement d'un moteur d'acquisition pour agence immobilière dans la métropole casablancaise.</p>
                 </div>
 
-                <div class="project-card" style="background: #0d0d10; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; padding: 24px;">
+                <div class="project-card alc-showcase-card" style="padding: 24px;">
                     <div class="project-details-grid project-details-grid-compact">
-                        <div style="background: #141418; border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 40px 24px; text-align: center;">
+                        <div class="alc-showcase-inner-box" style="padding: 40px 24px; text-align: center;">
                             <i class="fas fa-city neon" style="font-size: 56px; margin-bottom: 16px;"></i>
-                            <h3 style="font-size: 20px; color: white; margin-bottom: 8px;">Agence Immobilière Maarif</h3>
+                            <h3 class="alc-showcase-title" style="font-size: 20px; margin-bottom: 8px;">Agence Immobilière Maarif</h3>
                             <div style="color: var(--brand-neon); font-size: 13px; font-weight: 700; margin-bottom: 12px;">Casablanca, Maroc</div>
                             <div style="font-size: 11px; color: var(--zinc-400); text-transform: uppercase; letter-spacing: 0.1em;">Projet livré en Octobre 2026</div>
                         </div>
@@ -468,7 +469,7 @@
                                 <li><i class="fas fa-check neon"></i> Synchronisation WhatsApp Business & suivi des demandes d'estimation</li>
                                 <li><i class="fas fa-check neon"></i> Temps de chargement inférieur à 1 seconde sur smartphone</li>
                             </ul>
-                            <div style="padding: 12px 16px; background: rgba(0,255,65,0.04); border: 1px solid rgba(0,255,65,0.15); border-radius: 6px; font-size: 12px; color: var(--zinc-300);">
+                            <div class="alc-showcase-status-box">
                                 <!-- À COMPLÉTER : vraie statistique -->
                                 <i class="fas fa-check-circle neon"></i> <strong>Statut :</strong> Système d'acquisition actif en ligne. Fiches locales Google et campagnes d'indexation opérationnelles.
                             </div>
